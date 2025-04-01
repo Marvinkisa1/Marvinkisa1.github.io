@@ -1,17 +1,40 @@
 [
     {
-        "name": "Khanh Hoa TV",
-        "id": "KhanhHoaTV.vn",
-        "logo": "https://i.imgur.com/qLMcGPT.png",
-        "url": "http://210.245.20.94/hls/ktv1.m3u8",
-        "categories": [],
+        "name": "HTV7",
+        "id": "HTV7.vn",
+        "logo": "https://i.postimg.cc/fyCZR0kb/HTV7-logo-2015.png",
+        "url": "http://125hvt.ddns.net:21585/htv7/tracks-v1a1/mono.m3u8",
+        "categories": [
+            "general"
+        ],
         "country": "VN"
     },
     {
-        "name": "Kien Giang TV 1",
-        "id": "KienGiangTV1.vn",
-        "logo": "https://i.imgur.com/vzaqu80.png",
-        "url": "https://tv.kgtv.vn/live/kgtv1/kgtv1.m3u8",
+        "name": "HTV9",
+        "id": "HTV9.vn",
+        "logo": "https://i.postimg.cc/DzGTbNmH/HTV9-logo-2015.png",
+        "url": "http://125hvt.ddns.net:21585/htv9/index.m3u8",
+        "categories": [
+            "news",
+            "general"
+        ],
+        "country": "VN"
+    },
+    {
+        "name": "Uniquely Thai",
+        "id": "UniquelyThai.vn",
+        "logo": "https://i.imgur.com/cTSDB8O.png",
+        "url": "https://livefta.malimarcdn.com/ftaedge00/uniquely.sdp/playlist.m3u8",
+        "categories": [
+            "shop"
+        ],
+        "country": "VN"
+    },
+    {
+        "name": "Bac Kan TV",
+        "id": "BacKanTV.vn",
+        "logo": "https://i.postimg.cc/xT9jJXZ0/TBK-logo-2021.png",
+        "url": "http://123.31.36.68/live.m3u8?c=vstv360&deviceId=&deviceType=&gcId=1532&location=NA&pkg=pkg11.hni&q=high&requestTime=1586309420781&time=1586395820&token=LX-ibJYRUq9pflRtYAxfYQ&type=tv&userId=",
         "categories": [],
         "country": "VN"
     },
@@ -24,37 +47,89 @@
         "country": "VN"
     },
     {
-        "name": "Kon Tum TV",
-        "id": "KonTumTV.vn",
-        "logo": "https://i.imgur.com/lLlu6ZA.png",
-        "url": "https://tv.kontumtv.vn/live/kontumtv/kontumtv.m3u8",
+        "name": "Kien Giang TV 1",
+        "id": "KienGiangTV1.vn",
+        "logo": "https://i.imgur.com/vzaqu80.png",
+        "url": "https://tv.kgtv.vn/live/kgtv1/kgtv1.m3u8",
         "categories": [],
         "country": "VN"
     },
     {
-        "name": "Dien Bien TV",
-        "id": "DienBienTV.vn",
-        "logo": "https://i.imgur.com/u308o8q.png",
-        "url": "https://truyenhinh.vnptvas.vn/live.m3u8?c=vstv362&deviceId=&deviceType=&gcId=1532&location=NA&pkg=pkg11.hni&q=high&requestTime=1586309420781&time=1586395820&token=LX-ibJYRUq9pflRtYAxfYQ&type=tv&userId=",
+        "name": "Kon Tum TV",
+        "id": "KonTumTV.vn",
+        "logo": "https://i.imgur.com/lLlu6ZA.png",
+        "url": "https://tv.kontumtv.vn/live/kontumtv/kontumtv.m3u8",
         "categories": [
             "general"
         ],
         "country": "VN"
     },
     {
-        "name": "Ha Giang TV",
-        "id": "HaGiangTV.vn",
-        "logo": "https://i.imgur.com/zXqjjUf.png",
-        "url": "http://123.31.36.68/live.m3u8?c=vstv365&deviceId=&deviceType=&gcId=1532&location=NA&pkg=pkg11.hni&q=high&requestTime=1586309420781&time=1586395820&token=LX-ibJYRUq9pflRtYAxfYQ&type=tv&userId=",
+        "name": "Vinh Long TV 1",
+        "id": "VinhLongTV1.vn",
+        "logo": "https://i.imgur.com/5YFsqPx.png",
+        "url": "http://125hvt.ddns.net:21585/thvl1/tracks-v1a1/mono.m3u8",
         "categories": [],
         "country": "VN"
     },
     {
-        "name": "Bac Kan TV",
-        "id": "BacKanTV.vn",
-        "logo": "https://i.postimg.cc/xT9jJXZ0/TBK-logo-2021.png",
-        "url": "http://123.31.36.68/live.m3u8?c=vstv360&deviceId=&deviceType=&gcId=1532&location=NA&pkg=pkg11.hni&q=high&requestTime=1586309420781&time=1586395820&token=LX-ibJYRUq9pflRtYAxfYQ&type=tv&userId=",
+        "name": "Vinh Phuc TV",
+        "id": "VinhPhucTV.vn",
+        "logo": "https://i.imgur.com/jLgwX4X.png",
+        "url": "http://vinhphuctv.vn:8090/vinhphuclive/web.stream/playlist.m3u8",
         "categories": [],
+        "country": "VN"
+    },
+    {
+        "name": "VTV1",
+        "id": "VTV1.vn",
+        "logo": "https://i.imgur.com/vZYlGIW.png",
+        "url": "http://125hvt.ddns.net:21585/vtv1/tracks-v1a1/mono.m3u8",
+        "categories": [],
+        "country": "VN"
+    },
+    {
+        "name": "VTV4",
+        "id": "VTV4.vn",
+        "logo": "https://i.imgur.com/WsLLmR2.png",
+        "url": "http://125hvt.ddns.net:21585/vtv4/tracks-v1a1/mono.m3u8",
+        "categories": [],
+        "country": "VN"
+    },
+    {
+        "name": "VTV9",
+        "id": "VTV9.vn",
+        "logo": "https://i.imgur.com/QiY55sy.png",
+        "url": "http://125hvt.ddns.net:21585/vtv9/tracks-v1a1/mono.m3u8",
+        "categories": [],
+        "country": "VN"
+    },
+    {
+        "name": "VTV Can Tho",
+        "id": "VTVCanTho.vn",
+        "logo": "https://i.imgur.com/Mqmbsj4.png",
+        "url": "http://125hvt.ddns.net:21585/vtv6/playlist.m3u8",
+        "categories": [],
+        "country": "VN"
+    },
+    {
+        "name": "Lam Dong TV",
+        "id": "LamDongTV.vn",
+        "logo": "https://i.imgur.com/lSMoGlv.png",
+        "url": "http://118.107.85.5:1935/live/smil:LTV.smil/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "VN"
+    },
+    {
+        "name": "Lao SV TV",
+        "id": "LaoSVTV.vn",
+        "logo": "https://i.imgur.com/ZIXtazI.png",
+        "url": "https://livefta.malimarcdn.com/ftaedge00/laosvtv.stream/playlist.m3u8",
+        "categories": [
+            "shop"
+        ],
         "country": "VN"
     },
     {
@@ -62,14 +137,6 @@
         "id": "LaoCaiTV.vn",
         "logo": "https://i.imgur.com/TLvrDHa.png",
         "url": "https://cdn.3ssoft.vn/livetv/laocaitv/laocaitv/index.m3u8",
-        "categories": [],
-        "country": "VN"
-    },
-    {
-        "name": "Thai Nguyen TV",
-        "id": "ThaiNguyenTV.vn",
-        "logo": "https://thainguyentv.vn/modules/frontend/themes/ptthtn/images/logo.png",
-        "url": "https://streaming.thainguyentv.vn/hls/livestream.m3u8",
         "categories": [
             "general"
         ],
@@ -84,18 +151,28 @@
         "country": "VN"
     },
     {
-        "name": "Phu Yen TV",
-        "id": "PhuYenTV.vn",
-        "logo": "https://i.imgur.com/fYYS9QS.png",
-        "url": "http://113.161.4.48:8080/phuyen/tv/index.m3u8",
-        "categories": [],
-        "country": "VN"
-    },
-    {
         "name": "Cao Bang TV",
         "id": "CaoBangTV.vn",
         "logo": "https://i.imgur.com/dGonewm.png",
         "url": "http://118.107.85.4:1935/live/smil:CRTV.smil/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "VN"
+    },
+    {
+        "name": "Mien Tay TV",
+        "id": "MienTayTV.vn",
+        "logo": "https://i.imgur.com/pgvVQ9c.png",
+        "url": "https://618b88f69e53b.streamlock.net/THDT/thdttv/playlist.m3u8",
+        "categories": [],
+        "country": "VN"
+    },
+    {
+        "name": "Ninh Thuan TV",
+        "id": "NinhThuanTV.vn",
+        "logo": "https://i.imgur.com/HIyUzLM.png",
+        "url": "https://60acee235f4d5.streamlock.net/live/mystream/playlist.m3u8",
         "categories": [
             "general"
         ],
@@ -112,22 +189,12 @@
         "country": "VN"
     },
     {
-        "name": "Tea TV",
-        "id": "TeaTV.vn",
-        "logo": "https://i.imgur.com/WorbnyD.jpg",
-        "url": "https://livefta.malimarcdn.com/ftaedge00/teatv.sdp/playlist.m3u8",
+        "name": "Dien Bien TV",
+        "id": "DienBienTV.vn",
+        "logo": "https://i.imgur.com/u308o8q.png",
+        "url": "https://truyenhinh.vnptvas.vn/live.m3u8?c=vstv362&deviceId=&deviceType=&gcId=1532&location=NA&pkg=pkg11.hni&q=high&requestTime=1586309420781&time=1586395820&token=LX-ibJYRUq9pflRtYAxfYQ&type=tv&userId=",
         "categories": [
-            "shop"
-        ],
-        "country": "VN"
-    },
-    {
-        "name": "Tea TV Khmer",
-        "id": "TeaTVKhmer.vn",
-        "logo": "https://i.imgur.com/u6SMbOQ.jpg",
-        "url": "https://livefta.malimarcdn.com/ftaedge00/teatv2.sdp/playlist.m3u8",
-        "categories": [
-            "shop"
+            "general"
         ],
         "country": "VN"
     },
@@ -150,6 +217,52 @@
         "categories": [
             "sports",
             "entertainment"
+        ],
+        "country": "VN"
+    },
+    {
+        "name": "Phu Yen TV",
+        "id": "PhuYenTV.vn",
+        "logo": "https://i.imgur.com/fYYS9QS.png",
+        "url": "http://113.161.4.48:8080/phuyen/tv/index.m3u8",
+        "categories": [],
+        "country": "VN"
+    },
+    {
+        "name": "Quang Ngai TV",
+        "id": "QuangNgaiTV.vn",
+        "logo": "https://i.imgur.com/QckiN3H.png",
+        "url": "http://118.107.85.5:1935/live/smil:PTQ.smil/playlist.m3u8",
+        "categories": [],
+        "country": "VN"
+    },
+    {
+        "name": "Tea TV Khmer",
+        "id": "TeaTVKhmer.vn",
+        "logo": "https://i.imgur.com/u6SMbOQ.jpg",
+        "url": "https://livefta.malimarcdn.com/ftaedge00/teatv2.sdp/playlist.m3u8",
+        "categories": [
+            "shop"
+        ],
+        "country": "VN"
+    },
+    {
+        "name": "Tea TV",
+        "id": "TeaTV.vn",
+        "logo": "https://i.imgur.com/WorbnyD.jpg",
+        "url": "https://livefta.malimarcdn.com/ftaedge00/teatv.sdp/playlist.m3u8",
+        "categories": [
+            "shop"
+        ],
+        "country": "VN"
+    },
+    {
+        "name": "Thai Nguyen TV",
+        "id": "ThaiNguyenTV.vn",
+        "logo": "https://thainguyentv.vn/modules/frontend/themes/ptthtn/images/logo.png",
+        "url": "https://streaming.thainguyentv.vn/hls/livestream.m3u8",
+        "categories": [
+            "general"
         ],
         "country": "VN"
     },
@@ -180,6 +293,16 @@
         "country": "VN"
     },
     {
+        "name": "Ha Giang TV",
+        "id": "HaGiangTV.vn",
+        "logo": "https://i.imgur.com/zXqjjUf.png",
+        "url": "http://123.31.36.68/live.m3u8?c=vstv365&deviceId=&deviceType=&gcId=1532&location=NA&pkg=pkg11.hni&q=high&requestTime=1586309420781&time=1586395820&token=LX-ibJYRUq9pflRtYAxfYQ&type=tv&userId=",
+        "categories": [
+            "general"
+        ],
+        "country": "VN"
+    },
+    {
         "name": "Hau Giang TV",
         "id": "HauGiangTV.vn",
         "logo": "https://i.imgur.com/e0gc4CQ.png",
@@ -194,7 +317,9 @@
         "id": "HaTinhTV.vn",
         "logo": "https://i.imgur.com/4yIgKKx.png",
         "url": "https://wse.hatinhtv.net/live/httv1/playlist.m3u8",
-        "categories": [],
+        "categories": [
+            "general"
+        ],
         "country": "VN"
     },
     {
@@ -202,119 +327,9 @@
         "id": "HBTV.vn",
         "logo": "https://i.imgur.com/nyfysP7.png",
         "url": "https://hbtvlive.3ssoft.vn/hoabinhtv/playlist.m3u8",
-        "categories": [],
-        "country": "VN"
-    },
-    {
-        "name": "Uniquely Thai",
-        "id": "UniquelyThai.vn",
-        "logo": "https://i.imgur.com/cTSDB8O.png",
-        "url": "https://livefta.malimarcdn.com/ftaedge00/uniquely.sdp/playlist.m3u8",
-        "categories": [
-            "shop"
-        ],
-        "country": "VN"
-    },
-    {
-        "name": "Vinh Phuc TV",
-        "id": "VinhPhucTV.vn",
-        "logo": "https://i.imgur.com/jLgwX4X.png",
-        "url": "http://vinhphuctv.vn:8090/vinhphuclive/web.stream/playlist.m3u8",
-        "categories": [],
-        "country": "VN"
-    },
-    {
-        "name": "VOV TV",
-        "id": "VOVTV.vn",
-        "logo": "https://i.imgur.com/tfYNZmG.png",
-        "url": "https://live.mediatech.vn/live/285fbc845578c6641d5a4c40534a0d1864b/playlist.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "VN"
-    },
-    {
-        "name": "Lam Dong TV",
-        "id": "LamDongTV.vn",
-        "logo": "https://i.imgur.com/lSMoGlv.png",
-        "url": "http://118.107.85.5:1935/live/smil:LTV.smil/playlist.m3u8",
-        "categories": [],
-        "country": "VN"
-    },
-    {
-        "name": "Lao SV TV",
-        "id": "LaoSVTV.vn",
-        "logo": "https://i.imgur.com/ZIXtazI.png",
-        "url": "https://livefta.malimarcdn.com/ftaedge00/laosvtv.stream/playlist.m3u8",
-        "categories": [
-            "shop"
-        ],
-        "country": "VN"
-    },
-    {
-        "name": "Mien Tay TV",
-        "id": "MienTayTV.vn",
-        "logo": "https://i.imgur.com/pgvVQ9c.png",
-        "url": "https://618b88f69e53b.streamlock.net/THDT/thdttv/playlist.m3u8",
-        "categories": [],
-        "country": "VN"
-    },
-    {
-        "name": "Ninh Thuan TV",
-        "id": "NinhThuanTV.vn",
-        "logo": "https://i.imgur.com/HIyUzLM.png",
-        "url": "https://60acee235f4d5.streamlock.net/live/mystream/playlist.m3u8",
-        "categories": [],
-        "country": "VN"
-    },
-    {
-        "name": "Bac Ninh TV",
-        "id": "BacNinhTV.vn",
-        "logo": "https://i.postimg.cc/WbrWPpVg/BTV-Bac-Ninh-2021.png",
-        "url": "https://stream.thingnet.vn/live/smil:BTV.smil/playlist.m3u8",
-        "categories": [],
-        "country": "VN"
-    },
-    {
-        "name": "Quang Ngai TV",
-        "id": "QuangNgaiTV.vn",
-        "logo": "https://i.imgur.com/QckiN3H.png",
-        "url": "http://118.107.85.5:1935/live/smil:PTQ.smil/playlist.m3u8",
-        "categories": [],
-        "country": "VN"
-    },
-    {
-        "name": "HTV7",
-        "id": "HTV7.vn",
-        "logo": "https://i.postimg.cc/fyCZR0kb/HTV7-logo-2015.png",
-        "url": "http://125hvt.ddns.net:21585/htv7/tracks-v1a1/mono.m3u8",
         "categories": [
             "general"
         ],
-        "country": "VN"
-    },
-    {
-        "name": "VTV1",
-        "id": "VTV1.vn",
-        "logo": "https://i.imgur.com/vZYlGIW.png",
-        "url": "http://125hvt.ddns.net:21585/vtv1/tracks-v1a1/mono.m3u8",
-        "categories": [],
-        "country": "VN"
-    },
-    {
-        "name": "VTV5",
-        "id": "VTV5.vn",
-        "logo": "https://i.imgur.com/Vnnna1C.png",
-        "url": "http://125hvt.ddns.net:21585/vtv5/tracks-v1a1/mono.m3u8",
-        "categories": [],
-        "country": "VN"
-    },
-    {
-        "name": "VTV Can Tho",
-        "id": "VTVCanTho.vn",
-        "logo": "https://i.imgur.com/Mqmbsj4.png",
-        "url": "http://125hvt.ddns.net:21585/vtv6/playlist.m3u8",
-        "categories": [],
         "country": "VN"
     }
 ]

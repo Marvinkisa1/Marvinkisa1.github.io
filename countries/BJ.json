@@ -1,11 +1,22 @@
 [
     {
-        "name": "Eden TV",
-        "id": "EdenTV.bj",
-        "logo": "https://i.imgur.com/4ClnG0x.png",
-        "url": "https://rtmp.edentv.bj/hls/stream.m3u8",
+        "name": "TVC Benin",
+        "id": "TVCBenin.bj",
+        "logo": "https://i.imgur.com/oUnEYl5.png",
+        "url": "https://live.tvcbenin.com/direct/729c37a1d3319ee21991227b1f84c687.sdp/playlist.m3u8",
         "categories": [
             "general"
+        ],
+        "country": "BJ"
+    },
+    {
+        "name": "ADO TV",
+        "id": "ADOTV.bj",
+        "logo": "https://i.imgur.com/pxFamLr.png",
+        "url": "https://strhls.streamakaci.tv/ortb/ortb2-multi/playlist.m3u8",
+        "categories": [
+            "kids",
+            "sports"
         ],
         "country": "BJ"
     },
@@ -13,28 +24,10 @@
         "name": "Benin Web TV",
         "id": "BeninWebTV.bj",
         "logo": "https://i.imgur.com/CYy4n0N.png",
-        "url": "https://vdo.pro-fhi.net:3244/stream/play.m3u8",
+        "url": "https://stream.beninwebtv.bj/2/live/stream.m3u8",
         "categories": [
             "news"
         ],
-        "country": "BJ"
-    },
-    {
-        "name": "Etele",
-        "id": "Etele.bj",
-        "logo": "https://i.imgur.com/y1eg7OC.png",
-        "url": "https://livetvsteam.com:1936/etelebenin/etelebenin/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "BJ"
-    },
-    {
-        "name": "TVC Benin",
-        "id": "TVCBenin.bj",
-        "logo": "https://i.imgur.com/Z3xZT2p.png",
-        "url": "https://live.tvcbenin.com/direct/729c37a1d3319ee21991227b1f84c687.sdp/playlist.m3u8",
-        "categories": [],
         "country": "BJ"
     },
     {
@@ -50,17 +43,41 @@
     {
         "name": "ORTB TV",
         "id": "ORTBTV.bj",
-        "logo": "https://i.imgur.com/ovhVYvP.png",
+        "logo": "https://i.imgur.com/o6zAR88.png",
         "url": "https://strhls.streamakaci.tv/ortb/ortb1-multi/playlist.m3u8",
-        "categories": [],
+        "categories": [
+            "general"
+        ],
         "country": "BJ"
     },
     {
-        "name": "Canal 3 Benin",
-        "id": "Canal3Benin.bj",
-        "logo": "https://i.imgur.com/NbZ7Y4j.png",
-        "url": "https://live.creacast.com/bluediamond/stream/playlist.m3u8",
-        "categories": [],
+        "name": "Eden TV",
+        "id": "EdenTV.bj",
+        "logo": "https://i.imgur.com/4ClnG0x.png",
+        "url": "https://rtmp.edentv.bj/hls/stream.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "BJ"
+    },
+    {
+        "name": "Power TV",
+        "id": "PowerTV.bj",
+        "logo": "https://i.imgur.com/IiP7djp.png",
+        "url": "https://stream.it-innov.com/powertv/index.fmp4.m3u8",
+        "categories": [
+            "religious"
+        ],
+        "country": "BJ"
+    },
+    {
+        "name": "Etele",
+        "id": "Etele.bj",
+        "logo": "https://i.imgur.com/y1eg7OC.png",
+        "url": "https://livetvsteam.com:1936/etelebenin/etelebenin/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
         "country": "BJ"
     }
 ]

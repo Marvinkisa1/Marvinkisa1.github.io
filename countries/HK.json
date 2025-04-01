@@ -1,18 +1,32 @@
 [
     {
-        "name": "RTHK TV 33",
-        "id": "RTHKTV33.hk",
-        "logo": "https://i.imgur.com/2MProun.png",
-        "url": "https://rthktv33-live.akamaized.net/hls/live/2101641/RTHKTV33/master.m3u8",
-        "categories": [],
+        "name": "Bloomberg TV Asia",
+        "id": "BloombergTVAsia.hk",
+        "logo": "https://i.imgur.com/OuogLHx.png",
+        "url": "https://bloomberg.com/media-manifest/streams/asia.m3u8",
+        "categories": [
+            "business"
+        ],
         "country": "HK"
     },
     {
-        "name": "RTHK TV 34",
-        "id": "RTHKTV34.hk",
-        "logo": "https://i.imgur.com/Kq5A6Qn.png",
-        "url": "https://rthktv34-live.akamaized.net/hls/live/2101642/RTHKTV34/master.m3u8",
-        "categories": [],
+        "name": "Bloomberg TV Asia Live Event",
+        "id": "BloombergTVAsiaLiveEvent.hk",
+        "logo": "https://i.imgur.com/OuogLHx.png",
+        "url": "https://bloomberg.com/media-manifest/streams/asia-event.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "HK"
+    },
+    {
+        "name": "BSTV",
+        "id": "BSTV.hk",
+        "logo": "https://i.imgur.com/GVYSSgm.png",
+        "url": "http://202.69.67.66:443/webcast/bshdlive-pc/playlist.m3u8",
+        "categories": [
+            "shop"
+        ],
         "country": "HK"
     },
     {
@@ -30,47 +44,25 @@
         "id": "PetClubTV.hk",
         "logo": "https://i.imgur.com/ykPNNwQ.png",
         "url": "https://cdn-apse1-prod.tsv2.amagi.tv/linear/amg01076-lightningintern-petclub-samsungnz/playlist.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "HK"
+    },
+    {
+        "name": "RTHK TV 33",
+        "id": "RTHKTV33.hk",
+        "logo": "https://i.imgur.com/2MProun.png",
+        "url": "https://rthktv33-live.akamaized.net/hls/live/2101641/RTHKTV33/master.m3u8",
         "categories": [],
         "country": "HK"
     },
     {
-        "name": "Phoenix InfoNews Channel",
-        "id": "PhoenixInfoNewsChannel.hk",
-        "logo": "https://i.imgur.com/mt4h3VO.png",
-        "url": "https://ythls.armelin.one/channel/UCd9dPMYgV9-IQaZG491TaRw.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "HK"
-    },
-    {
-        "name": "Bloomberg TV Asia Live Event",
-        "id": "BloombergTVAsiaLiveEvent.hk",
-        "logo": "https://i.imgur.com/OuogLHx.png",
-        "url": "https://bloomberg.com/media-manifest/streams/asia-event.m3u8",
-        "categories": [
-            "business"
-        ],
-        "country": "HK"
-    },
-    {
-        "name": "Bloomberg TV Asia",
-        "id": "BloombergTVAsia.hk",
-        "logo": "https://i.imgur.com/OuogLHx.png",
-        "url": "https://bloomberg.com/media-manifest/streams/asia.m3u8",
-        "categories": [
-            "business"
-        ],
-        "country": "HK"
-    },
-    {
-        "name": "BSTV",
-        "id": "BSTV.hk",
-        "logo": "https://i.imgur.com/GVYSSgm.png",
-        "url": "http://202.69.67.66:443/webcast/bshdlive-pc/playlist.m3u8",
-        "categories": [
-            "shop"
-        ],
+        "name": "RTHK TV 34",
+        "id": "RTHKTV34.hk",
+        "logo": "https://i.imgur.com/Kq5A6Qn.png",
+        "url": "https://rthktv34-live.akamaized.net/hls/live/2101642/RTHKTV34/master.m3u8",
+        "categories": [],
         "country": "HK"
     }
 ]
