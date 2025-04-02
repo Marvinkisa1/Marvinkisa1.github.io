@@ -10,12 +10,32 @@
         "country": "LB"
     },
     {
+        "name": "Lana TV",
+        "id": "LanaTV.lb",
+        "logo": "https://i.imgur.com/xPoycVY.png",
+        "url": "https://p-ltv.akamaized.net/ltv/ltv.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "LB"
+    },
+    {
         "name": "Al-Iman TV",
         "id": "AlImanTV.lb",
         "logo": "https://i.imgur.com/4WKQppG.png",
         "url": "https://svs.itworkscdn.net/alimanlive/imantv.smil/playlist.m3u8",
         "categories": [
             "religious"
+        ],
+        "country": "LB"
+    },
+    {
+        "name": "Future TV",
+        "id": "FutureTV.lb",
+        "logo": "https://i.imgur.com/OaqEpwe.png",
+        "url": "https://live.kwikmotion.com/futurelive/ftv.smil/playlist.m3u8",
+        "categories": [
+            "general"
         ],
         "country": "LB"
     },
@@ -40,50 +60,22 @@
         "country": "LB"
     },
     {
-        "name": "ALWifak News TV",
-        "id": "ALWifakNewsTV.lb",
-        "logo": "https://i.imgur.com/1vqhmNz.png",
-        "url": "http://stream.spilebanon.com:1935/live/myStream/playlist.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "LB"
-    },
-    {
-        "name": "Arabica TV",
-        "id": "ArabicaTV.lb",
-        "logo": "https://i.imgur.com/sTOoDy1.png",
-        "url": "http://istream.binarywaves.com:8081/hls/arabica/playlist.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "LB"
-    },
-    {
-        "name": "Voice of Lebanon",
-        "id": "VoiceofLebanon.lb",
-        "logo": "https://i.imgur.com/f8WcqRY.png",
-        "url": "https://svs.itworkscdn.net/vdltvlive/vdltv.smil/playlist.m3u8",
-        "categories": [],
-        "country": "LB"
-    },
-    {
-        "name": "Lana TV",
-        "id": "LanaTV.lb",
-        "logo": "https://i.imgur.com/xPoycVY.png",
-        "url": "https://p-ltv.akamaized.net/ltv/ltv.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "LB"
-    },
-    {
         "name": "MTV",
         "id": "MTV.lb",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/7/75/Murr_tv.png",
         "url": "https://hms.pfs.gdn/v1/broadcast/mtv/playlist.m3u8",
         "categories": [
             "general"
+        ],
+        "country": "LB"
+    },
+    {
+        "name": "ALWifak News TV",
+        "id": "ALWifakNewsTV.lb",
+        "logo": "https://i.imgur.com/1vqhmNz.png",
+        "url": "http://stream.spilebanon.com:1935/live/myStream/playlist.m3u8",
+        "categories": [
+            "news"
         ],
         "country": "LB"
     },
@@ -104,6 +96,16 @@
         "url": "https://655ca86f46b1f.streamlock.net/live/Nabaa/playlist.m3u8",
         "categories": [
             "news"
+        ],
+        "country": "LB"
+    },
+    {
+        "name": "Arabica TV",
+        "id": "ArabicaTV.lb",
+        "logo": "https://i.imgur.com/sTOoDy1.png",
+        "url": "http://istream.binarywaves.com:8081/hls/arabica/playlist.m3u8",
+        "categories": [
+            "music"
         ],
         "country": "LB"
     },
@@ -168,26 +170,6 @@
         "country": "LB"
     },
     {
-        "name": "OneFM",
-        "id": "OneFM.lb",
-        "logo": "https://imgur.com/O4DuR9G",
-        "url": "https://hms.pfs.gdn/v1/broadcast/onefm/playlist.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "LB"
-    },
-    {
-        "name": "One TV",
-        "id": "OneTV.lb",
-        "logo": "https://i.imgur.com/O4DuR9G.png",
-        "url": "https://hms.pfs.gdn/v1/broadcast/one/playlist.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "LB"
-    },
-    {
         "name": "SPI Lebanon",
         "id": "SPILebanon.lb",
         "logo": "https://spilebanon.com/img/spi-logo.jpg",
@@ -208,6 +190,26 @@
         "country": "LB"
     },
     {
+        "name": "OneFM",
+        "id": "OneFM.lb",
+        "logo": "https://imgur.com/O4DuR9G",
+        "url": "https://hms.pfs.gdn/v1/broadcast/onefm/playlist.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "LB"
+    },
+    {
+        "name": "One TV",
+        "id": "OneTV.lb",
+        "logo": "https://i.imgur.com/O4DuR9G.png",
+        "url": "https://hms.pfs.gdn/v1/broadcast/one/playlist.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "LB"
+    },
+    {
         "name": "Tele Liban",
         "id": "TeleLiban.lb",
         "logo": "https://i.imgur.com/5VPYxJi.png",
@@ -218,13 +220,11 @@
         "country": "LB"
     },
     {
-        "name": "Future TV",
-        "id": "FutureTV.lb",
-        "logo": "https://i.imgur.com/OaqEpwe.png",
-        "url": "https://live.kwikmotion.com/futurelive/ftv.smil/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
+        "name": "Voice of Lebanon",
+        "id": "VoiceofLebanon.lb",
+        "logo": "https://i.imgur.com/f8WcqRY.png",
+        "url": "https://svs.itworkscdn.net/vdltvlive/vdltv.smil/playlist.m3u8",
+        "categories": [],
         "country": "LB"
     }
 ]
