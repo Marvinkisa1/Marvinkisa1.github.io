@@ -178,6 +178,14 @@ body {
   font-size: 20px;
 }
 
+.links {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
 @media (max-width: 768px) {
     .footer {
     padding: 0.5rem; 
