@@ -1,11 +1,22 @@
 [
     {
-        "name": "CTB Perth",
-        "id": "CTBPerth.au",
+        "name": "CTB Perth Movies Channel",
+        "id": "CTBPerthMoviesChannel.au",
         "logo": "https://i.imgur.com/VB8gtCy.jpeg",
-        "url": "https://live.ctbperth.net.au/hls/0/stream.m3u8",
+        "url": "https://movies.ctbperth.net.au/hls/stream.m3u8",
         "categories": [
-            "general"
+            "movies"
+        ],
+        "country": "AU"
+    },
+    {
+        "name": "10 Bold",
+        "id": "10Bold.au",
+        "logo": "https://i.imgur.com/2xglh33.png",
+        "url": "https://dce3793146fef017.mediapackage.us-west-2.amazonaws.com/out/v1/55cdf73af7894775ba6de8f57482b66a/CMAF_HLS/index.m3u8",
+        "categories": [
+            "lifestyle",
+            "relax"
         ],
         "country": "AU"
     },
@@ -16,6 +27,16 @@
         "url": "https://live-tvsn.simplestreamcdn.com/live13/tvsnjewellery/bitrate1.isml/.m3u8",
         "categories": [
             "shop"
+        ],
+        "country": "AU"
+    },
+    {
+        "name": "CTB Perth",
+        "id": "CTBPerth.au",
+        "logo": "https://i.imgur.com/VB8gtCy.jpeg",
+        "url": "https://live.ctbperth.net.au/hls/0/stream.m3u8",
+        "categories": [
+            "general"
         ],
         "country": "AU"
     },
@@ -40,30 +61,20 @@
         "country": "AU"
     },
     {
-        "name": "2GB",
-        "id": "2GB.au",
-        "logo": "https://i.ibb.co/jwM8DFG/2GB-1.png",
-        "url": "https://2gblive.akamaized.net/hls/live/2033805/2GB/index.m3u8",
+        "name": "6PR",
+        "id": "6PR.au",
+        "logo": "https://i.imgur.com/Q9iCxg1.png",
+        "url": "https://6prlive.akamaized.net/hls/live/2033806/6PR/index.m3u8",
         "categories": [
             "news"
         ],
         "country": "AU"
     },
     {
-        "name": "CTB Perth Movies Channel",
-        "id": "CTBPerthMoviesChannel.au",
-        "logo": "https://i.imgur.com/VB8gtCy.jpeg",
-        "url": "https://movies.ctbperth.net.au/hls/stream.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "AU"
-    },
-    {
-        "name": "6PR",
-        "id": "6PR.au",
-        "logo": "https://i.imgur.com/Q9iCxg1.png",
-        "url": "https://6prlive.akamaized.net/hls/live/2033806/6PR/index.m3u8",
+        "name": "2GB",
+        "id": "2GB.au",
+        "logo": "https://i.ibb.co/jwM8DFG/2GB-1.png",
+        "url": "https://2gblive.akamaized.net/hls/live/2033805/2GB/index.m3u8",
         "categories": [
             "news"
         ],

@@ -1,5 +1,23 @@
 [
     {
+        "name": "Caminos Media",
+        "id": "CaminosMedia.ve",
+        "logo": null,
+        "url": "https://streamtv.intervenhosting.net:3029/hybrid/play.m3u8",
+        "categories": [],
+        "country": "VE"
+    },
+    {
+        "name": "Monagas Vision",
+        "id": "MonagasVision.ve",
+        "logo": null,
+        "url": "https://cloud2.streaminglivehd.com:1936/monagasvision-2/monagasvision-2/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "VE"
+    },
+    {
         "name": "Canal Diplomatico",
         "id": "CanalDiplomatico.ve",
         "logo": "https://i.ibb.co/34vsSzS/1439-Canal-Diplomatico.png",
@@ -10,50 +28,10 @@
         "country": "VE"
     },
     {
-        "name": "TRT",
-        "id": "TRT.ve",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/6/67/Canal_trt_logo.PNG",
-        "url": "https://vcp12.myplaytv.com/trt/trt/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "VE"
-    },
-    {
-        "name": "UN24",
-        "id": "UN24.ve",
+        "name": "UniTV",
+        "id": "UniTV.ve",
         "logo": null,
-        "url": "https://59d39900ebfb8.streamlock.net/untv-720/untv-720/playlist.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "VE"
-    },
-    {
-        "name": "TeleAragua",
-        "id": "TeleAragua.ve",
-        "logo": "https://i.imgur.com/jPzcb2S.png",
-        "url": "http://45.173.198.59:8080/hls/nginx3.m3u8?tla=",
-        "categories": [
-            "general"
-        ],
-        "country": "VE"
-    },
-    {
-        "name": "Aguacate TV",
-        "id": "AguacateTV.ve",
-        "logo": "https://i.ibb.co/wpWBsgf/IMG-20230705-154622.jpg",
-        "url": "https://streamtv.intervenhosting.net:3040/hybrid/play.m3u8",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "VE"
-    },
-    {
-        "name": "Portuguesa Television",
-        "id": "PortuguesaTelevision.ve",
-        "logo": "https://intervenhosting.net/roku/portutv/portutv.jpg",
-        "url": "https://streamtv.intervenhosting.net:3789/live/portutvlive.m3u8",
+        "url": "https://vcp6.myplaytv.com/unitv/unitv/playlist.m3u8",
         "categories": [
             "general"
         ],
@@ -64,6 +42,16 @@
         "id": "Venevision.ve",
         "logo": null,
         "url": "https://venevision-ioriver-cdn.encoders.immergo.tv/3/streamPlaylist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "VE"
+    },
+    {
+        "name": "TeleAragua",
+        "id": "TeleAragua.ve",
+        "logo": "https://i.imgur.com/jPzcb2S.png",
+        "url": "http://45.173.198.59:8080/hls/nginx3.m3u8?tla=",
         "categories": [
             "general"
         ],
@@ -90,11 +78,43 @@
         "country": "VE"
     },
     {
-        "name": "Caminos Media",
-        "id": "CaminosMedia.ve",
+        "name": "Portuguesa Television",
+        "id": "PortuguesaTelevision.ve",
+        "logo": "https://intervenhosting.net/roku/portutv/portutv.jpg",
+        "url": "https://streamtv.intervenhosting.net:3789/live/portutvlive.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "VE"
+    },
+    {
+        "name": "TRT",
+        "id": "TRT.ve",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/6/67/Canal_trt_logo.PNG",
+        "url": "https://vcp12.myplaytv.com/trt/trt/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "VE"
+    },
+    {
+        "name": "UN24",
+        "id": "UN24.ve",
         "logo": null,
-        "url": "https://streamtv.intervenhosting.net:3029/hybrid/play.m3u8",
-        "categories": [],
+        "url": "https://59d39900ebfb8.streamlock.net/untv-720/untv-720/playlist.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "VE"
+    },
+    {
+        "name": "Aguacate TV",
+        "id": "AguacateTV.ve",
+        "logo": "https://i.ibb.co/wpWBsgf/IMG-20230705-154622.jpg",
+        "url": "https://streamtv.intervenhosting.net:3040/hybrid/play.m3u8",
+        "categories": [
+            "entertainment"
+        ],
         "country": "VE"
     }
 ]

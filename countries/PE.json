@@ -1,30 +1,32 @@
 [
     {
-        "name": "Unitel",
-        "id": "Unitel.pe",
-        "logo": "https://i.imgur.com/F0PWpyc.png",
-        "url": "https://play.agenciastreaming.com:8081/uniteltv/index.m3u8",
+        "name": "Global TV",
+        "id": "GlobalTV.pe",
+        "logo": "https://i.imgur.com/yuEou9C.png",
+        "url": "http://181.188.216.5:18000/play/a0m5/index.m3u8",
         "categories": [
             "general"
         ],
         "country": "PE"
     },
     {
-        "name": "ATV Sur",
-        "id": "ATVSur.pe",
-        "logo": "https://i.imgur.com/LnyVa5H.png",
-        "url": "https://alba-pe-atv-atvsur.stream.mediatiquestream.com/index.m3u8",
+        "name": "Monterrico TV",
+        "id": "MonterricoTV.pe",
+        "logo": null,
+        "url": "https://www.opencaster.com/resources/hls_stream/hipodromojcp2.m3u8",
         "categories": [
-            "general"
+            "sports"
         ],
         "country": "PE"
     },
     {
-        "name": "Senal Peru TV",
-        "id": "SenalPeruTV.pe",
-        "logo": "https://i.imgur.com/1q0R6R9.png",
-        "url": "https://livestream.perucast.com/hls/stream.m3u8",
-        "categories": [],
+        "name": "Exitosa TV",
+        "id": "ExitosaTV.pe",
+        "logo": "https://i.imgur.com/pu0BSB7.png",
+        "url": "https://luna-1-video.mediaserver.digital/exitosatv_233b-4b49-a726-5a3cb0e3243c/video.m3u8",
+        "categories": [
+            "news"
+        ],
         "country": "PE"
     },
     {
@@ -36,12 +38,12 @@
         "country": "PE"
     },
     {
-        "name": "Global TV",
-        "id": "GlobalTV.pe",
-        "logo": "https://i.imgur.com/yuEou9C.png",
-        "url": "http://181.188.216.5:18000/play/a0m5/index.m3u8",
+        "name": "Panc TV Peru",
+        "id": "PancTVPeru.pe",
+        "logo": "https://play-lh.googleusercontent.com/-FVhaeUjvONL49NYdVMchoLXU421387791mp8zZ15JFic_kPyb3vULf86ffIr-NeOg",
+        "url": "https://panel.host-live.com:19360/20000/20000.m3u8",
         "categories": [
-            "general"
+            "entertainment"
         ],
         "country": "PE"
     },
@@ -56,20 +58,36 @@
         "country": "PE"
     },
     {
-        "name": "Panc TV Peru",
-        "id": "PancTVPeru.pe",
-        "logo": "https://play-lh.googleusercontent.com/-FVhaeUjvONL49NYdVMchoLXU421387791mp8zZ15JFic_kPyb3vULf86ffIr-NeOg",
-        "url": "https://panel.host-live.com:19360/20000/20000.m3u8",
+        "name": "Senal Peru TV",
+        "id": "SenalPeruTV.pe",
+        "logo": "https://i.imgur.com/1q0R6R9.png",
+        "url": "https://livestream.perucast.com/hls/stream.m3u8",
+        "categories": [],
+        "country": "PE"
+    },
+    {
+        "name": "Unife TV",
+        "id": "UnifeTV.pe",
+        "logo": null,
+        "url": "https://cdn.mycloudstream.io/hls/live/broadcast/ic1frrzz/index.m3u8",
         "categories": [
-            "entertainment"
+            "religious"
         ],
         "country": "PE"
     },
     {
-        "name": "ONDA DIGITAL",
-        "id": "ONDADIGITAL.pe",
-        "logo": "https://i.imgur.com/3R2emx7.jpg",
-        "url": "https://tv.ondadigital.pe/ondadigital/index.m3u8",
+        "name": "Uranio TV",
+        "id": "UranioTV.pe",
+        "logo": null,
+        "url": "https://live.obslivestream.com/uraniotv/index.m3u8",
+        "categories": [],
+        "country": "PE"
+    },
+    {
+        "name": "Mega TV Jaen",
+        "id": "MegaTVJaen.pe",
+        "logo": "https://i.imgur.com/zK1YcpJ.png",
+        "url": "https://7.innovatestream.pe:19360/megatvjaen/megatvjaen.m3u8",
         "categories": [
             "general"
         ],
@@ -86,12 +104,22 @@
         "country": "PE"
     },
     {
-        "name": "Exitosa TV",
-        "id": "ExitosaTV.pe",
-        "logo": "https://i.imgur.com/pu0BSB7.png",
-        "url": "https://luna-1-video.mediaserver.digital/exitosatv_233b-4b49-a726-5a3cb0e3243c/video.m3u8",
+        "name": "ATV Sur",
+        "id": "ATVSur.pe",
+        "logo": "https://i.imgur.com/LnyVa5H.png",
+        "url": "https://alba-pe-atv-atvsur.stream.mediatiquestream.com/index.m3u8",
         "categories": [
-            "news"
+            "general"
+        ],
+        "country": "PE"
+    },
+    {
+        "name": "JN 19.2",
+        "id": "JN192.pe",
+        "logo": "https://www.lyngsat.com/logo/tv/jj/jn19_pe.png",
+        "url": "https://servilive.com:3224/live/jn19tv2live.m3u8",
+        "categories": [
+            "general"
         ],
         "country": "PE"
     },
@@ -106,10 +134,20 @@
         "country": "PE"
     },
     {
-        "name": "JN 19.2",
-        "id": "JN192.pe",
-        "logo": "https://www.lyngsat.com/logo/tv/jj/jn19_pe.png",
-        "url": "https://servilive.com:3224/live/jn19tv2live.m3u8",
+        "name": "Unitel",
+        "id": "Unitel.pe",
+        "logo": "https://i.imgur.com/F0PWpyc.png",
+        "url": "https://play.agenciastreaming.com:8081/uniteltv/index.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "PE"
+    },
+    {
+        "name": "Via Television",
+        "id": "ViaTelevision.pe",
+        "logo": "https://i.imgur.com/FiptbGQ.png",
+        "url": "https://videoserver.tmcreativos.com:19360/cablerasvia/cablerasvia.m3u8",
         "categories": [
             "general"
         ],
@@ -126,40 +164,10 @@
         "country": "PE"
     },
     {
-        "name": "Via Television",
-        "id": "ViaTelevision.pe",
-        "logo": "https://i.imgur.com/FiptbGQ.png",
-        "url": "https://videoserver.tmcreativos.com:19360/cablerasvia/cablerasvia.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "PE"
-    },
-    {
-        "name": "Mega TV Jaen",
-        "id": "MegaTVJaen.pe",
-        "logo": "https://i.imgur.com/zK1YcpJ.png",
-        "url": "https://7.innovatestream.pe:19360/megatvjaen/megatvjaen.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "PE"
-    },
-    {
-        "name": "Global TV",
-        "id": "GlobalTV.pe",
-        "logo": null,
-        "url": "http://181.188.216.5:18000/play/a0m5/index.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "PE"
-    },
-    {
-        "name": "America Television",
-        "id": "AmericaTelevision.pe",
-        "logo": null,
-        "url": "http://181.188.216.5:18000/play/a014/index.m3u8",
+        "name": "ONDA DIGITAL",
+        "id": "ONDADIGITAL.pe",
+        "logo": "https://i.imgur.com/3R2emx7.jpg",
+        "url": "https://tv.ondadigital.pe/ondadigital/index.m3u8",
         "categories": [
             "general"
         ],

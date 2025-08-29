@@ -1,13 +1,24 @@
 [
     {
-        "name": "Duck Hunting TV",
-        "id": "DuckHuntingTV.us",
-        "logo": "https://image.roku.com/developer_channels/prod/b2a80f0a20fc338f22a8289f23d20d19d958470ff1b8df3845c57cbc54ec1245.png",
-        "url": "https://main.duckhunting.playout.vju.tv/duckhuntingtv/main.m3u8",
+        "name": "Peer TV Alto Adige",
+        "id": "PeerTVAltoAdige.it",
+        "logo": "https://www.peer.biz/peertv-iptv/peer-tv-alto-adige.png",
+        "url": "https://iptv.peer.biz/live/peertv-it.m3u8",
+        "categories": [
+            "outdoor",
+            "travel"
+        ],
+        "country": "IT"
+    },
+    {
+        "name": "Moya Planeta",
+        "id": "MoyaPlaneta.ru",
+        "logo": null,
+        "url": "http://194.143.148.28:8080/MoyaPlanetaHD/index.m3u8",
         "categories": [
             "outdoor"
         ],
-        "country": "US"
+        "country": "RU"
     },
     {
         "name": "Horse & Country TV",
@@ -20,6 +31,16 @@
         "country": "UK"
     },
     {
+        "name": "Duck Hunting TV",
+        "id": "DuckHuntingTV.us",
+        "logo": "https://image.roku.com/developer_channels/prod/b2a80f0a20fc338f22a8289f23d20d19d958470ff1b8df3845c57cbc54ec1245.png",
+        "url": "https://main.duckhunting.playout.vju.tv/duckhuntingtv/main.m3u8",
+        "categories": [
+            "outdoor"
+        ],
+        "country": "US"
+    },
+    {
         "name": "Outdoor Channel",
         "id": "OutdoorChannel.us",
         "logo": "https://i.imgur.com/Kh4MWaY.png",
@@ -30,41 +51,10 @@
         "country": "US"
     },
     {
-        "name": "Peer TV Alto Adige",
-        "id": "PeerTVAltoAdige.it",
-        "logo": "https://www.peer.biz/peertv-iptv/peer-tv-alto-adige.png",
-        "url": "https://iptv.peer.biz/live/peertv-it.m3u8",
-        "categories": [
-            "outdoor",
-            "travel"
-        ],
-        "country": "IT"
-    },
-    {
         "name": "Pluto TV Backcountry",
         "id": "PlutoTVBackcountry.us",
         "logo": "https://i.imgur.com/KnlQzs7.png",
         "url": "http://stitcher-ipv4.pluto.tv/v1/stitch/embed/hls/channel/5cabdf1437b88b26947346b2/master.m3u8?deviceType=samsung-tvplus&deviceMake=samsung&deviceModel=samsung&deviceVersion=unknown&appVersion=unknown&deviceLat=0&deviceLon=0&deviceDNT=%7BTARGETOPT%7D&deviceId=%7BPSID%7D&advertisingId=%7BPSID%7D&us_privacy=1YNY&samsung_app_domain=%7BAPP_DOMAIN%7D&samsung_app_name=%7BAPP_NAME%7D&profileLimit=&profileFloor=&embedPartner=samsung-tvplus",
-        "categories": [
-            "outdoor"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Pluto TV Nature",
-        "id": "PlutoTVNature.us",
-        "logo": "https://i.imgur.com/PtWUmss.png",
-        "url": "http://stitcher-ipv4.pluto.tv/v1/stitch/embed/hls/channel/5be1c3f9851dd5632e2c91b2/master.m3u8?deviceType=samsung-tvplus&deviceMake=samsung&deviceModel=samsung&deviceVersion=unknown&appVersion=unknown&deviceLat=0&deviceLon=0&deviceDNT=%7BTARGETOPT%7D&deviceId=%7BPSID%7D&advertisingId=%7BPSID%7D&us_privacy=1YNY&samsung_app_domain=%7BAPP_DOMAIN%7D&samsung_app_name=%7BAPP_NAME%7D&profileLimit=&profileFloor=&embedPartner=samsung-tvplus",
-        "categories": [
-            "outdoor"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Pluto TV Naturaleza",
-        "id": "PlutoTVNaturaleza.us",
-        "logo": "https://i.imgur.com/vUHAWAJ.png",
-        "url": "http://stitcher-ipv4.pluto.tv/v1/stitch/embed/hls/channel/5be1c3f9851dd5632e2c91b2/master.m3u8?deviceType=samsung-tvplus&deviceMake=samsung&deviceModel=samsung&deviceVersion=unknown&appVersion=unknown&deviceLat=0&deviceLon=0&deviceDNT=%7BTARGETOPT%7D&deviceId=%7BPSID%7D&advertisingId=%7BPSID%7D&us_privacy=1YNY&samsung_app_domain=%7BAPP_DOMAIN%7D&samsung_app_name=%7BAPP_NAME%7D&profileLimit=&profileFloor=&embedPartner=samsung-tvplus",
         "categories": [
             "outdoor"
         ],
@@ -79,5 +69,15 @@
             "outdoor"
         ],
         "country": "US"
+    },
+    {
+        "name": "Agro TV",
+        "id": "AgroTV.bg",
+        "logo": "https://i.imgur.com/tPMNDtD.png",
+        "url": "https://restr2.bgtv.bg/agro/hls/agro.m3u8",
+        "categories": [
+            "outdoor"
+        ],
+        "country": "BG"
     }
 ]

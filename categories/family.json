@@ -1,13 +1,24 @@
 [
     {
-        "name": "Great Commission TV",
-        "id": "GreatCommissionTV.ph",
-        "logo": "https://i.imgur.com/8cvikOo.png",
-        "url": "http://45.32.115.103/live/livestream/index.m3u8",
+        "name": "TV Famille",
+        "id": "TVFamille.mq",
+        "logo": "https://tvfamille.org/website/images/logo/tv_famille_logo_2019_square_75px.png",
+        "url": "https://streamer1.streamhost.org/salive/GMItvfh/playlist.m3u8",
+        "categories": [
+            "family",
+            "religious"
+        ],
+        "country": "MQ"
+    },
+    {
+        "name": "Dove Channel",
+        "id": "DoveChannel.us",
+        "logo": "https://i.imgur.com/FVWqYQG.png",
+        "url": "https://linear-896.frequency.stream/dist/xumo/896/hls/master/playlist.m3u8",
         "categories": [
             "family"
         ],
-        "country": "PH"
+        "country": "US"
     },
     {
         "name": "The Pet Collective",
@@ -31,34 +42,24 @@
         "country": "DO"
     },
     {
-        "name": "Dove Channel",
-        "id": "DoveChannel.us",
-        "logo": "https://i.imgur.com/FVWqYQG.png",
-        "url": "https://linear-896.frequency.stream/dist/xumo/896/hls/master/playlist.m3u8",
+        "name": "Great Commission TV",
+        "id": "GreatCommissionTV.ph",
+        "logo": "https://i.imgur.com/8cvikOo.png",
+        "url": "http://45.32.115.103/live/livestream/index.m3u8",
         "categories": [
             "family"
         ],
-        "country": "US"
+        "country": "PH"
     },
     {
-        "name": "The Pet Collective",
-        "id": "ThePetCollective.us",
-        "logo": "https://i.imgur.com/yH7n2dF.png",
-        "url": "https://the-pet-collective-international-se.samsung.wurl.tv/playlist.m3u8",
-        "categories": [
-            "family"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "TV Famille",
-        "id": "TVFamille.mq",
-        "logo": "https://tvfamille.org/website/images/logo/tv_famille_logo_2019_square_75px.png",
-        "url": "https://streamer1.streamhost.org/salive/GMItvfh/playlist.m3u8",
+        "name": "CWB TV",
+        "id": "CWBTV.br",
+        "logo": null,
+        "url": "https://59d39900ebfb8.streamlock.net/cwbtv/cwbtv/playlist.m3u8",
         "categories": [
             "family",
-            "religious"
+            "general"
         ],
-        "country": "MQ"
+        "country": "BR"
     }
 ]
