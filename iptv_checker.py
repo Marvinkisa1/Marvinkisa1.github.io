@@ -430,7 +430,7 @@ async def check_iptv_channels(session, checker, channels_data, streams_dict, exi
                     channel_data = {
                         "name": channel.get("name", "Unknown"),
                         "id": channel.get("id"),
-                        "logo": channel.get("logo"),
+                        "logo": channel.get("logo") or "",
                         "url": url,
                         "categories": channel.get("categories", []),
                         "country": channel.get("country", "Unknown"),
