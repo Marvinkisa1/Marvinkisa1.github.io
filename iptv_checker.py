@@ -304,11 +304,12 @@ def load_existing_data():
                     existing_data["categories"][category] = channels
                     existing_data["all_existing_channels"].extend(channels)
 
-    seen_urls = set()
+    seen_ids = set()
     unique_channels = []
     for channel in existing_data["all_existing_channels"]:
-        if channel.get("url") and channel["url"] not in seen_urls:
-            seen_urls.add(channel["url"])
+        ch_id = channel.get("id")
+        if ch_id and ch_id not in seen_ids:
+            seen_ids.add(ch_id)
             unique_channels.append(channel)
     existing_data["all_existing_channels"] = unique_channels
 
@@ -318,15 +319,20 @@ def save_channels(channels, working_channels_file, country_files, category_files
     os.makedirs(COUNTRIES_DIR, exist_ok=True)
     os.makedirs(CATEGORIES_DIR, exist_ok=True)
 
-    if os.path.exists(WORKING_CHANNELS_FILE):
-        with open(WORKING_CHANNELS_FILE, "r", encoding="utf-8") as f:
-            working_channels = json.load(f)
+    # Save to working_channels.json
+    if os.path.exists(working_channels_file):
+        with open(working_channels_file, "r", encoding="utf-8") as f:
+            existing_channels = json.load(f)
+        working_dict = {ch['id']: ch for ch in existing_channels if 'id' in ch}
     else:
-        working_channels = []
-    working_channels.extend(channels)
-    with open(WORKING_CHANNELS_FILE, "w", encoding="utf-8") as f:
-        json.dump(working_channels, f, indent=4, ensure_ascii=False)
+        working_dict = {}
+    for ch in channels:
+        if 'id' in ch:
+            working_dict[ch['id']] = ch
+    with open(working_channels_file, "w", encoding="utf-8") as f:
+        json.dump(list(working_dict.values()), f, indent=4, ensure_ascii=False)
 
+    # Save to country files
     for country, country_channels in country_files.items():
         safe_country = "".join(c for c in country if c.isalnum() or c in (' ', '_', '-')).rstrip()
         if not safe_country:
@@ -335,12 +341,16 @@ def save_channels(channels, working_channels_file, country_files, category_files
         if os.path.exists(country_file):
             with open(country_file, "r", encoding="utf-8") as f:
                 existing = json.load(f)
+            country_dict = {ch['id']: ch for ch in existing if 'id' in ch}
         else:
-            existing = []
-        existing.extend(country_channels)
+            country_dict = {}
+        for ch in country_channels:
+            if 'id' in ch:
+                country_dict[ch['id']] = ch
         with open(country_file, "w", encoding="utf-8") as f:
-            json.dump(existing, f, indent=4, ensure_ascii=False)
+            json.dump(list(country_dict.values()), f, indent=4, ensure_ascii=False)
 
+    # Save to category files
     for category, category_channels in category_files.items():
         safe_category = "".join(c for c in category if c.isalnum() or c in (' ', '_', '-')).rstrip()
         if not safe_category:
@@ -349,11 +359,14 @@ def save_channels(channels, working_channels_file, country_files, category_files
         if os.path.exists(category_file):
             with open(category_file, "r", encoding="utf-8") as f:
                 existing = json.load(f)
+            category_dict = {ch['id']: ch for ch in existing if 'id' in ch}
         else:
-            existing = []
-        existing.extend(category_channels)
+            category_dict = {}
+        for ch in category_channels:
+            if 'id' in ch:
+                category_dict[ch['id']] = ch
         with open(category_file, "w", encoding="utf-8") as f:
-            json.dump(existing, f, indent=4, ensure_ascii=False)
+            json.dump(list(category_dict.values()), f, indent=4, ensure_ascii=False)
 
 async def validate_channels(session, checker, all_existing_channels, iptv_channel_ids):
     valid_channels_count = 0
@@ -409,22 +422,16 @@ async def check_iptv_channels(session, checker, channels_data, streams_dict, exi
     country_files = {}
     category_files = {}
 
-    channels_to_check = [
-        channel
-        for channel in channels_data
-        if channel.get("id") in streams_dict
-        and streams_dict[channel["id"]].get("url") not in existing_urls
-    ]
-
-    async def process_channel(channel):
-        async with checker.semaphore:
-            stream = streams_dict[channel["id"]]
+    for channel in channels_data:
+        ch_id = channel.get("id")
+        if ch_id not in streams_dict:
+            continue
+        for stream in streams_dict[ch_id]:
             url = stream.get("url")
-            if not url:
-                return None
+            if not url or url in existing_urls:
+                continue
 
             logo_url = ""
-            ch_id = channel["id"]
             feed = stream.get("feed")
             matching_logos = [l for l in logos_data if l["channel"] == ch_id and l.get("feed") == feed]
             if matching_logos:
@@ -434,40 +441,36 @@ async def check_iptv_channels(session, checker, channels_data, streams_dict, exi
                 if channel_logos:
                     logo_url = channel_logos[0]["url"]
 
+            is_working = False
             for retry in range(RETRIES):
                 checker.timeout = ClientTimeout(total=min(INITIAL_TIMEOUT * (retry + 1), MAX_TIMEOUT))
                 _, is_working = await checker.check_single_url(session, url)
                 if is_working:
-                    channel_data = {
-                        "name": channel.get("name", "Unknown"),
-                        "id": channel.get("id"),
-                        "logo": logo_url,
-                        "url": url,
-                        "categories": channel.get("categories", []),
-                        "country": channel.get("country", "Unknown"),
-                    }
-                    batch_channels.append(channel_data)
-                    country_files.setdefault(channel_data["country"], []).append(channel_data)
-                    for cat in channel_data["categories"]:
-                        category_files.setdefault(cat, []).append(channel_data)
-                    return channel_data
-                await asyncio.sleep(0.1 * (retry + 1))  # Increasing delay
-            return None
+                    break
+                await asyncio.sleep(0.1 * (retry + 1))
 
-    tasks = [process_channel(channel) for channel in channels_to_check]
-    for future in tqdm(asyncio.as_completed(tasks), total=len(tasks), desc="Testing new IPTV channels"):
-        try:
-            result = await future
-            if result:
+            if is_working:
+                feed_suffix = f".{feed}" if feed else ""
+                channel_data = {
+                    "name": stream.get("title", channel.get("name", "Unknown")),
+                    "id": f"{ch_id}{feed_suffix}",
+                    "logo": logo_url,
+                    "url": url,
+                    "categories": channel.get("categories", []),
+                    "country": channel.get("country", "Unknown"),
+                }
+                batch_channels.append(channel_data)
+                country_files.setdefault(channel_data["country"], []).append(channel_data)
+                for cat in channel_data["categories"]:
+                    category_files.setdefault(cat, []).append(channel_data)
                 new_iptv_channels_count += 1
+
             if len(batch_channels) >= BATCH_SIZE:
                 save_channels(batch_channels, WORKING_CHANNELS_FILE, country_files, category_files)
                 batch_channels.clear()
                 country_files.clear()
                 category_files.clear()
                 await asyncio.sleep(BATCH_DELAY)
-        except Exception as e:
-            logging.error(f"Error processing channel: {e}")
 
     if batch_channels:
         save_channels(batch_channels, WORKING_CHANNELS_FILE, country_files, category_files)
@@ -595,7 +598,7 @@ def scrape_kenya_tv_channels():
         logging.error(f"Error occurred in Kenya TV scrape: {str(e)}")
         return []
 
-async def clean_and_replace_channels(session, checker, all_channels, streams_dict, m3u_channels):
+async def clean_and_replace_channels(session, checker, all_channels, streams_dict, m3u_channels, logos_data):
     """Check all channels, replace non-working URLs if possible, keep all channels"""
     logging.info("\n=== Step 5: Cleaning non-working channels and replacing URLs ===")
     
@@ -605,22 +608,52 @@ async def clean_and_replace_channels(session, checker, all_channels, streams_dic
     country_files = {}
     category_files = {}
 
+    def update_logo(channel, logos_data, streams_dict):
+        ch_id = channel.get('id')
+        if not ch_id:
+            return
+        # Parse if feed in id
+        feed = None
+        base_id = ch_id
+        if '.' in ch_id:
+            parts = ch_id.rsplit('.', 1)
+            if len(parts) == 2 and parts[0] in streams_dict:
+                base_id = parts[0]
+                feed = parts[1]
+        if base_id not in streams_dict:
+            return
+
+        matching_logos = [l for l in logos_data if l["channel"] == base_id and l.get("feed") == feed]
+        if matching_logos:
+            new_logo = matching_logos[0]["url"]
+        else:
+            channel_logos = [l for l in logos_data if l["channel"] == base_id]
+            if channel_logos:
+                new_logo = channel_logos[0]["url"]
+            else:
+                return
+
+        current = channel.get("logo")
+        if not current or current != new_logo:
+            channel["logo"] = new_logo
+
     async def find_replacement_url(channel, streams_dict, m3u_channels, session, checker):
-        """Attempt to find a working replacement URL for a channel"""
         channel_id = channel.get("id")
         channel_name = channel.get("name", "").lower()
 
         # Try IPTV-org streams first
-        if streams_dict and channel_id in streams_dict:
-            new_url = streams_dict[channel_id].get("url")
-            if new_url:
-                for retry in range(RETRIES):
-                    checker.timeout = ClientTimeout(total=min(INITIAL_TIMEOUT * (retry + 1), MAX_TIMEOUT))
-                    _, is_working = await checker.check_single_url(session, new_url)
-                    if is_working:
-                        logging.info(f"Found working replacement URL from IPTV-org for {channel_name}: {new_url}")
-                        return new_url
-                    await asyncio.sleep(0.5 * (retry + 1))  # Longer delay
+        base_id = channel_id.split('.')[0] if '.' in channel_id else channel_id
+        if streams_dict and base_id in streams_dict:
+            for stream in streams_dict[base_id]:
+                new_url = stream.get("url")
+                if new_url:
+                    for retry in range(RETRIES):
+                        checker.timeout = ClientTimeout(total=min(INITIAL_TIMEOUT * (retry + 1), MAX_TIMEOUT))
+                        _, is_working = await checker.check_single_url(session, new_url)
+                        if is_working:
+                            logging.info(f"Found working replacement URL from IPTV-org for {channel_name}: {new_url}")
+                            return new_url
+                        await asyncio.sleep(0.5 * (retry + 1))  # Longer delay
 
         # Try M3U channels with fuzzy matching
         if m3u_channels:
@@ -646,6 +679,7 @@ async def clean_and_replace_channels(session, checker, all_channels, streams_dic
 
         if not channel_url:
             logging.info(f"Keeping channel with no URL (no check possible): {channel_name}")
+            update_logo(channel, logos_data, streams_dict)
             valid_channels.append(channel)
             country = channel.get("country", "Unknown")
             if country and country != "Unknown":
@@ -665,6 +699,7 @@ async def clean_and_replace_channels(session, checker, all_channels, streams_dic
             await asyncio.sleep(0.5 * (retry + 1))  # Longer delay between retries
 
         if is_working:
+            update_logo(channel, logos_data, streams_dict)
             valid_channels.append(channel)
             country = channel.get("country", "Unknown")
             if country and country != "Unknown":
@@ -680,6 +715,7 @@ async def clean_and_replace_channels(session, checker, all_channels, streams_dic
         if new_url:
             channel_copy = channel.copy()
             channel_copy["url"] = new_url
+            update_logo(channel_copy, logos_data, streams_dict)
             valid_channels.append(channel_copy)
             country = channel_copy.get("country", "Unknown")
             if country and country != "Unknown":
@@ -691,6 +727,7 @@ async def clean_and_replace_channels(session, checker, all_channels, streams_dic
         else:
             # Keep the channel even if no replacement found
             logging.info(f"No replacement found for {channel_name}. Keeping original channel.")
+            update_logo(channel, logos_data, streams_dict)
             valid_channels.append(channel)
             country = channel.get("country", "Unknown")
             if country and country != "Unknown":
@@ -740,12 +777,13 @@ def sync_working_channels():
                     channels = json.load(f)
                     all_channels.extend(channels)
     
-    # Remove duplicates by URL
-    seen_urls = set()
+    # Remove duplicates by ID
+    seen_ids = set()
     unique_channels = []
     for channel in all_channels:
-        if channel.get("url") and channel["url"] not in seen_urls:
-            seen_urls.add(channel["url"])
+        ch_id = channel.get("id")
+        if ch_id and ch_id not in seen_ids:
+            seen_ids.add(ch_id)
             unique_channels.append(channel)
     
     # Save to working_channels.json
@@ -842,7 +880,14 @@ async def main():
                     fetch_json(session, "https://iptv-org.github.io/api/logos.json"),
                 )
 
-                streams_dict = {stream["channel"]: stream for stream in streams_data if stream.get("channel")}
+                streams_dict = {}
+                for stream in streams_data:
+                    if "channel" in stream:
+                        ch = stream["channel"]
+                        if ch not in streams_dict:
+                            streams_dict[ch] = []
+                        streams_dict[ch].append(stream)
+
                 iptv_channel_ids = set(streams_dict.keys())
 
                 existing_data = load_existing_data()
@@ -893,7 +938,7 @@ async def main():
             m3u_channels.extend(channels)
     
     valid_channels_count, non_working_count, replaced_count = await clean_and_replace_channels(
-        session, checker, all_existing_channels, streams_dict, m3u_channels
+        session, checker, all_existing_channels, streams_dict, m3u_channels, logos_data
     )
 
     # Step 6: Sync updated channels
