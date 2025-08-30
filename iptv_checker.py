@@ -403,7 +403,7 @@ async def validate_channels(session, checker, all_existing_channels, iptv_channe
 
     return valid_channels_count
 
-async def check_iptv_channels(session, checker, channels_data, streams_dict, existing_urls):
+async def check_iptv_channels(session, checker, channels_data, streams_dict, existing_urls, logos_data):
     new_iptv_channels_count = 0
     batch_channels = []
     country_files = {}
@@ -423,6 +423,17 @@ async def check_iptv_channels(session, checker, channels_data, streams_dict, exi
             if not url:
                 return None
 
+            logo_url = ""
+            ch_id = channel["id"]
+            feed = stream.get("feed")
+            matching_logos = [l for l in logos_data if l["channel"] == ch_id and l.get("feed") == feed]
+            if matching_logos:
+                logo_url = matching_logos[0]["url"]
+            else:
+                channel_logos = [l for l in logos_data if l["channel"] == ch_id]
+                if channel_logos:
+                    logo_url = channel_logos[0]["url"]
+
             for retry in range(RETRIES):
                 checker.timeout = ClientTimeout(total=min(INITIAL_TIMEOUT * (retry + 1), MAX_TIMEOUT))
                 _, is_working = await checker.check_single_url(session, url)
@@ -430,7 +441,7 @@ async def check_iptv_channels(session, checker, channels_data, streams_dict, exi
                     channel_data = {
                         "name": channel.get("name", "Unknown"),
                         "id": channel.get("id"),
-                        "logo": channel.get("logo") or "",
+                        "logo": logo_url,
                         "url": url,
                         "categories": channel.get("categories", []),
                         "country": channel.get("country", "Unknown"),
@@ -823,10 +834,12 @@ async def main():
                 logging.error("CHANNELS_URL or STREAMS_URL is not set. Skipping IPTV-org channels.")
                 streams_dict = {}
                 channels_data = []
+                logos_data = []
             else:
-                channels_data, streams_data = await asyncio.gather(
+                channels_data, streams_data, logos_data = await asyncio.gather(
                     fetch_json(session, CHANNELS_URL),
                     fetch_json(session, STREAMS_URL),
+                    fetch_json(session, "https://iptv-org.github.io/api/logos.json"),
                 )
 
                 streams_dict = {stream["channel"]: stream for stream in streams_data if stream.get("channel")}
@@ -845,7 +858,7 @@ async def main():
                 )
 
                 new_iptv_channels_count = await check_iptv_channels(
-                    session, checker, channels_data, streams_dict, existing_urls
+                    session, checker, channels_data, streams_dict, existing_urls, logos_data
                 )
 
                 total_channels = valid_channels_count + new_iptv_channels_count + sports_channels_count
@@ -857,6 +870,7 @@ async def main():
             logging.error(f"Error in IPTV-org processing: {e}")
             streams_dict = {}
             channels_data = []
+            logos_data = []
 
     # Step 4: Sync all channels
     logging.info("\n=== Step 4: Syncing channels ===")
