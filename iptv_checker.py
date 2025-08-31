@@ -34,11 +34,11 @@ WORKING_CHANNELS_FILE = "working_channels.json"
 CATEGORIES_DIR = "categories"
 COUNTRIES_DIR = "countries"
 
-# Settings
-MAX_CONCURRENT = int(os.getenv("MAX_CONCURRENT", 100))  # Reduced for better reliability
-INITIAL_TIMEOUT = 15  # Increased for thorough checking
-MAX_TIMEOUT = 45  # Increased for thorough checking
-RETRIES = 8  # Increased for thorough checking
+# Settings - Optimized for speed but still thorough
+MAX_CONCURRENT = int(os.getenv("MAX_CONCURRENT", 80))  # Balanced concurrency
+INITIAL_TIMEOUT = 12  # Balanced timeout
+MAX_TIMEOUT = 25  # Balanced maximum timeout
+RETRIES = 3  # Balanced retries
 BATCH_DELAY = 0.1
 BATCH_SIZE = 500
 USE_HEAD_METHOD = True
@@ -57,9 +57,9 @@ class FastChecker:
         self.semaphore = asyncio.Semaphore(MAX_CONCURRENT)
 
     async def check_single_url(self, session, url):
-        """Thorough URL checker with multiple validation methods"""
+        """Efficient but thorough URL checker"""
         try:
-            # First try HEAD request if enabled
+            # First try HEAD request (fastest)
             if USE_HEAD_METHOD:
                 try:
                     async with session.head(url, timeout=self.timeout, allow_redirects=True) as response:
@@ -70,33 +70,39 @@ class FastChecker:
                             # Even if content-type doesn't match, it might still work
                             return url, True
                         elif response.status in [301, 302, 307, 308]:
-                            # Follow redirects manually
+                            # Follow redirects but only once to avoid loops
                             redirect_url = response.headers.get('Location')
                             if redirect_url:
                                 if not redirect_url.startswith('http'):
-                                    # Handle relative redirects
                                     parsed = urlparse(url)
                                     redirect_url = f"{parsed.scheme}://{parsed.netloc}{redirect_url}"
-                                return await self.check_single_url(session, redirect_url)
+                                # Check redirect with HEAD only
+                                try:
+                                    async with session.head(redirect_url, timeout=self.timeout, allow_redirects=False) as redirect_response:
+                                        if redirect_response.status in (200, 301, 302, 307, 308):
+                                            return url, True
+                                except:
+                                    pass
                         return url, False
                 except (aiohttp.ClientError, asyncio.TimeoutError):
                     pass  # Fall through to GET method
             
-            # Try GET request with byte range
+            # Try GET request with byte range (more thorough but still fast)
             headers = {'Range': 'bytes=0-1'} if BYTE_RANGE_CHECK else {}
             try:
                 async with session.get(url, timeout=self.timeout, headers=headers, 
                                       allow_redirects=True) as response:
                     if response.status in (200, 206):
-                        # For m3u8 playlists, try to parse them
+                        # Quick content check for m3u8
                         if url.endswith('.m3u8') or 'm3u8' in response.headers.get('Content-Type', ''):
                             try:
-                                content = await response.text()
-                                playlist = m3u8.loads(content)
-                                if playlist.segments or playlist.playlists:
+                                # Read only first few bytes to check if it's a playlist
+                                content = await response.content.read(1024)
+                                content_str = content.decode('utf-8', errors='ignore')
+                                if '#EXTM3U' in content_str:
                                     return url, True
-                            except Exception:
-                                # Even if parsing fails, the URL might still work
+                            except:
+                                # If we can't parse it, still consider it valid
                                 return url, True
                         return url, True
                     return url, False
@@ -108,7 +114,7 @@ class FastChecker:
 class M3UProcessor:
     def __init__(self):
         self.connector = aiohttp.TCPConnector(limit=50, force_close=True)
-        self.timeout = aiohttp.ClientTimeout(total=15)  # Increased timeout
+        self.timeout = aiohttp.ClientTimeout(total=15)
         self.semaphore = asyncio.Semaphore(50)
         self.unwanted_extensions = ['.mkv', '.mp4', '.avi', '.mov', '.flv', '.wmv']
         self.failed_urls = []
@@ -165,12 +171,12 @@ class M3UProcessor:
             'raw_name': channel_name
         }
 
-    async def check_url(self, session, url, retries=RETRIES):
-        """Thorough URL checking with multiple attempts and methods"""
+    async def check_url(self, session, url, retries=2):
+        """Efficient URL checking"""
         parsed_url = urlparse(url)
         domain = f"{parsed_url.scheme}://{parsed_url.netloc}"
         headers = {
-            'User-Agent': 'VLC/3.0.16 LibVLC/3.0.16',
+            'User-Aster': 'VLC/3.0.16 LibVLC/3.0.16',
             'Referer': domain,
         }
         
@@ -192,33 +198,13 @@ class M3UProcessor:
                                              timeout=self.timeout, allow_redirects=True) as response:
                             if response.status in (200, 206):
                                 return True
-                            elif response.status in (301, 302, 307, 308):
-                                redirect_url = response.headers.get('Location')
-                                if redirect_url:
-                                    if not redirect_url.startswith('http'):
-                                        redirect_url = f"{domain}{redirect_url}"
-                                    return await self.check_url(session, redirect_url, retries=1)
                     except (aiohttp.ClientError, asyncio.TimeoutError):
                         pass
-                    
-                    # For m3u8 URLs, try to parse the content
-                    if url.endswith('.m3u8'):
-                        try:
-                            async with session.get(url, headers=headers, timeout=self.timeout, 
-                                                  allow_redirects=True) as response:
-                                if response.status == 200:
-                                    content = await response.text()
-                                    playlist = m3u8.loads(content)
-                                    if playlist.segments or playlist.playlists:
-                                        return True
-                        except Exception:
-                            pass
                 
-                # Wait before next attempt
-                await asyncio.sleep(1 * (attempt + 1))
+                await asyncio.sleep(0.2 * (attempt + 1))
             except Exception as e:
                 self.failed_urls.append((url, f"Attempt {attempt + 1}: {str(e)}"))
-                await asyncio.sleep(1 * (attempt + 1))
+                await asyncio.sleep(0.2 * (attempt + 1))
         
         return False
 
@@ -314,7 +300,7 @@ def load_existing_data():
 
     if os.path.exists(COUNTRIES_DIR):
         for filename in os.listdir(COUNTRIES_DIR):
-            if filename.endswith(".json") and filename != ".json":  # Skip invalid files
+            if filename.endswith(".json") and filename != ".json":
                 country = filename[:-5]
                 with open(os.path.join(COUNTRIES_DIR, filename), "r", encoding="utf-8") as f:
                     channels = json.load(f)
@@ -338,16 +324,13 @@ def load_existing_data():
                     existing_data["categories"][category] = channels
                     existing_data["all_existing_channels"].extend(channels)
 
-    # Remove duplicates from all_existing_channels
     existing_data["all_existing_channels"] = remove_duplicates(existing_data["all_existing_channels"])
-
     return existing_data
 
 def save_channels(channels, working_channels_file, country_files, category_files):
     os.makedirs(COUNTRIES_DIR, exist_ok=True)
     os.makedirs(CATEGORIES_DIR, exist_ok=True)
 
-    # Remove duplicates before saving
     channels = remove_duplicates(channels)
     
     if os.path.exists(WORKING_CHANNELS_FILE):
@@ -368,10 +351,9 @@ def save_channels(channels, working_channels_file, country_files, category_files
         if not safe_country:
             continue
         
-        # Remove duplicates from country channels
         country_channels = remove_duplicates(country_channels)
-        
         country_file = os.path.join(COUNTRIES_DIR, f"{safe_country}.json")
+        
         if os.path.exists(country_file):
             with open(country_file, "r", encoding="utf-8") as f:
                 existing = json.load(f)
@@ -390,10 +372,9 @@ def save_channels(channels, working_channels_file, country_files, category_files
         if not safe_category:
             continue
         
-        # Remove duplicates from category channels
         category_channels = remove_duplicates(category_channels)
-        
         category_file = os.path.join(CATEGORIES_DIR, f"{safe_category}.json")
+        
         if os.path.exists(category_file):
             with open(category_file, "r", encoding="utf-8") as f:
                 existing = json.load(f)
@@ -424,10 +405,10 @@ async def validate_channels(session, checker, all_existing_channels, iptv_channe
             if channel_id in iptv_channel_ids:
                 matching_logos = [logo for logo in logos_data if logo["channel"] == channel_id]
                 if matching_logos:
-                    # Use the first matching logo
                     channel["logo"] = matching_logos[0]["url"]
                     logging.info(f"Updated logo for {channel_id}: {matching_logos[0]['url']}")
 
+            # Efficient but thorough URL checking
             for retry in range(RETRIES):
                 checker.timeout = ClientTimeout(total=min(INITIAL_TIMEOUT * (retry + 1), MAX_TIMEOUT))
                 _, is_working = await checker.check_single_url(session, channel_url)
@@ -441,23 +422,31 @@ async def validate_channels(session, checker, all_existing_channels, iptv_channe
                     for cat in channel_copy["categories"]:
                         category_files.setdefault(cat, []).append(channel_copy)
                     return channel_copy
-                await asyncio.sleep(0.1 * (retry + 1))  # Increasing delay
+                await asyncio.sleep(0.1 * (retry + 1))
             return None
 
-    tasks = [validate_channel(channel) for channel in all_existing_channels]
-    for future in tqdm(asyncio.as_completed(tasks), total=len(tasks), desc="Validating channels"):
-        try:
-            result = await future
-            if result:
-                valid_channels_count += 1
-            if len(batch_channels) >= BATCH_SIZE:
-                save_channels(batch_channels, WORKING_CHANNELS_FILE, country_files, category_files)
-                batch_channels.clear()
-                country_files.clear()
-                category_files.clear()
-                await asyncio.sleep(BATCH_DELAY)
-        except Exception as e:
-            logging.error(f"Error processing channel: {e}")
+    # Process in manageable batches
+    total_channels = len(all_existing_channels)
+    batch_size = 500
+    
+    for batch_start in range(0, total_channels, batch_size):
+        batch_end = min(batch_start + batch_size, total_channels)
+        current_batch = all_existing_channels[batch_start:batch_end]
+        
+        tasks = [validate_channel(channel) for channel in current_batch]
+        for future in tqdm(asyncio.as_completed(tasks), total=len(tasks), desc=f"Validating channels {batch_start}-{batch_end}"):
+            try:
+                result = await future
+                if result:
+                    valid_channels_count += 1
+                if len(batch_channels) >= BATCH_SIZE:
+                    save_channels(batch_channels, WORKING_CHANNELS_FILE, country_files, category_files)
+                    batch_channels.clear()
+                    country_files.clear()
+                    category_files.clear()
+                    await asyncio.sleep(BATCH_DELAY)
+            except Exception as e:
+                logging.error(f"Error processing channel: {e}")
 
     if batch_channels:
         save_channels(batch_channels, WORKING_CHANNELS_FILE, country_files, category_files)
@@ -484,23 +473,20 @@ async def check_iptv_channels(session, checker, channels_data, streams_dict, exi
             if not url:
                 return None
 
-            # Get logo from logos_data for iptv_org channels
+            # Get logo from logos_data
             logo_url = ""
             ch_id = channel["id"]
             feed = stream.get("feed")
             
-            # First try to find exact match with feed
             matching_logos = [l for l in logos_data if l["channel"] == ch_id and l.get("feed") == feed]
             if matching_logos:
                 logo_url = matching_logos[0]["url"]
-                logging.info(f"Found logo with feed match for {ch_id}: {logo_url}")
             else:
-                # If no feed match, use any logo for this channel
                 channel_logos = [l for l in logos_data if l["channel"] == ch_id]
                 if channel_logos:
                     logo_url = channel_logos[0]["url"]
-                    logging.info(f"Found logo for {ch_id}: {logo_url}")
 
+            # Efficient URL checking
             for retry in range(RETRIES):
                 checker.timeout = ClientTimeout(total=min(INITIAL_TIMEOUT * (retry + 1), MAX_TIMEOUT))
                 _, is_working = await checker.check_single_url(session, url)
@@ -518,23 +504,31 @@ async def check_iptv_channels(session, checker, channels_data, streams_dict, exi
                     for cat in channel_data["categories"]:
                         category_files.setdefault(cat, []).append(channel_data)
                     return channel_data
-                await asyncio.sleep(0.1 * (retry + 1))  # Increasing delay
+                await asyncio.sleep(0.1 * (retry + 1))
             return None
 
-    tasks = [process_channel(channel) for channel in channels_to_check]
-    for future in tqdm(asyncio.as_completed(tasks), total=len(tasks), desc="Testing new IPTV channels"):
-        try:
-            result = await future
-            if result:
-                new_iptv_channels_count += 1
-            if len(batch_channels) >= BATCH_SIZE:
-                save_channels(batch_channels, WORKING_CHANNELS_FILE, country_files, category_files)
-                batch_channels.clear()
-                country_files.clear()
-                category_files.clear()
-                await asyncio.sleep(BATCH_DELAY)
-        except Exception as e:
-            logging.error(f"Error processing channel: {e}")
+    # Process in batches
+    total_channels = len(channels_to_check)
+    batch_size = 300
+    
+    for batch_start in range(0, total_channels, batch_size):
+        batch_end = min(batch_start + batch_size, total_channels)
+        current_batch = channels_to_check[batch_start:batch_end]
+        
+        tasks = [process_channel(channel) for channel in current_batch]
+        for future in tqdm(asyncio.as_completed(tasks), total=len(tasks), desc=f"Testing new IPTV channels {batch_start}-{batch_end}"):
+            try:
+                result = await future
+                if result:
+                    new_iptv_channels_count += 1
+                if len(batch_channels) >= BATCH_SIZE:
+                    save_channels(batch_channels, WORKING_CHANNELS_FILE, country_files, category_files)
+                    batch_channels.clear()
+                    country_files.clear()
+                    category_files.clear()
+                    await asyncio.sleep(BATCH_DELAY)
+            except Exception as e:
+                logging.error(f"Error processing channel: {e}")
 
     if batch_channels:
         save_channels(batch_channels, WORKING_CHANNELS_FILE, country_files, category_files)
@@ -556,7 +550,7 @@ def get_m3u8_from_page(url_data):
         logging.error(f"[{index}] Error processing {url}: {str(e)}")
         return []
 
-async def check_single_m3u8_url(session, url, timeout=30):
+async def check_single_m3u8_url(session, url, timeout=15):
     """Check if a single m3u8 URL is valid"""
     try:
         async with session.get(url, timeout=aiohttp.ClientTimeout(total=timeout)) as response:
@@ -681,13 +675,13 @@ async def clean_and_replace_channels(session, checker, all_channels, streams_dic
         if streams_dict and channel_id in streams_dict:
             new_url = streams_dict[channel_id].get("url")
             if new_url:
-                for retry in range(RETRIES):
+                for retry in range(2):  # Reduced retries for speed
                     checker.timeout = ClientTimeout(total=min(INITIAL_TIMEOUT * (retry + 1), MAX_TIMEOUT))
                     _, is_working = await checker.check_single_url(session, new_url)
                     if is_working:
                         logging.info(f"Found working replacement URL from IPTV-org for {channel_name}: {new_url}")
                         return new_url
-                    await asyncio.sleep(0.5 * (retry + 1))  # Longer delay
+                    await asyncio.sleep(0.3 * (retry + 1))
 
         # Try M3U channels with fuzzy matching
         if m3u_channels:
@@ -695,13 +689,13 @@ async def clean_and_replace_channels(session, checker, all_channels, streams_dic
                 m3u_name = m3u_channel.get("display_name", "").lower()
                 if fuzz.ratio(channel_name, m3u_name) > 80:  # Similarity threshold
                     new_url = m3u_channel.get("url")
-                    for retry in range(RETRIES):
+                    for retry in range(2):  # Reduced retries for speed
                         checker.timeout = ClientTimeout(total=min(INITIAL_TIMEOUT * (retry + 1), MAX_TIMEOUT))
                         _, is_working = await checker.check_single_url(session, new_url)
                         if is_working:
                             logging.info(f"Found working replacement URL from M3U for {channel_name}: {new_url}")
                             return new_url
-                        await asyncio.sleep(0.5 * (retry + 1))  # Longer delay
+                        await asyncio.sleep(0.3 * (retry + 1))
 
         logging.info(f"No working replacement URL found for {channel_name}")
         return None
@@ -727,7 +721,6 @@ async def clean_and_replace_channels(session, checker, all_channels, streams_dic
         if channel_id in streams_dict:
             matching_logos = [logo for logo in logos_data if logo["channel"] == channel_id]
             if matching_logos:
-                # Use the first matching logo
                 channel["logo"] = matching_logos[0]["url"]
                 logging.info(f"Updated logo for {channel_id}: {matching_logos[0]['url']}")
 
@@ -738,7 +731,7 @@ async def clean_and_replace_channels(session, checker, all_channels, streams_dic
             _, is_working = await checker.check_single_url(session, channel_url)
             if is_working:
                 break
-            await asyncio.sleep(0.5 * (retry + 1))  # Longer delay between retries
+            await asyncio.sleep(0.1 * (retry + 1))
 
         if is_working:
             valid_channels.append(channel)
@@ -776,12 +769,20 @@ async def clean_and_replace_channels(session, checker, all_channels, streams_dic
                     category_files.setdefault(cat, []).append(channel)
             non_working_channels += 1
 
-    tasks = [check_and_process_channel(channel) for channel in all_channels]
-    for future in tqdm(asyncio.as_completed(tasks), total=len(tasks), desc="Cleaning and replacing channels"):
-        try:
-            await future
-        except Exception as e:
-            logging.error(f"Error processing channel: {e}")
+    # Process in batches for better performance
+    total_channels = len(all_channels)
+    batch_size = 400
+    
+    for batch_start in range(0, total_channels, batch_size):
+        batch_end = min(batch_start + batch_size, total_channels)
+        current_batch = all_channels[batch_start:batch_end]
+        
+        tasks = [check_and_process_channel(channel) for channel in current_batch]
+        for future in tqdm(asyncio.as_completed(tasks), total=len(tasks), desc=f"Cleaning channels {batch_start}-{batch_end}"):
+            try:
+                await future
+            except Exception as e:
+                logging.error(f"Error processing channel: {e}")
 
     # Save updated channels
     save_channels(valid_channels, WORKING_CHANNELS_FILE, country_files, category_files)
@@ -953,7 +954,7 @@ async def main():
     logging.info("\n=== Step 4: Syncing channels ===")
     sync_working_channels()
 
-    # Step 5: Clean non-working channels and replace URLs
+    # Step 5: Clean non-working channels and replace URLs (optional - can be skipped if taking too long)
     logging.info("\n=== Step 5: Cleaning non-working channels and replacing URLs ===")
     existing_data = load_existing_data()
     all_existing_channels = existing_data["all_existing_channels"]
