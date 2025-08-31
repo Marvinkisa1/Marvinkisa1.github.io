@@ -422,13 +422,13 @@ async def validate_channels(session, checker, all_existing_channels, iptv_channe
             if not channel_url:
                 return None
 
-            # Update logo for iptv_org channels
-            channel_id = channel.get("id")
-            if channel_id in iptv_channel_ids:
-                matching_logos = [logo for logo in logos_data if logo["channel"] == channel_id]
-                if matching_logos:
-                    channel["logo"] = matching_logos[0]["url"]
-                    logging.info(f"Updated logo for {channel_id}: {matching_logos[0]['url']}")
+            # Get logo from logos_data
+            logo_url = ""
+            ch_id = channel["id"]
+            matching_logos = [l for l in logos_data if l["channel"] == ch_id]
+            if matching_logos:
+                logo_url = matching_logos[0]["url"]
+                channel["logo"] = logo_url
 
             # Efficient but thorough URL checking
             for retry in range(RETRIES):
@@ -679,7 +679,7 @@ def scrape_kenya_tv_channels():
         return []
 
 async def clean_and_replace_channels(session, checker, all_channels, streams_dict, m3u_channels, logos_data):
-    """Check all channels, replace non-working URLs if possible, keep all channels"""
+    """Check all channels, replace non-working URLs if possible, remove non-working channels without replacement"""
     logging.info("\n=== Step 5: Cleaning non-working channels and replacing URLs ===")
     
     # First update logos for channels with logo: null
@@ -783,15 +783,8 @@ async def clean_and_replace_channels(session, checker, all_channels, streams_dic
                     category_files.setdefault(cat, []).append(channel_copy)
             replaced_channels += 1
         else:
-            # Keep the channel even if no replacement found
-            logging.info(f"No replacement found for {channel_name}. Keeping original channel.")
-            valid_channels.append(channel)
-            country = channel.get("country", "Unknown")
-            if country and country != "Unknown":
-                country_files.setdefault(country, []).append(channel)
-            for cat in channel.get("categories", []):
-                if cat:
-                    category_files.setdefault(cat, []).append(channel)
+            # Do not keep the channel if no replacement found - remove it
+            logging.info(f"No replacement found for {channel_name}. Removing channel.")
             non_working_channels += 1
 
     # Process in batches for better performance
@@ -809,11 +802,11 @@ async def clean_and_replace_channels(session, checker, all_channels, streams_dic
             except Exception as e:
                 logging.error(f"Error processing channel: {e}")
 
-    # Save updated channels
+    # Save updated channels (only valid ones)
     save_channels(valid_channels, WORKING_CHANNELS_FILE, country_files, category_files)
 
     logging.info(f"Replaced {replaced_channels} channels with new URLs")
-    logging.info(f"Kept {non_working_channels} non-working channels (no replacement found)")
+    logging.info(f"Removed {non_working_channels} non-working channels (no replacement found)")
     logging.info(f"Total channels after cleaning: {len(valid_channels)}")
 
     return len(valid_channels), non_working_channels, replaced_channels
@@ -1005,7 +998,7 @@ async def main():
 
     logging.info("\n=== Process completed ===")
     logging.info(f"Final count: {valid_channels_count} channels")
-    logging.info(f"Non-working channels kept: {non_working_count}")
+    logging.info(f"Removed non-working channels: {non_working_count}")
     logging.info(f"Channels replaced: {replaced_count}")
     sys.exit(0)
 
