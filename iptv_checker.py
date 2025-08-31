@@ -22,7 +22,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 # URLs (loaded from environment variables, no defaults to ensure secrecy)
 CHANNELS_URL = os.getenv("CHANNELS_URL", "")
 STREAMS_URL = os.getenv("STREAMS_URL", "")
-LOGOS_URL = os.getenv("LOGOS_URL", "https://iptv-org.github.io/api/logos.json")
+LOGOS_URL = os.getenv("LOGOS_URL", "")
 KENYA_BASE_URL = os.getenv("KENYA_BASE_URL", "")
 M3U_URLS = [
     os.getenv("M3U_URL_1", ""),
@@ -36,9 +36,9 @@ COUNTRIES_DIR = "countries"
 
 # Settings - Optimized for speed but still thorough
 MAX_CONCURRENT = int(os.getenv("MAX_CONCURRENT", 80))  # Balanced concurrency
-INITIAL_TIMEOUT = 12  # Balanced timeout
-MAX_TIMEOUT = 25  # Balanced maximum timeout
-RETRIES = 3  # Balanced retries
+INITIAL_TIMEOUT = 15  # Balanced timeout
+MAX_TIMEOUT = 30  # Balanced maximum timeout
+RETRIES = 4  # Balanced retries
 BATCH_DELAY = 0.1
 BATCH_SIZE = 500
 USE_HEAD_METHOD = True
