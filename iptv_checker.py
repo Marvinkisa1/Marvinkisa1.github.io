@@ -388,11 +388,33 @@ def save_channels(channels, working_channels_file, country_files, category_files
         with open(category_file, "w", encoding="utf-8") as f:
             json.dump(existing, f, indent=4, ensure_ascii=False)
 
+def update_logos_for_null_channels(channels, logos_data):
+    """Update logos for channels with logo: null using logos.json data"""
+    updated_count = 0
+    
+    for channel in channels:
+        if channel.get("logo") is None or channel.get("logo") == "null" or not channel.get("logo"):
+            channel_id = channel.get("id")
+            if channel_id:
+                # Look for matching logo in logos_data
+                matching_logos = [logo for logo in logos_data if logo["channel"] == channel_id]
+                if matching_logos:
+                    # Use the first matching logo
+                    channel["logo"] = matching_logos[0]["url"]
+                    updated_count += 1
+                    logging.info(f"Updated logo for {channel_id}: {matching_logos[0]['url']}")
+    
+    logging.info(f"Updated logos for {updated_count} channels with logo: null")
+    return channels
+
 async def validate_channels(session, checker, all_existing_channels, iptv_channel_ids, logos_data):
     valid_channels_count = 0
     batch_channels = []
     country_files = {}
     category_files = {}
+
+    # First update logos for channels with logo: null
+    all_existing_channels = update_logos_for_null_channels(all_existing_channels, logos_data)
 
     async def validate_channel(channel):
         async with checker.semaphore:
@@ -659,6 +681,9 @@ def scrape_kenya_tv_channels():
 async def clean_and_replace_channels(session, checker, all_channels, streams_dict, m3u_channels, logos_data):
     """Check all channels, replace non-working URLs if possible, keep all channels"""
     logging.info("\n=== Step 5: Cleaning non-working channels and replacing URLs ===")
+    
+    # First update logos for channels with logo: null
+    all_channels = update_logos_for_null_channels(all_channels, logos_data)
     
     valid_channels = []
     replaced_channels = 0
