@@ -22,6 +22,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 # URLs (loaded from environment variables, no defaults to ensure secrecy)
 CHANNELS_URL = os.getenv("CHANNELS_URL", "")
 STREAMS_URL = os.getenv("STREAMS_URL", "")
+LOGOS_URL = os.getenv("LOGOS_URL", "https://iptv-org.github.io/api/logos.json")
 KENYA_BASE_URL = os.getenv("KENYA_BASE_URL", "")
 M3U_URLS = [
     os.getenv("M3U_URL_1", ""),
@@ -191,6 +192,12 @@ class M3UProcessor:
                                              timeout=self.timeout, allow_redirects=True) as response:
                             if response.status in (200, 206):
                                 return True
+                            elif response.status in (301, 302, 307, 308):
+                                redirect_url = response.headers.get('Location')
+                                if redirect_url:
+                                    if not redirect_url.startswith('http'):
+                                        redirect_url = f"{domain}{redirect_url}"
+                                    return await self.check_url(session, redirect_url, retries=1)
                     except (aiohttp.ClientError, asyncio.TimeoutError):
                         pass
                     
@@ -263,6 +270,30 @@ async def fetch_json(session, url):
         logging.error(f"Error fetching {url}: {e}")
     return []
 
+def remove_duplicates(channels):
+    """Remove duplicate channels by URL and ID"""
+    seen_urls = set()
+    seen_ids = set()
+    unique_channels = []
+    
+    for channel in channels:
+        channel_url = channel.get("url")
+        channel_id = channel.get("id")
+        
+        # Skip if no URL or ID
+        if not channel_url or not channel_id:
+            continue
+            
+        # Check for duplicates by URL or ID
+        if channel_url not in seen_urls and channel_id not in seen_ids:
+            seen_urls.add(channel_url)
+            seen_ids.add(channel_id)
+            unique_channels.append(channel)
+        else:
+            logging.info(f"Removed duplicate channel: {channel.get('name')} (URL: {channel_url}, ID: {channel_id})")
+    
+    return unique_channels
+
 def load_existing_data():
     existing_data = {
         "working_channels": [],
@@ -274,6 +305,7 @@ def load_existing_data():
     if os.path.exists(WORKING_CHANNELS_FILE):
         with open(WORKING_CHANNELS_FILE, "r", encoding="utf-8") as f:
             channels = json.load(f)
+            channels = remove_duplicates(channels)
             for channel in channels:
                 channel["country"] = channel.get("country", "Unknown")
                 channel["categories"] = channel.get("categories", [])
@@ -286,6 +318,7 @@ def load_existing_data():
                 country = filename[:-5]
                 with open(os.path.join(COUNTRIES_DIR, filename), "r", encoding="utf-8") as f:
                     channels = json.load(f)
+                    channels = remove_duplicates(channels)
                     for channel in channels:
                         channel["country"] = channel.get("country", "Unknown")
                         channel["categories"] = channel.get("categories", [])
@@ -298,20 +331,15 @@ def load_existing_data():
                 category = filename[:-5]
                 with open(os.path.join(CATEGORIES_DIR, filename), "r", encoding="utf-8") as f:
                     channels = json.load(f)
+                    channels = remove_duplicates(channels)
                     for channel in channels:
                         channel["country"] = channel.get("country", "Unknown")
                         channel["categories"] = channel.get("categories", [])
                     existing_data["categories"][category] = channels
                     existing_data["all_existing_channels"].extend(channels)
 
-    seen_ids = set()
-    unique_channels = []
-    for channel in existing_data["all_existing_channels"]:
-        ch_id = channel.get("id")
-        if ch_id and ch_id not in seen_ids:
-            seen_ids.add(ch_id)
-            unique_channels.append(channel)
-    existing_data["all_existing_channels"] = unique_channels
+    # Remove duplicates from all_existing_channels
+    existing_data["all_existing_channels"] = remove_duplicates(existing_data["all_existing_channels"])
 
     return existing_data
 
@@ -319,56 +347,67 @@ def save_channels(channels, working_channels_file, country_files, category_files
     os.makedirs(COUNTRIES_DIR, exist_ok=True)
     os.makedirs(CATEGORIES_DIR, exist_ok=True)
 
-    # Save to working_channels.json
-    if os.path.exists(working_channels_file):
-        with open(working_channels_file, "r", encoding="utf-8") as f:
-            existing_channels = json.load(f)
-        working_dict = {ch['id']: ch for ch in existing_channels if 'id' in ch}
+    # Remove duplicates before saving
+    channels = remove_duplicates(channels)
+    
+    if os.path.exists(WORKING_CHANNELS_FILE):
+        with open(WORKING_CHANNELS_FILE, "r", encoding="utf-8") as f:
+            working_channels = json.load(f)
+            working_channels = remove_duplicates(working_channels)
     else:
-        working_dict = {}
-    for ch in channels:
-        if 'id' in ch:
-            working_dict[ch['id']] = ch
-    with open(working_channels_file, "w", encoding="utf-8") as f:
-        json.dump(list(working_dict.values()), f, indent=4, ensure_ascii=False)
+        working_channels = []
+    
+    working_channels.extend(channels)
+    working_channels = remove_duplicates(working_channels)
+    
+    with open(WORKING_CHANNELS_FILE, "w", encoding="utf-8") as f:
+        json.dump(working_channels, f, indent=4, ensure_ascii=False)
 
-    # Save to country files
     for country, country_channels in country_files.items():
         safe_country = "".join(c for c in country if c.isalnum() or c in (' ', '_', '-')).rstrip()
         if not safe_country:
             continue
+        
+        # Remove duplicates from country channels
+        country_channels = remove_duplicates(country_channels)
+        
         country_file = os.path.join(COUNTRIES_DIR, f"{safe_country}.json")
         if os.path.exists(country_file):
             with open(country_file, "r", encoding="utf-8") as f:
                 existing = json.load(f)
-            country_dict = {ch['id']: ch for ch in existing if 'id' in ch}
+                existing = remove_duplicates(existing)
         else:
-            country_dict = {}
-        for ch in country_channels:
-            if 'id' in ch:
-                country_dict[ch['id']] = ch
+            existing = []
+        
+        existing.extend(country_channels)
+        existing = remove_duplicates(existing)
+        
         with open(country_file, "w", encoding="utf-8") as f:
-            json.dump(list(country_dict.values()), f, indent=4, ensure_ascii=False)
+            json.dump(existing, f, indent=4, ensure_ascii=False)
 
-    # Save to category files
     for category, category_channels in category_files.items():
         safe_category = "".join(c for c in category if c.isalnum() or c in (' ', '_', '-')).rstrip()
         if not safe_category:
             continue
+        
+        # Remove duplicates from category channels
+        category_channels = remove_duplicates(category_channels)
+        
         category_file = os.path.join(CATEGORIES_DIR, f"{safe_category}.json")
         if os.path.exists(category_file):
             with open(category_file, "r", encoding="utf-8") as f:
                 existing = json.load(f)
-            category_dict = {ch['id']: ch for ch in existing if 'id' in ch}
+                existing = remove_duplicates(existing)
         else:
-            category_dict = {}
-        for ch in category_channels:
-            if 'id' in ch:
-                category_dict[ch['id']] = ch
+            existing = []
+        
+        existing.extend(category_channels)
+        existing = remove_duplicates(existing)
+        
         with open(category_file, "w", encoding="utf-8") as f:
-            json.dump(list(category_dict.values()), f, indent=4, ensure_ascii=False)
+            json.dump(existing, f, indent=4, ensure_ascii=False)
 
-async def validate_channels(session, checker, all_existing_channels, iptv_channel_ids):
+async def validate_channels(session, checker, all_existing_channels, iptv_channel_ids, logos_data):
     valid_channels_count = 0
     batch_channels = []
     country_files = {}
@@ -377,8 +416,17 @@ async def validate_channels(session, checker, all_existing_channels, iptv_channe
     async def validate_channel(channel):
         async with checker.semaphore:
             channel_url = channel.get("url")
-            if not channel_url or channel.get("id") in iptv_channel_ids:
+            if not channel_url:
                 return None
+
+            # Update logo for iptv_org channels
+            channel_id = channel.get("id")
+            if channel_id in iptv_channel_ids:
+                matching_logos = [logo for logo in logos_data if logo["channel"] == channel_id]
+                if matching_logos:
+                    # Use the first matching logo
+                    channel["logo"] = matching_logos[0]["url"]
+                    logging.info(f"Updated logo for {channel_id}: {matching_logos[0]['url']}")
 
             for retry in range(RETRIES):
                 checker.timeout = ClientTimeout(total=min(INITIAL_TIMEOUT * (retry + 1), MAX_TIMEOUT))
@@ -422,55 +470,71 @@ async def check_iptv_channels(session, checker, channels_data, streams_dict, exi
     country_files = {}
     category_files = {}
 
-    for channel in channels_data:
-        ch_id = channel.get("id")
-        if ch_id not in streams_dict:
-            continue
-        for stream in streams_dict[ch_id]:
-            url = stream.get("url")
-            if not url or url in existing_urls:
-                continue
+    channels_to_check = [
+        channel
+        for channel in channels_data
+        if channel.get("id") in streams_dict
+        and streams_dict[channel["id"]].get("url") not in existing_urls
+    ]
 
+    async def process_channel(channel):
+        async with checker.semaphore:
+            stream = streams_dict[channel["id"]]
+            url = stream.get("url")
+            if not url:
+                return None
+
+            # Get logo from logos_data for iptv_org channels
             logo_url = ""
+            ch_id = channel["id"]
             feed = stream.get("feed")
+            
+            # First try to find exact match with feed
             matching_logos = [l for l in logos_data if l["channel"] == ch_id and l.get("feed") == feed]
             if matching_logos:
                 logo_url = matching_logos[0]["url"]
+                logging.info(f"Found logo with feed match for {ch_id}: {logo_url}")
             else:
+                # If no feed match, use any logo for this channel
                 channel_logos = [l for l in logos_data if l["channel"] == ch_id]
                 if channel_logos:
                     logo_url = channel_logos[0]["url"]
+                    logging.info(f"Found logo for {ch_id}: {logo_url}")
 
-            is_working = False
             for retry in range(RETRIES):
                 checker.timeout = ClientTimeout(total=min(INITIAL_TIMEOUT * (retry + 1), MAX_TIMEOUT))
                 _, is_working = await checker.check_single_url(session, url)
                 if is_working:
-                    break
-                await asyncio.sleep(0.1 * (retry + 1))
+                    channel_data = {
+                        "name": channel.get("name", "Unknown"),
+                        "id": channel.get("id"),
+                        "logo": logo_url,
+                        "url": url,
+                        "categories": channel.get("categories", []),
+                        "country": channel.get("country", "Unknown"),
+                    }
+                    batch_channels.append(channel_data)
+                    country_files.setdefault(channel_data["country"], []).append(channel_data)
+                    for cat in channel_data["categories"]:
+                        category_files.setdefault(cat, []).append(channel_data)
+                    return channel_data
+                await asyncio.sleep(0.1 * (retry + 1))  # Increasing delay
+            return None
 
-            if is_working:
-                feed_suffix = f".{feed}" if feed else ""
-                channel_data = {
-                    "name": stream.get("title", channel.get("name", "Unknown")),
-                    "id": f"{ch_id}{feed_suffix}",
-                    "logo": logo_url,
-                    "url": url,
-                    "categories": channel.get("categories", []),
-                    "country": channel.get("country", "Unknown"),
-                }
-                batch_channels.append(channel_data)
-                country_files.setdefault(channel_data["country"], []).append(channel_data)
-                for cat in channel_data["categories"]:
-                    category_files.setdefault(cat, []).append(channel_data)
+    tasks = [process_channel(channel) for channel in channels_to_check]
+    for future in tqdm(asyncio.as_completed(tasks), total=len(tasks), desc="Testing new IPTV channels"):
+        try:
+            result = await future
+            if result:
                 new_iptv_channels_count += 1
-
             if len(batch_channels) >= BATCH_SIZE:
                 save_channels(batch_channels, WORKING_CHANNELS_FILE, country_files, category_files)
                 batch_channels.clear()
                 country_files.clear()
                 category_files.clear()
                 await asyncio.sleep(BATCH_DELAY)
+        except Exception as e:
+            logging.error(f"Error processing channel: {e}")
 
     if batch_channels:
         save_channels(batch_channels, WORKING_CHANNELS_FILE, country_files, category_files)
@@ -592,7 +656,7 @@ def scrape_kenya_tv_channels():
         logging.info(f"Found {len(filtered_results)} channels with working m3u8 URLs out of {len(results)} total channels")
         logging.info(f"Completed in {time.time() - start_time:.2f} seconds")
         
-        return filtered_results
+        return remove_duplicates(filtered_results)
         
     except Exception as e:
         logging.error(f"Error occurred in Kenya TV scrape: {str(e)}")
@@ -608,52 +672,22 @@ async def clean_and_replace_channels(session, checker, all_channels, streams_dic
     country_files = {}
     category_files = {}
 
-    def update_logo(channel, logos_data, streams_dict):
-        ch_id = channel.get('id')
-        if not ch_id:
-            return
-        # Parse if feed in id
-        feed = None
-        base_id = ch_id
-        if '.' in ch_id:
-            parts = ch_id.rsplit('.', 1)
-            if len(parts) == 2 and parts[0] in streams_dict:
-                base_id = parts[0]
-                feed = parts[1]
-        if base_id not in streams_dict:
-            return
-
-        matching_logos = [l for l in logos_data if l["channel"] == base_id and l.get("feed") == feed]
-        if matching_logos:
-            new_logo = matching_logos[0]["url"]
-        else:
-            channel_logos = [l for l in logos_data if l["channel"] == base_id]
-            if channel_logos:
-                new_logo = channel_logos[0]["url"]
-            else:
-                return
-
-        current = channel.get("logo")
-        if not current or current != new_logo:
-            channel["logo"] = new_logo
-
     async def find_replacement_url(channel, streams_dict, m3u_channels, session, checker):
+        """Attempt to find a working replacement URL for a channel"""
         channel_id = channel.get("id")
         channel_name = channel.get("name", "").lower()
 
         # Try IPTV-org streams first
-        base_id = channel_id.split('.')[0] if '.' in channel_id else channel_id
-        if streams_dict and base_id in streams_dict:
-            for stream in streams_dict[base_id]:
-                new_url = stream.get("url")
-                if new_url:
-                    for retry in range(RETRIES):
-                        checker.timeout = ClientTimeout(total=min(INITIAL_TIMEOUT * (retry + 1), MAX_TIMEOUT))
-                        _, is_working = await checker.check_single_url(session, new_url)
-                        if is_working:
-                            logging.info(f"Found working replacement URL from IPTV-org for {channel_name}: {new_url}")
-                            return new_url
-                        await asyncio.sleep(0.5 * (retry + 1))  # Longer delay
+        if streams_dict and channel_id in streams_dict:
+            new_url = streams_dict[channel_id].get("url")
+            if new_url:
+                for retry in range(RETRIES):
+                    checker.timeout = ClientTimeout(total=min(INITIAL_TIMEOUT * (retry + 1), MAX_TIMEOUT))
+                    _, is_working = await checker.check_single_url(session, new_url)
+                    if is_working:
+                        logging.info(f"Found working replacement URL from IPTV-org for {channel_name}: {new_url}")
+                        return new_url
+                    await asyncio.sleep(0.5 * (retry + 1))  # Longer delay
 
         # Try M3U channels with fuzzy matching
         if m3u_channels:
@@ -679,7 +713,6 @@ async def clean_and_replace_channels(session, checker, all_channels, streams_dic
 
         if not channel_url:
             logging.info(f"Keeping channel with no URL (no check possible): {channel_name}")
-            update_logo(channel, logos_data, streams_dict)
             valid_channels.append(channel)
             country = channel.get("country", "Unknown")
             if country and country != "Unknown":
@@ -688,6 +721,15 @@ async def clean_and_replace_channels(session, checker, all_channels, streams_dic
                 if cat:
                     category_files.setdefault(cat, []).append(channel)
             return
+
+        # Update logo for iptv_org channels
+        channel_id = channel.get("id")
+        if channel_id in streams_dict:
+            matching_logos = [logo for logo in logos_data if logo["channel"] == channel_id]
+            if matching_logos:
+                # Use the first matching logo
+                channel["logo"] = matching_logos[0]["url"]
+                logging.info(f"Updated logo for {channel_id}: {matching_logos[0]['url']}")
 
         # Check if current URL is working
         is_working = False
@@ -699,7 +741,6 @@ async def clean_and_replace_channels(session, checker, all_channels, streams_dic
             await asyncio.sleep(0.5 * (retry + 1))  # Longer delay between retries
 
         if is_working:
-            update_logo(channel, logos_data, streams_dict)
             valid_channels.append(channel)
             country = channel.get("country", "Unknown")
             if country and country != "Unknown":
@@ -715,7 +756,6 @@ async def clean_and_replace_channels(session, checker, all_channels, streams_dic
         if new_url:
             channel_copy = channel.copy()
             channel_copy["url"] = new_url
-            update_logo(channel_copy, logos_data, streams_dict)
             valid_channels.append(channel_copy)
             country = channel_copy.get("country", "Unknown")
             if country and country != "Unknown":
@@ -727,7 +767,6 @@ async def clean_and_replace_channels(session, checker, all_channels, streams_dic
         else:
             # Keep the channel even if no replacement found
             logging.info(f"No replacement found for {channel_name}. Keeping original channel.")
-            update_logo(channel, logos_data, streams_dict)
             valid_channels.append(channel)
             country = channel.get("country", "Unknown")
             if country and country != "Unknown":
@@ -766,6 +805,7 @@ def sync_working_channels():
                 country_file = os.path.join(COUNTRIES_DIR, filename)
                 with open(country_file, "r", encoding="utf-8") as f:
                     channels = json.load(f)
+                    channels = remove_duplicates(channels)
                     all_channels.extend(channels)
     
     # Load channels from category files
@@ -775,22 +815,17 @@ def sync_working_channels():
                 category_file = os.path.join(CATEGORIES_DIR, filename)
                 with open(category_file, "r", encoding="utf-8") as f:
                     channels = json.load(f)
+                    channels = remove_duplicates(channels)
                     all_channels.extend(channels)
     
-    # Remove duplicates by ID
-    seen_ids = set()
-    unique_channels = []
-    for channel in all_channels:
-        ch_id = channel.get("id")
-        if ch_id and ch_id not in seen_ids:
-            seen_ids.add(ch_id)
-            unique_channels.append(channel)
+    # Remove duplicates
+    all_channels = remove_duplicates(all_channels)
     
     # Save to working_channels.json
     with open(WORKING_CHANNELS_FILE, "w", encoding="utf-8") as f:
-        json.dump(unique_channels, f, indent=4, ensure_ascii=False)
+        json.dump(all_channels, f, indent=4, ensure_ascii=False)
     
-    logging.info(f"Synced {len(unique_channels)} channels to working_channels.json")
+    logging.info(f"Synced {len(all_channels)} channels to working_channels.json")
 
 async def process_m3u_urls(session):
     """Process M3U URLs and return count of working sports channels"""
@@ -874,20 +909,17 @@ async def main():
                 channels_data = []
                 logos_data = []
             else:
-                channels_data, streams_data, logos_data = await asyncio.gather(
+                # Fetch logos data first
+                logos_data = await fetch_json(session, LOGOS_URL)
+                logging.info(f"Loaded {len(logos_data)} logos from {LOGOS_URL}")
+                
+                # Then fetch channels and streams
+                channels_data, streams_data = await asyncio.gather(
                     fetch_json(session, CHANNELS_URL),
                     fetch_json(session, STREAMS_URL),
-                    fetch_json(session, "https://iptv-org.github.io/api/logos.json"),
                 )
 
-                streams_dict = {}
-                for stream in streams_data:
-                    if "channel" in stream:
-                        ch = stream["channel"]
-                        if ch not in streams_dict:
-                            streams_dict[ch] = []
-                        streams_dict[ch].append(stream)
-
+                streams_dict = {stream["channel"]: stream for stream in streams_data if stream.get("channel")}
                 iptv_channel_ids = set(streams_dict.keys())
 
                 existing_data = load_existing_data()
@@ -899,7 +931,7 @@ async def main():
                         json.dump([], f)
 
                 valid_channels_count = await validate_channels(
-                    session, checker, all_existing_channels, iptv_channel_ids
+                    session, checker, all_existing_channels, iptv_channel_ids, logos_data
                 )
 
                 new_iptv_channels_count = await check_iptv_channels(
