@@ -20,9 +20,9 @@ from fuzzywuzzy import fuzz
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # URLs (loaded from environment variables, no defaults to ensure secrecy)
-CHANNELS_URL = os.getenv("CHANNELS_URL", "")
-STREAMS_URL = os.getenv("STREAMS_URL", "")
-LOGOS_URL = os.getenv("LOGOS_URL", "")
+CHANNELS_URL = os.getenv("CHANNELS_URL", "https://iptv-org.github.io/api/channels.json")
+STREAMS_URL = os.getenv("STREAMS_URL", "https://iptv-org.github.io/api/streams.json")
+LOGOS_URL = os.getenv("LOGOS_URL", "https://iptv-org.github.io/api/logos.json")
 KENYA_BASE_URL = os.getenv("KENYA_BASE_URL", "")
 M3U_URLS = [
     os.getenv("M3U_URL_1", ""),
@@ -67,16 +67,13 @@ class FastChecker:
                             content_type = response.headers.get('Content-Type', '').lower()
                             if any(x in content_type for x in ['video', 'mpegurl', 'application/octet-stream']):
                                 return url, True
-                            # Even if content-type doesn't match, it might still work
                             return url, True
                         elif response.status in [301, 302, 307, 308]:
-                            # Follow redirects but only once to avoid loops
                             redirect_url = response.headers.get('Location')
                             if redirect_url:
                                 if not redirect_url.startswith('http'):
                                     parsed = urlparse(url)
                                     redirect_url = f"{parsed.scheme}://{parsed.netloc}{redirect_url}"
-                                # Check redirect with HEAD only
                                 try:
                                     async with session.head(redirect_url, timeout=self.timeout, allow_redirects=False) as redirect_response:
                                         if redirect_response.status in (200, 301, 302, 307, 308):
@@ -85,24 +82,20 @@ class FastChecker:
                                     pass
                         return url, False
                 except (aiohttp.ClientError, asyncio.TimeoutError):
-                    pass  # Fall through to GET method
+                    pass
             
-            # Try GET request with byte range (more thorough but still fast)
             headers = {'Range': 'bytes=0-1'} if BYTE_RANGE_CHECK else {}
             try:
                 async with session.get(url, timeout=self.timeout, headers=headers, 
                                       allow_redirects=True) as response:
                     if response.status in (200, 206):
-                        # Quick content check for m3u8
                         if url.endswith('.m3u8') or 'm3u8' in response.headers.get('Content-Type', ''):
                             try:
-                                # Read only first few bytes to check if it's a playlist
                                 content = await response.content.read(1024)
                                 content_str = content.decode('utf-8', errors='ignore')
                                 if '#EXTM3U' in content_str:
                                     return url, True
                             except:
-                                # If we can't parse it, still consider it valid
                                 return url, True
                         return url, True
                     return url, False
@@ -183,7 +176,6 @@ class M3UProcessor:
         for attempt in range(retries):
             try:
                 async with self.semaphore:
-                    # First try HEAD request
                     try:
                         async with session.head(url, headers=headers, timeout=self.timeout, 
                                               allow_redirects=True) as response:
@@ -192,7 +184,6 @@ class M3UProcessor:
                     except (aiohttp.ClientError, asyncio.TimeoutError):
                         pass
                     
-                    # Then try GET request with byte range
                     try:
                         async with session.get(url, headers={**headers, 'Range': 'bytes=0-1'}, 
                                              timeout=self.timeout, allow_redirects=True) as response:
@@ -221,8 +212,8 @@ class M3UProcessor:
         
         return working_channels
 
-    def format_channel_data(self, channels):
-        """Format channel data into the desired JSON structure"""
+    def format_channel_data(self, channels, logos_data):
+        """Format channel data into the desired JSON structure with logos from LOGOS_URL"""
         formatted_channels = []
         
         for channel in channels:
@@ -233,10 +224,16 @@ class M3UProcessor:
             country_code = channel['country_code']
             channel_id = f"{base_id.lower()}.{country_code.lower()}" if country_code else base_id.lower()
             
+            # Get logo from logos_data
+            logo_url = ""
+            matching_logos = [l for l in logos_data if l["channel"] == channel_id]
+            if matching_logos:
+                logo_url = matching_logos[0]["url"]
+            
             formatted_channels.append({
                 'name': channel['display_name'],
                 'id': channel_id,
-                'logo': channel['tvg_logo'],
+                'logo': logo_url,
                 'url': channel['url'],
                 'categories': ['sports'],
                 'country': channel['country_code']
@@ -266,11 +263,9 @@ def remove_duplicates(channels):
         channel_url = channel.get("url")
         channel_id = channel.get("id")
         
-        # Skip if no URL or ID
         if not channel_url or not channel_id:
             continue
             
-        # Check for duplicates by URL or ID
         if channel_url not in seen_urls and channel_id not in seen_ids:
             seen_urls.add(channel_url)
             seen_ids.add(channel_id)
@@ -346,9 +341,8 @@ def save_channels(channels, working_channels_file, country_files, category_files
     with open(WORKING_CHANNELS_FILE, "w", encoding="utf-8") as f:
         json.dump(working_channels, f, indent=4, ensure_ascii=False)
 
-    # Overwrite country files
     for country, country_channels in country_files.items():
-        if not country or country == "Unknown":  # Skip invalid country codes
+        if not country or country == "Unknown":
             continue
         safe_country = "".join(c for c in country if c.isalnum() or c in (' ', '_', '-')).rstrip()
         if not safe_country:
@@ -370,9 +364,8 @@ def save_channels(channels, working_channels_file, country_files, category_files
         with open(country_file, "w", encoding="utf-8") as f:
             json.dump(existing, f, indent=4, ensure_ascii=False)
 
-    # Overwrite category files
     for category, category_channels in category_files.items():
-        if not category:  # Skip empty categories
+        if not category:
             continue
         safe_category = "".join(c for c in category if c.isalnum() or c in (' ', '_', '-')).rstrip()
         if not safe_category:
@@ -402,10 +395,8 @@ def update_logos_for_null_channels(channels, logos_data):
         if channel.get("logo") is None or channel.get("logo") == "null" or not channel.get("logo"):
             channel_id = channel.get("id")
             if channel_id:
-                # Look for matching logo in logos_data
                 matching_logos = [logo for logo in logos_data if logo["channel"] == channel_id]
                 if matching_logos:
-                    # Use the first matching logo
                     channel["logo"] = matching_logos[0]["url"]
                     updated_count += 1
                     logging.info(f"Updated logo for {channel_id}: {matching_logos[0]['url']}")
@@ -419,7 +410,6 @@ async def validate_channels(session, checker, all_existing_channels, iptv_channe
     country_files = {}
     category_files = {}
 
-    # First update logos for channels with logo: null
     all_existing_channels = update_logos_for_null_channels(all_existing_channels, logos_data)
 
     async def validate_channel(channel):
@@ -428,15 +418,12 @@ async def validate_channels(session, checker, all_existing_channels, iptv_channe
             if not channel_url:
                 return None
 
-            # Get logo from logos_data
-            logo_url = ""
+            # Ensure logo is from logos_data
             ch_id = channel["id"]
             matching_logos = [l for l in logos_data if l["channel"] == ch_id]
             if matching_logos:
-                logo_url = matching_logos[0]["url"]
-                channel["logo"] = logo_url
+                channel["logo"] = matching_logos[0]["url"]
 
-            # Efficient but thorough URL checking
             for retry in range(RETRIES):
                 checker.timeout = ClientTimeout(total=min(INITIAL_TIMEOUT * (retry + 1), MAX_TIMEOUT))
                 _, is_working = await checker.check_single_url(session, channel_url)
@@ -453,7 +440,6 @@ async def validate_channels(session, checker, all_existing_channels, iptv_channe
                 await asyncio.sleep(0.1 * (retry + 1))
             return None
 
-    # Process in manageable batches
     total_channels = len(all_existing_channels)
     batch_size = 500
     
@@ -501,7 +487,7 @@ async def check_iptv_channels(session, checker, channels_data, streams_dict, exi
             if not url:
                 return None
 
-            # Get logo from logos_data
+            # Get logo from logos_data, prioritizing feed match
             logo_url = ""
             ch_id = channel["id"]
             feed = stream.get("feed")
@@ -514,7 +500,6 @@ async def check_iptv_channels(session, checker, channels_data, streams_dict, exi
                 if channel_logos:
                     logo_url = channel_logos[0]["url"]
 
-            # Efficient URL checking
             for retry in range(RETRIES):
                 checker.timeout = ClientTimeout(total=min(INITIAL_TIMEOUT * (retry + 1), MAX_TIMEOUT))
                 _, is_working = await checker.check_single_url(session, url)
@@ -535,7 +520,6 @@ async def check_iptv_channels(session, checker, channels_data, streams_dict, exi
                 await asyncio.sleep(0.1 * (retry + 1))
             return None
 
-    # Process in batches
     total_channels = len(channels_to_check)
     batch_size = 300
     
@@ -589,7 +573,6 @@ async def check_single_m3u8_url(session, url, timeout=15):
                     logging.info(f"Valid m3u8 found: {url}")
                     return url, True
                 else:
-                    # Even if parsing fails, the URL might still work
                     logging.info(f"m3u8 parsing failed but keeping URL: {url}")
                     return url, True
     except Exception as e:
@@ -606,8 +589,8 @@ async def check_m3u8_urls(urls):
                 return url
         return None
 
-def scrape_kenya_tv_channels():
-    """Scrape Kenya TV channels and return valid ones"""
+def scrape_kenya_tv_channels(logos_data):
+    """Scrape Kenya TV channels and assign logos from LOGOS_URL"""
     start_time = time.time()
     logging.info("Starting Kenya TV scrape...")
     
@@ -646,11 +629,18 @@ def scrape_kenya_tv_channels():
                         href = a_tag.get('href', '')
                         full_url = href if href.startswith('http') else KENYA_BASE_URL + href
                         channel_name = img_tag.get('alt', '')
+                        channel_id = f"{re.sub(r'[^a-zA-Z0-9]', '', channel_name).lower()}.ke"
+                        
+                        # Get logo from logos_data
+                        logo_url = ""
+                        matching_logos = [l for l in logos_data if l["channel"] == channel_id]
+                        if matching_logos:
+                            logo_url = matching_logos[0]["url"]
                         
                         channel_data = {
                             "name": channel_name,
-                            "id": f"{channel_name}.ke",
-                            "logo": img_tag.get('src', ''),
+                            "id": channel_id,
+                            "logo": logo_url,
                             "url": None,
                             "categories": ["general"],
                             "country": "KE"
@@ -688,7 +678,6 @@ async def clean_and_replace_channels(session, checker, all_channels, streams_dic
     """Check all channels, replace non-working URLs if possible, remove non-working channels without replacement"""
     logging.info("\n=== Step 5: Cleaning non-working channels and replacing URLs ===")
     
-    # First update logos for channels with logo: null
     all_channels = update_logos_for_null_channels(all_channels, logos_data)
     
     valid_channels = []
@@ -702,11 +691,10 @@ async def clean_and_replace_channels(session, checker, all_channels, streams_dic
         channel_id = channel.get("id")
         channel_name = channel.get("name", "").lower()
 
-        # Try IPTV-org streams first
         if streams_dict and channel_id in streams_dict:
             new_url = streams_dict[channel_id].get("url")
             if new_url:
-                for retry in range(2):  # Reduced retries for speed
+                for retry in range(2):
                     checker.timeout = ClientTimeout(total=min(INITIAL_TIMEOUT * (retry + 1), MAX_TIMEOUT))
                     _, is_working = await checker.check_single_url(session, new_url)
                     if is_working:
@@ -714,13 +702,12 @@ async def clean_and_replace_channels(session, checker, all_channels, streams_dic
                         return new_url
                     await asyncio.sleep(0.3 * (retry + 1))
 
-        # Try M3U channels with fuzzy matching
         if m3u_channels:
             for m3u_channel in m3u_channels:
                 m3u_name = m3u_channel.get("display_name", "").lower()
-                if fuzz.ratio(channel_name, m3u_name) > 80:  # Similarity threshold
+                if fuzz.ratio(channel_name, m3u_name) > 80:
                     new_url = m3u_channel.get("url")
-                    for retry in range(2):  # Reduced retries for speed
+                    for retry in range(2):
                         checker.timeout = ClientTimeout(total=min(INITIAL_TIMEOUT * (retry + 1), MAX_TIMEOUT))
                         _, is_working = await checker.check_single_url(session, new_url)
                         if is_working:
@@ -747,15 +734,12 @@ async def clean_and_replace_channels(session, checker, all_channels, streams_dic
                     category_files.setdefault(cat, []).append(channel)
             return
 
-        # Update logo for iptv_org channels
+        # Ensure logo is from logos_data
         channel_id = channel.get("id")
-        if channel_id in streams_dict:
-            matching_logos = [logo for logo in logos_data if logo["channel"] == channel_id]
-            if matching_logos:
-                channel["logo"] = matching_logos[0]["url"]
-                logging.info(f"Updated logo for {channel_id}: {matching_logos[0]['url']}")
+        matching_logos = [logo for logo in logos_data if logo["channel"] == channel_id]
+        if matching_logos:
+            channel["logo"] = matching_logos[0]["url"]
 
-        # Check if current URL is working
         is_working = False
         for retry in range(RETRIES):
             checker.timeout = ClientTimeout(total=min(INITIAL_TIMEOUT * (retry + 1), MAX_TIMEOUT))
@@ -774,7 +758,6 @@ async def clean_and_replace_channels(session, checker, all_channels, streams_dic
                     category_files.setdefault(cat, []).append(channel)
             return
 
-        # Current URL is not working, try to find a replacement
         logging.info(f"Channel not working: {channel_name} ({channel_url}). Attempting replacement.")
         new_url = await find_replacement_url(channel, streams_dict, m3u_channels, session, checker)
         if new_url:
@@ -789,11 +772,9 @@ async def clean_and_replace_channels(session, checker, all_channels, streams_dic
                     category_files.setdefault(cat, []).append(channel_copy)
             replaced_channels += 1
         else:
-            # Do not keep the channel if no replacement found - remove it
             logging.info(f"No replacement found for {channel_name}. Removing channel.")
             non_working_channels += 1
 
-    # Process in batches for better performance
     total_channels = len(all_channels)
     batch_size = 400
     
@@ -808,7 +789,6 @@ async def clean_and_replace_channels(session, checker, all_channels, streams_dic
             except Exception as e:
                 logging.error(f"Error processing channel: {e}")
 
-    # Save updated channels (only valid ones)
     save_channels(valid_channels, WORKING_CHANNELS_FILE, country_files, category_files)
 
     logging.info(f"Replaced {replaced_channels} channels with new URLs")
@@ -823,7 +803,6 @@ def sync_working_channels():
     
     all_channels = []
     
-    # Load channels from country files
     if os.path.exists(COUNTRIES_DIR):
         for filename in os.listdir(COUNTRIES_DIR):
             if filename.endswith(".json"):
@@ -833,7 +812,6 @@ def sync_working_channels():
                     channels = remove_duplicates(channels)
                     all_channels.extend(channels)
     
-    # Load channels from category files
     if os.path.exists(CATEGORIES_DIR):
         for filename in os.listdir(CATEGORIES_DIR):
             if filename.endswith(".json"):
@@ -843,16 +821,14 @@ def sync_working_channels():
                     channels = remove_duplicates(channels)
                     all_channels.extend(channels)
     
-    # Remove duplicates
     all_channels = remove_duplicates(all_channels)
     
-    # Save to working_channels.json
     with open(WORKING_CHANNELS_FILE, "w", encoding="utf-8") as f:
         json.dump(all_channels, f, indent=4, ensure_ascii=False)
     
     logging.info(f"Synced {len(all_channels)} channels to working_channels.json")
 
-async def process_m3u_urls(session):
+async def process_m3u_urls(session, logos_data):
     """Process M3U URLs and return count of working sports channels"""
     logging.info("\n=== Step 2: Processing M3U URLs ===")
     processor = M3UProcessor()
@@ -868,7 +844,6 @@ async def process_m3u_urls(session):
             channels = processor.parse_m3u(content)
             logging.info(f"Found {len(channels)} channels in {m3u_url}")
             
-            # Filter for sports channels
             sports_channels = [
                 channel for channel in channels 
                 if 'sport' in channel.get('group_title', '').lower() or 
@@ -877,12 +852,10 @@ async def process_m3u_urls(session):
             ]
             logging.info(f"Found {len(sports_channels)} sports channels in {m3u_url}")
             
-            # Check which sports channels are working
             working_sports_channels = await processor.filter_working_channels(session, sports_channels)
             logging.info(f"Found {len(working_sports_channels)} working sports channels in {m3u_url}")
             
-            # Format and save the working sports channels
-            formatted_channels = processor.format_channel_data(working_sports_channels)
+            formatted_channels = processor.format_channel_data(working_sports_channels, logos_data)
             all_channels.extend(formatted_channels)
     
     if all_channels:
@@ -908,8 +881,12 @@ async def main():
     processor = M3UProcessor()
     
     async with aiohttp.ClientSession(connector=checker.connector) as session:
+        # Fetch logos data first
+        logos_data = await fetch_json(session, LOGOS_URL)
+        logging.info(f"Loaded {len(logos_data)} logos from {LOGOS_URL}")
+        
         logging.info("\n=== Step 1: Scraping Kenya TV channels ===")
-        kenya_channels = scrape_kenya_tv_channels()
+        kenya_channels = scrape_kenya_tv_channels(logos_data)
         
         if kenya_channels:
             country_files = {}
@@ -925,7 +902,7 @@ async def main():
             save_channels(kenya_channels, WORKING_CHANNELS_FILE, country_files, category_files)
             logging.info(f"Added {len(kenya_channels)} Kenya channels to working channels")
         
-        sports_channels_count = await process_m3u_urls(session)
+        sports_channels_count = await process_m3u_urls(session, logos_data)
         
         logging.info("\n=== Step 3: Checking IPTV-org channels ===")
         try:
@@ -933,13 +910,7 @@ async def main():
                 logging.error("CHANNELS_URL or STREAMS_URL is not set. Skipping IPTV-org channels.")
                 streams_dict = {}
                 channels_data = []
-                logos_data = []
             else:
-                # Fetch logos data first
-                logos_data = await fetch_json(session, LOGOS_URL)
-                logging.info(f"Loaded {len(logos_data)} logos from {LOGOS_URL}")
-                
-                # Then fetch channels and streams
                 channels_data, streams_data = await asyncio.gather(
                     fetch_json(session, CHANNELS_URL),
                     fetch_json(session, STREAMS_URL),
@@ -974,18 +945,14 @@ async def main():
             logging.error(f"Error in IPTV-org processing: {e}")
             streams_dict = {}
             channels_data = []
-            logos_data = []
 
-        # Step 4: Sync all channels
         logging.info("\n=== Step 4: Syncing channels ===")
         sync_working_channels()
 
-        # Step 5: Clean non-working channels and replace URLs
         logging.info("\n=== Step 5: Cleaning non-working channels and replacing URLs ===")
         existing_data = load_existing_data()
         all_existing_channels = existing_data["all_existing_channels"]
         
-        # Load M3U channels for potential replacements
         m3u_channels = []
         processor = M3UProcessor()
         for m3u_url in M3U_URLS:
@@ -1000,7 +967,6 @@ async def main():
             session, checker, all_existing_channels, streams_dict, m3u_channels, logos_data
         )
 
-        # Step 6: Sync updated channels
         logging.info("\n=== Step 6: Syncing updated channels ===")
         sync_working_channels()
 
