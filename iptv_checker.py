@@ -848,7 +848,25 @@ async def process_m3u_urls(session, logos_data):
                 channel for channel in channels 
                 if 'sport' in channel.get('group_title', '').lower() or 
                    'sport' in channel.get('display_name', '').lower() or
-                   'sport' in channel.get('raw_name', '').lower()
+                   'sport' in channel.get('raw_name', '').lower() or 
+                   'spor' in channel.get('group_title', '').lower() or
+                   'spor' in channel.get('display_name', '').lower() or 
+                   'spor' in channel.get('raw_name', '').lower() or
+                   'dazn' in channel.get('group_title', '').lower() or
+                   'dazn' in channel.get('display_name', '').lower() or 
+                   'dazn' in channel.get('raw_name', '').lower() or
+                   'xxx' in channel.get('group_title', '').lower() or
+                   'xxx' in channel.get('display_name', '').lower() or 
+                   'xxx' in channel.get('raw_name', '').lower() or 
+                   'adult' in channel.get('group_title', '').lower() or
+                   'adult' in channel.get('display_name', '').lower() or 
+                   'adult' in channel.get('raw_name', '').lower() or 
+                   '18+' in channel.get('group_title', '').lower() or
+                   '18+' in channel.get('display_name', '').lower() or 
+                   '18+' in channel.get('raw_name', '').lower() or 
+                   'news' in channel.get('group_title', '').lower() or
+                   'news' in channel.get('display_name', '').lower() or 
+                   'news' in channel.get('raw_name', '').lower()
             ]
             logging.info(f"Found {len(sports_channels)} sports channels in {m3u_url}")
             
