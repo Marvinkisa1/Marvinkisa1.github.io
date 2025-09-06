@@ -323,24 +323,17 @@ def load_existing_data():
     return existing_data
 
 def save_channels(channels, working_channels_file, country_files, category_files):
+    """Save channels to files - COMPLETELY REPLACES existing content"""
     os.makedirs(COUNTRIES_DIR, exist_ok=True)
     os.makedirs(CATEGORIES_DIR, exist_ok=True)
 
     channels = remove_duplicates(channels)
     
-    if os.path.exists(WORKING_CHANNELS_FILE):
-        with open(WORKING_CHANNELS_FILE, "r", encoding="utf-8") as f:
-            working_channels = json.load(f)
-            working_channels = remove_duplicates(working_channels)
-    else:
-        working_channels = []
-    
-    working_channels.extend(channels)
-    working_channels = remove_duplicates(working_channels)
-    
+    # COMPLETELY REPLACE working channels file
     with open(WORKING_CHANNELS_FILE, "w", encoding="utf-8") as f:
-        json.dump(working_channels, f, indent=4, ensure_ascii=False)
+        json.dump(channels, f, indent=4, ensure_ascii=False)
 
+    # COMPLETELY REPLACE country files
     for country, country_channels in country_files.items():
         if not country or country == "Unknown":
             continue
@@ -351,19 +344,11 @@ def save_channels(channels, working_channels_file, country_files, category_files
         country_channels = remove_duplicates(country_channels)
         country_file = os.path.join(COUNTRIES_DIR, f"{safe_country}.json")
         
-        if os.path.exists(country_file):
-            with open(country_file, "r", encoding="utf-8") as f:
-                existing = json.load(f)
-                existing = remove_duplicates(existing)
-        else:
-            existing = []
-        
-        existing.extend(country_channels)
-        existing = remove_duplicates(existing)
-        
+        # Write only the current valid channels (COMPLETE REPLACEMENT)
         with open(country_file, "w", encoding="utf-8") as f:
-            json.dump(existing, f, indent=4, ensure_ascii=False)
+            json.dump(country_channels, f, indent=4, ensure_ascii=False)
 
+    # COMPLETELY REPLACE category files
     for category, category_channels in category_files.items():
         if not category:
             continue
@@ -374,18 +359,9 @@ def save_channels(channels, working_channels_file, country_files, category_files
         category_channels = remove_duplicates(category_channels)
         category_file = os.path.join(CATEGORIES_DIR, f"{safe_category}.json")
         
-        if os.path.exists(category_file):
-            with open(category_file, "r", encoding="utf-8") as f:
-                existing = json.load(f)
-                existing = remove_duplicates(existing)
-        else:
-            existing = []
-        
-        existing.extend(category_channels)
-        existing = remove_duplicates(existing)
-        
+        # Write only the current valid channels (COMPLETE REPLACEMENT)
         with open(category_file, "w", encoding="utf-8") as f:
-            json.dump(existing, f, indent=4, ensure_ascii=False)
+            json.dump(category_channels, f, indent=4, ensure_ascii=False)
 
 def update_logos_for_null_channels(channels, logos_data):
     """Update logos for channels with logo: null using logos.json data"""
@@ -789,6 +765,7 @@ async def clean_and_replace_channels(session, checker, all_channels, streams_dic
             except Exception as e:
                 logging.error(f"Error processing channel: {e}")
 
+    # COMPLETELY REPLACE all files with only valid channels
     save_channels(valid_channels, WORKING_CHANNELS_FILE, country_files, category_files)
 
     logging.info(f"Replaced {replaced_channels} channels with new URLs")
