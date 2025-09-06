@@ -1,21 +1,21 @@
 [
     {
-        "name": "AMC",
-        "id": "AMC.af",
-        "logo": "https://i.imgur.com/yj8RNnG.png",
-        "url": "https://amchls.wns.live/hls/stream.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "AF"
-    },
-    {
         "name": "Barbud Music",
         "id": "BarbudMusic.af",
         "logo": "https://i.imgur.com/jbbxu0g.png",
         "url": "https://raw.githubusercontent.com/taodicakhia/IPTV_Exception/master/channels/af/tolomusic.m3u8",
         "categories": [
             "music"
+        ],
+        "country": "AF"
+    },
+    {
+        "name": "TOLOnews",
+        "id": "TOLOnews.af",
+        "logo": "https://i.imgur.com/oxaHaTq.png",
+        "url": "https://raw.githubusercontent.com/taodicakhia/IPTV_Exception/master/channels/af/tolonews.m3u8",
+        "categories": [
+            "news"
         ],
         "country": "AF"
     },
@@ -40,6 +40,62 @@
         "country": "AF"
     },
     {
+        "name": "RTA News",
+        "id": "RTANews.af",
+        "logo": "https://rta.af/artmedia/2022/12/rta-logo-final-300x185.png",
+        "url": "https://rtatv.akamaized.net/Content/HLS/Live/channel(RTA2)/index.m3u8",
+        "categories": [],
+        "country": "AF"
+    },
+    {
+        "name": "RTA",
+        "id": "RTA.af",
+        "logo": "https://i.imgur.com/pJU2KPh.png",
+        "url": "https://rtatv.akamaized.net/Content/HLS/Live/channel(RTA1)/index.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "AF"
+    },
+    {
+        "name": "RTA Sport",
+        "id": "RTASport.af",
+        "logo": "https://i.imgur.com/lEXrwos.jpg",
+        "url": "https://rtatv.akamaized.net/Content/HLS/Live/channel(RTA3)/index.m3u8",
+        "categories": [
+            "sports"
+        ],
+        "country": "AF"
+    },
+    {
+        "name": "RTA Education",
+        "id": "RTAEducation.af",
+        "logo": "https://rta.af/artmedia/2022/12/rta-logo-final-300x185.png",
+        "url": "https://rtatv.akamaized.net/Content/HLS/Live/channel(RTA4)/index.m3u8",
+        "categories": [],
+        "country": "AF"
+    },
+    {
+        "name": "Faza TV",
+        "id": "FazaTV.af",
+        "logo": "https://i.imgur.com/GpxjzNm.png",
+        "url": "https://fl1002.bozztv.com/gin-fazatv/tracks-v1a1/mono.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "AF"
+    },
+    {
+        "name": "AMC",
+        "id": "AMC.af",
+        "logo": "https://i.imgur.com/yj8RNnG.png",
+        "url": "https://amchls.wns.live/hls/stream.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "AF"
+    },
+    {
         "name": "Eslah TV",
         "id": "EslahTV.af",
         "logo": "https://i.imgur.com/To7VnsA.png",
@@ -60,78 +116,12 @@
         "country": "AF"
     },
     {
-        "name": "Faza TV",
-        "id": "FazaTV.af",
-        "logo": "https://i.imgur.com/GpxjzNm.png",
-        "url": "https://fl1002.bozztv.com/gin-fazatv/tracks-v1a1/mono.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "AF"
-    },
-    {
         "name": "Kayhan TV",
         "id": "KayhanTV.af",
         "logo": "https://i.imgur.com/2MDjU7x.png",
         "url": "https://playout395.livestreamingcdn.com/live/Stream1/playlist.m3u8",
         "categories": [
             "music"
-        ],
-        "country": "AF"
-    },
-    {
-        "name": "RTA Sport",
-        "id": "RTASport.af",
-        "logo": "https://i.imgur.com/lEXrwos.jpg",
-        "url": "https://rtatv.akamaized.net/Content/HLS/Live/channel(RTA3)/index.m3u8",
-        "categories": [
-            "sports"
-        ],
-        "country": "AF"
-    },
-    {
-        "name": "RTA",
-        "id": "RTA.af",
-        "logo": "https://i.imgur.com/pJU2KPh.png",
-        "url": "https://rtatv.akamaized.net/Content/HLS/Live/channel(RTA1)/index.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "AF"
-    },
-    {
-        "name": "RTA Education",
-        "id": "RTAEducation.af",
-        "logo": "https://rta.af/artmedia/2022/12/rta-logo-final-300x185.png",
-        "url": "https://rtatv.akamaized.net/Content/HLS/Live/channel(RTA4)/index.m3u8",
-        "categories": [],
-        "country": "AF"
-    },
-    {
-        "name": "RTA News",
-        "id": "RTANews.af",
-        "logo": "https://rta.af/artmedia/2022/12/rta-logo-final-300x185.png",
-        "url": "https://rtatv.akamaized.net/Content/HLS/Live/channel(RTA2)/index.m3u8",
-        "categories": [],
-        "country": "AF"
-    },
-    {
-        "name": "Shamshad TV",
-        "id": "ShamshadTV.af",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/2/28/Shamshad_tv_logo.jpg",
-        "url": "https://5a1178b42cc03.streamlock.net/shamshadtelevision/shamshadtelevision/playlist.m3u8",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "AF"
-    },
-    {
-        "name": "Sharq Radio TV",
-        "id": "SharqRadioTV.af",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Sharq_TV_Logo_2020.jpg/440px-Sharq_TV_Logo_2020.jpg",
-        "url": "https://59nyqa5elwap-hls-live.5centscdn.com/Sharq/eec89088ee408b80387155272b113256.sdp/playlist.m3u8",
-        "categories": [
-            "general"
         ],
         "country": "AF"
     },
@@ -154,12 +144,12 @@
         "country": "AF"
     },
     {
-        "name": "TOLOnews",
-        "id": "TOLOnews.af",
-        "logo": "https://i.imgur.com/oxaHaTq.png",
-        "url": "https://raw.githubusercontent.com/taodicakhia/IPTV_Exception/master/channels/af/tolonews.m3u8",
+        "name": "Shamshad TV",
+        "id": "ShamshadTV.af",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/2/28/Shamshad_tv_logo.jpg",
+        "url": "https://5a1178b42cc03.streamlock.net/shamshadtelevision/shamshadtelevision/playlist.m3u8",
         "categories": [
-            "news"
+            "entertainment"
         ],
         "country": "AF"
     }
