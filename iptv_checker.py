@@ -15,6 +15,7 @@ from pathlib import Path
 import logging
 import sys
 from fuzzywuzzy import fuzz
+import shutil
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -276,6 +277,7 @@ def remove_duplicates(channels):
     return unique_channels
 
 def load_existing_data():
+    """Load all existing channel data from files, ensuring consistency."""
     existing_data = {
         "working_channels": [],
         "countries": {},
@@ -322,8 +324,22 @@ def load_existing_data():
     existing_data["all_existing_channels"] = remove_duplicates(existing_data["all_existing_channels"])
     return existing_data
 
+def clear_directories():
+    """Clear all JSON files in countries and categories directories to prevent stale data."""
+    for dir_path in [COUNTRIES_DIR, CATEGORIES_DIR]:
+        if os.path.exists(dir_path):
+            shutil.rmtree(dir_path)
+        os.makedirs(dir_path, exist_ok=True)
+
 def save_channels(channels, country_files, category_files, append=False):
-    """Save channels to files - can replace or append to existing content"""
+    """Save channels to files - can replace or append to existing content.
+    When append=False, clears directories first to ensure no stale files remain.
+    """
+    if not append:
+        clear_directories()
+        if os.path.exists(WORKING_CHANNELS_FILE):
+            os.remove(WORKING_CHANNELS_FILE)
+
     os.makedirs(COUNTRIES_DIR, exist_ok=True)
     os.makedirs(CATEGORIES_DIR, exist_ok=True)
 
@@ -399,6 +415,7 @@ def update_logos_for_null_channels(channels, logos_data):
     return channels
 
 async def validate_channels(session, checker, all_existing_channels, iptv_channel_ids, logos_data):
+    """Validate existing channels and collect only working ones."""
     valid_channels_count = 0
     valid_channels = []
     country_files = {}
@@ -455,6 +472,7 @@ async def validate_channels(session, checker, all_existing_channels, iptv_channe
     return valid_channels_count
 
 async def check_iptv_channels(session, checker, channels_data, streams_dict, existing_urls, logos_data):
+    """Check and add new IPTV channels that are working."""
     new_iptv_channels_count = 0
     new_channels = []
     country_files = {}
@@ -528,6 +546,7 @@ async def check_iptv_channels(session, checker, channels_data, streams_dict, exi
     return new_iptv_channels_count
 
 def get_m3u8_from_page(url_data):
+    """Extract m3u8 URLs from a page."""
     url, index = url_data
     try:
         response = requests.get(url, headers=KENYA_HEADERS, timeout=10)
@@ -543,7 +562,7 @@ def get_m3u8_from_page(url_data):
         return []
 
 async def check_single_m3u8_url(session, url, timeout=15):
-    """Check if a single m3u8 URL is valid"""
+    """Check if a single m3u8 URL is valid."""
     try:
         async with session.get(url, timeout=aiohttp.ClientTimeout(total=timeout)) as response:
             if response.status == 200:
@@ -560,7 +579,7 @@ async def check_single_m3u8_url(session, url, timeout=15):
     return url, False
 
 async def check_m3u8_urls(urls):
-    """Check multiple m3u8 URLs and return the first working one"""
+    """Check multiple m3u8 URLs and return the first working one."""
     async with aiohttp.ClientSession() as session:
         tasks = [check_single_m3u8_url(session, url) for url in urls]
         results = await asyncio.gather(*tasks)
@@ -570,7 +589,7 @@ async def check_m3u8_urls(urls):
         return None
 
 def scrape_kenya_tv_channels(logos_data):
-    """Scrape Kenya TV channels and assign logos from LOGOS_URL"""
+    """Scrape Kenya TV channels and assign logos from LOGOS_URL."""
     start_time = time.time()
     logging.info("Starting Kenya TV scrape...")
     
@@ -655,7 +674,13 @@ def scrape_kenya_tv_channels(logos_data):
         return []
 
 async def clean_and_replace_channels(session, checker, all_channels, streams_dict, m3u_channels, logos_data):
-    """Check all channels, replace non-working URLs if possible, remove non-working channels without replacement"""
+    """Check all channels, replace non-working URLs if possible, and ensure only working channels are kept.
+    
+    This function guarantees:
+    - All working channels (original or replaced) are retained.
+    - All non-working channels without replacements are removed.
+    - Directories are cleared before saving to prevent stale data.
+    """
     logging.info("\n=== Step 5: Cleaning non-working channels and replacing URLs ===")
     
     all_channels = update_logos_for_null_channels(all_channels, logos_data)
@@ -667,7 +692,7 @@ async def clean_and_replace_channels(session, checker, all_channels, streams_dic
     category_files = {}
 
     async def find_replacement_url(channel, streams_dict, m3u_channels, session, checker):
-        """Attempt to find a working replacement URL for a channel"""
+        """Attempt to find a working replacement URL for a channel."""
         channel_id = channel.get("id")
         channel_name = channel.get("name", "").lower()
 
@@ -704,14 +729,7 @@ async def clean_and_replace_channels(session, checker, all_channels, streams_dic
         channel_name = channel.get("name", "Unknown")
 
         if not channel_url:
-            logging.info(f"Keeping channel with no URL (no check possible): {channel_name}")
-            valid_channels.append(channel)
-            country = channel.get("country", "Unknown")
-            if country and country != "Unknown":
-                country_files.setdefault(country, []).append(channel)
-            for cat in channel.get("categories", []):
-                if cat:
-                    category_files.setdefault(cat, []).append(channel)
+            logging.info(f"Skipping channel with no URL: {channel_name}")
             return
 
         # Ensure logo is from logos_data
@@ -741,15 +759,14 @@ async def clean_and_replace_channels(session, checker, all_channels, streams_dic
         logging.info(f"Channel not working: {channel_name} ({channel_url}). Attempting replacement.")
         new_url = await find_replacement_url(channel, streams_dict, m3u_channels, session, checker)
         if new_url:
-            channel_copy = channel.copy()
-            channel_copy["url"] = new_url
-            valid_channels.append(channel_copy)
-            country = channel_copy.get("country", "Unknown")
+            channel["url"] = new_url  # Update in place for simplicity
+            valid_channels.append(channel)
+            country = channel.get("country", "Unknown")
             if country and country != "Unknown":
-                country_files.setdefault(country, []).append(channel_copy)
-            for cat in channel_copy.get("categories", []):
+                country_files.setdefault(country, []).append(channel)
+            for cat in channel.get("categories", []):
                 if cat:
-                    category_files.setdefault(cat, []).append(channel_copy)
+                    category_files.setdefault(cat, []).append(channel)
             replaced_channels += 1
         else:
             logging.info(f"No replacement found for {channel_name}. Removing channel.")
@@ -769,7 +786,7 @@ async def clean_and_replace_channels(session, checker, all_channels, streams_dic
             except Exception as e:
                 logging.error(f"Error processing channel: {e}")
 
-    # COMPLETELY REPLACE all files with only valid channels
+    # Save only valid channels, clearing directories first
     save_channels(valid_channels, country_files, category_files, append=False)
 
     logging.info(f"Replaced {replaced_channels} channels with new URLs")
@@ -779,7 +796,10 @@ async def clean_and_replace_channels(session, checker, all_channels, streams_dic
     return len(valid_channels), non_working_channels, replaced_channels
 
 def sync_working_channels():
-    """Sync all channels from country and category files to the main working_channels.json"""
+    """Sync all channels from country and category files to the main working_channels.json.
+    
+    This ensures consistency after cleaning, without reintroducing removed channels.
+    """
     logging.info("Syncing all channels to working_channels.json...")
     
     all_channels = []
@@ -790,8 +810,7 @@ def sync_working_channels():
                 country_file = os.path.join(COUNTRIES_DIR, filename)
                 with open(country_file, "r", encoding="utf-8") as f:
                     channels = json.load(f)
-                    channels = remove_duplicates(channels)
-                    all_channels.extend(channels)
+                    all_channels.extend(remove_duplicates(channels))
     
     if os.path.exists(CATEGORIES_DIR):
         for filename in os.listdir(CATEGORIES_DIR):
@@ -799,8 +818,7 @@ def sync_working_channels():
                 category_file = os.path.join(CATEGORIES_DIR, filename)
                 with open(category_file, "r", encoding="utf-8") as f:
                     channels = json.load(f)
-                    channels = remove_duplicates(channels)
-                    all_channels.extend(channels)
+                    all_channels.extend(remove_duplicates(channels))
     
     all_channels = remove_duplicates(all_channels)
     
@@ -810,7 +828,7 @@ def sync_working_channels():
     logging.info(f"Synced {len(all_channels)} channels to working_channels.json")
 
 async def process_m3u_urls(session, logos_data):
-    """Process M3U URLs and return count of working sports channels"""
+    """Process M3U URLs and return count of working sports channels."""
     logging.info("\n=== Step 2: Processing M3U URLs ===")
     processor = M3UProcessor()
     all_channels = []
@@ -941,7 +959,6 @@ async def main():
         all_existing_channels = existing_data["all_existing_channels"]
         
         m3u_channels = []
-        processor = M3UProcessor()
         for m3u_url in M3U_URLS:
             if not m3u_url:
                 continue
