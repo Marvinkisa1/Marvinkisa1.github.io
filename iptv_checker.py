@@ -322,18 +322,24 @@ def load_existing_data():
     existing_data["all_existing_channels"] = remove_duplicates(existing_data["all_existing_channels"])
     return existing_data
 
-def save_channels(channels, working_channels_file, country_files, category_files):
-    """Save channels to files - COMPLETELY REPLACES existing content with only valid channels"""
+def save_channels(channels, country_files, category_files, append=False):
+    """Save channels to files - can replace or append to existing content"""
     os.makedirs(COUNTRIES_DIR, exist_ok=True)
     os.makedirs(CATEGORIES_DIR, exist_ok=True)
 
     channels = remove_duplicates(channels)
     
-    # COMPLETELY REPLACE working channels file with only valid channels
+    if append and os.path.exists(WORKING_CHANNELS_FILE):
+        with open(WORKING_CHANNELS_FILE, "r", encoding="utf-8") as f:
+            current_channels = json.load(f)
+        current_channels.extend(channels)
+        channels = remove_duplicates(current_channels)
+    
+    # Write (replace or updated) working channels file
     with open(WORKING_CHANNELS_FILE, "w", encoding="utf-8") as f:
         json.dump(channels, f, indent=4, ensure_ascii=False)
 
-    # For country files - COMPLETELY REPLACE with only valid channels
+    # For country files
     for country, country_channels in country_files.items():
         if not country or country == "Unknown":
             continue
@@ -344,11 +350,17 @@ def save_channels(channels, working_channels_file, country_files, category_files
         country_channels = remove_duplicates(country_channels)
         country_file = os.path.join(COUNTRIES_DIR, f"{safe_country}.json")
         
-        # Write only the current valid channels (COMPLETE REPLACEMENT)
+        if append and os.path.exists(country_file):
+            with open(country_file, "r", encoding="utf-8") as f:
+                current_country_channels = json.load(f)
+            current_country_channels.extend(country_channels)
+            country_channels = remove_duplicates(current_country_channels)
+        
+        # Write (replace or updated)
         with open(country_file, "w", encoding="utf-8") as f:
             json.dump(country_channels, f, indent=4, ensure_ascii=False)
 
-    # For category files - COMPLETELY REPLACE with only valid channels
+    # For category files
     for category, category_channels in category_files.items():
         if not category:
             continue
@@ -359,7 +371,13 @@ def save_channels(channels, working_channels_file, country_files, category_files
         category_channels = remove_duplicates(category_channels)
         category_file = os.path.join(CATEGORIES_DIR, f"{safe_category}.json")
         
-        # Write only the current valid channels (COMPLETE REPLACEMENT)
+        if append and os.path.exists(category_file):
+            with open(category_file, "r", encoding="utf-8") as f:
+                current_category_channels = json.load(f)
+            current_category_channels.extend(category_channels)
+            category_channels = remove_duplicates(current_category_channels)
+        
+        # Write (replace or updated)
         with open(category_file, "w", encoding="utf-8") as f:
             json.dump(category_channels, f, indent=4, ensure_ascii=False)
 
@@ -382,7 +400,7 @@ def update_logos_for_null_channels(channels, logos_data):
 
 async def validate_channels(session, checker, all_existing_channels, iptv_channel_ids, logos_data):
     valid_channels_count = 0
-    batch_channels = []
+    valid_channels = []
     country_files = {}
     category_files = {}
 
@@ -407,7 +425,7 @@ async def validate_channels(session, checker, all_existing_channels, iptv_channe
                     channel_copy = channel.copy()
                     channel_copy["country"] = channel.get("country", "Unknown")
                     channel_copy["categories"] = channel.get("categories", [])
-                    batch_channels.append(channel_copy)
+                    valid_channels.append(channel_copy)
                     country = channel_copy["country"]
                     country_files.setdefault(country, []).append(channel_copy)
                     for cat in channel_copy["categories"]:
@@ -429,23 +447,16 @@ async def validate_channels(session, checker, all_existing_channels, iptv_channe
                 result = await future
                 if result:
                     valid_channels_count += 1
-                if len(batch_channels) >= BATCH_SIZE:
-                    save_channels(batch_channels, WORKING_CHANNELS_FILE, country_files, category_files)
-                    batch_channels.clear()
-                    country_files.clear()
-                    category_files.clear()
-                    await asyncio.sleep(BATCH_DELAY)
             except Exception as e:
                 logging.error(f"Error processing channel: {e}")
 
-    if batch_channels:
-        save_channels(batch_channels, WORKING_CHANNELS_FILE, country_files, category_files)
+    save_channels(valid_channels, country_files, category_files, append=False)
 
     return valid_channels_count
 
 async def check_iptv_channels(session, checker, channels_data, streams_dict, existing_urls, logos_data):
     new_iptv_channels_count = 0
-    batch_channels = []
+    new_channels = []
     country_files = {}
     category_files = {}
 
@@ -488,7 +499,7 @@ async def check_iptv_channels(session, checker, channels_data, streams_dict, exi
                         "categories": channel.get("categories", []),
                         "country": channel.get("country", "Unknown"),
                     }
-                    batch_channels.append(channel_data)
+                    new_channels.append(channel_data)
                     country_files.setdefault(channel_data["country"], []).append(channel_data)
                     for cat in channel_data["categories"]:
                         category_files.setdefault(cat, []).append(channel_data)
@@ -509,17 +520,10 @@ async def check_iptv_channels(session, checker, channels_data, streams_dict, exi
                 result = await future
                 if result:
                     new_iptv_channels_count += 1
-                if len(batch_channels) >= BATCH_SIZE:
-                    save_channels(batch_channels, WORKING_CHANNELS_FILE, country_files, category_files)
-                    batch_channels.clear()
-                    country_files.clear()
-                    category_files.clear()
-                    await asyncio.sleep(BATCH_DELAY)
             except Exception as e:
                 logging.error(f"Error processing channel: {e}")
 
-    if batch_channels:
-        save_channels(batch_channels, WORKING_CHANNELS_FILE, country_files, category_files)
+    save_channels(new_channels, country_files, category_files, append=True)
 
     return new_iptv_channels_count
 
@@ -766,7 +770,7 @@ async def clean_and_replace_channels(session, checker, all_channels, streams_dic
                 logging.error(f"Error processing channel: {e}")
 
     # COMPLETELY REPLACE all files with only valid channels
-    save_channels(valid_channels, WORKING_CHANNELS_FILE, country_files, category_files)
+    save_channels(valid_channels, country_files, category_files, append=False)
 
     logging.info(f"Replaced {replaced_channels} channels with new URLs")
     logging.info(f"Removed {non_working_channels} non-working channels (no replacement found)")
@@ -831,19 +835,7 @@ async def process_m3u_urls(session, logos_data):
                    'spor' in channel.get('raw_name', '').lower() or
                    'dazn' in channel.get('group_title', '').lower() or
                    'dazn' in channel.get('display_name', '').lower() or 
-                   'dazn' in channel.get('raw_name', '').lower() or
-                   'xxx' in channel.get('group_title', '').lower() or
-                   'xxx' in channel.get('display_name', '').lower() or 
-                   'xxx' in channel.get('raw_name', '').lower() or 
-                   'adult' in channel.get('group_title', '').lower() or
-                   'adult' in channel.get('display_name', '').lower() or 
-                   'adult' in channel.get('raw_name', '').lower() or 
-                   '18+' in channel.get('group_title', '').lower() or
-                   '18+' in channel.get('display_name', '').lower() or 
-                   '18+' in channel.get('raw_name', '').lower() or 
-                   'news' in channel.get('group_title', '').lower() or
-                   'news' in channel.get('display_name', '').lower() or 
-                   'news' in channel.get('raw_name', '').lower()
+                   'dazn' in channel.get('raw_name', '').lower()
             ]
             logging.info(f"Found {len(sports_channels)} sports channels in {m3u_url}")
             
@@ -864,7 +856,7 @@ async def process_m3u_urls(session, logos_data):
             for category in channel.get("categories", ["sports"]):
                 category_files.setdefault(category, []).append(channel)
         
-        save_channels(all_channels, WORKING_CHANNELS_FILE, country_files, category_files)
+        save_channels(all_channels, country_files, category_files, append=True)
         logging.info(f"Added {len(all_channels)} working sports channels from M3U URLs")
     
     return len(all_channels)
@@ -894,7 +886,7 @@ async def main():
                 for category in channel.get("categories", ["general"]):
                     category_files.setdefault(category, []).append(channel)
             
-            save_channels(kenya_channels, WORKING_CHANNELS_FILE, country_files, category_files)
+            save_channels(kenya_channels, country_files, category_files, append=True)
             logging.info(f"Added {len(kenya_channels)} Kenya channels to working channels")
         
         sports_channels_count = await process_m3u_urls(session, logos_data)
