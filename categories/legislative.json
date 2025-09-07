@@ -1,15 +1,5 @@
 [
     {
-        "name": "MOI TV",
-        "id": "MOITV.kh",
-        "logo": "https://i.imgur.com/fbI2ybo.png",
-        "url": "http://202.62.56.22:8080/hls/MOITV.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "KH"
-    },
-    {
         "name": "The Parliamentary Channel",
         "id": "TheParliamentaryChannel.bs",
         "logo": "https://i.imgur.com/YjPJ8zZ.png",
@@ -20,14 +10,24 @@
         "country": "BS"
     },
     {
-        "name": "Privesc.Eu TV",
-        "id": "PrivescEuTV.md",
-        "logo": "https://i.imgur.com/ukBacSn.png",
-        "url": "https://cachestar.privesc.eu/liniar/moldova/playlist.m3u8",
+        "name": "TV Camara 2",
+        "id": "TVCamara2.br",
+        "logo": "https://i.imgur.com/dHrUG1R.png",
+        "url": "https://stream3.camara.gov.br/tv2/manifest.m3u8",
         "categories": [
             "legislative"
         ],
-        "country": "MD"
+        "country": "BR"
+    },
+    {
+        "name": "TV Camara",
+        "id": "TVCamara.br",
+        "logo": "https://i.imgur.com/Sdou1Ab.png",
+        "url": "https://stream3.camara.gov.br/tv1/manifest.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "BR"
     },
     {
         "name": "Parliament TV",
@@ -40,114 +40,24 @@
         "country": "NZ"
     },
     {
-        "name": "WLCT96",
-        "id": "WLCT96.us",
-        "logo": "https://i.imgur.com/ooby0ka.png",
-        "url": "https://5a5c57d042315.streamlock.net/live11704001/ngrp:government_all/playlist.m3u8",
+        "name": "WFSU-DT2",
+        "id": "WFSUDT2.us",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/3/3c/FloridaChannel.png",
+        "url": "https://cdnapisec.kaltura.com/p/2593311/sp/259331100/playManifest/entryId/1_1tqjk60s/protocol/https/format/applehttp/a.m3u8",
         "categories": [
             "legislative"
         ],
         "country": "US"
     },
     {
-        "name": "Yuma Channel 73",
-        "id": "YumaChannel73.us",
-        "logo": "https://i.imgur.com/QsFBCWv.png",
-        "url": "https://livestream.telvue.com/yumaaz2/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
+        "name": "TV4",
+        "id": "TV4.us",
+        "logo": "https://i.imgur.com/CRvQ6sF.png",
+        "url": "https://cdn3.wowza.com/5/UWpORHhLSEs5SkJs/bullheadcity/G0860_002/playlist.m3u8",
         "categories": [
             "legislative"
         ],
         "country": "US"
-    },
-    {
-        "name": "Yuma Channel 72",
-        "id": "YumaChannel72.us",
-        "logo": "https://i.imgur.com/QsFBCWv.png",
-        "url": "https://livestream.telvue.com/yumaaz1/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "YouDotGov",
-        "id": "YouDotGov.us",
-        "logo": "https://i.imgur.com/4Mc7baR.png",
-        "url": "https://reflect-communitytv.cablecast.tv/live-3/live/stream-1/live.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Oireachtas TV Committee Room 1",
-        "id": "OireachtasTVCommitteeRoom1.ie",
-        "logo": "https://i.imgur.com/JLYqKC0.jpg",
-        "url": "https://d33zah5htxvoxb.cloudfront.net/el/live/cr1/hls.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "IE"
-    },
-    {
-        "name": "Oireachtas TV Committee Room 3",
-        "id": "OireachtasTVCommitteeRoom3.ie",
-        "logo": "https://i.imgur.com/EoAQeg5.jpg",
-        "url": "https://d33zah5htxvoxb.cloudfront.net/el/live/cr3/hls.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "IE"
-    },
-    {
-        "name": "Oireachtas TV Committee Room 2",
-        "id": "OireachtasTVCommitteeRoom2.ie",
-        "logo": "https://i.imgur.com/2Wxx2jK.jpg",
-        "url": "https://d33zah5htxvoxb.cloudfront.net/el/live/cr2/hls.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "IE"
-    },
-    {
-        "name": "Oireachtas TV Committee Room 4",
-        "id": "OireachtasTVCommitteeRoom4.ie",
-        "logo": "https://i.imgur.com/U9U4rgs.jpg",
-        "url": "https://d33zah5htxvoxb.cloudfront.net/el/live/cr4/hls.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "IE"
-    },
-    {
-        "name": "Oireachtas TV",
-        "id": "OireachtasTV.ie",
-        "logo": "https://i.imgur.com/aC4fsCI.png",
-        "url": "https://d33zah5htxvoxb.cloudfront.net/el/live/oirtv/hls.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "IE"
-    },
-    {
-        "name": "Oireachtas TV Dail Eireann",
-        "id": "OireachtasTVDailEireann.ie",
-        "logo": "https://i.imgur.com/mexKiS0.jpg",
-        "url": "https://d33zah5htxvoxb.cloudfront.net/el/live/dail/hls.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "IE"
-    },
-    {
-        "name": "Oireachtas TV Seanad Eireann",
-        "id": "OireachtasTVSeanadEireann.ie",
-        "logo": "https://i.imgur.com/c5TI2DT.jpg",
-        "url": "https://d33zah5htxvoxb.cloudfront.net/el/live/seanad/hls.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "IE"
     },
     {
         "name": "Parliament TV",
@@ -158,5 +68,35 @@
             "legislative"
         ],
         "country": "MN"
+    },
+    {
+        "name": "TV NRSR",
+        "id": "TVNRSR.sk",
+        "logo": "https://i.imgur.com/hsJsu3I.png",
+        "url": "https://n11.stv.livebox.sk/stv-tv/stv4.stream/playlist.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "SK"
+    },
+    {
+        "name": "TV from the Danish Parliament",
+        "id": "TVfromtheDanishParliament.dk",
+        "logo": "https://i.imgur.com/RqQDUzX.png",
+        "url": "https://cdnapi.kaltura.com/p/2158211/sp/327418300/playManifest/entryId/1_24gfa7qq/protocol/https/format/applehttp/a.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "DK"
+    },
+    {
+        "name": "Thai Parliament Television",
+        "id": "ThaiParliamentTelevision.th",
+        "logo": "https://i.imgur.com/Okcnmt6.png",
+        "url": "https://tv-live.tpchannel.org/live/tv.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "TH"
     }
 ]

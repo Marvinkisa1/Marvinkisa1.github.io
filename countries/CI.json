@@ -1,11 +1,42 @@
 [
     {
-        "name": "TV Al Bayane",
-        "id": "TVAlBayane.ci",
-        "logo": "https://i.imgur.com/Xs9oEG8.png",
-        "url": "http://69.64.57.208/albayanetv/index.m3u8",
+        "name": "RTI La 3",
+        "id": "RTILa3.ci",
+        "logo": "https://i.imgur.com/HdNshgF.png",
+        "url": "http://69.64.57.208/la3/index.m3u8",
+        "categories": [
+            "music",
+            "sports"
+        ],
+        "country": "CI"
+    },
+    {
+        "name": "RTI 2",
+        "id": "RTI2.ci",
+        "logo": "https://i.imgur.com/73ueXrp.png",
+        "url": "http://69.64.57.208:8080/rti2/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "CI"
+    },
+    {
+        "name": "RTVC",
+        "id": "RTVC.ci",
+        "logo": "https://i.imgur.com/oXuSkHz.png",
+        "url": "https://cdn140m.panaccess.com/HLS/RTVC/index.m3u8",
         "categories": [
             "religious"
+        ],
+        "country": "CI"
+    },
+    {
+        "name": "Reflet TV",
+        "id": "RefletTV.ci",
+        "logo": "https://i.imgur.com/EauXR22.png",
+        "url": "https://edge-a3.evrideo.tv/8f37c9f0-fe22-44f4-b64a-76ad11730daf_1000026630_HLS/manifest.m3u8",
+        "categories": [
+            "general"
         ],
         "country": "CI"
     }

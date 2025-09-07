@@ -1,9 +1,89 @@
 [
     {
-        "name": "Wesal TV",
-        "id": "WesalTV.id",
-        "logo": "https://i.imgur.com/Uv8RWks.png",
-        "url": "https://ams.juraganstreaming.com:5443/LiveApp/streams/wesaltv.m3u8",
+        "name": "TVKU",
+        "id": "TVKU.id",
+        "logo": "https://i.imgur.com/BAklJGy.png",
+        "url": "https://tvku.tv/hlsstream/hls/live.m3u8",
+        "categories": [],
+        "country": "ID"
+    },
+    {
+        "name": "TVRI Sport",
+        "id": "TVRISport.id",
+        "logo": "https://i.postimg.cc/PrqBt2h1/tvrisport.png",
+        "url": "https://ott-balancer.tvri.go.id/live/eds/SportHD/hls/SportHD.m3u8",
+        "categories": [
+            "sports"
+        ],
+        "country": "ID"
+    },
+    {
+        "name": "TVRI World",
+        "id": "TVRIWorld.id",
+        "logo": "https://i.postimg.cc/28Xg3h8M/tvriworld.png",
+        "url": "https://ott-balancer.tvri.go.id/live/eds/TVRIWorld/hls/TVRIWorld.m3u8",
+        "categories": [],
+        "country": "ID"
+    },
+    {
+        "name": "TVRI",
+        "id": "TVRI.id",
+        "logo": "https://i.postimg.cc/NM7W0n5k/tvri.png",
+        "url": "https://ott-balancer.tvri.go.id/live/eds/Jogjakarta/hls/Jogjakarta.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "ID"
+    },
+    {
+        "name": "TV Mu",
+        "id": "TVMu.id",
+        "logo": "https://i.imgur.com/rR2iPBk.png",
+        "url": "https://e.siar.us/live/tvmu.m3u8",
+        "categories": [],
+        "country": "ID"
+    },
+    {
+        "name": "TV Tabalong",
+        "id": "TVTabalong.id",
+        "logo": "https://i.imgur.com/2YhDH98.png",
+        "url": "https://5bf7b725107e5.streamlock.net/tvtabalong/tvtabalong/playlist.m3u8",
+        "categories": [],
+        "country": "ID"
+    },
+    {
+        "name": "Trans7",
+        "id": "Trans7.id",
+        "logo": "https://i.imgur.com/fAbGImS.png",
+        "url": "https://video.detik.com/trans7/smil:trans7.smil/index.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "ID"
+    },
+    {
+        "name": "Trans TV",
+        "id": "TransTV.id",
+        "logo": "https://i.postimg.cc/4y48dSTV/transtv.png",
+        "url": "https://video.detik.com/transtv/smil:transtv.smil/index.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "ID"
+    },
+    {
+        "name": "TV 9 Nusantara",
+        "id": "TV9Nusantara.id",
+        "logo": "https://i.imgur.com/xPjWyiL.png",
+        "url": "https://5bf7b725107e5.streamlock.net/tv9/tv9/playlist.m3u8",
+        "categories": [],
+        "country": "ID"
+    },
+    {
+        "name": "UGTV",
+        "id": "UGTV.id",
+        "logo": "https://i.imgur.com/iEKDH26.png",
+        "url": "https://cdn.gunadarma.ac.id/streams/ugtv/ingestugtv.m3u8",
         "categories": [],
         "country": "ID"
     }
