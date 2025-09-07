@@ -535,7 +535,7 @@ def get_m3u8_from_page(url_data):
         logging.info(f"[{index}] Processed linked page: {url} - Found {len(valid_m3u8_links)} valid m3u8 links")
         return valid_m3u8_links
     except Exception as e:
-        logging.error(f"[{index] Error processing {url}: {str(e)}")
+        logging.error(f"[{index}] Error processing {url}: {str(e)}")
         return []
 
 async def check_single_m3u8_url(session, url, timeout=15):
