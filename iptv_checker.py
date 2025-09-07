@@ -323,17 +323,17 @@ def load_existing_data():
     return existing_data
 
 def save_channels(channels, working_channels_file, country_files, category_files):
-    """Save channels to files - COMPLETELY REPLACES existing content"""
+    """Save channels to files - COMPLETELY REPLACES existing content with only valid channels"""
     os.makedirs(COUNTRIES_DIR, exist_ok=True)
     os.makedirs(CATEGORIES_DIR, exist_ok=True)
 
     channels = remove_duplicates(channels)
     
-    # COMPLETELY REPLACE working channels file
+    # COMPLETELY REPLACE working channels file with only valid channels
     with open(WORKING_CHANNELS_FILE, "w", encoding="utf-8") as f:
         json.dump(channels, f, indent=4, ensure_ascii=False)
 
-    # COMPLETELY REPLACE country files
+    # For country files - COMPLETELY REPLACE with only valid channels
     for country, country_channels in country_files.items():
         if not country or country == "Unknown":
             continue
@@ -348,7 +348,7 @@ def save_channels(channels, working_channels_file, country_files, category_files
         with open(country_file, "w", encoding="utf-8") as f:
             json.dump(country_channels, f, indent=4, ensure_ascii=False)
 
-    # COMPLETELY REPLACE category files
+    # For category files - COMPLETELY REPLACE with only valid channels
     for category, category_channels in category_files.items():
         if not category:
             continue
@@ -535,7 +535,7 @@ def get_m3u8_from_page(url_data):
         logging.info(f"[{index}] Processed linked page: {url} - Found {len(valid_m3u8_links)} valid m3u8 links")
         return valid_m3u8_links
     except Exception as e:
-        logging.error(f"[{index}] Error processing {url}: {str(e)}")
+        logging.error(f"[{index] Error processing {url}: {str(e)}")
         return []
 
 async def check_single_m3u8_url(session, url, timeout=15):
