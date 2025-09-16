@@ -1,5 +1,15 @@
 [
     {
+        "name": "CNBC Indonesia",
+        "id": "CNBCIndonesia.id",
+        "logo": "https://i.imgur.com/bUfeG7Y.png",
+        "url": "https://live.cnbcindonesia.com/livecnbc/smil:cnbctv.smil/playlist.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "ID"
+    },
+    {
         "name": "Bloomberg HT",
         "id": "BloombergHT.tr",
         "logo": "https://i.imgur.com/bmkXfIE.png",
@@ -18,16 +28,6 @@
             "business"
         ],
         "country": "CN"
-    },
-    {
-        "name": "CNBC Indonesia",
-        "id": "CNBCIndonesia.id",
-        "logo": "https://i.imgur.com/bUfeG7Y.png",
-        "url": "https://live.cnbcindonesia.com/livecnbc/smil:cnbctv.smil/playlist.m3u8",
-        "categories": [
-            "business"
-        ],
-        "country": "ID"
     },
     {
         "name": "Zee Business",
@@ -62,17 +62,6 @@
         "country": "SA"
     },
     {
-        "name": "Asharq News",
-        "id": "AsharqNews.sa",
-        "logo": "https://i.imgur.com/bqRC3sl.png",
-        "url": "https://svs.itworkscdn.net/bloomberarlive/bloomberg.smil/playlist_dvr.m3u8",
-        "categories": [
-            "business",
-            "news"
-        ],
-        "country": "SA"
-    },
-    {
         "name": "Asharq Radio",
         "id": "AsharqRadio.sa",
         "logo": "https://i.imgur.com/M6K8cD3.jpeg",
@@ -84,14 +73,15 @@
         "country": "SA"
     },
     {
-        "name": "Ausbiz TV",
-        "id": "AusbizTV.au",
-        "logo": "https://i.imgur.com/8vGGdB0.png",
-        "url": "https://d9quh89lh7dtw.cloudfront.net/public-output/index.m3u8",
+        "name": "Asharq News",
+        "id": "AsharqNews.sa",
+        "logo": "https://i.imgur.com/bqRC3sl.png",
+        "url": "https://svs.itworkscdn.net/bloomberarlive/bloomberg.smil/playlist_dvr.m3u8",
         "categories": [
-            "business"
+            "business",
+            "news"
         ],
-        "country": "AU"
+        "country": "SA"
     },
     {
         "name": "Canal E",
@@ -103,6 +93,16 @@
             "news"
         ],
         "country": "AR"
+    },
+    {
+        "name": "Ausbiz TV",
+        "id": "AusbizTV.au",
+        "logo": "https://i.imgur.com/8vGGdB0.png",
+        "url": "https://d9quh89lh7dtw.cloudfront.net/public-output/index.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "AU"
     },
     {
         "name": "RBK-TV",
@@ -126,6 +126,36 @@
         "country": "UA"
     },
     {
+        "name": "Jobplus TV",
+        "id": "JobplusTV.kr",
+        "logo": "https://i.imgur.com/Y5Zg5SR.png",
+        "url": "https://live.jobplustv.or.kr/live/wowtvlive1.sdp/playlist.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "KR"
+    },
+    {
+        "name": "TD Ameritrade Network",
+        "id": "TDAmeritradeNetwork.us",
+        "logo": "https://i.imgur.com/RbVdkJ5.png",
+        "url": "https://tdameritrade-distro.amagi.tv/playlist.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Ameritrade",
+        "id": "Ameritrade.us",
+        "logo": "https://images-na.ssl-images-amazon.com/images/I/71CZKwin9mL.png",
+        "url": "https://tdameritrade-vizio.amagi.tv/playlist.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "US"
+    },
+    {
         "name": "Fox Business Network",
         "id": "FoxBusinessNetwork.us",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Fox_Business.svg/512px-Fox_Business.svg.png",
@@ -146,20 +176,10 @@
         "country": "US"
     },
     {
-        "name": "TD Ameritrade Network",
-        "id": "TDAmeritradeNetwork.us",
-        "logo": "https://i.imgur.com/RbVdkJ5.png",
-        "url": "https://tdameritrade-distro.amagi.tv/playlist.m3u8",
-        "categories": [
-            "business"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Ameritrade",
-        "id": "Ameritrade.us",
-        "logo": "https://images-na.ssl-images-amazon.com/images/I/71CZKwin9mL.png",
-        "url": "https://tdameritrade-vizio.amagi.tv/playlist.m3u8",
+        "name": "CNBC World",
+        "id": "CNBCWorld.us",
+        "logo": "https://zap2it.tmsimg.com/h3/NowShowing/26849/s26849_ll_h15_ab.png?w=512",
+        "url": "https://fl4.moveonjoy.com/CNBC_World/index.m3u8",
         "categories": [
             "business"
         ],
@@ -184,16 +204,6 @@
             "business"
         ],
         "country": "US"
-    },
-    {
-        "name": "Business 24 Africa",
-        "id": "Business24Africa.ci",
-        "logo": "https://i.imgur.com/zZFl3vy.png",
-        "url": "https://cdn-globecast.akamaized.net/live/eds/business24_tv/hls_video/index.m3u8",
-        "categories": [
-            "business"
-        ],
-        "country": "CI"
     },
     {
         "name": "Kanaal Z",
@@ -236,14 +246,14 @@
         "country": "AE"
     },
     {
-        "name": "DeFiance Media",
-        "id": "DeFianceMedia.pr",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5e6HtuC9SEacvU98D5CWN9eBhERsc_WU73KZAyKHaePqMkJloAQ1lGfSGHqg-W_j5Z2g&usqp=CAU",
-        "url": "https://amg01529-defiancetv-defiancemedia-glewed-tre8x.amagi.tv/playlist.m3u8",
+        "name": "Business 24 Africa",
+        "id": "Business24Africa.ci",
+        "logo": "https://i.imgur.com/zZFl3vy.png",
+        "url": "https://cdn-globecast.akamaized.net/live/eds/business24_tv/hls_video/index.m3u8",
         "categories": [
             "business"
         ],
-        "country": "PR"
+        "country": "CI"
     },
     {
         "name": "Bloomberg TV Mongolia",
@@ -266,16 +276,6 @@
         "country": "AE"
     },
     {
-        "name": "Tevex",
-        "id": "Tevex.cl",
-        "logo": "https://i.imgur.com/FnInQRd.png",
-        "url": "https://v4.tustreaming.cl/tevexinter/index.m3u8",
-        "categories": [
-            "business"
-        ],
-        "country": "CL"
-    },
-    {
         "name": "apart TV",
         "id": "apartTV.lu",
         "logo": "https://i.imgur.com/IBcMIcZ.png",
@@ -288,16 +288,6 @@
         "country": "LU"
     },
     {
-        "name": "Cafe Trade TV",
-        "id": "CafeTradeTV.ir",
-        "logo": "https://i.ibb.co/GW4cMfc/cafe-trade-tv.png",
-        "url": "https://cafetradehls.wns.live/hls/stream.m3u8",
-        "categories": [
-            "business"
-        ],
-        "country": "IR"
-    },
-    {
         "name": "CNBC Europe",
         "id": "CNBCEurope.uk",
         "logo": "https://i.imgur.com/B6sfpDa.png",
@@ -306,6 +296,36 @@
             "business"
         ],
         "country": "UK"
+    },
+    {
+        "name": "Tevex",
+        "id": "Tevex.cl",
+        "logo": "https://i.imgur.com/FnInQRd.png",
+        "url": "https://v4.tustreaming.cl/tevexinter/index.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "CL"
+    },
+    {
+        "name": "DeFiance Media",
+        "id": "DeFianceMedia.pr",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5e6HtuC9SEacvU98D5CWN9eBhERsc_WU73KZAyKHaePqMkJloAQ1lGfSGHqg-W_j5Z2g&usqp=CAU",
+        "url": "https://amg01529-defiancetv-defiancemedia-glewed-tre8x.amagi.tv/playlist.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "PR"
+    },
+    {
+        "name": "Cafe Trade TV",
+        "id": "CafeTradeTV.ir",
+        "logo": "https://i.ibb.co/GW4cMfc/cafe-trade-tv.png",
+        "url": "https://cafetradehls.wns.live/hls/stream.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "IR"
     },
     {
         "name": "Telewizja Biznesowa",
