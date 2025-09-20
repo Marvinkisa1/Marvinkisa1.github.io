@@ -10,16 +10,6 @@
         "country": "KR"
     },
     {
-        "name": "HLDR-DTV",
-        "id": "HLDRDTV.kr",
-        "logo": "https://i.imgur.com/zVunmpQ.png",
-        "url": "http://1.222.207.80:1935/live/cjbtv/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "KR"
-    },
-    {
         "name": "HLAQ-DTV",
         "id": "HLAQDTV.kr",
         "logo": "https://i.imgur.com/FGsKCH3.png",
@@ -40,16 +30,6 @@
         "country": "KR"
     },
     {
-        "name": "HLKJ-DTV",
-        "id": "HLKJDTV.kr",
-        "logo": "https://i.imgur.com/iAz0Psw.png",
-        "url": "http://123.140.197.22/stream/1/play.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "KR"
-    },
-    {
         "name": "HLAO-DTV",
         "id": "HLAODTV.kr",
         "logo": "https://i.imgur.com/uR0gScb.png",
@@ -60,12 +40,22 @@
         "country": "KR"
     },
     {
-        "name": "National Assembly TV",
-        "id": "NationalAssemblyTV.kr",
-        "logo": "https://i.imgur.com/UKdB8vD.png",
-        "url": "https://github.com/BellezaEmporium/IPTV_Exception/raw/master/channels/kr/natv.m3u8",
+        "name": "HLKJ-DTV",
+        "id": "HLKJDTV.kr",
+        "logo": "https://i.imgur.com/iAz0Psw.png",
+        "url": "http://123.140.197.22/stream/1/play.m3u8",
         "categories": [
-            "legislative"
+            "general"
+        ],
+        "country": "KR"
+    },
+    {
+        "name": "HLCG-DTV",
+        "id": "HLCGDTV.kr",
+        "logo": "https://i.imgur.com/ABdmZMc.png",
+        "url": "http://61.82.49.4:1935/live/_definst_/tv.stream/playlist.m3u8",
+        "categories": [
+            "general"
         ],
         "country": "KR"
     },
@@ -91,22 +81,257 @@
         "country": "KR"
     },
     {
-        "name": "EBS 2TV",
-        "id": "EBS2TV.kr",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/EBS_2TV_Logo.svg/512px-EBS_2TV_Logo.svg.png",
-        "url": "https://ebsonair.ebs.co.kr/ebs2familypc/familypc1m/playlist.m3u8",
+        "name": "Gugbang TV",
+        "id": "GugbangTV.kr",
+        "logo": "https://i.imgur.com/f1tz5fg.png",
+        "url": "http://mediaworks.dema.mil.kr:1935/live_edge/cudo.sdp/playlist.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "KR"
+    },
+    {
+        "name": "National Assembly TV",
+        "id": "NationalAssemblyTV.kr",
+        "logo": "https://i.imgur.com/UKdB8vD.png",
+        "url": "https://github.com/BellezaEmporium/IPTV_Exception/raw/master/channels/kr/natv.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "KR"
+    },
+    {
+        "name": "Jobplus TV",
+        "id": "JobplusTV.kr",
+        "logo": "https://i.imgur.com/Y5Zg5SR.png",
+        "url": "https://live.jobplustv.or.kr/live/wowtvlive1.sdp/playlist.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "KR"
+    },
+    {
+        "name": "Lotte OneTV",
+        "id": "LotteOneTV.kr",
+        "logo": "https://i.imgur.com/bXe7tYE.png",
+        "url": "https://onetvhlslive.lotteimall.com/lotteonetvlive/lotteonetvlive.mp4.m3u8",
+        "categories": [
+            "shop"
+        ],
+        "country": "KR"
+    },
+    {
+        "name": "TBS TV",
+        "id": "TBSTV.kr",
+        "logo": "https://i.imgur.com/iOnWS6V.png",
+        "url": "https://cdntv.tbs.seoul.kr/tbs/tbs_tv_web.smil/playlist.m3u8",
+        "categories": [],
+        "country": "KR"
+    },
+    {
+        "name": "Hyundai Home Shopping + Shop",
+        "id": "HyundaiHomeShoppingPlusShop.kr",
+        "logo": "https://i.imgur.com/DoNOuZE.png",
+        "url": "https://dtvstreaming.hyundaihmall.com/newcjp3/_definst_/newcjpstream.smil/playlist.m3u8",
+        "categories": [
+            "shop"
+        ],
+        "country": "KR"
+    },
+    {
+        "name": "HLAJ-DTV",
+        "id": "HLAJDTV.kr",
+        "logo": "https://i.imgur.com/JM4rxGU.png",
+        "url": "https://wowza.jejumbc.com/live/tv_jejumbc/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "KR"
+    },
+    {
+        "name": "Shinsegae TV Shopping",
+        "id": "ShinsegaeTVShopping.kr",
+        "logo": "https://i.imgur.com/Hq3yjqA.png",
+        "url": "https://liveout.catenoid.net/live-02-shinsegaetvshopping/shinsegaetvshopping_720p/playlist.m3u8",
+        "categories": [
+            "shop"
+        ],
+        "country": "KR"
+    },
+    {
+        "name": "W Shopping",
+        "id": "WShopping.kr",
+        "logo": "https://i.imgur.com/hfXjVJd.png",
+        "url": "https://liveout.catenoid.net/live-05-wshopping/wshopping_1500k/playlist.m3u8",
+        "categories": [
+            "shop"
+        ],
+        "country": "KR"
+    },
+    {
+        "name": "NBS",
+        "id": "NBS.kr",
+        "logo": "https://i.imgur.com/pOSroOE.png",
+        "url": "https://media.joycorp.co.kr:4443/live/ngrp:live_all/playlist.m3u8",
         "categories": [
             "education"
         ],
         "country": "KR"
     },
     {
-        "name": "EBS Kids",
-        "id": "EBSKids.kr",
-        "logo": "https://i.imgur.com/62oo8Bx.png",
-        "url": "https://ebsonair.ebs.co.kr/ebsufamilypc/familypc1m/playlist.m3u8",
+        "name": "Good TV",
+        "id": "GoodTV.kr",
+        "logo": "https://i.ibb.co/1v913gn/logo-goodtv.png",
+        "url": "http://mobliestream.c3tv.com:1935/live/goodtv.sdp/playlist.m3u8",
         "categories": [
-            "kids"
+            "religious"
+        ],
+        "country": "KR"
+    },
+    {
+        "name": "HLCQ-DTV",
+        "id": "HLCQDTV.kr",
+        "logo": "https://i.imgur.com/HCbvAiM.png",
+        "url": "https://ns1.tjmbc.co.kr/live/myStream.sdp/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "KR"
+    },
+    {
+        "name": "HLDH-DTV",
+        "id": "HLDHDTV.kr",
+        "logo": "https://i.imgur.com/Srsw4Mi.png",
+        "url": "https://vod.ikbc.co.kr/KBCTV/tv/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "KR"
+    },
+    {
+        "name": "OUN",
+        "id": "OUN.kr",
+        "logo": "https://i.imgur.com/7s6JtcU.png",
+        "url": "https://live.knou.ac.kr/knou1/live1/playlist.m3u8",
+        "categories": [
+            "education"
+        ],
+        "country": "KR"
+    },
+    {
+        "name": "TV Chosun 2",
+        "id": "TVChosun2.kr",
+        "logo": "https://i.imgur.com/Ev5JoBJ.png",
+        "url": "http://onair2.cdn.tvchosun.com/origin2/_definst_/tvchosun_s3/playlist.m3u8",
+        "categories": [],
+        "country": "KR"
+    },
+    {
+        "name": "FGTV",
+        "id": "FGTV.kr",
+        "logo": "https://i.ibb.co/crxz0fd/yfgc-hearder-logo.png",
+        "url": "https://fgtvlive.fgtv.com/smil:fgtv.smil/playlist.m3u8",
+        "categories": [
+            "religious"
+        ],
+        "country": "KR"
+    },
+    {
+        "name": "Arirang Radio",
+        "id": "ArirangRadio.kr",
+        "logo": "https://i.imgur.com/dtfiG9k.png",
+        "url": "https://amdlive-ch02-ctnd-com.akamaized.net/arirang_3ch/smil:arirang_3ch.smil/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "KR"
+    },
+    {
+        "name": "Arirang UN",
+        "id": "ArirangUN.kr",
+        "logo": "https://i.imgur.com/Jdy3WNm.png",
+        "url": "https://amdlive-ch02-ctnd-com.akamaized.net/arirang_2ch/smil:arirang_2ch.smil/playlist.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "KR"
+    },
+    {
+        "name": "KBS LiveCam DokDo",
+        "id": "KBSLiveCamDokDo.kr",
+        "logo": "https://i.imgur.com/7mZnPO5.png",
+        "url": "http://kbs-dokdo.gscdn.com/dokdo_300/dokdo_300.stream/playlist.m3u8",
+        "categories": [],
+        "country": "KR"
+    },
+    {
+        "name": "KTV",
+        "id": "KTV.kr",
+        "logo": "https://i.ibb.co/WkrLDJW/Screenshot-20230714-135036-removebg-preview.png",
+        "url": "https://hlive.ktv.go.kr/live/klive_h.stream/playlist.m3u8",
+        "categories": [
+            "legislative",
+            "news"
+        ],
+        "country": "KR"
+    },
+    {
+        "name": "GS Shop",
+        "id": "GSShop.kr",
+        "logo": "https://i.imgur.com/F7QDbEy.png",
+        "url": "https://gstv-gsshop.gsshop.com/gsshop_hd/gsshop_hd.stream/playlist.m3u8",
+        "categories": [
+            "shop"
+        ],
+        "country": "KR"
+    },
+    {
+        "name": "BTN TV",
+        "id": "BTNTV.kr",
+        "logo": "https://i.imgur.com/sOoS7RQ.png",
+        "url": "https://btn.nowcdn.co.kr/btn/btnlive2m/playlist.m3u8",
+        "categories": [
+            "religious"
+        ],
+        "country": "KR"
+    },
+    {
+        "name": "Gugak TV",
+        "id": "GugakTV.kr",
+        "logo": "https://i.imgur.com/Ey7Htm8.png",
+        "url": "https://mgugaklive.nowcdn.co.kr/gugakvideo/gugakvideo.stream/playlist.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "KR"
+    },
+    {
+        "name": "Home & Shopping",
+        "id": "HomeShopping.kr",
+        "logo": "https://i.imgur.com/IcexRXG.png",
+        "url": "https://s28.qtcdn.co.kr/media/liveM3U8/idx/518045142/enc/1860408350/playlist.m3u8",
+        "categories": [
+            "shop"
+        ],
+        "country": "KR"
+    },
+    {
+        "name": "BBS TV",
+        "id": "BBSTV.kr",
+        "logo": "https://i.imgur.com/01UmXRe.png",
+        "url": "http://bbstv.clouducs.com:1935/bbstv-live/livestream/playlist.m3u8",
+        "categories": [
+            "religious"
+        ],
+        "country": "KR"
+    },
+    {
+        "name": "Gongyoung Home Shopping",
+        "id": "GongyoungHomeShopping.kr",
+        "logo": "https://i.imgur.com/YL3rpd7.png",
+        "url": "https://etv.publichs.com/live5.stream/playlist.m3u8",
+        "categories": [
+            "shop"
         ],
         "country": "KR"
     },
@@ -131,10 +356,20 @@
         "country": "KR"
     },
     {
-        "name": "EBS Plus 2",
-        "id": "EBSPlus2.kr",
-        "logo": "https://i.imgur.com/pllIMGi.png",
-        "url": "https://ebsonair.ebs.co.kr/plus2familypc/familypc1m/playlist.m3u8",
+        "name": "TV Chosun",
+        "id": "TVChosun.kr",
+        "logo": "https://i.imgur.com/62EwaCG.png",
+        "url": "http://onair.cdn.tvchosun.com/origin1/_definst_/tvchosun_s1/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "KR"
+    },
+    {
+        "name": "EBS 2TV",
+        "id": "EBS2TV.kr",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/EBS_2TV_Logo.svg/512px-EBS_2TV_Logo.svg.png",
+        "url": "https://ebsonair.ebs.co.kr/ebs2familypc/familypc1m/playlist.m3u8",
         "categories": [
             "education"
         ],
@@ -151,30 +386,50 @@
         "country": "KR"
     },
     {
-        "name": "HLAT-DTV",
-        "id": "HLATDTV.kr",
-        "logo": "https://i.imgur.com/3VSuYsn.png",
-        "url": "https://5c3639aa99149.streamlock.net/live_TV/tv/playlist.m3u8",
+        "name": "EBS Plus 2",
+        "id": "EBSPlus2.kr",
+        "logo": "https://i.imgur.com/pllIMGi.png",
+        "url": "https://ebsonair.ebs.co.kr/plus2familypc/familypc1m/playlist.m3u8",
+        "categories": [
+            "education"
+        ],
+        "country": "KR"
+    },
+    {
+        "name": "EBS Kids",
+        "id": "EBSKids.kr",
+        "logo": "https://i.imgur.com/62oo8Bx.png",
+        "url": "https://ebsonair.ebs.co.kr/ebsufamilypc/familypc1m/playlist.m3u8",
+        "categories": [
+            "kids"
+        ],
+        "country": "KR"
+    },
+    {
+        "name": "Shopping NT",
+        "id": "ShoppingNT.kr",
+        "logo": "https://i.imgur.com/BgbJp5X.png",
+        "url": "https://live.shoppingntmall.com/live/10011.m3u8",
+        "categories": [
+            "shop"
+        ],
+        "country": "KR"
+    },
+    {
+        "name": "HLCT-DTV",
+        "id": "HLCTDTV.kr",
+        "logo": "https://i.imgur.com/LlYQR8m.png",
+        "url": "https://5ee1ec6f32118.streamlock.net/live/livetv/playlist.m3u8",
         "categories": [
             "general"
         ],
         "country": "KR"
     },
     {
-        "name": "NHTV",
-        "id": "NHTV.kr",
-        "logo": "https://i.imgur.com/DfECkgB.png",
-        "url": "http://nonghyup.flive.skcdn.com/nonghyup/_definst_/nhlive/playlist.m3u8",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "KR"
-    },
-    {
-        "name": "HLAW-DTV",
-        "id": "HLAWDTV.kr",
-        "logo": "https://i.imgur.com/nqRWpUu.png",
-        "url": "http://andong.webcasting.co.kr/live/mbc/playlist.m3u8",
+        "name": "HLAN-DTV",
+        "id": "HLANDTV.kr",
+        "logo": "https://i.imgur.com/lthyx2P.png",
+        "url": "https://stream.chmbc.co.kr/TV/myStream/playlist.m3u8",
         "categories": [
             "general"
         ],
@@ -187,6 +442,16 @@
         "url": "https://gstv-myshop.gsshop.com/myshop_hd/myshop_hd.stream/playlist.m3u8",
         "categories": [
             "shop"
+        ],
+        "country": "KR"
+    },
+    {
+        "name": "HLAT-DTV",
+        "id": "HLATDTV.kr",
+        "logo": "https://i.imgur.com/3VSuYsn.png",
+        "url": "https://5c3639aa99149.streamlock.net/live_TV/tv/playlist.m3u8",
+        "categories": [
+            "general"
         ],
         "country": "KR"
     },
@@ -211,50 +476,40 @@
         "country": "KR"
     },
     {
-        "name": "Lotte Home Shopping",
-        "id": "LotteHomeShopping.kr",
-        "logo": "https://i.imgur.com/dJeNehc.png",
-        "url": "https://pchlslivesw.lotteimall.com/live/livestream/lotteimalllive_mp4.m3u8",
+        "name": "Hyundai Home Shopping",
+        "id": "HyundaiHomeShopping.kr",
+        "logo": "https://i.imgur.com/NJpECmq.png",
+        "url": "https://livejj.hyundaihmall.com:8443/live/ngrp:hmall.stream_pc/playlist.m3u8",
         "categories": [
             "shop"
         ],
         "country": "KR"
     },
     {
-        "name": "TV Chosun",
-        "id": "TVChosun.kr",
-        "logo": "https://i.imgur.com/62EwaCG.png",
-        "url": "http://onair.cdn.tvchosun.com/origin1/_definst_/tvchosun_s1/playlist.m3u8",
+        "name": "HLQS-DTV",
+        "id": "HLQSDTV.kr",
+        "logo": "https://i.imgur.com/oWB3ApR.png",
+        "url": "https://vod.obs.co.kr:444/live/obsstream1/tv.stream/playlist.m3u8",
         "categories": [
             "general"
         ],
         "country": "KR"
     },
     {
-        "name": "CJ OnStyle",
-        "id": "CJOnStyle.kr",
-        "logo": "https://i.imgur.com/JiSfEBv.png",
-        "url": "https://live-ch1.cjonstyle.net/cjmalllive/stream2/playlist.m3u8",
+        "name": "HLAW-DTV",
+        "id": "HLAWDTV.kr",
+        "logo": "https://i.imgur.com/nqRWpUu.png",
+        "url": "http://andong.webcasting.co.kr/live/mbc/playlist.m3u8",
         "categories": [
-            "shop"
+            "general"
         ],
         "country": "KR"
     },
     {
-        "name": "CGNTV South Korea",
-        "id": "CGNTVSouthKorea.kr",
-        "logo": "https://i.imgur.com/zwZASOB.png",
-        "url": "https://du35ivadp6cxj.cloudfront.net/out/v1/81781d23cbbf490990b2aa9181d4ce19/CGNWebLiveKR.m3u8",
-        "categories": [
-            "religious"
-        ],
-        "country": "KR"
-    },
-    {
-        "name": "Shopping NT",
-        "id": "ShoppingNT.kr",
-        "logo": "https://i.imgur.com/BgbJp5X.png",
-        "url": "https://live.shoppingntmall.com/live/10011.m3u8",
+        "name": "Lotte Home Shopping",
+        "id": "LotteHomeShopping.kr",
+        "logo": "https://i.imgur.com/dJeNehc.png",
+        "url": "https://pchlslivesw.lotteimall.com/live/livestream/lotteimalllive_mp4.m3u8",
         "categories": [
             "shop"
         ],
@@ -271,247 +526,22 @@
         "country": "KR"
     },
     {
-        "name": "Hyundai Home Shopping + Shop",
-        "id": "HyundaiHomeShoppingPlusShop.kr",
-        "logo": "https://i.imgur.com/DoNOuZE.png",
-        "url": "https://dtvstreaming.hyundaihmall.com/newcjp3/_definst_/newcjpstream.smil/playlist.m3u8",
+        "name": "CJ OnStyle",
+        "id": "CJOnStyle.kr",
+        "logo": "https://i.imgur.com/JiSfEBv.png",
+        "url": "https://live-ch1.cjonstyle.net/cjmalllive/stream2/playlist.m3u8",
         "categories": [
             "shop"
         ],
         "country": "KR"
     },
     {
-        "name": "HLDP-DTV",
-        "id": "HLDPDTV.kr",
-        "logo": "https://i.imgur.com/BBCoqIf.png",
-        "url": "https://stream.ubc.co.kr/hls/ubctvstream/index.m3u8",
+        "name": "NHTV",
+        "id": "NHTV.kr",
+        "logo": "https://i.imgur.com/DfECkgB.png",
+        "url": "http://nonghyup.flive.skcdn.com/nonghyup/_definst_/nhlive/playlist.m3u8",
         "categories": [
-            "general"
-        ],
-        "country": "KR"
-    },
-    {
-        "name": "HLAN-DTV",
-        "id": "HLANDTV.kr",
-        "logo": "https://i.imgur.com/lthyx2P.png",
-        "url": "https://stream.chmbc.co.kr/TV/myStream/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "KR"
-    },
-    {
-        "name": "TBS TV",
-        "id": "TBSTV.kr",
-        "logo": "https://i.imgur.com/iOnWS6V.png",
-        "url": "https://cdntv.tbs.seoul.kr/tbs/tbs_tv_web.smil/playlist.m3u8",
-        "categories": [],
-        "country": "KR"
-    },
-    {
-        "name": "HLCT-DTV",
-        "id": "HLCTDTV.kr",
-        "logo": "https://i.imgur.com/LlYQR8m.png",
-        "url": "https://5ee1ec6f32118.streamlock.net/live/livetv/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "KR"
-    },
-    {
-        "name": "Good TV",
-        "id": "GoodTV.kr",
-        "logo": "https://i.ibb.co/1v913gn/logo-goodtv.png",
-        "url": "http://mobliestream.c3tv.com:1935/live/goodtv.sdp/playlist.m3u8",
-        "categories": [
-            "religious"
-        ],
-        "country": "KR"
-    },
-    {
-        "name": "Home & Shopping",
-        "id": "HomeShopping.kr",
-        "logo": "https://i.imgur.com/IcexRXG.png",
-        "url": "https://s28.qtcdn.co.kr/media/liveM3U8/idx/518045142/enc/1860408350/playlist.m3u8",
-        "categories": [
-            "shop"
-        ],
-        "country": "KR"
-    },
-    {
-        "name": "Gongyoung Home Shopping",
-        "id": "GongyoungHomeShopping.kr",
-        "logo": "https://i.imgur.com/YL3rpd7.png",
-        "url": "https://etv.publichs.com/live5.stream/playlist.m3u8",
-        "categories": [
-            "shop"
-        ],
-        "country": "KR"
-    },
-    {
-        "name": "Hyundai Home Shopping",
-        "id": "HyundaiHomeShopping.kr",
-        "logo": "https://i.imgur.com/NJpECmq.png",
-        "url": "https://livejj.hyundaihmall.com:8443/live/ngrp:hmall.stream_pc/playlist.m3u8",
-        "categories": [
-            "shop"
-        ],
-        "country": "KR"
-    },
-    {
-        "name": "BBS TV",
-        "id": "BBSTV.kr",
-        "logo": "https://i.imgur.com/01UmXRe.png",
-        "url": "http://bbstv.clouducs.com:1935/bbstv-live/livestream/playlist.m3u8",
-        "categories": [
-            "religious"
-        ],
-        "country": "KR"
-    },
-    {
-        "name": "Lotte OneTV",
-        "id": "LotteOneTV.kr",
-        "logo": "https://i.imgur.com/bXe7tYE.png",
-        "url": "https://onetvhlslive.lotteimall.com/lotteonetvlive/lotteonetvlive.mp4.m3u8",
-        "categories": [
-            "shop"
-        ],
-        "country": "KR"
-    },
-    {
-        "name": "BTN TV",
-        "id": "BTNTV.kr",
-        "logo": "https://i.imgur.com/sOoS7RQ.png",
-        "url": "https://btn.nowcdn.co.kr/btn/btnlive2m/playlist.m3u8",
-        "categories": [
-            "religious"
-        ],
-        "country": "KR"
-    },
-    {
-        "name": "W Shopping",
-        "id": "WShopping.kr",
-        "logo": "https://i.imgur.com/hfXjVJd.png",
-        "url": "https://liveout.catenoid.net/live-05-wshopping/wshopping_1500k/playlist.m3u8",
-        "categories": [
-            "shop"
-        ],
-        "country": "KR"
-    },
-    {
-        "name": "Shinsegae TV Shopping",
-        "id": "ShinsegaeTVShopping.kr",
-        "logo": "https://i.imgur.com/Hq3yjqA.png",
-        "url": "https://liveout.catenoid.net/live-02-shinsegaetvshopping/shinsegaetvshopping_720p/playlist.m3u8",
-        "categories": [
-            "shop"
-        ],
-        "country": "KR"
-    },
-    {
-        "name": "WBC TV",
-        "id": "WBCTV.kr",
-        "logo": "https://i.imgur.com/IkFev3L.png",
-        "url": "https://cdnlive179.smartucc.kr/smartlive/312/46324be24454bd98f785039457ac695d/playlist.m3u8",
-        "categories": [],
-        "country": "KR"
-    },
-    {
-        "name": "TV Chosun 2",
-        "id": "TVChosun2.kr",
-        "logo": "https://i.imgur.com/Ev5JoBJ.png",
-        "url": "http://onair2.cdn.tvchosun.com/origin2/_definst_/tvchosun_s3/playlist.m3u8",
-        "categories": [],
-        "country": "KR"
-    },
-    {
-        "name": "NBS",
-        "id": "NBS.kr",
-        "logo": "https://i.imgur.com/pOSroOE.png",
-        "url": "https://media.joycorp.co.kr:4443/live/ngrp:live_all/playlist.m3u8",
-        "categories": [
-            "education"
-        ],
-        "country": "KR"
-    },
-    {
-        "name": "KTV",
-        "id": "KTV.kr",
-        "logo": "https://i.ibb.co/WkrLDJW/Screenshot-20230714-135036-removebg-preview.png",
-        "url": "https://hlive.ktv.go.kr/live/klive_h.stream/playlist.m3u8",
-        "categories": [
-            "legislative",
-            "news"
-        ],
-        "country": "KR"
-    },
-    {
-        "name": "HLCQ-DTV",
-        "id": "HLCQDTV.kr",
-        "logo": "https://i.imgur.com/HCbvAiM.png",
-        "url": "https://ns1.tjmbc.co.kr/live/myStream.sdp/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "KR"
-    },
-    {
-        "name": "ABN",
-        "id": "ABN.kr",
-        "logo": "https://www.abn.co.kr/resources/images/logo.png",
-        "url": "https://vod2.abn.co.kr/IPHONE/abn.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "KR"
-    },
-    {
-        "name": "GS Shop",
-        "id": "GSShop.kr",
-        "logo": "https://i.imgur.com/F7QDbEy.png",
-        "url": "https://gstv-gsshop.gsshop.com/gsshop_hd/gsshop_hd.stream/playlist.m3u8",
-        "categories": [
-            "shop"
-        ],
-        "country": "KR"
-    },
-    {
-        "name": "OUN",
-        "id": "OUN.kr",
-        "logo": "https://i.imgur.com/7s6JtcU.png",
-        "url": "https://live.knou.ac.kr/knou1/live1/playlist.m3u8",
-        "categories": [
-            "education"
-        ],
-        "country": "KR"
-    },
-    {
-        "name": "HLAJ-DTV",
-        "id": "HLAJDTV.kr",
-        "logo": "https://i.imgur.com/JM4rxGU.png",
-        "url": "https://wowza.jejumbc.com/live/tv_jejumbc/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "KR"
-    },
-    {
-        "name": "HLDH-DTV",
-        "id": "HLDHDTV.kr",
-        "logo": "https://i.imgur.com/Srsw4Mi.png",
-        "url": "https://vod.ikbc.co.kr/KBCTV/tv/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "KR"
-    },
-    {
-        "name": "Arirang UN",
-        "id": "ArirangUN.kr",
-        "logo": "https://i.imgur.com/Jdy3WNm.png",
-        "url": "https://amdlive-ch02-ctnd-com.akamaized.net/arirang_2ch/smil:arirang_2ch.smil/playlist.m3u8",
-        "categories": [
-            "news"
+            "entertainment"
         ],
         "country": "KR"
     },
@@ -526,59 +556,31 @@
         "country": "KR"
     },
     {
-        "name": "Arirang Radio",
-        "id": "ArirangRadio.kr",
-        "logo": "https://i.imgur.com/dtfiG9k.png",
-        "url": "https://amdlive-ch02-ctnd-com.akamaized.net/arirang_3ch/smil:arirang_3ch.smil/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "KR"
-    },
-    {
-        "name": "KBS LiveCam DokDo",
-        "id": "KBSLiveCamDokDo.kr",
-        "logo": "https://i.imgur.com/7mZnPO5.png",
-        "url": "http://kbs-dokdo.gscdn.com/dokdo_300/dokdo_300.stream/playlist.m3u8",
-        "categories": [],
-        "country": "KR"
-    },
-    {
-        "name": "FGTV",
-        "id": "FGTV.kr",
-        "logo": "https://i.ibb.co/crxz0fd/yfgc-hearder-logo.png",
-        "url": "https://fgtvlive.fgtv.com/smil:fgtv.smil/playlist.m3u8",
+        "name": "CGNTV South Korea",
+        "id": "CGNTVSouthKorea.kr",
+        "logo": "https://i.imgur.com/zwZASOB.png",
+        "url": "https://du35ivadp6cxj.cloudfront.net/out/v1/81781d23cbbf490990b2aa9181d4ce19/CGNWebLiveKR.m3u8",
         "categories": [
             "religious"
         ],
         "country": "KR"
     },
     {
-        "name": "HLQS-DTV",
-        "id": "HLQSDTV.kr",
-        "logo": "https://i.imgur.com/oWB3ApR.png",
-        "url": "https://vod.obs.co.kr:444/live/obsstream1/tv.stream/playlist.m3u8",
+        "name": "HLDP-DTV",
+        "id": "HLDPDTV.kr",
+        "logo": "https://i.imgur.com/BBCoqIf.png",
+        "url": "https://stream.ubc.co.kr/hls/ubctvstream/index.m3u8",
         "categories": [
             "general"
         ],
         "country": "KR"
     },
     {
-        "name": "SBS",
-        "id": "SBS.kr",
-        "logo": "https://i.imgur.com/4LHX71N.png",
-        "url": "http://www.hwado.net/webtv/catv/502_76142D8F.php",
+        "name": "WBC TV",
+        "id": "WBCTV.kr",
+        "logo": "https://i.imgur.com/IkFev3L.png",
+        "url": "https://cdnlive179.smartucc.kr/smartlive/312/46324be24454bd98f785039457ac695d/playlist.m3u8",
         "categories": [],
-        "country": "KR"
-    },
-    {
-        "name": "KBS Life",
-        "id": "KBSLife.kr",
-        "logo": "https://i.postimg.cc/509snRky/kbslife.png",
-        "url": "http://mytv.dothome.co.kr/ch/catv/5.php",
-        "categories": [
-            "lifestyle"
-        ],
         "country": "KR"
     },
     {
@@ -592,10 +594,18 @@
         "country": "KR"
     },
     {
-        "name": "KBS Drama",
-        "id": "KBSDrama.kr",
-        "logo": "https://i.postimg.cc/8zWX5W6p/kbsdrama.png",
-        "url": "http://mytv.dothome.co.kr/ch/catv/2.php",
+        "name": "SBS",
+        "id": "SBS.kr",
+        "logo": "https://i.imgur.com/4LHX71N.png",
+        "url": "http://www.hwado.net/webtv/catv/502_76142D8F.php",
+        "categories": [],
+        "country": "KR"
+    },
+    {
+        "name": "KBS Joy",
+        "id": "KBSJoy.kr",
+        "logo": "https://i.postimg.cc/XqpQ0yW0/kbsjoy.png",
+        "url": "http://mytv.dothome.co.kr/ch/catv/3.php",
         "categories": [
             "entertainment"
         ],
@@ -612,12 +622,22 @@
         "country": "KR"
     },
     {
-        "name": "KBS Joy",
-        "id": "KBSJoy.kr",
-        "logo": "https://i.postimg.cc/XqpQ0yW0/kbsjoy.png",
-        "url": "http://mytv.dothome.co.kr/ch/catv/3.php",
+        "name": "KBS Drama",
+        "id": "KBSDrama.kr",
+        "logo": "https://i.postimg.cc/8zWX5W6p/kbsdrama.png",
+        "url": "http://mytv.dothome.co.kr/ch/catv/2.php",
         "categories": [
             "entertainment"
+        ],
+        "country": "KR"
+    },
+    {
+        "name": "KBS Life",
+        "id": "KBSLife.kr",
+        "logo": "https://i.postimg.cc/509snRky/kbslife.png",
+        "url": "http://mytv.dothome.co.kr/ch/catv/5.php",
+        "categories": [
+            "lifestyle"
         ],
         "country": "KR"
     },
@@ -628,16 +648,6 @@
         "url": "http://mytv.dothome.co.kr/ch/catv/4.php",
         "categories": [
             "entertainment"
-        ],
-        "country": "KR"
-    },
-    {
-        "name": "Gugak TV",
-        "id": "GugakTV.kr",
-        "logo": "https://i.imgur.com/Ey7Htm8.png",
-        "url": "https://mgugaklive.nowcdn.co.kr/gugakvideo/gugakvideo.stream/playlist.m3u8",
-        "categories": [
-            "music"
         ],
         "country": "KR"
     },
@@ -656,6 +666,16 @@
         "id": "HLKUDTV.kr",
         "logo": "https://i.imgur.com/jiFOYi5.png",
         "url": "https://stream.bsmbc.com/livetv/BusanMBC_TV_onairstream/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "KR"
+    },
+    {
+        "name": "ABN",
+        "id": "ABN.kr",
+        "logo": "https://www.abn.co.kr/resources/images/logo.png",
+        "url": "https://vod2.abn.co.kr/IPHONE/abn.m3u8",
         "categories": [
             "general"
         ],
