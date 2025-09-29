@@ -1,9 +1,9 @@
 [
     {
-        "name": "TVN",
-        "id": "TVN.ee",
-        "logo": "https://i.imgur.com/t8nUMAO.png",
-        "url": "https://s4.telset.ee/tvn/index.m3u8?filter.tracks=v1a1&token=tvn_token",
+        "name": "Riigikogu",
+        "id": "Riigikogu.ee",
+        "logo": "https://i.imgur.com/dJRGDt2.png",
+        "url": "https://le02.euddn.net/6487956abb8faf0706d8c4c2465f54cb3625b812fec8e13d11668907ff00f44b004ea22691a9216c71ebda22b7e6e57c8b923aeee9e1e6aa447947c014b7a3babd73ab865562f4ae463ce0c617da65805296ed52a0af64d7d881781d282ea970de7a1ab524c1ea73e271a8df71d43212f4850e2d81241308886184db1abf516f2d6d0b9965402fc7c960e27fa968eabb077474e7493c278ebae58d614923fb2f5c76c2865cb681763ffd765a39a629ce/smil:rk_live_1.smil/playlist.m3u8",
         "categories": [],
         "country": "EE"
     },
@@ -18,6 +18,14 @@
         "country": "EE"
     },
     {
+        "name": "TVN",
+        "id": "TVN.ee",
+        "logo": "https://i.imgur.com/t8nUMAO.png",
+        "url": "https://s4.telset.ee/tvn/index.m3u8?filter.tracks=v1a1&token=tvn_token",
+        "categories": [],
+        "country": "EE"
+    },
+    {
         "name": "Life TV",
         "id": "LifeTV.ee",
         "logo": "https://i.imgur.com/JhrTB82.png",
@@ -25,14 +33,6 @@
         "categories": [
             "religious"
         ],
-        "country": "EE"
-    },
-    {
-        "name": "Riigikogu",
-        "id": "Riigikogu.ee",
-        "logo": "https://i.imgur.com/dJRGDt2.png",
-        "url": "https://le02.euddn.net/6487956abb8faf0706d8c4c2465f54cb3625b812fec8e13d11668907ff00f44b004ea22691a9216c71ebda22b7e6e57c8b923aeee9e1e6aa447947c014b7a3babd73ab865562f4ae463ce0c617da65805296ed52a0af64d7d881781d282ea970de7a1ab524c1ea73e271a8df71d43212f4850e2d81241308886184db1abf516f2d6d0b9965402fc7c960e27fa968eabb077474e7493c278ebae58d614923fb2f5c76c2865cb681763ffd765a39a629ce/smil:rk_live_1.smil/playlist.m3u8",
-        "categories": [],
         "country": "EE"
     },
     {
@@ -46,16 +46,6 @@
         "country": "EE"
     },
     {
-        "name": "ETV+",
-        "id": "ETVPlus.ee",
-        "logo": "https://i.postimg.cc/nrzXQnrH/etvplus.png",
-        "url": "https://sb.err.ee/live/etvpluss.m3u8",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "EE"
-    },
-    {
         "name": "ETV 2",
         "id": "ETV2.ee",
         "logo": "https://i.imgur.com/fUjGHDa.png",
@@ -63,6 +53,16 @@
         "categories": [
             "kids",
             "culture"
+        ],
+        "country": "EE"
+    },
+    {
+        "name": "ETV+",
+        "id": "ETVPlus.ee",
+        "logo": "https://i.postimg.cc/nrzXQnrH/etvplus.png",
+        "url": "https://sb.err.ee/live/etvpluss.m3u8",
+        "categories": [
+            "entertainment"
         ],
         "country": "EE"
     }
