@@ -10,6 +10,26 @@
         "country": "BR"
     },
     {
+        "name": "OEPM TV",
+        "id": "OEPMTV.do",
+        "logo": "https://i.imgur.com/QghtwMB.jpeg",
+        "url": "https://cnn.essastream.com:3318/live/oepmtelevisionlive.m3u8",
+        "categories": [
+            "travel"
+        ],
+        "country": "DO"
+    },
+    {
+        "name": "Pluto TV Histoire",
+        "id": "PlutoTVHistoire.us",
+        "logo": "https://i.imgur.com/JE5xcCV.png",
+        "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/611e771e2f5f180007002224/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=8e063bd3-1f2c-11ef-86d8-5d587df108c6&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=a7663e8d-062c-4293-9b93-a2bd07b5cb20",
+        "categories": [
+            "travel"
+        ],
+        "country": "US"
+    },
+    {
         "name": "TVS Travel Network",
         "id": "TVSTravelNetwork.us",
         "logo": "https://i.imgur.com/vSFf5Ce.png",
@@ -30,30 +50,10 @@
         "country": "DO"
     },
     {
-        "name": "OEPM TV",
-        "id": "OEPMTV.do",
-        "logo": "https://i.imgur.com/QghtwMB.jpeg",
-        "url": "https://cnn.essastream.com:3318/live/oepmtelevisionlive.m3u8",
-        "categories": [
-            "travel"
-        ],
-        "country": "DO"
-    },
-    {
         "name": "Pluto TV Animaux",
         "id": "PlutoTVAnimaux.us",
         "logo": "https://i.imgur.com/jxYlLsd.png",
         "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/60925a44f0350600075a1fdc/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=8e05edb2-1f2c-11ef-86d8-5d587df108c6&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=754cd30f-6a34-42d3-9e06-63128a8e07e3",
-        "categories": [
-            "travel"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Pluto TV Histoire",
-        "id": "PlutoTVHistoire.us",
-        "logo": "https://i.imgur.com/JE5xcCV.png",
-        "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/611e771e2f5f180007002224/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=8e063bd3-1f2c-11ef-86d8-5d587df108c6&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=a7663e8d-062c-4293-9b93-a2bd07b5cb20",
         "categories": [
             "travel"
         ],
@@ -91,10 +91,10 @@
         "country": "US"
     },
     {
-        "name": "Beach TV Florida & Alabama",
-        "id": "BeachTVFloridaAlabama.us",
-        "logo": "https://i.imgur.com/weypM9C.png",
-        "url": "https://5ed325193d4e1.streamlock.net:444/LiveTV/DTVHD/playlist.m3u8",
+        "name": "Beach TV Myrtle Beach & The Grand Strand",
+        "id": "BeachTVMyrtleBeachTheGrandStrand.us",
+        "logo": "https://i.imgur.com/aLYz7Bv.png",
+        "url": "https://5ed325193d4e1.streamlock.net:444/LiveTV/MTVHD/playlist.m3u8",
         "categories": [
             "travel"
         ],
@@ -111,30 +111,20 @@
         "country": "US"
     },
     {
+        "name": "Beach TV Florida & Alabama",
+        "id": "BeachTVFloridaAlabama.us",
+        "logo": "https://i.imgur.com/weypM9C.png",
+        "url": "https://5ed325193d4e1.streamlock.net:444/LiveTV/DTVHD/playlist.m3u8",
+        "categories": [
+            "travel"
+        ],
+        "country": "US"
+    },
+    {
         "name": "Beach TV Panama City",
         "id": "BeachTVPanamaCity.us",
         "logo": "https://i.imgur.com/HCQDvEe.png",
         "url": "https://5ed325193d4e1.streamlock.net:444/LiveTV/BTVHD/playlist.m3u8",
-        "categories": [
-            "travel"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Beach TV Myrtle Beach & The Grand Strand",
-        "id": "BeachTVMyrtleBeachTheGrandStrand.us",
-        "logo": "https://i.imgur.com/aLYz7Bv.png",
-        "url": "https://5ed325193d4e1.streamlock.net:444/LiveTV/MTVHD/playlist.m3u8",
-        "categories": [
-            "travel"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Palm Beaches TV",
-        "id": "PalmBeachesTV.us",
-        "logo": "https://i.imgur.com/kBol4Pf.png",
-        "url": "https://live.feed.thepalmbeaches.tv/index.m3u8",
         "categories": [
             "travel"
         ],
@@ -151,6 +141,16 @@
         "country": "US"
     },
     {
+        "name": "Palm Beaches TV",
+        "id": "PalmBeachesTV.us",
+        "logo": "https://i.imgur.com/kBol4Pf.png",
+        "url": "https://live.feed.thepalmbeaches.tv/index.m3u8",
+        "categories": [
+            "travel"
+        ],
+        "country": "US"
+    },
+    {
         "name": "Travelxp",
         "id": "Travelxp.in",
         "logo": "https://i.imgur.com/8KQirah.png",
@@ -159,37 +159,6 @@
             "travel"
         ],
         "country": "IN"
-    },
-    {
-        "name": "Teleputeshestviya",
-        "id": "Teleputeshestviya.ru",
-        "logo": "https://i.imgur.com/eXJm1n3.png",
-        "url": "http://31.148.48.15/Teleputeshestviya/index.m3u8",
-        "categories": [
-            "travel"
-        ],
-        "country": "RU"
-    },
-    {
-        "name": "RTG TV",
-        "id": "RTGTV.ru",
-        "logo": "https://i.imgur.com/ZMKPAho.png",
-        "url": "http://194.143.148.28:8080/RTG_HD/index.m3u8",
-        "categories": [
-            "travel"
-        ],
-        "country": "RU"
-    },
-    {
-        "name": "Chile Channel",
-        "id": "ChileChannel.cl",
-        "logo": "https://i.imgur.com/F1it6fh.png",
-        "url": "https://v2.tustreaming.cl/chilechannel/index.m3u8",
-        "categories": [
-            "travel",
-            "entertainment"
-        ],
-        "country": "CL"
     },
     {
         "name": "Schladming-Dachstein TV",
@@ -212,6 +181,37 @@
         "country": "TJ"
     },
     {
+        "name": "Chile Channel",
+        "id": "ChileChannel.cl",
+        "logo": "https://i.imgur.com/F1it6fh.png",
+        "url": "https://v2.tustreaming.cl/chilechannel/index.m3u8",
+        "categories": [
+            "travel",
+            "entertainment"
+        ],
+        "country": "CL"
+    },
+    {
+        "name": "RTG TV",
+        "id": "RTGTV.ru",
+        "logo": "https://i.imgur.com/ZMKPAho.png",
+        "url": "http://194.143.148.28:8080/RTG_HD/index.m3u8",
+        "categories": [
+            "travel"
+        ],
+        "country": "RU"
+    },
+    {
+        "name": "Teleputeshestviya",
+        "id": "Teleputeshestviya.ru",
+        "logo": "https://i.imgur.com/eXJm1n3.png",
+        "url": "http://31.148.48.15/Teleputeshestviya/index.m3u8",
+        "categories": [
+            "travel"
+        ],
+        "country": "RU"
+    },
+    {
         "name": "Anytime TV",
         "id": "AnytimeTV.za",
         "logo": "https://i.imgur.com/LloHzi4.png",
@@ -222,10 +222,10 @@
         "country": "ZA"
     },
     {
-        "name": "Peer TV Alto Adige",
-        "id": "PeerTVAltoAdige.it",
-        "logo": "https://www.peer.biz/peertv-iptv/peer-tv-alto-adige.png",
-        "url": "https://iptv.peer.biz/live/peertv-it.m3u8",
+        "name": "Peer TV South Tyrol",
+        "id": "PeerTVSouthTyrol.it",
+        "logo": "https://www.peer.biz/peertv-iptv/peer-tv-south-tyrol.png",
+        "url": "https://iptv.peer.biz/live/peertv-en.m3u8",
         "categories": [
             "outdoor",
             "travel"
@@ -244,10 +244,10 @@
         "country": "IT"
     },
     {
-        "name": "Peer TV South Tyrol",
-        "id": "PeerTVSouthTyrol.it",
-        "logo": "https://www.peer.biz/peertv-iptv/peer-tv-south-tyrol.png",
-        "url": "https://iptv.peer.biz/live/peertv-en.m3u8",
+        "name": "Peer TV Alto Adige",
+        "id": "PeerTVAltoAdige.it",
+        "logo": "https://www.peer.biz/peertv-iptv/peer-tv-alto-adige.png",
+        "url": "https://iptv.peer.biz/live/peertv-it.m3u8",
         "categories": [
             "outdoor",
             "travel"
@@ -265,16 +265,6 @@
         "country": "BG"
     },
     {
-        "name": "Aruba.TV",
-        "id": "ArubaTV.aw",
-        "logo": "https://i.imgur.com/9fWY09U.png",
-        "url": "https://cdn01.setar.aw/Canal49/canal49/playlist.m3u8",
-        "categories": [
-            "travel"
-        ],
-        "country": "AW"
-    },
-    {
         "name": "TV OFF",
         "id": "TVOFF.bo",
         "logo": "https://i.imgur.com/vBe1GgI.png",
@@ -283,6 +273,16 @@
             "travel"
         ],
         "country": "BO"
+    },
+    {
+        "name": "Aruba.TV",
+        "id": "ArubaTV.aw",
+        "logo": "https://i.imgur.com/9fWY09U.png",
+        "url": "https://cdn01.setar.aw/Canal49/canal49/playlist.m3u8",
+        "categories": [
+            "travel"
+        ],
+        "country": "AW"
     },
     {
         "name": "Discover Pakistan",

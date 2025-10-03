@@ -1,5 +1,16 @@
 [
     {
+        "name": "CWB TV",
+        "id": "CWBTV.br",
+        "logo": "https://i.imgur.com/S0ISpmU.png",
+        "url": "https://59d39900ebfb8.streamlock.net/cwbtv/cwbtv/playlist.m3u8",
+        "categories": [
+            "family",
+            "general"
+        ],
+        "country": "BR"
+    },
+    {
         "name": "MBC 5",
         "id": "MBC5.ae",
         "logo": "https://i.imgur.com/fRWaDyF.png",
@@ -23,29 +34,6 @@
         "country": "BR"
     },
     {
-        "name": "CWB TV",
-        "id": "CWBTV.br",
-        "logo": "https://i.imgur.com/S0ISpmU.png",
-        "url": "https://59d39900ebfb8.streamlock.net/cwbtv/cwbtv/playlist.m3u8",
-        "categories": [
-            "family",
-            "general"
-        ],
-        "country": "BR"
-    },
-    {
-        "name": "BBC Three/CBBC",
-        "id": "BBCThreeCBBC.uk",
-        "logo": "https://svgmix.com/uploads/8a9370-cbbc-bbc-three.svg",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/bbc3cbbc/browser-dash/bbc3cbbc.mpd",
-        "categories": [
-            "family",
-            "kids",
-            "animation"
-        ],
-        "country": "UK"
-    },
-    {
         "name": "Telenovisa43",
         "id": "Telenovisa43.do",
         "logo": "https://i.imgur.com/iHvf3bR.png",
@@ -67,14 +55,16 @@
         "country": "US"
     },
     {
-        "name": "Dove Channel",
-        "id": "DoveChannel.us",
-        "logo": "",
-        "url": "https://linear-896.frequency.stream/dist/xumo/896/hls/master/playlist.m3u8",
+        "name": "BBC Three/CBBC",
+        "id": "BBCThreeCBBC.uk",
+        "logo": "https://svgmix.com/uploads/8a9370-cbbc-bbc-three.svg",
+        "url": "https://viamotionhsi.netplus.ch/live/eds/bbc3cbbc/browser-dash/bbc3cbbc.mpd",
         "categories": [
-            "family"
+            "family",
+            "kids",
+            "animation"
         ],
-        "country": "US"
+        "country": "UK"
     },
     {
         "name": "Estrella Games",
@@ -98,10 +88,10 @@
         "country": "US"
     },
     {
-        "name": "The Pet Collective",
-        "id": "ThePetCollective.us",
-        "logo": "https://i.imgur.com/yH7n2dF.png",
-        "url": "https://the-pet-collective-international-se.samsung.wurl.tv/playlist.m3u8",
+        "name": "Dove Channel",
+        "id": "DoveChannel.us",
+        "logo": "",
+        "url": "https://linear-896.frequency.stream/dist/xumo/896/hls/master/playlist.m3u8",
         "categories": [
             "family"
         ],
@@ -118,10 +108,20 @@
         "country": "US"
     },
     {
-        "name": "FETV",
-        "id": "FETV.us",
-        "logo": "https://i.imgur.com/Z9xclnE.png",
-        "url": "https://gcdn-p6.teleuptv.net/806c57bb-85bc-4773-becc-e24433711d14/index.m3u8",
+        "name": "The Pet Collective",
+        "id": "ThePetCollective.us",
+        "logo": "https://i.imgur.com/yH7n2dF.png",
+        "url": "https://the-pet-collective-international-se.samsung.wurl.tv/playlist.m3u8",
+        "categories": [
+            "family"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Hallmark Channel",
+        "id": "HallmarkChannel.us",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Hallmark_Channel.svg/512px-Hallmark_Channel.svg.png",
+        "url": "https://fl25.moveonjoy.com/HALLMARK_CHANNEL/index.m3u8",
         "categories": [
             "family"
         ],
@@ -138,10 +138,10 @@
         "country": "US"
     },
     {
-        "name": "Hallmark Channel",
-        "id": "HallmarkChannel.us",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Hallmark_Channel.svg/512px-Hallmark_Channel.svg.png",
-        "url": "https://fl25.moveonjoy.com/HALLMARK_CHANNEL/index.m3u8",
+        "name": "FETV",
+        "id": "FETV.us",
+        "logo": "https://i.imgur.com/Z9xclnE.png",
+        "url": "https://gcdn-p6.teleuptv.net/806c57bb-85bc-4773-becc-e24433711d14/index.m3u8",
         "categories": [
             "family"
         ],
@@ -170,16 +170,6 @@
         "country": "RU"
     },
     {
-        "name": "STS",
-        "id": "STS.ru",
-        "logo": "https://i.imgur.com/ilUzAeb.png",
-        "url": "https://zabava-htlive.cdn.ngenix.net/hls/CH_STS/variant.m3u8",
-        "categories": [
-            "family"
-        ],
-        "country": "RU"
-    },
-    {
         "name": "Pro100TV",
         "id": "Pro100TV.ru",
         "logo": "https://i.imgur.com/YfQEflM.png",
@@ -194,17 +184,6 @@
         "country": "RU"
     },
     {
-        "name": "RiC",
-        "id": "RiC.de",
-        "logo": "https://i.imgur.com/4wMZ8Em.png",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/ric/browser-HLS8/ric.m3u8",
-        "categories": [
-            "kids",
-            "family"
-        ],
-        "country": "DE"
-    },
-    {
         "name": "Soweto TV",
         "id": "SowetoTV.za",
         "logo": "https://admango.cdn.mangomolo.com/analytics/uploads/188/654228e5b5.jpg",
@@ -212,18 +191,6 @@
         "categories": [
             "entertainment",
             "family"
-        ],
-        "country": "ZA"
-    },
-    {
-        "name": "Tshwane TV",
-        "id": "TshwaneTV.za",
-        "logo": "https://admango.cdn.mangomolo.com/analytics/uploads/188/654a3ec660.png",
-        "url": "https://cdn.freevisiontv.co.za/sttv/smil:tshwane.stream.smil/playlist.m3u8",
-        "categories": [
-            "entertainment",
-            "family",
-            "general"
         ],
         "country": "ZA"
     },
@@ -240,20 +207,53 @@
         "country": "ZA"
     },
     {
-        "name": "EmanTv",
-        "id": "EmanTv.iq",
-        "logo": "https://i.imgur.com/QmgaPSi.png",
-        "url": "https://avr.host247.net/live/emantv/playlist.m3u8",
+        "name": "Tshwane TV",
+        "id": "TshwaneTV.za",
+        "logo": "https://admango.cdn.mangomolo.com/analytics/uploads/188/654a3ec660.png",
+        "url": "https://cdn.freevisiontv.co.za/sttv/smil:tshwane.stream.smil/playlist.m3u8",
+        "categories": [
+            "entertainment",
+            "family",
+            "general"
+        ],
+        "country": "ZA"
+    },
+    {
+        "name": "RiC",
+        "id": "RiC.de",
+        "logo": "https://i.imgur.com/4wMZ8Em.png",
+        "url": "https://viamotionhsi.netplus.ch/live/eds/ric/browser-HLS8/ric.m3u8",
+        "categories": [
+            "kids",
+            "family"
+        ],
+        "country": "DE"
+    },
+    {
+        "name": "STS",
+        "id": "STS.ru",
+        "logo": "https://i.imgur.com/ilUzAeb.png",
+        "url": "https://zabava-htlive.cdn.ngenix.net/hls/CH_STS/variant.m3u8",
         "categories": [
             "family"
         ],
-        "country": "IQ"
+        "country": "RU"
     },
     {
         "name": "Mixkurdy",
         "id": "Mixkurdy.iq",
         "logo": "https://i.imgur.com/WHeH5i7.png",
         "url": "https://avr.host247.net/live/Mix-kurdy/playlist.m3u8",
+        "categories": [
+            "family"
+        ],
+        "country": "IQ"
+    },
+    {
+        "name": "EmanTv",
+        "id": "EmanTv.iq",
+        "logo": "https://i.imgur.com/QmgaPSi.png",
+        "url": "https://avr.host247.net/live/emantv/playlist.m3u8",
         "categories": [
             "family"
         ],
