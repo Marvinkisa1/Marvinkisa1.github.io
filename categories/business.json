@@ -1,19 +1,19 @@
 [
     {
-        "name": "Al Arabiya Business",
-        "id": "AlArabiyaBusiness.ae",
-        "logo": "https://i.imgur.com/eEV4r6J.jpg",
-        "url": "https://live.alarabiya.net/alarabiapublish/aswaaq.smil/playlist.m3u8",
+        "name": "CNBC Arabiya",
+        "id": "CNBCArabiya.ae",
+        "logo": "https://i.imgur.com/opBXx1K.png",
+        "url": "https://cnbc-live.akamaized.net/cnbc/master.m3u8",
         "categories": [
             "business"
         ],
         "country": "AE"
     },
     {
-        "name": "CNBC Arabiya",
-        "id": "CNBCArabiya.ae",
-        "logo": "https://i.imgur.com/opBXx1K.png",
-        "url": "https://cnbc-live.akamaized.net/cnbc/master.m3u8",
+        "name": "Al Arabiya Business",
+        "id": "AlArabiyaBusiness.ae",
+        "logo": "https://i.imgur.com/eEV4r6J.jpg",
+        "url": "https://live.alarabiya.net/alarabiapublish/aswaaq.smil/playlist.m3u8",
         "categories": [
             "business"
         ],
@@ -62,16 +62,6 @@
         "country": "US"
     },
     {
-        "name": "TD Ameritrade Network",
-        "id": "TDAmeritradeNetwork.us",
-        "logo": "https://i.imgur.com/RbVdkJ5.png",
-        "url": "https://tdameritrade-distro.amagi.tv/playlist.m3u8",
-        "categories": [
-            "business"
-        ],
-        "country": "US"
-    },
-    {
         "name": "Ameritrade",
         "id": "Ameritrade.us",
         "logo": "https://images-na.ssl-images-amazon.com/images/I/71CZKwin9mL.png",
@@ -82,10 +72,10 @@
         "country": "US"
     },
     {
-        "name": "Bloomberg TV",
-        "id": "BloombergTV.us",
-        "logo": "https://i.imgur.com/OuogLHx.png",
-        "url": "https://bloomberg.com/media-manifest/streams/politics.m3u8",
+        "name": "TD Ameritrade Network",
+        "id": "TDAmeritradeNetwork.us",
+        "logo": "https://i.imgur.com/RbVdkJ5.png",
+        "url": "https://tdameritrade-distro.amagi.tv/playlist.m3u8",
         "categories": [
             "business"
         ],
@@ -102,14 +92,24 @@
         "country": "US"
     },
     {
-        "name": "Tevex",
-        "id": "Tevex.cl",
-        "logo": "https://i.imgur.com/FnInQRd.png",
-        "url": "https://v4.tustreaming.cl/tevexinter/index.m3u8",
+        "name": "Bloomberg TV",
+        "id": "BloombergTV.us",
+        "logo": "https://i.imgur.com/OuogLHx.png",
+        "url": "https://bloomberg.com/media-manifest/streams/politics.m3u8",
         "categories": [
             "business"
         ],
-        "country": "CL"
+        "country": "US"
+    },
+    {
+        "name": "JOB TV",
+        "id": "JOBTV.ro",
+        "logo": "https://i.imgur.com/UzcZNe3.png",
+        "url": "https://jobtvserver.eu/hls/stream.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "RO"
     },
     {
         "name": "Zee Business",
@@ -122,14 +122,14 @@
         "country": "IN"
     },
     {
-        "name": "JOB TV",
-        "id": "JOBTV.ro",
-        "logo": "https://i.imgur.com/UzcZNe3.png",
-        "url": "https://jobtvserver.eu/hls/stream.m3u8",
+        "name": "Tevex",
+        "id": "Tevex.cl",
+        "logo": "https://i.imgur.com/FnInQRd.png",
+        "url": "https://v4.tustreaming.cl/tevexinter/index.m3u8",
         "categories": [
             "business"
         ],
-        "country": "RO"
+        "country": "CL"
     },
     {
         "name": "100% NEWS",
@@ -153,10 +153,10 @@
         "country": "RU"
     },
     {
-        "name": "Asharq Radio",
-        "id": "AsharqRadio.sa",
-        "logo": "https://i.imgur.com/M6K8cD3.jpeg",
-        "url": "https://svs.itworkscdn.net/asharqradiovlive/asharqradiov/playlist.m3u8",
+        "name": "Asharq News Portrait",
+        "id": "AsharqNewsPortrait.sa",
+        "logo": "https://i.imgur.com/bqRC3sl.png",
+        "url": "https://bcovlive-a.akamaihd.net/ed81ac1118414d4fa893d3a83ccec9be/eu-central-1/6203311941001/playlist.m3u8",
         "categories": [
             "business",
             "news"
@@ -175,6 +175,17 @@
         "country": "SA"
     },
     {
+        "name": "Asharq Radio",
+        "id": "AsharqRadio.sa",
+        "logo": "https://i.imgur.com/M6K8cD3.jpeg",
+        "url": "https://svs.itworkscdn.net/asharqradiovlive/asharqradiov/playlist.m3u8",
+        "categories": [
+            "business",
+            "news"
+        ],
+        "country": "SA"
+    },
+    {
         "name": "Bloomberg TV Mongolia",
         "id": "BloombergTVMongolia.mn",
         "logo": "https://i.imgur.com/OuogLHx.png",
@@ -183,27 +194,6 @@
             "business"
         ],
         "country": "MN"
-    },
-    {
-        "name": "Asharq News Portrait",
-        "id": "AsharqNewsPortrait.sa",
-        "logo": "https://i.imgur.com/bqRC3sl.png",
-        "url": "https://bcovlive-a.akamaihd.net/ed81ac1118414d4fa893d3a83ccec9be/eu-central-1/6203311941001/playlist.m3u8",
-        "categories": [
-            "business",
-            "news"
-        ],
-        "country": "SA"
-    },
-    {
-        "name": "Business 24 Africa",
-        "id": "Business24Africa.ci",
-        "logo": "https://i.imgur.com/zZFl3vy.png",
-        "url": "https://cdn-globecast.akamaized.net/live/eds/business24_tv/hls_video/index.m3u8",
-        "categories": [
-            "business"
-        ],
-        "country": "CI"
     },
     {
         "name": "Telewizja Biznesowa",
@@ -246,6 +236,16 @@
         "country": "AU"
     },
     {
+        "name": "Nei Monggol TV Economic & Life Channel",
+        "id": "NeiMonggolTVEconomicLifeChannel.cn",
+        "logo": "https://i.imgur.com/M4xXzIr.png",
+        "url": "http://play1-qk.nmtv.cn/live/1686562470947181.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "CN"
+    },
+    {
         "name": "DeFiance Media",
         "id": "DeFianceMedia.pr",
         "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5e6HtuC9SEacvU98D5CWN9eBhERsc_WU73KZAyKHaePqMkJloAQ1lGfSGHqg-W_j5Z2g&usqp=CAU",
@@ -256,10 +256,10 @@
         "country": "PR"
     },
     {
-        "name": "Nei Monggol TV Economic & Life Channel",
-        "id": "NeiMonggolTVEconomicLifeChannel.cn",
-        "logo": "https://i.imgur.com/M4xXzIr.png",
-        "url": "http://play1-qk.nmtv.cn/live/1686562470947181.m3u8",
+        "name": "Jiangxi Economy & Life Channel",
+        "id": "JiangxiEconomyLifeChannel.cn",
+        "logo": "https://www.tvchinese.net/uploads/tv/jxtv3.jpg",
+        "url": "https://play-live-hls.jxtvcn.com.cn/live-city/tv_jxtv3.m3u8",
         "categories": [
             "business"
         ],
@@ -278,14 +278,14 @@
         "country": "LU"
     },
     {
-        "name": "Cafe Trade TV",
-        "id": "CafeTradeTV.ir",
-        "logo": "https://i.ibb.co/GW4cMfc/cafe-trade-tv.png",
-        "url": "https://cafetradehls.wns.live/hls/stream.m3u8",
+        "name": "Bloomberg HT",
+        "id": "BloombergHT.tr",
+        "logo": "https://i.imgur.com/bmkXfIE.png",
+        "url": "https://ciner-live.daioncdn.net/bloomberght/bloomberght.m3u8",
         "categories": [
             "business"
         ],
-        "country": "IR"
+        "country": "TR"
     },
     {
         "name": "Jobplus TV",
@@ -298,14 +298,14 @@
         "country": "KR"
     },
     {
-        "name": "Bloomberg HT",
-        "id": "BloombergHT.tr",
-        "logo": "https://i.imgur.com/bmkXfIE.png",
-        "url": "https://ciner-live.daioncdn.net/bloomberght/bloomberght.m3u8",
+        "name": "Cafe Trade TV",
+        "id": "CafeTradeTV.ir",
+        "logo": "https://i.ibb.co/GW4cMfc/cafe-trade-tv.png",
+        "url": "https://cafetradehls.wns.live/hls/stream.m3u8",
         "categories": [
             "business"
         ],
-        "country": "TR"
+        "country": "IR"
     },
     {
         "name": "Negocios TV",
