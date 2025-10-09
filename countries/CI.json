@@ -1,15 +1,5 @@
 [
     {
-        "name": "RTI 2",
-        "id": "RTI2.ci",
-        "logo": "https://i.imgur.com/73ueXrp.png",
-        "url": "http://69.64.57.208:8080/rti2/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "CI"
-    },
-    {
         "name": "TV Al Bayane",
         "id": "TVAlBayane.ci",
         "logo": "https://i.imgur.com/Xs9oEG8.png",
@@ -20,10 +10,10 @@
         "country": "CI"
     },
     {
-        "name": "RTI 1",
-        "id": "RTI1.ci",
-        "logo": "https://i.imgur.com/TybQZQS.png",
-        "url": "https://uvotv-aniview.global.ssl.fastly.net/hls/live/2119033/rti/playlist.m3u8",
+        "name": "RTI 2",
+        "id": "RTI2.ci",
+        "logo": "https://i.imgur.com/73ueXrp.png",
+        "url": "http://69.64.57.208:8080/rti2/playlist.m3u8",
         "categories": [
             "general"
         ],
@@ -36,6 +26,37 @@
         "url": "https://cdn-globecast.akamaized.net/live/eds/business24_tv/hls_video/index.m3u8",
         "categories": [
             "business"
+        ],
+        "country": "CI"
+    },
+    {
+        "name": "RTI La 3",
+        "id": "RTILa3.ci",
+        "logo": "https://i.imgur.com/HdNshgF.png",
+        "url": "http://69.64.57.208/la3/index.m3u8",
+        "categories": [
+            "music",
+            "sports"
+        ],
+        "country": "CI"
+    },
+    {
+        "name": "A+ Ivoire",
+        "id": "APlusIvoire.ci",
+        "logo": "https://i.imgur.com/yOW0vyP.png",
+        "url": "http://69.64.57.208/atv/playlist.m3u8",
+        "categories": [
+            "culture"
+        ],
+        "country": "CI"
+    },
+    {
+        "name": "RTI 1",
+        "id": "RTI1.ci",
+        "logo": "https://i.imgur.com/TybQZQS.png",
+        "url": "https://uvotv-aniview.global.ssl.fastly.net/hls/live/2119033/rti/playlist.m3u8",
+        "categories": [
+            "general"
         ],
         "country": "CI"
     },
@@ -60,20 +81,30 @@
         "country": "CI"
     },
     {
-        "name": "Afro Magic Channel",
-        "id": "AfroMagicChannel.ci",
-        "logo": "https://i.imgur.com/yQzXErU.png",
-        "url": "https://video1.getstreamhosting.com:1936/8490/8490/playlist.m3u8",
+        "name": "Divin Amour TV",
+        "id": "DivinAmourTV.ci",
+        "logo": "https://i.imgur.com/UUSAQET.png",
+        "url": "https://voozmedia.fun/divinamourtv/livestream/playlist.m3u8",
         "categories": [
-            "culture"
+            "religious"
         ],
         "country": "CI"
     },
     {
-        "name": "Alpha et Omega TV",
-        "id": "AlphaetOmegaTV.ci",
-        "logo": "https://i.imgur.com/s9EgQQI.jpg",
-        "url": "https://video1.getstreamhosting.com:1936/8318/8318/playlist.m3u8",
+        "name": "Exploits TV",
+        "id": "ExploitsTV.ci",
+        "logo": "https://i.imgur.com/3wC7tSG.jpeg",
+        "url": "https://stream.berosat.live:19360/exploits-tv/exploits-tv.m3u8",
+        "categories": [
+            "religious"
+        ],
+        "country": "CI"
+    },
+    {
+        "name": "LM TV French",
+        "id": "LMTVFrench.ci",
+        "logo": "https://i.imgur.com/FVnq2cQ.png",
+        "url": "https://video1.getstreamhosting.com:1936/8282/8282/playlist.m3u8",
         "categories": [
             "religious"
         ],
@@ -90,16 +121,6 @@
         "country": "CI"
     },
     {
-        "name": "LM TV French",
-        "id": "LMTVFrench.ci",
-        "logo": "https://i.imgur.com/FVnq2cQ.png",
-        "url": "https://video1.getstreamhosting.com:1936/8282/8282/playlist.m3u8",
-        "categories": [
-            "religious"
-        ],
-        "country": "CI"
-    },
-    {
         "name": "Ivoire Channel",
         "id": "IvoireChannel.ci",
         "logo": "https://i.imgur.com/gKbNqQv.png",
@@ -110,23 +131,32 @@
         "country": "CI"
     },
     {
-        "name": "A+ Ivoire",
-        "id": "APlusIvoire.ci",
-        "logo": "https://i.imgur.com/yOW0vyP.png",
-        "url": "http://69.64.57.208/atv/playlist.m3u8",
+        "name": "Alpha et Omega TV",
+        "id": "AlphaetOmegaTV.ci",
+        "logo": "https://i.imgur.com/s9EgQQI.jpg",
+        "url": "https://video1.getstreamhosting.com:1936/8318/8318/playlist.m3u8",
+        "categories": [
+            "religious"
+        ],
+        "country": "CI"
+    },
+    {
+        "name": "Afro Magic Channel",
+        "id": "AfroMagicChannel.ci",
+        "logo": "https://i.imgur.com/yQzXErU.png",
+        "url": "https://video1.getstreamhosting.com:1936/8490/8490/playlist.m3u8",
         "categories": [
             "culture"
         ],
         "country": "CI"
     },
     {
-        "name": "RTI La 3",
-        "id": "RTILa3.ci",
-        "logo": "https://i.imgur.com/HdNshgF.png",
-        "url": "http://69.64.57.208/la3/index.m3u8",
+        "name": "Afroculture TV",
+        "id": "AfrocultureTV.ci",
+        "logo": "https://i.imgur.com/bjaZ3kO.png",
+        "url": "https://streamtv.cmediahosthosting.net:3836/live/myafroculturelive.m3u8",
         "categories": [
-            "music",
-            "sports"
+            "culture"
         ],
         "country": "CI"
     },
@@ -155,26 +185,6 @@
         "id": "RTVC.ci",
         "logo": "https://i.imgur.com/oXuSkHz.png",
         "url": "https://cdn140m.panaccess.com/HLS/RTVC/index.m3u8",
-        "categories": [
-            "religious"
-        ],
-        "country": "CI"
-    },
-    {
-        "name": "Exploits TV",
-        "id": "ExploitsTV.ci",
-        "logo": "https://i.imgur.com/3wC7tSG.jpeg",
-        "url": "https://stream.berosat.live:19360/exploits-tv/exploits-tv.m3u8",
-        "categories": [
-            "religious"
-        ],
-        "country": "CI"
-    },
-    {
-        "name": "Divin Amour TV",
-        "id": "DivinAmourTV.ci",
-        "logo": "https://i.imgur.com/UUSAQET.png",
-        "url": "https://voozmedia.fun/divinamourtv/livestream/playlist.m3u8",
         "categories": [
             "religious"
         ],
