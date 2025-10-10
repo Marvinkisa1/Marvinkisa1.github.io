@@ -1,14 +1,13 @@
 [
     {
-        "name": "CWB TV",
-        "id": "CWBTV.br",
-        "logo": "https://i.imgur.com/S0ISpmU.png",
-        "url": "https://59d39900ebfb8.streamlock.net/cwbtv/cwbtv/playlist.m3u8",
+        "name": "MBC 5",
+        "id": "MBC5.ae",
+        "logo": "https://i.imgur.com/fRWaDyF.png",
+        "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-5/ee6b000cee0629411b666ab26cb13e9b/index.m3u8",
         "categories": [
-            "family",
-            "general"
+            "family"
         ],
-        "country": "BR"
+        "country": "AE"
     },
     {
         "name": "TV Paraense",
@@ -24,14 +23,15 @@
         "country": "BR"
     },
     {
-        "name": "MBC 5",
-        "id": "MBC5.ae",
-        "logo": "https://i.imgur.com/fRWaDyF.png",
-        "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-5/ee6b000cee0629411b666ab26cb13e9b/index.m3u8",
+        "name": "CWB TV",
+        "id": "CWBTV.br",
+        "logo": "https://i.imgur.com/S0ISpmU.png",
+        "url": "https://59d39900ebfb8.streamlock.net/cwbtv/cwbtv/playlist.m3u8",
         "categories": [
-            "family"
+            "family",
+            "general"
         ],
-        "country": "AE"
+        "country": "BR"
     },
     {
         "name": "Telenovisa43",
@@ -45,6 +45,18 @@
         "country": "DO"
     },
     {
+        "name": "BBC Three/CBBC",
+        "id": "BBCThreeCBBC.uk",
+        "logo": "https://i.imgur.com/CGXC5fp.png",
+        "url": "https://viamotionhsi.netplus.ch/live/eds/bbc3cbbc/browser-dash/bbc3cbbc.mpd",
+        "categories": [
+            "family",
+            "kids",
+            "animation"
+        ],
+        "country": "UK"
+    },
+    {
         "name": "AMG TV",
         "id": "AMGTV.us",
         "logo": "https://i.imgur.com/m5Anun9.png",
@@ -53,18 +65,6 @@
             "family"
         ],
         "country": "US"
-    },
-    {
-        "name": "BBC Three/CBBC",
-        "id": "BBCThreeCBBC.uk",
-        "logo": "https://svgmix.com/uploads/8a9370-cbbc-bbc-three.svg",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/bbc3cbbc/browser-dash/bbc3cbbc.mpd",
-        "categories": [
-            "family",
-            "kids",
-            "animation"
-        ],
-        "country": "UK"
     },
     {
         "name": "Positiv TV",
@@ -118,10 +118,10 @@
         "country": "US"
     },
     {
-        "name": "FETV",
-        "id": "FETV.us",
-        "logo": "https://i.imgur.com/Z9xclnE.png",
-        "url": "https://gcdn-p6.teleuptv.net/806c57bb-85bc-4773-becc-e24433711d14/index.m3u8",
+        "name": "Hallmark Channel",
+        "id": "HallmarkChannel.us",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Hallmark_Channel.svg/512px-Hallmark_Channel.svg.png",
+        "url": "https://fl7.moveonjoy.com/HALLMARK_CHANNEL/index.m3u8",
         "categories": [
             "family"
         ],
@@ -138,26 +138,14 @@
         "country": "US"
     },
     {
-        "name": "Hallmark Channel",
-        "id": "HallmarkChannel.us",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Hallmark_Channel.svg/512px-Hallmark_Channel.svg.png",
-        "url": "https://fl7.moveonjoy.com/HALLMARK_CHANNEL/index.m3u8",
+        "name": "FETV",
+        "id": "FETV.us",
+        "logo": "https://i.imgur.com/Z9xclnE.png",
+        "url": "https://gcdn-p6.teleuptv.net/806c57bb-85bc-4773-becc-e24433711d14/index.m3u8",
         "categories": [
             "family"
         ],
         "country": "US"
-    },
-    {
-        "name": "MCI Television",
-        "id": "MCITelevision.co",
-        "logo": "https://pbs.twimg.com/profile_images/1836009952420274177/FfYonU6r_400x400.jpg",
-        "url": "https://video.ejeserver.com/live/mcitelevision.m3u8",
-        "categories": [
-            "movies",
-            "family",
-            "general"
-        ],
-        "country": "CO"
     },
     {
         "name": "Pro100TV",
@@ -172,17 +160,6 @@
             "animation"
         ],
         "country": "RU"
-    },
-    {
-        "name": "RiC",
-        "id": "RiC.de",
-        "logo": "https://i.imgur.com/4wMZ8Em.png",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/ric/browser-HLS8/ric.m3u8",
-        "categories": [
-            "kids",
-            "family"
-        ],
-        "country": "DE"
     },
     {
         "name": "STS Love",
@@ -205,10 +182,22 @@
         "country": "RU"
     },
     {
-        "name": "Tshwane TV",
-        "id": "TshwaneTV.za",
-        "logo": "https://admango.cdn.mangomolo.com/analytics/uploads/188/654a3ec660.png",
-        "url": "https://cdn.freevisiontv.co.za/sttv/smil:tshwane.stream.smil/playlist.m3u8",
+        "name": "MCI Television",
+        "id": "MCITelevision.co",
+        "logo": "https://pbs.twimg.com/profile_images/1836009952420274177/FfYonU6r_400x400.jpg",
+        "url": "https://video.ejeserver.com/live/mcitelevision.m3u8",
+        "categories": [
+            "movies",
+            "family",
+            "general"
+        ],
+        "country": "CO"
+    },
+    {
+        "name": "1KZN TV",
+        "id": "1KZNTV.za",
+        "logo": "https://admango.cdn.mangomolo.com/analytics/uploads/188/6544bebaae.jpg",
+        "url": "https://cdn.freevisiontv.co.za/sttv/smil:1kzn.stream.smil/playlist.m3u8",
         "categories": [
             "entertainment",
             "family",
@@ -228,16 +217,27 @@
         "country": "ZA"
     },
     {
-        "name": "1KZN TV",
-        "id": "1KZNTV.za",
-        "logo": "https://admango.cdn.mangomolo.com/analytics/uploads/188/6544bebaae.jpg",
-        "url": "https://cdn.freevisiontv.co.za/sttv/smil:1kzn.stream.smil/playlist.m3u8",
+        "name": "Tshwane TV",
+        "id": "TshwaneTV.za",
+        "logo": "https://admango.cdn.mangomolo.com/analytics/uploads/188/654a3ec660.png",
+        "url": "https://cdn.freevisiontv.co.za/sttv/smil:tshwane.stream.smil/playlist.m3u8",
         "categories": [
             "entertainment",
             "family",
             "general"
         ],
         "country": "ZA"
+    },
+    {
+        "name": "RiC",
+        "id": "RiC.de",
+        "logo": "https://i.imgur.com/4wMZ8Em.png",
+        "url": "https://viamotionhsi.netplus.ch/live/eds/ric/browser-HLS8/ric.m3u8",
+        "categories": [
+            "kids",
+            "family"
+        ],
+        "country": "DE"
     },
     {
         "name": "Mixkurdy",

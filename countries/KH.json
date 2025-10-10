@@ -1,12 +1,10 @@
 [
     {
-        "name": "MOI TV",
-        "id": "MOITV.kh",
-        "logo": "https://i.imgur.com/fbI2ybo.png",
-        "url": "http://202.62.56.22:8080/hls/MOITV.m3u8",
-        "categories": [
-            "legislative"
-        ],
+        "name": "TV 3",
+        "id": "TV3.kh",
+        "logo": "https://i.imgur.com/76XWq08.png",
+        "url": "http://206.189.93.160:1935/live/myStream_720p/playlist.m3u8",
+        "categories": [],
         "country": "KH"
     },
     {
@@ -20,20 +18,74 @@
         "country": "KH"
     },
     {
-        "name": "Wiki TV",
-        "id": "WikiTV.kh",
-        "logo": "https://i.imgur.com/rnV0Ui1.png",
-        "url": "https://stream.wikitv.asia/live/ngrp:myStream_all/playlist.m3u8",
+        "name": "MOI TV",
+        "id": "MOITV.kh",
+        "logo": "https://i.imgur.com/fbI2ybo.png",
+        "url": "http://202.62.56.22:8080/hls/MOITV.m3u8",
         "categories": [
-            "education"
+            "legislative"
         ],
         "country": "KH"
     },
     {
-        "name": "TV 3",
-        "id": "TV3.kh",
-        "logo": "https://i.imgur.com/76XWq08.png",
-        "url": "http://206.189.93.160:1935/live/myStream_720p/playlist.m3u8",
+        "name": "SEA TV",
+        "id": "SEATV.kh",
+        "logo": "https://i.imgur.com/oZPorvg.png",
+        "url": "https://seatv.netlinkbroadcaster.com/hls/test.m3u8",
+        "categories": [],
+        "country": "KH"
+    },
+    {
+        "name": "PNN",
+        "id": "PNN.kh",
+        "logo": "https://i.imgur.com/ObtFGBW.png",
+        "url": "https://live-evg13.tv360.metfone.com.kh/live/pnn.m3u8",
+        "categories": [],
+        "country": "KH"
+    },
+    {
+        "name": "BTV News",
+        "id": "BTVNews.kh",
+        "logo": "https://i.imgur.com/sUHiRj3.png",
+        "url": "https://live-evg2.tv360.metfone.com.kh/livetest/bayontest.stream/playlist.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "KH"
+    },
+    {
+        "name": "CTN",
+        "id": "CTN.kh",
+        "logo": "https://i.imgur.com/r523kOq.png",
+        "url": "http://live.happywatch99.com/livehd10/02587745dbd71d978954203d7ec78497.sdp/playlist.m3u8",
+        "categories": [],
+        "country": "KH"
+    },
+    {
+        "name": "My TV",
+        "id": "MyTV.kh",
+        "logo": "https://i.imgur.com/lhxRefQ.png",
+        "url": "http://live.happywatch99.com/livehd11/90ecf35382a7597e553200692c3fc384.sdp/playlist.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "KH"
+    },
+    {
+        "name": "Bayon TV",
+        "id": "BayonTV.kh",
+        "logo": "https://i.imgur.com/Gry2KEN.jpg",
+        "url": "https://live-evg2.tv360.metfone.com.kh/livebayontv/bayontvhd.stream/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "KH"
+    },
+    {
+        "name": "TV5 Cambodia",
+        "id": "TV5Cambodia.kh",
+        "logo": "https://i.imgur.com/iMZLyoX.png",
+        "url": "http://live.happywatch99.com/livehd14/77bbe9df6a93cf229cd40f1400af00fa.sdp/playlist.m3u8",
         "categories": [],
         "country": "KH"
     },
@@ -45,6 +97,24 @@
         "categories": [
             "news"
         ],
+        "country": "KH"
+    },
+    {
+        "name": "Hang Meas HDTV",
+        "id": "HangMeasHDTV.kh",
+        "logo": "https://i.imgur.com/P8oOR8I.png",
+        "url": "http://clive.malisresidences.com:1935/hm_hdtv/_definst_/smil:HMHDTV.smil/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "KH"
+    },
+    {
+        "name": "Rasmey Hang Meas HDTV",
+        "id": "RasmeyHangMeasHDTV.kh",
+        "logo": "https://i.imgur.com/EcqEMMg.png",
+        "url": "http://clive.malisresidences.com:1935/rhm_hdtv/_definst_/smil:RHMHDTV.smil/playlist.m3u8",
+        "categories": [],
         "country": "KH"
     },
     {
@@ -68,6 +138,26 @@
         "country": "KH"
     },
     {
+        "name": "Wiki TV",
+        "id": "WikiTV.kh",
+        "logo": "https://i.imgur.com/rnV0Ui1.png",
+        "url": "https://stream.wikitv.asia/live/ngrp:myStream_all/playlist.m3u8",
+        "categories": [
+            "education"
+        ],
+        "country": "KH"
+    },
+    {
+        "name": "Komsan TV",
+        "id": "KomsanTV.kh",
+        "logo": "https://i.imgur.com/SNTf2r3.png",
+        "url": "http://tv.cootel.com.kh:8077/streams/d/Komsan/playlist.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "KH"
+    },
+    {
         "name": "NTV",
         "id": "NTV.kh",
         "logo": "https://i.imgur.com/SoBhuIb.png",
@@ -82,96 +172,6 @@
         "url": "https://live-evg17.tv360.metfone.com.kh/LiveApp/streams/eacnews.m3u8",
         "categories": [
             "news"
-        ],
-        "country": "KH"
-    },
-    {
-        "name": "SEA TV",
-        "id": "SEATV.kh",
-        "logo": "https://i.imgur.com/oZPorvg.png",
-        "url": "https://seatv.netlinkbroadcaster.com/hls/test.m3u8",
-        "categories": [],
-        "country": "KH"
-    },
-    {
-        "name": "CTN",
-        "id": "CTN.kh",
-        "logo": "https://i.imgur.com/r523kOq.png",
-        "url": "http://live.happywatch99.com/livehd10/02587745dbd71d978954203d7ec78497.sdp/playlist.m3u8",
-        "categories": [],
-        "country": "KH"
-    },
-    {
-        "name": "My TV",
-        "id": "MyTV.kh",
-        "logo": "https://i.imgur.com/lhxRefQ.png",
-        "url": "http://live.happywatch99.com/livehd11/90ecf35382a7597e553200692c3fc384.sdp/playlist.m3u8",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "KH"
-    },
-    {
-        "name": "Hang Meas HDTV",
-        "id": "HangMeasHDTV.kh",
-        "logo": "https://i.imgur.com/P8oOR8I.png",
-        "url": "http://clive.malisresidences.com:1935/hm_hdtv/_definst_/smil:HMHDTV.smil/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "KH"
-    },
-    {
-        "name": "Rasmey Hang Meas HDTV",
-        "id": "RasmeyHangMeasHDTV.kh",
-        "logo": "https://i.imgur.com/EcqEMMg.png",
-        "url": "http://clive.malisresidences.com:1935/rhm_hdtv/_definst_/smil:RHMHDTV.smil/playlist.m3u8",
-        "categories": [],
-        "country": "KH"
-    },
-    {
-        "name": "TV5 Cambodia",
-        "id": "TV5Cambodia.kh",
-        "logo": "https://i.imgur.com/iMZLyoX.png",
-        "url": "http://live.happywatch99.com/livehd14/77bbe9df6a93cf229cd40f1400af00fa.sdp/playlist.m3u8",
-        "categories": [],
-        "country": "KH"
-    },
-    {
-        "name": "PNN",
-        "id": "PNN.kh",
-        "logo": "https://i.imgur.com/ObtFGBW.png",
-        "url": "https://live-evg13.tv360.metfone.com.kh/live/pnn.m3u8",
-        "categories": [],
-        "country": "KH"
-    },
-    {
-        "name": "Komsan TV",
-        "id": "KomsanTV.kh",
-        "logo": "https://i.imgur.com/SNTf2r3.png",
-        "url": "http://tv.cootel.com.kh:8077/streams/d/Komsan/playlist.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "KH"
-    },
-    {
-        "name": "BTV News",
-        "id": "BTVNews.kh",
-        "logo": "https://i.imgur.com/sUHiRj3.png",
-        "url": "https://live-evg2.tv360.metfone.com.kh/livetest/bayontest.stream/playlist.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "KH"
-    },
-    {
-        "name": "Bayon TV",
-        "id": "BayonTV.kh",
-        "logo": "https://i.imgur.com/Gry2KEN.jpg",
-        "url": "https://live-evg2.tv360.metfone.com.kh/livebayontv/bayontvhd.stream/playlist.m3u8",
-        "categories": [
-            "general"
         ],
         "country": "KH"
     },

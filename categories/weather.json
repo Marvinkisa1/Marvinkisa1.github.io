@@ -1,15 +1,5 @@
 [
     {
-        "name": "Meteonews",
-        "id": "Meteonews.ch",
-        "logo": "https://i.imgur.com/YtYhbJD.png",
-        "url": "https://streaming.meteonews.net/hls/stream.m3u8",
-        "categories": [
-            "weather"
-        ],
-        "country": "CH"
-    },
-    {
         "name": "The Weather Network",
         "id": "TheWeatherNetwork.ca",
         "logo": "https://i.imgur.com/V6ZUwUY.png",
@@ -18,6 +8,16 @@
             "weather"
         ],
         "country": "CA"
+    },
+    {
+        "name": "Meteonews",
+        "id": "Meteonews.ch",
+        "logo": "https://i.imgur.com/YtYhbJD.png",
+        "url": "https://streaming.meteonews.net/hls/stream.m3u8",
+        "categories": [
+            "weather"
+        ],
+        "country": "CH"
     },
     {
         "name": "Sky News Weather",
@@ -51,22 +51,22 @@
         "country": "US"
     },
     {
+        "name": "Fox Weather",
+        "id": "FoxWeather.us",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Fox_Weather_logo.svg/512px-Fox_Weather_logo.svg.png",
+        "url": "https://foxweather-xumo.amagi.tv/playlist.m3u8",
+        "categories": [
+            "weather"
+        ],
+        "country": "US"
+    },
+    {
         "name": "WBRZ-DT1",
         "id": "WBRZDT1.us",
         "logo": "https://i.imgur.com/n057TgX.png",
         "url": "https://d2a6g6zgxepbwi.cloudfront.net/wbrz-edge/weather.stream_360p/playlist.m3u8",
         "categories": [
             "news",
-            "weather"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Fox Weather",
-        "id": "FoxWeather.us",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Fox_Weather_logo.svg/512px-Fox_Weather_logo.svg.png",
-        "url": "https://foxweather-xumo.amagi.tv/playlist.m3u8",
-        "categories": [
             "weather"
         ],
         "country": "US"
