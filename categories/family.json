@@ -1,15 +1,5 @@
 [
     {
-        "name": "MBC 5",
-        "id": "MBC5.ae",
-        "logo": "https://i.imgur.com/fRWaDyF.png",
-        "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-5/ee6b000cee0629411b666ab26cb13e9b/index.m3u8",
-        "categories": [
-            "family"
-        ],
-        "country": "AE"
-    },
-    {
         "name": "TV Paraense",
         "id": "TVParaense.br",
         "logo": "https://duckduckgo.com/i/e408ea02.png",
@@ -32,6 +22,16 @@
             "general"
         ],
         "country": "BR"
+    },
+    {
+        "name": "MBC 5",
+        "id": "MBC5.ae",
+        "logo": "https://i.imgur.com/fRWaDyF.png",
+        "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-5/ee6b000cee0629411b666ab26cb13e9b/index.m3u8",
+        "categories": [
+            "family"
+        ],
+        "country": "AE"
     },
     {
         "name": "Telenovisa43",
@@ -77,17 +77,6 @@
         "country": "US"
     },
     {
-        "name": "Estrella Games",
-        "id": "EstrellaGames.us",
-        "logo": "https://i.imgur.com/Z52nEnH.png",
-        "url": "https://livetv-fa.tubi.video/estrella-games/playlist.m3u8",
-        "categories": [
-            "entertainment",
-            "family"
-        ],
-        "country": "US"
-    },
-    {
         "name": "TVS Family Channel",
         "id": "TVSFamilyChannel.us",
         "logo": "https://i.imgur.com/Y3EV3DL.png",
@@ -103,6 +92,17 @@
         "logo": "https://i.imgur.com/yH7n2dF.png",
         "url": "https://the-pet-collective-international-se.samsung.wurl.tv/playlist.m3u8",
         "categories": [
+            "family"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Estrella Games",
+        "id": "EstrellaGames.us",
+        "logo": "https://i.imgur.com/Z52nEnH.png",
+        "url": "https://livetv-fa.tubi.video/estrella-games/playlist.m3u8",
+        "categories": [
+            "entertainment",
             "family"
         ],
         "country": "US"
@@ -162,26 +162,6 @@
         "country": "RU"
     },
     {
-        "name": "STS Love",
-        "id": "STSLove.ru",
-        "logo": "https://i.imgur.com/YBVZoDd.png",
-        "url": "https://zabava-htlive.cdn.ngenix.net/hls/CH_STSLOVE/variant.m3u8",
-        "categories": [
-            "family"
-        ],
-        "country": "RU"
-    },
-    {
-        "name": "STS",
-        "id": "STS.ru",
-        "logo": "https://i.imgur.com/ilUzAeb.png",
-        "url": "https://zabava-htlive.cdn.ngenix.net/hls/CH_STS/variant.m3u8",
-        "categories": [
-            "family"
-        ],
-        "country": "RU"
-    },
-    {
         "name": "MCI Television",
         "id": "MCITelevision.co",
         "logo": "https://pbs.twimg.com/profile_images/1836009952420274177/FfYonU6r_400x400.jpg",
@@ -192,18 +172,6 @@
             "general"
         ],
         "country": "CO"
-    },
-    {
-        "name": "1KZN TV",
-        "id": "1KZNTV.za",
-        "logo": "https://admango.cdn.mangomolo.com/analytics/uploads/188/6544bebaae.jpg",
-        "url": "https://cdn.freevisiontv.co.za/sttv/smil:1kzn.stream.smil/playlist.m3u8",
-        "categories": [
-            "entertainment",
-            "family",
-            "general"
-        ],
-        "country": "ZA"
     },
     {
         "name": "Soweto TV",
@@ -229,6 +197,38 @@
         "country": "ZA"
     },
     {
+        "name": "1KZN TV",
+        "id": "1KZNTV.za",
+        "logo": "https://admango.cdn.mangomolo.com/analytics/uploads/188/6544bebaae.jpg",
+        "url": "https://cdn.freevisiontv.co.za/sttv/smil:1kzn.stream.smil/playlist.m3u8",
+        "categories": [
+            "entertainment",
+            "family",
+            "general"
+        ],
+        "country": "ZA"
+    },
+    {
+        "name": "STS",
+        "id": "STS.ru",
+        "logo": "https://i.imgur.com/ilUzAeb.png",
+        "url": "https://zabava-htlive.cdn.ngenix.net/hls/CH_STS/variant.m3u8",
+        "categories": [
+            "family"
+        ],
+        "country": "RU"
+    },
+    {
+        "name": "STS Love",
+        "id": "STSLove.ru",
+        "logo": "https://i.imgur.com/YBVZoDd.png",
+        "url": "https://zabava-htlive.cdn.ngenix.net/hls/CH_STSLOVE/variant.m3u8",
+        "categories": [
+            "family"
+        ],
+        "country": "RU"
+    },
+    {
         "name": "RiC",
         "id": "RiC.de",
         "logo": "https://i.imgur.com/4wMZ8Em.png",
@@ -244,16 +244,6 @@
         "id": "Mixkurdy.iq",
         "logo": "https://i.imgur.com/WHeH5i7.png",
         "url": "https://avr.host247.net/live/Mix-kurdy/playlist.m3u8",
-        "categories": [
-            "family"
-        ],
-        "country": "IQ"
-    },
-    {
-        "name": "EmanTv",
-        "id": "EmanTv.iq",
-        "logo": "https://i.imgur.com/QmgaPSi.png",
-        "url": "https://avr.host247.net/live/emantv/playlist.m3u8",
         "categories": [
             "family"
         ],
