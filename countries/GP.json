@@ -1,11 +1,21 @@
 [
     {
-        "name": "Radio TV Basse-Terre",
-        "id": "RadioTVBasseTerre.gp",
-        "logo": "https://i.imgur.com/OvnRplq.png",
-        "url": "https://vdo.ssl-stream.com:3412/stream/play.m3u8",
+        "name": "Madras FM TV",
+        "id": "MadrasFMTV.gp",
+        "logo": "https://i.imgur.com/spGg1CZ.png",
+        "url": "https://edge12.vedge.infomaniak.com/livecast/ik:madrasfmtv/manifest.m3u8",
         "categories": [
-            "general"
+            "music"
+        ],
+        "country": "GP"
+    },
+    {
+        "name": "RHT Guadeloupe",
+        "id": "RHTGuadeloupe.gp",
+        "logo": "https://i.imgur.com/hQ0Q6nE.png",
+        "url": "https://edge12.vedge.infomaniak.com/livecast/ik:livehautetension/manifest.m3u8",
+        "categories": [
+            "music"
         ],
         "country": "GP"
     },
@@ -20,12 +30,12 @@
         "country": "GP"
     },
     {
-        "name": "Madras FM TV",
-        "id": "MadrasFMTV.gp",
-        "logo": "https://i.imgur.com/spGg1CZ.png",
-        "url": "https://edge12.vedge.infomaniak.com/livecast/ik:madrasfmtv/manifest.m3u8",
+        "name": "Radio TV Basse-Terre",
+        "id": "RadioTVBasseTerre.gp",
+        "logo": "https://i.imgur.com/OvnRplq.png",
+        "url": "https://vdo.ssl-stream.com:3412/stream/play.m3u8",
         "categories": [
-            "music"
+            "general"
         ],
         "country": "GP"
     },
@@ -36,6 +46,16 @@
         "url": "https://www.teveka.net:8443/show/teveka/index.m3u8",
         "categories": [
             "general"
+        ],
+        "country": "GP"
+    },
+    {
+        "name": "TMA",
+        "id": "TMA.gp",
+        "logo": "https://i.imgur.com/1iOAl2j.png",
+        "url": "http://hls.tmacaraibes.com/live/index.m3u8",
+        "categories": [
+            "music"
         ],
         "country": "GP"
     }
