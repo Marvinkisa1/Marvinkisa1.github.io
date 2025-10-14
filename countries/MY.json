@@ -26,10 +26,20 @@
         "country": "MY"
     },
     {
-        "name": "TV2",
-        "id": "TV2.my",
-        "logo": "https://i.imgur.com/LGEdeyJ.png",
-        "url": "https://d25tgymtnqzu8s.cloudfront.net/smil:tv2/playlist.m3u8?id=2",
+        "name": "RTM Parlimen Dewan Negara",
+        "id": "RTMParlimenDewanNegara.my",
+        "logo": "https://i.postimg.cc/mgrVsTMY/header.png",
+        "url": "https://d25tgymtnqzu8s.cloudfront.net/smil:negara/playlist.m3u8?id=8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "MY"
+    },
+    {
+        "name": "TV1",
+        "id": "TV1.my",
+        "logo": "https://i.imgur.com/wSyPmiY.png",
+        "url": "https://d25tgymtnqzu8s.cloudfront.net/smil:tv1/playlist.m3u8?id=1",
         "categories": [],
         "country": "MY"
     },
@@ -42,21 +52,11 @@
         "country": "MY"
     },
     {
-        "name": "TV1",
-        "id": "TV1.my",
-        "logo": "https://i.imgur.com/wSyPmiY.png",
-        "url": "https://d25tgymtnqzu8s.cloudfront.net/smil:tv1/playlist.m3u8?id=1",
+        "name": "TV2",
+        "id": "TV2.my",
+        "logo": "https://i.imgur.com/LGEdeyJ.png",
+        "url": "https://d25tgymtnqzu8s.cloudfront.net/smil:tv2/playlist.m3u8?id=2",
         "categories": [],
-        "country": "MY"
-    },
-    {
-        "name": "RTM Parlimen Dewan Rakyat",
-        "id": "RTMParlimenDewanRakyat.my",
-        "logo": "https://i.postimg.cc/mgrVsTMY/header.png",
-        "url": "https://d25tgymtnqzu8s.cloudfront.net/smil:rakyat/playlist.m3u8?id=7",
-        "categories": [
-            "legislative"
-        ],
         "country": "MY"
     },
     {
@@ -70,20 +70,10 @@
         "country": "MY"
     },
     {
-        "name": "Maah TV",
-        "id": "MaahTV.my",
-        "logo": "https://i.imgur.com/FkyueH6.png",
-        "url": "https://hls.maahtv.live/hls/stream.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "MY"
-    },
-    {
-        "name": "RTM Parlimen Dewan Negara",
-        "id": "RTMParlimenDewanNegara.my",
+        "name": "RTM Parlimen Dewan Rakyat",
+        "id": "RTMParlimenDewanRakyat.my",
         "logo": "https://i.postimg.cc/mgrVsTMY/header.png",
-        "url": "https://d25tgymtnqzu8s.cloudfront.net/smil:negara/playlist.m3u8?id=8",
+        "url": "https://d25tgymtnqzu8s.cloudfront.net/smil:rakyat/playlist.m3u8?id=7",
         "categories": [
             "legislative"
         ],
@@ -96,6 +86,16 @@
         "url": "https://proshls.wns.live/hls/stream.m3u8",
         "categories": [
             "sports"
+        ],
+        "country": "MY"
+    },
+    {
+        "name": "Maah TV",
+        "id": "MaahTV.my",
+        "logo": "https://i.imgur.com/FkyueH6.png",
+        "url": "https://hls.maahtv.live/hls/stream.m3u8",
+        "categories": [
+            "movies"
         ],
         "country": "MY"
     },
