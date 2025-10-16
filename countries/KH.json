@@ -1,15 +1,5 @@
 [
     {
-        "name": "MSJ TV",
-        "id": "MSJTV.kh",
-        "logo": "https://i.imgur.com/TilslGU.png",
-        "url": "http://124.248.165.18:1935/live/myStream.smil/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "KH"
-    },
-    {
         "name": "MOI TV",
         "id": "MOITV.kh",
         "logo": "https://i.imgur.com/fbI2ybo.png",
@@ -20,10 +10,30 @@
         "country": "KH"
     },
     {
-        "name": "Wiki TV",
-        "id": "WikiTV.kh",
-        "logo": "https://i.imgur.com/rnV0Ui1.png",
-        "url": "https://stream.wikitv.asia/live/ngrp:myStream_all/playlist.m3u8",
+        "name": "MSJ TV",
+        "id": "MSJTV.kh",
+        "logo": "https://i.imgur.com/TilslGU.png",
+        "url": "http://124.248.165.18:1935/live/myStream.smil/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "KH"
+    },
+    {
+        "name": "TVK",
+        "id": "TVK.kh",
+        "logo": "https://i.imgur.com/5hPxjcl.png",
+        "url": "https://live.kh.malimarcdn.com/live/tvk.stream/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "KH"
+    },
+    {
+        "name": "TVK 2",
+        "id": "TVK2.kh",
+        "logo": "https://i.imgur.com/L36ptO2.png",
+        "url": "https://live.kh.malimarcdn.com/live/tvk2.stream/playlist.m3u8",
         "categories": [
             "education"
         ],
@@ -40,16 +50,6 @@
         "country": "KH"
     },
     {
-        "name": "Hang Meas HDTV",
-        "id": "HangMeasHDTV.kh",
-        "logo": "https://i.imgur.com/P8oOR8I.png",
-        "url": "http://clive.malisresidences.com:1935/hm_hdtv/_definst_/smil:HMHDTV.smil/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "KH"
-    },
-    {
         "name": "Rasmey Hang Meas HDTV",
         "id": "RasmeyHangMeasHDTV.kh",
         "logo": "https://i.imgur.com/EcqEMMg.png",
@@ -58,32 +58,12 @@
         "country": "KH"
     },
     {
-        "name": "TVK 2",
-        "id": "TVK2.kh",
-        "logo": "https://i.imgur.com/L36ptO2.png",
-        "url": "https://live.kh.malimarcdn.com/live/tvk2.stream/playlist.m3u8",
-        "categories": [
-            "education"
-        ],
-        "country": "KH"
-    },
-    {
-        "name": "TVK",
-        "id": "TVK.kh",
-        "logo": "https://i.imgur.com/5hPxjcl.png",
-        "url": "https://live.kh.malimarcdn.com/live/tvk.stream/playlist.m3u8",
+        "name": "Hang Meas HDTV",
+        "id": "HangMeasHDTV.kh",
+        "logo": "https://i.imgur.com/P8oOR8I.png",
+        "url": "http://clive.malisresidences.com:1935/hm_hdtv/_definst_/smil:HMHDTV.smil/playlist.m3u8",
         "categories": [
             "general"
-        ],
-        "country": "KH"
-    },
-    {
-        "name": "EAC News TV",
-        "id": "EACNewsTV.kh",
-        "logo": "https://i.imgur.com/EuYhS9Z.png",
-        "url": "https://live-evg17.tv360.metfone.com.kh/LiveApp/streams/eacnews.m3u8",
-        "categories": [
-            "news"
         ],
         "country": "KH"
     },
@@ -104,22 +84,22 @@
         "country": "KH"
     },
     {
-        "name": "My TV",
-        "id": "MyTV.kh",
-        "logo": "https://i.imgur.com/lhxRefQ.png",
-        "url": "http://live.happywatch99.com/livehd11/90ecf35382a7597e553200692c3fc384.sdp/playlist.m3u8",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "KH"
-    },
-    {
         "name": "CTV8 HD",
         "id": "CTV8HD.kh",
         "logo": "https://i.imgur.com/yrdr4Po.png",
         "url": "http://live.happywatch99.com/livehd17/60b8e758d3dac2865fa0cd868d0f7ec4.sdp/playlist.m3u8",
         "categories": [
             "general"
+        ],
+        "country": "KH"
+    },
+    {
+        "name": "My TV",
+        "id": "MyTV.kh",
+        "logo": "https://i.imgur.com/lhxRefQ.png",
+        "url": "http://live.happywatch99.com/livehd11/90ecf35382a7597e553200692c3fc384.sdp/playlist.m3u8",
+        "categories": [
+            "entertainment"
         ],
         "country": "KH"
     },
@@ -142,10 +122,48 @@
         "country": "KH"
     },
     {
+        "name": "Wiki TV",
+        "id": "WikiTV.kh",
+        "logo": "https://i.imgur.com/rnV0Ui1.png",
+        "url": "https://stream.wikitv.asia/live/ngrp:myStream_all/playlist.m3u8",
+        "categories": [
+            "education"
+        ],
+        "country": "KH"
+    },
+    {
+        "name": "Komsan TV",
+        "id": "KomsanTV.kh",
+        "logo": "https://i.imgur.com/SNTf2r3.png",
+        "url": "http://tv.cootel.com.kh:8077/streams/d/Komsan/playlist.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "KH"
+    },
+    {
+        "name": "PNN",
+        "id": "PNN.kh",
+        "logo": "https://i.imgur.com/ObtFGBW.png",
+        "url": "https://live-evg13.tv360.metfone.com.kh/live/pnn.m3u8",
+        "categories": [],
+        "country": "KH"
+    },
+    {
         "name": "BTV News",
         "id": "BTVNews.kh",
         "logo": "https://i.imgur.com/sUHiRj3.png",
         "url": "https://live-evg2.tv360.metfone.com.kh/livetest/bayontest.stream/playlist.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "KH"
+    },
+    {
+        "name": "EAC News TV",
+        "id": "EACNewsTV.kh",
+        "logo": "https://i.imgur.com/EuYhS9Z.png",
+        "url": "https://live-evg17.tv360.metfone.com.kh/LiveApp/streams/eacnews.m3u8",
         "categories": [
             "news"
         ],
@@ -167,24 +185,6 @@
         "logo": "https://i.imgur.com/SoBhuIb.png",
         "url": "https://live-evg10.tv360.metfone.com.kh/LiveApp/streams/ntvhd.m3u8",
         "categories": [],
-        "country": "KH"
-    },
-    {
-        "name": "PNN",
-        "id": "PNN.kh",
-        "logo": "https://i.imgur.com/ObtFGBW.png",
-        "url": "https://live-evg13.tv360.metfone.com.kh/live/pnn.m3u8",
-        "categories": [],
-        "country": "KH"
-    },
-    {
-        "name": "Komsan TV",
-        "id": "KomsanTV.kh",
-        "logo": "https://i.imgur.com/SNTf2r3.png",
-        "url": "http://tv.cootel.com.kh:8077/streams/d/Komsan/playlist.m3u8",
-        "categories": [
-            "movies"
-        ],
         "country": "KH"
     },
     {

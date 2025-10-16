@@ -1,26 +1,32 @@
 [
     {
-        "name": "TV SE",
-        "id": "TVSE.ro",
-        "logo": "https://i.imgur.com/r4zKU1e.png",
-        "url": "http://89.38.8.130:39419",
-        "categories": [],
+        "name": "TV Buzau",
+        "id": "TVBuzau.ro",
+        "logo": "https://i.imgur.com/GhFmUVO.png",
+        "url": "http://78.96.33.89:8080",
+        "categories": [
+            "general"
+        ],
         "country": "RO"
     },
     {
-        "name": "Rapsodia TV",
-        "id": "RapsodiaTV.ro",
-        "logo": "https://i.imgur.com/mwMG7BB.png",
-        "url": "http://92.86.248.141:8080/ram/playlist.m3u8",
-        "categories": [],
+        "name": "PROFI 24 TV",
+        "id": "PROFI24TV.ro",
+        "logo": "https://profi24.ro/wp-content/uploads/2025/03/Logo_Profi24_Nou_Logo_Profi24_Landscape_Logo_Profi24_Landscape-e1742981714264.png",
+        "url": "https://owncast-jjg42-u20330.vm.elestio.app/hls/0/stream.m3u8",
+        "categories": [
+            "general"
+        ],
         "country": "RO"
     },
     {
-        "name": "TVSat",
-        "id": "TVSat.ro",
-        "logo": "https://i.imgur.com/54GHZMv.png",
-        "url": "http://89.38.8.130:39443",
-        "categories": [],
+        "name": "Moinesti TV",
+        "id": "MoinestiTV.ro",
+        "logo": "https://i.imgur.com/MjS7LCr.png",
+        "url": "https://flus.moinestifm.ro/ro.moinesti/index.m3u8",
+        "categories": [
+            "music"
+        ],
         "country": "RO"
     },
     {
@@ -34,20 +40,154 @@
         "country": "RO"
     },
     {
-        "name": "Kanal D",
-        "id": "KanalD.ro",
-        "logo": "https://i.imgur.com/15ILp0P.png",
-        "url": "https://stream1.kanald.ro/iphone/knd-live.m3u8",
+        "name": "Nasul TV",
+        "id": "NasulTV.ro",
+        "logo": "https://i.imgur.com/MoguWme.png",
+        "url": "https://live.nasul.tv/live/stream.m3u8",
         "categories": [
             "general"
         ],
         "country": "RO"
     },
     {
-        "name": "Ardeal TV",
-        "id": "ArdealTV.ro",
-        "logo": "https://i.imgur.com/5XwtFKd.png",
-        "url": "https://frn.rtsp.me/wzhx8pmNF7-kstp_J0AdjA/1695647213/hls/yZ9ED27Q.m3u8",
+        "name": "Antena Monden",
+        "id": "AntenaMonden.ro",
+        "logo": "https://static.wikia.nocookie.net/logopedia/images/0/01/Antena_Monden_2022.png/revision/latest/scale-to-width-down/300",
+        "url": "https://stream1.antenaplay.ro/live/AntenaMonden/playlist.m3u8",
+        "categories": [
+            "lifestyle"
+        ],
+        "country": "RO"
+    },
+    {
+        "name": "Comedy Play",
+        "id": "ComedyPlay.ro",
+        "logo": "https://i.imgur.com/6kAeVOk.png",
+        "url": "https://stream1.antenaplay.ro/live/ComedyPlay/playlist.m3u8",
+        "categories": [
+            "comedy"
+        ],
+        "country": "RO"
+    },
+    {
+        "name": "AntenaSport",
+        "id": "AntenaSport.ro",
+        "logo": "",
+        "url": "https://stream1.antenaplay.ro/as/asrolive1/playlist.m3u8",
+        "categories": [
+            "sports"
+        ],
+        "country": "RO"
+    },
+    {
+        "name": "Rapsodia TV",
+        "id": "RapsodiaTV.ro",
+        "logo": "https://i.imgur.com/mwMG7BB.png",
+        "url": "http://92.86.248.141:8080/ram/playlist.m3u8",
+        "categories": [],
+        "country": "RO"
+    },
+    {
+        "name": "CaTine",
+        "id": "CaTine.ro",
+        "logo": "https://i.imgur.com/eFNHuIh.png",
+        "url": "https://stream1.antenaplay.ro/live/CaTine/playlist.m3u8",
+        "categories": [
+            "lifestyle"
+        ],
+        "country": "RO"
+    },
+    {
+        "name": "Traditional TV",
+        "id": "TraditionalTV.ro",
+        "logo": "https://i.ibb.co/G5bNH48/Traditional-TV-HD.png",
+        "url": "http://83.103.149.75:8085/udp/239.30.0.9:4000",
+        "categories": [
+            "music"
+        ],
+        "country": "RO"
+    },
+    {
+        "name": "Metropola TV",
+        "id": "MetropolaTV.ro",
+        "logo": "https://i.imgur.com/Gzq05v8.png",
+        "url": "https://www.livemetropolatv.ro/MetropolaTV/Metro/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "RO"
+    },
+    {
+        "name": "PROTV News",
+        "id": "PROTVNews.ro",
+        "logo": "",
+        "url": "https://cmero-ott-live.ssl.cdn.cra.cz/channels/cme-ro-voyo-news/playlist.m3u8?offsetSeconds=0&url=0",
+        "categories": [
+            "news"
+        ],
+        "country": "RO"
+    },
+    {
+        "name": "Agro TV",
+        "id": "AgroTV.ro",
+        "logo": "https://i.imgur.com/S7X1PiC.png",
+        "url": "https://agrotv.streamnet.ro/mobile_tv/agrotv.m3u8",
+        "categories": [
+            "outdoor"
+        ],
+        "country": "RO"
+    },
+    {
+        "name": "Dotto TV",
+        "id": "DottoTV.ro",
+        "logo": "https://i.imgur.com/pfs882Z.png",
+        "url": "https://live.dottotv.ro/index.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "RO"
+    },
+    {
+        "name": "Alfa Omega TV",
+        "id": "AlfaOmegaTV.ro",
+        "logo": "https://i.postimg.cc/0NmdbyS7/alfaomegatv.png",
+        "url": "http://vipforj.top:8080/VIP0176173538414492/11735384144745/3185",
+        "categories": [
+            "religious"
+        ],
+        "country": "RO"
+    },
+    {
+        "name": "Muscel TV",
+        "id": "MuscelTV.ro",
+        "logo": "https://i.ibb.co/Bq9CHyn/Musceltv1.png",
+        "url": "https://cdn.streamnet.pro/musceltv/live/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "RO"
+    },
+    {
+        "name": "TVSat",
+        "id": "TVSat.ro",
+        "logo": "https://i.imgur.com/54GHZMv.png",
+        "url": "http://89.38.8.130:39443",
+        "categories": [],
+        "country": "RO"
+    },
+    {
+        "name": "TV SE",
+        "id": "TVSE.ro",
+        "logo": "https://i.imgur.com/r4zKU1e.png",
+        "url": "http://89.38.8.130:39419",
+        "categories": [],
+        "country": "RO"
+    },
+    {
+        "name": "TeleM Botosani",
+        "id": "TeleMBotosani.ro",
+        "logo": "https://i.imgur.com/3EZ8CmJ.png",
+        "url": "http://89.137.197.15:8080/testing/pl5/playlist/ram/playlist.m3u8",
         "categories": [
             "general"
         ],
@@ -62,12 +202,150 @@
         "country": "RO"
     },
     {
-        "name": "Alfa Omega TV",
-        "id": "AlfaOmegaTV.ro",
-        "logo": "https://i.postimg.cc/0NmdbyS7/alfaomegatv.png",
-        "url": "http://vipforj.top:8080/VIP0176173538414492/11735384144745/3185",
+        "name": "Hunedoara 1",
+        "id": "Hunedoara1.ro",
+        "logo": "https://i.imgur.com/9bz15ad.png",
+        "url": "https://netstreaming.eu/hd1.m3u8",
         "categories": [
-            "religious"
+            "general"
+        ],
+        "country": "RO"
+    },
+    {
+        "name": "Columna TV",
+        "id": "ColumnaTV.ro",
+        "logo": "https://i.imgur.com/C5dIgsc.png",
+        "url": "http://live.columnatv.ro:1935/columnatv/live/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "RO"
+    },
+    {
+        "name": "Atomic Academy TV",
+        "id": "AtomicAcademyTV.ro",
+        "logo": "https://i.imgur.com/ZbrDIbZ.png",
+        "url": "https://atomic.streamnet.ro/academia.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "RO"
+    },
+    {
+        "name": "Atomic TV",
+        "id": "AtomicTV.ro",
+        "logo": "https://i.imgur.com/O4uI0Uy.png",
+        "url": "https://atomic.streamnet.ro/atomictv.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "RO"
+    },
+    {
+        "name": "Impact TV Manele",
+        "id": "ImpactTVManele.ro",
+        "logo": "https://i.imgur.com/G5mNdpE.png",
+        "url": "https://online.tvimpact.live/hls/impact_tv.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "RO"
+    },
+    {
+        "name": "Kanal D",
+        "id": "KanalD.ro",
+        "logo": "https://i.imgur.com/15ILp0P.png",
+        "url": "https://stream1.kanald.ro/iphone/knd-live.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "RO"
+    },
+    {
+        "name": "Impact TV Dance",
+        "id": "ImpactTVDance.ro",
+        "logo": "https://i.imgur.com/G5mNdpE.png",
+        "url": "https://online.tvimpact.live/hls/dancetv.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "RO"
+    },
+    {
+        "name": "Telestar1",
+        "id": "Telestar1.ro",
+        "logo": "https://i.imgur.com/BTKh5ef.png",
+        "url": "https://dvb.tennet.ro/mobile_tv/telestar.m3u8",
+        "categories": [],
+        "country": "RO"
+    },
+    {
+        "name": "Aleph News",
+        "id": "AlephNews.ro",
+        "logo": "https://i.imgur.com/qPRQZMI.png",
+        "url": "https://stream-aleph.m.ro/Aleph/ngrp:Alephnewsmain.stream_all/playlist.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "RO"
+    },
+    {
+        "name": "TVR International",
+        "id": "TVRInternational.ro",
+        "logo": "https://i.imgur.com/w28wcHs.png",
+        "url": "https://viamotionhsi.netplus.ch/live/eds/tvrinternational/browser-dash/tvrinternational.mpd",
+        "categories": [
+            "general"
+        ],
+        "country": "RO"
+    },
+    {
+        "name": "MediCOOL TV",
+        "id": "MediCOOLTV.ro",
+        "logo": "https://i.imgur.com/Xe7x1k2.png",
+        "url": "https://stream1.antenaplay.ro/live/MediCOOLTV/chunklist.m3u8",
+        "categories": [
+            "lifestyle"
+        ],
+        "country": "RO"
+    },
+    {
+        "name": "Magic TV",
+        "id": "MagicTV.ro",
+        "logo": "https://i.imgur.com/9izrr4d.png",
+        "url": "https://tv.broadcasting.ro/magictv/925f90db-5c88-4190-a53d-5163cdffe6f4.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "RO"
+    },
+    {
+        "name": "Kiss TV",
+        "id": "KissTV.ro",
+        "logo": "https://i.imgur.com/NKfVymH.png",
+        "url": "https://tv.broadcasting.ro/kisstv/a629c031-2170-4ee9-a36d-87a891aa3131.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "RO"
+    },
+    {
+        "name": "Rock TV",
+        "id": "RockTV.ro",
+        "logo": "https://i.imgur.com/VB88A5V.png",
+        "url": "https://tv.broadcasting.ro/rocktv/85c83a80-4f71-4f2d-a8d6-43f676896bcb.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "RO"
+    },
+    {
+        "name": "JimJam",
+        "id": "JimJam.ro",
+        "logo": "https://i.imgur.com/ODhkYyx.png",
+        "url": "https://saruman1.tharen.cfd/jimy/usergenq3n0lz7kr.m3u8",
+        "categories": [
+            "kids"
         ],
         "country": "RO"
     },
@@ -92,34 +370,6 @@
         "country": "RO"
     },
     {
-        "name": "TeleM Botosani",
-        "id": "TeleMBotosani.ro",
-        "logo": "https://i.imgur.com/3EZ8CmJ.png",
-        "url": "http://89.137.197.15:8080/testing/pl5/playlist/ram/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "RO"
-    },
-    {
-        "name": "TV Buzau",
-        "id": "TVBuzau.ro",
-        "logo": "https://i.imgur.com/GhFmUVO.png",
-        "url": "http://78.96.33.89:8080",
-        "categories": [
-            "general"
-        ],
-        "country": "RO"
-    },
-    {
-        "name": "Light Channel",
-        "id": "LightChannel.ro",
-        "logo": "https://i.imgur.com/S3Fbf8T.png",
-        "url": "http://streamer1.streamhost.org:1935/salive/GMIlcbgM/playlist.m3u8",
-        "categories": [],
-        "country": "RO"
-    },
-    {
         "name": "Arges TV",
         "id": "ArgesTV.ro",
         "logo": "https://i.imgur.com/qufz6nk.png",
@@ -130,112 +380,12 @@
         "country": "RO"
     },
     {
-        "name": "Traditional TV",
-        "id": "TraditionalTV.ro",
-        "logo": "https://i.ibb.co/G5bNH48/Traditional-TV-HD.png",
-        "url": "http://83.103.149.75:8085/udp/239.30.0.9:4000",
-        "categories": [
-            "music"
-        ],
-        "country": "RO"
-    },
-    {
-        "name": "JOB TV",
-        "id": "JOBTV.ro",
-        "logo": "https://i.imgur.com/UzcZNe3.png",
-        "url": "https://jobtvserver.eu/hls/stream.m3u8",
-        "categories": [
-            "business"
-        ],
-        "country": "RO"
-    },
-    {
-        "name": "TVR International",
-        "id": "TVRInternational.ro",
-        "logo": "https://i.imgur.com/w28wcHs.png",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/tvrinternational/browser-dash/tvrinternational.mpd",
+        "name": "Ardeal TV",
+        "id": "ArdealTV.ro",
+        "logo": "https://i.imgur.com/5XwtFKd.png",
+        "url": "https://frn.rtsp.me/wzhx8pmNF7-kstp_J0AdjA/1695647213/hls/yZ9ED27Q.m3u8",
         "categories": [
             "general"
-        ],
-        "country": "RO"
-    },
-    {
-        "name": "JimJam",
-        "id": "JimJam.ro",
-        "logo": "https://i.imgur.com/ODhkYyx.png",
-        "url": "https://saruman1.tharen.cfd/jimy/usergenq3n0lz7kr.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "RO"
-    },
-    {
-        "name": "Mireasa",
-        "id": "Mireasa.ro",
-        "logo": "https://i.imgur.com/k0VO0LH.png",
-        "url": "https://stream1.antenaplay.ro/live/MireasaExtra/playlist.m3u8",
-        "categories": [
-            "series"
-        ],
-        "country": "RO"
-    },
-    {
-        "name": "Antena Monden",
-        "id": "AntenaMonden.ro",
-        "logo": "https://static.wikia.nocookie.net/logopedia/images/0/01/Antena_Monden_2022.png/revision/latest/scale-to-width-down/300",
-        "url": "https://stream1.antenaplay.ro/live/AntenaMonden/playlist.m3u8",
-        "categories": [
-            "lifestyle"
-        ],
-        "country": "RO"
-    },
-    {
-        "name": "Nova TV Brasov",
-        "id": "NovaTVBrasov.ro",
-        "logo": "https://i.imgur.com/33Vn0Ij.png",
-        "url": "http://novapress.ro:2022/live/nova/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "RO"
-    },
-    {
-        "name": "CaTine",
-        "id": "CaTine.ro",
-        "logo": "https://i.imgur.com/eFNHuIh.png",
-        "url": "https://stream1.antenaplay.ro/live/CaTine/playlist.m3u8",
-        "categories": [
-            "lifestyle"
-        ],
-        "country": "RO"
-    },
-    {
-        "name": "Comedy Play",
-        "id": "ComedyPlay.ro",
-        "logo": "https://i.imgur.com/6kAeVOk.png",
-        "url": "https://stream1.antenaplay.ro/live/ComedyPlay/playlist.m3u8",
-        "categories": [
-            "comedy"
-        ],
-        "country": "RO"
-    },
-    {
-        "name": "MediCOOL TV",
-        "id": "MediCOOLTV.ro",
-        "logo": "https://i.imgur.com/Xe7x1k2.png",
-        "url": "https://stream1.antenaplay.ro/live/MediCOOLTV/chunklist.m3u8",
-        "categories": [
-            "lifestyle"
-        ],
-        "country": "RO"
-    },
-    {
-        "name": "AntenaSport",
-        "id": "AntenaSport.ro",
-        "logo": "",
-        "url": "https://stream1.antenaplay.ro/as/asrolive1/playlist.m3u8",
-        "categories": [
-            "sports"
         ],
         "country": "RO"
     },
@@ -250,132 +400,12 @@
         "country": "RO"
     },
     {
-        "name": "Rock TV",
-        "id": "RockTV.ro",
-        "logo": "https://i.imgur.com/VB88A5V.png",
-        "url": "https://tv.broadcasting.ro/rocktv/85c83a80-4f71-4f2d-a8d6-43f676896bcb.m3u8",
+        "name": "Mireasa",
+        "id": "Mireasa.ro",
+        "logo": "https://i.imgur.com/k0VO0LH.png",
+        "url": "https://stream1.antenaplay.ro/live/MireasaExtra/playlist.m3u8",
         "categories": [
-            "music"
-        ],
-        "country": "RO"
-    },
-    {
-        "name": "Kiss TV",
-        "id": "KissTV.ro",
-        "logo": "https://i.imgur.com/NKfVymH.png",
-        "url": "https://tv.broadcasting.ro/kisstv/a629c031-2170-4ee9-a36d-87a891aa3131.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "RO"
-    },
-    {
-        "name": "Magic TV",
-        "id": "MagicTV.ro",
-        "logo": "https://i.imgur.com/9izrr4d.png",
-        "url": "https://tv.broadcasting.ro/magictv/925f90db-5c88-4190-a53d-5163cdffe6f4.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "RO"
-    },
-    {
-        "name": "Informatia TV",
-        "id": "InformatiaTV.ro",
-        "logo": "https://i.imgur.com/P1ZbVRg.png",
-        "url": "https://informatia.streamnet.ro/mobile_tv/informatiatv.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "RO"
-    },
-    {
-        "name": "Moinesti TV",
-        "id": "MoinestiTV.ro",
-        "logo": "https://i.imgur.com/MjS7LCr.png",
-        "url": "https://flus.moinestifm.ro/ro.moinesti/index.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "RO"
-    },
-    {
-        "name": "Impact TV Manele",
-        "id": "ImpactTVManele.ro",
-        "logo": "https://i.imgur.com/G5mNdpE.png",
-        "url": "https://online.tvimpact.live/hls/impact_tv.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "RO"
-    },
-    {
-        "name": "Impact TV Dance",
-        "id": "ImpactTVDance.ro",
-        "logo": "https://i.imgur.com/G5mNdpE.png",
-        "url": "https://online.tvimpact.live/hls/dancetv.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "RO"
-    },
-    {
-        "name": "PROFI 24 TV",
-        "id": "PROFI24TV.ro",
-        "logo": "https://profi24.ro/wp-content/uploads/2025/03/Logo_Profi24_Nou_Logo_Profi24_Landscape_Logo_Profi24_Landscape-e1742981714264.png",
-        "url": "https://owncast-jjg42-u20330.vm.elestio.app/hls/0/stream.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "RO"
-    },
-    {
-        "name": "Nasul TV",
-        "id": "NasulTV.ro",
-        "logo": "https://i.imgur.com/MoguWme.png",
-        "url": "https://live.nasul.tv/live/stream.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "RO"
-    },
-    {
-        "name": "Dotto TV",
-        "id": "DottoTV.ro",
-        "logo": "https://i.imgur.com/pfs882Z.png",
-        "url": "https://live.dottotv.ro/index.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "RO"
-    },
-    {
-        "name": "Digi 24",
-        "id": "Digi24.ro",
-        "logo": "https://i.imgur.com/qmRnD0M.png",
-        "url": "https://edge-ar.rcs-rds.ro/digi24ar/index.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "RO"
-    },
-    {
-        "name": "A7TV",
-        "id": "A7TV.ro",
-        "logo": "https://i.imgur.com/RmFg8BN.png",
-        "url": "https://a7tvlive.ro/A7TV/A7TV/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "RO"
-    },
-    {
-        "name": "Muscel TV",
-        "id": "MuscelTV.ro",
-        "logo": "https://i.ibb.co/Bq9CHyn/Musceltv1.png",
-        "url": "https://cdn.streamnet.pro/musceltv/live/playlist.m3u8",
-        "categories": [
-            "general"
+            "series"
         ],
         "country": "RO"
     },
@@ -400,80 +430,32 @@
         "country": "RO"
     },
     {
-        "name": "Aleph News",
-        "id": "AlephNews.ro",
-        "logo": "https://i.imgur.com/qPRQZMI.png",
-        "url": "https://stream-aleph.m.ro/Aleph/ngrp:Alephnewsmain.stream_all/playlist.m3u8",
+        "name": "A7TV",
+        "id": "A7TV.ro",
+        "logo": "https://i.imgur.com/RmFg8BN.png",
+        "url": "https://a7tvlive.ro/A7TV/A7TV/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "RO"
+    },
+    {
+        "name": "Nova TV Brasov",
+        "id": "NovaTVBrasov.ro",
+        "logo": "https://i.imgur.com/33Vn0Ij.png",
+        "url": "http://novapress.ro:2022/live/nova/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "RO"
+    },
+    {
+        "name": "Informatia TV",
+        "id": "InformatiaTV.ro",
+        "logo": "https://i.imgur.com/P1ZbVRg.png",
+        "url": "https://informatia.streamnet.ro/mobile_tv/informatiatv.m3u8",
         "categories": [
             "news"
-        ],
-        "country": "RO"
-    },
-    {
-        "name": "Metropola TV",
-        "id": "MetropolaTV.ro",
-        "logo": "https://i.imgur.com/Gzq05v8.png",
-        "url": "https://www.livemetropolatv.ro/MetropolaTV/Metro/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "RO"
-    },
-    {
-        "name": "Hunedoara 1",
-        "id": "Hunedoara1.ro",
-        "logo": "https://i.imgur.com/9bz15ad.png",
-        "url": "https://netstreaming.eu/hd1.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "RO"
-    },
-    {
-        "name": "PROTV News",
-        "id": "PROTVNews.ro",
-        "logo": "",
-        "url": "https://cmero-ott-live.ssl.cdn.cra.cz/channels/cme-ro-voyo-news/playlist.m3u8?offsetSeconds=0&url=0",
-        "categories": [
-            "news"
-        ],
-        "country": "RO"
-    },
-    {
-        "name": "Atomic TV",
-        "id": "AtomicTV.ro",
-        "logo": "https://i.imgur.com/O4uI0Uy.png",
-        "url": "https://atomic.streamnet.ro/atomictv.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "RO"
-    },
-    {
-        "name": "Atomic Academy TV",
-        "id": "AtomicAcademyTV.ro",
-        "logo": "https://i.imgur.com/ZbrDIbZ.png",
-        "url": "https://atomic.streamnet.ro/academia.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "RO"
-    },
-    {
-        "name": "Telestar1",
-        "id": "Telestar1.ro",
-        "logo": "https://i.imgur.com/BTKh5ef.png",
-        "url": "https://dvb.tennet.ro/mobile_tv/telestar.m3u8",
-        "categories": [],
-        "country": "RO"
-    },
-    {
-        "name": "Columna TV",
-        "id": "ColumnaTV.ro",
-        "logo": "https://i.imgur.com/C5dIgsc.png",
-        "url": "http://live.columnatv.ro:1935/columnatv/live/playlist.m3u8",
-        "categories": [
-            "general"
         ],
         "country": "RO"
     },
@@ -488,12 +470,22 @@
         "country": "RO"
     },
     {
-        "name": "Agro TV",
-        "id": "AgroTV.ro",
-        "logo": "https://i.imgur.com/S7X1PiC.png",
-        "url": "https://agrotv.streamnet.ro/mobile_tv/agrotv.m3u8",
+        "name": "Digi 24",
+        "id": "Digi24.ro",
+        "logo": "https://i.imgur.com/qmRnD0M.png",
+        "url": "https://edge-ar.rcs-rds.ro/digi24ar/index.m3u8",
         "categories": [
-            "outdoor"
+            "news"
+        ],
+        "country": "RO"
+    },
+    {
+        "name": "JOB TV",
+        "id": "JOBTV.ro",
+        "logo": "https://i.imgur.com/UzcZNe3.png",
+        "url": "https://jobtvserver.eu/hls/stream.m3u8",
+        "categories": [
+            "business"
         ],
         "country": "RO"
     },
@@ -504,6 +496,24 @@
         "url": "https://testcam.go.ro:8080/hls/hd365.m3u8",
         "categories": [
             "general"
+        ],
+        "country": "RO"
+    },
+    {
+        "name": "Light Channel",
+        "id": "LightChannel.ro",
+        "logo": "https://i.imgur.com/S3Fbf8T.png",
+        "url": "http://streamer1.streamhost.org:1935/salive/GMIlcbgM/playlist.m3u8",
+        "categories": [],
+        "country": "RO"
+    },
+    {
+        "name": "Super TV",
+        "id": "SuperTV.ro",
+        "logo": "https://i.imgur.com/pzxUE0O.png",
+        "url": "http://iptv.supertv.ro:8000/play/a001/index.m3u8",
+        "categories": [
+            "music"
         ],
         "country": "RO"
     }
