@@ -25,6 +25,7 @@ CHANNELS_URL = os.getenv("CHANNELS_URL", "https://iptv-org.github.io/api/channel
 STREAMS_URL = os.getenv("STREAMS_URL", "https://iptv-org.github.io/api/streams.json")
 LOGOS_URL = os.getenv("LOGOS_URL", "https://iptv-org.github.io/api/logos.json")
 KENYA_BASE_URL = os.getenv("KENYA_BASE_URL", "")
+UGANDA_API_URL = "https://apps.moochatplus.net/bash/api/api.php?get_posts&page=1&count=100&api_key=cda11bx8aITlKsXCpNB7yVLnOdEGqg342ZFrQzJRetkSoUMi9w"
 M3U_URLS = [
     os.getenv("M3U_URL_1", ""),
     os.getenv("M3U_URL_2", "")
@@ -673,6 +674,103 @@ def scrape_kenya_tv_channels(logos_data):
         logging.error(f"Error occurred in Kenya TV scrape: {str(e)}")
         return []
 
+async def fetch_and_process_uganda_channels(session, checker, logos_data):
+    """Fetch and process Uganda channels from API, check working URLs, assign logos, and save."""
+    logging.info("Starting Uganda channels fetch...")
+    api_url = UGANDA_API_URL
+    try:
+        async with session.get(api_url) as response:
+            if response.status == 200:
+                data = await response.json()
+                posts = data.get("posts", [])
+                logging.info(f"Fetched {len(posts)} posts from Uganda API")
+            else:
+                logging.error(f"Failed to fetch Uganda API: Status {response.status}")
+                return 0
+    except Exception as e:
+        logging.error(f"Error fetching Uganda API: {e}")
+        return 0
+
+    channels = []
+    country_files = {"UG": []}
+    category_files = {}
+
+    async def process_post(post):
+        name = post.get("channel_name", "").strip()
+        if not name:
+            return None
+        url = post.get("channel_url")
+        if not url:
+            return None
+        category = post.get("category_name", "").lower().strip()
+        if not category:
+            category = "entertainment"  # default
+
+        base_id = re.sub(r'[^a-zA-Z0-9]', '', name).lower()
+        ch_id = f"{base_id}.ug"
+
+        # Logo search
+        logo = ""
+        exact_matches = [l for l in logos_data if l["channel"] == ch_id]
+        if exact_matches:
+            logo = exact_matches[0]["url"]
+        else:
+            base_matches = [l for l in logos_data if l["channel"] == base_id]
+            if base_matches:
+                logo = base_matches[0]["url"]
+
+        if not logo:
+            # Fuzzy match
+            best_match = max(
+                (l for l in logos_data if fuzz.ratio(l["channel"], base_id) > 85),
+                key=lambda l: fuzz.ratio(l["channel"], base_id),
+                default=None
+            )
+            if best_match:
+                score = fuzz.ratio(best_match["channel"], base_id)
+                logo = best_match["url"]
+                logging.info(f"Fuzzy logo match for {name} (ID: {ch_id}): {best_match['channel']} (score: {score})")
+
+        channel = {
+            "name": name,
+            "id": ch_id,
+            "logo": logo,
+            "url": url,
+            "categories": [category],
+            "country": "UG"
+        }
+
+        # Check if working
+        is_working = False
+        for retry in range(2):
+            checker.timeout = ClientTimeout(total=min(INITIAL_TIMEOUT * (retry + 1), MAX_TIMEOUT))
+            _, is_working = await checker.check_single_url(session, url)
+            if is_working:
+                break
+            await asyncio.sleep(0.1 * (retry + 1))
+
+        if is_working:
+            return channel
+        return None
+
+    tasks = [process_post(post) for post in posts]
+    for future in tqdm(asyncio.as_completed(tasks), total=len(tasks), desc="Processing Uganda channels"):
+        try:
+            result = await future
+            if result:
+                channels.append(result)
+                country_files["UG"].append(result)
+                cat = result["categories"][0]
+                category_files.setdefault(cat, []).append(result)
+        except Exception as e:
+            logging.error(f"Error processing Uganda post: {e}")
+
+    if channels:
+        save_channels(channels, country_files, category_files, append=True)
+        logging.info(f"Added {len(channels)} working Uganda channels")
+
+    return len(channels)
+
 async def clean_and_replace_channels(session, checker, all_channels, streams_dict, m3u_channels, logos_data):
     """Check all channels, replace non-working URLs if possible, and ensure only working channels are kept.
     
@@ -906,6 +1004,9 @@ async def main():
             
             save_channels(kenya_channels, country_files, category_files, append=True)
             logging.info(f"Added {len(kenya_channels)} Kenya channels to working channels")
+
+        logging.info("\n=== Step 1.5: Scraping Uganda channels ===")
+        ug_channels_count = await fetch_and_process_uganda_channels(session, checker, logos_data)
         
         sports_channels_count = await process_m3u_urls(session, logos_data)
         
@@ -941,11 +1042,12 @@ async def main():
                 )
 
                 all_channels = kenya_channels + all_existing_channels
-                total_channels = valid_channels_count + new_iptv_channels_count + sports_channels_count
+                total_channels = valid_channels_count + new_iptv_channels_count + sports_channels_count + ug_channels_count
                 logging.info(f"\nTotal working channels before cleaning: {total_channels}")
                 logging.info(f"Working manual channels: {valid_channels_count}")
                 logging.info(f"New working IPTV channels: {new_iptv_channels_count}")
                 logging.info(f"New working sports channels: {sports_channels_count}")
+                logging.info(f"New working Uganda channels: {ug_channels_count}")
         except Exception as e:
             logging.error(f"Error in IPTV-org processing: {e}")
             streams_dict = {}
