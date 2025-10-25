@@ -31,6 +31,16 @@
         "country": "US"
     },
     {
+        "name": "TVS Travel Network",
+        "id": "TVSTravelNetwork.us",
+        "logo": "https://i.imgur.com/vSFf5Ce.png",
+        "url": "https://rpn.bozztv.com/gusa/gusa-tvstravel/index.m3u8",
+        "categories": [
+            "travel"
+        ],
+        "country": "US"
+    },
+    {
         "name": "Pluto TV Animaux",
         "id": "PlutoTVAnimaux.us",
         "logo": "https://i.imgur.com/jxYlLsd.png",
@@ -41,10 +51,10 @@
         "country": "US"
     },
     {
-        "name": "TVS Travel Network",
-        "id": "TVSTravelNetwork.us",
-        "logo": "https://i.imgur.com/vSFf5Ce.png",
-        "url": "https://rpn.bozztv.com/gusa/gusa-tvstravel/index.m3u8",
+        "name": "Palm Beaches TV",
+        "id": "PalmBeachesTV.us",
+        "logo": "https://i.imgur.com/kBol4Pf.png",
+        "url": "https://live.feed.thepalmbeaches.tv/index.m3u8",
         "categories": [
             "travel"
         ],
@@ -61,10 +71,20 @@
         "country": "US"
     },
     {
-        "name": "Palm Beaches TV",
-        "id": "PalmBeachesTV.us",
-        "logo": "https://i.imgur.com/kBol4Pf.png",
-        "url": "https://live.feed.thepalmbeaches.tv/index.m3u8",
+        "name": "Beach TV Key West & Florida Keys",
+        "id": "BeachTVKeyWestFloridaKeys.us",
+        "logo": "https://i.imgur.com/XhDBdff.png",
+        "url": "https://5ed325193d4e1.streamlock.net:444/LiveTV/KTVHD/playlist.m3u8",
+        "categories": [
+            "travel"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Beach TV Florida & Alabama",
+        "id": "BeachTVFloridaAlabama.us",
+        "logo": "https://i.imgur.com/weypM9C.png",
+        "url": "https://5ed325193d4e1.streamlock.net:444/LiveTV/DTVHD/playlist.m3u8",
         "categories": [
             "travel"
         ],
@@ -101,26 +121,6 @@
         "country": "US"
     },
     {
-        "name": "Beach TV Florida & Alabama",
-        "id": "BeachTVFloridaAlabama.us",
-        "logo": "https://i.imgur.com/weypM9C.png",
-        "url": "https://5ed325193d4e1.streamlock.net:444/LiveTV/DTVHD/playlist.m3u8",
-        "categories": [
-            "travel"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Beach TV Key West & Florida Keys",
-        "id": "BeachTVKeyWestFloridaKeys.us",
-        "logo": "https://i.imgur.com/XhDBdff.png",
-        "url": "https://5ed325193d4e1.streamlock.net:444/LiveTV/KTVHD/playlist.m3u8",
-        "categories": [
-            "travel"
-        ],
-        "country": "US"
-    },
-    {
         "name": "GoUSA TV",
         "id": "GoUSATV.us",
         "logo": "https://i.imgur.com/x90ALip.png",
@@ -141,17 +141,6 @@
         "country": "US"
     },
     {
-        "name": "Chile Channel",
-        "id": "ChileChannel.cl",
-        "logo": "https://i.imgur.com/F1it6fh.png",
-        "url": "https://v2.tustreaming.cl/chilechannel/index.m3u8",
-        "categories": [
-            "travel",
-            "entertainment"
-        ],
-        "country": "CL"
-    },
-    {
         "name": "Travelxp",
         "id": "Travelxp.in",
         "logo": "https://i.imgur.com/8KQirah.png",
@@ -162,16 +151,6 @@
         "country": "IN"
     },
     {
-        "name": "RTG TV",
-        "id": "RTGTV.ru",
-        "logo": "https://i.imgur.com/ZMKPAho.png",
-        "url": "http://194.143.148.28:8080/RTG_HD/index.m3u8",
-        "categories": [
-            "travel"
-        ],
-        "country": "RU"
-    },
-    {
         "name": "Teleputeshestviya",
         "id": "Teleputeshestviya.ru",
         "logo": "https://i.imgur.com/eXJm1n3.png",
@@ -180,6 +159,17 @@
             "travel"
         ],
         "country": "RU"
+    },
+    {
+        "name": "Chile Channel",
+        "id": "ChileChannel.cl",
+        "logo": "https://i.imgur.com/F1it6fh.png",
+        "url": "https://v2.tustreaming.cl/chilechannel/index.m3u8",
+        "categories": [
+            "travel",
+            "entertainment"
+        ],
+        "country": "CL"
     },
     {
         "name": "TV Sayohi",
@@ -212,6 +202,16 @@
         "country": "ZA"
     },
     {
+        "name": "RTG TV",
+        "id": "RTGTV.ru",
+        "logo": "https://i.imgur.com/ZMKPAho.png",
+        "url": "http://194.143.148.28:8080/RTG_HD/index.m3u8",
+        "categories": [
+            "travel"
+        ],
+        "country": "RU"
+    },
+    {
         "name": "Peer TV Sudtirol",
         "id": "PeerTVSudtirol.it",
         "logo": "https://www.peer.biz/peertv-iptv/peer-tv-suedtirol.png",
@@ -223,10 +223,10 @@
         "country": "IT"
     },
     {
-        "name": "Peer TV Alto Adige",
-        "id": "PeerTVAltoAdige.it",
-        "logo": "https://www.peer.biz/peertv-iptv/peer-tv-alto-adige.png",
-        "url": "https://iptv.peer.biz/live/peertv-it.m3u8",
+        "name": "Peer TV South Tyrol",
+        "id": "PeerTVSouthTyrol.it",
+        "logo": "https://www.peer.biz/peertv-iptv/peer-tv-south-tyrol.png",
+        "url": "https://iptv.peer.biz/live/peertv-en.m3u8",
         "categories": [
             "outdoor",
             "travel"
@@ -234,10 +234,10 @@
         "country": "IT"
     },
     {
-        "name": "Peer TV South Tyrol",
-        "id": "PeerTVSouthTyrol.it",
-        "logo": "https://www.peer.biz/peertv-iptv/peer-tv-south-tyrol.png",
-        "url": "https://iptv.peer.biz/live/peertv-en.m3u8",
+        "name": "Peer TV Alto Adige",
+        "id": "PeerTVAltoAdige.it",
+        "logo": "https://www.peer.biz/peertv-iptv/peer-tv-alto-adige.png",
+        "url": "https://iptv.peer.biz/live/peertv-it.m3u8",
         "categories": [
             "outdoor",
             "travel"
