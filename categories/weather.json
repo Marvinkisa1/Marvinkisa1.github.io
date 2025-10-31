@@ -20,16 +20,6 @@
         "country": "CH"
     },
     {
-        "name": "Sky News Weather",
-        "id": "SkyNewsWeather.uk",
-        "logo": "https://i.postimg.cc/5tj8kWSX/skynewsweather.png",
-        "url": "https://distro001-gb-hls1-prd.delivery.skycdp.com/easel_cdn/ngrp:weather_loop.stream_all/playlist.m3u8",
-        "categories": [
-            "weather"
-        ],
-        "country": "UK"
-    },
-    {
         "name": "WMUR-DT1",
         "id": "WMURDT1.us",
         "logo": "https://upload.wikimedia.org/wikipedia/en/7/72/WMURCurrentLogo.png",
@@ -41,12 +31,32 @@
         "country": "US"
     },
     {
+        "name": "Sky News Weather",
+        "id": "SkyNewsWeather.uk",
+        "logo": "https://i.postimg.cc/5tj8kWSX/skynewsweather.png",
+        "url": "https://distro001-gb-hls1-prd.delivery.skycdp.com/easel_cdn/ngrp:weather_loop.stream_all/playlist.m3u8",
+        "categories": [
+            "weather"
+        ],
+        "country": "UK"
+    },
+    {
         "name": "WBRZ-DT1",
         "id": "WBRZDT1.us",
         "logo": "https://i.imgur.com/n057TgX.png",
         "url": "https://d2a6g6zgxepbwi.cloudfront.net/wbrz-edge/weather.stream_360p/playlist.m3u8",
         "categories": [
             "news",
+            "weather"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "AccuWeather NOW",
+        "id": "AccuWeatherNOW.us",
+        "logo": "https://i.imgur.com/M8wbVYK.png",
+        "url": "https://accuweather-xumo.amagi.tv/playlist.m3u8",
+        "categories": [
             "weather"
         ],
         "country": "US"
@@ -66,16 +76,6 @@
         "id": "FoxWeather.us",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Fox_Weather_logo.svg/512px-Fox_Weather_logo.svg.png",
         "url": "https://foxweather-xumo.amagi.tv/playlist.m3u8",
-        "categories": [
-            "weather"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "AccuWeather NOW",
-        "id": "AccuWeatherNOW.us",
-        "logo": "https://i.imgur.com/M8wbVYK.png",
-        "url": "https://accuweather-xumo.amagi.tv/playlist.m3u8",
         "categories": [
             "weather"
         ],
