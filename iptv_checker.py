@@ -706,28 +706,24 @@ async def fetch_and_process_uganda_channels(session, checker, logos_data):
         if not category:
             category = "entertainment"  # default
 
+        # Use regex to clean the channel name for ID construction
         base_id = re.sub(r'[^a-zA-Z0-9]', '', name).lower()
         ch_id = f"{base_id}.ug"
 
-        # Logo search
+        # Logo search: prioritize exact match on ch_id (ending with .ug)
         logo = ""
         exact_matches = [l for l in logos_data if l["channel"] == ch_id]
         if exact_matches:
             logo = exact_matches[0]["url"]
         else:
-            base_matches = [l for l in logos_data if l["channel"] == base_id]
-            if base_matches:
-                logo = base_matches[0]["url"]
-
-        if not logo:
-            # Fuzzy match
+            # Fuzzy match on ch_id (with .ug suffix) for approximate matches in logos
             best_match = max(
-                (l for l in logos_data if fuzz.ratio(l["channel"], base_id) > 85),
-                key=lambda l: fuzz.ratio(l["channel"], base_id),
+                (l for l in logos_data if fuzz.ratio(l["channel"], ch_id) > 85),
+                key=lambda l: fuzz.ratio(l["channel"], ch_id),
                 default=None
             )
             if best_match:
-                score = fuzz.ratio(best_match["channel"], base_id)
+                score = fuzz.ratio(best_match["channel"], ch_id)
                 logo = best_match["url"]
                 logging.info(f"Fuzzy logo match for {name} (ID: {ch_id}): {best_match['channel']} (score: {score})")
 
@@ -951,7 +947,19 @@ async def process_m3u_urls(session, logos_data):
                    'spor' in channel.get('raw_name', '').lower() or
                    'dazn' in channel.get('group_title', '').lower() or
                    'dazn' in channel.get('display_name', '').lower() or 
-                   'dazn' in channel.get('raw_name', '').lower()
+                   'dazn' in channel.get('raw_name', '').lower() or
+                   'sp' in channel.get('group_title', '').lower() or
+                   'sp' in channel.get('display_name', '').lower() or 
+                   'sp' in channel.get('raw_name', '').lower() or 
+                   'spo' in channel.get('group_title', '').lower() or
+                   'spo' in channel.get('display_name', '').lower() or 
+                   'spo' in channel.get('raw_name', '').lower() or 
+                   'xxx' in channel.get('group_title', '').lower() or
+                   'xxx' in channel.get('display_name', '').lower() or 
+                   'xxx' in channel.get('raw_name', '').lower() or 
+                   '18+' in channel.get('group_title', '').lower() or
+                   '18+' in channel.get('display_name', '').lower() or 
+                   '18+' in channel.get('raw_name', '').lower()
             ]
             logging.info(f"Found {len(sports_channels)} sports channels in {m3u_url}")
             
