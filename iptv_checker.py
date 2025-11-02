@@ -691,6 +691,9 @@ async def fetch_and_process_uganda_channels(session, checker, logos_data):
         logging.error(f"Error fetching Uganda API: {e}")
         return 0
 
+    # Pre-filter Uganda logos
+    ug_logos = [l for l in logos_data if l["channel"].endswith(".ug")]
+
     channels = []
     country_files = {"UG": []}
     category_files = {}
@@ -702,6 +705,9 @@ async def fetch_and_process_uganda_channels(session, checker, logos_data):
         url = post.get("channel_url")
         if not url:
             return None
+        if '.mp4' in url.lower():
+            logging.info(f"Skipping MP4 URL for channel: {name}")
+            return None
         category = post.get("category_name", "").lower().strip()
         if not category:
             category = "entertainment"  # default
@@ -712,18 +718,19 @@ async def fetch_and_process_uganda_channels(session, checker, logos_data):
 
         # Logo search: prioritize exact match on ch_id (ending with .ug)
         logo = ""
-        exact_matches = [l for l in logos_data if l["channel"] == ch_id]
+        exact_matches = [l for l in ug_logos if l["channel"] == ch_id]
         if exact_matches:
             logo = exact_matches[0]["url"]
+            logging.info(f"Exact logo match for {name} (ID: {ch_id}): {exact_matches[0]['channel']}")
         else:
-            # Fuzzy match on ch_id (with .ug suffix) for approximate matches in logos
+            # Fuzzy match on the base name (without .ug) against Uganda logos only
             best_match = max(
-                (l for l in logos_data if fuzz.ratio(l["channel"], ch_id) > 85),
-                key=lambda l: fuzz.ratio(l["channel"], ch_id),
+                (l for l in ug_logos if fuzz.ratio(l["channel"].rpartition('.')[0].lower(), base_id) > 80),
+                key=lambda l: fuzz.ratio(l["channel"].rpartition('.')[0].lower(), base_id),
                 default=None
             )
             if best_match:
-                score = fuzz.ratio(best_match["channel"], ch_id)
+                score = fuzz.ratio(best_match["channel"].rpartition('.')[0].lower(), base_id)
                 logo = best_match["url"]
                 logging.info(f"Fuzzy logo match for {name} (ID: {ch_id}): {best_match['channel']} (score: {score})")
 
