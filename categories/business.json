@@ -1,15 +1,5 @@
 [
     {
-        "name": "CNBC Arabiya",
-        "id": "CNBCArabiya.ae",
-        "logo": "https://i.imgur.com/opBXx1K.png",
-        "url": "https://cnbc-live.akamaized.net/cnbc/master.m3u8",
-        "categories": [
-            "business"
-        ],
-        "country": "AE"
-    },
-    {
         "name": "Al Arabiya Business",
         "id": "AlArabiyaBusiness.ae",
         "logo": "https://i.imgur.com/eEV4r6J.jpg",
@@ -29,6 +19,16 @@
             "news"
         ],
         "country": "FR"
+    },
+    {
+        "name": "CNBC Arabiya",
+        "id": "CNBCArabiya.ae",
+        "logo": "https://i.imgur.com/opBXx1K.png",
+        "url": "https://cnbc-live.akamaized.net/cnbc/master.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "AE"
     },
     {
         "name": "Canal E",
@@ -62,16 +62,6 @@
         "country": "US"
     },
     {
-        "name": "Yahoo! Finance",
-        "id": "YahooFinance.us",
-        "logo": "https://i.imgur.com/43oHsHL.png",
-        "url": "https://yahoo-vizio.amagi.tv/playlist.m3u8",
-        "categories": [
-            "business"
-        ],
-        "country": "US"
-    },
-    {
         "name": "Ameritrade",
         "id": "Ameritrade.us",
         "logo": "https://images-na.ssl-images-amazon.com/images/I/71CZKwin9mL.png",
@@ -82,10 +72,20 @@
         "country": "US"
     },
     {
-        "name": "30A Investment Pitch",
-        "id": "30AInvestmentPitch.us",
-        "logo": "https://i.imgur.com/CKCtZo7.png",
-        "url": "https://www.30a-tv.com/InvPit.m3u8",
+        "name": "CNBC World",
+        "id": "CNBCWorld.us",
+        "logo": "https://zap2it.tmsimg.com/h3/NowShowing/26849/s26849_ll_h15_ab.png?w=512",
+        "url": "https://fl1.moveonjoy.com/CNBC_World/index.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Yahoo! Finance",
+        "id": "YahooFinance.us",
+        "logo": "https://i.imgur.com/43oHsHL.png",
+        "url": "https://yahoo-vizio.amagi.tv/playlist.m3u8",
         "categories": [
             "business"
         ],
@@ -96,6 +96,16 @@
         "id": "TDAmeritradeNetwork.us",
         "logo": "https://i.imgur.com/RbVdkJ5.png",
         "url": "https://tdameritrade-distro.amagi.tv/playlist.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "30A Investment Pitch",
+        "id": "30AInvestmentPitch.us",
+        "logo": "https://i.imgur.com/CKCtZo7.png",
+        "url": "https://www.30a-tv.com/InvPit.m3u8",
         "categories": [
             "business"
         ],
@@ -226,16 +236,6 @@
         "country": "PL"
     },
     {
-        "name": "Nei Monggol TV Economic & Life Channel",
-        "id": "NeiMonggolTVEconomicLifeChannel.cn",
-        "logo": "https://i.imgur.com/M4xXzIr.png",
-        "url": "http://play1-qk.nmtv.cn/live/1686562470947181.m3u8",
-        "categories": [
-            "business"
-        ],
-        "country": "CN"
-    },
-    {
         "name": "Ausbiz TV",
         "id": "AusbizTV.au",
         "logo": "https://i.imgur.com/8vGGdB0.png",
@@ -246,20 +246,30 @@
         "country": "AU"
     },
     {
-        "name": "Canal Z",
-        "id": "CanalZ.be",
-        "logo": "https://i.imgur.com/qtiGLzZ.png",
-        "url": "https://d1hz1p2gea2zy4.cloudfront.net/live/rmgtv/RMG-TRENDSZFR-LIVE/index.m3u8",
+        "name": "Nei Monggol TV Economic & Life Channel",
+        "id": "NeiMonggolTVEconomicLifeChannel.cn",
+        "logo": "https://i.imgur.com/M4xXzIr.png",
+        "url": "http://play1-qk.nmtv.cn/live/1686562470947181.m3u8",
         "categories": [
             "business"
         ],
-        "country": "BE"
+        "country": "CN"
     },
     {
         "name": "Kanaal Z",
         "id": "KanaalZ.be",
         "logo": "https://i.imgur.com/YzgYJxM.png",
         "url": "https://d1hz1p2gea2zy4.cloudfront.net/live/rmgtv/RMG-TRENDSZNL-LIVE/index.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "BE"
+    },
+    {
+        "name": "Canal Z",
+        "id": "CanalZ.be",
+        "logo": "https://i.imgur.com/qtiGLzZ.png",
+        "url": "https://d1hz1p2gea2zy4.cloudfront.net/live/rmgtv/RMG-TRENDSZFR-LIVE/index.m3u8",
         "categories": [
             "business"
         ],

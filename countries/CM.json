@@ -10,13 +10,11 @@
         "country": "CM"
     },
     {
-        "name": "Play TV",
-        "id": "PlayTV.cm",
-        "logo": "https://i.imgur.com/1dmBqpf.png",
-        "url": "http://connectiktv.ddns.net:5000/playtv/@playtv/playlist.m3u8",
-        "categories": [
-            "music"
-        ],
+        "name": "My TV Channel",
+        "id": "MyTVChannel.cm",
+        "logo": "https://i.imgur.com/vh2373L.png",
+        "url": "http://connectiktv.ddns.net:5000/mytvchannel/@mytvchannel/playlist.m3u8",
+        "categories": [],
         "country": "CM"
     },
     {
@@ -30,11 +28,13 @@
         "country": "CM"
     },
     {
-        "name": "My TV Channel",
-        "id": "MyTVChannel.cm",
-        "logo": "https://i.imgur.com/vh2373L.png",
-        "url": "http://connectiktv.ddns.net:5000/mytvchannel/@mytvchannel/playlist.m3u8",
-        "categories": [],
+        "name": "Play TV",
+        "id": "PlayTV.cm",
+        "logo": "https://i.imgur.com/1dmBqpf.png",
+        "url": "http://connectiktv.ddns.net:5000/playtv/@playtv/playlist.m3u8",
+        "categories": [
+            "music"
+        ],
         "country": "CM"
     },
     {
@@ -64,6 +64,16 @@
         "url": "https://stream.it-innov.com/misec/index.m3u8",
         "categories": [
             "religious"
+        ],
+        "country": "CM"
+    },
+    {
+        "name": "CTV Afrique",
+        "id": "CTVAfrique.cm",
+        "logo": "https://i.ibb.co/k0mws9B/Ctv-Afrique.jpg",
+        "url": "https://stream.it-innov.com/ctv/index.m3u8",
+        "categories": [
+            "general"
         ],
         "country": "CM"
     },
