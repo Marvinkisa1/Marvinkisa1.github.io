@@ -47,6 +47,9 @@ USE_HEAD_METHOD = True
 BYTE_RANGE_CHECK = True
 KENYA_HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
 
+# Unwanted extensions for filtering
+UNWANTED_EXTENSIONS = ['.mkv', '.mp4', '.avi', '.mov', '.flv', '.wmv']
+
 class FastChecker:
     def __init__(self):
         self.connector = TCPConnector(
@@ -58,8 +61,18 @@ class FastChecker:
         self.timeout = ClientTimeout(total=INITIAL_TIMEOUT)
         self.semaphore = asyncio.Semaphore(MAX_CONCURRENT)
 
+    def has_unwanted_extension(self, url):
+        """Check if URL has unwanted video file extension"""
+        if not url:
+            return False
+        return any(url.lower().endswith(ext) for ext in UNWANTED_EXTENSIONS)
+
     async def check_single_url(self, session, url):
         """Efficient but thorough URL checker"""
+        # Skip URLs with unwanted extensions
+        if self.has_unwanted_extension(url):
+            return url, False
+            
         try:
             # First try HEAD request (fastest)
             if USE_HEAD_METHOD:
@@ -76,6 +89,9 @@ class FastChecker:
                                 if not redirect_url.startswith('http'):
                                     parsed = urlparse(url)
                                     redirect_url = f"{parsed.scheme}://{parsed.netloc}{redirect_url}"
+                                # Check if redirect URL has unwanted extension
+                                if self.has_unwanted_extension(redirect_url):
+                                    return url, False
                                 try:
                                     async with session.head(redirect_url, timeout=self.timeout, allow_redirects=False) as redirect_response:
                                         if redirect_response.status in (200, 301, 302, 307, 308):
@@ -111,8 +127,14 @@ class M3UProcessor:
         self.connector = aiohttp.TCPConnector(limit=50, force_close=True)
         self.timeout = aiohttp.ClientTimeout(total=15)
         self.semaphore = asyncio.Semaphore(50)
-        self.unwanted_extensions = ['.mkv', '.mp4', '.avi', '.mov', '.flv', '.wmv']
+        self.unwanted_extensions = UNWANTED_EXTENSIONS
         self.failed_urls = []
+
+    def has_unwanted_extension(self, url):
+        """Check if URL has unwanted video file extension"""
+        if not url:
+            return False
+        return any(url.lower().endswith(ext) for ext in self.unwanted_extensions)
 
     async def fetch_m3u_content(self, session, m3u_url):
         """Fetch M3U content from URL"""
@@ -137,7 +159,8 @@ class M3UProcessor:
             if line.startswith('#EXTINF:-1'):
                 current_channel = self._parse_extinf_line(line)
             elif line and not line.startswith('#') and current_channel:
-                if not any(line.lower().endswith(ext) for ext in self.unwanted_extensions):
+                # Skip URLs with unwanted extensions
+                if not self.has_unwanted_extension(line):
                     current_channel['url'] = line
                     channels.append(current_channel)
                 current_channel = {}
@@ -168,6 +191,10 @@ class M3UProcessor:
 
     async def check_url(self, session, url, retries=2):
         """Efficient URL checking"""
+        # Skip URLs with unwanted extensions
+        if self.has_unwanted_extension(url):
+            return False
+            
         parsed_url = urlparse(url)
         domain = f"{parsed_url.scheme}://{parsed_url.netloc}"
         headers = {
@@ -430,6 +457,10 @@ async def validate_channels(session, checker, all_existing_channels, iptv_channe
             if not channel_url:
                 return None
 
+            # Skip URLs with unwanted extensions
+            if checker.has_unwanted_extension(channel_url):
+                return None
+
             # Ensure logo is from logos_data
             ch_id = channel["id"]
             matching_logos = [l for l in logos_data if l["channel"] == ch_id]
@@ -491,6 +522,10 @@ async def check_iptv_channels(session, checker, channels_data, streams_dict, exi
             stream = streams_dict[channel["id"]]
             url = stream.get("url")
             if not url:
+                return None
+
+            # Skip URLs with unwanted extensions
+            if checker.has_unwanted_extension(url):
                 return None
 
             # Get logo from logos_data, prioritizing feed match
@@ -564,6 +599,10 @@ def get_m3u8_from_page(url_data):
 
 async def check_single_m3u8_url(session, url, timeout=15):
     """Check if a single m3u8 URL is valid."""
+    # Skip URLs with unwanted extensions
+    if any(url.lower().endswith(ext) for ext in UNWANTED_EXTENSIONS):
+        return url, False
+        
     try:
         async with session.get(url, timeout=aiohttp.ClientTimeout(total=timeout)) as response:
             if response.status == 200:
@@ -705,9 +744,12 @@ async def fetch_and_process_uganda_channels(session, checker, logos_data):
         url = post.get("channel_url")
         if not url:
             return None
-        if '.mp4' in url.lower():
-            logging.info(f"Skipping MP4 URL for channel: {name}")
+            
+        # Skip URLs with unwanted extensions
+        if any(url.lower().endswith(ext) for ext in UNWANTED_EXTENSIONS):
+            logging.info(f"Skipping unwanted extension URL for channel: {name}")
             return None
+            
         category = post.get("category_name", "").lower().strip()
         if not category:
             category = "entertainment"  # default
@@ -723,16 +765,19 @@ async def fetch_and_process_uganda_channels(session, checker, logos_data):
             logo = exact_matches[0]["url"]
             logging.info(f"Exact logo match for {name} (ID: {ch_id}): {exact_matches[0]['channel']}")
         else:
-            # Fuzzy match on the base name (without .ug) against Uganda logos only
-            best_match = max(
-                (l for l in ug_logos if fuzz.ratio(l["channel"].rpartition('.')[0].lower(), base_id) > 80),
-                key=lambda l: fuzz.ratio(l["channel"].rpartition('.')[0].lower(), base_id),
-                default=None
-            )
-            if best_match:
-                score = fuzz.ratio(best_match["channel"].rpartition('.')[0].lower(), base_id)
-                logo = best_match["url"]
-                logging.info(f"Fuzzy logo match for {name} (ID: {ch_id}): {best_match['channel']} (score: {score})")
+            # Improved fuzzy matching - only consider logos that end with .ug
+            potential_matches = []
+            for logo_data in ug_logos:
+                logo_channel = logo_data["channel"]
+                logo_base = logo_channel.rpartition('.')[0].lower()  # Remove .ug extension
+                similarity = fuzz.ratio(logo_base, base_id)
+                if similarity > 80:  # Only consider good matches
+                    potential_matches.append((logo_data, similarity))
+            
+            if potential_matches:
+                best_match = max(potential_matches, key=lambda x: x[1])
+                logo = best_match[0]["url"]
+                logging.info(f"Fuzzy logo match for {name} (ID: {ch_id}): {best_match[0]['channel']} (score: {best_match[1]})")
 
         channel = {
             "name": name,
@@ -799,7 +844,7 @@ async def clean_and_replace_channels(session, checker, all_channels, streams_dic
 
         if streams_dict and channel_id in streams_dict:
             new_url = streams_dict[channel_id].get("url")
-            if new_url:
+            if new_url and not checker.has_unwanted_extension(new_url):
                 for retry in range(2):
                     checker.timeout = ClientTimeout(total=min(INITIAL_TIMEOUT * (retry + 1), MAX_TIMEOUT))
                     _, is_working = await checker.check_single_url(session, new_url)
@@ -813,13 +858,14 @@ async def clean_and_replace_channels(session, checker, all_channels, streams_dic
                 m3u_name = m3u_channel.get("display_name", "").lower()
                 if fuzz.ratio(channel_name, m3u_name) > 80:
                     new_url = m3u_channel.get("url")
-                    for retry in range(2):
-                        checker.timeout = ClientTimeout(total=min(INITIAL_TIMEOUT * (retry + 1), MAX_TIMEOUT))
-                        _, is_working = await checker.check_single_url(session, new_url)
-                        if is_working:
-                            logging.info(f"Found working replacement URL from M3U for {channel_name}: {new_url}")
-                            return new_url
-                        await asyncio.sleep(0.3 * (retry + 1))
+                    if new_url and not checker.has_unwanted_extension(new_url):
+                        for retry in range(2):
+                            checker.timeout = ClientTimeout(total=min(INITIAL_TIMEOUT * (retry + 1), MAX_TIMEOUT))
+                            _, is_working = await checker.check_single_url(session, new_url)
+                            if is_working:
+                                logging.info(f"Found working replacement URL from M3U for {channel_name}: {new_url}")
+                                return new_url
+                            await asyncio.sleep(0.3 * (retry + 1))
 
         logging.info(f"No working replacement URL found for {channel_name}")
         return None
@@ -831,6 +877,12 @@ async def clean_and_replace_channels(session, checker, all_channels, streams_dic
 
         if not channel_url:
             logging.info(f"Skipping channel with no URL: {channel_name}")
+            return
+
+        # Skip URLs with unwanted extensions
+        if checker.has_unwanted_extension(channel_url):
+            logging.info(f"Skipping channel with unwanted extension: {channel_name} ({channel_url})")
+            non_working_channels += 1
             return
 
         # Ensure logo is from logos_data
