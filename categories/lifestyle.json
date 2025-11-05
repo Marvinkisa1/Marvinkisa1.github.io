@@ -40,6 +40,16 @@
         "country": "FR"
     },
     {
+        "name": "Maison & Travaux TV",
+        "id": "MaisonTravauxTV.fr",
+        "logo": "https://i.imgur.com/uYpc6nE.png",
+        "url": "https://raw.githubusercontent.com/Sibprod/streams/main/ressources/dm/py/hls/maisonettravaux.m3u8",
+        "categories": [
+            "lifestyle"
+        ],
+        "country": "FR"
+    },
+    {
         "name": "Monte Carlo Digital Television",
         "id": "MonteCarloDigitalTelevision.fr",
         "logo": "https://i.imgur.com/99h8F1y.jpeg",
@@ -70,6 +80,16 @@
         "country": "CH"
     },
     {
+        "name": "Hobby Maker",
+        "id": "HobbyMaker.uk",
+        "logo": "https://i.imgur.com/VWHp5Tl.png",
+        "url": "https://lo3.gemporia.com/abrhobbymakerukgfx/smil:livestreamFullHD.smil/playlist.m3u8",
+        "categories": [
+            "lifestyle"
+        ],
+        "country": "UK"
+    },
+    {
         "name": "ON Style TV",
         "id": "ONStyleTV.vn",
         "logo": "https://i.postimg.cc/x8RYwSkZ/ON-Style-TV.png",
@@ -80,14 +100,15 @@
         "country": "VN"
     },
     {
-        "name": "Hobby Maker",
-        "id": "HobbyMaker.uk",
-        "logo": "https://i.imgur.com/VWHp5Tl.png",
-        "url": "https://lo3.gemporia.com/abrhobbymakerukgfx/smil:livestreamFullHD.smil/playlist.m3u8",
+        "name": "Fashion Finds",
+        "id": "FashionFinds.us",
+        "logo": "https://i.imgur.com/GvDRZgq.png",
+        "url": "https://qvc-amd-live.akamaized.net/hls/live/2034113/lsqvc5us/master.m3u8",
         "categories": [
+            "shop",
             "lifestyle"
         ],
-        "country": "UK"
+        "country": "US"
     },
     {
         "name": "Pluto TV Cuisine",
@@ -120,16 +141,6 @@
         "country": "US"
     },
     {
-        "name": "BBC Travel",
-        "id": "BBCTravel.us",
-        "logo": "https://i.imgur.com/QiuYWs9.png",
-        "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/60e4519e6873180007d3cddb/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=84ac5694-4b92-11ef-aece-533610f1ea34&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=6c128a45-6314-4183-a002-254731ea91a6",
-        "categories": [
-            "lifestyle"
-        ],
-        "country": "US"
-    },
-    {
         "name": "Better Health TV",
         "id": "BetterHealthTV.us",
         "logo": "https://i.imgur.com/qnwJiji.png",
@@ -140,41 +151,10 @@
         "country": "US"
     },
     {
-        "name": "Revry Queer",
-        "id": "RevryQueer.us",
-        "logo": "",
-        "url": "https://linear-43.frequency.stream/mt/galxy/43/hls/master/playlist.m3u8",
-        "categories": [
-            "lifestyle"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Fashion Finds",
-        "id": "FashionFinds.us",
-        "logo": "https://i.imgur.com/GvDRZgq.png",
-        "url": "https://qvc-amd-live.akamaized.net/hls/live/2034113/lsqvc5us/master.m3u8",
-        "categories": [
-            "shop",
-            "lifestyle"
-        ],
-        "country": "US"
-    },
-    {
         "name": "The Design Network",
         "id": "TheDesignNetwork.us",
         "logo": "https://i.imgur.com/J5YJ3r3.png",
         "url": "https://amg00441-amg00441c1-rakuten-us-6050.playouts.now.amagi.tv/playlist.m3u8",
-        "categories": [
-            "lifestyle"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Health Media TV",
-        "id": "HealthMediaTV.us",
-        "logo": "https://i.imgur.com/x3lIyG9.png",
-        "url": "https://6n3yowknl9ok-hls-live.5centscdn.com/HMN/271ddf829afeece44d8732757fba1a66.sdp/playlist.m3u8",
         "categories": [
             "lifestyle"
         ],
@@ -211,10 +191,30 @@
         "country": "US"
     },
     {
-        "name": "Cleo TV",
-        "id": "CleoTV.us",
-        "logo": "https://i.imgur.com/US0T6DC.png",
-        "url": "https://fl41.moveonjoy.com/Cleo_TV/index.m3u8",
+        "name": "Revry Queer",
+        "id": "RevryQueer.us",
+        "logo": "",
+        "url": "https://linear-43.frequency.stream/mt/galxy/43/hls/master/playlist.m3u8",
+        "categories": [
+            "lifestyle"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "BBC Travel",
+        "id": "BBCTravel.us",
+        "logo": "https://i.imgur.com/QiuYWs9.png",
+        "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/60e4519e6873180007d3cddb/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=84ac5694-4b92-11ef-aece-533610f1ea34&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=6c128a45-6314-4183-a002-254731ea91a6",
+        "categories": [
+            "lifestyle"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Smart LifeStyle TV",
+        "id": "SmartLifeStyleTV.us",
+        "logo": "https://i.imgur.com/kHFlTEy.png",
+        "url": "https://brightstar-sls-pull-secure.akamaized.net/brightstarsls/stream.m3u8",
         "categories": [
             "lifestyle"
         ],
@@ -241,16 +241,6 @@
         "country": "US"
     },
     {
-        "name": "Smart LifeStyle TV",
-        "id": "SmartLifeStyleTV.us",
-        "logo": "https://i.imgur.com/kHFlTEy.png",
-        "url": "https://brightstar-sls-pull-secure.akamaized.net/brightstarsls/stream.m3u8",
-        "categories": [
-            "lifestyle"
-        ],
-        "country": "US"
-    },
-    {
         "name": "Kappa TV",
         "id": "KappaTV.in",
         "logo": "https://i.imgur.com/e9qTjgB.png",
@@ -261,30 +251,20 @@
         "country": "IN"
     },
     {
-        "name": "Ayush TV",
-        "id": "AyushTV.in",
-        "logo": "https://i.imgur.com/PWzvp0B.png",
-        "url": "https://95eryw39dwn4-hls-live.wmncdn.net/Ayushu/271ddf829afeece44d8732757fba1a66.sdp/index.m3u8",
-        "categories": [
-            "lifestyle"
-        ],
-        "country": "IN"
-    },
-    {
-        "name": "CaTine",
-        "id": "CaTine.ro",
-        "logo": "https://i.imgur.com/eFNHuIh.png",
-        "url": "https://stream1.antenaplay.ro/live/CaTine/playlist.m3u8",
+        "name": "MediCOOL TV",
+        "id": "MediCOOLTV.ro",
+        "logo": "https://i.imgur.com/Xe7x1k2.png",
+        "url": "https://stream1.antenaplay.ro/live/MediCOOLTV/chunklist.m3u8",
         "categories": [
             "lifestyle"
         ],
         "country": "RO"
     },
     {
-        "name": "MediCOOL TV",
-        "id": "MediCOOLTV.ro",
-        "logo": "https://i.imgur.com/Xe7x1k2.png",
-        "url": "https://stream1.antenaplay.ro/live/MediCOOLTV/chunklist.m3u8",
+        "name": "CaTine",
+        "id": "CaTine.ro",
+        "logo": "https://i.imgur.com/eFNHuIh.png",
+        "url": "https://stream1.antenaplay.ro/live/CaTine/playlist.m3u8",
         "categories": [
             "lifestyle"
         ],
@@ -311,6 +291,26 @@
         "country": "IN"
     },
     {
+        "name": "Ayush TV",
+        "id": "AyushTV.in",
+        "logo": "https://i.imgur.com/PWzvp0B.png",
+        "url": "https://95eryw39dwn4-hls-live.wmncdn.net/Ayushu/271ddf829afeece44d8732757fba1a66.sdp/index.m3u8",
+        "categories": [
+            "lifestyle"
+        ],
+        "country": "IN"
+    },
+    {
+        "name": "Zhivi!",
+        "id": "Zhivi.ru",
+        "logo": "https://i.imgur.com/LPqySGk.png",
+        "url": "http://31.148.48.15/Zhivi/index.m3u8",
+        "categories": [
+            "lifestyle"
+        ],
+        "country": "RU"
+    },
+    {
         "name": "PRIDEtv LATAM",
         "id": "PRIDEtvLATAM.cl",
         "logo": "https://neotv.cl/img/pridetv-512.png",
@@ -323,20 +323,10 @@
         "country": "CL"
     },
     {
-        "name": "Domashniy International",
-        "id": "DomashniyInternational.ru",
-        "logo": "https://i.imgur.com/nf7GRXb.png",
-        "url": "https://cdn4.skygo.mn/live/disk1/Domashni/HLSv3-FTA/Domashni.m3u8",
-        "categories": [
-            "lifestyle"
-        ],
-        "country": "RU"
-    },
-    {
-        "name": "Zhivi!",
-        "id": "Zhivi.ru",
-        "logo": "https://i.imgur.com/LPqySGk.png",
-        "url": "http://31.148.48.15/Zhivi/index.m3u8",
+        "name": "Otkritiy mir. Zdorove",
+        "id": "OtkritiymirZdorove.ru",
+        "logo": "https://i.imgur.com/7orZOJA.png",
+        "url": "https://v4.proofix.ru/0mir/index.m3u8",
         "categories": [
             "lifestyle"
         ],
@@ -353,10 +343,20 @@
         "country": "RU"
     },
     {
-        "name": "Otkritiy mir. Zdorove",
-        "id": "OtkritiymirZdorove.ru",
-        "logo": "https://i.imgur.com/7orZOJA.png",
-        "url": "https://v4.proofix.ru/0mir/index.m3u8",
+        "name": "NTV Style",
+        "id": "NTVStyle.ru",
+        "logo": "https://i.imgur.com/rX6K6qT.png",
+        "url": "https://cdn.ntv.ru/th_style/playlist.m3u8",
+        "categories": [
+            "lifestyle"
+        ],
+        "country": "RU"
+    },
+    {
+        "name": "Domashniy International",
+        "id": "DomashniyInternational.ru",
+        "logo": "https://i.imgur.com/nf7GRXb.png",
+        "url": "https://cdn4.skygo.mn/live/disk1/Domashni/HLSv3-FTA/Domashni.m3u8",
         "categories": [
             "lifestyle"
         ],
@@ -373,14 +373,14 @@
         "country": "MC"
     },
     {
-        "name": "NTV Style",
-        "id": "NTVStyle.ru",
-        "logo": "https://i.imgur.com/rX6K6qT.png",
-        "url": "https://cdn.ntv.ru/th_style/playlist.m3u8",
+        "name": "Class TV Moda",
+        "id": "ClassTVModa.it",
+        "logo": "https://i.postimg.cc/d3sngZ1J/classtvmoda.png",
+        "url": "https://raw.githubusercontent.com/Sibprod/streams/main/ressources/dm/py/hls/classtvmoda.m3u8",
         "categories": [
             "lifestyle"
         ],
-        "country": "RU"
+        "country": "IT"
     },
     {
         "name": "Alma TV",
@@ -391,6 +391,16 @@
             "lifestyle"
         ],
         "country": "IT"
+    },
+    {
+        "name": "Guide Love TV",
+        "id": "GuideLoveTV.ci",
+        "logo": "https://i.ibb.co/9gS2Y4G/guidelove-logo.png",
+        "url": "https://video1.getstreamhosting.com:1936/8056/8056/playlist.m3u8",
+        "categories": [
+            "lifestyle"
+        ],
+        "country": "CI"
     },
     {
         "name": "10 Bold",
@@ -404,30 +414,20 @@
         "country": "AU"
     },
     {
-        "name": "Guide Love TV",
-        "id": "GuideLoveTV.ci",
-        "logo": "https://i.ibb.co/9gS2Y4G/guidelove-logo.png",
-        "url": "https://video1.getstreamhosting.com:1936/8056/8056/playlist.m3u8",
-        "categories": [
-            "lifestyle"
-        ],
-        "country": "CI"
-    },
-    {
-        "name": "Poradnik Zdrowie TV",
-        "id": "PoradnikZdrowieTV.pl",
-        "logo": "https://i.imgur.com/EZP2KWS.png",
-        "url": "https://s-pl-01.mediatool.tv/playout/pzpl-abr/index.m3u8",
+        "name": "Murator TV",
+        "id": "MuratorTV.pl",
+        "logo": "https://i.imgur.com/HCnS1VT.png",
+        "url": "https://s-pl-01.mediatool.tv/playout/mupl-abr/index.m3u8",
         "categories": [
             "lifestyle"
         ],
         "country": "PL"
     },
     {
-        "name": "Murator TV",
-        "id": "MuratorTV.pl",
-        "logo": "https://i.imgur.com/HCnS1VT.png",
-        "url": "https://s-pl-01.mediatool.tv/playout/mupl-abr/index.m3u8",
+        "name": "Poradnik Zdrowie TV",
+        "id": "PoradnikZdrowieTV.pl",
+        "logo": "https://i.imgur.com/EZP2KWS.png",
+        "url": "https://s-pl-01.mediatool.tv/playout/pzpl-abr/index.m3u8",
         "categories": [
             "lifestyle"
         ],
@@ -457,17 +457,6 @@
         "country": "KR"
     },
     {
-        "name": "QTV-6",
-        "id": "QTV6.cn",
-        "logo": "https://www.tvchinese.net/uploads/tv/qdtv6.jpg",
-        "url": "http://video10.qtv.com.cn/drm/qtv6at/manifest.m3u8",
-        "categories": [
-            "lifestyle",
-            "kids"
-        ],
-        "country": "CN"
-    },
-    {
         "name": "QTV-2",
         "id": "QTV2.cn",
         "logo": "https://www.tvchinese.net/uploads/tv/qdtv2.jpg",
@@ -478,24 +467,15 @@
         "country": "CN"
     },
     {
-        "name": "Divinity",
-        "id": "Divinity.es",
-        "logo": "https://i.imgur.com/o7fvEr6.png",
-        "url": "http://176.65.146.237:8401/play/a09q/index.m3u8",
+        "name": "QTV-6",
+        "id": "QTV6.cn",
+        "logo": "https://www.tvchinese.net/uploads/tv/qdtv6.jpg",
+        "url": "http://video10.qtv.com.cn/drm/qtv6at/manifest.m3u8",
         "categories": [
-            "lifestyle"
+            "lifestyle",
+            "kids"
         ],
-        "country": "ES"
-    },
-    {
-        "name": "GEM Life",
-        "id": "GEMLife.tr",
-        "logo": "https://i.imgur.com/gI8qePa.png",
-        "url": "https://still-mud-3642.nqanzvyuupxwcahtfq.workers.dev/?url=https://ca-rt.onetv.app/gemlife/index-0.m3u8",
-        "categories": [
-            "lifestyle"
-        ],
-        "country": "TR"
+        "country": "CN"
     },
     {
         "name": "Plous TV",
@@ -508,14 +488,14 @@
         "country": "VE"
     },
     {
-        "name": "Nova",
-        "id": "Nova.es",
-        "logo": "https://i.imgur.com/Vx1F4o5.png",
-        "url": "http://176.65.146.237:8401/play/a0ah/index.m3u8",
+        "name": "GEM Life",
+        "id": "GEMLife.tr",
+        "logo": "https://i.imgur.com/gI8qePa.png",
+        "url": "https://still-mud-3642.nqanzvyuupxwcahtfq.workers.dev/?url=https://ca-rt.onetv.app/gemlife/index-0.m3u8",
         "categories": [
             "lifestyle"
         ],
-        "country": "ES"
+        "country": "TR"
     },
     {
         "name": "apart TV",
@@ -542,10 +522,40 @@
         "country": "TR"
     },
     {
+        "name": "SOS Docteur TV",
+        "id": "SOSDocteurTV.tg",
+        "logo": "https://i.imgur.com/wQpooHw.png",
+        "url": "https://raw.githubusercontent.com/Sibprod/streams/main/ressources/dm/py/hls/sosdocteurtv.m3u8",
+        "categories": [
+            "lifestyle"
+        ],
+        "country": "TG"
+    },
+    {
         "name": "Logos TV Salud",
         "id": "LogosTVSalud.es",
         "logo": "https://i.imgur.com/qkHrttj.png",
         "url": "https://streamer1.streamhost.org/salive/logossaludH/playlist.m3u8",
+        "categories": [
+            "lifestyle"
+        ],
+        "country": "ES"
+    },
+    {
+        "name": "Divinity",
+        "id": "Divinity.es",
+        "logo": "https://i.imgur.com/o7fvEr6.png",
+        "url": "http://176.65.146.237:8401/play/a09q/index.m3u8",
+        "categories": [
+            "lifestyle"
+        ],
+        "country": "ES"
+    },
+    {
+        "name": "Nova",
+        "id": "Nova.es",
+        "logo": "https://i.imgur.com/Vx1F4o5.png",
+        "url": "http://176.65.146.237:8401/play/a0ah/index.m3u8",
         "categories": [
             "lifestyle"
         ],
