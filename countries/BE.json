@@ -1,11 +1,31 @@
 [
     {
-        "name": "La Une",
-        "id": "LaUne.be",
-        "logo": "https://i.imgur.com/jMwZp7z.png",
-        "url": "http://41.205.93.154/LA-UNE/mpegts",
+        "name": "HLN Live",
+        "id": "HLNLive.be",
+        "logo": "https://i.ibb.co/zbCrZG9/hq-hln.png",
+        "url": "https://dpg-eventstreams.akamaized.net/hlnlivesrt-xmr/streamx/hlnlivesrt_720p.m3u8",
         "categories": [
-            "entertainment"
+            "news"
+        ],
+        "country": "BE"
+    },
+    {
+        "name": "Radio Contact",
+        "id": "RadioContact.be",
+        "logo": "https://i.imgur.com/32mmGvB.png",
+        "url": "https://contact-live-hls.akamaized.net/hls/live/2038650/CONTACT-Live-HLS/master.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "BE"
+    },
+    {
+        "name": "LN24",
+        "id": "LN24.be",
+        "logo": "https://i.imgur.com/1EkZRwn.png",
+        "url": "https://live-ln24.digiteka.com/1911668011/index.m3u8",
+        "categories": [
+            "news"
         ],
         "country": "BE"
     },
@@ -14,6 +34,62 @@
         "id": "ATV.be",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/ATV_Belgium_logo.svg/527px-ATV_Belgium_logo.svg.png",
         "url": "https://live.zendzend.com/mpegts/29375_107244/media_mpegts_0.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "BE"
+    },
+    {
+        "name": "Canal Z",
+        "id": "CanalZ.be",
+        "logo": "https://i.imgur.com/qtiGLzZ.png",
+        "url": "https://d1hz1p2gea2zy4.cloudfront.net/live/rmgtv/RMG-TRENDSZFR-LIVE/index.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "BE"
+    },
+    {
+        "name": "Kanaal Z",
+        "id": "KanaalZ.be",
+        "logo": "https://i.imgur.com/YzgYJxM.png",
+        "url": "https://d1hz1p2gea2zy4.cloudfront.net/live/rmgtv/RMG-TRENDSZNL-LIVE/index.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "BE"
+    },
+    {
+        "name": "Bel RTL",
+        "id": "BelRTL.be",
+        "logo": "https://i.imgur.com/0DUprIW.png",
+        "url": "https://bel-live-hls.akamaized.net/hls/live/2038650/BEL-Live-HLS/master.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "BE"
+    },
+    {
+        "name": "VTM",
+        "id": "VTM.be",
+        "logo": "https://i.imgur.com/N3nwyDd.png",
+        "url": "https://dpp-live-events.medialaancdn.be/events/hls/aes/webstream1.m3u8",
+        "categories": [],
+        "country": "BE"
+    },
+    {
+        "name": "RTL-TVI",
+        "id": "RTLTVI.be",
+        "logo": "https://i.imgur.com/2CimAAN.png",
+        "url": "https://tvi-live-hls.akamaized.net/hls/live/2038650/TVI-Live-HLS/master.m3u8",
+        "categories": [],
+        "country": "BE"
+    },
+    {
+        "name": "Notele",
+        "id": "Notele.be",
+        "logo": "https://i.imgur.com/fGS55nR.png",
+        "url": "https://streaming01.divercom.be/notele_live/direct.stream/playlist.m3u8",
         "categories": [
             "general"
         ],
@@ -38,50 +114,12 @@
         "country": "BE"
     },
     {
-        "name": "RTL-TVI",
-        "id": "RTLTVI.be",
-        "logo": "https://i.imgur.com/2CimAAN.png",
-        "url": "https://tvi-live-hls.akamaized.net/hls/live/2038650/TVI-Live-HLS/master.m3u8",
-        "categories": [],
-        "country": "BE"
-    },
-    {
-        "name": "Canal Z",
-        "id": "CanalZ.be",
-        "logo": "https://i.imgur.com/qtiGLzZ.png",
-        "url": "https://d1hz1p2gea2zy4.cloudfront.net/live/rmgtv/RMG-TRENDSZFR-LIVE/index.m3u8",
+        "name": "La Une",
+        "id": "LaUne.be",
+        "logo": "https://i.imgur.com/jMwZp7z.png",
+        "url": "http://41.205.93.154/LA-UNE/mpegts",
         "categories": [
-            "business"
-        ],
-        "country": "BE"
-    },
-    {
-        "name": "Kanaal Z",
-        "id": "KanaalZ.be",
-        "logo": "https://i.imgur.com/YzgYJxM.png",
-        "url": "https://d1hz1p2gea2zy4.cloudfront.net/live/rmgtv/RMG-TRENDSZNL-LIVE/index.m3u8",
-        "categories": [
-            "business"
-        ],
-        "country": "BE"
-    },
-    {
-        "name": "LN24",
-        "id": "LN24.be",
-        "logo": "https://i.imgur.com/1EkZRwn.png",
-        "url": "https://live-ln24.digiteka.com/1911668011/index.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "BE"
-    },
-    {
-        "name": "Matele",
-        "id": "Matele.be",
-        "logo": "https://i.imgur.com/rw72POr.png",
-        "url": "https://live.matele.be/hls/live.m3u8",
-        "categories": [
-            "general"
+            "entertainment"
         ],
         "country": "BE"
     },
@@ -96,50 +134,12 @@
         "country": "BE"
     },
     {
-        "name": "Radio Contact",
-        "id": "RadioContact.be",
-        "logo": "https://i.imgur.com/32mmGvB.png",
-        "url": "https://contact-live-hls.akamaized.net/hls/live/2038650/CONTACT-Live-HLS/master.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "BE"
-    },
-    {
-        "name": "Notele",
-        "id": "Notele.be",
-        "logo": "https://i.imgur.com/fGS55nR.png",
-        "url": "https://streaming01.divercom.be/notele_live/direct.stream/playlist.m3u8",
+        "name": "Matele",
+        "id": "Matele.be",
+        "logo": "https://i.imgur.com/rw72POr.png",
+        "url": "https://live.matele.be/hls/live.m3u8",
         "categories": [
             "general"
-        ],
-        "country": "BE"
-    },
-    {
-        "name": "HLN Live",
-        "id": "HLNLive.be",
-        "logo": "https://i.ibb.co/zbCrZG9/hq-hln.png",
-        "url": "https://dpg-eventstreams.akamaized.net/hlnlivesrt-xmr/streamx/hlnlivesrt_720p.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "BE"
-    },
-    {
-        "name": "VTM",
-        "id": "VTM.be",
-        "logo": "https://i.imgur.com/N3nwyDd.png",
-        "url": "https://dpp-live-events.medialaancdn.be/events/hls/aes/webstream1.m3u8",
-        "categories": [],
-        "country": "BE"
-    },
-    {
-        "name": "Bel RTL",
-        "id": "BelRTL.be",
-        "logo": "https://i.imgur.com/0DUprIW.png",
-        "url": "https://bel-live-hls.akamaized.net/hls/live/2038650/BEL-Live-HLS/master.m3u8",
-        "categories": [
-            "music"
         ],
         "country": "BE"
     }
