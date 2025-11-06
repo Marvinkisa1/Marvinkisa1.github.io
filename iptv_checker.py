@@ -744,10 +744,7 @@ async def fetch_and_process_uganda_channels(session, checker, logos_data):
 
         splittedName = firstName.split(' ')
 
-        name = ''
-
-        for n in name:
-            name = name+n
+        name = ''.join(splittedName)
 
         if not name:
             return None
@@ -768,26 +765,25 @@ async def fetch_and_process_uganda_channels(session, checker, logos_data):
         base_id = re.sub(r'[^a-zA-Z0-9]', '', name).lower()
         ch_id = f"{base_id}.ug"
 
-        # Logo search: prioritize exact match on ch_id (ending with .ug)
+        # Logo search: use regex-based possible match (no exact match)
         logo = ""
-        exact_matches = [l for l in ug_logos if l["channel"] == ch_id]
-        if exact_matches:
-            logo = exact_matches[0]["url"]
-            logging.info(f"Exact logo match for {name} (ID: {ch_id}): {exact_matches[0]['channel']}")
-        else:
-            # Improved fuzzy matching - only consider logos that end with .ug
-            potential_matches = []
-            for logo_data in ug_logos:
-                logo_channel = logo_data["channel"]
-                logo_base = logo_channel.rpartition('.')[0].lower()  # Remove .ug extension
-                similarity = fuzz.ratio(logo_base, base_id)
-                if similarity > 80:  # Only consider good matches
-                    potential_matches.append((logo_data, similarity))
-            
-            if potential_matches:
-                best_match = max(potential_matches, key=lambda x: x[1])
-                logo = best_match[0]["url"]
-                logging.info(f"Fuzzy logo match for {name} (ID: {ch_id}): {best_match[0]['channel']} (score: {best_match[1]})")
+        best_logo_data = None
+        best_score = 0
+        for logo_data in ug_logos:
+            logo_channel_base = logo_data["channel"].rpartition('.')[0]
+            normalized_logo = re.sub(r'[^a-z0-9]', '', logo_channel_base.lower())
+            # Regex pattern for partial/possible match (substring after normalization)
+            pattern = re.compile(re.escape(base_id), re.IGNORECASE)
+            if pattern.search(normalized_logo):
+                # Score based on length similarity for better matches
+                score = 100 if normalized_logo == base_id else 90 - abs(len(normalized_logo) - len(base_id))
+                if score > best_score:
+                    best_score = score
+                    best_logo_data = logo_data
+        
+        if best_logo_data:
+            logo = best_logo_data["url"]
+            logging.info(f"Regex-based logo match for {name} (ID: {ch_id}): {best_logo_data['channel']} (score: {best_score})")
 
         channel = {
             "name": name,
@@ -1163,4 +1159,4 @@ if __name__ == "__main__":
         asyncio.run(main())
     except Exception as e:
         logging.error(f"Script failed: {e}")
-        sys.exit(1)
+        sys.exit(1) 
