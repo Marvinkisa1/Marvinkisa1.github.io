@@ -20,16 +20,6 @@
         "country": "CH"
     },
     {
-        "name": "Sky News Weather",
-        "id": "SkyNewsWeather.uk",
-        "logo": "https://i.postimg.cc/5tj8kWSX/skynewsweather.png",
-        "url": "https://distro001-gb-hls1-prd.delivery.skycdp.com/easel_cdn/ngrp:weather_loop.stream_all/playlist.m3u8",
-        "categories": [
-            "weather"
-        ],
-        "country": "UK"
-    },
-    {
         "name": "WMUR-DT1",
         "id": "WMURDT1.us",
         "logo": "https://upload.wikimedia.org/wikipedia/en/7/72/WMURCurrentLogo.png",
@@ -39,6 +29,16 @@
             "weather"
         ],
         "country": "US"
+    },
+    {
+        "name": "Sky News Weather",
+        "id": "SkyNewsWeather.uk",
+        "logo": "https://i.postimg.cc/5tj8kWSX/skynewsweather.png",
+        "url": "https://distro001-gb-hls1-prd.delivery.skycdp.com/easel_cdn/ngrp:weather_loop.stream_all/playlist.m3u8",
+        "categories": [
+            "weather"
+        ],
+        "country": "UK"
     },
     {
         "name": "WBRZ-DT1",
@@ -62,20 +62,20 @@
         "country": "US"
     },
     {
-        "name": "WeatherNation",
-        "id": "WeatherNation.us",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/WeatherNation_Logo.svg/512px-WeatherNation_Logo.svg.png",
-        "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/5d2cb7ac552e3773bc48982e/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=6c2d1028-30d3-11ef-9cf5-e9ddff8ff496&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=dcca8395-396e-4be0-9049-564f29c5ac9b",
+        "name": "Fox Weather",
+        "id": "FoxWeather.us",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Fox_Weather_logo.svg/512px-Fox_Weather_logo.svg.png",
+        "url": "https://foxweather-xumo.amagi.tv/playlist.m3u8",
         "categories": [
             "weather"
         ],
         "country": "US"
     },
     {
-        "name": "Fox Weather",
-        "id": "FoxWeather.us",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Fox_Weather_logo.svg/512px-Fox_Weather_logo.svg.png",
-        "url": "https://foxweather-xumo.amagi.tv/playlist.m3u8",
+        "name": "WeatherNation",
+        "id": "WeatherNation.us",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/WeatherNation_Logo.svg/512px-WeatherNation_Logo.svg.png",
+        "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/5d2cb7ac552e3773bc48982e/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=6c2d1028-30d3-11ef-9cf5-e9ddff8ff496&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=dcca8395-396e-4be0-9049-564f29c5ac9b",
         "categories": [
             "weather"
         ],
@@ -103,16 +103,6 @@
     },
     {
         "name": "WeatherSpy",
-        "id": "WeatherSpy.au",
-        "logo": "https://i.imgur.com/GTxN2nH.png",
-        "url": "https://jukin-weatherspy-2-au.samsung.wurl.tv/playlist.m3u8",
-        "categories": [
-            "weather"
-        ],
-        "country": "AU"
-    },
-    {
-        "name": "WeatherSpy",
         "id": "WeatherSpy.mx",
         "logo": "https://i.imgur.com/KIEKOt1.png",
         "url": "https://jukin-weatherspy-2-mx.samsung.wurl.tv/playlist.m3u8",
@@ -120,6 +110,16 @@
             "weather"
         ],
         "country": "MX"
+    },
+    {
+        "name": "WeatherSpy",
+        "id": "WeatherSpy.au",
+        "logo": "https://i.imgur.com/GTxN2nH.png",
+        "url": "https://jukin-weatherspy-2-au.samsung.wurl.tv/playlist.m3u8",
+        "categories": [
+            "weather"
+        ],
+        "country": "AU"
     },
     {
         "name": "3Cat Cameres del temps",
