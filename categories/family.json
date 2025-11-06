@@ -10,17 +10,16 @@
         "country": "AE"
     },
     {
-        "name": "TV Paraense",
-        "id": "TVParaense.br",
-        "logo": "https://duckduckgo.com/i/e408ea02.png",
-        "url": "https://video09.logicahost.com.br/tvparaense/tvparaense/playlist.m3u",
+        "name": "BBC Three/CBBC",
+        "id": "BBCThreeCBBC.uk",
+        "logo": "https://i.imgur.com/CGXC5fp.png",
+        "url": "https://viamotionhsi.netplus.ch/live/eds/bbc3cbbc/browser-dash/bbc3cbbc.mpd",
         "categories": [
-            "general",
             "family",
-            "entertainment",
-            "news"
+            "kids",
+            "animation"
         ],
-        "country": "BR"
+        "country": "UK"
     },
     {
         "name": "Telenovisa43",
@@ -44,18 +43,6 @@
         "country": "US"
     },
     {
-        "name": "BBC Three/CBBC",
-        "id": "BBCThreeCBBC.uk",
-        "logo": "https://i.imgur.com/CGXC5fp.png",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/bbc3cbbc/browser-dash/bbc3cbbc.mpd",
-        "categories": [
-            "family",
-            "kids",
-            "animation"
-        ],
-        "country": "UK"
-    },
-    {
         "name": "Estrella Games",
         "id": "EstrellaGames.us",
         "logo": "https://i.imgur.com/Z52nEnH.png",
@@ -67,30 +54,10 @@
         "country": "US"
     },
     {
-        "name": "Freeform",
-        "id": "Freeform.us",
-        "logo": "https://i.imgur.com/BGAGeIf.png",
-        "url": "https://fl1.moveonjoy.com/FREE_FORM/index.m3u8",
-        "categories": [
-            "family"
-        ],
-        "country": "US"
-    },
-    {
         "name": "Positiv TV",
         "id": "PositivTV.us",
         "logo": "https://upload.wikimedia.org/wikipedia/en/8/82/Positiv_TV_Network_Logo.png",
         "url": "https://livecdn.use1-0004.jwplive.com/live/sites/fGLyccP5/media/FoWynVnP/live.isml/.m3u8",
-        "categories": [
-            "family"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "TVS Family Channel",
-        "id": "TVSFamilyChannel.us",
-        "logo": "https://i.imgur.com/Y3EV3DL.png",
-        "url": "https://rpn.bozztv.com/gusa/gusa-TVSFamilyChannel/index.m3u8",
         "categories": [
             "family"
         ],
@@ -107,10 +74,20 @@
         "country": "US"
     },
     {
-        "name": "FETV",
-        "id": "FETV.us",
-        "logo": "https://i.imgur.com/Z9xclnE.png",
-        "url": "https://gcdn-p6.teleuptv.net/806c57bb-85bc-4773-becc-e24433711d14/index.m3u8",
+        "name": "TVS Family Channel",
+        "id": "TVSFamilyChannel.us",
+        "logo": "https://i.imgur.com/Y3EV3DL.png",
+        "url": "https://rpn.bozztv.com/gusa/gusa-TVSFamilyChannel/index.m3u8",
+        "categories": [
+            "family"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Freeform",
+        "id": "Freeform.us",
+        "logo": "https://i.imgur.com/BGAGeIf.png",
+        "url": "https://fl1.moveonjoy.com/FREE_FORM/index.m3u8",
         "categories": [
             "family"
         ],
@@ -137,6 +114,16 @@
         "country": "US"
     },
     {
+        "name": "FETV",
+        "id": "FETV.us",
+        "logo": "https://i.imgur.com/Z9xclnE.png",
+        "url": "https://gcdn-p6.teleuptv.net/806c57bb-85bc-4773-becc-e24433711d14/index.m3u8",
+        "categories": [
+            "family"
+        ],
+        "country": "US"
+    },
+    {
         "name": "MCI Television",
         "id": "MCITelevision.co",
         "logo": "https://pbs.twimg.com/profile_images/1836009952420274177/FfYonU6r_400x400.jpg",
@@ -147,17 +134,6 @@
             "general"
         ],
         "country": "CO"
-    },
-    {
-        "name": "RiC",
-        "id": "RiC.de",
-        "logo": "https://i.imgur.com/4wMZ8Em.png",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/ric/browser-HLS8/ric.m3u8",
-        "categories": [
-            "kids",
-            "family"
-        ],
-        "country": "DE"
     },
     {
         "name": "STS Love",
@@ -180,14 +156,13 @@
         "country": "RU"
     },
     {
-        "name": "Tshwane TV",
-        "id": "TshwaneTV.za",
-        "logo": "https://admango.cdn.mangomolo.com/analytics/uploads/188/654a3ec660.png",
-        "url": "https://cdn.freevisiontv.co.za/sttv/smil:tshwane.stream.smil/playlist.m3u8",
+        "name": "Soweto TV",
+        "id": "SowetoTV.za",
+        "logo": "https://admango.cdn.mangomolo.com/analytics/uploads/188/654228e5b5.jpg",
+        "url": "https://cdn.freevisiontv.co.za/sttv/smil:soweto.stream.smil/playlist.m3u8",
         "categories": [
             "entertainment",
-            "family",
-            "general"
+            "family"
         ],
         "country": "ZA"
     },
@@ -204,15 +179,27 @@
         "country": "ZA"
     },
     {
-        "name": "Soweto TV",
-        "id": "SowetoTV.za",
-        "logo": "https://admango.cdn.mangomolo.com/analytics/uploads/188/654228e5b5.jpg",
-        "url": "https://cdn.freevisiontv.co.za/sttv/smil:soweto.stream.smil/playlist.m3u8",
+        "name": "Tshwane TV",
+        "id": "TshwaneTV.za",
+        "logo": "https://admango.cdn.mangomolo.com/analytics/uploads/188/654a3ec660.png",
+        "url": "https://cdn.freevisiontv.co.za/sttv/smil:tshwane.stream.smil/playlist.m3u8",
         "categories": [
             "entertainment",
-            "family"
+            "family",
+            "general"
         ],
         "country": "ZA"
+    },
+    {
+        "name": "RiC",
+        "id": "RiC.de",
+        "logo": "https://i.imgur.com/4wMZ8Em.png",
+        "url": "https://viamotionhsi.netplus.ch/live/eds/ric/browser-HLS8/ric.m3u8",
+        "categories": [
+            "kids",
+            "family"
+        ],
+        "country": "DE"
     },
     {
         "name": "EmanTv",
@@ -235,16 +222,6 @@
         "country": "IQ"
     },
     {
-        "name": "AVA Family",
-        "id": "AVAFamily.ir",
-        "logo": "https://i.postimg.cc/mZNchF5b/avafamily.png",
-        "url": "https://familyhls.avatv.live/hls/stream.m3u8",
-        "categories": [
-            "family"
-        ],
-        "country": "IR"
-    },
-    {
         "name": "TV Famille",
         "id": "TVFamille.mq",
         "logo": "https://i.imgur.com/Kbfihk5.png",
@@ -254,6 +231,16 @@
             "religious"
         ],
         "country": "MQ"
+    },
+    {
+        "name": "AVA Family",
+        "id": "AVAFamily.ir",
+        "logo": "https://i.postimg.cc/mZNchF5b/avafamily.png",
+        "url": "https://familyhls.avatv.live/hls/stream.m3u8",
+        "categories": [
+            "family"
+        ],
+        "country": "IR"
     },
     {
         "name": "Superscreen TV",

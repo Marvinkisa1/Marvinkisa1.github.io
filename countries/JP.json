@@ -1,9 +1,20 @@
 [
     {
-        "name": "QVC",
-        "id": "QVC.jp",
-        "logo": "https://i.imgur.com/6TWUVrh.png",
-        "url": "https://cdn-live1.qvc.jp/iPhone/1501/1501.m3u8",
+        "name": "NHK World-Japan",
+        "id": "NHKWorldJapan.jp",
+        "logo": "https://i.postimg.cc/prRQTsmD/nhkworldjapan.png",
+        "url": "https://cdn4.skygo.mn/live/disk1/NHK_World/HLSv3-FTA/NHK_World.m3u8",
+        "categories": [
+            "news",
+            "culture"
+        ],
+        "country": "JP"
+    },
+    {
+        "name": "Shop Channel",
+        "id": "ShopChannel.jp",
+        "logo": "https://i.postimg.cc/wMqPSBfX/shopchannel.png",
+        "url": "https://stream3.shopch.jp/HLS/master.m3u8",
         "categories": [
             "shop"
         ],
@@ -20,13 +31,22 @@
         "country": "JP"
     },
     {
-        "name": "NHK World-Japan",
-        "id": "NHKWorldJapan.jp",
-        "logo": "https://i.postimg.cc/prRQTsmD/nhkworldjapan.png",
-        "url": "https://cdn4.skygo.mn/live/disk1/NHK_World/HLSv3-FTA/NHK_World.m3u8",
+        "name": "NHK Kishou-Saigai",
+        "id": "NHKKishouSaigai.jp",
+        "logo": "https://i.imgur.com/oWKCBIz.png",
+        "url": "https://newssimul-stream.nhk.jp/hls/live/2010561/nhknewssimul/master.m3u8",
         "categories": [
-            "news",
-            "culture"
+            "weather"
+        ],
+        "country": "JP"
+    },
+    {
+        "name": "QVC",
+        "id": "QVC.jp",
+        "logo": "https://i.imgur.com/6TWUVrh.png",
+        "url": "https://cdn-live1.qvc.jp/iPhone/1501/1501.m3u8",
+        "categories": [
+            "shop"
         ],
         "country": "JP"
     },
@@ -37,26 +57,6 @@
         "url": "https://cdn.skygo.mn/live/disk1/NHK_World_Premium/HLSv3-FTA/NHK_World_Premium.m3u8",
         "categories": [
             "entertainment"
-        ],
-        "country": "JP"
-    },
-    {
-        "name": "Shop Channel",
-        "id": "ShopChannel.jp",
-        "logo": "https://i.postimg.cc/wMqPSBfX/shopchannel.png",
-        "url": "https://stream3.shopch.jp/HLS/master.m3u8",
-        "categories": [
-            "shop"
-        ],
-        "country": "JP"
-    },
-    {
-        "name": "NHK Kishou-Saigai",
-        "id": "NHKKishouSaigai.jp",
-        "logo": "https://i.imgur.com/oWKCBIz.png",
-        "url": "https://newssimul-stream.nhk.jp/hls/live/2010561/nhknewssimul/master.m3u8",
-        "categories": [
-            "weather"
         ],
         "country": "JP"
     }
