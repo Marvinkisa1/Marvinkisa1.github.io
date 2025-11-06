@@ -738,12 +738,8 @@ async def fetch_and_process_uganda_channels(session, checker, logos_data):
     category_files = {}
 
     async def process_post(post):
-
-        
         firstName = str(post.get("channel_name", "").strip())
-
         splittedName = firstName.split(' ')
-
         name = ''.join(splittedName)
 
         if not name:
@@ -765,25 +761,67 @@ async def fetch_and_process_uganda_channels(session, checker, logos_data):
         base_id = re.sub(r'[^a-zA-Z0-9]', '', name).lower()
         ch_id = f"{base_id}.ug"
 
-        # Logo search: use regex-based possible match (no exact match)
+        # Improved logo search: multiple strategies for possible matches
         logo = ""
         best_logo_data = None
         best_score = 0
+        
+        # Normalize the base_id for searching
+        search_pattern = re.sub(r'[^a-z0-9]', '', base_id.lower())
+        
         for logo_data in ug_logos:
-            logo_channel_base = logo_data["channel"].rpartition('.')[0]
-            normalized_logo = re.sub(r'[^a-z0-9]', '', logo_channel_base.lower())
-            # Regex pattern for partial/possible match (substring after normalization)
-            pattern = re.compile(re.escape(base_id), re.IGNORECASE)
-            if pattern.search(normalized_logo):
-                # Score based on length similarity for better matches
-                score = 100 if normalized_logo == base_id else 90 - abs(len(normalized_logo) - len(base_id))
+            logo_channel = logo_data["channel"]
+            # Remove the .ug extension and normalize for comparison
+            logo_channel_base = logo_channel.rpartition('.')[0]
+            normalized_logo_channel = re.sub(r'[^a-z0-9]', '', logo_channel_base.lower())
+            
+            # Multiple search strategies for better matching:
+            
+            # Strategy 1: Exact match after normalization (highest priority)
+            if normalized_logo_channel == search_pattern:
+                score = 100
                 if score > best_score:
                     best_score = score
                     best_logo_data = logo_data
-        
-        if best_logo_data:
+                continue
+                
+            # Strategy 2: Channel name contains our search pattern
+            if search_pattern in normalized_logo_channel:
+                score = 85
+                # Bonus points for closer length match
+                length_diff = abs(len(normalized_logo_channel) - len(search_pattern))
+                score -= min(length_diff, 10)  # Reduce score by length difference (max 10 points)
+                if score > best_score:
+                    best_score = score
+                    best_logo_data = logo_data
+                continue
+                
+            # Strategy 3: Our search pattern contains channel name
+            if normalized_logo_channel in search_pattern:
+                score = 80
+                length_diff = abs(len(normalized_logo_channel) - len(search_pattern))
+                score -= min(length_diff, 10)
+                if score > best_score:
+                    best_score = score
+                    best_logo_data = logo_data
+                continue
+                
+            # Strategy 4: Fuzzy matching using regex for partial word matches
+            # Create a pattern that matches significant parts of the name
+            if len(search_pattern) >= 3:
+                # Try matching significant substrings (at least 3 characters)
+                for i in range(len(search_pattern) - 2):
+                    substring = search_pattern[i:i+3]
+                    if substring in normalized_logo_channel:
+                        score = 70 - i  # Earlier substrings get higher scores
+                        if score > best_score:
+                            best_score = score
+                            best_logo_data = logo_data
+                        break
+
+        if best_logo_data and best_score >= 70:  # Only use matches with decent confidence
             logo = best_logo_data["url"]
-            logging.info(f"Regex-based logo match for {name} (ID: {ch_id}): {best_logo_data['channel']} (score: {best_score})")
+            logging.info(f"Logo match for {name} (ID: {ch_id}): {best_logo_data['channel']} (score: {best_score})")
 
         channel = {
             "name": name,
@@ -1159,4 +1197,4 @@ if __name__ == "__main__":
         asyncio.run(main())
     except Exception as e:
         logging.error(f"Script failed: {e}")
-        sys.exit(1) 
+        sys.exit(1)
