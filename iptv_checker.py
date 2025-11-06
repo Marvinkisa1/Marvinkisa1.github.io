@@ -738,7 +738,17 @@ async def fetch_and_process_uganda_channels(session, checker, logos_data):
     category_files = {}
 
     async def process_post(post):
-        name = post.get("channel_name", "").strip()
+
+        
+        firstName = str(post.get("channel_name", "").strip())
+
+        splittedName = firstName.split(' ')
+
+        name = ''
+
+        for n in name:
+            name = name+n
+
         if not name:
             return None
         url = post.get("channel_url")
