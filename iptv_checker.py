@@ -717,10 +717,25 @@ def scrape_kenya_tv_channels(logos_data):
 async def fetch_and_process_uganda_channels(session, checker, logos_data):
     """Fetch and process Uganda channels from API, check working URLs, assign logos, and save."""
     def normalize(name):
-        # Normalize by lowercasing and removing non-alphanumeric characters
+        # Simple and general: lowercase and remove non-alphanumeric (no specific stripping)
         name = name.lower()
         name = re.sub(r'[^a-z0-9]', '', name)
         return name
+
+    def get_score(a, b):
+        # Prefix-boosted for dynamic names (e.g., logo extras like "Uganda")
+        len_a = len(a)
+        len_b = len(b)
+        if len_a <= len_b:
+            shorter, longer = a, b
+            is_prefix = shorter == longer[:len_a]
+        else:
+            shorter, longer = b, a
+            is_prefix = shorter == longer[:len_b]
+        if is_prefix:
+            return 1.0
+        else:
+            return SequenceMatcher(None, a, b).ratio()
 
     logging.info("Starting Uganda channels fetch...")
     api_url = UGANDA_API_URL
@@ -736,64 +751,60 @@ async def fetch_and_process_uganda_channels(session, checker, logos_data):
     except Exception as e:
         logging.error(f"Error fetching Uganda API: {e}")
         return 0
-
-    # Pre-filter Uganda logos
+    # Pre-filter Uganda logos as dicts for easy URL access
     ug_logos = [l for l in logos_data if str(l["channel"]).lower().endswith('.ug')]
-
     channels = []
     country_files = {"UG": []}
     category_files = {}
-
-    # Threshold for a "good" match (adjust as needed, e.g., 0.8 means 80% similarity)
+    # Threshold for a "good" match (0.8 for high confidence, dynamic)
     match_threshold = 0.8
-
     async def process_post(post):
         name = str(post.get("channel_name", "").strip())
-
         if not name:
             return None
         url = post.get("channel_url")
         if not url:
             return None
-            
+           
         # Skip URLs with unwanted extensions
         if any(url.lower().endswith(ext) for ext in UNWANTED_EXTENSIONS):
             logging.info(f"Skipping unwanted extension URL for channel: {name}")
             return None
-            
+           
         category = post.get("category_name", "").lower().strip()
         if not category:
-            category = "entertainment"  # default
-
-        # Improved logo search using fuzzy matching
+            category = "entertainment" # default
+        # Improved logo search using prefix-boosted fuzzy matching
         logo = ""
         best_logo_data = None
         best_score = 0
-        
+       
         # Normalize the input name for searching
         norm_inp = normalize(name)
-        
+       
         for logo_data in ug_logos:
             logo_channel = logo_data["channel"]
             # Normalize the key, removing the domain extension like .ug
             norm_key = normalize(logo_channel.split('.')[0])
-            
-            # Calculate similarity score using SequenceMatcher
-            score = SequenceMatcher(None, norm_inp, norm_key).ratio()
-            
+           
+            # Calculate boosted similarity score
+            score = get_score(norm_inp, norm_key)
+           
             if score > best_score:
                 best_score = score
                 best_logo_data = logo_data
-        
+       
+        ch_id = None
         if best_logo_data and best_score >= match_threshold:
-            logo = best_logo_data["url"]
-            ch_id = best_logo_data['channel']  # Use matched logo channel as ID
-            logging.info(f"Logo match for {name} (ID: {ch_id}): {best_logo_data['channel']} with similarity {best_score:.2f}")
+            logo = best_logo_data["url"]  # Assign the logo URL
+            ch_id = best_logo_data['channel'] # Use matched logo channel as ID
+            logging.info(f"Logo match for {name} (ID: {ch_id}): {logo} with score {best_score:.2f}")
         else:
-            # Fallback to normalized ID
-            base_id = normalize(name)
+            # Fallback to normalized ID (no logo)
+            base_id = norm_inp
             ch_id = f"{base_id}.ug"
-
+            logging.info(f"No good logo match for {name} (best score: {best_score:.2f}) | No logo assigned | Fallback ID: {ch_id}")
+       
         channel = {
             "name": name,
             "id": ch_id,
@@ -802,7 +813,6 @@ async def fetch_and_process_uganda_channels(session, checker, logos_data):
             "categories": [category],
             "country": "UG"
         }
-
         # Check if working
         is_working = False
         for retry in range(2):
@@ -811,11 +821,9 @@ async def fetch_and_process_uganda_channels(session, checker, logos_data):
             if is_working:
                 break
             await asyncio.sleep(0.1 * (retry + 1))
-
         if is_working:
             return channel
         return None
-
     tasks = [process_post(post) for post in posts]
     for future in tqdm(asyncio.as_completed(tasks), total=len(tasks), desc="Processing Uganda channels"):
         try:
@@ -827,11 +835,9 @@ async def fetch_and_process_uganda_channels(session, checker, logos_data):
                 category_files.setdefault(cat, []).append(result)
         except Exception as e:
             logging.error(f"Error processing Uganda post: {e}")
-
     if channels:
         save_channels(channels, country_files, category_files, append=True)
         logging.info(f"Added {len(channels)} working Uganda channels")
-
     return len(channels)
 
 async def clean_and_replace_channels(session, checker, all_channels, streams_dict, m3u_channels, logos_data):
