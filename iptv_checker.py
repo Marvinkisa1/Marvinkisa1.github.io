@@ -16,6 +16,7 @@ import logging
 import sys
 from fuzzywuzzy import fuzz
 import shutil
+from difflib import SequenceMatcher
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -715,6 +716,12 @@ def scrape_kenya_tv_channels(logos_data):
 
 async def fetch_and_process_uganda_channels(session, checker, logos_data):
     """Fetch and process Uganda channels from API, check working URLs, assign logos, and save."""
+    def normalize(name):
+        # Normalize by lowercasing and removing non-alphanumeric characters
+        name = name.lower()
+        name = re.sub(r'[^a-z0-9]', '', name)
+        return name
+
     logging.info("Starting Uganda channels fetch...")
     api_url = UGANDA_API_URL
     try:
@@ -736,6 +743,9 @@ async def fetch_and_process_uganda_channels(session, checker, logos_data):
     channels = []
     country_files = {"UG": []}
     category_files = {}
+
+    # Threshold for a "good" match (adjust as needed, e.g., 0.8 means 80% similarity)
+    match_threshold = 0.8
 
     async def process_post(post):
         firstName = str(post.get("channel_name", "").strip())
@@ -761,67 +771,29 @@ async def fetch_and_process_uganda_channels(session, checker, logos_data):
         base_id = re.sub(r'[^a-zA-Z0-9]', '', name).lower()
         ch_id = f"{base_id}.ug"
 
-        # Improved logo search: multiple strategies for possible matches
+        # Improved logo search using fuzzy matching
         logo = ""
         best_logo_data = None
         best_score = 0
         
-        # Normalize the base_id for searching
-        search_pattern = re.sub(r'[^a-z0-9]', '', base_id.lower())
+        # Normalize the input name for searching
+        norm_inp = normalize(firstName)
         
         for logo_data in ug_logos:
             logo_channel = logo_data["channel"]
-            # Remove the .ug extension and normalize for comparison
-            logo_channel_base = logo_channel.rpartition('.')[0]
-            normalized_logo_channel = re.sub(r'[^a-z0-9]', '', logo_channel_base.lower())
+            # Normalize the key, removing the domain extension like .ug
+            norm_key = normalize(logo_channel.split('.')[0])
             
-            # Multiple search strategies for better matching:
+            # Calculate similarity score using SequenceMatcher
+            score = SequenceMatcher(None, norm_inp, norm_key).ratio()
             
-            # Strategy 1: Exact match after normalization (highest priority)
-            if normalized_logo_channel == search_pattern:
-                score = 100
-                if score > best_score:
-                    best_score = score
-                    best_logo_data = logo_data
-                continue
-                
-            # Strategy 2: Channel name contains our search pattern
-            if search_pattern in normalized_logo_channel:
-                score = 85
-                # Bonus points for closer length match
-                length_diff = abs(len(normalized_logo_channel) - len(search_pattern))
-                score -= min(length_diff, 10)  # Reduce score by length difference (max 10 points)
-                if score > best_score:
-                    best_score = score
-                    best_logo_data = logo_data
-                continue
-                
-            # Strategy 3: Our search pattern contains channel name
-            if normalized_logo_channel in search_pattern:
-                score = 80
-                length_diff = abs(len(normalized_logo_channel) - len(search_pattern))
-                score -= min(length_diff, 10)
-                if score > best_score:
-                    best_score = score
-                    best_logo_data = logo_data
-                continue
-                
-            # Strategy 4: Fuzzy matching using regex for partial word matches
-            # Create a pattern that matches significant parts of the name
-            if len(search_pattern) >= 3:
-                # Try matching significant substrings (at least 3 characters)
-                for i in range(len(search_pattern) - 2):
-                    substring = search_pattern[i:i+3]
-                    if substring in normalized_logo_channel:
-                        score = 70 - i  # Earlier substrings get higher scores
-                        if score > best_score:
-                            best_score = score
-                            best_logo_data = logo_data
-                        break
-
-        if best_logo_data and best_score >= 70:  # Only use matches with decent confidence
+            if score > best_score:
+                best_score = score
+                best_logo_data = logo_data
+        
+        if best_logo_data and best_score >= match_threshold:
             logo = best_logo_data["url"]
-            logging.info(f"Logo match for {name} (ID: {ch_id}): {best_logo_data['channel']} (score: {best_score})")
+            logging.info(f"Logo match for {name} (ID: {ch_id}): {best_logo_data['channel']} with similarity {best_score:.2f}")
 
         channel = {
             "name": name,
