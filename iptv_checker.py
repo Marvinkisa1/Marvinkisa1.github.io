@@ -738,7 +738,7 @@ async def fetch_and_process_uganda_channels(session, checker, logos_data):
         return 0
 
     # Pre-filter Uganda logos
-    ug_logos = [l for l in logos_data if l["channel"].endswith(".ug")]
+    ug_logos = [l for l in logos_data if str(l["channel"]).lower().endswith('.ug')]
 
     channels = []
     country_files = {"UG": []}
@@ -748,9 +748,7 @@ async def fetch_and_process_uganda_channels(session, checker, logos_data):
     match_threshold = 0.8
 
     async def process_post(post):
-        firstName = str(post.get("channel_name", "").strip())
-        splittedName = firstName.split(' ')
-        name = ''.join(splittedName)
+        name = str(post.get("channel_name", "").strip())
 
         if not name:
             return None
@@ -767,17 +765,13 @@ async def fetch_and_process_uganda_channels(session, checker, logos_data):
         if not category:
             category = "entertainment"  # default
 
-        # Use regex to clean the channel name for ID construction
-        base_id = re.sub(r'[^a-zA-Z0-9]', '', name).lower()
-        ch_id = f"{base_id}.ug"
-
         # Improved logo search using fuzzy matching
         logo = ""
         best_logo_data = None
         best_score = 0
         
         # Normalize the input name for searching
-        norm_inp = normalize(firstName)
+        norm_inp = normalize(name)
         
         for logo_data in ug_logos:
             logo_channel = logo_data["channel"]
@@ -793,7 +787,12 @@ async def fetch_and_process_uganda_channels(session, checker, logos_data):
         
         if best_logo_data and best_score >= match_threshold:
             logo = best_logo_data["url"]
+            ch_id = best_logo_data['channel']  # Use matched logo channel as ID
             logging.info(f"Logo match for {name} (ID: {ch_id}): {best_logo_data['channel']} with similarity {best_score:.2f}")
+        else:
+            # Fallback to normalized ID
+            base_id = normalize(name)
+            ch_id = f"{base_id}.ug"
 
         channel = {
             "name": name,
