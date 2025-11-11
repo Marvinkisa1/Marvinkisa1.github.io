@@ -1,35 +1,10 @@
 [
     {
-        "name": "CEACOM TV",
-        "id": "CEACOMTV.bo",
-        "logo": "https://i.imgur.com/hutdRfk.png",
-        "url": "https://eu1.servers10.com:8081/ceacom/index.m3u8",
-        "categories": [
-            "news",
-            "lifestyle",
-            "music",
-            "general"
-        ],
-        "country": "BO"
-    },
-    {
-        "name": "Cadena A",
-        "id": "CadenaA.bo",
-        "logo": "https://i.imgur.com/BxQPPAA.png",
-        "url": "https://5fe2654d6127d.streamlock.net/cadenaa/videocadenaa/playlist.m3u8",
+        "name": "RedADvenir TV",
+        "id": "RedADvenirTV.bo",
+        "logo": "https://i.imgur.com/WGkMt2j.png",
+        "url": "http://streamer1.streamhost.org:1935/salive/GMIredadvenirm/playlist.m3u8",
         "categories": [],
-        "country": "BO"
-    },
-    {
-        "name": "UMSA TVU Internacional",
-        "id": "UMSATVUInternacional.bo",
-        "logo": "https://tvu.umsa.bo/documents/780216/12171558/Logo+TVU-Int.png/b67c9c61-7516-e38a-a425-72e61f3824c6?t=1751574228493",
-        "url": "https://live.enhdtv.com:8081/8026/tracks-v1a1/mono.m3u8",
-        "categories": [
-            "education",
-            "science",
-            "documentary"
-        ],
         "country": "BO"
     },
     {
@@ -57,12 +32,14 @@
         "country": "BO"
     },
     {
-        "name": "RTP",
-        "id": "RTP.bo",
-        "logo": "https://i.imgur.com/cECNvvr.png",
-        "url": "https://rtp.noxun.net/hls/stream.m3u8",
+        "name": "UMSA TVU Internacional",
+        "id": "UMSATVUInternacional.bo",
+        "logo": "https://tvu.umsa.bo/documents/780216/12171558/Logo+TVU-Int.png/b67c9c61-7516-e38a-a425-72e61f3824c6?t=1751574228493",
+        "url": "https://live.enhdtv.com:8081/8026/tracks-v1a1/mono.m3u8",
         "categories": [
-            "general"
+            "education",
+            "science",
+            "documentary"
         ],
         "country": "BO"
     },
@@ -77,38 +54,20 @@
         "country": "BO"
     },
     {
-        "name": "CTV",
-        "id": "CTV.bo",
-        "logo": "https://i.imgur.com/ljKb0UX.png",
-        "url": "https://live.ctvbolivia.com/hls/ctv.m3u8",
+        "name": "RTP",
+        "id": "RTP.bo",
+        "logo": "https://i.imgur.com/cECNvvr.png",
+        "url": "https://rtp.noxun.net/hls/stream.m3u8",
         "categories": [
             "general"
         ],
         "country": "BO"
     },
     {
-        "name": "PAT La Paz",
-        "id": "PATLaPaz.bo",
-        "logo": "https://i.imgur.com/4A7R2Jt.png",
-        "url": "https://www.redpat.tv/proxylpz/index.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "BO"
-    },
-    {
-        "name": "Univalle Television",
-        "id": "UnivalleTelevision.bo",
-        "logo": "https://i.imgur.com/qgrWDIs.png",
-        "url": "https://master.tucableip.com/univalletv/playlist.m3u8",
-        "categories": [],
-        "country": "BO"
-    },
-    {
-        "name": "Unitel Santa Cruz",
-        "id": "UnitelSantaCruz.bo",
-        "logo": "https://i.imgur.com/B9wg1zj.png",
-        "url": "https://master.tucableip.com/tvhome/index.m3u8",
+        "name": "TDT Multimedia",
+        "id": "TDTMultimedia.bo",
+        "logo": "https://i.imgur.com/JkCywl5.png",
+        "url": "https://video01.kshost.com.br:4443/juan6318/juan6318/playlist.m3u8",
         "categories": [
             "general"
         ],
@@ -125,16 +84,6 @@
         "country": "BO"
     },
     {
-        "name": "FTV",
-        "id": "FTV.bo",
-        "logo": "https://i.imgur.com/YOr1Oac.png",
-        "url": "https://master.tucableip.com/ftvhd/index.m3u8",
-        "categories": [
-            "sports"
-        ],
-        "country": "BO"
-    },
-    {
         "name": "Red TV Shop",
         "id": "RedTVShop.bo",
         "logo": "https://i.imgur.com/I7yB176.png",
@@ -145,13 +94,31 @@
         "country": "BO"
     },
     {
-        "name": "TDT Multimedia",
-        "id": "TDTMultimedia.bo",
-        "logo": "https://i.imgur.com/JkCywl5.png",
-        "url": "https://video01.kshost.com.br:4443/juan6318/juan6318/playlist.m3u8",
+        "name": "Unitel Santa Cruz",
+        "id": "UnitelSantaCruz.bo",
+        "logo": "https://i.imgur.com/B9wg1zj.png",
+        "url": "https://master.tucableip.com/tvhome/index.m3u8",
         "categories": [
             "general"
         ],
+        "country": "BO"
+    },
+    {
+        "name": "FTV",
+        "id": "FTV.bo",
+        "logo": "https://i.imgur.com/YOr1Oac.png",
+        "url": "https://master.tucableip.com/ftvhd/index.m3u8",
+        "categories": [
+            "sports"
+        ],
+        "country": "BO"
+    },
+    {
+        "name": "Univalle Television",
+        "id": "UnivalleTelevision.bo",
+        "logo": "https://i.imgur.com/qgrWDIs.png",
+        "url": "https://master.tucableip.com/univalletv/playlist.m3u8",
+        "categories": [],
         "country": "BO"
     },
     {
@@ -185,19 +152,21 @@
         "country": "BO"
     },
     {
-        "name": "RedADvenir TV",
-        "id": "RedADvenirTV.bo",
-        "logo": "https://i.imgur.com/WGkMt2j.png",
-        "url": "http://streamer1.streamhost.org:1935/salive/GMIredadvenirm/playlist.m3u8",
-        "categories": [],
-        "country": "BO"
-    },
-    {
         "name": "XTOTV",
         "id": "XTOTV.bo",
         "logo": "https://i.imgur.com/MLwLlWl.png",
         "url": "http://190.104.15.135/0.ts",
         "categories": [],
+        "country": "BO"
+    },
+    {
+        "name": "PAT La Paz",
+        "id": "PATLaPaz.bo",
+        "logo": "https://i.imgur.com/4A7R2Jt.png",
+        "url": "https://www.redpat.tv/proxylpz/index.m3u8",
+        "categories": [
+            "general"
+        ],
         "country": "BO"
     }
 ]
