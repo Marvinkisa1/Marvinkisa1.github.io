@@ -1,29 +1,9 @@
 [
     {
-        "name": "ETV",
-        "id": "ETV.mn",
-        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/ETV_Mongolia_logo.png/512px-ETV_Mongolia_logo.png",
-        "url": "https://cdn4.skygo.mn/live/disk1/ETV/HLSv3-FTA/ETV.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "MN"
-    },
-    {
         "name": "TV 25",
         "id": "TV25.mn",
         "logo": "https://i.imgur.com/F3MMJMd.png",
         "url": "https://cdn4.skygo.mn/live/disk1/MN25/HLSv3-FTA/MN25.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "MN"
-    },
-    {
-        "name": "Central TV",
-        "id": "CentralTV.mn",
-        "logo": "https://i.imgur.com/E9wAUrT.png",
-        "url": "https://cdn4.skygo.mn/live/disk1/Ekh_Oron/HLSv3-FTA/Ekh_Oron.m3u8",
         "categories": [
             "general"
         ],
@@ -40,6 +20,46 @@
         "country": "MN"
     },
     {
+        "name": "Central TV",
+        "id": "CentralTV.mn",
+        "logo": "https://i.imgur.com/E9wAUrT.png",
+        "url": "https://cdn4.skygo.mn/live/disk1/Ekh_Oron/HLSv3-FTA/Ekh_Oron.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "MN"
+    },
+    {
+        "name": "ETV",
+        "id": "ETV.mn",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/ETV_Mongolia_logo.png/512px-ETV_Mongolia_logo.png",
+        "url": "https://cdn4.skygo.mn/live/disk1/ETV/HLSv3-FTA/ETV.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "MN"
+    },
+    {
+        "name": "MNB",
+        "id": "MNB.mn",
+        "logo": "https://i.imgur.com/RdRd0to.png",
+        "url": "https://live.mnb.mn/hls/mnb.stream.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "MN"
+    },
+    {
+        "name": "MNB World",
+        "id": "MNBWorld.mn",
+        "logo": "https://i.imgur.com/PHlj84Q.png",
+        "url": "https://live.mnb.mn/hls/mnb_world.stream.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "MN"
+    },
+    {
         "name": "UBS",
         "id": "UBS.mn",
         "logo": "https://i.imgur.com/dIRMYYd.png",
@@ -47,6 +67,14 @@
         "categories": [
             "general"
         ],
+        "country": "MN"
+    },
+    {
+        "name": "MNB Mongoliin Medee",
+        "id": "MNBMongoliinMedee.mn",
+        "logo": "https://i.imgur.com/KUvJzUD.png",
+        "url": "https://live.mnb.mn/hls/mn2.stream.m3u8",
+        "categories": [],
         "country": "MN"
     },
     {
@@ -245,16 +273,6 @@
         "country": "MN"
     },
     {
-        "name": "Star TV",
-        "id": "StarTV.mn",
-        "logo": "https://i.imgur.com/R6hxJgl.png",
-        "url": "https://cdn4.skygo.mn/live/disk1/Star/HLSv3-FTA/Star.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "MN"
-    },
-    {
         "name": "Global TV",
         "id": "GlobalTV.mn",
         "logo": "https://i.imgur.com/Es5FX4z.png",
@@ -283,16 +301,6 @@
         "country": "MN"
     },
     {
-        "name": "Channel 11",
-        "id": "Channel11.mn",
-        "logo": "https://i.imgur.com/GztOajC.png",
-        "url": "https://cdn4.skygo.mn/live/disk1/Channel11/HLSv3-FTA/Channel11.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "MN"
-    },
-    {
         "name": "Mongolian News Channel",
         "id": "MongolianNewsChannel.mn",
         "logo": "https://i.imgur.com/gMVqbwU.png",
@@ -307,6 +315,16 @@
         "id": "SoyonGegeeruulegchTV.mn",
         "logo": "https://i.imgur.com/iBZVvtW.png",
         "url": "https://cdn4.skygo.mn/live/disk1/SoyonGegeeruulegch/HLSv3-FTA/SoyonGegeeruulegch.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "MN"
+    },
+    {
+        "name": "Channel 11",
+        "id": "Channel11.mn",
+        "logo": "https://i.imgur.com/GztOajC.png",
+        "url": "https://cdn4.skygo.mn/live/disk1/Channel11/HLSv3-FTA/Channel11.m3u8",
         "categories": [
             "general"
         ],
@@ -349,34 +367,6 @@
         "url": "http://cdn4.skygo.mn/live/disk1/SPSFight/HLS-FTA/SPSFight.m3u8",
         "categories": [
             "sports"
-        ],
-        "country": "MN"
-    },
-    {
-        "name": "MNB World",
-        "id": "MNBWorld.mn",
-        "logo": "https://i.imgur.com/PHlj84Q.png",
-        "url": "https://live.mnb.mn/hls/mnb_world.stream.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "MN"
-    },
-    {
-        "name": "MNB Mongoliin Medee",
-        "id": "MNBMongoliinMedee.mn",
-        "logo": "https://i.imgur.com/KUvJzUD.png",
-        "url": "https://live.mnb.mn/hls/mn2.stream.m3u8",
-        "categories": [],
-        "country": "MN"
-    },
-    {
-        "name": "MNB",
-        "id": "MNB.mn",
-        "logo": "https://i.imgur.com/RdRd0to.png",
-        "url": "https://live.mnb.mn/hls/mnb.stream.m3u8",
-        "categories": [
-            "general"
         ],
         "country": "MN"
     }

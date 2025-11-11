@@ -1,15 +1,5 @@
 [
     {
-        "name": "STV",
-        "id": "STV.hr",
-        "logo": "https://i.imgur.com/Z3yRl17.png",
-        "url": "http://89.201.163.244:8080/hls/hdmi.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "HR"
-    },
-    {
         "name": "HRT 1",
         "id": "HRT1.hr",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/1/1f/HRT1-logo.png",
@@ -20,10 +10,10 @@
         "country": "HR"
     },
     {
-        "name": "HRT 2",
-        "id": "HRT2.hr",
-        "logo": "https://i.imgur.com/yyePcl1.png",
-        "url": "https://webtvstream.bhtelecom.ba/hrt2.m3u8",
+        "name": "STV",
+        "id": "STV.hr",
+        "logo": "https://i.imgur.com/Z3yRl17.png",
+        "url": "http://89.201.163.244:8080/hls/hdmi.m3u8",
         "categories": [
             "general"
         ],
@@ -41,12 +31,22 @@
         "country": "HR"
     },
     {
-        "name": "Extra TV",
-        "id": "ExtraTV.hr",
-        "logo": "https://i.imgur.com/5edYPBO.png",
-        "url": "https://streaming.social3.hr/ExtraTVudzdhr5/uUankWqpXD/1.m3u8",
+        "name": "HRT 2",
+        "id": "HRT2.hr",
+        "logo": "https://i.imgur.com/yyePcl1.png",
+        "url": "https://webtvstream.bhtelecom.ba/hrt2.m3u8",
         "categories": [
-            "music"
+            "general"
+        ],
+        "country": "HR"
+    },
+    {
+        "name": "SBTV",
+        "id": "SBTV.hr",
+        "logo": "https://i.imgur.com/MIampxZ.png",
+        "url": "https://live.leveex.hr/hls/live.m3u8",
+        "categories": [
+            "general"
         ],
         "country": "HR"
     },
@@ -61,6 +61,16 @@
         "country": "HR"
     },
     {
+        "name": "Extra TV",
+        "id": "ExtraTV.hr",
+        "logo": "https://i.imgur.com/5edYPBO.png",
+        "url": "https://streaming.social3.hr/ExtraTVudzdhr5/uUankWqpXD/1.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "HR"
+    },
+    {
         "name": "Bravo! TV",
         "id": "BravoTV.hr",
         "logo": "https://i.imgur.com/FN2J9hv.png",
@@ -71,12 +81,22 @@
         "country": "HR"
     },
     {
-        "name": "SBTV",
-        "id": "SBTV.hr",
-        "logo": "https://i.imgur.com/MIampxZ.png",
-        "url": "https://live.leveex.hr/hls/live.m3u8",
+        "name": "Diadora TV",
+        "id": "DiadoraTV.hr",
+        "logo": "https://i.imgur.com/qZzsASl.png",
+        "url": "https://diadoratv.stream/live/diadora/playlist.m3u8",
         "categories": [
             "general"
+        ],
+        "country": "HR"
+    },
+    {
+        "name": "TV Nova",
+        "id": "TVNova.hr",
+        "logo": "https://i.imgur.com/gFjJ7YB.png",
+        "url": "https://stream.agatin.hr:3727/live/tvnovalive.m3u8",
+        "categories": [
+            "entertainment"
         ],
         "country": "HR"
     },
@@ -109,10 +129,10 @@
         "country": "HR"
     },
     {
-        "name": "Diadora TV",
-        "id": "DiadoraTV.hr",
-        "logo": "https://i.imgur.com/qZzsASl.png",
-        "url": "https://diadoratv.stream/live/diadora/playlist.m3u8",
+        "name": "Libertas TV",
+        "id": "LibertasTV.hr",
+        "logo": "https://i.imgur.com/4R4fhbd.png",
+        "url": "https://stream.luci.xyz/hls/LTV.m3u8",
         "categories": [
             "general"
         ],
@@ -125,26 +145,6 @@
         "url": "https://tvjadran.stream.agatin.hr:3412/live/tvjadranlive.m3u8",
         "categories": [
             "news"
-        ],
-        "country": "HR"
-    },
-    {
-        "name": "TV Nova",
-        "id": "TVNova.hr",
-        "logo": "https://i.imgur.com/gFjJ7YB.png",
-        "url": "https://stream.agatin.hr:3727/live/tvnovalive.m3u8",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "HR"
-    },
-    {
-        "name": "Libertas TV",
-        "id": "LibertasTV.hr",
-        "logo": "https://i.imgur.com/4R4fhbd.png",
-        "url": "https://stream.luci.xyz/hls/LTV.m3u8",
-        "categories": [
-            "general"
         ],
         "country": "HR"
     }
