@@ -723,16 +723,8 @@ async def fetch_and_process_uganda_channels(session, checker, logos_data):
         return name
 
     def get_score(a, b):
-        # Prefix-boosted for dynamic names (e.g., logo extras like "Uganda")
-        len_a = len(a)
-        len_b = len(b)
-        if len_a <= len_b:
-            shorter, longer = a, b
-            is_prefix = shorter == longer[:len_a]
-        else:
-            shorter, longer = b, a
-            is_prefix = shorter == longer[:len_b]
-        if is_prefix:
+        # Substring-boosted for dynamic names (e.g., logo embedded in channel name with prefixes/suffixes)
+        if a in b or b in a:
             return 1.0
         else:
             return SequenceMatcher(None, a, b).ratio()
@@ -774,7 +766,7 @@ async def fetch_and_process_uganda_channels(session, checker, logos_data):
         category = post.get("category_name", "").lower().strip()
         if not category:
             category = "entertainment" # default
-        # Improved logo search using prefix-boosted fuzzy matching
+        # Improved logo search using substring-boosted fuzzy matching
         logo = ""
         best_logo_data = None
         best_score = 0
