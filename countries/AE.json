@@ -1,21 +1,31 @@
 [
     {
-        "name": "National Geographic Abu Dhabi",
-        "id": "NationalGeographicAbuDhabi.ae",
-        "logo": "https://i.imgur.com/fNA00VF.png",
-        "url": "http://213.57.91.138:8000/play/a05a",
-        "categories": [
-            "documentary"
-        ],
-        "country": "AE"
-    },
-    {
         "name": "MBC 2",
         "id": "MBC2.ae",
         "logo": "https://i.imgur.com/n9mSHuP.png",
         "url": "http://213.57.91.138:8000/play/a05k",
         "categories": [
             "movies"
+        ],
+        "country": "AE"
+    },
+    {
+        "name": "Zee Aflam",
+        "id": "ZeeAflam.ae",
+        "logo": "https://i.imgur.com/ZxknutA.png",
+        "url": "http://213.57.91.138:8000/play/a05s",
+        "categories": [
+            "movies"
+        ],
+        "country": "AE"
+    },
+    {
+        "name": "MBC Action",
+        "id": "MBCAction.ae",
+        "logo": "https://i.imgur.com/OWZAghw.png",
+        "url": "http://213.57.91.138:8000/play/a05l",
+        "categories": [
+            "entertainment"
         ],
         "country": "AE"
     },
@@ -31,22 +41,12 @@
         "country": "AE"
     },
     {
-        "name": "MBC Action",
-        "id": "MBCAction.ae",
-        "logo": "https://i.imgur.com/OWZAghw.png",
-        "url": "http://213.57.91.138:8000/play/a05l",
+        "name": "National Geographic Abu Dhabi",
+        "id": "NationalGeographicAbuDhabi.ae",
+        "logo": "https://i.imgur.com/fNA00VF.png",
+        "url": "http://213.57.91.138:8000/play/a05a",
         "categories": [
-            "entertainment"
-        ],
-        "country": "AE"
-    },
-    {
-        "name": "Zee Aflam",
-        "id": "ZeeAflam.ae",
-        "logo": "https://i.imgur.com/ZxknutA.png",
-        "url": "http://213.57.91.138:8000/play/a05s",
-        "categories": [
-            "movies"
+            "documentary"
         ],
         "country": "AE"
     },
@@ -62,23 +62,42 @@
         "country": "AE"
     },
     {
-        "name": "Al Wousta TV",
-        "id": "AlWoustaTV.ae",
-        "logo": "https://i.imgur.com/zgMqQPQ.png",
-        "url": "https://svs.itworkscdn.net/alwoustalive/alwoustatv.smil/playlist.m3u8",
+        "name": "Nour TV",
+        "id": "NourTV.ae",
+        "logo": "https://i.postimg.cc/zXRDvq1F/nourtv.png",
+        "url": "https://cdn.bestream.io:19360/elfaro4/elfaro4.m3u8",
         "categories": [
-            "general"
+            "religious"
         ],
         "country": "AE"
     },
     {
-        "name": "Al Arabiya Programs",
-        "id": "AlArabiyaPrograms.ae",
-        "logo": "https://i.imgur.com/Hoc3cfO.png",
-        "url": "https://d1j4r34gq3qw9y.cloudfront.net/out/v1/96804f3a14864641a21c25e8ca9afb74/index.m3u8",
+        "name": "Sharjah TV",
+        "id": "SharjahTV.ae",
+        "logo": "https://i.imgur.com/Oz2bPOt.png",
+        "url": "https://cdn-globecast.akamaized.net/live/eds/sharjah_tv/hls_roku/index.m3u8",
         "categories": [
-            "documentary",
-            "news"
+            "religious"
+        ],
+        "country": "AE"
+    },
+    {
+        "name": "Al Arabiya Business",
+        "id": "AlArabiyaBusiness.ae",
+        "logo": "https://i.imgur.com/eEV4r6J.jpg",
+        "url": "https://live.alarabiya.net/alarabiapublish/aswaaq.smil/playlist.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "AE"
+    },
+    {
+        "name": "Dubai Racing 3",
+        "id": "DubaiRacing3.ae",
+        "logo": "https://i.imgur.com/Vg4fxmc.png",
+        "url": "https://dmithrvllta.cdn.mgmlcdn.com/dubaimubasher/smil:dubaimubasher.smil/chunklist.m3u8",
+        "categories": [
+            "sports"
         ],
         "country": "AE"
     },
@@ -101,10 +120,20 @@
         "country": "AE"
     },
     {
-        "name": "Sharjah TV",
-        "id": "SharjahTV.ae",
-        "logo": "https://i.imgur.com/Oz2bPOt.png",
-        "url": "https://cdn-globecast.akamaized.net/live/eds/sharjah_tv/hls_roku/index.m3u8",
+        "name": "Al Wousta TV",
+        "id": "AlWoustaTV.ae",
+        "logo": "https://i.imgur.com/zgMqQPQ.png",
+        "url": "https://svs.itworkscdn.net/alwoustalive/alwoustatv.smil/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "AE"
+    },
+    {
+        "name": "Sharjah 2",
+        "id": "Sharjah2.ae",
+        "logo": "https://i.imgur.com/Wd3Xvd1.png",
+        "url": "https://svs.itworkscdn.net/smc2live/smc2tv.smil/playlist.m3u8",
         "categories": [
             "religious"
         ],
@@ -121,6 +150,26 @@
         "country": "AE"
     },
     {
+        "name": "Sharjah Radio",
+        "id": "SharjahRadio.ae",
+        "logo": "https://i.imgur.com/q7GGALe.png",
+        "url": "https://svs.itworkscdn.net/smcradiolive/smcradiolive/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "AE"
+    },
+    {
+        "name": "Sky News Arabia Vertical",
+        "id": "SkyNewsArabiaVertical.ae",
+        "logo": "https://i.imgur.com/FjtzQQs.png",
+        "url": "https://stream.skynewsarabia.com/vertical/vertical.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "AE"
+    },
+    {
         "name": "Watar Radio",
         "id": "WatarRadio.ae",
         "logo": "https://maraya.faulio.com/storage/mediagallery/33/d7/fullhd_b25ca838c984b6ee2a9a254560f1e7bc1b04aa33.png",
@@ -129,32 +178,32 @@
         "country": "AE"
     },
     {
-        "name": "MBC Persia",
-        "id": "MBCPersia.ae",
-        "logo": "https://i.imgur.com/4FXiyjn.png",
-        "url": "https://hls.mbcpersia.live/hls/stream.m3u8",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "AE"
-    },
-    {
-        "name": "Sharjah 2",
-        "id": "Sharjah2.ae",
-        "logo": "https://i.imgur.com/Wd3Xvd1.png",
-        "url": "https://svs.itworkscdn.net/smc2live/smc2tv.smil/playlist.m3u8",
+        "name": "Noor Dubai",
+        "id": "NoorDubai.ae",
+        "logo": "https://i.imgur.com/Nwl8Y7K.png",
+        "url": "https://dmiffthftl.cdn.mangomolo.com/noordubaitv/smil:noordubaitv.smil/chunklist.m3u8",
         "categories": [
             "religious"
         ],
         "country": "AE"
     },
     {
-        "name": "Sharjah Radio",
-        "id": "SharjahRadio.ae",
-        "logo": "https://i.imgur.com/q7GGALe.png",
-        "url": "https://svs.itworkscdn.net/smcradiolive/smcradiolive/playlist.m3u8",
+        "name": "PMC Royale",
+        "id": "PMCRoyale.ae",
+        "logo": "https://www.lyngsat.com/logo/tv/pp/pmc-royale-ch.png",
+        "url": "https://pmcrohls.wns.live/hls/stream.m3u8",
         "categories": [
-            "general"
+            "music"
+        ],
+        "country": "AE"
+    },
+    {
+        "name": "Dubai Zaman",
+        "id": "DubaiZaman.ae",
+        "logo": "https://i.imgur.com/5Q5qMzP.png",
+        "url": "https://dmiffthftl.cdn.mangomolo.com/dubaizaman/smil:dubaizaman.stream.smil/chunklist.m3u8",
+        "categories": [
+            "classic"
         ],
         "country": "AE"
     },
@@ -169,120 +218,52 @@
         "country": "AE"
     },
     {
-        "name": "Dubai Racing 3",
-        "id": "DubaiRacing3.ae",
-        "logo": "https://i.imgur.com/Vg4fxmc.png",
-        "url": "https://dmithrvllta.cdn.mgmlcdn.com/dubaimubasher/smil:dubaimubasher.smil/chunklist.m3u8",
+        "name": "Dubai Racing",
+        "id": "DubaiRacing.ae",
+        "logo": "https://i.imgur.com/CJ1dagP.png",
+        "url": "https://dmisdracta.cdn.mgmlcdn.com/events/smil:events.stream.smil/chunklist.m3u8",
         "categories": [
             "sports"
         ],
         "country": "AE"
     },
     {
-        "name": "MBC Bollywood",
-        "id": "MBCBollywood.ae",
-        "logo": "https://i.imgur.com/TTAGFHG.png",
-        "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-bollywood/546eb40d7dcf9a209255dd2496903764/index.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "AE"
-    },
-    {
-        "name": "Ajman TV",
-        "id": "AjmanTV.ae",
-        "logo": "https://i.imgur.com/hVNIwgE.png",
-        "url": "https://cdn1.logichost.in/ajmantv/live/playlist.m3u8",
+        "name": "Dubai One",
+        "id": "DubaiOne.ae",
+        "logo": "https://i.imgur.com/Dj16oKL.png",
+        "url": "https://dminnvllta.cdn.mgmlcdn.com/dubaione/smil:dubaione.stream.smil/chunklist.m3u8",
         "categories": [
             "general"
         ],
         "country": "AE"
     },
     {
-        "name": "MBC 4",
-        "id": "MBC4.ae",
-        "logo": "https://i.imgur.com/BcXASJp.png",
-        "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-4/24f134f1cd63db9346439e96b86ca6ed/index.m3u8",
+        "name": "Al Shallal TV",
+        "id": "AlShallalTV.ae",
+        "logo": "https://i.imgur.com/otAHLRo.png",
+        "url": "https://amg01480-alshallalfze-alshallal-ono-q0hfg.amagi.tv/playlist.m3u8",
         "categories": [
-            "entertainment"
+            "general"
         ],
         "country": "AE"
     },
     {
-        "name": "MBC 5",
-        "id": "MBC5.ae",
-        "logo": "https://i.imgur.com/fRWaDyF.png",
-        "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-5/ee6b000cee0629411b666ab26cb13e9b/index.m3u8",
-        "categories": [
-            "family"
-        ],
-        "country": "AE"
-    },
-    {
-        "name": "Al Yaum TV",
-        "id": "AlYaumTV.ae",
-        "logo": "https://i.imgur.com/rBixF3P.png",
-        "url": "https://iko-live.akamaized.net/AlyuamTV/master.m3u8",
+        "name": "Sky News Arabia",
+        "id": "SkyNewsArabia.ae",
+        "logo": "https://i.imgur.com/SvjU4h6.png",
+        "url": "https://stream.skynewsarabia.com/hls/sna.m3u8",
         "categories": [
             "news"
         ],
         "country": "AE"
     },
     {
-        "name": "MBC Drama",
-        "id": "MBCDrama.ae",
-        "logo": "https://i.imgur.com/g5PWnqp.png",
-        "url": "https://mbc1-enc.edgenextcdn.net/out/v1/b0b3a0e6750d4408bb86d703d5feffd1/index.m3u8",
+        "name": "MBC 1",
+        "id": "MBC1.ae",
+        "logo": "https://i.imgur.com/CiA3plN.png",
+        "url": "https://shls-live-enc.edgenextcdn.net/out/v1/0965e4d7deae49179172426cbfb3bc5e/index.m3u8",
         "categories": [
-            "entertainment"
-        ],
-        "country": "AE"
-    },
-    {
-        "name": "MBC FM",
-        "id": "MBCFM.ae",
-        "logo": "https://i.imgur.com/lF8UxvR.png",
-        "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-fm/3f36f7db6086acf058dc51681c87f8ad/index.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "AE"
-    },
-    {
-        "name": "Al Qamar TV",
-        "id": "AlQamarTV.ae",
-        "logo": "https://i.imgur.com/zkBT0C8.png",
-        "url": "https://streamer3.premio.link/alqamar/playlist.m3u8",
-        "categories": [],
-        "country": "AE"
-    },
-    {
-        "name": "Al Arabiya Business",
-        "id": "AlArabiyaBusiness.ae",
-        "logo": "https://i.imgur.com/eEV4r6J.jpg",
-        "url": "https://live.alarabiya.net/alarabiapublish/aswaaq.smil/playlist.m3u8",
-        "categories": [
-            "business"
-        ],
-        "country": "AE"
-    },
-    {
-        "name": "Wanasah",
-        "id": "Wanasah.ae",
-        "logo": "https://i.imgur.com/nLtiXNf.png",
-        "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-wanasah/13e82ea6232fa647c43b26e8a41f173d/index.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "AE"
-    },
-    {
-        "name": "Dubai Sports 1",
-        "id": "DubaiSports1.ae",
-        "logo": "https://i.imgur.com/Poxw8lG.png",
-        "url": "https://dmidspta.cdn.mgmlcdn.com/dubaisports/smil:dubaisports.stream.smil/chunklist.m3u8",
-        "categories": [
-            "sports"
+            "general"
         ],
         "country": "AE"
     },
@@ -297,10 +278,179 @@
         "country": "AE"
     },
     {
+        "name": "Sama Dubai",
+        "id": "SamaDubai.ae",
+        "logo": "https://i.imgur.com/F5g3ymW.png",
+        "url": "https://dmieigthvllta.cdn.mgmlcdn.com/samadubaiht/smil:samadubai.stream.smil/chunklist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "AE"
+    },
+    {
+        "name": "MBC Drama",
+        "id": "MBCDrama.ae",
+        "logo": "https://i.imgur.com/g5PWnqp.png",
+        "url": "https://mbc1-enc.edgenextcdn.net/out/v1/b0b3a0e6750d4408bb86d703d5feffd1/index.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "AE"
+    },
+    {
+        "name": "Dubai TV",
+        "id": "DubaiTV.ae",
+        "logo": "https://i.imgur.com/UMmbyHv.png",
+        "url": "https://dmieigthvllta.cdn.mgmlcdn.com/dubaitvht/smil:dubaitv.stream.smil/chunklist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "AE"
+    },
+    {
+        "name": "Sharjah Radio Quran",
+        "id": "SharjahRadioQuran.ae",
+        "logo": "https://i.imgur.com/MxZlOvc.png",
+        "url": "https://live.kwikmotion.com/smcquranlive/quranradiolive/playlist.m3u8",
+        "categories": [
+            "religious"
+        ],
+        "country": "AE"
+    },
+    {
+        "name": "Fujairah TV",
+        "id": "FujairahTV.ae",
+        "logo": "https://i.imgur.com/D2tOhbE.png",
+        "url": "https://live.kwikmotion.com/fujairahlive/fujairah.smil/playlist.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "AE"
+    },
+    {
+        "name": "Al Qamar TV",
+        "id": "AlQamarTV.ae",
+        "logo": "https://i.imgur.com/zkBT0C8.png",
+        "url": "https://streamer3.premio.link/alqamar/playlist.m3u8",
+        "categories": [],
+        "country": "AE"
+    },
+    {
+        "name": "MBC 4",
+        "id": "MBC4.ae",
+        "logo": "https://i.imgur.com/BcXASJp.png",
+        "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-4/24f134f1cd63db9346439e96b86ca6ed/index.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "AE"
+    },
+    {
+        "name": "Wanasah",
+        "id": "Wanasah.ae",
+        "logo": "https://i.imgur.com/nLtiXNf.png",
+        "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-wanasah/13e82ea6232fa647c43b26e8a41f173d/index.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "AE"
+    },
+    {
+        "name": "Al Yaum TV",
+        "id": "AlYaumTV.ae",
+        "logo": "https://i.imgur.com/rBixF3P.png",
+        "url": "https://iko-live.akamaized.net/AlyuamTV/master.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "AE"
+    },
+    {
+        "name": "Ajman TV",
+        "id": "AjmanTV.ae",
+        "logo": "https://i.imgur.com/hVNIwgE.png",
+        "url": "https://cdn1.logichost.in/ajmantv/live/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "AE"
+    },
+    {
+        "name": "MBC Bollywood",
+        "id": "MBCBollywood.ae",
+        "logo": "https://i.imgur.com/TTAGFHG.png",
+        "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-bollywood/546eb40d7dcf9a209255dd2496903764/index.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "AE"
+    },
+    {
+        "name": "MBC 5",
+        "id": "MBC5.ae",
+        "logo": "https://i.imgur.com/fRWaDyF.png",
+        "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-5/ee6b000cee0629411b666ab26cb13e9b/index.m3u8",
+        "categories": [
+            "family"
+        ],
+        "country": "AE"
+    },
+    {
+        "name": "MBC FM",
+        "id": "MBCFM.ae",
+        "logo": "https://i.imgur.com/lF8UxvR.png",
+        "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-fm/3f36f7db6086acf058dc51681c87f8ad/index.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "AE"
+    },
+    {
+        "name": "Al Arabiya Programs",
+        "id": "AlArabiyaPrograms.ae",
+        "logo": "https://i.imgur.com/Hoc3cfO.png",
+        "url": "https://d1j4r34gq3qw9y.cloudfront.net/out/v1/96804f3a14864641a21c25e8ca9afb74/index.m3u8",
+        "categories": [
+            "documentary",
+            "news"
+        ],
+        "country": "AE"
+    },
+    {
+        "name": "Dubai Sports 3",
+        "id": "DubaiSports3.ae",
+        "logo": "https://i.imgur.com/U0A8Gex.png",
+        "url": "https://dmitwlvvll.cdn.mgmlcdn.com/dubaisportshd5/smil:dubaisportshd5.smil/chunklist.m3u8",
+        "categories": [
+            "sports"
+        ],
+        "country": "AE"
+    },
+    {
+        "name": "Dubai Sports 2",
+        "id": "DubaiSports2.ae",
+        "logo": "https://i.imgur.com/PMJ7Zmo.png",
+        "url": "https://dmitwlvvll.cdn.mgmlcdn.com/dubaisportshd/smil:dubaisportshd.smil/chunklist.m3u8",
+        "categories": [
+            "sports"
+        ],
+        "country": "AE"
+    },
+    {
         "name": "Peace TV Bangla",
         "id": "PeaceTVBangla.ae",
         "logo": "https://i.imgur.com/1ztVXUi.png",
         "url": "https://dzkyvlfyge.erbvr.com/PeaceTvBangla/index.m3u8",
+        "categories": [
+            "religious"
+        ],
+        "country": "AE"
+    },
+    {
+        "name": "Peace TV Chinese",
+        "id": "PeaceTVChinese.ae",
+        "logo": "https://github.com/fawazahmed0/tiger/raw/master/peace/chinese.jpg",
+        "url": "https://dzkyvlfyge.erbvr.com/PeaceTvChinese/index.m3u8",
         "categories": [
             "religious"
         ],
@@ -327,138 +477,10 @@
         "country": "AE"
     },
     {
-        "name": "Peace TV Chinese",
-        "id": "PeaceTVChinese.ae",
-        "logo": "https://github.com/fawazahmed0/tiger/raw/master/peace/chinese.jpg",
-        "url": "https://dzkyvlfyge.erbvr.com/PeaceTvChinese/index.m3u8",
-        "categories": [
-            "religious"
-        ],
-        "country": "AE"
-    },
-    {
-        "name": "Fujairah TV",
-        "id": "FujairahTV.ae",
-        "logo": "https://i.imgur.com/D2tOhbE.png",
-        "url": "https://live.kwikmotion.com/fujairahlive/fujairah.smil/playlist.m3u8",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "AE"
-    },
-    {
-        "name": "Sharjah Radio Quran",
-        "id": "SharjahRadioQuran.ae",
-        "logo": "https://i.imgur.com/MxZlOvc.png",
-        "url": "https://live.kwikmotion.com/smcquranlive/quranradiolive/playlist.m3u8",
-        "categories": [
-            "religious"
-        ],
-        "country": "AE"
-    },
-    {
-        "name": "PMC Royale",
-        "id": "PMCRoyale.ae",
-        "logo": "https://www.lyngsat.com/logo/tv/pp/pmc-royale-ch.png",
-        "url": "https://pmcrohls.wns.live/hls/stream.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "AE"
-    },
-    {
-        "name": "Dubai TV",
-        "id": "DubaiTV.ae",
-        "logo": "https://i.imgur.com/UMmbyHv.png",
-        "url": "https://dmieigthvllta.cdn.mgmlcdn.com/dubaitvht/smil:dubaitv.stream.smil/chunklist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "AE"
-    },
-    {
-        "name": "Sama Dubai",
-        "id": "SamaDubai.ae",
-        "logo": "https://i.imgur.com/F5g3ymW.png",
-        "url": "https://dmieigthvllta.cdn.mgmlcdn.com/samadubaiht/smil:samadubai.stream.smil/chunklist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "AE"
-    },
-    {
-        "name": "Sky News Arabia Vertical",
-        "id": "SkyNewsArabiaVertical.ae",
-        "logo": "https://i.imgur.com/FjtzQQs.png",
-        "url": "https://stream.skynewsarabia.com/vertical/vertical.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "AE"
-    },
-    {
-        "name": "Dubai Sports 3",
-        "id": "DubaiSports3.ae",
-        "logo": "https://i.imgur.com/U0A8Gex.png",
-        "url": "https://dmitwlvvll.cdn.mgmlcdn.com/dubaisportshd5/smil:dubaisportshd5.smil/chunklist.m3u8",
-        "categories": [
-            "sports"
-        ],
-        "country": "AE"
-    },
-    {
-        "name": "Al Shallal TV",
-        "id": "AlShallalTV.ae",
-        "logo": "https://i.imgur.com/otAHLRo.png",
-        "url": "https://amg01480-alshallalfze-alshallal-ono-q0hfg.amagi.tv/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "AE"
-    },
-    {
-        "name": "Baynounah TV",
-        "id": "BaynounahTV.ae",
-        "logo": "https://i.imgur.com/uVmHT97.png",
-        "url": "https://vo-live-media.cdb.cdn.orange.com/Content/Channel/Baynounah/HLS/index.m3u8",
-        "categories": [
-            "culture"
-        ],
-        "country": "AE"
-    },
-    {
-        "name": "Yas TV",
-        "id": "YasTV.ae",
-        "logo": "https://i.imgur.com/CSHQhP4.png",
-        "url": "https://vo-live-media.cdb.cdn.orange.com/Content/Channel/YASSportsChannel/HLS/index.m3u8",
-        "categories": [],
-        "country": "AE"
-    },
-    {
-        "name": "Abu Dhabi Sports 1",
-        "id": "AbuDhabiSports1.ae",
-        "logo": "https://i.imgur.com/6BVWk8z.png",
-        "url": "https://vo-live-media.cdb.cdn.orange.com/Content/Channel/AbuDhabiSportsChannel1/HLS/index.m3u8",
-        "categories": [
-            "sports"
-        ],
-        "country": "AE"
-    },
-    {
-        "name": "Abu Dhabi Aloula",
-        "id": "AbuDhabiAloula.ae",
-        "logo": "https://i.imgur.com/g7IRorO.jpeg",
-        "url": "https://vo-live-media.cdb.cdn.orange.com/Content/Channel/AbuDhabiChannel/HLS/index.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "AE"
-    },
-    {
-        "name": "Abu Dhabi Sports 2",
-        "id": "AbuDhabiSports2.ae",
-        "logo": "https://i.imgur.com/y1I2jFK.png",
-        "url": "https://vo-live-media.cdb.cdn.orange.com/Content/Channel/AbuDhabiSportsChannel2/HLS/index.m3u8",
+        "name": "Dubai Sports 1",
+        "id": "DubaiSports1.ae",
+        "logo": "https://i.imgur.com/Poxw8lG.png",
+        "url": "https://dmidspta.cdn.mgmlcdn.com/dubaisports/smil:dubaisports.stream.smil/chunklist.m3u8",
         "categories": [
             "sports"
         ],
@@ -475,23 +497,51 @@
         "country": "AE"
     },
     {
-        "name": "Sky News Arabia",
-        "id": "SkyNewsArabia.ae",
-        "logo": "https://i.imgur.com/SvjU4h6.png",
-        "url": "https://stream.skynewsarabia.com/hls/sna.m3u8",
+        "name": "Abu Dhabi Aloula",
+        "id": "AbuDhabiAloula.ae",
+        "logo": "https://i.imgur.com/g7IRorO.jpeg",
+        "url": "https://vo-live-media.cdb.cdn.orange.com/Content/Channel/AbuDhabiChannel/HLS/index.m3u8",
         "categories": [
-            "news"
+            "general"
         ],
         "country": "AE"
     },
     {
-        "name": "Dubai Sports 2",
-        "id": "DubaiSports2.ae",
-        "logo": "https://i.imgur.com/PMJ7Zmo.png",
-        "url": "https://dmitwlvvll.cdn.mgmlcdn.com/dubaisportshd/smil:dubaisportshd.smil/chunklist.m3u8",
+        "name": "Baynounah TV",
+        "id": "BaynounahTV.ae",
+        "logo": "https://i.imgur.com/uVmHT97.png",
+        "url": "https://vo-live-media.cdb.cdn.orange.com/Content/Channel/Baynounah/HLS/index.m3u8",
+        "categories": [
+            "culture"
+        ],
+        "country": "AE"
+    },
+    {
+        "name": "Abu Dhabi Sports 1",
+        "id": "AbuDhabiSports1.ae",
+        "logo": "https://i.imgur.com/6BVWk8z.png",
+        "url": "https://vo-live-media.cdb.cdn.orange.com/Content/Channel/AbuDhabiSportsChannel1/HLS/index.m3u8",
         "categories": [
             "sports"
         ],
+        "country": "AE"
+    },
+    {
+        "name": "MBC Persia",
+        "id": "MBCPersia.ae",
+        "logo": "https://i.imgur.com/4FXiyjn.png",
+        "url": "https://hls.mbcpersia.live/hls/stream.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "AE"
+    },
+    {
+        "name": "Yas TV",
+        "id": "YasTV.ae",
+        "logo": "https://i.imgur.com/CSHQhP4.png",
+        "url": "https://vo-live-media.cdb.cdn.orange.com/Content/Channel/YASSportsChannel/HLS/index.m3u8",
+        "categories": [],
         "country": "AE"
     },
     {
@@ -505,40 +555,10 @@
         "country": "AE"
     },
     {
-        "name": "Dubai One",
-        "id": "DubaiOne.ae",
-        "logo": "https://i.imgur.com/Dj16oKL.png",
-        "url": "https://dminnvllta.cdn.mgmlcdn.com/dubaione/smil:dubaione.stream.smil/chunklist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "AE"
-    },
-    {
-        "name": "Dubai Zaman",
-        "id": "DubaiZaman.ae",
-        "logo": "https://i.imgur.com/5Q5qMzP.png",
-        "url": "https://dmiffthftl.cdn.mangomolo.com/dubaizaman/smil:dubaizaman.stream.smil/chunklist.m3u8",
-        "categories": [
-            "classic"
-        ],
-        "country": "AE"
-    },
-    {
-        "name": "Noor Dubai",
-        "id": "NoorDubai.ae",
-        "logo": "https://i.imgur.com/Nwl8Y7K.png",
-        "url": "https://dmiffthftl.cdn.mangomolo.com/noordubaitv/smil:noordubaitv.smil/chunklist.m3u8",
-        "categories": [
-            "religious"
-        ],
-        "country": "AE"
-    },
-    {
-        "name": "Dubai Racing",
-        "id": "DubaiRacing.ae",
-        "logo": "https://i.imgur.com/CJ1dagP.png",
-        "url": "https://dmisdracta.cdn.mgmlcdn.com/events/smil:events.stream.smil/chunklist.m3u8",
+        "name": "Abu Dhabi Sports 2",
+        "id": "AbuDhabiSports2.ae",
+        "logo": "https://i.imgur.com/y1I2jFK.png",
+        "url": "https://vo-live-media.cdb.cdn.orange.com/Content/Channel/AbuDhabiSportsChannel2/HLS/index.m3u8",
         "categories": [
             "sports"
         ],
@@ -551,26 +571,6 @@
         "url": "https://cnbc-live.akamaized.net/cnbc/master.m3u8",
         "categories": [
             "business"
-        ],
-        "country": "AE"
-    },
-    {
-        "name": "MBC 1",
-        "id": "MBC1.ae",
-        "logo": "https://i.imgur.com/CiA3plN.png",
-        "url": "https://shls-live-enc.edgenextcdn.net/out/v1/0965e4d7deae49179172426cbfb3bc5e/index.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "AE"
-    },
-    {
-        "name": "Nour TV",
-        "id": "NourTV.ae",
-        "logo": "https://i.postimg.cc/zXRDvq1F/nourtv.png",
-        "url": "https://cdn.bestream.io:19360/elfaro4/elfaro4.m3u8",
-        "categories": [
-            "religious"
         ],
         "country": "AE"
     },
