@@ -8,16 +8,6 @@
         "country": "KH"
     },
     {
-        "name": "MOI TV",
-        "id": "MOITV.kh",
-        "logo": "https://i.imgur.com/fbI2ybo.png",
-        "url": "http://202.62.56.22:8080/hls/MOITV.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "KH"
-    },
-    {
         "name": "MSJ TV",
         "id": "MSJTV.kh",
         "logo": "https://i.imgur.com/TilslGU.png",
@@ -28,22 +18,32 @@
         "country": "KH"
     },
     {
-        "name": "Wiki TV",
-        "id": "WikiTV.kh",
-        "logo": "https://i.imgur.com/rnV0Ui1.png",
-        "url": "https://stream.wikitv.asia/live/ngrp:myStream_all/playlist.m3u8",
+        "name": "MOI TV",
+        "id": "MOITV.kh",
+        "logo": "https://i.imgur.com/fbI2ybo.png",
+        "url": "http://202.62.56.22:8080/hls/MOITV.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "KH"
+    },
+    {
+        "name": "TVK 2",
+        "id": "TVK2.kh",
+        "logo": "https://i.imgur.com/L36ptO2.png",
+        "url": "https://live.kh.malimarcdn.com/live/tvk2.stream/playlist.m3u8",
         "categories": [
             "education"
         ],
         "country": "KH"
     },
     {
-        "name": "EAC News TV",
-        "id": "EACNewsTV.kh",
-        "logo": "https://i.imgur.com/EuYhS9Z.png",
-        "url": "https://live-evg17.tv360.metfone.com.kh/LiveApp/streams/eacnews.m3u8",
+        "name": "TVK",
+        "id": "TVK.kh",
+        "logo": "https://i.imgur.com/5hPxjcl.png",
+        "url": "https://live.kh.malimarcdn.com/live/tvk.stream/playlist.m3u8",
         "categories": [
-            "news"
+            "general"
         ],
         "country": "KH"
     },
@@ -55,6 +55,14 @@
         "categories": [
             "news"
         ],
+        "country": "KH"
+    },
+    {
+        "name": "SEA TV",
+        "id": "SEATV.kh",
+        "logo": "https://i.imgur.com/oZPorvg.png",
+        "url": "https://seatv.netlinkbroadcaster.com/hls/test.m3u8",
+        "categories": [],
         "country": "KH"
     },
     {
@@ -86,34 +94,6 @@
         "country": "KH"
     },
     {
-        "name": "SEA TV",
-        "id": "SEATV.kh",
-        "logo": "https://i.imgur.com/oZPorvg.png",
-        "url": "https://seatv.netlinkbroadcaster.com/hls/test.m3u8",
-        "categories": [],
-        "country": "KH"
-    },
-    {
-        "name": "TVK 2",
-        "id": "TVK2.kh",
-        "logo": "https://i.imgur.com/L36ptO2.png",
-        "url": "https://live.kh.malimarcdn.com/live/tvk2.stream/playlist.m3u8",
-        "categories": [
-            "education"
-        ],
-        "country": "KH"
-    },
-    {
-        "name": "TVK",
-        "id": "TVK.kh",
-        "logo": "https://i.imgur.com/5hPxjcl.png",
-        "url": "https://live.kh.malimarcdn.com/live/tvk.stream/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "KH"
-    },
-    {
         "name": "TV5 Cambodia",
         "id": "TV5Cambodia.kh",
         "logo": "https://i.imgur.com/iMZLyoX.png",
@@ -132,11 +112,13 @@
         "country": "KH"
     },
     {
-        "name": "Rasmey Hang Meas HDTV",
-        "id": "RasmeyHangMeasHDTV.kh",
-        "logo": "https://i.imgur.com/EcqEMMg.png",
-        "url": "http://clive.malisresidences.com:1935/rhm_hdtv/_definst_/smil:RHMHDTV.smil/playlist.m3u8",
-        "categories": [],
+        "name": "Wiki TV",
+        "id": "WikiTV.kh",
+        "logo": "https://i.imgur.com/rnV0Ui1.png",
+        "url": "https://stream.wikitv.asia/live/ngrp:myStream_all/playlist.m3u8",
+        "categories": [
+            "education"
+        ],
         "country": "KH"
     },
     {
@@ -147,6 +129,14 @@
         "categories": [
             "movies"
         ],
+        "country": "KH"
+    },
+    {
+        "name": "Rasmey Hang Meas HDTV",
+        "id": "RasmeyHangMeasHDTV.kh",
+        "logo": "https://i.imgur.com/EcqEMMg.png",
+        "url": "http://clive.malisresidences.com:1935/rhm_hdtv/_definst_/smil:RHMHDTV.smil/playlist.m3u8",
+        "categories": [],
         "country": "KH"
     }
 ]

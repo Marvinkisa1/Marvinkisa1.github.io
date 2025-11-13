@@ -20,21 +20,32 @@
         "country": "KW"
     },
     {
-        "name": "Bahry",
-        "id": "Bahry.kw",
-        "logo": "https://bahry.faulio.com/storage/mediagallery/9a/c7/fullhd_6a5a505408b027c0d4a4453c72258f9db0d2cb20.png",
-        "url": "https://live.kwikmotion.com/bahry1live/bahry1.smil/playlist.m3u8",
-        "categories": [],
+        "name": "Marina TV",
+        "id": "MarinaTV.kw",
+        "logo": "https://i.imgur.com/F2PzEaw.png",
+        "url": "https://ffs.gulfsat.com/Marina-TV-HD/index.m3u8",
+        "categories": [
+            "music"
+        ],
         "country": "KW"
     },
     {
-        "name": "KTV 2",
-        "id": "KTV2.kw",
-        "logo": "https://i.imgur.com/hB57mNh.png",
-        "url": "https://kwtktv2ta.cdn.mangomolo.com/ktv2/smil:ktv2.stream.smil/chunklist.m3u8",
+        "name": "Ch4Teen",
+        "id": "Ch4Teen.kw",
+        "logo": "https://i.imgur.com/pHpFGeg.png",
+        "url": "https://ch14.tv/live/ch4teenclip/playlist.m3u8",
         "categories": [
-            "culture",
-            "news"
+            "religious"
+        ],
+        "country": "KW"
+    },
+    {
+        "name": "KTV Sport Plus",
+        "id": "KTVSportPlus.kw",
+        "logo": "https://i.imgur.com/l4oX0gf.png",
+        "url": "https://kwtsplta.cdn.mangomolo.com/spl/smil:spl.stream.smil/chunklist.m3u8",
+        "categories": [
+            "sports"
         ],
         "country": "KW"
     },
@@ -49,12 +60,13 @@
         "country": "KW"
     },
     {
-        "name": "KTV Sport Plus",
-        "id": "KTVSportPlus.kw",
-        "logo": "https://i.imgur.com/l4oX0gf.png",
-        "url": "https://kwtsplta.cdn.mangomolo.com/spl/smil:spl.stream.smil/chunklist.m3u8",
+        "name": "KTV 2",
+        "id": "KTV2.kw",
+        "logo": "https://i.imgur.com/hB57mNh.png",
+        "url": "https://kwtktv2ta.cdn.mangomolo.com/ktv2/smil:ktv2.stream.smil/chunklist.m3u8",
         "categories": [
-            "sports"
+            "culture",
+            "news"
         ],
         "country": "KW"
     },
@@ -89,23 +101,11 @@
         "country": "KW"
     },
     {
-        "name": "Ch4Teen",
-        "id": "Ch4Teen.kw",
-        "logo": "https://i.imgur.com/pHpFGeg.png",
-        "url": "https://ch14.tv/live/ch4teenclip/playlist.m3u8",
-        "categories": [
-            "religious"
-        ],
-        "country": "KW"
-    },
-    {
-        "name": "Marina TV",
-        "id": "MarinaTV.kw",
-        "logo": "https://i.imgur.com/F2PzEaw.png",
-        "url": "https://ffs.gulfsat.com/Marina-TV-HD/index.m3u8",
-        "categories": [
-            "music"
-        ],
+        "name": "Bahry",
+        "id": "Bahry.kw",
+        "logo": "https://bahry.faulio.com/storage/mediagallery/9a/c7/fullhd_6a5a505408b027c0d4a4453c72258f9db0d2cb20.png",
+        "url": "https://live.kwikmotion.com/bahry1live/bahry1.smil/playlist.m3u8",
+        "categories": [],
         "country": "KW"
     }
 ]
