@@ -26,20 +26,18 @@
         "country": "MY"
     },
     {
-        "name": "Maah TV",
-        "id": "MaahTV.my",
-        "logo": "https://i.imgur.com/FkyueH6.png",
-        "url": "https://hls.maahtv.live/hls/stream.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "MY"
-    },
-    {
         "name": "TV1",
         "id": "TV1.my",
         "logo": "https://i.imgur.com/wSyPmiY.png",
         "url": "https://d25tgymtnqzu8s.cloudfront.net/smil:tv1/playlist.m3u8?id=1",
+        "categories": [],
+        "country": "MY"
+    },
+    {
+        "name": "Berita RTM",
+        "id": "BeritaRTM.my",
+        "logo": "https://i.imgur.com/1Xzxsgl.png",
+        "url": "https://d25tgymtnqzu8s.cloudfront.net/smil:berita/playlist.m3u8?id=5",
         "categories": [],
         "country": "MY"
     },
@@ -62,11 +60,13 @@
         "country": "MY"
     },
     {
-        "name": "Berita RTM",
-        "id": "BeritaRTM.my",
-        "logo": "https://i.imgur.com/1Xzxsgl.png",
-        "url": "https://d25tgymtnqzu8s.cloudfront.net/smil:berita/playlist.m3u8?id=5",
-        "categories": [],
+        "name": "RTM Parlimen Dewan Negara",
+        "id": "RTMParlimenDewanNegara.my",
+        "logo": "https://i.postimg.cc/mgrVsTMY/header.png",
+        "url": "https://d25tgymtnqzu8s.cloudfront.net/smil:negara/playlist.m3u8?id=8",
+        "categories": [
+            "legislative"
+        ],
         "country": "MY"
     },
     {
@@ -80,22 +80,22 @@
         "country": "MY"
     },
     {
-        "name": "RTM Parlimen Dewan Negara",
-        "id": "RTMParlimenDewanNegara.my",
-        "logo": "https://i.postimg.cc/mgrVsTMY/header.png",
-        "url": "https://d25tgymtnqzu8s.cloudfront.net/smil:negara/playlist.m3u8?id=8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "MY"
-    },
-    {
         "name": "PRO Sport International",
         "id": "PROSportInternational.my",
         "logo": "https://i.postimg.cc/7hjCP4mf/PROSport-International.png",
         "url": "https://proshls.wns.live/hls/stream.m3u8",
         "categories": [
             "sports"
+        ],
+        "country": "MY"
+    },
+    {
+        "name": "Maah TV",
+        "id": "MaahTV.my",
+        "logo": "https://i.imgur.com/FkyueH6.png",
+        "url": "https://hls.maahtv.live/hls/stream.m3u8",
+        "categories": [
+            "movies"
         ],
         "country": "MY"
     },
