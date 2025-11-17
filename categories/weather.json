@@ -1,5 +1,15 @@
 [
     {
+        "name": "Meteonews",
+        "id": "Meteonews.ch",
+        "logo": "https://i.imgur.com/YtYhbJD.png",
+        "url": "https://streaming.meteonews.net/hls/stream.m3u8",
+        "categories": [
+            "weather"
+        ],
+        "country": "CH"
+    },
+    {
         "name": "The Weather Network",
         "id": "TheWeatherNetwork.ca",
         "logo": "https://i.imgur.com/V6ZUwUY.png",
@@ -10,14 +20,15 @@
         "country": "CA"
     },
     {
-        "name": "Meteonews",
-        "id": "Meteonews.ch",
-        "logo": "https://i.imgur.com/YtYhbJD.png",
-        "url": "https://streaming.meteonews.net/hls/stream.m3u8",
+        "name": "WMUR-DT1",
+        "id": "WMURDT1.us",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/7/72/WMURCurrentLogo.png",
+        "url": "https://livetv-fa.tubi.video/wmur/playlist.m3u8",
         "categories": [
+            "news",
             "weather"
         ],
-        "country": "CH"
+        "country": "US"
     },
     {
         "name": "Sky News Weather",
@@ -41,12 +52,11 @@
         "country": "US"
     },
     {
-        "name": "WMUR-DT1",
-        "id": "WMURDT1.us",
-        "logo": "https://upload.wikimedia.org/wikipedia/en/7/72/WMURCurrentLogo.png",
-        "url": "https://livetv-fa.tubi.video/wmur/playlist.m3u8",
+        "name": "WeatherNation",
+        "id": "WeatherNation.us",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/WeatherNation_Logo.svg/512px-WeatherNation_Logo.svg.png",
+        "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/5d2cb7ac552e3773bc48982e/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=6c2d1028-30d3-11ef-9cf5-e9ddff8ff496&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=dcca8395-396e-4be0-9049-564f29c5ac9b",
         "categories": [
-            "news",
             "weather"
         ],
         "country": "US"
@@ -66,16 +76,6 @@
         "id": "AccuWeatherNOW.us",
         "logo": "https://i.imgur.com/M8wbVYK.png",
         "url": "https://accuweather-xumo.amagi.tv/playlist.m3u8",
-        "categories": [
-            "weather"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "WeatherNation",
-        "id": "WeatherNation.us",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/WeatherNation_Logo.svg/512px-WeatherNation_Logo.svg.png",
-        "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/5d2cb7ac552e3773bc48982e/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=6c2d1028-30d3-11ef-9cf5-e9ddff8ff496&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=dcca8395-396e-4be0-9049-564f29c5ac9b",
         "categories": [
             "weather"
         ],
