@@ -1,5 +1,25 @@
 [
     {
+        "name": "Al-Aqsa TV",
+        "id": "AlAqsaTV.ps",
+        "logo": "https://i.imgur.com/Z2rfrQ8.png",
+        "url": "http://167.172.161.13/hls/feedspare/6udfi7v8a3eof6nlps6e9ovfrs65c7l7.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "PS"
+    },
+    {
+        "name": "Al Najah News",
+        "id": "AlNajahNews.ps",
+        "logo": "https://i.imgur.com/c2bwn4G.png",
+        "url": "https://streaming.najah.edu:8443/hls/AlNajah.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "PS"
+    },
+    {
         "name": "Palestine Satellite Channel",
         "id": "PalestineSatelliteChannel.ps",
         "logo": "https://i.imgur.com/4B5FvmX.png",
@@ -10,10 +30,40 @@
         "country": "PS"
     },
     {
-        "name": "Al-Aqsa TV",
-        "id": "AlAqsaTV.ps",
-        "logo": "https://i.imgur.com/Z2rfrQ8.png",
-        "url": "http://167.172.161.13/hls/feedspare/6udfi7v8a3eof6nlps6e9ovfrs65c7l7.m3u8",
+        "name": "Palestine Today",
+        "id": "PalestineToday.ps",
+        "logo": "https://i.imgur.com/BS8XXug.png",
+        "url": "https://live.paltodaytv.com/paltv/live/playlist.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "PS"
+    },
+    {
+        "name": "Palestine Edu",
+        "id": "PalestineEdu.ps",
+        "logo": "https://i.imgur.com/AwVHXyC.png",
+        "url": "https://pbc.furrera.ps/PalestineEDU/index.m3u8",
+        "categories": [
+            "education"
+        ],
+        "country": "PS"
+    },
+    {
+        "name": "Musawa Channel",
+        "id": "MusawaChannel.ps",
+        "logo": "https://i.imgur.com/GB2Q9kl.png",
+        "url": "https://pbc.furrera.ps/musawahd/index.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "PS"
+    },
+    {
+        "name": "Palestine Mubasher",
+        "id": "PalestineMubasher.ps",
+        "logo": "https://i.imgur.com/68llVTZ.png",
+        "url": "https://pbc.furrera.ps/palestinelivehd/index.m3u8",
         "categories": [
             "general"
         ],
@@ -28,13 +78,21 @@
         "country": "PS"
     },
     {
-        "name": "Nablus TV",
-        "id": "NablusTV.ps",
-        "logo": "https://i.imgur.com/GoLhaDK.png",
-        "url": "http://htvmada.mada.ps:8888/nabluslive/index.m3u8",
+        "name": "Falastini TV",
+        "id": "FalastiniTV.ps",
+        "logo": "https://i.imgur.com/6B3Cims.png",
+        "url": "https://rp.tactivemedia.com/palestiniantv_source/live/playlist.m3u8",
         "categories": [
-            "news"
+            "music"
         ],
+        "country": "PS"
+    },
+    {
+        "name": "Shabab FM",
+        "id": "ShababFM.ps",
+        "logo": "https://i.imgur.com/4Cyz4Bn.png",
+        "url": "https://streaming.zaytonatube.com:8081/ShababFM/shabab/index.m3u8",
+        "categories": [],
         "country": "PS"
     },
     {
@@ -56,20 +114,12 @@
         "country": "PS"
     },
     {
-        "name": "Shabab FM",
-        "id": "ShababFM.ps",
-        "logo": "https://i.imgur.com/4Cyz4Bn.png",
-        "url": "https://streaming.zaytonatube.com:8081/ShababFM/shabab/index.m3u8",
-        "categories": [],
-        "country": "PS"
-    },
-    {
-        "name": "Falastini TV",
-        "id": "FalastiniTV.ps",
-        "logo": "https://i.imgur.com/6B3Cims.png",
-        "url": "https://rp.tactivemedia.com/palestiniantv_source/live/playlist.m3u8",
+        "name": "Nablus TV",
+        "id": "NablusTV.ps",
+        "logo": "https://i.imgur.com/GoLhaDK.png",
+        "url": "http://htvmada.mada.ps:8888/nabluslive/index.m3u8",
         "categories": [
-            "music"
+            "news"
         ],
         "country": "PS"
     },
@@ -80,66 +130,6 @@
         "url": "http://streaming.zaytonatube.com:8080/holyquran/holyquran/video.m3u8",
         "categories": [
             "religious"
-        ],
-        "country": "PS"
-    },
-    {
-        "name": "Palestine Edu",
-        "id": "PalestineEdu.ps",
-        "logo": "https://i.imgur.com/AwVHXyC.png",
-        "url": "https://pbc.furrera.ps/PalestineEDU/index.m3u8",
-        "categories": [
-            "education"
-        ],
-        "country": "PS"
-    },
-    {
-        "name": "Palestine Mubasher",
-        "id": "PalestineMubasher.ps",
-        "logo": "https://i.imgur.com/68llVTZ.png",
-        "url": "https://pbc.furrera.ps/palestinelivehd/index.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "PS"
-    },
-    {
-        "name": "Musawa Channel",
-        "id": "MusawaChannel.ps",
-        "logo": "https://i.imgur.com/GB2Q9kl.png",
-        "url": "https://pbc.furrera.ps/musawahd/index.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "PS"
-    },
-    {
-        "name": "Al Najah News",
-        "id": "AlNajahNews.ps",
-        "logo": "https://i.imgur.com/c2bwn4G.png",
-        "url": "https://streaming.najah.edu:8443/hls/AlNajah.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "PS"
-    },
-    {
-        "name": "Palestine Today",
-        "id": "PalestineToday.ps",
-        "logo": "https://i.imgur.com/BS8XXug.png",
-        "url": "https://live.paltodaytv.com/paltv/live/playlist.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "PS"
-    },
-    {
-        "name": "Ajyal TV",
-        "id": "AjyalTV.ps",
-        "logo": "https://i.imgur.com/i6Y7beR.jpg",
-        "url": "http://htvajyal.mada.ps:8888/ajyal/index.m3u8",
-        "categories": [
-            "general"
         ],
         "country": "PS"
     }
