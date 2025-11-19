@@ -1,11 +1,11 @@
 [
     {
-        "name": "Disney Channel",
-        "id": "DisneyChannel.bg",
-        "logo": "https://i.imgur.com/UxrAiAe.png",
-        "url": "http://84.54.128.52:9090/play/3006/index.m3u8",
+        "name": "DSTV",
+        "id": "DSTV.bg",
+        "logo": "https://i.imgur.com/YMgzzkf.png",
+        "url": "http://46.249.95.140:8081/hls/data.m3u8",
         "categories": [
-            "kids"
+            "music"
         ],
         "country": "BG"
     },
@@ -20,12 +20,12 @@
         "country": "BG"
     },
     {
-        "name": "DSTV",
-        "id": "DSTV.bg",
-        "logo": "https://i.imgur.com/YMgzzkf.png",
-        "url": "http://46.249.95.140:8081/hls/data.m3u8",
+        "name": "Disney Channel",
+        "id": "DisneyChannel.bg",
+        "logo": "https://i.imgur.com/UxrAiAe.png",
+        "url": "http://84.54.128.52:9090/play/3006/index.m3u8",
         "categories": [
-            "music"
+            "kids"
         ],
         "country": "BG"
     },
@@ -34,6 +34,16 @@
         "id": "BNT4.bg",
         "logo": "https://i.imgur.com/Lw8b3yu.png",
         "url": "https://viamotionhsi.netplus.ch/live/eds/bntworld/browser-HLS8/bntworld.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "BG"
+    },
+    {
+        "name": "TV Zagora",
+        "id": "TVZagora.bg",
+        "logo": "https://i.imgur.com/DvBboqe.png",
+        "url": "http://zagoratv.ddns.net:8080/tvzagora.m3u8",
         "categories": [
             "general"
         ],
@@ -50,22 +60,12 @@
         "country": "BG"
     },
     {
-        "name": "Light Channel",
-        "id": "LightChannel.bg",
-        "logo": "https://i.imgur.com/S3Fbf8T.png",
-        "url": "https://streamer1.streamhost.org/salive/GMIlcbgM/playlist.m3u8",
+        "name": "Magic TV",
+        "id": "MagicTV.bg",
+        "logo": "https://i.imgur.com/n7bcrrp.png",
+        "url": "https://bss1.neterra.tv/magictv/magictv.m3u8",
         "categories": [
-            "religious"
-        ],
-        "country": "BG"
-    },
-    {
-        "name": "TV Zagora",
-        "id": "TVZagora.bg",
-        "logo": "https://i.imgur.com/DvBboqe.png",
-        "url": "http://zagoratv.ddns.net:8080/tvzagora.m3u8",
-        "categories": [
-            "general"
+            "music"
         ],
         "country": "BG"
     },
@@ -80,23 +80,11 @@
         "country": "BG"
     },
     {
-        "name": "Magic TV",
-        "id": "MagicTV.bg",
-        "logo": "https://i.imgur.com/n7bcrrp.png",
-        "url": "https://bss1.neterra.tv/magictv/magictv.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "BG"
-    },
-    {
-        "name": "City TV",
-        "id": "CityTV.bg",
-        "logo": "https://i.imgur.com/mFL452f.png",
-        "url": "https://tv.city.bg/play/tshls/citytv/index.m3u8",
-        "categories": [
-            "music"
-        ],
+        "name": "RMTV",
+        "id": "RMTV.bg",
+        "logo": "https://rmtv.bg/img/logo.png",
+        "url": "https://transcoder1.bitcare.eu/streaming/rimextv/rmtv.m3u8",
+        "categories": [],
         "country": "BG"
     },
     {
@@ -110,20 +98,12 @@
         "country": "BG"
     },
     {
-        "name": "RMTV",
-        "id": "RMTV.bg",
-        "logo": "https://rmtv.bg/img/logo.png",
-        "url": "https://transcoder1.bitcare.eu/streaming/rimextv/rmtv.m3u8",
-        "categories": [],
-        "country": "BG"
-    },
-    {
-        "name": "Tiankov Folk",
-        "id": "TiankovFolk.bg",
-        "logo": "https://i.imgur.com/VKY4q64.png",
-        "url": "https://streamer103.neterra.tv/tiankov-folk/live.m3u8",
+        "name": "This is Bulgaria HD",
+        "id": "ThisisBulgariaHD.bg",
+        "logo": "https://i.imgur.com/062jkXw.png",
+        "url": "https://streamer103.neterra.tv/thisisbulgaria/live.m3u8",
         "categories": [
-            "music"
+            "entertainment"
         ],
         "country": "BG"
     },
@@ -148,12 +128,22 @@
         "country": "BG"
     },
     {
-        "name": "This is Bulgaria HD",
-        "id": "ThisisBulgariaHD.bg",
-        "logo": "https://i.imgur.com/062jkXw.png",
-        "url": "https://streamer103.neterra.tv/thisisbulgaria/live.m3u8",
+        "name": "Tiankov Folk",
+        "id": "TiankovFolk.bg",
+        "logo": "https://i.imgur.com/VKY4q64.png",
+        "url": "https://streamer103.neterra.tv/tiankov-folk/live.m3u8",
         "categories": [
-            "entertainment"
+            "music"
+        ],
+        "country": "BG"
+    },
+    {
+        "name": "Light Channel",
+        "id": "LightChannel.bg",
+        "logo": "https://i.imgur.com/S3Fbf8T.png",
+        "url": "https://streamer1.streamhost.org/salive/GMIlcbgM/playlist.m3u8",
+        "categories": [
+            "religious"
         ],
         "country": "BG"
     }
