@@ -1,5 +1,15 @@
 [
     {
+        "name": "Eagle News",
+        "id": "EagleNews.mn",
+        "logo": "https://i.imgur.com/2oqXpve.jpg",
+        "url": "https://cdn4.skygo.mn/live/disk1/Eagle/HLSv3-FTA/Eagle.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "MN"
+    },
+    {
         "name": "TM TV",
         "id": "TMTV.mn",
         "logo": "https://i.imgur.com/Bza9r7U.png",
@@ -10,38 +20,31 @@
         "country": "MN"
     },
     {
-        "name": "MNB Mongoliin Medee",
-        "id": "MNBMongoliinMedee.mn",
-        "logo": "https://i.imgur.com/KUvJzUD.png",
-        "url": "https://live.mnb.mn/hls/mn2.stream.m3u8",
-        "categories": [],
-        "country": "MN"
-    },
-    {
-        "name": "MNB Sport",
-        "id": "MNBSport.mn",
-        "logo": "https://i.imgur.com/z854PC3.png",
-        "url": "https://live.mnb.mn/hls/mnb_sport.stream.m3u8",
+        "name": "Edutainment TV",
+        "id": "EdutainmentTV.mn",
+        "logo": "https://i.imgur.com/0m8t3vh.png",
+        "url": "https://cdn4.skygo.mn/live/disk1/Education/HLSv3-FTA/Education.m3u8",
         "categories": [
-            "sports"
+            "education",
+            "entertainment"
         ],
         "country": "MN"
     },
     {
-        "name": "MNB",
-        "id": "MNB.mn",
-        "logo": "https://i.imgur.com/RdRd0to.png",
-        "url": "https://live.mnb.mn/hls/mnb.stream.m3u8",
+        "name": "UBS",
+        "id": "UBS.mn",
+        "logo": "https://i.imgur.com/dIRMYYd.png",
+        "url": "https://cdn4.skygo.mn/live/disk1/UBSHD/HLSv3-FTA/UBSHD.m3u8",
         "categories": [
             "general"
         ],
         "country": "MN"
     },
     {
-        "name": "MNB World",
-        "id": "MNBWorld.mn",
-        "logo": "https://i.imgur.com/PHlj84Q.png",
-        "url": "https://live.mnb.mn/hls/mnb_world.stream.m3u8",
+        "name": "C1",
+        "id": "C1.mn",
+        "logo": "https://i.imgur.com/v1mHG5x.png",
+        "url": "https://cdn4.skygo.mn/live/disk1/C1/HLSv3-FTA/C1.m3u8",
         "categories": [
             "general"
         ],
@@ -58,12 +61,32 @@
         "country": "MN"
     },
     {
+        "name": "Parliament TV",
+        "id": "ParliamentTV.mn",
+        "logo": "https://i.imgur.com/OD7YKuz.jpeg",
+        "url": "https://cdn4.skygo.mn/live/disk1/Parlament/HLSv3-FTA/Parlament.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "MN"
+    },
+    {
         "name": "Premier Sports 2",
         "id": "PremierSports2.mn",
         "logo": "https://i.imgur.com/eMNWhDq.png",
         "url": "https://cdn4.skygo.mn/live/disk1/SPSPlay/HLS-FTA/SPSPlay.m3u8",
         "categories": [
             "sports"
+        ],
+        "country": "MN"
+    },
+    {
+        "name": "TenGer TV",
+        "id": "TenGerTV.mn",
+        "logo": "https://i.imgur.com/MmPvkcO.png",
+        "url": "https://cdn4.skygo.mn/live/disk1/VTV/HLSv3-FTA/VTV.m3u8",
+        "categories": [
+            "general"
         ],
         "country": "MN"
     },
@@ -78,28 +101,10 @@
         "country": "MN"
     },
     {
-        "name": "Parliament TV",
-        "id": "ParliamentTV.mn",
-        "logo": "https://i.imgur.com/OD7YKuz.jpeg",
-        "url": "https://cdn4.skygo.mn/live/disk1/Parlament/HLSv3-FTA/Parlament.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "MN"
-    },
-    {
-        "name": "GTV",
-        "id": "GTV.mn",
-        "logo": "https://i.imgur.com/z18PSIo.png",
-        "url": "https://cdn4.skygo.mn/live/disk1/GTV/HLSv3-FTA/GTV.m3u8",
-        "categories": [],
-        "country": "MN"
-    },
-    {
-        "name": "TenGer TV",
-        "id": "TenGerTV.mn",
-        "logo": "https://i.imgur.com/MmPvkcO.png",
-        "url": "https://cdn4.skygo.mn/live/disk1/VTV/HLSv3-FTA/VTV.m3u8",
+        "name": "SBN",
+        "id": "SBN.mn",
+        "logo": "https://i.imgur.com/E3fvpwn.png",
+        "url": "https://cdn4.skygo.mn/live/disk1/SBN/HLSv3-FTA/SBN.m3u8",
         "categories": [
             "general"
         ],
@@ -116,13 +121,11 @@
         "country": "MN"
     },
     {
-        "name": "SBN",
-        "id": "SBN.mn",
-        "logo": "https://i.imgur.com/E3fvpwn.png",
-        "url": "https://cdn4.skygo.mn/live/disk1/SBN/HLSv3-FTA/SBN.m3u8",
-        "categories": [
-            "general"
-        ],
+        "name": "GTV",
+        "id": "GTV.mn",
+        "logo": "https://i.imgur.com/z18PSIo.png",
+        "url": "https://cdn4.skygo.mn/live/disk1/GTV/HLSv3-FTA/GTV.m3u8",
+        "categories": [],
         "country": "MN"
     },
     {
@@ -132,26 +135,6 @@
         "url": "https://cdn4.skygo.mn/live/disk1/Moviebox/HLSv3-FTA/Moviebox.m3u8",
         "categories": [
             "movies"
-        ],
-        "country": "MN"
-    },
-    {
-        "name": "AsianBox",
-        "id": "AsianBox.mn",
-        "logo": "https://i.imgur.com/WAYZSgx.png",
-        "url": "https://cdn4.skygo.mn/live/disk1/AsianBOX/HLSv3-FTA/AsianBOX.m3u8",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "MN"
-    },
-    {
-        "name": "ONTV",
-        "id": "ONTV.mn",
-        "logo": "https://i.imgur.com/EzODUBO.png",
-        "url": "https://cdn4.skygo.mn/live/disk1/ONTV/HLSv3-FTA/ONTV.m3u8",
-        "categories": [
-            "general"
         ],
         "country": "MN"
     },
@@ -166,12 +149,42 @@
         "country": "MN"
     },
     {
+        "name": "AsianBox",
+        "id": "AsianBox.mn",
+        "logo": "https://i.imgur.com/WAYZSgx.png",
+        "url": "https://cdn4.skygo.mn/live/disk1/AsianBOX/HLSv3-FTA/AsianBOX.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "MN"
+    },
+    {
         "name": "ETV",
         "id": "ETV.mn",
         "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/ETV_Mongolia_logo.png/512px-ETV_Mongolia_logo.png",
         "url": "https://cdn4.skygo.mn/live/disk1/ETV/HLSv3-FTA/ETV.m3u8",
         "categories": [
             "news"
+        ],
+        "country": "MN"
+    },
+    {
+        "name": "Soyon Gegeeruulegch TV",
+        "id": "SoyonGegeeruulegchTV.mn",
+        "logo": "https://i.imgur.com/iBZVvtW.png",
+        "url": "https://cdn4.skygo.mn/live/disk1/SoyonGegeeruulegch/HLSv3-FTA/SoyonGegeeruulegch.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "MN"
+    },
+    {
+        "name": "ONTV",
+        "id": "ONTV.mn",
+        "logo": "https://i.imgur.com/EzODUBO.png",
+        "url": "https://cdn4.skygo.mn/live/disk1/ONTV/HLSv3-FTA/ONTV.m3u8",
+        "categories": [
+            "general"
         ],
         "country": "MN"
     },
@@ -184,10 +197,10 @@
         "country": "MN"
     },
     {
-        "name": "Soyon Gegeeruulegch TV",
-        "id": "SoyonGegeeruulegchTV.mn",
-        "logo": "https://i.imgur.com/iBZVvtW.png",
-        "url": "https://cdn4.skygo.mn/live/disk1/SoyonGegeeruulegch/HLSv3-FTA/SoyonGegeeruulegch.m3u8",
+        "name": "TV9",
+        "id": "TV9.mn",
+        "logo": "https://i.imgur.com/QFteAgd.png",
+        "url": "https://cdn4.skygo.mn/live/disk1/TV9HD/HLSv3-FTA/TV9HD.m3u8",
         "categories": [
             "general"
         ],
@@ -204,12 +217,12 @@
         "country": "MN"
     },
     {
-        "name": "TV9",
-        "id": "TV9.mn",
-        "logo": "https://i.imgur.com/QFteAgd.png",
-        "url": "https://cdn4.skygo.mn/live/disk1/TV9HD/HLSv3-FTA/TV9HD.m3u8",
+        "name": "Mongolian News Channel",
+        "id": "MongolianNewsChannel.mn",
+        "logo": "https://i.imgur.com/gMVqbwU.png",
+        "url": "https://cdn4.skygo.mn/live/disk1/MNCTV/HLSv3-FTA/MNCTV.m3u8",
         "categories": [
-            "general"
+            "news"
         ],
         "country": "MN"
     },
@@ -219,16 +232,6 @@
         "logo": "https://i.imgur.com/CnLxehv.png",
         "url": "https://cdn4.skygo.mn/live/disk1/SuldTV/HLSv3-FTA/SuldTV.m3u8",
         "categories": [],
-        "country": "MN"
-    },
-    {
-        "name": "Mongolian News Channel",
-        "id": "MongolianNewsChannel.mn",
-        "logo": "https://i.imgur.com/gMVqbwU.png",
-        "url": "https://cdn4.skygo.mn/live/disk1/MNCTV/HLSv3-FTA/MNCTV.m3u8",
-        "categories": [
-            "news"
-        ],
         "country": "MN"
     },
     {
@@ -280,16 +283,6 @@
         "country": "MN"
     },
     {
-        "name": "Seven Channel",
-        "id": "SevenChannel.mn",
-        "logo": "https://i.imgur.com/9Ld5ATz.png",
-        "url": "https://cdn4.skygo.mn/live/disk1/TV7/HLS-FTA/TV7.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "MN"
-    },
-    {
         "name": "Central TV",
         "id": "CentralTV.mn",
         "logo": "https://i.imgur.com/E9wAUrT.png",
@@ -310,6 +303,16 @@
         "country": "MN"
     },
     {
+        "name": "Seven Channel",
+        "id": "SevenChannel.mn",
+        "logo": "https://i.imgur.com/9Ld5ATz.png",
+        "url": "https://cdn4.skygo.mn/live/disk1/TV7/HLS-FTA/TV7.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "MN"
+    },
+    {
         "name": "Ulzii TV",
         "id": "UlziiTV.mn",
         "logo": "https://i.imgur.com/p7tsUTI.png",
@@ -320,43 +323,50 @@
         "country": "MN"
     },
     {
-        "name": "Edutainment TV",
-        "id": "EdutainmentTV.mn",
-        "logo": "https://i.imgur.com/0m8t3vh.png",
-        "url": "https://cdn4.skygo.mn/live/disk1/Education/HLSv3-FTA/Education.m3u8",
-        "categories": [
-            "education",
-            "entertainment"
-        ],
-        "country": "MN"
-    },
-    {
-        "name": "Eagle News",
-        "id": "EagleNews.mn",
-        "logo": "https://i.imgur.com/2oqXpve.jpg",
-        "url": "https://cdn4.skygo.mn/live/disk1/Eagle/HLSv3-FTA/Eagle.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "MN"
-    },
-    {
-        "name": "C1",
-        "id": "C1.mn",
-        "logo": "https://i.imgur.com/v1mHG5x.png",
-        "url": "https://cdn4.skygo.mn/live/disk1/C1/HLSv3-FTA/C1.m3u8",
+        "name": "MNB World",
+        "id": "MNBWorld.mn",
+        "logo": "https://i.imgur.com/PHlj84Q.png",
+        "url": "https://live.mnb.mn/hls/mnb_world.stream.m3u8",
         "categories": [
             "general"
         ],
         "country": "MN"
     },
     {
-        "name": "UBS",
-        "id": "UBS.mn",
-        "logo": "https://i.imgur.com/dIRMYYd.png",
-        "url": "https://cdn4.skygo.mn/live/disk1/UBSHD/HLSv3-FTA/UBSHD.m3u8",
+        "name": "MNB Sport",
+        "id": "MNBSport.mn",
+        "logo": "https://i.imgur.com/z854PC3.png",
+        "url": "https://live.mnb.mn/hls/mnb_sport.stream.m3u8",
+        "categories": [
+            "sports"
+        ],
+        "country": "MN"
+    },
+    {
+        "name": "MNB Mongoliin Medee",
+        "id": "MNBMongoliinMedee.mn",
+        "logo": "https://i.imgur.com/KUvJzUD.png",
+        "url": "https://live.mnb.mn/hls/mn2.stream.m3u8",
+        "categories": [],
+        "country": "MN"
+    },
+    {
+        "name": "MNB",
+        "id": "MNB.mn",
+        "logo": "https://i.imgur.com/RdRd0to.png",
+        "url": "https://live.mnb.mn/hls/mnb.stream.m3u8",
         "categories": [
             "general"
+        ],
+        "country": "MN"
+    },
+    {
+        "name": "Premier Sports 5",
+        "id": "PremierSports5.mn",
+        "logo": "https://i.imgur.com/LkIe9gR.png",
+        "url": "http://cdn4.skygo.mn/live/disk1/SPSPlus/HLS-FTA/SPSPlus.m3u8",
+        "categories": [
+            "sports"
         ],
         "country": "MN"
     },
@@ -375,16 +385,6 @@
         "id": "PremierSports1.mn",
         "logo": "https://i.imgur.com/t5qCejI.png",
         "url": "http://cdn4.skygo.mn/live/disk1/SPSPrime/HLS-FTA/SPSPrime.m3u8",
-        "categories": [
-            "sports"
-        ],
-        "country": "MN"
-    },
-    {
-        "name": "Premier Sports 5",
-        "id": "PremierSports5.mn",
-        "logo": "https://i.imgur.com/LkIe9gR.png",
-        "url": "http://cdn4.skygo.mn/live/disk1/SPSPlus/HLS-FTA/SPSPlus.m3u8",
         "categories": [
             "sports"
         ],
