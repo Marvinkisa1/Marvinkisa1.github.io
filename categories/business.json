@@ -1,19 +1,19 @@
 [
     {
-        "name": "Al Arabiya Business",
-        "id": "AlArabiyaBusiness.ae",
-        "logo": "https://i.imgur.com/eEV4r6J.jpg",
-        "url": "https://live.alarabiya.net/alarabiapublish/aswaaq.smil/playlist.m3u8",
+        "name": "CNBC Arabiya",
+        "id": "CNBCArabiya.ae",
+        "logo": "https://i.imgur.com/opBXx1K.png",
+        "url": "https://cnbc-live.akamaized.net/cnbc/master.m3u8",
         "categories": [
             "business"
         ],
         "country": "AE"
     },
     {
-        "name": "CNBC Arabiya",
-        "id": "CNBCArabiya.ae",
-        "logo": "https://i.imgur.com/opBXx1K.png",
-        "url": "https://cnbc-live.akamaized.net/cnbc/master.m3u8",
+        "name": "Al Arabiya Business",
+        "id": "AlArabiyaBusiness.ae",
+        "logo": "https://i.imgur.com/eEV4r6J.jpg",
+        "url": "https://live.alarabiya.net/alarabiapublish/aswaaq.smil/playlist.m3u8",
         "categories": [
             "business"
         ],
@@ -72,30 +72,10 @@
         "country": "US"
     },
     {
-        "name": "CNBC World",
-        "id": "CNBCWorld.us",
-        "logo": "https://zap2it.tmsimg.com/h3/NowShowing/26849/s26849_ll_h15_ab.png?w=512",
-        "url": "https://fl1.moveonjoy.com/CNBC_World/index.m3u8",
-        "categories": [
-            "business"
-        ],
-        "country": "US"
-    },
-    {
         "name": "Fox Business Network",
         "id": "FoxBusinessNetwork.us",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Fox_Business.svg/512px-Fox_Business.svg.png",
         "url": "http://g-med.xyz:25461/live/zikojelica/E845P2V9ae/19522.ts",
-        "categories": [
-            "business"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Bloomberg TV",
-        "id": "BloombergTV.us",
-        "logo": "https://i.imgur.com/OuogLHx.png",
-        "url": "https://bloomberg.com/media-manifest/streams/politics.m3u8",
         "categories": [
             "business"
         ],
@@ -112,6 +92,16 @@
         "country": "US"
     },
     {
+        "name": "Bloomberg TV",
+        "id": "BloombergTV.us",
+        "logo": "https://i.imgur.com/OuogLHx.png",
+        "url": "https://bloomberg.com/media-manifest/streams/politics.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "US"
+    },
+    {
         "name": "30A Investment Pitch",
         "id": "30AInvestmentPitch.us",
         "logo": "https://i.imgur.com/CKCtZo7.png",
@@ -122,14 +112,14 @@
         "country": "US"
     },
     {
-        "name": "JOB TV",
-        "id": "JOBTV.ro",
-        "logo": "https://i.imgur.com/UzcZNe3.png",
-        "url": "https://jobtvserver.eu/hls/stream.m3u8",
+        "name": "CNBC",
+        "id": "CNBC.us",
+        "logo": "https://i.postimg.cc/L8LfB69D/cnbc.png",
+        "url": "https://tvpass.org/live/CNBC/sd",
         "categories": [
             "business"
         ],
-        "country": "RO"
+        "country": "US"
     },
     {
         "name": "Zee Business",
@@ -152,16 +142,6 @@
         "country": "IN"
     },
     {
-        "name": "Aleph Business",
-        "id": "AlephBusiness.ro",
-        "logo": "https://i.imgur.com/IqvZBeo.png",
-        "url": "https://streamw.m.ro/Aleph/ngrp:Alephbiz.stream_all/playlist.m3u8",
-        "categories": [
-            "business"
-        ],
-        "country": "RO"
-    },
-    {
         "name": "Tevex",
         "id": "Tevex.cl",
         "logo": "https://i.imgur.com/FnInQRd.png",
@@ -170,6 +150,26 @@
             "business"
         ],
         "country": "CL"
+    },
+    {
+        "name": "JOB TV",
+        "id": "JOBTV.ro",
+        "logo": "https://i.imgur.com/UzcZNe3.png",
+        "url": "https://jobtvserver.eu/hls/stream.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "RO"
+    },
+    {
+        "name": "Aleph Business",
+        "id": "AlephBusiness.ro",
+        "logo": "https://i.imgur.com/IqvZBeo.png",
+        "url": "https://streamw.m.ro/Aleph/ngrp:Alephbiz.stream_all/playlist.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "RO"
     },
     {
         "name": "RBK-TV",
@@ -203,15 +203,44 @@
         "country": "MN"
     },
     {
-        "name": "Asharq Radio",
-        "id": "AsharqRadio.sa",
-        "logo": "https://i.imgur.com/M6K8cD3.jpeg",
-        "url": "https://svs.itworkscdn.net/asharqradiovlive/asharqradiov/playlist.m3u8",
+        "name": "Class CNBC",
+        "id": "ClassCNBC.it",
+        "logo": "https://i.imgur.com/3Ei5VHa.png",
+        "url": "https://raw.githubusercontent.com/Sibprod/streams/main/ressources/dm/py/hls/classcnbc.m3u8",
         "categories": [
-            "business",
-            "news"
+            "business"
         ],
-        "country": "SA"
+        "country": "IT"
+    },
+    {
+        "name": "Business 24 Africa",
+        "id": "Business24Africa.ci",
+        "logo": "https://i.imgur.com/zZFl3vy.png",
+        "url": "https://cdn-globecast.akamaized.net/live/eds/business24_tv/hls_video/index.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "CI"
+    },
+    {
+        "name": "Ausbiz TV",
+        "id": "AusbizTV.au",
+        "logo": "https://i.imgur.com/8vGGdB0.png",
+        "url": "https://d9quh89lh7dtw.cloudfront.net/public-output/index.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "AU"
+    },
+    {
+        "name": "Telewizja Biznesowa",
+        "id": "TelewizjaBiznesowa.pl",
+        "logo": "https://i.imgur.com/XC7i7ZL.png",
+        "url": "https://s-pl-01.mediatool.tv/playout/tbpl-abr/index.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "PL"
     },
     {
         "name": "Asharq News Portrait",
@@ -225,40 +254,21 @@
         "country": "SA"
     },
     {
-        "name": "Class CNBC",
-        "id": "ClassCNBC.it",
-        "logo": "https://i.imgur.com/3Ei5VHa.png",
-        "url": "https://raw.githubusercontent.com/Sibprod/streams/main/ressources/dm/py/hls/classcnbc.m3u8",
-        "categories": [
-            "business"
-        ],
-        "country": "IT"
-    },
-    {
-        "name": "Telewizja Biznesowa",
-        "id": "TelewizjaBiznesowa.pl",
-        "logo": "https://i.imgur.com/XC7i7ZL.png",
-        "url": "https://s-pl-01.mediatool.tv/playout/tbpl-abr/index.m3u8",
-        "categories": [
-            "business"
-        ],
-        "country": "PL"
-    },
-    {
-        "name": "Ausbiz TV",
-        "id": "AusbizTV.au",
-        "logo": "https://i.imgur.com/8vGGdB0.png",
-        "url": "https://d9quh89lh7dtw.cloudfront.net/public-output/index.m3u8",
-        "categories": [
-            "business"
-        ],
-        "country": "AU"
-    },
-    {
         "name": "Asharq News",
         "id": "AsharqNews.sa",
         "logo": "https://i.imgur.com/bqRC3sl.png",
         "url": "https://svs.itworkscdn.net/bloomberarlive/bloomberg.smil/playlist_dvr.m3u8",
+        "categories": [
+            "business",
+            "news"
+        ],
+        "country": "SA"
+    },
+    {
+        "name": "Asharq Radio",
+        "id": "AsharqRadio.sa",
+        "logo": "https://i.imgur.com/M6K8cD3.jpeg",
+        "url": "https://svs.itworkscdn.net/asharqradiovlive/asharqradiov/playlist.m3u8",
         "categories": [
             "business",
             "news"
@@ -286,6 +296,16 @@
         "country": "PR"
     },
     {
+        "name": "Cafe Trade TV",
+        "id": "CafeTradeTV.ir",
+        "logo": "https://i.ibb.co/GW4cMfc/cafe-trade-tv.png",
+        "url": "https://cafetradehls.wns.live/hls/stream.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "IR"
+    },
+    {
         "name": "apart TV",
         "id": "apartTV.lu",
         "logo": "https://i.imgur.com/IBcMIcZ.png",
@@ -298,14 +318,14 @@
         "country": "LU"
     },
     {
-        "name": "Cafe Trade TV",
-        "id": "CafeTradeTV.ir",
-        "logo": "https://i.ibb.co/GW4cMfc/cafe-trade-tv.png",
-        "url": "https://cafetradehls.wns.live/hls/stream.m3u8",
+        "name": "CNBC Indonesia",
+        "id": "CNBCIndonesia.id",
+        "logo": "https://i.imgur.com/bUfeG7Y.png",
+        "url": "https://live.cnbcindonesia.com/livecnbc/smil:cnbctv.smil/playlist.m3u8",
         "categories": [
             "business"
         ],
-        "country": "IR"
+        "country": "ID"
     },
     {
         "name": "Negocios TV",
@@ -316,15 +336,5 @@
             "business"
         ],
         "country": "ES"
-    },
-    {
-        "name": "CNBC Indonesia",
-        "id": "CNBCIndonesia.id",
-        "logo": "https://i.imgur.com/bUfeG7Y.png",
-        "url": "https://live.cnbcindonesia.com/livecnbc/smil:cnbctv.smil/playlist.m3u8",
-        "categories": [
-            "business"
-        ],
-        "country": "ID"
     }
 ]

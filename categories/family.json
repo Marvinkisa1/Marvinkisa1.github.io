@@ -1,5 +1,15 @@
 [
     {
+        "name": "MBC 5",
+        "id": "MBC5.ae",
+        "logo": "https://i.imgur.com/fRWaDyF.png",
+        "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-5/ee6b000cee0629411b666ab26cb13e9b/index.m3u8",
+        "categories": [
+            "family"
+        ],
+        "country": "AE"
+    },
+    {
         "name": "CWB TV",
         "id": "CWBTV.br",
         "logo": "https://i.imgur.com/S0ISpmU.png",
@@ -24,26 +34,6 @@
         "country": "BR"
     },
     {
-        "name": "MBC 5",
-        "id": "MBC5.ae",
-        "logo": "https://i.imgur.com/fRWaDyF.png",
-        "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-5/ee6b000cee0629411b666ab26cb13e9b/index.m3u8",
-        "categories": [
-            "family"
-        ],
-        "country": "AE"
-    },
-    {
-        "name": "TVS Family Channel",
-        "id": "TVSFamilyChannel.us",
-        "logo": "https://i.imgur.com/Y3EV3DL.png",
-        "url": "https://rpn.bozztv.com/gusa/gusa-TVSFamilyChannel/index.m3u8",
-        "categories": [
-            "family"
-        ],
-        "country": "US"
-    },
-    {
         "name": "6 Wise Tv",
         "id": "6WiseTv.us",
         "logo": "https://jrlist70.pages.dev/list/wise.png",
@@ -52,17 +42,6 @@
             "family"
         ],
         "country": "US"
-    },
-    {
-        "name": "Telenovisa43",
-        "id": "Telenovisa43.do",
-        "logo": "https://i.imgur.com/iHvf3bR.png",
-        "url": "https://rdn.essastream.com:3230/live/telenovisa43live.m3u8",
-        "categories": [
-            "general",
-            "family"
-        ],
-        "country": "DO"
     },
     {
         "name": "BBC Three/CBBC",
@@ -75,6 +54,17 @@
             "animation"
         ],
         "country": "UK"
+    },
+    {
+        "name": "Telenovisa43",
+        "id": "Telenovisa43.do",
+        "logo": "https://i.imgur.com/iHvf3bR.png",
+        "url": "https://rdn.essastream.com:3230/live/telenovisa43live.m3u8",
+        "categories": [
+            "general",
+            "family"
+        ],
+        "country": "DO"
     },
     {
         "name": "AMG TV",
@@ -97,22 +87,22 @@
         "country": "US"
     },
     {
+        "name": "TVS Family Channel",
+        "id": "TVSFamilyChannel.us",
+        "logo": "https://i.imgur.com/Y3EV3DL.png",
+        "url": "https://rpn.bozztv.com/gusa/gusa-TVSFamilyChannel/index.m3u8",
+        "categories": [
+            "family"
+        ],
+        "country": "US"
+    },
+    {
         "name": "Estrella Games",
         "id": "EstrellaGames.us",
         "logo": "https://i.imgur.com/Z52nEnH.png",
         "url": "https://livetv-fa.tubi.video/estrella-games/playlist.m3u8",
         "categories": [
             "entertainment",
-            "family"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Freeform",
-        "id": "Freeform.us",
-        "logo": "https://i.imgur.com/BGAGeIf.png",
-        "url": "https://fl1.moveonjoy.com/FREE_FORM/index.m3u8",
-        "categories": [
             "family"
         ],
         "country": "US"
@@ -128,10 +118,10 @@
         "country": "US"
     },
     {
-        "name": "Hallmark Channel",
-        "id": "HallmarkChannel.us",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Hallmark_Channel.svg/512px-Hallmark_Channel.svg.png",
-        "url": "https://fl1.moveonjoy.com/HALLMARK_CHANNEL/index.m3u8",
+        "name": "Freeform",
+        "id": "Freeform.us",
+        "logo": "https://i.imgur.com/BGAGeIf.png",
+        "url": "https://fl1.moveonjoy.com/FREE_FORM/index.m3u8",
         "categories": [
             "family"
         ],
@@ -148,6 +138,16 @@
         "country": "US"
     },
     {
+        "name": "Dove Channel",
+        "id": "DoveChannel.us",
+        "logo": "",
+        "url": "https://linear-896.frequency.stream/dist/xumo/896/hls/master/playlist.m3u8",
+        "categories": [
+            "family"
+        ],
+        "country": "US"
+    },
+    {
         "name": "FETV",
         "id": "FETV.us",
         "logo": "https://i.imgur.com/Z9xclnE.png",
@@ -158,10 +158,10 @@
         "country": "US"
     },
     {
-        "name": "Dove Channel",
-        "id": "DoveChannel.us",
-        "logo": "",
-        "url": "https://linear-896.frequency.stream/dist/xumo/896/hls/master/playlist.m3u8",
+        "name": "Hallmark Channel",
+        "id": "HallmarkChannel.us",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Hallmark_Channel.svg/512px-Hallmark_Channel.svg.png",
+        "url": "https://fl1.moveonjoy.com/HALLMARK_CHANNEL/index.m3u8",
         "categories": [
             "family"
         ],
@@ -212,6 +212,18 @@
         "country": "LK"
     },
     {
+        "name": "Tshwane TV",
+        "id": "TshwaneTV.za",
+        "logo": "https://admango.cdn.mangomolo.com/analytics/uploads/188/654a3ec660.png",
+        "url": "https://cdn.freevisiontv.co.za/sttv/smil:tshwane.stream.smil/playlist.m3u8",
+        "categories": [
+            "entertainment",
+            "family",
+            "general"
+        ],
+        "country": "ZA"
+    },
+    {
         "name": "Soweto TV",
         "id": "SowetoTV.za",
         "logo": "https://admango.cdn.mangomolo.com/analytics/uploads/188/654228e5b5.jpg",
@@ -227,18 +239,6 @@
         "id": "1KZNTV.za",
         "logo": "https://admango.cdn.mangomolo.com/analytics/uploads/188/6544bebaae.jpg",
         "url": "https://cdn.freevisiontv.co.za/sttv/smil:1kzn.stream.smil/playlist.m3u8",
-        "categories": [
-            "entertainment",
-            "family",
-            "general"
-        ],
-        "country": "ZA"
-    },
-    {
-        "name": "Tshwane TV",
-        "id": "TshwaneTV.za",
-        "logo": "https://admango.cdn.mangomolo.com/analytics/uploads/188/654a3ec660.png",
-        "url": "https://cdn.freevisiontv.co.za/sttv/smil:tshwane.stream.smil/playlist.m3u8",
         "categories": [
             "entertainment",
             "family",
