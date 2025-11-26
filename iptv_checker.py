@@ -5,7 +5,7 @@ import os
 import m3u8
 from tqdm import tqdm
 from aiohttp import ClientTimeout, TCPConnector
-from urllib.parse import urlparse
+from urllib.parse import urlparse, urljoin
 import requests
 from bs4 import BeautifulSoup
 import re
@@ -17,6 +17,8 @@ import sys
 from fuzzywuzzy import fuzz
 import shutil
 from difflib import SequenceMatcher
+import html  # For decoding entities like &#038; to &
+from datetime import date, timedelta
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -50,6 +52,149 @@ KENYA_HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleW
 
 # Unwanted extensions for filtering
 UNWANTED_EXTENSIONS = ['.mkv', '.mp4', '.avi', '.mov', '.flv', '.wmv']
+
+# Scraper headers
+SCRAPER_HEADERS = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+}
+
+def scrape_daily_m3u_urls(max_working=5):
+    """Scrape daily working M3U URLs from world-iptv.club."""
+    logging.info("Starting daily M3U URL scraper...")
+    
+    # Get current date in DD-MM-YYYY format
+    current_date = date.today().strftime("%d-%m-%Y")
+
+    # Fetch the category page
+    url = 'https://world-iptv.club/category/iptv/'
+    try:
+        response = requests.get(url, headers=SCRAPER_HEADERS)
+        if response.status_code != 200:
+            logging.error(f"Failed to fetch the page: {response.status_code}")
+            return []
+    except Exception as e:
+        logging.error(f"Error fetching category page: {e}")
+        return []
+
+    content = response.text
+
+    # Regex to find all href attributes (general, to catch more)
+    pattern = r'<a\s+[^>]*href=[\'"]([^\'"]+)[\'"]'
+    matches = re.findall(pattern, content, re.IGNORECASE)
+
+    # Convert to full URLs, filter for those containing 'm3u', and remove duplicates
+    urls = []
+    seen = set()
+    for match in matches:
+        if 'm3u' in match.lower():
+            if match.startswith('/'):
+                full_url = 'https://world-iptv.club' + match
+            elif match.startswith('http'):
+                full_url = match
+            else:
+                continue  # Skip invalid
+        
+            if full_url not in seen:
+                seen.add(full_url)
+                urls.append(full_url)
+
+    # Filter for URLs containing the current date like -DD-MM-YYYY/
+    current_urls = [u for u in urls if f'-{current_date}/' in u]
+
+    # If none for current, try previous day
+    prev_date = None
+    if not current_urls:
+        prev_date = (date.today() - timedelta(days=1)).strftime("%d-%m-%Y")
+        current_urls = [u for u in urls if f'-{prev_date}/' in u]
+
+    # Get up to the first 5
+    top_5_urls = current_urls[:5]
+
+    if not top_5_urls:
+        fallback_date = (date.today() - timedelta(days=2)).strftime("%d-%m-%Y")
+        logging.warning(f"No URLs found for recent dates: {current_date}, {prev_date or 'N/A'}, or {fallback_date}")
+        return []
+
+    date_used = current_date if f'-{current_date}/' in top_5_urls[0] else prev_date
+    logging.info(f"Using date: {date_used}")
+    logging.info("Scraped playlist pages:")
+    for i, link in enumerate(top_5_urls, 1):
+        logging.info(f"{i}. {link}")
+
+    # Now, visit each and extract .m3u / get.php links
+    working_m3u = []
+    for page_url in top_5_urls:
+        logging.info(f"\nFetching {page_url}...")
+        try:
+            resp = requests.get(page_url, headers=SCRAPER_HEADERS, timeout=30)
+            if resp.status_code != 200:
+                logging.warning(f"Failed to fetch page: {resp.status_code}")
+                continue
+        except Exception as e:
+            logging.error(f"Error fetching page: {e}")
+            continue
+        
+        page_content = resp.text
+        
+        # Broader pattern for M3U: .m3u or get.php?...type=m3u/m3u_plus/m3u8
+        m3u_pattern = r'(?:\.m3u|get\.php\?.*?type=(?:m3u|m3u_plus|m3u8))'
+        
+        # Extract from hrefs
+        href_pattern = r'<a\s+[^>]*href=[\'"]([^\'"]+)[\'"]'
+        all_hrefs = re.findall(href_pattern, page_content, re.IGNORECASE)
+        href_m3u = [html.unescape(h) for h in all_hrefs if re.search(m3u_pattern, h, re.IGNORECASE)]
+        
+        # Fallback/Enhance: Extract from raw text
+        text_pattern = r'https?://[^\s<>"\']+'
+        all_urls_in_text = re.findall(text_pattern, page_content)
+        text_m3u = [html.unescape(u) for u in all_urls_in_text if re.search(m3u_pattern, u, re.IGNORECASE)]
+        
+        # Union, make full, dedupe
+        m3u_matches = list(set(href_m3u + text_m3u))
+        m3u_matches = [urljoin(page_url, m) if not m.startswith('http') else m for m in m3u_matches]
+        m3u_matches = list(dict.fromkeys(m3u_matches))  # Preserve order, remove dups
+        
+        logging.info(f"Found {len(m3u_matches)} potential M3U/stream links on this page.")
+        
+        for idx, m3u_match in enumerate(m3u_matches):
+            full_m3u = m3u_match  # Already full and decoded
+            
+            logging.info(f"  Testing {idx+1}: {full_m3u}")
+            
+            # Test if working: GET and check status and non-empty content
+            try:
+                m3u_resp = requests.get(full_m3u, headers=SCRAPER_HEADERS, timeout=30, stream=True)
+                status = m3u_resp.status_code
+                content_len = len(m3u_resp.content)
+                content_preview = m3u_resp.text[:100] + '...' if len(m3u_resp.text) > 100 else m3u_resp.text
+                
+                logging.info(f"    Status: {status}, Length: {content_len}")
+                if content_len <= 100:  # Only preview if small/relevant
+                    logging.info(f"    Preview: {content_preview}")
+                
+                # Enhanced check: M3U signature + optional content-type
+                is_m3u = status == 200 and content_len > 50 and '#EXT' in m3u_resp.text
+                if is_m3u or 'm3u' in m3u_resp.headers.get('content-type', '').lower():
+                    working_m3u.append(full_m3u)
+                    logging.info(f"    -> WORKING!")
+                    if len(working_m3u) >= max_working:
+                        break
+                else:
+                    logging.info(f"    -> Not working (status, size, or format issue)")
+            except Exception as e:
+                logging.error(f"    -> Error: {e}")
+            
+        if len(working_m3u) >= max_working:
+            break
+
+    if working_m3u:
+        logging.info(f"Scraped {len(working_m3u)} working M3U URLs:")
+        for i, m3u in enumerate(working_m3u, 1):
+            logging.info(f"{i}. {m3u}")
+    else:
+        logging.warning("No working M3U URLs found after testing all.")
+
+    return working_m3u
 
 class FastChecker:
     def __init__(self):
@@ -1058,7 +1203,15 @@ async def process_m3u_urls(session, logos_data):
     return len(all_channels)
 
 async def main():
+    global M3U_URLS  # To update the module-level variable
+    
     logging.info("Starting IPTV channel collection process...")
+    
+    # Step 0: Scrape daily M3U URLs and update M3U_URLS
+    logging.info("\n=== Step 0: Scraping daily M3U URLs ===")
+    scraped_m3u = scrape_daily_m3u_urls(max_working=5)
+    M3U_URLS = scraped_m3u  # Override with scraped URLs (up to 5)
+    logging.info(f"Updated M3U_URLS with {len(M3U_URLS)} scraped working URLs")
     
     checker = FastChecker()
     processor = M3UProcessor()
