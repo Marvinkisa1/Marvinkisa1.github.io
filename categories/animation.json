@@ -74,6 +74,30 @@
         "country": "AR"
     },
     {
+        "name": "BBC Three/CBBC",
+        "id": "BBCThreeCBBC.uk",
+        "logo": "https://i.imgur.com/CGXC5fp.png",
+        "url": "https://viamotionhsi.netplus.ch/live/eds/bbc3cbbc/browser-dash/bbc3cbbc.mpd",
+        "categories": [
+            "family",
+            "kids",
+            "animation"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "BBC Four/CBeebies",
+        "id": "BBCFourCBeebies.uk",
+        "logo": "https://i.imgur.com/aH0PCPy.png",
+        "url": "https://viamotionhsi.netplus.ch/live/eds/bbc4cbeebies/browser-dash/bbc4cbeebies.mpd",
+        "categories": [
+            "kids",
+            "general",
+            "animation"
+        ],
+        "country": "UK"
+    },
+    {
         "name": "Tiguerito TV",
         "id": "TigueritoTV.do",
         "logo": "https://dominicanchannels.com/wp-content/uploads/tigueritos-tv.jpg",
@@ -95,38 +119,14 @@
         "country": "DO"
     },
     {
-        "name": "Lupin the 3rd",
-        "id": "Lupinthe3rd.us",
-        "logo": "https://i.imgur.com/Wopu3y9.png",
-        "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/60f74ba51c82ac000776c669/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=6c29b4c3-30d3-11ef-9cf5-e9ddff8ff496&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=929f711f-6565-41d9-84a9-9f2c83d020e5",
+        "name": "Movies for Gamers",
+        "id": "MoviesforGamers.us",
+        "logo": "https://i.imgur.com/aqjzEkb.png",
+        "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/6008ddf24ef92b00079d61cf/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=6c2a02e3-30d3-11ef-9cf5-e9ddff8ff496&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=2f37e9d8-bdac-4d46-949d-ccfbf76dd6e0",
         "categories": [
             "animation"
         ],
         "country": "US"
-    },
-    {
-        "name": "BBC Four/CBeebies",
-        "id": "BBCFourCBeebies.uk",
-        "logo": "https://i.imgur.com/aH0PCPy.png",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/bbc4cbeebies/browser-dash/bbc4cbeebies.mpd",
-        "categories": [
-            "kids",
-            "general",
-            "animation"
-        ],
-        "country": "UK"
-    },
-    {
-        "name": "BBC Three/CBBC",
-        "id": "BBCThreeCBBC.uk",
-        "logo": "https://i.imgur.com/CGXC5fp.png",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/bbc3cbbc/browser-dash/bbc3cbbc.mpd",
-        "categories": [
-            "family",
-            "kids",
-            "animation"
-        ],
-        "country": "UK"
     },
     {
         "name": "South Park",
@@ -139,20 +139,10 @@
         "country": "US"
     },
     {
-        "name": "Anime All Day",
-        "id": "AnimeAllDay.us",
-        "logo": "https://i.imgur.com/bYZtd0G.png",
-        "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/5812b7d3249444e05d09cc49/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=6c26a781-30d3-11ef-9cf5-e9ddff8ff496&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=6903cfae-183e-4d3b-a482-b7acf38ce356",
-        "categories": [
-            "animation"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Alan Becker TV",
-        "id": "AlanBeckerTV.us",
-        "logo": "https://yt3.googleusercontent.com/ytc/AOPolaSk8jLwTPTZ9tnSWr0coUk1-VJLYQCi2muftdUyHw=s100-c-k-c0x00ffffff-no-rj",
-        "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/630348a54c48ce00077eb6c7/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=84ac5695-4b92-11ef-aece-533610f1ea34&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=b1b31f04-864d-413e-8fc3-19d800ee7569",
+        "name": "KMBY-LD5",
+        "id": "KMBYLD5.us",
+        "logo": "https://i.imgur.com/px0CSti.png",
+        "url": "https://2-fss-2.streamhoster.com/pl_138/205510-3094608-1/playlist.m3u8",
         "categories": [
             "animation"
         ],
@@ -171,10 +161,30 @@
         "country": "US"
     },
     {
-        "name": "KMBY-LD5",
-        "id": "KMBYLD5.us",
-        "logo": "https://i.imgur.com/px0CSti.png",
-        "url": "https://2-fss-2.streamhoster.com/pl_138/205510-3094608-1/playlist.m3u8",
+        "name": "Naruto",
+        "id": "Naruto.us",
+        "logo": "https://i.imgur.com/M8X3Kvc.png",
+        "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/65d5fc39a25d5e00082895c4/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=84ae2b56-4b92-11ef-aece-533610f1ea34&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=624d6e59-b964-41c4-8e12-4ec9c07d66e8",
+        "categories": [
+            "animation"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Alan Becker TV",
+        "id": "AlanBeckerTV.us",
+        "logo": "https://yt3.googleusercontent.com/ytc/AOPolaSk8jLwTPTZ9tnSWr0coUk1-VJLYQCi2muftdUyHw=s100-c-k-c0x00ffffff-no-rj",
+        "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/630348a54c48ce00077eb6c7/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=84ac5695-4b92-11ef-aece-533610f1ea34&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=b1b31f04-864d-413e-8fc3-19d800ee7569",
+        "categories": [
+            "animation"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Lupin the 3rd",
+        "id": "Lupinthe3rd.us",
+        "logo": "https://i.imgur.com/Wopu3y9.png",
+        "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/60f74ba51c82ac000776c669/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=6c29b4c3-30d3-11ef-9cf5-e9ddff8ff496&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=929f711f-6565-41d9-84a9-9f2c83d020e5",
         "categories": [
             "animation"
         ],
@@ -192,6 +202,16 @@
         "country": "US"
     },
     {
+        "name": "Anime All Day",
+        "id": "AnimeAllDay.us",
+        "logo": "https://i.imgur.com/bYZtd0G.png",
+        "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/5812b7d3249444e05d09cc49/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=6c26a781-30d3-11ef-9cf5-e9ddff8ff496&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=6903cfae-183e-4d3b-a482-b7acf38ce356",
+        "categories": [
+            "animation"
+        ],
+        "country": "US"
+    },
+    {
         "name": "3ABN Kids",
         "id": "3ABNKids.us",
         "logo": "https://i.imgur.com/z3npqO1.png",
@@ -199,16 +219,6 @@
         "categories": [
             "kids",
             "religious",
-            "animation"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Movies for Gamers",
-        "id": "MoviesforGamers.us",
-        "logo": "https://i.imgur.com/aqjzEkb.png",
-        "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/6008ddf24ef92b00079d61cf/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=6c2a02e3-30d3-11ef-9cf5-e9ddff8ff496&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=2f37e9d8-bdac-4d46-949d-ccfbf76dd6e0",
-        "categories": [
             "animation"
         ],
         "country": "US"
@@ -234,10 +244,10 @@
         "country": "US"
     },
     {
-        "name": "Naruto",
-        "id": "Naruto.us",
-        "logo": "https://i.imgur.com/M8X3Kvc.png",
-        "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/65d5fc39a25d5e00082895c4/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=84ae2b56-4b92-11ef-aece-533610f1ea34&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=624d6e59-b964-41c4-8e12-4ec9c07d66e8",
+        "name": "Toonami Aftermath",
+        "id": "ToonamiAftermath.us",
+        "logo": "https://i.imgur.com/aSjhZK7.png",
+        "url": "http://api.toonamiaftermath.com:3000/est/playlist.m3u8",
         "categories": [
             "animation"
         ],
@@ -250,16 +260,6 @@
         "url": "https://cineverse.g-mana.live/media/ac7cff3c-5bc3-4745-ac4d-56aadb586d00/profile/1/profileManifest.m3u8",
         "categories": [
             "classic",
-            "animation"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Toonami Aftermath",
-        "id": "ToonamiAftermath.us",
-        "logo": "https://i.imgur.com/aSjhZK7.png",
-        "url": "http://api.toonamiaftermath.com:3000/est/playlist.m3u8",
-        "categories": [
             "animation"
         ],
         "country": "US"
@@ -286,6 +286,17 @@
         "country": "RU"
     },
     {
+        "name": "Kanade",
+        "id": "Kanade.cl",
+        "logo": "https://static.kanade.cl/assets/img/profilepic_512px.png",
+        "url": "https://backend.energeek.cl/webtv/kanadeweb/index.m3u8?token=ZZDemoIPTVGH",
+        "categories": [
+            "animation",
+            "entertainment"
+        ],
+        "country": "CL"
+    },
+    {
         "name": "EnerGeek",
         "id": "EnerGeek.cl",
         "logo": "https://cdn.energeek.cl/logos/EG-Retro-2025_pfp.png",
@@ -296,15 +307,15 @@
         "country": "CL"
     },
     {
-        "name": "Kanade",
-        "id": "Kanade.cl",
-        "logo": "https://static.kanade.cl/assets/img/profilepic_512px.png",
-        "url": "https://backend.energeek.cl/webtv/kanadeweb/index.m3u8?token=ZZDemoIPTVGH",
+        "name": "Cartoon Classics",
+        "id": "CartoonClassics.pl",
+        "logo": "https://images-3.rakuten.tv/storage/global-live-channel/translation/artwork/3227c06e-333b-4b1b-b657-3e3ab99ebd06-width200-quality90.jpeg",
+        "url": "https://daiconnect.com/live/hls/tvup/rk-cartoonclassics/578f4b7eb725168349ec0af81b21d388/index.m3u8",
         "categories": [
             "animation",
-            "entertainment"
+            "kids"
         ],
-        "country": "CL"
+        "country": "PL"
     },
     {
         "name": "GikTVMX",
@@ -319,27 +330,15 @@
         "country": "MX"
     },
     {
-        "name": "Cartoon Classics",
-        "id": "CartoonClassics.pl",
-        "logo": "https://images-3.rakuten.tv/storage/global-live-channel/translation/artwork/3227c06e-333b-4b1b-b657-3e3ab99ebd06-width200-quality90.jpeg",
-        "url": "https://daiconnect.com/live/hls/tvup/rk-cartoonclassics/578f4b7eb725168349ec0af81b21d388/index.m3u8",
+        "name": "Nickelodeon",
+        "id": "Nickelodeon.ee",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Nickelodeon_2023_logo_%28outline%29.svg/1200px-Nickelodeon_2023_logo_%28outline%29.svg.png",
+        "url": "http://195.64.140.147:10121/121",
         "categories": [
             "animation",
             "kids"
         ],
-        "country": "PL"
-    },
-    {
-        "name": "Kuriakos Kids",
-        "id": "KuriakosKids.pt",
-        "logo": "https://i.imgur.com/SRX6EPY.png",
-        "url": "https://w2.manasat.com/kkids/smil:kkids.smil/playlist.m3u8",
-        "categories": [
-            "animation",
-            "kids",
-            "religious"
-        ],
-        "country": "PT"
+        "country": "EE"
     },
     {
         "name": "Extrema Kids TV",
@@ -364,14 +363,15 @@
         "country": "BE"
     },
     {
-        "name": "Nickelodeon",
-        "id": "Nickelodeon.ee",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Nickelodeon_2023_logo_%28outline%29.svg/1200px-Nickelodeon_2023_logo_%28outline%29.svg.png",
-        "url": "http://195.64.140.147:10121/121",
+        "name": "Kuriakos Kids",
+        "id": "KuriakosKids.pt",
+        "logo": "https://i.imgur.com/SRX6EPY.png",
+        "url": "https://w2.manasat.com/kkids/smil:kkids.smil/playlist.m3u8",
         "categories": [
             "animation",
-            "kids"
+            "kids",
+            "religious"
         ],
-        "country": "EE"
+        "country": "PT"
     }
 ]
