@@ -10,14 +10,6 @@
         "country": "SK"
     },
     {
-        "name": "TV8",
-        "id": "TV8.sk",
-        "logo": "https://i.imgur.com/Z7URrp1.png",
-        "url": "http://109.74.145.11:1935/tv8/mp4:tv8.stream_360p/playlist.m3u8",
-        "categories": [],
-        "country": "SK"
-    },
-    {
         "name": "TV Liptov",
         "id": "TVLiptov.sk",
         "logo": "https://i.imgur.com/CkvB3af.png",
@@ -28,12 +20,40 @@
         "country": "SK"
     },
     {
+        "name": "ducktv",
+        "id": "ducktv.sk",
+        "logo": "https://i.imgur.com/gRFQ35W.png",
+        "url": "https://stream.ads.ottera.tv/playlist.m3u8?network_id=13168",
+        "categories": [
+            "kids"
+        ],
+        "country": "SK"
+    },
+    {
         "name": "Jednotka",
         "id": "Jednotka.sk",
         "logo": "https://i.imgur.com/aqVki9i.png",
         "url": "http://88.212.15.19/live/test_jednotka_25p/playlist.m3u8",
         "categories": [
             "general"
+        ],
+        "country": "SK"
+    },
+    {
+        "name": "TV8",
+        "id": "TV8.sk",
+        "logo": "https://i.imgur.com/Z7URrp1.png",
+        "url": "http://109.74.145.11:1935/tv8/mp4:tv8.stream_360p/playlist.m3u8",
+        "categories": [],
+        "country": "SK"
+    },
+    {
+        "name": "Markiza Doma",
+        "id": "MarkizaDoma.sk",
+        "logo": "https://i.imgur.com/emVnkFK.png",
+        "url": "http://88.212.7.11/live/test_doma_hd_hevc/playlist.m3u8",
+        "categories": [
+            "entertainment"
         ],
         "country": "SK"
     },
@@ -56,16 +76,6 @@
         "country": "SK"
     },
     {
-        "name": "Markiza Doma",
-        "id": "MarkizaDoma.sk",
-        "logo": "https://i.imgur.com/emVnkFK.png",
-        "url": "http://88.212.7.11/live/test_doma_hd_hevc/playlist.m3u8",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "SK"
-    },
-    {
         "name": "Sport",
         "id": "Sport.sk",
         "logo": "https://i.imgur.com/oAtcxNZ.png",
@@ -73,24 +83,6 @@
         "categories": [
             "sports"
         ],
-        "country": "SK"
-    },
-    {
-        "name": "ducktv",
-        "id": "ducktv.sk",
-        "logo": "https://i.imgur.com/gRFQ35W.png",
-        "url": "https://stream.ads.ottera.tv/playlist.m3u8?network_id=13168",
-        "categories": [
-            "kids"
-        ],
-        "country": "SK"
-    },
-    {
-        "name": "TV Ruzinov",
-        "id": "TVRuzinov.sk",
-        "logo": "https://i.imgur.com/bUGuntH.png",
-        "url": "http://lb.streaming.sk/tvruzinov/stream/playlist.m3u8",
-        "categories": [],
         "country": "SK"
     },
     {
@@ -102,36 +94,48 @@
         "country": "SK"
     },
     {
-        "name": "TV LocAll",
-        "id": "TVLocAll.sk",
-        "logo": "https://i.imgur.com/xN1CJol.png",
-        "url": "http://tv.geniusnet.sk:8081/localltv/pl.m3u8",
+        "name": "TV Ruzinov",
+        "id": "TVRuzinov.sk",
+        "logo": "https://i.imgur.com/bUGuntH.png",
+        "url": "http://lb.streaming.sk/tvruzinov/stream/playlist.m3u8",
         "categories": [],
         "country": "SK"
     },
     {
-        "name": "Regio TV",
-        "id": "RegioTV.sk",
-        "logo": "https://i.imgur.com/WlF6tlZ.png",
-        "url": "http://tv.geniusnet.sk:8081/regiotv/pl.m3u8",
+        "name": "LifeTv",
+        "id": "LifeTv.sk",
+        "logo": "https://i.imgur.com/jO8kAY2.png",
+        "url": "https://lifetv.mpks.sk/s.m3u8",
         "categories": [
-            "general"
+            "religious"
         ],
         "country": "SK"
     },
     {
-        "name": "BTV",
-        "id": "BTV.sk",
-        "logo": "https://i.imgur.com/5CZ6HHn.png",
-        "url": "https://fs3.kabelko.sk/9011/index.m3u8?token=btv",
-        "categories": [],
+        "name": "Markiza Klasik",
+        "id": "MarkizaKlasik.sk",
+        "logo": "https://i.postimg.cc/MTHptq2X/markizaklasik.png",
+        "url": "https://cdnsk003.panaccess.com/local/Markiza_Klasik/index.m3u8",
+        "categories": [
+            "entertainment"
+        ],
         "country": "SK"
     },
     {
-        "name": "Televizia Mocenok",
-        "id": "TeleviziaMocenok.sk",
-        "logo": "https://i.imgur.com/psb8GxZ.png",
-        "url": "https://5ca49f2417d90.streamlock.net/mocenok/livestream/playlist.m3u8",
+        "name": "Markiza Krimi",
+        "id": "MarkizaKrimi.sk",
+        "logo": "https://i.imgur.com/5KnajhP.png",
+        "url": "https://cdnsk003.panaccess.com/local/Markiza_krimi/index.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "SK"
+    },
+    {
+        "name": "MTR",
+        "id": "MTR.sk",
+        "logo": "https://www.mtr.sk/img/logo-mtr-0.png",
+        "url": "https://cdnsk003.panaccess.com/local/Ruzomberok/index.m3u8",
         "categories": [
             "general"
         ],
@@ -154,12 +158,12 @@
         "country": "SK"
     },
     {
-        "name": "LifeTv",
-        "id": "LifeTv.sk",
-        "logo": "https://i.imgur.com/jO8kAY2.png",
-        "url": "https://lifetv.mpks.sk/s.m3u8",
+        "name": "Televizia Mocenok",
+        "id": "TeleviziaMocenok.sk",
+        "logo": "https://i.imgur.com/psb8GxZ.png",
+        "url": "https://5ca49f2417d90.streamlock.net/mocenok/livestream/playlist.m3u8",
         "categories": [
-            "religious"
+            "general"
         ],
         "country": "SK"
     },
@@ -174,33 +178,29 @@
         "country": "SK"
     },
     {
-        "name": "MTR",
-        "id": "MTR.sk",
-        "logo": "https://www.mtr.sk/img/logo-mtr-0.png",
-        "url": "https://cdnsk003.panaccess.com/local/Ruzomberok/index.m3u8",
+        "name": "BTV",
+        "id": "BTV.sk",
+        "logo": "https://i.imgur.com/5CZ6HHn.png",
+        "url": "https://fs3.kabelko.sk/9011/index.m3u8?token=btv",
+        "categories": [],
+        "country": "SK"
+    },
+    {
+        "name": "Regio TV",
+        "id": "RegioTV.sk",
+        "logo": "https://i.imgur.com/WlF6tlZ.png",
+        "url": "http://tv.geniusnet.sk:8081/regiotv/pl.m3u8",
         "categories": [
             "general"
         ],
         "country": "SK"
     },
     {
-        "name": "Markiza Klasik",
-        "id": "MarkizaKlasik.sk",
-        "logo": "https://i.postimg.cc/MTHptq2X/markizaklasik.png",
-        "url": "https://cdnsk003.panaccess.com/local/Markiza_Klasik/index.m3u8",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "SK"
-    },
-    {
-        "name": "Markiza Krimi",
-        "id": "MarkizaKrimi.sk",
-        "logo": "https://i.imgur.com/5KnajhP.png",
-        "url": "https://cdnsk003.panaccess.com/local/Markiza_krimi/index.m3u8",
-        "categories": [
-            "entertainment"
-        ],
+        "name": "TV LocAll",
+        "id": "TVLocAll.sk",
+        "logo": "https://i.imgur.com/xN1CJol.png",
+        "url": "http://tv.geniusnet.sk:8081/localltv/pl.m3u8",
+        "categories": [],
         "country": "SK"
     }
 ]
