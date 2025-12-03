@@ -1,12 +1,19 @@
 [
     {
-        "name": "Nickelodeon",
-        "id": "Nickelodeon.ee",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Nickelodeon_2023_logo_%28outline%29.svg/1200px-Nickelodeon_2023_logo_%28outline%29.svg.png",
-        "url": "http://195.64.140.147:10121/121",
+        "name": "TVN",
+        "id": "TVN.ee",
+        "logo": "https://i.imgur.com/t8nUMAO.png",
+        "url": "https://s4.telset.ee/tvn/index.m3u8?filter.tracks=v1a1&token=tvn_token",
+        "categories": [],
+        "country": "EE"
+    },
+    {
+        "name": "Life TV",
+        "id": "LifeTV.ee",
+        "logo": "https://i.imgur.com/JhrTB82.png",
+        "url": "https://lifetv.bitflip.ee/live/stream1.m3u8",
         "categories": [
-            "animation",
-            "kids"
+            "religious"
         ],
         "country": "EE"
     },
@@ -19,20 +26,12 @@
         "country": "EE"
     },
     {
-        "name": "TVN",
-        "id": "TVN.ee",
-        "logo": "https://i.imgur.com/t8nUMAO.png",
-        "url": "https://s4.telset.ee/tvn/index.m3u8?filter.tracks=v1a1&token=tvn_token",
-        "categories": [],
-        "country": "EE"
-    },
-    {
-        "name": "ETV+",
-        "id": "ETVPlus.ee",
-        "logo": "https://i.postimg.cc/nrzXQnrH/etvplus.png",
-        "url": "https://sb.err.ee/live/etvpluss.m3u8",
+        "name": "TBN Baltia",
+        "id": "TBNBaltia.ee",
+        "logo": "https://i.imgur.com/rKBaK56.png",
+        "url": "http://dc.tbnbaltia.eu:8088/dvr/rewind-21600.m3u8",
         "categories": [
-            "entertainment"
+            "religious"
         ],
         "country": "EE"
     },
@@ -48,32 +47,22 @@
         "country": "EE"
     },
     {
+        "name": "ETV+",
+        "id": "ETVPlus.ee",
+        "logo": "https://i.postimg.cc/nrzXQnrH/etvplus.png",
+        "url": "https://sb.err.ee/live/etvpluss.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "EE"
+    },
+    {
         "name": "ETV",
         "id": "ETV.ee",
         "logo": "https://i.imgur.com/5URjPgG.png",
         "url": "https://sb.err.ee/live/etv.m3u8",
         "categories": [
             "general"
-        ],
-        "country": "EE"
-    },
-    {
-        "name": "TBN Baltia",
-        "id": "TBNBaltia.ee",
-        "logo": "https://i.imgur.com/rKBaK56.png",
-        "url": "http://dc.tbnbaltia.eu:8088/dvr/rewind-21600.m3u8",
-        "categories": [
-            "religious"
-        ],
-        "country": "EE"
-    },
-    {
-        "name": "Life TV",
-        "id": "LifeTV.ee",
-        "logo": "https://i.imgur.com/JhrTB82.png",
-        "url": "https://lifetv.bitflip.ee/live/stream1.m3u8",
-        "categories": [
-            "religious"
         ],
         "country": "EE"
     }
