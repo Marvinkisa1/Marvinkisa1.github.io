@@ -23,6 +23,17 @@
         "country": "BR"
     },
     {
+        "name": "CWB TV",
+        "id": "CWBTV.br",
+        "logo": "https://i.imgur.com/S0ISpmU.png",
+        "url": "https://59d39900ebfb8.streamlock.net/cwbtv/cwbtv/playlist.m3u8",
+        "categories": [
+            "family",
+            "general"
+        ],
+        "country": "BR"
+    },
+    {
         "name": "Telenovisa43",
         "id": "Telenovisa43.do",
         "logo": "https://i.imgur.com/iHvf3bR.png",
@@ -46,20 +57,20 @@
         "country": "UK"
     },
     {
-        "name": "AMG TV",
-        "id": "AMGTV.us",
-        "logo": "https://i.imgur.com/m5Anun9.png",
-        "url": "https://2-fss-2.streamhoster.com/pl_138/201660-1270634-1/playlist.m3u8",
+        "name": "6 Wise Tv",
+        "id": "6WiseTv.us",
+        "logo": "https://jrlist70.pages.dev/list/wise.png",
+        "url": "https://live.enhdtv.com:8081/8150/index.m3u8",
         "categories": [
             "family"
         ],
         "country": "US"
     },
     {
-        "name": "6 Wise Tv",
-        "id": "6WiseTv.us",
-        "logo": "https://jrlist70.pages.dev/list/wise.png",
-        "url": "https://live.enhdtv.com:8081/8150/index.m3u8",
+        "name": "AMG TV",
+        "id": "AMGTV.us",
+        "logo": "https://i.imgur.com/m5Anun9.png",
+        "url": "https://2-fss-2.streamhoster.com/pl_138/201660-1270634-1/playlist.m3u8",
         "categories": [
             "family"
         ],
@@ -76,11 +87,12 @@
         "country": "US"
     },
     {
-        "name": "Positiv TV",
-        "id": "PositivTV.us",
-        "logo": "https://upload.wikimedia.org/wikipedia/en/8/82/Positiv_TV_Network_Logo.png",
-        "url": "https://livecdn.use1-0004.jwplive.com/live/sites/fGLyccP5/media/FoWynVnP/live.isml/.m3u8",
+        "name": "Estrella Games",
+        "id": "EstrellaGames.us",
+        "logo": "https://i.imgur.com/Z52nEnH.png",
+        "url": "https://livetv-fa.tubi.video/estrella-games/playlist.m3u8",
         "categories": [
+            "entertainment",
             "family"
         ],
         "country": "US"
@@ -106,41 +118,10 @@
         "country": "US"
     },
     {
-        "name": "Estrella Games",
-        "id": "EstrellaGames.us",
-        "logo": "https://i.imgur.com/Z52nEnH.png",
-        "url": "https://livetv-fa.tubi.video/estrella-games/playlist.m3u8",
-        "categories": [
-            "entertainment",
-            "family"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "FETV",
-        "id": "FETV.us",
-        "logo": "https://i.imgur.com/Z9xclnE.png",
-        "url": "https://gcdn-p6.teleuptv.net/806c57bb-85bc-4773-becc-e24433711d14/index.m3u8",
-        "categories": [
-            "family"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Great American Family",
-        "id": "GreatAmericanFamily.us",
-        "logo": "https://i.imgur.com/TzvnHDn.png",
-        "url": "https://fl1.moveonjoy.com/Great_American_Country/index.m3u8",
-        "categories": [
-            "family"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Hallmark Channel",
-        "id": "HallmarkChannel.us",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Hallmark_Channel.svg/512px-Hallmark_Channel.svg.png",
-        "url": "https://fl1.moveonjoy.com/HALLMARK_CHANNEL/index.m3u8",
+        "name": "Positiv TV",
+        "id": "PositivTV.us",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/8/82/Positiv_TV_Network_Logo.png",
+        "url": "https://livecdn.use1-0004.jwplive.com/live/sites/fGLyccP5/media/FoWynVnP/live.isml/.m3u8",
         "categories": [
             "family"
         ],
@@ -157,6 +138,36 @@
         "country": "US"
     },
     {
+        "name": "Hallmark Channel",
+        "id": "HallmarkChannel.us",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Hallmark_Channel.svg/512px-Hallmark_Channel.svg.png",
+        "url": "https://fl1.moveonjoy.com/HALLMARK_CHANNEL/index.m3u8",
+        "categories": [
+            "family"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Great American Family",
+        "id": "GreatAmericanFamily.us",
+        "logo": "https://i.imgur.com/TzvnHDn.png",
+        "url": "https://fl1.moveonjoy.com/Great_American_Country/index.m3u8",
+        "categories": [
+            "family"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "FETV",
+        "id": "FETV.us",
+        "logo": "https://i.imgur.com/Z9xclnE.png",
+        "url": "https://gcdn-p6.teleuptv.net/806c57bb-85bc-4773-becc-e24433711d14/index.m3u8",
+        "categories": [
+            "family"
+        ],
+        "country": "US"
+    },
+    {
         "name": "Nambikkai TV",
         "id": "NambikkaiTV.in",
         "logo": "https://i.imgur.com/xnjkUOs.png",
@@ -165,18 +176,6 @@
             "family"
         ],
         "country": "IN"
-    },
-    {
-        "name": "MCI Television",
-        "id": "MCITelevision.co",
-        "logo": "https://pbs.twimg.com/profile_images/1836009952420274177/FfYonU6r_400x400.jpg",
-        "url": "https://video.ejeserver.com/live/mcitelevision.m3u8",
-        "categories": [
-            "movies",
-            "family",
-            "general"
-        ],
-        "country": "CO"
     },
     {
         "name": "Asia TV",
@@ -189,6 +188,30 @@
             "general"
         ],
         "country": "LK"
+    },
+    {
+        "name": "alpha Cinema",
+        "id": "alphaCinema.ru",
+        "logo": "https://ry7wpjhjwylg7u7.vxdgroup-84jzo19.xyz/logos_4RBUvIk6iXEOn3vNbd3j5PCw3T06yk0G/alphacinema.png",
+        "url": "https://dvr3.vokkavideo.xyz/ALPHACINEMAHD/index.m3u8",
+        "categories": [
+            "comedy",
+            "movies",
+            "family"
+        ],
+        "country": "RU"
+    },
+    {
+        "name": "MCI Television",
+        "id": "MCITelevision.co",
+        "logo": "https://pbs.twimg.com/profile_images/1836009952420274177/FfYonU6r_400x400.jpg",
+        "url": "https://video.ejeserver.com/live/mcitelevision.m3u8",
+        "categories": [
+            "movies",
+            "family",
+            "general"
+        ],
+        "country": "CO"
     },
     {
         "name": "STS",
@@ -209,6 +232,18 @@
             "family"
         ],
         "country": "RU"
+    },
+    {
+        "name": "Tshwane TV",
+        "id": "TshwaneTV.za",
+        "logo": "https://admango.cdn.mangomolo.com/analytics/uploads/188/654a3ec660.png",
+        "url": "https://cdn.freevisiontv.co.za/sttv/smil:tshwane.stream.smil/playlist.m3u8",
+        "categories": [
+            "entertainment",
+            "family",
+            "general"
+        ],
+        "country": "ZA"
     },
     {
         "name": "Soweto TV",
@@ -232,30 +267,6 @@
             "general"
         ],
         "country": "ZA"
-    },
-    {
-        "name": "Tshwane TV",
-        "id": "TshwaneTV.za",
-        "logo": "https://admango.cdn.mangomolo.com/analytics/uploads/188/654a3ec660.png",
-        "url": "https://cdn.freevisiontv.co.za/sttv/smil:tshwane.stream.smil/playlist.m3u8",
-        "categories": [
-            "entertainment",
-            "family",
-            "general"
-        ],
-        "country": "ZA"
-    },
-    {
-        "name": "alpha Cinema",
-        "id": "alphaCinema.ru",
-        "logo": "https://ry7wpjhjwylg7u7.vxdgroup-84jzo19.xyz/logos_4RBUvIk6iXEOn3vNbd3j5PCw3T06yk0G/alphacinema.png",
-        "url": "https://dvr3.vokkavideo.xyz/ALPHACINEMAHD/index.m3u8",
-        "categories": [
-            "comedy",
-            "movies",
-            "family"
-        ],
-        "country": "RU"
     },
     {
         "name": "RiC",

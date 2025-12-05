@@ -10,16 +10,6 @@
         "country": "AR"
     },
     {
-        "name": "Motor Trend",
-        "id": "MotorTrend.us",
-        "logo": "https://i.imgur.com/hKDccCL.png",
-        "url": "http://104.255.88.155/motortrend/index.m3u8",
-        "categories": [
-            "auto"
-        ],
-        "country": "US"
-    },
-    {
         "name": "Top Gear",
         "id": "TopGear.uk",
         "logo": "https://i.imgur.com/S6Su6QH.png",
@@ -31,12 +21,32 @@
         "country": "UK"
     },
     {
+        "name": "Motor Trend",
+        "id": "MotorTrend.us",
+        "logo": "https://i.imgur.com/hKDccCL.png",
+        "url": "http://104.255.88.155/motortrend/index.m3u8",
+        "categories": [
+            "auto"
+        ],
+        "country": "US"
+    },
+    {
         "name": "Fun Roads",
         "id": "FunRoads.us",
         "logo": "https://i.imgur.com/2Q6TENm.png",
         "url": "https://a-cdn.klowdtv.com/live3/funroads_720p/playlist.m3u8",
         "categories": [
             "travel",
+            "auto"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "30A We Love Cars",
+        "id": "30AWeLoveCars.us",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxroqfE_hvEApKMQx03sSYXPeEh4ClaF5QSa8XfRwJW_So3vfSN0CjqzxN30H-qEBswqU&usqp=CAU",
+        "url": "https://30a-tv.com/feeds/vidaa/cars.m3u8",
+        "categories": [
             "auto"
         ],
         "country": "US"
@@ -62,14 +72,14 @@
         "country": "US"
     },
     {
-        "name": "30A We Love Cars",
-        "id": "30AWeLoveCars.us",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxroqfE_hvEApKMQx03sSYXPeEh4ClaF5QSa8XfRwJW_So3vfSN0CjqzxN30H-qEBswqU&usqp=CAU",
-        "url": "https://30a-tv.com/feeds/vidaa/cars.m3u8",
+        "name": "Motorvision",
+        "id": "Motorvision.de",
+        "logo": "https://i.imgur.com/v4kj8pI.png",
+        "url": "https://mvg-mv-xumo.otteravision.com/mvg/mv/mv.m3u8",
         "categories": [
             "auto"
         ],
-        "country": "US"
+        "country": "DE"
     },
     {
         "name": "Auto Motor og Sport TV",
@@ -82,26 +92,6 @@
         "country": "NO"
     },
     {
-        "name": "Canal Motor",
-        "id": "CanalMotor.no",
-        "logo": "https://i.imgur.com/nCAt3QN.png",
-        "url": "https://digicom.hls.iptvdc.com/motorstv/index.m3u8",
-        "categories": [
-            "auto"
-        ],
-        "country": "NO"
-    },
-    {
-        "name": "Motorvision",
-        "id": "Motorvision.de",
-        "logo": "https://i.imgur.com/v4kj8pI.png",
-        "url": "https://mvg-mv-xumo.otteravision.com/mvg/mv/mv.m3u8",
-        "categories": [
-            "auto"
-        ],
-        "country": "DE"
-    },
-    {
         "name": "Auto Plus",
         "id": "AutoPlus.ru",
         "logo": "https://i.imgur.com/sVc8cFt.png",
@@ -110,5 +100,15 @@
             "auto"
         ],
         "country": "RU"
+    },
+    {
+        "name": "Canal Motor",
+        "id": "CanalMotor.no",
+        "logo": "https://i.imgur.com/nCAt3QN.png",
+        "url": "https://digicom.hls.iptvdc.com/motorstv/index.m3u8",
+        "categories": [
+            "auto"
+        ],
+        "country": "NO"
     }
 ]
