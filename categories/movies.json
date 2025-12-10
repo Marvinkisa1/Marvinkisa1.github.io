@@ -1,35 +1,5 @@
 [
     {
-        "name": "Classique TV",
-        "id": "ClassiqueTV.br",
-        "logo": "https://i.imgur.com/rHxcraT.png",
-        "url": "https://stmv1.srvif.com/classique/classique/playlist.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "BR"
-    },
-    {
-        "name": "MyTime Movie Network",
-        "id": "MyTimeMovieNetwork.br",
-        "logo": "https://i.imgur.com/aiGQtzI.png",
-        "url": "https://appletree-mytime-samsungbrazil.amagi.tv/playlist.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "BR"
-    },
-    {
-        "name": "Persiana HD",
-        "id": "PersianaHD.fr",
-        "logo": "https://i.postimg.cc/PqGNMPdx/persianahd.png",
-        "url": "https://euhls.persiana.live/hls/stream.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "FR"
-    },
-    {
         "name": "Wild Side TV",
         "id": "WildSideTV.fr",
         "logo": "https://i.imgur.com/cQkfRhH.png",
@@ -40,14 +10,14 @@
         "country": "FR"
     },
     {
-        "name": "TVCARiB Cinema",
-        "id": "TVCARiBCinema.sx",
-        "logo": "https://i.imgur.com/fvGlwKo.png",
-        "url": "https://cdn.mycloudstream.io/hls/live/broadcast/l3vslw4i/index.m3u8",
+        "name": "MBC Bollywood",
+        "id": "MBCBollywood.ae",
+        "logo": "https://i.imgur.com/TTAGFHG.png",
+        "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-bollywood/546eb40d7dcf9a209255dd2496903764/index.m3u8",
         "categories": [
             "movies"
         ],
-        "country": "SX"
+        "country": "AE"
     },
     {
         "name": "Persiana Korea",
@@ -58,26 +28,6 @@
             "movies"
         ],
         "country": "FR"
-    },
-    {
-        "name": "Komsan TV",
-        "id": "KomsanTV.kh",
-        "logo": "https://i.imgur.com/SNTf2r3.png",
-        "url": "http://tv.cootel.com.kh:8077/streams/d/Komsan/playlist.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "KH"
-    },
-    {
-        "name": "MBC Bollywood",
-        "id": "MBCBollywood.ae",
-        "logo": "https://i.imgur.com/TTAGFHG.png",
-        "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-bollywood/546eb40d7dcf9a209255dd2496903764/index.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "AE"
     },
     {
         "name": "Persiana Family",
@@ -100,10 +50,40 @@
         "country": "FR"
     },
     {
-        "name": "TF1 Series Films",
-        "id": "TF1SeriesFilms.fr",
-        "logo": "https://i.imgur.com/4CJIDKQ.png",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/hd1/browser-dash/hd1.mpd",
+        "name": "TVCARiB Cinema",
+        "id": "TVCARiBCinema.sx",
+        "logo": "https://i.imgur.com/fvGlwKo.png",
+        "url": "https://cdn.mycloudstream.io/hls/live/broadcast/l3vslw4i/index.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "SX"
+    },
+    {
+        "name": "Komsan TV",
+        "id": "KomsanTV.kh",
+        "logo": "https://i.imgur.com/SNTf2r3.png",
+        "url": "http://tv.cootel.com.kh:8077/streams/d/Komsan/playlist.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "KH"
+    },
+    {
+        "name": "MyTime Movie Network",
+        "id": "MyTimeMovieNetwork.br",
+        "logo": "https://i.imgur.com/aiGQtzI.png",
+        "url": "https://appletree-mytime-samsungbrazil.amagi.tv/playlist.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "BR"
+    },
+    {
+        "name": "Persiana HD",
+        "id": "PersianaHD.fr",
+        "logo": "https://i.postimg.cc/PqGNMPdx/persianahd.png",
+        "url": "https://euhls.persiana.live/hls/stream.m3u8",
         "categories": [
             "movies"
         ],
@@ -121,6 +101,37 @@
         "country": "FR"
     },
     {
+        "name": "TF1 Series Films",
+        "id": "TF1SeriesFilms.fr",
+        "logo": "https://i.imgur.com/4CJIDKQ.png",
+        "url": "https://viamotionhsi.netplus.ch/live/eds/hd1/browser-dash/hd1.mpd",
+        "categories": [
+            "movies"
+        ],
+        "country": "FR"
+    },
+    {
+        "name": "Classique TV",
+        "id": "ClassiqueTV.br",
+        "logo": "https://i.imgur.com/rHxcraT.png",
+        "url": "https://stmv1.srvif.com/classique/classique/playlist.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "BR"
+    },
+    {
+        "name": "Xtrema Cine Clasico",
+        "id": "XtremaCineClasico.ar",
+        "logo": "https://i.imgur.com/j91M4Yf.png",
+        "url": "https://stmv6.voxtvhd.com.br/cineclasico/cineclasico/playlist.m3u8",
+        "categories": [
+            "movies",
+            "classic"
+        ],
+        "country": "AR"
+    },
+    {
         "name": "Xtrema Accion",
         "id": "XtremaAccion.ar",
         "logo": "https://i.imgur.com/z5NwizH.png",
@@ -129,6 +140,16 @@
             "movies"
         ],
         "country": "AR"
+    },
+    {
+        "name": "RTSH Shqip",
+        "id": "RTSHShqip.al",
+        "logo": "https://i.imgur.com/88kRsW3.png",
+        "url": "http://178.33.11.6:8696/live/rtshshqip/playlist.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "AL"
     },
     {
         "name": "Xtrema Terror",
@@ -141,13 +162,23 @@
         "country": "AR"
     },
     {
-        "name": "Xtrema Cine Clasico",
-        "id": "XtremaCineClasico.ar",
-        "logo": "https://i.imgur.com/j91M4Yf.png",
-        "url": "https://stmv6.voxtvhd.com.br/cineclasico/cineclasico/playlist.m3u8",
+        "name": "Boreal",
+        "id": "Boreal.do",
+        "logo": "https://i.imgur.com/KSquHTG.png",
+        "url": "https://cdn.borealtelevision.com:3712/live/borealtelevisionhdlive.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "DO"
+    },
+    {
+        "name": "Cosmos Tv",
+        "id": "CosmosTv.ar",
+        "logo": "https://i0.wp.com/fmcosmos.com/wp-content/uploads/2021/11/COSMOS-TV.png",
+        "url": "https://canaletaplus.com:3922/hybrid/play.m3u8",
         "categories": [
             "movies",
-            "classic"
+            "news"
         ],
         "country": "AR"
     },
@@ -172,25 +203,14 @@
         "country": "CA"
     },
     {
-        "name": "RTSH Shqip",
-        "id": "RTSHShqip.al",
-        "logo": "https://i.imgur.com/88kRsW3.png",
-        "url": "http://178.33.11.6:8696/live/rtshshqip/playlist.m3u8",
+        "name": "Crave 4",
+        "id": "Crave4.ca",
+        "logo": "https://i.imgur.com/MyH3Q2p.png",
+        "url": "https://fl1.moveonjoy.com/CRAVE_4/index.m3u8",
         "categories": [
             "movies"
         ],
-        "country": "AL"
-    },
-    {
-        "name": "Cosmos Tv",
-        "id": "CosmosTv.ar",
-        "logo": "https://i0.wp.com/fmcosmos.com/wp-content/uploads/2021/11/COSMOS-TV.png",
-        "url": "https://canaletaplus.com:3922/hybrid/play.m3u8",
-        "categories": [
-            "movies",
-            "news"
-        ],
-        "country": "AR"
+        "country": "CA"
     },
     {
         "name": "Crave 2",
@@ -203,14 +223,14 @@
         "country": "CA"
     },
     {
-        "name": "Crave 4",
-        "id": "Crave4.ca",
-        "logo": "https://i.imgur.com/MyH3Q2p.png",
-        "url": "https://fl1.moveonjoy.com/CRAVE_4/index.m3u8",
+        "name": "FilmRise Forensic Files",
+        "id": "FilmRiseForensicFiles.us",
+        "logo": "https://i.imgur.com/8j2npVc.png",
+        "url": "https://livetv-fa.tubi.video/forensic-files/index.m3u8",
         "categories": [
             "movies"
         ],
-        "country": "CA"
+        "country": "US"
     },
     {
         "name": "Maverick Black Cinema",
@@ -223,26 +243,6 @@
         "country": "US"
     },
     {
-        "name": "EBS Cinema",
-        "id": "EBSCinema.us",
-        "logo": "https://i.imgur.com/fewPTFE.png",
-        "url": "https://rpn.bozztv.com/ebstv/ebscinema/index.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "GREAT! movies",
-        "id": "GREATmovies.uk",
-        "logo": "https://d2n0069hmnqmmx.cloudfront.net/epgdata/1.0/newchanlogos/512/512/skychb3709.png",
-        "url": "https://amg01753-narrativeuk-amg01753c3-lg-gb-1833.playouts.now.amagi.tv/playlist/amg01753-narrativeuk-greatmovies-lggb/playlist.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "UK"
-    },
-    {
         "name": "GREAT! romance",
         "id": "GREATromance.uk",
         "logo": "https://d2n0069hmnqmmx.cloudfront.net/epgdata/1.0/newchanlogos/512/512/skychb3643.png",
@@ -253,20 +253,10 @@
         "country": "UK"
     },
     {
-        "name": "Boreal",
-        "id": "Boreal.do",
-        "logo": "https://i.imgur.com/KSquHTG.png",
-        "url": "https://cdn.borealtelevision.com:3712/live/borealtelevisionhdlive.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "DO"
-    },
-    {
-        "name": "Film4",
-        "id": "Film4.uk",
-        "logo": "https://i.imgur.com/MTSgoGI.png",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/film4/browser-dash/film4.mpd",
+        "name": "GREAT! movies",
+        "id": "GREATmovies.uk",
+        "logo": "https://d2n0069hmnqmmx.cloudfront.net/epgdata/1.0/newchanlogos/512/512/skychb3709.png",
+        "url": "https://amg01753-narrativeuk-amg01753c3-lg-gb-1833.playouts.now.amagi.tv/playlist/amg01753-narrativeuk-greatmovies-lggb/playlist.m3u8",
         "categories": [
             "movies"
         ],
@@ -283,6 +273,16 @@
         "country": "UK"
     },
     {
+        "name": "Film4",
+        "id": "Film4.uk",
+        "logo": "https://i.imgur.com/MTSgoGI.png",
+        "url": "https://viamotionhsi.netplus.ch/live/eds/film4/browser-dash/film4.mpd",
+        "categories": [
+            "movies"
+        ],
+        "country": "UK"
+    },
+    {
         "name": "Discover Film",
         "id": "DiscoverFilm.uk",
         "logo": "https://i.imgur.com/oMnpsQ5.png",
@@ -293,11 +293,42 @@
         "country": "UK"
     },
     {
-        "name": "FilmRise Forensic Files",
-        "id": "FilmRiseForensicFiles.us",
+        "name": "FilmRise True Crime",
+        "id": "FilmRiseTrueCrime.us",
         "logo": "https://i.imgur.com/8j2npVc.png",
-        "url": "https://livetv-fa.tubi.video/forensic-files/index.m3u8",
+        "url": "https://livetv-fa.tubi.video/filmrise-true-crime/index.m3u8",
         "categories": [
+            "movies"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "TVS Drive In Movie",
+        "id": "TVSDriveInMovie.us",
+        "logo": "https://i.imgur.com/OR9APjb.png",
+        "url": "https://rpn.bozztv.com/gusa/gusa-tvsdriveinmovie/index.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "EBS Cinema",
+        "id": "EBSCinema.us",
+        "logo": "https://i.imgur.com/fewPTFE.png",
+        "url": "https://rpn.bozztv.com/ebstv/ebscinema/index.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "ABN Bible Movies Channel",
+        "id": "ABNBibleMoviesChannel.us",
+        "logo": "https://i.imgur.com/NCqZdaL.png",
+        "url": "https://mediaserver.abnvideos.com/streams/abnbiblemovies.m3u8",
+        "categories": [
+            "religious",
             "movies"
         ],
         "country": "US"
@@ -313,10 +344,10 @@
         "country": "US"
     },
     {
-        "name": "TVS Drive In Movie",
-        "id": "TVSDriveInMovie.us",
-        "logo": "https://i.imgur.com/OR9APjb.png",
-        "url": "https://rpn.bozztv.com/gusa/gusa-tvsdriveinmovie/index.m3u8",
+        "name": "Classic Cinema",
+        "id": "ClassicCinema.us",
+        "logo": "https://i.imgur.com/FJoPnTb.png",
+        "url": "https://rpn.bozztv.com/gusa/gusa-classiccinema/index.m3u8",
         "categories": [
             "movies"
         ],
@@ -353,17 +384,6 @@
         "country": "US"
     },
     {
-        "name": "ABN Bible Movies Channel",
-        "id": "ABNBibleMoviesChannel.us",
-        "logo": "https://i.imgur.com/NCqZdaL.png",
-        "url": "https://mediaserver.abnvideos.com/streams/abnbiblemovies.m3u8",
-        "categories": [
-            "religious",
-            "movies"
-        ],
-        "country": "US"
-    },
-    {
         "name": "KidsFlix",
         "id": "KidsFlix.us",
         "logo": "https://i.imgur.com/4Pn0ADQ.png",
@@ -375,20 +395,30 @@
         "country": "US"
     },
     {
-        "name": "FilmRise True Crime",
-        "id": "FilmRiseTrueCrime.us",
-        "logo": "https://i.imgur.com/8j2npVc.png",
-        "url": "https://livetv-fa.tubi.video/filmrise-true-crime/index.m3u8",
+        "name": "Cinecanal",
+        "id": "Cinecanal.us",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/CinecanalLA.png/512px-CinecanalLA.png",
+        "url": "http://zafertv85.shop:8080/slymn7976/kncaXQpRtbRd/468091",
         "categories": [
             "movies"
         ],
         "country": "US"
     },
     {
-        "name": "Classic Cinema",
-        "id": "ClassicCinema.us",
-        "logo": "https://i.imgur.com/FJoPnTb.png",
-        "url": "https://rpn.bozztv.com/gusa/gusa-classiccinema/index.m3u8",
+        "name": "Cine Sony",
+        "id": "CineSony.us",
+        "logo": "https://i.imgur.com/bZWoDTg.png",
+        "url": "https://a-cdn.klowdtv.com/live1/cine_720p/playlist.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "MovieSphere",
+        "id": "MovieSphere.us",
+        "logo": "https://i.imgur.com/h1ejU90.png",
+        "url": "https://amg00353-lionsgatestudio-moviesphere-xumo-zh5u0.amagi.tv/playlist.m3u8",
         "categories": [
             "movies"
         ],
@@ -406,50 +436,10 @@
         "country": "US"
     },
     {
-        "name": "Cinecanal",
-        "id": "Cinecanal.us",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/CinecanalLA.png/512px-CinecanalLA.png",
-        "url": "http://zafertv85.shop:8080/slymn7976/kncaXQpRtbRd/468091",
-        "categories": [
-            "movies"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Sundance TV",
-        "id": "SundanceTV.us",
-        "logo": "https://i.postimg.cc/MT3Dshtd/sundancetv.png",
-        "url": "https://fl1.moveonjoy.com/SUNDANCE/index.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "FX Movie Channel",
-        "id": "FXMovieChannel.us",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/FXM_Logo.svg/512px-FXM_Logo.svg.png",
-        "url": "http://bgdc.live:25461/dawn/jackson65/13449",
-        "categories": [
-            "movies"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "MGM+ Marquee",
-        "id": "MGMPlusMarquee.us",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/MGM%2B_Marquee_2023.svg/512px-MGM%2B_Marquee_2023.svg.png",
-        "url": "https://fl1.moveonjoy.com/EPIX_DRIVE_IN/index.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Cine Sony",
-        "id": "CineSony.us",
-        "logo": "https://i.imgur.com/bZWoDTg.png",
-        "url": "https://a-cdn.klowdtv.com/live1/cine_720p/playlist.m3u8",
+        "name": "AMC",
+        "id": "AMC.us",
+        "logo": "https://i.postimg.cc/ncGLcbMM/amc.png",
+        "url": "http://cors.tundracast.com:2000/https://streamer1.nexgen.bz/AMC/index.m3u8",
         "categories": [
             "movies"
         ],
@@ -466,20 +456,50 @@
         "country": "US"
     },
     {
-        "name": "AMC",
-        "id": "AMC.us",
-        "logo": "https://i.postimg.cc/ncGLcbMM/amc.png",
-        "url": "http://cors.tundracast.com:2000/https://streamer1.nexgen.bz/AMC/index.m3u8",
+        "name": "Runtime Espanol",
+        "id": "RuntimeEspanol.us",
+        "logo": "https://i.imgur.com/OMQq19N.png",
+        "url": "https://run-rt-uh-roku.otteravision.com/run/rt_uh/rt_uh.m3u8",
         "categories": [
             "movies"
         ],
         "country": "US"
     },
     {
-        "name": "Runtime Espanol",
-        "id": "RuntimeEspanol.us",
-        "logo": "https://i.imgur.com/OMQq19N.png",
-        "url": "https://run-rt-uh-roku.otteravision.com/run/rt_uh/rt_uh.m3u8",
+        "name": "MyTime Movie Network East",
+        "id": "MyTimeMovieNetworkEast.us",
+        "logo": "https://i.imgur.com/HYgxPVQ.png",
+        "url": "https://mytimeuk-rakuten-samsung.amagi.tv/playlist.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "FX Movie Channel",
+        "id": "FXMovieChannel.us",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/FXM_Logo.svg/512px-FXM_Logo.svg.png",
+        "url": "http://bgdc.live:25461/dawn/jackson65/13449",
+        "categories": [
+            "movies"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "ICC plus",
+        "id": "ICCplus.us",
+        "logo": "https://www.lyngsat.com/logo/tv/ii/iccplus-us.png",
+        "url": "https://icchls.wns.live/hls/stream.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "MGM+ Marquee",
+        "id": "MGMPlusMarquee.us",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/MGM%2B_Marquee_2023.svg/512px-MGM%2B_Marquee_2023.svg.png",
+        "url": "https://fl1.moveonjoy.com/EPIX_DRIVE_IN/index.m3u8",
         "categories": [
             "movies"
         ],
@@ -506,30 +526,10 @@
         "country": "US"
     },
     {
-        "name": "MyTime Movie Network East",
-        "id": "MyTimeMovieNetworkEast.us",
-        "logo": "https://i.imgur.com/HYgxPVQ.png",
-        "url": "https://mytimeuk-rakuten-samsung.amagi.tv/playlist.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "MovieSphere",
-        "id": "MovieSphere.us",
-        "logo": "https://i.imgur.com/h1ejU90.png",
-        "url": "https://amg00353-lionsgatestudio-moviesphere-xumo-zh5u0.amagi.tv/playlist.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "ICC plus",
-        "id": "ICCplus.us",
-        "logo": "https://www.lyngsat.com/logo/tv/ii/iccplus-us.png",
-        "url": "https://icchls.wns.live/hls/stream.m3u8",
+        "name": "Sundance TV",
+        "id": "SundanceTV.us",
+        "logo": "https://i.postimg.cc/MT3Dshtd/sundancetv.png",
+        "url": "https://fl1.moveonjoy.com/SUNDANCE/index.m3u8",
         "categories": [
             "movies"
         ],
@@ -546,14 +546,34 @@
         "country": "US"
     },
     {
-        "name": "Bflix Movies",
-        "id": "BflixMovies.in",
-        "logo": "https://i.imgur.com/5CtiQ45.png",
-        "url": "http://163.61.227.29:8000/play/a05s/index.m3u8",
+        "name": "Studio One Yuva",
+        "id": "StudioOneYuva.in",
+        "logo": "https://i.imgur.com/lzsAPHZ.png",
+        "url": "http://202.164.50.194:8000/play/a030/index.m3u8",
         "categories": [
             "movies"
         ],
         "country": "IN"
+    },
+    {
+        "name": "Abzy Dhakad",
+        "id": "AbzyDhakad.in",
+        "logo": "https://i.imgur.com/5ORC4tn.png",
+        "url": "https://d2lk5u59tns74c.cloudfront.net/out/v1/4fe6ab07a13543d6bdb2ec63b3e2df44/index.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "IN"
+    },
+    {
+        "name": "American Horrors",
+        "id": "AmericanHorrors.us",
+        "logo": "https://image.roku.com/developer_channels/prod/16f5571a82819e8992a748c70b256cbe63105f4b546b73d129668dc2cb701d91.png",
+        "url": "http://107.167.7.162:8081/playlist/amhor/playlist.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "US"
     },
     {
         "name": "Abzy Movies",
@@ -566,30 +586,20 @@
         "country": "IN"
     },
     {
-        "name": "Oscar Movies Bhojpuri",
-        "id": "OscarMoviesBhojpuri.in",
-        "logo": "",
-        "url": "https://cdn-4.pishow.tv/live/233/master.m3u8",
+        "name": "B4U Movies",
+        "id": "B4UMovies.in",
+        "logo": "https://i.imgur.com/M9kMFJl.png",
+        "url": "https://cdnb4u.wiseplayout.com/B4U_Movies/master.m3u8",
         "categories": [
             "movies"
         ],
         "country": "IN"
     },
     {
-        "name": "Bhojpuri Cinema",
-        "id": "BhojpuriCinema.in",
-        "logo": "https://i.imgur.com/ABxIO7r.jpg",
-        "url": "https://live-bhojpuri.akamaized.net/liveabr/playlist.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "IN"
-    },
-    {
-        "name": "Suriyan TV",
-        "id": "SuriyanTV.in",
-        "logo": "https://jiotvimages.cdn.jio.com/dare_images/shows/2025-11-06/2511063356010.jpg",
-        "url": "https://stream.galaxyott.live/live/suriyantv/index.m3u8",
+        "name": "B4U Bhojpuri",
+        "id": "B4UBhojpuri.in",
+        "logo": "https://i.imgur.com/NwOQUDp.png",
+        "url": "https://cdnb4u.wiseplayout.com/B4U_Bhojpuri/master.m3u8",
         "categories": [
             "movies"
         ],
@@ -607,70 +617,10 @@
         "country": "US"
     },
     {
-        "name": "Udaya Movies",
-        "id": "UdayaMovies.in",
-        "logo": "https://i.imgur.com/UNEQaAv.png",
-        "url": "https://playyonogames.in/live.php?format=.m3u8&id=678",
-        "categories": [
-            "movies"
-        ],
-        "country": "IN"
-    },
-    {
-        "name": "&xplor HD",
-        "id": "AndxplorHD.in",
-        "logo": "https://i.imgur.com/9mK6dgM.png",
-        "url": "https://playyonogames.in/z5/stream.m3u8?id=0-9-209",
-        "categories": [
-            "movies"
-        ],
-        "country": "IN"
-    },
-    {
-        "name": "Abzy Dhakad",
-        "id": "AbzyDhakad.in",
-        "logo": "https://i.imgur.com/5ORC4tn.png",
-        "url": "https://d2lk5u59tns74c.cloudfront.net/out/v1/4fe6ab07a13543d6bdb2ec63b3e2df44/index.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "IN"
-    },
-    {
-        "name": "J Movie",
-        "id": "JMovie.in",
-        "logo": "https://i.imgur.com/cpaudl9.png",
-        "url": "http://103.140.254.2:3500/live/417.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "IN"
-    },
-    {
-        "name": "Sony Wah",
-        "id": "SonyWah.in",
-        "logo": "https://upload.wikimedia.org/wikipedia/hi/5/58/Sony_Wah_new_logo.png",
-        "url": "https://nxtlive.net/sliv/stream.php?e=.m3u8&id=0898545986",
-        "categories": [
-            "movies"
-        ],
-        "country": "IN"
-    },
-    {
-        "name": "B4U Bhojpuri",
-        "id": "B4UBhojpuri.in",
-        "logo": "https://i.imgur.com/NwOQUDp.png",
-        "url": "https://cdnb4u.wiseplayout.com/B4U_Bhojpuri/master.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "IN"
-    },
-    {
-        "name": "B4U Movies",
-        "id": "B4UMovies.in",
-        "logo": "https://i.imgur.com/M9kMFJl.png",
-        "url": "https://cdnb4u.wiseplayout.com/B4U_Movies/master.m3u8",
+        "name": "Oscar Movies Bhojpuri",
+        "id": "OscarMoviesBhojpuri.in",
+        "logo": "",
+        "url": "https://cdn-4.pishow.tv/live/233/master.m3u8",
         "categories": [
             "movies"
         ],
@@ -687,10 +637,41 @@
         "country": "IN"
     },
     {
-        "name": "Kairali We",
-        "id": "KairaliWe.in",
-        "logo": "https://i.imgur.com/zXpROBj.png",
-        "url": "https://playyonogames.in/live.php?format=.m3u8&id=731",
+        "name": "ZB Cinema",
+        "id": "ZBCinema.in",
+        "logo": "https://i.imgur.com/kUg6WSk.jpeg",
+        "url": "https://server.zillarbarta.com/ZBCINEMA/index.m3u8",
+        "categories": [
+            "classic",
+            "movies"
+        ],
+        "country": "IN"
+    },
+    {
+        "name": "&TV",
+        "id": "AndTV.in",
+        "logo": "https://i.imgur.com/32W50Y6.png",
+        "url": "https://amg01117-amg01117c1-amgplt0165.playout.now3.amagi.tv/playlist.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "IN"
+    },
+    {
+        "name": "Shemaroo Josh",
+        "id": "ShemarooJosh.in",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSutWZzQySLPpaZvaSHq1SnpV0dXNSFZimyag&s",
+        "url": "https://airtelapp.shemaroo.com/shemarooChumbakTV/smil:shemarooChumbakTVadp.smil/playlist.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "IN"
+    },
+    {
+        "name": "Bflix Movies",
+        "id": "BflixMovies.in",
+        "logo": "https://i.imgur.com/5CtiQ45.png",
+        "url": "http://163.61.227.29:8000/play/a05s/index.m3u8",
         "categories": [
             "movies"
         ],
@@ -707,20 +688,20 @@
         "country": "IN"
     },
     {
-        "name": "&TV",
-        "id": "AndTV.in",
-        "logo": "https://i.imgur.com/32W50Y6.png",
-        "url": "https://amg01117-amg01117c1-amgplt0165.playout.now3.amagi.tv/playlist.m3u8",
+        "name": "J Movie",
+        "id": "JMovie.in",
+        "logo": "https://i.imgur.com/cpaudl9.png",
+        "url": "http://103.140.254.2:3500/live/417.m3u8",
         "categories": [
             "movies"
         ],
         "country": "IN"
     },
     {
-        "name": "Colors Cineplex Bollywood",
-        "id": "ColorsCineplexBollywood.in",
-        "logo": "https://i.imgur.com/EbHSQAJ.png",
-        "url": "https://playyonogames.in/live.php?format=.m3u8&id=1763",
+        "name": "Bhojpuri Cinema",
+        "id": "BhojpuriCinema.in",
+        "logo": "https://i.imgur.com/ABxIO7r.jpg",
+        "url": "https://live-bhojpuri.akamaized.net/liveabr/playlist.m3u8",
         "categories": [
             "movies"
         ],
@@ -737,20 +718,20 @@
         "country": "US"
     },
     {
-        "name": "Studio One +",
-        "id": "StudioOnePlus.in",
-        "logo": "https://i.imgur.com/yOPB7JB.png",
-        "url": "https://cdn-1.pishow.tv/live/276/master.m3u8",
+        "name": "Sony Wah",
+        "id": "SonyWah.in",
+        "logo": "https://upload.wikimedia.org/wikipedia/hi/5/58/Sony_Wah_new_logo.png",
+        "url": "https://nxtlive.net/sliv/stream.php?e=.m3u8&id=0898545986",
         "categories": [
             "movies"
         ],
         "country": "IN"
     },
     {
-        "name": "Studio One Yuva",
-        "id": "StudioOneYuva.in",
-        "logo": "https://i.imgur.com/lzsAPHZ.png",
-        "url": "http://202.164.50.194:8000/play/a030/index.m3u8",
+        "name": "Studio One +",
+        "id": "StudioOnePlus.in",
+        "logo": "https://i.imgur.com/yOPB7JB.png",
+        "url": "https://cdn-1.pishow.tv/live/276/master.m3u8",
         "categories": [
             "movies"
         ],
@@ -777,44 +758,14 @@
         "country": "IN"
     },
     {
-        "name": "&flix",
-        "id": "Andflix.in",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/%26flix_2025.svg/512px-%26flix_2025.svg.png",
-        "url": "https://edge3-moblive.yuppcdn.net/drm/smil:nflixdrm.smil/index.m3u8",
+        "name": "MoviePlus",
+        "id": "MoviePlus.in",
+        "logo": "https://i.imgur.com/THJEAqJ.png",
+        "url": "http://202.164.50.194:8000/play/a03n/index.m3u8",
         "categories": [
             "movies"
         ],
         "country": "IN"
-    },
-    {
-        "name": "American Horrors",
-        "id": "AmericanHorrors.us",
-        "logo": "https://image.roku.com/developer_channels/prod/16f5571a82819e8992a748c70b256cbe63105f4b546b73d129668dc2cb701d91.png",
-        "url": "http://107.167.7.162:8081/playlist/amhor/playlist.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "IFC",
-        "id": "IFC.us",
-        "logo": "https://i.imgur.com/bQdkyF9.png",
-        "url": "https://tvpass.org/live/IFCEast/sd",
-        "categories": [
-            "movies"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "TVS Film Noir Network",
-        "id": "TVSFilmNoirNetwork.us",
-        "logo": "https://i.imgur.com/A4yWhQw.png",
-        "url": "https://rpn.bozztv.com/trn01/gusa-TVSFilmNoir/index.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "US"
     },
     {
         "name": "Colors Cineplex Superhits",
@@ -827,6 +778,66 @@
         "country": "IN"
     },
     {
+        "name": "&xplor HD",
+        "id": "AndxplorHD.in",
+        "logo": "https://i.imgur.com/9mK6dgM.png",
+        "url": "https://playyonogames.in/z5/stream.m3u8?id=0-9-209",
+        "categories": [
+            "movies"
+        ],
+        "country": "IN"
+    },
+    {
+        "name": "Suriyan TV",
+        "id": "SuriyanTV.in",
+        "logo": "https://jiotvimages.cdn.jio.com/dare_images/shows/2025-11-06/2511063356010.jpg",
+        "url": "https://stream.galaxyott.live/live/suriyantv/index.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "IN"
+    },
+    {
+        "name": "Kairali We",
+        "id": "KairaliWe.in",
+        "logo": "https://i.imgur.com/zXpROBj.png",
+        "url": "https://playyonogames.in/live.php?format=.m3u8&id=731",
+        "categories": [
+            "movies"
+        ],
+        "country": "IN"
+    },
+    {
+        "name": "Colors Cineplex Bollywood",
+        "id": "ColorsCineplexBollywood.in",
+        "logo": "https://i.imgur.com/EbHSQAJ.png",
+        "url": "https://playyonogames.in/live.php?format=.m3u8&id=1763",
+        "categories": [
+            "movies"
+        ],
+        "country": "IN"
+    },
+    {
+        "name": "Udaya Movies",
+        "id": "UdayaMovies.in",
+        "logo": "https://i.imgur.com/UNEQaAv.png",
+        "url": "https://playyonogames.in/live.php?format=.m3u8&id=678",
+        "categories": [
+            "movies"
+        ],
+        "country": "IN"
+    },
+    {
+        "name": "TVS Film Noir Network",
+        "id": "TVSFilmNoirNetwork.us",
+        "logo": "https://i.imgur.com/A4yWhQw.png",
+        "url": "https://rpn.bozztv.com/trn01/gusa-TVSFilmNoir/index.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "US"
+    },
+    {
         "name": "312 Kino",
         "id": "312Kino.kg",
         "logo": "https://i.ibb.co/3m9LrLj/k7gIibH.png",
@@ -835,6 +846,16 @@
             "movies"
         ],
         "country": "KG"
+    },
+    {
+        "name": "Anandham TV",
+        "id": "AnandhamTV.in",
+        "logo": "https://jiotvimages.cdn.jio.com/dare_images/shows/2025-11-25/2511253358000.jpg",
+        "url": "https://stream.galaxyott.live/live/anandhamtv/index.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "IN"
     },
     {
         "name": "MCI Television",
@@ -849,10 +870,10 @@
         "country": "CO"
     },
     {
-        "name": "Shemaroo Josh",
-        "id": "ShemarooJosh.in",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSutWZzQySLPpaZvaSHq1SnpV0dXNSFZimyag&s",
-        "url": "https://airtelapp.shemaroo.com/shemarooChumbakTV/smil:shemarooChumbakTVadp.smil/playlist.m3u8",
+        "name": "&flix",
+        "id": "Andflix.in",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/%26flix_2025.svg/512px-%26flix_2025.svg.png",
+        "url": "https://edge3-moblive.yuppcdn.net/drm/smil:nflixdrm.smil/index.m3u8",
         "categories": [
             "movies"
         ],
@@ -867,27 +888,6 @@
             "movies"
         ],
         "country": "AT"
-    },
-    {
-        "name": "MoviePlus",
-        "id": "MoviePlus.in",
-        "logo": "https://i.imgur.com/THJEAqJ.png",
-        "url": "http://202.164.50.194:8000/play/a03n/index.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "IN"
-    },
-    {
-        "name": "ZB Cinema",
-        "id": "ZBCinema.in",
-        "logo": "https://i.imgur.com/kUg6WSk.jpeg",
-        "url": "https://server.zillarbarta.com/ZBCINEMA/index.m3u8",
-        "categories": [
-            "classic",
-            "movies"
-        ],
-        "country": "IN"
     },
     {
         "name": "Indywood TV",
@@ -911,83 +911,20 @@
         "country": "LK"
     },
     {
-        "name": "Kineko",
-        "id": "Kineko.ru",
-        "logo": "https://i.imgur.com/Otfvlmf.png",
-        "url": "http://194.143.148.28:8080/KINEKO/index.m3u8",
+        "name": "Feniks plus Kino",
+        "id": "FeniksplusKino.ru",
+        "logo": "https://i.imgur.com/S9OPMLE.png",
+        "url": "http://31.148.48.15/Feniks_plus_kino/index.m3u8",
         "categories": [
             "movies"
         ],
         "country": "RU"
     },
     {
-        "name": "Kinopokaz",
-        "id": "Kinopokaz.ru",
-        "logo": "https://i.imgur.com/nNjMyAq.png",
-        "url": "http://zafertv85.shop:8080/slymn7976/kncaXQpRtbRd/447058",
-        "categories": [
-            "movies"
-        ],
-        "country": "RU"
-    },
-    {
-        "name": "Evrokino",
-        "id": "Evrokino.ru",
-        "logo": "https://i.imgur.com/8LPtPf6.png",
-        "url": "http://31.148.48.15/Evrokino/index.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "RU"
-    },
-    {
-        "name": "Novyi Russkii",
-        "id": "NovyiRusskii.ru",
-        "logo": "https://ry7wpjhjwylg7u7.vxdgroup-84jzo19.xyz/logos_4RBUvIk6iXEOn3vNbd3j5PCw3T06yk0G/nv.png",
-        "url": "https://dvr3.vokkavideo.xyz/NEWRUSSIAHD/index.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "RU"
-    },
-    {
-        "name": "alpha Cinema",
-        "id": "alphaCinema.ru",
-        "logo": "https://ry7wpjhjwylg7u7.vxdgroup-84jzo19.xyz/logos_4RBUvIk6iXEOn3vNbd3j5PCw3T06yk0G/alphacinema.png",
-        "url": "https://dvr3.vokkavideo.xyz/ALPHACINEMAHD/index.m3u8",
-        "categories": [
-            "comedy",
-            "movies",
-            "family"
-        ],
-        "country": "RU"
-    },
-    {
-        "name": "alpha Moretime",
-        "id": "alphaMoretime.ru",
-        "logo": "https://ry7wpjhjwylg7u7.vxdgroup-84jzo19.xyz/logos_4RBUvIk6iXEOn3vNbd3j5PCw3T06yk0G/alphamoretime.png",
-        "url": "https://dvr3.vokkavideo.xyz/ALPHAMORETIMEHD/index.m3u8",
-        "categories": [
-            "comedy",
-            "movies"
-        ],
-        "country": "RU"
-    },
-    {
-        "name": "Cinema",
-        "id": "Cinema.ru",
-        "logo": "https://i.imgur.com/b5e9qUA.png",
-        "url": "http://catchup.videoline.ru/cinema/playlist.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "RU"
-    },
-    {
-        "name": "Patriot",
-        "id": "Patriot.ru",
-        "logo": "https://patriotkanal.ru/assets/cached/2025/02/resize/264_112_q100_patriot-only-logo.png",
-        "url": "http://catchup.videoline.ru/asvtv/index.m3u8",
+        "name": "Russkiy Detektiv",
+        "id": "RusskiyDetektiv.ru",
+        "logo": "https://i.imgur.com/H3qhN8S.png",
+        "url": "http://31.148.48.15/Russkiy_Detektiv/index.m3u8",
         "categories": [
             "movies"
         ],
@@ -1014,35 +951,44 @@
         "country": "RU"
     },
     {
-        "name": "Pro100TV",
-        "id": "Pro100TV.ru",
-        "logo": "https://i.imgur.com/YfQEflM.png",
-        "url": "https://sirius.greenhosting.ru/Pro100tvRu/video.m3u8",
-        "categories": [
-            "movies",
-            "entertainment",
-            "family",
-            "classic",
-            "animation"
-        ],
-        "country": "RU"
-    },
-    {
-        "name": "Kino 24",
-        "id": "Kino24.ru",
-        "logo": "https://i.imgur.com/QAdDARF.png",
-        "url": "http://sirius.greenhosting.ru/Kino24Ru/video.m3u8",
+        "name": "Kinopokaz",
+        "id": "Kinopokaz.ru",
+        "logo": "https://i.imgur.com/nNjMyAq.png",
+        "url": "http://zafertv85.shop:8080/slymn7976/kncaXQpRtbRd/447058",
         "categories": [
             "movies"
         ],
         "country": "RU"
     },
     {
-        "name": "Kino TV",
-        "id": "KinoTV.ru",
-        "logo": "https://i.imgur.com/sMpamNO.png",
-        "url": "https://vod.tuva.ru/kinotv/index.m3u8",
+        "name": "alpha Cinema",
+        "id": "alphaCinema.ru",
+        "logo": "https://ry7wpjhjwylg7u7.vxdgroup-84jzo19.xyz/logos_4RBUvIk6iXEOn3vNbd3j5PCw3T06yk0G/alphacinema.png",
+        "url": "https://dvr3.vokkavideo.xyz/ALPHACINEMAHD/index.m3u8",
         "categories": [
+            "comedy",
+            "movies",
+            "family"
+        ],
+        "country": "RU"
+    },
+    {
+        "name": "Novyi Russkii",
+        "id": "NovyiRusskii.ru",
+        "logo": "https://ry7wpjhjwylg7u7.vxdgroup-84jzo19.xyz/logos_4RBUvIk6iXEOn3vNbd3j5PCw3T06yk0G/nv.png",
+        "url": "https://dvr3.vokkavideo.xyz/NEWRUSSIAHD/index.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "RU"
+    },
+    {
+        "name": "alpha Moretime",
+        "id": "alphaMoretime.ru",
+        "logo": "https://ry7wpjhjwylg7u7.vxdgroup-84jzo19.xyz/logos_4RBUvIk6iXEOn3vNbd3j5PCw3T06yk0G/alphamoretime.png",
+        "url": "https://dvr3.vokkavideo.xyz/ALPHAMORETIMEHD/index.m3u8",
+        "categories": [
+            "comedy",
             "movies"
         ],
         "country": "RU"
@@ -1062,10 +1008,20 @@
         "country": "RU"
     },
     {
-        "name": "Feniks plus Kino",
-        "id": "FeniksplusKino.ru",
-        "logo": "https://i.imgur.com/S9OPMLE.png",
-        "url": "http://31.148.48.15/Feniks_plus_kino/index.m3u8",
+        "name": "Kineko",
+        "id": "Kineko.ru",
+        "logo": "https://i.imgur.com/Otfvlmf.png",
+        "url": "http://194.143.148.28:8080/KINEKO/index.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "RU"
+    },
+    {
+        "name": "Evrokino",
+        "id": "Evrokino.ru",
+        "logo": "https://i.imgur.com/8LPtPf6.png",
+        "url": "http://31.148.48.15/Evrokino/index.m3u8",
         "categories": [
             "movies"
         ],
@@ -1082,10 +1038,20 @@
         "country": "ZA"
     },
     {
-        "name": "Russkiy Detektiv",
-        "id": "RusskiyDetektiv.ru",
-        "logo": "https://i.imgur.com/H3qhN8S.png",
-        "url": "http://31.148.48.15/Russkiy_Detektiv/index.m3u8",
+        "name": "Kino 24",
+        "id": "Kino24.ru",
+        "logo": "https://i.imgur.com/QAdDARF.png",
+        "url": "http://sirius.greenhosting.ru/Kino24Ru/video.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "RU"
+    },
+    {
+        "name": "Dom kino Premium",
+        "id": "DomkinoPremium.ru",
+        "logo": "https://i.imgur.com/rJpQtvK.png",
+        "url": "http://31.148.48.15/Dom_Kino_Premium_HD/index.m3u8",
         "categories": [
             "movies"
         ],
@@ -1102,6 +1068,16 @@
         "country": "RU"
     },
     {
+        "name": "START Air",
+        "id": "STARTAir.ru",
+        "logo": "https://i.imgur.com/4bACa7x.png",
+        "url": "https://livetv.mylifeisgood.net.ru/channels/strwc.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "RU"
+    },
+    {
         "name": "START World",
         "id": "STARTWorld.ru",
         "logo": "https://i.imgur.com/TXtY5eM.png",
@@ -1112,12 +1088,56 @@
         "country": "RU"
     },
     {
-        "name": "START Air",
-        "id": "STARTAir.ru",
-        "logo": "https://i.imgur.com/4bACa7x.png",
-        "url": "https://livetv.mylifeisgood.net.ru/channels/strwc.m3u8",
+        "name": "Kino TV",
+        "id": "KinoTV.ru",
+        "logo": "https://i.imgur.com/sMpamNO.png",
+        "url": "https://vod.tuva.ru/kinotv/index.m3u8",
         "categories": [
             "movies"
+        ],
+        "country": "RU"
+    },
+    {
+        "name": "Patriot",
+        "id": "Patriot.ru",
+        "logo": "https://patriotkanal.ru/assets/cached/2025/02/resize/264_112_q100_patriot-only-logo.png",
+        "url": "http://catchup.videoline.ru/asvtv/index.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "RU"
+    },
+    {
+        "name": "Cinema",
+        "id": "Cinema.ru",
+        "logo": "https://i.imgur.com/b5e9qUA.png",
+        "url": "http://catchup.videoline.ru/cinema/playlist.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "RU"
+    },
+    {
+        "name": "Dom kino",
+        "id": "Domkino.ru",
+        "logo": "https://i.postimg.cc/gJLyLyTS/domkino.png",
+        "url": "https://streaming.thestream.cyou/live/44.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "RU"
+    },
+    {
+        "name": "Pro100TV",
+        "id": "Pro100TV.ru",
+        "logo": "https://i.imgur.com/YfQEflM.png",
+        "url": "https://sirius.greenhosting.ru/Pro100tvRu/video.m3u8",
+        "categories": [
+            "movies",
+            "entertainment",
+            "family",
+            "classic",
+            "animation"
         ],
         "country": "RU"
     },
@@ -1192,34 +1212,14 @@
         "country": "SA"
     },
     {
-        "name": "Cinema",
-        "id": "Cinema.mn",
-        "logo": "https://i.imgur.com/yib6dM2.png",
-        "url": "https://cdn4.skygo.mn/live/disk1/CinemaTV/HLSv3-FTA/CinemaTV.m3u8",
+        "name": "Maah TV",
+        "id": "MaahTV.my",
+        "logo": "https://i.imgur.com/FkyueH6.png",
+        "url": "https://hls.maahtv.live/hls/stream.m3u8",
         "categories": [
             "movies"
         ],
-        "country": "MN"
-    },
-    {
-        "name": "MovieBox",
-        "id": "MovieBox.mn",
-        "logo": "https://i.imgur.com/xeO1Zb4.png",
-        "url": "https://cdn4.skygo.mn/live/disk1/Moviebox/HLSv3-FTA/Moviebox.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "MN"
-    },
-    {
-        "name": "MyTime Movie Network",
-        "id": "MyTimeMovieNetwork.mx",
-        "logo": "https://i.imgur.com/pw4NZK1.png",
-        "url": "https://appletree-mytime-samsungmexico.amagi.tv/playlist.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "MX"
+        "country": "MY"
     },
     {
         "name": "Dunia Sinema",
@@ -1232,24 +1232,24 @@
         "country": "MY"
     },
     {
-        "name": "Maah TV",
-        "id": "MaahTV.my",
-        "logo": "https://i.imgur.com/FkyueH6.png",
-        "url": "https://hls.maahtv.live/hls/stream.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "MY"
-    },
-    {
-        "name": "Filmex Clasico",
-        "id": "FilmexClasico.mx",
-        "logo": "https://i.imgur.com/D3dj4mv.png",
-        "url": "https://filmex-filmexclasico-xumo.amagi.tv/playlist.m3u8",
+        "name": "MyTime Movie Network",
+        "id": "MyTimeMovieNetwork.mx",
+        "logo": "https://i.imgur.com/pw4NZK1.png",
+        "url": "https://appletree-mytime-samsungmexico.amagi.tv/playlist.m3u8",
         "categories": [
             "movies"
         ],
         "country": "MX"
+    },
+    {
+        "name": "MovieBox",
+        "id": "MovieBox.mn",
+        "logo": "https://i.imgur.com/xeO1Zb4.png",
+        "url": "https://cdn4.skygo.mn/live/disk1/Moviebox/HLSv3-FTA/Moviebox.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "MN"
     },
     {
         "name": "Filmex",
@@ -1262,24 +1262,34 @@
         "country": "MX"
     },
     {
-        "name": "Kuriakos Cine",
-        "id": "KuriakosCine.pt",
-        "logo": "https://i.imgur.com/CZViCwB.jpg",
-        "url": "https://w2.manasat.com/kcine/smil:kcine.smil/playlist.m3u8",
+        "name": "Cinema",
+        "id": "Cinema.mn",
+        "logo": "https://i.imgur.com/yib6dM2.png",
+        "url": "https://cdn4.skygo.mn/live/disk1/CinemaTV/HLSv3-FTA/CinemaTV.m3u8",
         "categories": [
             "movies"
         ],
-        "country": "PT"
+        "country": "MN"
     },
     {
-        "name": "BIZ Cinema",
-        "id": "BIZCinema.uz",
-        "logo": "https://biztv.uz/static/media/biz-cinema.286b83dc.png",
-        "url": "https://fl.biztv.media/cinema_720_EMfSyXgoRdiIHgldXTZICucKTIeCKO/index.m3u8",
+        "name": "Filmex Clasico",
+        "id": "FilmexClasico.mx",
+        "logo": "https://i.imgur.com/D3dj4mv.png",
+        "url": "https://filmex-filmexclasico-xumo.amagi.tv/playlist.m3u8",
         "categories": [
             "movies"
         ],
-        "country": "UZ"
+        "country": "MX"
+    },
+    {
+        "name": "Aurora Media Films",
+        "id": "AuroraMediaFilms.gt",
+        "logo": "https://i.imgur.com/DVC5w6H.png",
+        "url": "http://nuhygo.shop:8080/yhy5704/5ccb13df9fe2f994/199700",
+        "categories": [
+            "movies"
+        ],
+        "country": "GT"
     },
     {
         "name": "CTB Perth Movies Channel",
@@ -1302,14 +1312,14 @@
         "country": "CN"
     },
     {
-        "name": "Aurora Media Films",
-        "id": "AuroraMediaFilms.gt",
-        "logo": "https://i.imgur.com/DVC5w6H.png",
-        "url": "http://nuhygo.shop:8080/yhy5704/5ccb13df9fe2f994/199700",
+        "name": "Kuriakos Cine",
+        "id": "KuriakosCine.pt",
+        "logo": "https://i.imgur.com/CZViCwB.jpg",
+        "url": "https://w2.manasat.com/kcine/smil:kcine.smil/playlist.m3u8",
         "categories": [
             "movies"
         ],
-        "country": "GT"
+        "country": "PT"
     },
     {
         "name": "QTV-3",
@@ -1322,14 +1332,14 @@
         "country": "CN"
     },
     {
-        "name": "GEM Pixel",
-        "id": "GEMPixel.tr",
-        "logo": "https://i.ibb.co/Q3tkbPrn/icon-27.png",
-        "url": "https://glserver1.tamashaland.com/live/aBCH96886YznRbGOiqTnnQ__/stream_0.m3u8",
+        "name": "Action 24",
+        "id": "Action24.gr",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/8/88/Action24-logo-small.png",
+        "url": "http://actionlive.siliconweb.com/actionabr/actiontv/playlist.m3u8",
         "categories": [
             "movies"
         ],
-        "country": "TR"
+        "country": "GR"
     },
     {
         "name": "Groovy TV",
@@ -1340,56 +1350,6 @@
             "movies"
         ],
         "country": "GR"
-    },
-    {
-        "name": "GEM Onyx",
-        "id": "GEMOnyx.tr",
-        "logo": "https://i.imgur.com/gXRIAw4.png",
-        "url": "https://still-mud-3642.nqanzvyuupxwcahtfq.workers.dev/?url=https://ca-rt.onetv.app/gemonyx/index-0.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "TR"
-    },
-    {
-        "name": "GEM Rubix +",
-        "id": "GEMRubixPlus.tr",
-        "logo": "https://gemgroup.tv/assets/images/channels/icon_31.png",
-        "url": "https://still-mud-3642.nqanzvyuupxwcahtfq.workers.dev/?url=https://ca-rt.onetv.app/gemrubixplus/index-0.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "TR"
-    },
-    {
-        "name": "GEM Rubix",
-        "id": "GEMRubix.tr",
-        "logo": "https://i.imgur.com/cDjOj58.png",
-        "url": "https://still-mud-3642.nqanzvyuupxwcahtfq.workers.dev/?url=https://ca-rt.onetv.app/gemrubix/index-0.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "TR"
-    },
-    {
-        "name": "GEM Drama +",
-        "id": "GEMDramaPlus.tr",
-        "logo": "https://gemgroup.tv/assets/images/channels/icon_7.png",
-        "url": "https://still-mud-3642.nqanzvyuupxwcahtfq.workers.dev/?url=https://ca-rt.onetv.app/gemdramaplus/index-0.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "TR"
-    },
-    {
-        "name": "GEM Bollywood",
-        "id": "GEMBollywood.tr",
-        "logo": "https://i.imgur.com/2XASeBk.png",
-        "url": "https://wild-dawn-81ef.srmhoburfqyupzwxbu.workers.dev/?url=https://ca-rt.onetv.app/gembollywood/index-0.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "TR"
     },
     {
         "name": "GEM Film",
@@ -1412,14 +1372,64 @@
         "country": "TR"
     },
     {
-        "name": "Action 24",
-        "id": "Action24.gr",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/8/88/Action24-logo-small.png",
-        "url": "http://actionlive.siliconweb.com/actionabr/actiontv/playlist.m3u8",
+        "name": "GEM Bollywood",
+        "id": "GEMBollywood.tr",
+        "logo": "https://i.imgur.com/2XASeBk.png",
+        "url": "https://wild-dawn-81ef.srmhoburfqyupzwxbu.workers.dev/?url=https://ca-rt.onetv.app/gembollywood/index-0.m3u8",
         "categories": [
             "movies"
         ],
-        "country": "GR"
+        "country": "TR"
+    },
+    {
+        "name": "GEM Pixel",
+        "id": "GEMPixel.tr",
+        "logo": "https://i.ibb.co/Q3tkbPrn/icon-27.png",
+        "url": "https://glserver1.tamashaland.com/live/aBCH96886YznRbGOiqTnnQ__/stream_0.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "TR"
+    },
+    {
+        "name": "GEM Onyx",
+        "id": "GEMOnyx.tr",
+        "logo": "https://i.imgur.com/gXRIAw4.png",
+        "url": "https://still-mud-3642.nqanzvyuupxwcahtfq.workers.dev/?url=https://ca-rt.onetv.app/gemonyx/index-0.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "TR"
+    },
+    {
+        "name": "GEM Rubix +",
+        "id": "GEMRubixPlus.tr",
+        "logo": "https://gemgroup.tv/assets/images/channels/icon_31.png",
+        "url": "https://still-mud-3642.nqanzvyuupxwcahtfq.workers.dev/?url=https://ca-rt.onetv.app/gemrubixplus/index-0.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "TR"
+    },
+    {
+        "name": "GEM Drama +",
+        "id": "GEMDramaPlus.tr",
+        "logo": "https://gemgroup.tv/assets/images/channels/icon_7.png",
+        "url": "https://still-mud-3642.nqanzvyuupxwcahtfq.workers.dev/?url=https://ca-rt.onetv.app/gemdramaplus/index-0.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "TR"
+    },
+    {
+        "name": "GEM Rubix",
+        "id": "GEMRubix.tr",
+        "logo": "https://i.imgur.com/cDjOj58.png",
+        "url": "https://still-mud-3642.nqanzvyuupxwcahtfq.workers.dev/?url=https://ca-rt.onetv.app/gemrubix/index-0.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "TR"
     },
     {
         "name": "Grand Cinema",
@@ -1430,6 +1440,117 @@
             "movies"
         ],
         "country": "TR"
+    },
+    {
+        "name": "Cafe Film",
+        "id": "CafeFilm.ir",
+        "logo": "https://i.postimg.cc/bJV7Ls4M/cafe-film.jpg",
+        "url": "https://cafefhls.wns.live/hls/stream.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "IR"
+    },
+    {
+        "name": "SL 1",
+        "id": "SL1.ir",
+        "logo": "https://i.imgur.com/n9cuM2W.jpg",
+        "url": "https://slonehls.wns.live/hls/stream.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "IR"
+    },
+    {
+        "name": "T2 Movies",
+        "id": "T2Movies.ir",
+        "logo": "https://i.postimg.cc/gJ0pG0jK/t2movies.png",
+        "url": "https://still-mud-3642.nqanzvyuupxwcahtfq.workers.dev/?url=https://ca-rt.onetv.app/T2Movies/index-0.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "IR"
+    },
+    {
+        "name": "NewFlix",
+        "id": "NewFlix.ir",
+        "logo": "https://i.postimg.cc/3w2FPSrX/newflix.png",
+        "url": "https://newfhls.wns.live/hls/stream.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "IR"
+    },
+    {
+        "name": "Gold Star",
+        "id": "GoldStar.ir",
+        "logo": "https://i.postimg.cc/KvsfL3sM/goldstar.jpg",
+        "url": "https://moviethls.wns.live/hls/stream.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "IR"
+    },
+    {
+        "name": "iFilm 2",
+        "id": "iFilm2.ir",
+        "logo": "https://i.postimg.cc/tgG7NL2H/ifilm2.png",
+        "url": "https://live.presstv.ir/hls/ifilm2.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "IR"
+    },
+    {
+        "name": "iFilm English",
+        "id": "iFilmEnglish.ir",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/b/b9/IFILM.png",
+        "url": "https://live.presstv.ir/hls/ifilmen.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "IR"
+    },
+    {
+        "name": "HomePlus",
+        "id": "HomePlus.ir",
+        "logo": "https://www.lyngsat.com/logo/tv/hh/homeplus.png",
+        "url": "https://homeplushls.wns.live/hls/stream.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "IR"
+    },
+    {
+        "name": "Ekran Movies",
+        "id": "EkranMovies.ir",
+        "logo": "https://i.ibb.co/WNyssx28/Screenshot-2025-05-18-211143.png",
+        "url": "https://still-mud-3642.nqanzvyuupxwcahtfq.workers.dev/?url=https://ca-rt.onetv.app/EkranMovies/index-0.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "IR"
+    },
+    {
+        "name": "Next HD",
+        "id": "NextHD.py",
+        "logo": "https://i.imgur.com/c2rF3SS.png",
+        "url": "https://live.enhdtv.com:19360/nexthd/nexthd.m3u8",
+        "categories": [
+            "movies",
+            "music"
+        ],
+        "country": "PY"
+    },
+    {
+        "name": "MyTime Movie Network",
+        "id": "MyTimeMovieNetwork.es",
+        "logo": "https://i.imgur.com/pw4NZK1.png",
+        "url": "https://appletree-mytimespain-rakuten.amagi.tv/playlist.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "ES"
     },
     {
         "name": "Bom Cine",
@@ -1464,26 +1585,6 @@
         "country": "ES"
     },
     {
-        "name": "MyTime Movie Network",
-        "id": "MyTimeMovieNetwork.es",
-        "logo": "https://i.imgur.com/pw4NZK1.png",
-        "url": "https://appletree-mytimespain-rakuten.amagi.tv/playlist.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "ES"
-    },
-    {
-        "name": "Ekran Movies",
-        "id": "EkranMovies.ir",
-        "logo": "https://i.ibb.co/WNyssx28/Screenshot-2025-05-18-211143.png",
-        "url": "https://still-mud-3642.nqanzvyuupxwcahtfq.workers.dev/?url=https://ca-rt.onetv.app/EkranMovies/index-0.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "IR"
-    },
-    {
         "name": "Paramount Network",
         "id": "ParamountNetwork.es",
         "logo": "https://i.postimg.cc/Hxy2hJyh/paramountnetwork.png",
@@ -1495,51 +1596,10 @@
         "country": "ES"
     },
     {
-        "name": "T2 Movies",
-        "id": "T2Movies.ir",
-        "logo": "https://i.postimg.cc/gJ0pG0jK/t2movies.png",
-        "url": "https://still-mud-3642.nqanzvyuupxwcahtfq.workers.dev/?url=https://ca-rt.onetv.app/T2Movies/index-0.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "IR"
-    },
-    {
-        "name": "Next HD",
-        "id": "NextHD.py",
-        "logo": "https://i.imgur.com/c2rF3SS.png",
-        "url": "https://live.enhdtv.com:19360/nexthd/nexthd.m3u8",
-        "categories": [
-            "movies",
-            "music"
-        ],
-        "country": "PY"
-    },
-    {
-        "name": "SL 2",
-        "id": "SL2.ir",
-        "logo": "https://i.imgur.com/BVuUx5R.jpg",
-        "url": "https://sltwohls.wns.live/hls/stream.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "IR"
-    },
-    {
         "name": "Bravo Farsi TV",
         "id": "BravoFarsiTV.ir",
         "logo": "https://i.ibb.co/yynxRTS/Bravo-Farsi.jpg",
         "url": "https://bravoohls.wns.live/hls/stream.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "IR"
-    },
-    {
-        "name": "Afra Film",
-        "id": "AfraFilm.ir",
-        "logo": "https://i.postimg.cc/vZWdM86g/afra-film.jpg",
-        "url": "https://afrafhls.wns.live/hls/stream.m3u8",
         "categories": [
             "movies"
         ],
@@ -1556,70 +1616,20 @@
         "country": "IR"
     },
     {
-        "name": "iFilm English",
-        "id": "iFilmEnglish.ir",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/b/b9/IFILM.png",
-        "url": "https://live.presstv.ir/hls/ifilmen.m3u8",
+        "name": "Afra Film",
+        "id": "AfraFilm.ir",
+        "logo": "https://i.postimg.cc/vZWdM86g/afra-film.jpg",
+        "url": "https://afrafhls.wns.live/hls/stream.m3u8",
         "categories": [
             "movies"
         ],
         "country": "IR"
     },
     {
-        "name": "iFilm 2",
-        "id": "iFilm2.ir",
-        "logo": "https://i.postimg.cc/tgG7NL2H/ifilm2.png",
-        "url": "https://live.presstv.ir/hls/ifilm2.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "IR"
-    },
-    {
-        "name": "SL 1",
-        "id": "SL1.ir",
-        "logo": "https://i.imgur.com/n9cuM2W.jpg",
-        "url": "https://slonehls.wns.live/hls/stream.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "IR"
-    },
-    {
-        "name": "Cafe Film",
-        "id": "CafeFilm.ir",
-        "logo": "https://i.postimg.cc/bJV7Ls4M/cafe-film.jpg",
-        "url": "https://cafefhls.wns.live/hls/stream.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "IR"
-    },
-    {
-        "name": "NewFlix",
-        "id": "NewFlix.ir",
-        "logo": "https://i.postimg.cc/3w2FPSrX/newflix.png",
-        "url": "https://newfhls.wns.live/hls/stream.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "IR"
-    },
-    {
-        "name": "Gold Star",
-        "id": "GoldStar.ir",
-        "logo": "https://i.postimg.cc/KvsfL3sM/goldstar.jpg",
-        "url": "https://moviethls.wns.live/hls/stream.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "IR"
-    },
-    {
-        "name": "HomePlus",
-        "id": "HomePlus.ir",
-        "logo": "https://www.lyngsat.com/logo/tv/hh/homeplus.png",
-        "url": "https://homeplushls.wns.live/hls/stream.m3u8",
+        "name": "SL 2",
+        "id": "SL2.ir",
+        "logo": "https://i.imgur.com/BVuUx5R.jpg",
+        "url": "https://sltwohls.wns.live/hls/stream.m3u8",
         "categories": [
             "movies"
         ],

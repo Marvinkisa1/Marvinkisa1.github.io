@@ -1,16 +1,5 @@
 [
     {
-        "name": "AWTV",
-        "id": "AWTV.br",
-        "logo": "https://i.imgur.com/2tdMyef.png",
-        "url": "https://streaming.cloudecast.com/hls/awtv/index.m3u8",
-        "categories": [
-            "classic",
-            "series"
-        ],
-        "country": "BR"
-    },
-    {
         "name": "Persiana Nostalgia",
         "id": "PersianaNostalgia.fr",
         "logo": "https://i.imgur.com/SWO9CKA.png",
@@ -20,6 +9,17 @@
             "classic"
         ],
         "country": "FR"
+    },
+    {
+        "name": "AWTV",
+        "id": "AWTV.br",
+        "logo": "https://i.imgur.com/2tdMyef.png",
+        "url": "https://streaming.cloudecast.com/hls/awtv/index.m3u8",
+        "categories": [
+            "classic",
+            "series"
+        ],
+        "country": "BR"
     },
     {
         "name": "Dubai Zaman",
@@ -53,20 +53,10 @@
         "country": "US"
     },
     {
-        "name": "TVS Nostalgia Movies",
-        "id": "TVSNostalgiaMovies.us",
-        "logo": "https://i.imgur.com/w4fxiKi.png",
-        "url": "https://rpn.bozztv.com/gusa/gusa-tvsNostalgiaMovies/index.m3u8",
-        "categories": [
-            "classic"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "TVS Pet Parade Network",
-        "id": "TVSPetParadeNetwork.us",
-        "logo": "https://i.imgur.com/oGE1MOP.png",
-        "url": "https://rpn.bozztv.com/gusa/gusa-petparadenetwork/index.m3u8",
+        "name": "TVS Classic Movies",
+        "id": "TVSClassicMovies.us",
+        "logo": "https://i.imgur.com/st1xMsw.png",
+        "url": "https://rpn.bozztv.com/gusa/gusa-tvsclassicmovies/index.m3u8",
         "categories": [
             "classic"
         ],
@@ -83,26 +73,6 @@
         "country": "US"
     },
     {
-        "name": "TVS Quiz Show Network",
-        "id": "TVSQuizShowNetwork.us",
-        "logo": "https://i.imgur.com/5ljQwx2.png",
-        "url": "https://rpn.bozztv.com/gusa/gusa-tvsgameshow/index.m3u8",
-        "categories": [
-            "classic"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Cinevault Westerns",
-        "id": "CinevaultWesterns.us",
-        "logo": "https://i.imgur.com/K1W137J.png",
-        "url": "https://aegis-cloudfront-1.tubi.video/72b8dd6b-391b-401c-a3e4-03f9c29555c8/playlist.m3u8",
-        "categories": [
-            "classic"
-        ],
-        "country": "US"
-    },
-    {
         "name": "TVS Tally Ho",
         "id": "TVSTallyHo.us",
         "logo": "https://i.imgur.com/JlFwnDD.png",
@@ -113,10 +83,20 @@
         "country": "US"
     },
     {
-        "name": "TVS Talk Network",
-        "id": "TVSTalkNetwork.us",
-        "logo": "https://i.imgur.com/WsaVAhx.png",
-        "url": "https://rpn.bozztv.com/gusa/gusa-TVStalk/index.m3u8",
+        "name": "TVS Nostalgia Movies",
+        "id": "TVSNostalgiaMovies.us",
+        "logo": "https://i.imgur.com/w4fxiKi.png",
+        "url": "https://rpn.bozztv.com/gusa/gusa-tvsNostalgiaMovies/index.m3u8",
+        "categories": [
+            "classic"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "TVS Quiz Show Network",
+        "id": "TVSQuizShowNetwork.us",
+        "logo": "https://i.imgur.com/5ljQwx2.png",
+        "url": "https://rpn.bozztv.com/gusa/gusa-tvsgameshow/index.m3u8",
         "categories": [
             "classic"
         ],
@@ -127,16 +107,6 @@
         "id": "TVSWesternMovie.us",
         "logo": "https://i.imgur.com/dwr98qb.png",
         "url": "https://rpn.bozztv.com/gusa/gusa-tvswesternmovies/index.m3u8",
-        "categories": [
-            "classic"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "TVS Cipher Network",
-        "id": "TVSCipherNetwork.us",
-        "logo": "https://i.imgur.com/yyz1S2W.png",
-        "url": "https://rpn.bozztv.com/gusa/gusa-tvsmystery/index.m3u8",
         "categories": [
             "classic"
         ],
@@ -163,10 +133,50 @@
         "country": "US"
     },
     {
-        "name": "TVS Classic Movies",
-        "id": "TVSClassicMovies.us",
-        "logo": "https://i.imgur.com/st1xMsw.png",
-        "url": "https://rpn.bozztv.com/gusa/gusa-tvsclassicmovies/index.m3u8",
+        "name": "TVS Cipher Network",
+        "id": "TVSCipherNetwork.us",
+        "logo": "https://i.imgur.com/yyz1S2W.png",
+        "url": "https://rpn.bozztv.com/gusa/gusa-tvsmystery/index.m3u8",
+        "categories": [
+            "classic"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "TVS Talk Network",
+        "id": "TVSTalkNetwork.us",
+        "logo": "https://i.imgur.com/WsaVAhx.png",
+        "url": "https://rpn.bozztv.com/gusa/gusa-TVStalk/index.m3u8",
+        "categories": [
+            "classic"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Cinevault Westerns",
+        "id": "CinevaultWesterns.us",
+        "logo": "https://i.imgur.com/K1W137J.png",
+        "url": "https://aegis-cloudfront-1.tubi.video/72b8dd6b-391b-401c-a3e4-03f9c29555c8/playlist.m3u8",
+        "categories": [
+            "classic"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "TVS Pet Parade Network",
+        "id": "TVSPetParadeNetwork.us",
+        "logo": "https://i.imgur.com/oGE1MOP.png",
+        "url": "https://rpn.bozztv.com/gusa/gusa-petparadenetwork/index.m3u8",
+        "categories": [
+            "classic"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Samuel Goldwyn Classics",
+        "id": "SamuelGoldwynClassics.us",
+        "logo": "https://i.imgur.com/XC30JAF.png",
+        "url": "https://samuelgoldwyn-classics-1-us.roku.wurl.tv/playlist.m3u8",
         "categories": [
             "classic"
         ],
@@ -179,16 +189,6 @@
         "url": "https://amogonetworx-artflix-1-se.samsung.wurl.tv/playlist.m3u8",
         "categories": [
             "movies",
-            "classic"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "TVS Mainstreet",
-        "id": "TVSMainstreet.us",
-        "logo": "https://i.imgur.com/N9nQpnP.png",
-        "url": "https://rpn.bozztv.com/gusa/gusa-tvsmainst/index.m3u8",
-        "categories": [
             "classic"
         ],
         "country": "US"
@@ -214,16 +214,6 @@
         "country": "US"
     },
     {
-        "name": "Samuel Goldwyn Classics",
-        "id": "SamuelGoldwynClassics.us",
-        "logo": "https://i.imgur.com/XC30JAF.png",
-        "url": "https://samuelgoldwyn-classics-1-us.roku.wurl.tv/playlist.m3u8",
-        "categories": [
-            "classic"
-        ],
-        "country": "US"
-    },
-    {
         "name": "The Carol Burnett Show",
         "id": "TheCarolBurnettShow.us",
         "logo": "https://i.imgur.com/1a03FlX.png",
@@ -234,15 +224,15 @@
         "country": "US"
     },
     {
-        "name": "RetroCrush",
-        "id": "RetroCrush.us",
-        "logo": "https://i.imgur.com/M40b4YI.png",
-        "url": "https://cineverse.g-mana.live/media/ac7cff3c-5bc3-4745-ac4d-56aadb586d00/profile/1/profileManifest.m3u8",
+        "name": "ZillarBarta News",
+        "id": "ZillarBartaNews.in",
+        "logo": "https://i.imgur.com/6uestzY.jpeg",
+        "url": "https://server.zillarbarta.com/zillarbarta/index.m3u8",
         "categories": [
-            "classic",
-            "animation"
+            "news",
+            "classic"
         ],
-        "country": "US"
+        "country": "IN"
     },
     {
         "name": "ZB Cinema",
@@ -256,15 +246,25 @@
         "country": "IN"
     },
     {
-        "name": "ZillarBarta News",
-        "id": "ZillarBartaNews.in",
-        "logo": "https://i.imgur.com/6uestzY.jpeg",
-        "url": "https://server.zillarbarta.com/zillarbarta/index.m3u8",
+        "name": "RetroCrush",
+        "id": "RetroCrush.us",
+        "logo": "https://i.imgur.com/M40b4YI.png",
+        "url": "https://cineverse.g-mana.live/media/ac7cff3c-5bc3-4745-ac4d-56aadb586d00/profile/1/profileManifest.m3u8",
         "categories": [
-            "news",
+            "classic",
+            "animation"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Cucuta Retro TV",
+        "id": "CucutaRetroTV.co",
+        "logo": "https://i.imgur.com/GltIfWW.jpeg",
+        "url": "https://mist01.homestream.fun/hls/ntvlive/0_1/index.m3u8",
+        "categories": [
             "classic"
         ],
-        "country": "IN"
+        "country": "CO"
     },
     {
         "name": "TVN3",
@@ -312,6 +312,16 @@
         "country": "GT"
     },
     {
+        "name": "GEM Classic",
+        "id": "GEMClassic.tr",
+        "logo": "https://i.imgur.com/25BhuOf.png",
+        "url": "https://wild-dawn-81ef.srmhoburfqyupzwxbu.workers.dev/?url=https://ca-rt.onetv.app/gemclassic/index-0.m3u8",
+        "categories": [
+            "classic"
+        ],
+        "country": "TR"
+    },
+    {
         "name": "Retrox TV",
         "id": "RetroxTV.cr",
         "logo": "https://i.imgur.com/viJBL6f.png",
@@ -322,14 +332,14 @@
         "country": "CR"
     },
     {
-        "name": "GEM Classic",
-        "id": "GEMClassic.tr",
-        "logo": "https://i.imgur.com/25BhuOf.png",
-        "url": "https://wild-dawn-81ef.srmhoburfqyupzwxbu.workers.dev/?url=https://ca-rt.onetv.app/gemclassic/index-0.m3u8",
+        "name": "Classic TV",
+        "id": "ClassicTV.ir",
+        "logo": "https://i.postimg.cc/0NnRMtn9/classic-tv.jpg",
+        "url": "https://clshls.wns.live/hls/stream.m3u8",
         "categories": [
             "classic"
         ],
-        "country": "TR"
+        "country": "IR"
     },
     {
         "name": "3Cat Plats bruts",
@@ -343,15 +353,5 @@
             "series"
         ],
         "country": "ES"
-    },
-    {
-        "name": "Classic TV",
-        "id": "ClassicTV.ir",
-        "logo": "https://i.postimg.cc/0NnRMtn9/classic-tv.jpg",
-        "url": "https://clshls.wns.live/hls/stream.m3u8",
-        "categories": [
-            "classic"
-        ],
-        "country": "IR"
     }
 ]
