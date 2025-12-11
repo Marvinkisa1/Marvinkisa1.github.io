@@ -10,22 +10,28 @@
         "country": "SK"
     },
     {
+        "name": "TV Romana",
+        "id": "TVRomana.sk",
+        "logo": "https://i.imgur.com/r7avFBX.png",
+        "url": "http://88.212.7.11/live/test_tv_romana_web_player/playlist.m3u8",
+        "categories": [],
+        "country": "SK"
+    },
+    {
+        "name": "TV8",
+        "id": "TV8.sk",
+        "logo": "https://i.imgur.com/Z7URrp1.png",
+        "url": "http://109.74.145.11:1935/tv8/mp4:tv8.stream_360p/playlist.m3u8",
+        "categories": [],
+        "country": "SK"
+    },
+    {
         "name": "Markiza",
         "id": "Markiza.sk",
         "logo": "https://i.imgur.com/W56rOi2.png",
         "url": "http://88.212.15.27/live/test_markiza_25p/playlist.m3u8",
         "categories": [
             "general"
-        ],
-        "country": "SK"
-    },
-    {
-        "name": ":24",
-        "id": "24.sk",
-        "logo": "https://i.imgur.com/tTCuczU.png",
-        "url": "http://88.212.15.27/live/test_trojka_25p/playlist.m3u8",
-        "categories": [
-            "news"
         ],
         "country": "SK"
     },
@@ -40,22 +46,32 @@
         "country": "SK"
     },
     {
-        "name": "TV Liptov",
-        "id": "TVLiptov.sk",
-        "logo": "https://i.imgur.com/CkvB3af.png",
-        "url": "http://95.105.255.137:1935/tvturiec/tvliptov.stream/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "SK"
-    },
-    {
         "name": "Sport",
         "id": "Sport.sk",
         "logo": "https://i.imgur.com/oAtcxNZ.png",
         "url": "http://88.212.15.27/live/test_rtvs_sport_hevc/playlist.m3u8",
         "categories": [
             "sports"
+        ],
+        "country": "SK"
+    },
+    {
+        "name": ":24",
+        "id": "24.sk",
+        "logo": "https://i.imgur.com/tTCuczU.png",
+        "url": "http://88.212.15.27/live/test_trojka_25p/playlist.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "SK"
+    },
+    {
+        "name": "TV Liptov",
+        "id": "TVLiptov.sk",
+        "logo": "https://i.imgur.com/CkvB3af.png",
+        "url": "http://95.105.255.137:1935/tvturiec/tvliptov.stream/playlist.m3u8",
+        "categories": [
+            "general"
         ],
         "country": "SK"
     },
@@ -100,48 +116,6 @@
         "country": "SK"
     },
     {
-        "name": "TV LocAll",
-        "id": "TVLocAll.sk",
-        "logo": "https://i.imgur.com/xN1CJol.png",
-        "url": "http://tv.geniusnet.sk:8081/localltv/pl.m3u8",
-        "categories": [],
-        "country": "SK"
-    },
-    {
-        "name": "Regio TV",
-        "id": "RegioTV.sk",
-        "logo": "https://i.imgur.com/WlF6tlZ.png",
-        "url": "http://tv.geniusnet.sk:8081/regiotv/pl.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "SK"
-    },
-    {
-        "name": "Senzi",
-        "id": "Senzi.sk",
-        "logo": "https://i.imgur.com/1qJMmBu.png",
-        "url": "http://lb.streaming.sk/senzi/stream/playlist.m3u8",
-        "categories": [],
-        "country": "SK"
-    },
-    {
-        "name": "TV Ruzinov",
-        "id": "TVRuzinov.sk",
-        "logo": "https://i.imgur.com/bUGuntH.png",
-        "url": "http://lb.streaming.sk/tvruzinov/stream/playlist.m3u8",
-        "categories": [],
-        "country": "SK"
-    },
-    {
-        "name": "TV8",
-        "id": "TV8.sk",
-        "logo": "https://i.imgur.com/Z7URrp1.png",
-        "url": "http://109.74.145.11:1935/tv8/mp4:tv8.stream_360p/playlist.m3u8",
-        "categories": [],
-        "country": "SK"
-    },
-    {
         "name": "Televizia Mocenok",
         "id": "TeleviziaMocenok.sk",
         "logo": "https://i.imgur.com/psb8GxZ.png",
@@ -176,10 +150,20 @@
         "country": "SK"
     },
     {
-        "name": "TV Romana",
-        "id": "TVRomana.sk",
-        "logo": "https://i.imgur.com/r7avFBX.png",
-        "url": "http://88.212.7.11/live/test_tv_romana_web_player/playlist.m3u8",
+        "name": "Regio TV",
+        "id": "RegioTV.sk",
+        "logo": "https://i.imgur.com/WlF6tlZ.png",
+        "url": "http://tv.geniusnet.sk:8081/regiotv/pl.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "SK"
+    },
+    {
+        "name": "TV LocAll",
+        "id": "TVLocAll.sk",
+        "logo": "https://i.imgur.com/xN1CJol.png",
+        "url": "http://tv.geniusnet.sk:8081/localltv/pl.m3u8",
         "categories": [],
         "country": "SK"
     },
@@ -191,6 +175,22 @@
         "categories": [
             "religious"
         ],
+        "country": "SK"
+    },
+    {
+        "name": "Senzi",
+        "id": "Senzi.sk",
+        "logo": "https://i.imgur.com/1qJMmBu.png",
+        "url": "http://lb.streaming.sk/senzi/stream/playlist.m3u8",
+        "categories": [],
+        "country": "SK"
+    },
+    {
+        "name": "TV Ruzinov",
+        "id": "TVRuzinov.sk",
+        "logo": "https://i.imgur.com/bUGuntH.png",
+        "url": "http://lb.streaming.sk/tvruzinov/stream/playlist.m3u8",
+        "categories": [],
         "country": "SK"
     },
     {

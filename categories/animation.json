@@ -1,15 +1,5 @@
 [
     {
-        "name": "Geekdot",
-        "id": "Geekdot.br",
-        "logo": "https://i.imgur.com/jML1u4O.png",
-        "url": "https://stream.ichibantv.com:3764/hybrid/play.m3u8",
-        "categories": [
-            "animation"
-        ],
-        "country": "BR"
-    },
-    {
         "name": "XilamTV",
         "id": "XilamTV.fr",
         "logo": "https://yt3.googleusercontent.com/ytc/AIdro_k6spR1AVLZ0ISqrFP-Z9JeBMHPpAc9T-pmFlG6_lSkNw=s160-c-k-c0x00ffffff-no-rj",
@@ -18,6 +8,16 @@
             "animation"
         ],
         "country": "FR"
+    },
+    {
+        "name": "Geekdot",
+        "id": "Geekdot.br",
+        "logo": "https://i.imgur.com/jML1u4O.png",
+        "url": "https://stream.ichibantv.com:3764/hybrid/play.m3u8",
+        "categories": [
+            "animation"
+        ],
+        "country": "BR"
     },
     {
         "name": "Game One",
@@ -53,6 +53,16 @@
         "country": "AR"
     },
     {
+        "name": "Anime Zone TV",
+        "id": "AnimeZoneTV.do",
+        "logo": "https://i.imgur.com/AHaXlCh.png",
+        "url": "http://animezonetv.net/hls/stream.m3u8",
+        "categories": [
+            "animation"
+        ],
+        "country": "DO"
+    },
+    {
         "name": "Tiguerito TV",
         "id": "TigueritoTV.do",
         "logo": "https://dominicanchannels.com/wp-content/uploads/tigueritos-tv.jpg",
@@ -74,16 +84,16 @@
         "country": "US"
     },
     {
-        "name": "3ABN Kids",
-        "id": "3ABNKids.us",
-        "logo": "https://i.imgur.com/z3npqO1.png",
-        "url": "https://3abn.bozztv.com/3abn2/Kids_live/smil:Kids_live.smil/playlist.m3u8",
+        "name": "BBC Three/CBBC",
+        "id": "BBCThreeCBBC.uk",
+        "logo": "https://i.imgur.com/CGXC5fp.png",
+        "url": "https://viamotionhsi.netplus.ch/live/eds/bbc3cbbc/browser-dash/bbc3cbbc.mpd",
         "categories": [
+            "family",
             "kids",
-            "religious",
             "animation"
         ],
-        "country": "US"
+        "country": "UK"
     },
     {
         "name": "BBC Four/CBeebies",
@@ -98,6 +108,18 @@
         "country": "UK"
     },
     {
+        "name": "3ABN Kids",
+        "id": "3ABNKids.us",
+        "logo": "https://i.imgur.com/z3npqO1.png",
+        "url": "https://3abn.bozztv.com/3abn2/Kids_live/smil:Kids_live.smil/playlist.m3u8",
+        "categories": [
+            "kids",
+            "religious",
+            "animation"
+        ],
+        "country": "US"
+    },
+    {
         "name": "MCN6 Music Channel",
         "id": "MCN6MusicChannel.us",
         "logo": "https://i.imgur.com/j6IiysJ.png",
@@ -108,28 +130,6 @@
             "kids"
         ],
         "country": "US"
-    },
-    {
-        "name": "BBC Three/CBBC",
-        "id": "BBCThreeCBBC.uk",
-        "logo": "https://i.imgur.com/CGXC5fp.png",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/bbc3cbbc/browser-dash/bbc3cbbc.mpd",
-        "categories": [
-            "family",
-            "kids",
-            "animation"
-        ],
-        "country": "UK"
-    },
-    {
-        "name": "Anime Zone TV",
-        "id": "AnimeZoneTV.do",
-        "logo": "https://i.imgur.com/AHaXlCh.png",
-        "url": "http://animezonetv.net/hls/stream.m3u8",
-        "categories": [
-            "animation"
-        ],
-        "country": "DO"
     },
     {
         "name": "Toonami Aftermath",
@@ -153,14 +153,14 @@
         "country": "US"
     },
     {
-        "name": "Animax",
-        "id": "Animax.in",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Animax.png/512px-Animax.png",
-        "url": "https://amg02159-kcglobal-amg02159c1-samsung-in-521.playouts.now.amagi.tv/playlist/amg02159-kcglobal-animax-samsungin/playlist.m3u8",
+        "name": "EnerGeek",
+        "id": "EnerGeek.cl",
+        "logo": "https://cdn.energeek.cl/logos/EG-Retro-2025_pfp.png",
+        "url": "https://backend.energeek.cl/webtv/egretroweb/index.m3u8?token=ZZDemoIPTVGH",
         "categories": [
             "animation"
         ],
-        "country": "IN"
+        "country": "CL"
     },
     {
         "name": "Kanade",
@@ -174,36 +174,14 @@
         "country": "CL"
     },
     {
-        "name": "EnerGeek",
-        "id": "EnerGeek.cl",
-        "logo": "https://cdn.energeek.cl/logos/EG-Retro-2025_pfp.png",
-        "url": "https://backend.energeek.cl/webtv/egretroweb/index.m3u8?token=ZZDemoIPTVGH",
+        "name": "Animax",
+        "id": "Animax.in",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Animax.png/512px-Animax.png",
+        "url": "https://amg02159-kcglobal-amg02159c1-samsung-in-521.playouts.now.amagi.tv/playlist/amg02159-kcglobal-animax-samsungin/playlist.m3u8",
         "categories": [
             "animation"
         ],
-        "country": "CL"
-    },
-    {
-        "name": "Multimania",
-        "id": "Multimania.ru",
-        "logo": "https://i.imgur.com/abh8ZBA.png",
-        "url": "http://sirius.greenhosting.ru/MultimaniaRu/video.m3u8",
-        "categories": [
-            "animation",
-            "kids"
-        ],
-        "country": "RU"
-    },
-    {
-        "name": "Solnce",
-        "id": "Solnce.ru",
-        "logo": "https://i.imgur.com/HCefxaK.png",
-        "url": "http://zabava-htlive.cdn.ngenix.net/hls/CH_DISNEY/variant.m3u8",
-        "categories": [
-            "animation",
-            "kids"
-        ],
-        "country": "RU"
+        "country": "IN"
     },
     {
         "name": "Pingviins",
@@ -231,6 +209,28 @@
         "country": "RU"
     },
     {
+        "name": "Solnce",
+        "id": "Solnce.ru",
+        "logo": "https://i.imgur.com/HCefxaK.png",
+        "url": "http://zabava-htlive.cdn.ngenix.net/hls/CH_DISNEY/variant.m3u8",
+        "categories": [
+            "animation",
+            "kids"
+        ],
+        "country": "RU"
+    },
+    {
+        "name": "Multimania",
+        "id": "Multimania.ru",
+        "logo": "https://i.imgur.com/abh8ZBA.png",
+        "url": "http://sirius.greenhosting.ru/MultimaniaRu/video.m3u8",
+        "categories": [
+            "animation",
+            "kids"
+        ],
+        "country": "RU"
+    },
+    {
         "name": "Cartoon Classics",
         "id": "CartoonClassics.pl",
         "logo": "https://images-3.rakuten.tv/storage/global-live-channel/translation/artwork/3227c06e-333b-4b1b-b657-3e3ab99ebd06-width200-quality90.jpeg",
@@ -252,17 +252,6 @@
             "religious"
         ],
         "country": "PT"
-    },
-    {
-        "name": "Extrema Kids TV",
-        "id": "ExtremaKidsTV.cr",
-        "logo": "https://www.vivalivetv.com/public/files/shows/0/1/3027-294x165-FFFFFF.jpg",
-        "url": "https://627bb251f23c7.streamlock.net:444/ExtremaKids/ExtremaKids/playlist.m3u8",
-        "categories": [
-            "animation",
-            "kids"
-        ],
-        "country": "CR"
     },
     {
         "name": "JapanimTV",
