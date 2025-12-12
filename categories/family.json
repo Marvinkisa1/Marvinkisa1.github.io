@@ -1,15 +1,5 @@
 [
     {
-        "name": "MBC 5",
-        "id": "MBC5.ae",
-        "logo": "https://i.imgur.com/fRWaDyF.png",
-        "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-5/ee6b000cee0629411b666ab26cb13e9b/index.m3u8",
-        "categories": [
-            "family"
-        ],
-        "country": "AE"
-    },
-    {
         "name": "CWB TV",
         "id": "CWBTV.br",
         "logo": "https://i.imgur.com/S0ISpmU.png",
@@ -34,15 +24,37 @@
         "country": "BR"
     },
     {
-        "name": "Telenovisa43",
-        "id": "Telenovisa43.do",
-        "logo": "https://i.imgur.com/iHvf3bR.png",
-        "url": "https://rdn.essastream.com:3230/live/telenovisa43live.m3u8",
+        "name": "MBC 5",
+        "id": "MBC5.ae",
+        "logo": "https://i.imgur.com/fRWaDyF.png",
+        "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-5/ee6b000cee0629411b666ab26cb13e9b/index.m3u8",
         "categories": [
-            "general",
             "family"
         ],
-        "country": "DO"
+        "country": "AE"
+    },
+    {
+        "name": "Estrella Games",
+        "id": "EstrellaGames.us",
+        "logo": "https://i.imgur.com/Z52nEnH.png",
+        "url": "https://livetv-fa.tubi.video/estrella-games/playlist.m3u8",
+        "categories": [
+            "entertainment",
+            "family"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "BBC Three/CBBC",
+        "id": "BBCThreeCBBC.uk",
+        "logo": "https://i.imgur.com/CGXC5fp.png",
+        "url": "https://viamotionhsi.netplus.ch/live/eds/bbc3cbbc/browser-dash/bbc3cbbc.mpd",
+        "categories": [
+            "family",
+            "kids",
+            "animation"
+        ],
+        "country": "UK"
     },
     {
         "name": "AMG TV",
@@ -65,33 +77,20 @@
         "country": "US"
     },
     {
-        "name": "BBC Three/CBBC",
-        "id": "BBCThreeCBBC.uk",
-        "logo": "https://i.imgur.com/CGXC5fp.png",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/bbc3cbbc/browser-dash/bbc3cbbc.mpd",
+        "name": "Freeform",
+        "id": "Freeform.us",
+        "logo": "https://i.imgur.com/BGAGeIf.png",
+        "url": "https://fl1.moveonjoy.com/FREE_FORM/index.m3u8",
         "categories": [
-            "family",
-            "kids",
-            "animation"
-        ],
-        "country": "UK"
-    },
-    {
-        "name": "Estrella Games",
-        "id": "EstrellaGames.us",
-        "logo": "https://i.imgur.com/Z52nEnH.png",
-        "url": "https://livetv-fa.tubi.video/estrella-games/playlist.m3u8",
-        "categories": [
-            "entertainment",
             "family"
         ],
         "country": "US"
     },
     {
-        "name": "Hallmark Channel",
-        "id": "HallmarkChannel.us",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Hallmark_Channel.svg/512px-Hallmark_Channel.svg.png",
-        "url": "https://fl1.moveonjoy.com/HALLMARK_CHANNEL/index.m3u8",
+        "name": "6 Wise Tv",
+        "id": "6WiseTv.us",
+        "logo": "https://jrlist70.pages.dev/list/wise.png",
+        "url": "https://live.enhdtv.com:8081/8150/index.m3u8",
         "categories": [
             "family"
         ],
@@ -108,20 +107,10 @@
         "country": "US"
     },
     {
-        "name": "Freeform",
-        "id": "Freeform.us",
-        "logo": "https://i.imgur.com/BGAGeIf.png",
-        "url": "https://fl1.moveonjoy.com/FREE_FORM/index.m3u8",
-        "categories": [
-            "family"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "6 Wise Tv",
-        "id": "6WiseTv.us",
-        "logo": "https://jrlist70.pages.dev/list/wise.png",
-        "url": "https://live.enhdtv.com:8081/8150/index.m3u8",
+        "name": "Hallmark Channel",
+        "id": "HallmarkChannel.us",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Hallmark_Channel.svg/512px-Hallmark_Channel.svg.png",
+        "url": "https://fl1.moveonjoy.com/HALLMARK_CHANNEL/index.m3u8",
         "categories": [
             "family"
         ],
@@ -178,18 +167,6 @@
         "country": "US"
     },
     {
-        "name": "Asia TV",
-        "id": "AsiaTV.lk",
-        "logo": "https://saddlebrown-jellyfish-181801.hostingersite.com/ATV-logo.png",
-        "url": "https://stream.asiatvnet.com/1/live/master.m3u8",
-        "categories": [
-            "entertainment",
-            "family",
-            "general"
-        ],
-        "country": "LK"
-    },
-    {
         "name": "MCI Television",
         "id": "MCITelevision.co",
         "logo": "https://pbs.twimg.com/profile_images/1836009952420274177/FfYonU6r_400x400.jpg",
@@ -202,51 +179,27 @@
         "country": "CO"
     },
     {
-        "name": "Tshwane TV",
-        "id": "TshwaneTV.za",
-        "logo": "https://admango.cdn.mangomolo.com/analytics/uploads/188/654a3ec660.png",
-        "url": "https://cdn.freevisiontv.co.za/sttv/smil:tshwane.stream.smil/playlist.m3u8",
+        "name": "Asia TV",
+        "id": "AsiaTV.lk",
+        "logo": "https://saddlebrown-jellyfish-181801.hostingersite.com/ATV-logo.png",
+        "url": "https://stream.asiatvnet.com/1/live/master.m3u8",
         "categories": [
             "entertainment",
             "family",
             "general"
         ],
-        "country": "ZA"
+        "country": "LK"
     },
     {
-        "name": "1KZN TV",
-        "id": "1KZNTV.za",
-        "logo": "https://admango.cdn.mangomolo.com/analytics/uploads/188/6544bebaae.jpg",
-        "url": "https://cdn.freevisiontv.co.za/sttv/smil:1kzn.stream.smil/playlist.m3u8",
+        "name": "RiC",
+        "id": "RiC.de",
+        "logo": "https://i.imgur.com/4wMZ8Em.png",
+        "url": "https://viamotionhsi.netplus.ch/live/eds/ric/browser-HLS8/ric.m3u8",
         "categories": [
-            "entertainment",
-            "family",
-            "general"
-        ],
-        "country": "ZA"
-    },
-    {
-        "name": "Soweto TV",
-        "id": "SowetoTV.za",
-        "logo": "https://admango.cdn.mangomolo.com/analytics/uploads/188/654228e5b5.jpg",
-        "url": "https://cdn.freevisiontv.co.za/sttv/smil:soweto.stream.smil/playlist.m3u8",
-        "categories": [
-            "entertainment",
+            "kids",
             "family"
         ],
-        "country": "ZA"
-    },
-    {
-        "name": "alpha Cinema",
-        "id": "alphaCinema.ru",
-        "logo": "https://ry7wpjhjwylg7u7.vxdgroup-84jzo19.xyz/logos_4RBUvIk6iXEOn3vNbd3j5PCw3T06yk0G/alphacinema.png",
-        "url": "https://dvr3.vokkavideo.xyz/ALPHACINEMAHD/index.m3u8",
-        "categories": [
-            "comedy",
-            "movies",
-            "family"
-        ],
-        "country": "RU"
+        "country": "DE"
     },
     {
         "name": "Pro100TV",
@@ -261,6 +214,29 @@
             "animation"
         ],
         "country": "RU"
+    },
+    {
+        "name": "Soweto TV",
+        "id": "SowetoTV.za",
+        "logo": "https://admango.cdn.mangomolo.com/analytics/uploads/188/654228e5b5.jpg",
+        "url": "https://cdn.freevisiontv.co.za/sttv/smil:soweto.stream.smil/playlist.m3u8",
+        "categories": [
+            "entertainment",
+            "family"
+        ],
+        "country": "ZA"
+    },
+    {
+        "name": "Tshwane TV",
+        "id": "TshwaneTV.za",
+        "logo": "https://admango.cdn.mangomolo.com/analytics/uploads/188/654a3ec660.png",
+        "url": "https://cdn.freevisiontv.co.za/sttv/smil:tshwane.stream.smil/playlist.m3u8",
+        "categories": [
+            "entertainment",
+            "family",
+            "general"
+        ],
+        "country": "ZA"
     },
     {
         "name": "STS",
@@ -283,31 +259,44 @@
         "country": "RU"
     },
     {
-        "name": "RiC",
-        "id": "RiC.de",
-        "logo": "https://i.imgur.com/4wMZ8Em.png",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/ric/browser-HLS8/ric.m3u8",
+        "name": "alpha Cinema",
+        "id": "alphaCinema.ru",
+        "logo": "https://ry7wpjhjwylg7u7.vxdgroup-84jzo19.xyz/logos_4RBUvIk6iXEOn3vNbd3j5PCw3T06yk0G/alphacinema.png",
+        "url": "https://dvr3.vokkavideo.xyz/ALPHACINEMAHD/index.m3u8",
         "categories": [
-            "kids",
+            "comedy",
+            "movies",
             "family"
         ],
-        "country": "DE"
+        "country": "RU"
     },
     {
-        "name": "EmanTv",
-        "id": "EmanTv.iq",
-        "logo": "https://i.imgur.com/QmgaPSi.png",
-        "url": "https://avr.host247.net/live/emantv/playlist.m3u8",
+        "name": "1KZN TV",
+        "id": "1KZNTV.za",
+        "logo": "https://admango.cdn.mangomolo.com/analytics/uploads/188/6544bebaae.jpg",
+        "url": "https://cdn.freevisiontv.co.za/sttv/smil:1kzn.stream.smil/playlist.m3u8",
         "categories": [
-            "family"
+            "entertainment",
+            "family",
+            "general"
         ],
-        "country": "IQ"
+        "country": "ZA"
     },
     {
         "name": "Mixkurdy",
         "id": "Mixkurdy.iq",
         "logo": "https://i.imgur.com/WHeH5i7.png",
         "url": "https://avr.host247.net/live/Mix-kurdy/playlist.m3u8",
+        "categories": [
+            "family"
+        ],
+        "country": "IQ"
+    },
+    {
+        "name": "EmanTv",
+        "id": "EmanTv.iq",
+        "logo": "https://i.imgur.com/QmgaPSi.png",
+        "url": "https://avr.host247.net/live/emantv/playlist.m3u8",
         "categories": [
             "family"
         ],
