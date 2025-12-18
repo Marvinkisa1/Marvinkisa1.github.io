@@ -1,15 +1,5 @@
 [
     {
-        "name": "Majid",
-        "id": "Majid.ae",
-        "logo": "https://i.imgur.com/TzOKMMy.png",
-        "url": "https://admn-live-cdn-lb.starzplayarabia.com/out/v1/admn_tv_enc/majid/majid_hls_nd/index.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "AE"
-    },
-    {
         "name": "Nickelodeon",
         "id": "Nickelodeon.br",
         "logo": "https://i.imgur.com/E84jnP8.png",
@@ -30,10 +20,10 @@
         "country": "SX"
     },
     {
-        "name": "Gulli",
-        "id": "Gulli.fr",
-        "logo": "https://i.imgur.com/kqYssbW.png",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/gulli/browser-dash/gulli.mpd",
+        "name": "France 4",
+        "id": "France4.fr",
+        "logo": "https://i.postimg.cc/HLz5JZz9/france4.png",
+        "url": "https://viamotionhsi.netplus.ch/live/eds/france4hd/browser-HLS8/france4hd.m3u8",
         "categories": [
             "kids"
         ],
@@ -50,16 +40,6 @@
         "country": "FR"
     },
     {
-        "name": "France 4",
-        "id": "France4.fr",
-        "logo": "https://i.postimg.cc/HLz5JZz9/france4.png",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/france4hd/browser-HLS8/france4hd.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "FR"
-    },
-    {
         "name": "Persiana Junior",
         "id": "PersianaJunior.fr",
         "logo": "https://i.imgur.com/zeKHZYG.png",
@@ -68,6 +48,26 @@
             "kids"
         ],
         "country": "FR"
+    },
+    {
+        "name": "Gulli",
+        "id": "Gulli.fr",
+        "logo": "https://i.imgur.com/kqYssbW.png",
+        "url": "https://viamotionhsi.netplus.ch/live/eds/gulli/browser-dash/gulli.mpd",
+        "categories": [
+            "kids"
+        ],
+        "country": "FR"
+    },
+    {
+        "name": "Majid",
+        "id": "Majid.ae",
+        "logo": "https://i.imgur.com/TzOKMMy.png",
+        "url": "https://admn-live-cdn-lb.starzplayarabia.com/out/v1/admn_tv_enc/majid/majid_hls_nd/index.m3u8",
+        "categories": [
+            "kids"
+        ],
+        "country": "AE"
     },
     {
         "name": "Disney Channel Latin America",
@@ -81,27 +81,6 @@
         "country": "AR"
     },
     {
-        "name": "Tiguerito TV",
-        "id": "TigueritoTV.do",
-        "logo": "https://dominicanchannels.com/wp-content/uploads/tigueritos-tv.jpg",
-        "url": "https://ss2.tvrdomi.com:1936/tigueritostv/tigueritostv/playlist.m3u8",
-        "categories": [
-            "animation",
-            "kids"
-        ],
-        "country": "DO"
-    },
-    {
-        "name": "Tom And Jerry",
-        "id": "TomAndJerry.do",
-        "logo": "https://gia.tv/streams/pptv/208314.jpg?1750373428",
-        "url": "https://live20.bozztv.com/giatvplayout7/giatv-208314/playlist.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "DO"
-    },
-    {
         "name": "Xtrema Cartoons",
         "id": "XtremaCartoons.ar",
         "logo": "https://i.imgur.com/X2d8y4e.png",
@@ -111,29 +90,6 @@
             "kids"
         ],
         "country": "AR"
-    },
-    {
-        "name": "PBS Kids Eastern/Central",
-        "id": "PBSKidsEasternCentral.us",
-        "logo": "https://i.imgur.com/ambc9le.png",
-        "url": "https://2-fss-2.streamhoster.com/pl_140/amlst:200914-1298290/playlist.m3u8",
-        "categories": [
-            "education",
-            "kids"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "3ABN Kids",
-        "id": "3ABNKids.us",
-        "logo": "https://i.imgur.com/z3npqO1.png",
-        "url": "https://3abn.bozztv.com/3abn2/Kids_live/smil:Kids_live.smil/playlist.m3u8",
-        "categories": [
-            "kids",
-            "religious",
-            "animation"
-        ],
-        "country": "US"
     },
     {
         "name": "Dios Te Ve Kids",
@@ -147,6 +103,58 @@
         "country": "HN"
     },
     {
+        "name": "Tom And Jerry",
+        "id": "TomAndJerry.do",
+        "logo": "https://gia.tv/streams/pptv/208314.jpg?1750373428",
+        "url": "https://live20.bozztv.com/giatvplayout7/giatv-208314/playlist.m3u8",
+        "categories": [
+            "kids"
+        ],
+        "country": "DO"
+    },
+    {
+        "name": "PBS Kids Eastern/Central",
+        "id": "PBSKidsEasternCentral.us",
+        "logo": "https://i.imgur.com/ambc9le.png",
+        "url": "https://2-fss-2.streamhoster.com/pl_140/amlst:200914-1298290/playlist.m3u8",
+        "categories": [
+            "education",
+            "kids"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Nicktoons",
+        "id": "Nicktoons.us",
+        "logo": "https://i.postimg.cc/mZjCjNc5/nicktoons.png",
+        "url": "https://fl1.moveonjoy.com/NICKTOONS/index.m3u8",
+        "categories": [
+            "kids"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Nickelodeon Latin America",
+        "id": "NickelodeonLatinAmerica.us",
+        "logo": "https://i.imgur.com/E84jnP8.png",
+        "url": "http://179.51.136.19:8000/play/a0q4/index.m3u8",
+        "categories": [
+            "kids"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Tiguerito TV",
+        "id": "TigueritoTV.do",
+        "logo": "https://dominicanchannels.com/wp-content/uploads/tigueritos-tv.jpg",
+        "url": "https://ss2.tvrdomi.com:1936/tigueritostv/tigueritostv/playlist.m3u8",
+        "categories": [
+            "animation",
+            "kids"
+        ],
+        "country": "DO"
+    },
+    {
         "name": "Tiny Pop",
         "id": "TinyPop.uk",
         "logo": "https://i.imgur.com/zCTf71x.png",
@@ -155,6 +163,28 @@
             "kids"
         ],
         "country": "UK"
+    },
+    {
+        "name": "BBC Three/CBBC",
+        "id": "BBCThreeCBBC.uk",
+        "logo": "https://i.imgur.com/CGXC5fp.png",
+        "url": "https://viamotionhsi.netplus.ch/live/eds/bbc3cbbc/browser-dash/bbc3cbbc.mpd",
+        "categories": [
+            "family",
+            "kids",
+            "animation"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "TVS Pinball Network",
+        "id": "TVSPinballNetwork.us",
+        "logo": "https://i.imgur.com/HHmc14i.png",
+        "url": "https://rpn.bozztv.com/gusa/gusa-TVSCartoonNetwork/index.m3u8",
+        "categories": [
+            "kids"
+        ],
+        "country": "US"
     },
     {
         "name": "TVS Hi Tops",
@@ -167,10 +197,10 @@
         "country": "US"
     },
     {
-        "name": "Nicktoons",
-        "id": "Nicktoons.uk",
-        "logo": "https://i.postimg.cc/mZjCjNc5/nicktoons.png",
-        "url": "https://a1xs.vip/100054",
+        "name": "Moonbug Kids",
+        "id": "MoonbugKids.uk",
+        "logo": "https://i.imgur.com/vZHtxQb.png",
+        "url": "https://moonbug-rokuus.amagi.tv/playlist.m3u8",
         "categories": [
             "kids"
         ],
@@ -189,14 +219,12 @@
         "country": "UK"
     },
     {
-        "name": "BBC Three/CBBC",
-        "id": "BBCThreeCBBC.uk",
-        "logo": "https://i.imgur.com/CGXC5fp.png",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/bbc3cbbc/browser-dash/bbc3cbbc.mpd",
+        "name": "Nicktoons",
+        "id": "Nicktoons.uk",
+        "logo": "https://i.postimg.cc/mZjCjNc5/nicktoons.png",
+        "url": "https://a1xs.vip/100054",
         "categories": [
-            "family",
-            "kids",
-            "animation"
+            "kids"
         ],
         "country": "UK"
     },
@@ -204,79 +232,40 @@
         "name": "Nickelodeon",
         "id": "Nickelodeon.uk",
         "logo": "https://i.imgur.com/E84jnP8.png",
-        "url": "https://a1xs.vip/1000051",
+        "url": "http://117.55.202.58:8080/red70919/topsat55570/2694",
         "categories": [
             "kids"
         ],
         "country": "UK"
     },
     {
-        "name": "Chinola TV",
-        "id": "ChinolaTV.do",
-        "logo": "https://i.imgur.com/ybud4dI.png",
-        "url": "https://tv.wracanal10.com:3300/live/chinolatvlive.m3u8",
+        "name": "3ABN Kids",
+        "id": "3ABNKids.us",
+        "logo": "https://i.imgur.com/z3npqO1.png",
+        "url": "https://3abn.bozztv.com/3abn2/Kids_live/smil:Kids_live.smil/playlist.m3u8",
         "categories": [
-            "kids"
+            "kids",
+            "religious",
+            "animation"
         ],
-        "country": "DO"
+        "country": "US"
     },
     {
-        "name": "Moonbug Kids",
-        "id": "MoonbugKids.uk",
-        "logo": "https://i.imgur.com/vZHtxQb.png",
-        "url": "https://moonbug-rokuus.amagi.tv/playlist.m3u8",
+        "name": "Christian Youth Channel CYC",
+        "id": "ChristianYouthChannelCYC.us",
+        "logo": "https://i.imgur.com/61eV77C.png",
+        "url": "http://media.smc-host.com:1935/cycnow.com/cyc2/playlist.m3u8",
         "categories": [
-            "kids"
-        ],
-        "country": "UK"
-    },
-    {
-        "name": "Nicktoons",
-        "id": "Nicktoons.us",
-        "logo": "https://i.postimg.cc/mZjCjNc5/nicktoons.png",
-        "url": "https://fl1.moveonjoy.com/NICKTOONS/index.m3u8",
-        "categories": [
+            "religious",
             "kids"
         ],
         "country": "US"
     },
     {
-        "name": "TVS Pinball Network",
-        "id": "TVSPinballNetwork.us",
-        "logo": "https://i.imgur.com/HHmc14i.png",
-        "url": "https://rpn.bozztv.com/gusa/gusa-TVSCartoonNetwork/index.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "MCN6 Music Channel",
-        "id": "MCN6MusicChannel.us",
-        "logo": "https://i.imgur.com/j6IiysJ.png",
-        "url": "https://d18fcxaqfnwjhj.cloudfront.net/CDN_Ingest/MCN6_MUSIC.smil/Playlist.m3u8",
-        "categories": [
-            "music",
-            "animation",
-            "kids"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Nickelodeon Latin America",
-        "id": "NickelodeonLatinAmerica.us",
-        "logo": "https://i.imgur.com/E84jnP8.png",
-        "url": "http://179.51.136.19:8000/play/a0q4/index.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "MBC 3 USA",
-        "id": "MBC3USA.us",
-        "logo": "https://i.imgur.com/PVt8OPN.png",
-        "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-3-usa/5d58265a862a476dc7f97694addb5ded/index.m3u8",
+        "name": "Ninja Kidz TV",
+        "id": "NinjaKidzTV.us",
+        "logo": "https://i.imgur.com/7EngqUi.png",
+        "url": "https://playworksdigital-ninjakidztv-1-us.xumo.wurl.tv/playlist.m3u8",
         "categories": [
             "kids"
         ],
@@ -303,31 +292,10 @@
         "country": "US"
     },
     {
-        "name": "Christian Youth Channel CYC",
-        "id": "ChristianYouthChannelCYC.us",
-        "logo": "https://i.imgur.com/61eV77C.png",
-        "url": "http://media.smc-host.com:1935/cycnow.com/cyc2/playlist.m3u8",
-        "categories": [
-            "religious",
-            "kids"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Ninja Kidz TV",
-        "id": "NinjaKidzTV.us",
-        "logo": "https://i.imgur.com/7EngqUi.png",
-        "url": "https://playworksdigital-ninjakidztv-1-us.xumo.wurl.tv/playlist.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Skwad Play",
-        "id": "SkwadPlay.us",
-        "logo": "https://i.imgur.com/cP56PrG.png",
-        "url": "https://stream-us-east-1.getpublica.com/playlist.m3u8?network_id=71",
+        "name": "Nickelodeon",
+        "id": "Nickelodeon.us",
+        "logo": "https://i.imgur.com/E84jnP8.png",
+        "url": "https://fl1.moveonjoy.com/NICKELODEON/index.m3u8",
         "categories": [
             "kids"
         ],
@@ -345,145 +313,21 @@
         "country": "US"
     },
     {
-        "name": "ToonGoggles",
-        "id": "ToonGoggles.us",
-        "logo": "https://i.imgur.com/JMnxswq.png",
-        "url": "https://tg-tg-xumo.otteravision.com/tg/tg/tg.m3u8",
+        "name": "Skwad Play",
+        "id": "SkwadPlay.us",
+        "logo": "https://i.imgur.com/cP56PrG.png",
+        "url": "https://stream-us-east-1.getpublica.com/playlist.m3u8?network_id=71",
         "categories": [
             "kids"
         ],
         "country": "US"
     },
     {
-        "name": "Nick Jr.",
-        "id": "NickJr.us",
-        "logo": "https://i.imgur.com/KT4tdQs.png",
-        "url": "https://fl41.moveonjoy.com/NICK_JR/index.m3u8",
+        "name": "MBC 3 USA",
+        "id": "MBC3USA.us",
+        "logo": "https://i.imgur.com/PVt8OPN.png",
+        "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-3-usa/5d58265a862a476dc7f97694addb5ded/index.m3u8",
         "categories": [
-            "kids"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Baby Shark TV",
-        "id": "BabySharkTV.us",
-        "logo": "https://i.imgur.com/SbBKr8L.png",
-        "url": "https://newidco-babysharktv-1-eu.rakuten.wurl.tv/playlist.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Disney Channel",
-        "id": "DisneyChannel.in",
-        "logo": "https://i.postimg.cc/854KwmH1/disneychannel.png",
-        "url": "http://66.102.120.18:8000/play/a070/index.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "IN"
-    },
-    {
-        "name": "NCM Educational & Kids Channel",
-        "id": "NCMEducationalKidsChannel.us",
-        "logo": "https://i.imgur.com/3YPvfPn.png",
-        "url": "https://reflect-npa.cablecast.tv/live-9/live/live.m3u8",
-        "categories": [
-            "education",
-            "kids"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "BabyFirst",
-        "id": "BabyFirst.us",
-        "logo": "https://i.imgur.com/WxLHBwu.png",
-        "url": "https://streams2.sofast.tv/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/be6f9eac-280e-4748-b866-2eb2463c1844/manifest.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Disney Channel",
-        "id": "DisneyChannel.us",
-        "logo": "https://i.postimg.cc/854KwmH1/disneychannel.png",
-        "url": "http://g-med.xyz:25461/live/zikojelica/E845P2V9ae/195.ts",
-        "categories": [
-            "kids"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Super Simple Songs",
-        "id": "SuperSimpleSongs.us",
-        "logo": "https://i.imgur.com/3k4F7O9.png",
-        "url": "https://janson-supersimplesongs-1-us.roku.wurl.tv/playlist.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Nickelodeon",
-        "id": "Nickelodeon.us",
-        "logo": "https://i.imgur.com/E84jnP8.png",
-        "url": "https://fl1.moveonjoy.com/NICKELODEON/index.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Aghapy Kids",
-        "id": "AghapyKids.us",
-        "logo": "https://i.imgur.com/8ariztD.png",
-        "url": "https://5b622f07944df.streamlock.net/aghapykids.tv/aghapykids2/playlist.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Ketchup TV",
-        "id": "KetchupTV.us",
-        "logo": "https://i.imgur.com/XRGioQX.png",
-        "url": "https://stream.ads.ottera.tv/playlist.m3u8?network_id=13171",
-        "categories": [
-            "kids"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "PBS Kids",
-        "id": "PBSKids.us",
-        "logo": "https://i.imgur.com/q4cUQKW.png",
-        "url": "https://livestream.pbskids.org/out/v1/14507d931bbe48a69287e4850e53443c/est.m3u8",
-        "categories": [
-            "education",
-            "kids"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "PBS Kids Hawaii",
-        "id": "PBSKidsHawaii.us",
-        "logo": "https://i.imgur.com/ambc9le.png",
-        "url": "https://livestream.pbskids.org/out/v1/aa31792fee094b24b09045483f04d150/hast.m3u8",
-        "categories": [
-            "education",
-            "kids"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "PBS Kids Alaska",
-        "id": "PBSKidsAlaska.us",
-        "logo": "https://i.imgur.com/ambc9le.png",
-        "url": "https://livestream.pbskids.org/out/v1/94b88ad58fc14f84a9382341f1c00b82/akst.m3u8",
-        "categories": [
-            "education",
             "kids"
         ],
         "country": "US"
@@ -510,10 +354,43 @@
         "country": "US"
     },
     {
+        "name": "PBS Kids Hawaii",
+        "id": "PBSKidsHawaii.us",
+        "logo": "https://i.imgur.com/ambc9le.png",
+        "url": "https://livestream.pbskids.org/out/v1/aa31792fee094b24b09045483f04d150/hast.m3u8",
+        "categories": [
+            "education",
+            "kids"
+        ],
+        "country": "US"
+    },
+    {
         "name": "PBS Kids Mountain",
         "id": "PBSKidsMountain.us",
         "logo": "https://i.imgur.com/ambc9le.png",
         "url": "https://livestream.pbskids.org/out/v1/3fe3030a2c8045a3932f4289d9eba3e6/mst.m3u8",
+        "categories": [
+            "education",
+            "kids"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "PBS Kids",
+        "id": "PBSKids.us",
+        "logo": "https://i.imgur.com/q4cUQKW.png",
+        "url": "https://livestream.pbskids.org/out/v1/14507d931bbe48a69287e4850e53443c/est.m3u8",
+        "categories": [
+            "education",
+            "kids"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "PBS Kids Alaska",
+        "id": "PBSKidsAlaska.us",
+        "logo": "https://i.imgur.com/ambc9le.png",
+        "url": "https://livestream.pbskids.org/out/v1/94b88ad58fc14f84a9382341f1c00b82/akst.m3u8",
         "categories": [
             "education",
             "kids"
@@ -531,14 +408,36 @@
         "country": "US"
     },
     {
-        "name": "ducktv",
-        "id": "ducktv.sk",
-        "logo": "https://i.imgur.com/gRFQ35W.png",
-        "url": "https://stream.ads.ottera.tv/playlist.m3u8?network_id=13168",
+        "name": "MCN6 Music Channel",
+        "id": "MCN6MusicChannel.us",
+        "logo": "https://i.imgur.com/j6IiysJ.png",
+        "url": "https://d18fcxaqfnwjhj.cloudfront.net/CDN_Ingest/MCN6_MUSIC.smil/Playlist.m3u8",
+        "categories": [
+            "music",
+            "animation",
+            "kids"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Nick Jr.",
+        "id": "NickJr.us",
+        "logo": "https://i.imgur.com/KT4tdQs.png",
+        "url": "https://fl41.moveonjoy.com/NICK_JR/index.m3u8",
         "categories": [
             "kids"
         ],
-        "country": "SK"
+        "country": "US"
+    },
+    {
+        "name": "Disney Channel",
+        "id": "DisneyChannel.us",
+        "logo": "https://i.postimg.cc/854KwmH1/disneychannel.png",
+        "url": "http://g-med.xyz:25461/live/zikojelica/E845P2V9ae/195.ts",
+        "categories": [
+            "kids"
+        ],
+        "country": "US"
     },
     {
         "name": "Disney Junior",
@@ -551,6 +450,87 @@
         "country": "IN"
     },
     {
+        "name": "Disney Channel",
+        "id": "DisneyChannel.in",
+        "logo": "https://i.postimg.cc/854KwmH1/disneychannel.png",
+        "url": "http://66.102.120.18:8000/play/a070/index.m3u8",
+        "categories": [
+            "kids"
+        ],
+        "country": "IN"
+    },
+    {
+        "name": "Super Simple Songs",
+        "id": "SuperSimpleSongs.us",
+        "logo": "https://i.imgur.com/3k4F7O9.png",
+        "url": "https://janson-supersimplesongs-1-us.roku.wurl.tv/playlist.m3u8",
+        "categories": [
+            "kids"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "BabyFirst",
+        "id": "BabyFirst.us",
+        "logo": "https://i.imgur.com/WxLHBwu.png",
+        "url": "https://streams2.sofast.tv/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/be6f9eac-280e-4748-b866-2eb2463c1844/manifest.m3u8",
+        "categories": [
+            "kids"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Ketchup TV",
+        "id": "KetchupTV.us",
+        "logo": "https://i.imgur.com/XRGioQX.png",
+        "url": "https://stream.ads.ottera.tv/playlist.m3u8?network_id=13171",
+        "categories": [
+            "kids"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "ToonGoggles",
+        "id": "ToonGoggles.us",
+        "logo": "https://i.imgur.com/JMnxswq.png",
+        "url": "https://tg-tg-xumo.otteravision.com/tg/tg/tg.m3u8",
+        "categories": [
+            "kids"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "NCM Educational & Kids Channel",
+        "id": "NCMEducationalKidsChannel.us",
+        "logo": "https://i.imgur.com/3YPvfPn.png",
+        "url": "https://reflect-npa.cablecast.tv/live-9/live/live.m3u8",
+        "categories": [
+            "education",
+            "kids"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Aghapy Kids",
+        "id": "AghapyKids.us",
+        "logo": "https://i.imgur.com/8ariztD.png",
+        "url": "https://5b622f07944df.streamlock.net/aghapykids.tv/aghapykids2/playlist.m3u8",
+        "categories": [
+            "kids"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Baby Shark TV",
+        "id": "BabySharkTV.us",
+        "logo": "https://i.imgur.com/SbBKr8L.png",
+        "url": "https://newidco-babysharktv-1-eu.rakuten.wurl.tv/playlist.m3u8",
+        "categories": [
+            "kids"
+        ],
+        "country": "US"
+    },
+    {
         "name": "Disney International HD",
         "id": "DisneyInternationalHD.in",
         "logo": "https://i.imgur.com/JkGvrc6.png",
@@ -561,10 +541,20 @@
         "country": "IN"
     },
     {
-        "name": "ZB Cartoon",
-        "id": "ZBCartoon.in",
-        "logo": "https://i.imgur.com/BbFNpMr.jpeg",
-        "url": "https://server.zillarbarta.com/zbcatun/video.m3u8",
+        "name": "ducktv",
+        "id": "ducktv.sk",
+        "logo": "https://i.imgur.com/gRFQ35W.png",
+        "url": "https://stream.ads.ottera.tv/playlist.m3u8?network_id=13168",
+        "categories": [
+            "kids"
+        ],
+        "country": "SK"
+    },
+    {
+        "name": "Sonic",
+        "id": "Sonic.in",
+        "logo": "https://i.imgur.com/vSJzF6o.png",
+        "url": "https://playyonogames.in/jio/app/ts_live_815.m3u8",
         "categories": [
             "kids"
         ],
@@ -581,30 +571,20 @@
         "country": "IN"
     },
     {
-        "name": "Sonic",
-        "id": "Sonic.in",
-        "logo": "https://i.imgur.com/vSJzF6o.png",
-        "url": "https://playyonogames.in/jio/app/ts_live_815.m3u8",
+        "name": "ZB Cartoon",
+        "id": "ZBCartoon.in",
+        "logo": "https://i.imgur.com/BbFNpMr.jpeg",
+        "url": "https://server.zillarbarta.com/zbcatun/video.m3u8",
         "categories": [
             "kids"
         ],
         "country": "IN"
     },
     {
-        "name": "Ani",
-        "id": "Ani.ru",
-        "logo": "https://i.imgur.com/i2AP0hp.png",
-        "url": "http://31.148.48.15/Ani/index.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "RU"
-    },
-    {
-        "name": "Mama",
-        "id": "Mama.ru",
-        "logo": "https://i.imgur.com/kmMIjjf.png",
-        "url": "http://zafertv85.shop:8080/slymn7976/kncaXQpRtbRd/447004",
+        "name": "STS kids",
+        "id": "STSkids.ru",
+        "logo": "https://i.imgur.com/o9kLpAL.png",
+        "url": "http://31.148.48.15/STS_Kids_HD/index.m3u8",
         "categories": [
             "kids"
         ],
@@ -621,6 +601,16 @@
         "country": "RU"
     },
     {
+        "name": "Mama",
+        "id": "Mama.ru",
+        "logo": "https://i.imgur.com/kmMIjjf.png",
+        "url": "http://zafertv85.shop:8080/slymn7976/kncaXQpRtbRd/447004",
+        "categories": [
+            "kids"
+        ],
+        "country": "RU"
+    },
+    {
         "name": "TV Bahoriston",
         "id": "TVBahoriston.tj",
         "logo": "https://i.imgur.com/Dacai5z.png",
@@ -629,48 +619,6 @@
             "kids"
         ],
         "country": "TJ"
-    },
-    {
-        "name": "STS kids",
-        "id": "STSkids.ru",
-        "logo": "https://i.imgur.com/o9kLpAL.png",
-        "url": "http://31.148.48.15/STS_Kids_HD/index.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "RU"
-    },
-    {
-        "name": "Smile TV",
-        "id": "SmileTV.ru",
-        "logo": "https://static.tildacdn.com/tild3936-3138-4234-b536-326531343933/-_13x.png",
-        "url": "https://5f05e059699ae.streamlock.net/WEB_Smilik/ngrp:Smilik.stream-adaptive/playlist.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "RU"
-    },
-    {
-        "name": "Pingviins",
-        "id": "Pingviins.lv",
-        "logo": "https://i.imgur.com/hfXoJIY.png",
-        "url": "https://sirius.greenhosting.ru/PingvinRu/video.m3u8",
-        "categories": [
-            "animation",
-            "kids"
-        ],
-        "country": "LV"
-    },
-    {
-        "name": "Solnce",
-        "id": "Solnce.ru",
-        "logo": "https://i.imgur.com/HCefxaK.png",
-        "url": "http://zabava-htlive.cdn.ngenix.net/hls/CH_DISNEY/variant.m3u8",
-        "categories": [
-            "animation",
-            "kids"
-        ],
-        "country": "RU"
     },
     {
         "name": "ORF Kids",
@@ -683,97 +631,15 @@
         "country": "AT"
     },
     {
-        "name": "Carousel",
-        "id": "Carousel.ru",
-        "logo": "https://i.imgur.com/4wmnx1W.png",
-        "url": "https://zabava-htlive.cdn.ngenix.net/hls/CH_KARUSEL/variant.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "RU"
-    },
-    {
-        "name": "Multimania",
-        "id": "Multimania.ru",
-        "logo": "https://i.imgur.com/abh8ZBA.png",
-        "url": "http://sirius.greenhosting.ru/MultimaniaRu/video.m3u8",
+        "name": "Pingviins",
+        "id": "Pingviins.lv",
+        "logo": "https://i.imgur.com/hfXoJIY.png",
+        "url": "https://sirius.greenhosting.ru/PingvinRu/video.m3u8",
         "categories": [
             "animation",
             "kids"
         ],
-        "country": "RU"
-    },
-    {
-        "name": "Disney Channel",
-        "id": "DisneyChannel.de",
-        "logo": "https://i.postimg.cc/854KwmH1/disneychannel.png",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/disneychannelde/browser-HLS8/disneychannelde.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "DE"
-    },
-    {
-        "name": "Nick/Comedy Central +1",
-        "id": "NickComedyCentralPlus1.de",
-        "logo": "https://i.imgur.com/lf34V3Y.png",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/comedycentralnick/browser-dash/comedycentralnick.mpd",
-        "categories": [
-            "comedy",
-            "kids"
-        ],
-        "country": "DE"
-    },
-    {
-        "name": "RiC",
-        "id": "RiC.de",
-        "logo": "https://i.imgur.com/4wMZ8Em.png",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/ric/browser-HLS8/ric.m3u8",
-        "categories": [
-            "kids",
-            "family"
-        ],
-        "country": "DE"
-    },
-    {
-        "name": "Carousel International",
-        "id": "CarouselInternational.ru",
-        "logo": "https://i.imgur.com/DnlngRZ.png",
-        "url": "https://cdn4.skygo.mn/live/disk1/Karusel/HLSv3-FTA/Karusel.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "RU"
-    },
-    {
-        "name": "Radost Moya",
-        "id": "RadostMoya.ru",
-        "logo": "https://i.imgur.com/B5FA62o.png",
-        "url": "https://radm.mediacdn.ru/cdn/radost/playlist.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "RU"
-    },
-    {
-        "name": "KiKA",
-        "id": "KiKA.de",
-        "logo": "https://i.imgur.com/vZdNp5S.png",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/kikahd/browser-HLS8/kikahd.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "DE"
-    },
-    {
-        "name": "Tamyr",
-        "id": "Tamyr.ru",
-        "logo": "https://i.imgur.com/Ia3acCB.png",
-        "url": "https://bstonline.mediacdn.ru/cdn/tamyr/playlist.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "RU"
+        "country": "LV"
     },
     {
         "name": "Mult i muzyka",
@@ -796,14 +662,172 @@
         "country": "RU"
     },
     {
-        "name": "Nick Toons",
-        "id": "nicktoons.ug",
-        "logo": "",
-        "url": "http://143.244.60.30/NICKTOONS/index.m3u8",
+        "name": "Ani",
+        "id": "Ani.ru",
+        "logo": "https://i.imgur.com/i2AP0hp.png",
+        "url": "http://31.148.48.15/Ani/index.m3u8",
         "categories": [
             "kids"
         ],
-        "country": "UG"
+        "country": "RU"
+    },
+    {
+        "name": "Disney Channel",
+        "id": "DisneyChannel.de",
+        "logo": "https://i.postimg.cc/854KwmH1/disneychannel.png",
+        "url": "https://viamotionhsi.netplus.ch/live/eds/disneychannelde/browser-HLS8/disneychannelde.m3u8",
+        "categories": [
+            "kids"
+        ],
+        "country": "DE"
+    },
+    {
+        "name": "RiC",
+        "id": "RiC.de",
+        "logo": "https://i.imgur.com/4wMZ8Em.png",
+        "url": "https://viamotionhsi.netplus.ch/live/eds/ric/browser-HLS8/ric.m3u8",
+        "categories": [
+            "kids",
+            "family"
+        ],
+        "country": "DE"
+    },
+    {
+        "name": "Carousel",
+        "id": "Carousel.ru",
+        "logo": "https://i.imgur.com/4wmnx1W.png",
+        "url": "https://zabava-htlive.cdn.ngenix.net/hls/CH_KARUSEL/variant.m3u8",
+        "categories": [
+            "kids"
+        ],
+        "country": "RU"
+    },
+    {
+        "name": "KiKA",
+        "id": "KiKA.de",
+        "logo": "https://i.imgur.com/vZdNp5S.png",
+        "url": "https://viamotionhsi.netplus.ch/live/eds/kikahd/browser-HLS8/kikahd.m3u8",
+        "categories": [
+            "kids"
+        ],
+        "country": "DE"
+    },
+    {
+        "name": "Smile TV",
+        "id": "SmileTV.ru",
+        "logo": "https://static.tildacdn.com/tild3936-3138-4234-b536-326531343933/-_13x.png",
+        "url": "https://5f05e059699ae.streamlock.net/WEB_Smilik/ngrp:Smilik.stream-adaptive/playlist.m3u8",
+        "categories": [
+            "kids"
+        ],
+        "country": "RU"
+    },
+    {
+        "name": "Carousel International",
+        "id": "CarouselInternational.ru",
+        "logo": "https://i.imgur.com/DnlngRZ.png",
+        "url": "https://cdn4.skygo.mn/live/disk1/Karusel/HLSv3-FTA/Karusel.m3u8",
+        "categories": [
+            "kids"
+        ],
+        "country": "RU"
+    },
+    {
+        "name": "Nick/Comedy Central +1",
+        "id": "NickComedyCentralPlus1.de",
+        "logo": "https://i.imgur.com/lf34V3Y.png",
+        "url": "https://viamotionhsi.netplus.ch/live/eds/comedycentralnick/browser-dash/comedycentralnick.mpd",
+        "categories": [
+            "comedy",
+            "kids"
+        ],
+        "country": "DE"
+    },
+    {
+        "name": "TV4",
+        "id": "TV4.ru",
+        "logo": "https://ry7wpjhjwylg7u7.vxdgroup-84jzo19.xyz/logos_4RBUvIk6iXEOn3vNbd3j5PCw3T06yk0G/tv4logohd.png",
+        "url": "https://dvr3.vokkavideo.xyz/TV4HD/index.m3u8",
+        "categories": [
+            "general",
+            "comedy",
+            "movies",
+            "kids",
+            "documentary"
+        ],
+        "country": "RU"
+    },
+    {
+        "name": "Multimania",
+        "id": "Multimania.ru",
+        "logo": "https://i.imgur.com/abh8ZBA.png",
+        "url": "http://sirius.greenhosting.ru/MultimaniaRu/video.m3u8",
+        "categories": [
+            "animation",
+            "kids"
+        ],
+        "country": "RU"
+    },
+    {
+        "name": "Solnce",
+        "id": "Solnce.ru",
+        "logo": "https://i.imgur.com/HCefxaK.png",
+        "url": "http://zabava-htlive.cdn.ngenix.net/hls/CH_DISNEY/variant.m3u8",
+        "categories": [
+            "animation",
+            "kids"
+        ],
+        "country": "RU"
+    },
+    {
+        "name": "Radost Moya",
+        "id": "RadostMoya.ru",
+        "logo": "https://i.imgur.com/B5FA62o.png",
+        "url": "https://radm.mediacdn.ru/cdn/radost/playlist.m3u8",
+        "categories": [
+            "kids"
+        ],
+        "country": "RU"
+    },
+    {
+        "name": "Tamyr",
+        "id": "Tamyr.ru",
+        "logo": "https://i.imgur.com/Ia3acCB.png",
+        "url": "https://bstonline.mediacdn.ru/cdn/tamyr/playlist.m3u8",
+        "categories": [
+            "kids"
+        ],
+        "country": "RU"
+    },
+    {
+        "name": "Minimax CEE",
+        "id": "MinimaxCEE.cz",
+        "logo": "https://i.imgur.com/WWOlm1x.png",
+        "url": "http://88.212.15.19/live/test_minimax/playlist.m3u8",
+        "categories": [
+            "kids"
+        ],
+        "country": "CZ"
+    },
+    {
+        "name": "Afarin Baxcha",
+        "id": "AfarinBaxcha.iq",
+        "logo": "https://afarin.tv/images/baxcha.png",
+        "url": "https://5dcabf026b188.streamlock.net/afarinTV/livestream/playlist.m3u8",
+        "categories": [
+            "kids"
+        ],
+        "country": "IQ"
+    },
+    {
+        "name": "CT Decko",
+        "id": "CTDecko.cz",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/%C4%8CT-D_logo.svg/512px-%C4%8CT-D_logo.svg.png",
+        "url": "http://88.212.15.19/live/ct_art_avc_25p/playlist.m3u8",
+        "categories": [
+            "kids"
+        ],
+        "country": "CZ"
     },
     {
         "name": "Koogi TV",
@@ -817,44 +841,24 @@
         "country": "EG"
     },
     {
-        "name": "Afarin Baxcha",
-        "id": "AfarinBaxcha.iq",
-        "logo": "https://afarin.tv/images/baxcha.png",
-        "url": "https://5dcabf026b188.streamlock.net/afarinTV/livestream/playlist.m3u8",
+        "name": "Afarin TV",
+        "id": "AfarinTV.iq",
+        "logo": "https://i.imgur.com/6MnXD7g.png",
+        "url": "https://65f16f0fdfc51.streamlock.net/afarinTV/livestream/playlist.m3u8",
         "categories": [
             "kids"
         ],
         "country": "IQ"
     },
     {
-        "name": "Balapan",
-        "id": "Balapan.kz",
-        "logo": "https://i.imgur.com/2o5T0gi.png",
-        "url": "https://balapantv-stream.qazcdn.com/balapantv/balapantv/playlist.m3u8",
+        "name": "Nick Toons",
+        "id": "nicktoons.ug",
+        "logo": "",
+        "url": "http://143.244.60.30/NICKTOONS/index.m3u8",
         "categories": [
             "kids"
         ],
-        "country": "KZ"
-    },
-    {
-        "name": "Minimax CEE",
-        "id": "MinimaxCEE.cz",
-        "logo": "https://i.imgur.com/WWOlm1x.png",
-        "url": "http://88.212.15.19/live/test_minimax/playlist.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "CZ"
-    },
-    {
-        "name": "BeJoy.kids",
-        "id": "BeJoykids.it",
-        "logo": "https://bejoy.kids/wp-content/uploads/2025/09/Logo_Bejoy.png",
-        "url": "https://64b16f23efbee.streamlock.net/bejoy/bejoy/playlist.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "IT"
+        "country": "UG"
     },
     {
         "name": "Sat7 Kids",
@@ -867,24 +871,24 @@
         "country": "UG"
     },
     {
-        "name": "CT Decko",
-        "id": "CTDecko.cz",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/%C4%8CT-D_logo.svg/512px-%C4%8CT-D_logo.svg.png",
-        "url": "http://88.212.15.19/live/ct_art_avc_25p/playlist.m3u8",
+        "name": "BeJoy.kids",
+        "id": "BeJoykids.it",
+        "logo": "https://bejoy.kids/wp-content/uploads/2025/09/Logo_Bejoy.png",
+        "url": "https://64b16f23efbee.streamlock.net/bejoy/bejoy/playlist.m3u8",
         "categories": [
             "kids"
         ],
-        "country": "CZ"
+        "country": "IT"
     },
     {
-        "name": "Afarin TV",
-        "id": "AfarinTV.iq",
-        "logo": "https://i.imgur.com/6MnXD7g.png",
-        "url": "https://65f16f0fdfc51.streamlock.net/afarinTV/livestream/playlist.m3u8",
+        "name": "Balapan",
+        "id": "Balapan.kz",
+        "logo": "https://i.imgur.com/2o5T0gi.png",
+        "url": "https://balapantv-stream.qazcdn.com/balapantv/balapantv/playlist.m3u8",
         "categories": [
             "kids"
         ],
-        "country": "IQ"
+        "country": "KZ"
     },
     {
         "name": "Iunior TV",
@@ -895,16 +899,6 @@
             "kids"
         ],
         "country": "IT"
-    },
-    {
-        "name": "4 Fun Kids",
-        "id": "4FunKids.pl",
-        "logo": "https://i.imgur.com/2JO5Y8c.png",
-        "url": "https://stream.4fun.tv:8889/hls/4fk_high/index.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "PL"
     },
     {
         "name": "Atfal & Mawaheb TV",
@@ -948,6 +942,16 @@
         "country": "HR"
     },
     {
+        "name": "4 Fun Kids",
+        "id": "4FunKids.pl",
+        "logo": "https://i.imgur.com/2JO5Y8c.png",
+        "url": "https://stream.4fun.tv:8889/hls/4fk_high/index.m3u8",
+        "categories": [
+            "kids"
+        ],
+        "country": "PL"
+    },
+    {
         "name": "Disney Channel",
         "id": "DisneyChannel.bg",
         "logo": "https://i.imgur.com/UxrAiAe.png",
@@ -956,58 +960,6 @@
             "kids"
         ],
         "country": "BG"
-    },
-    {
-        "name": "Sat 7 Kids",
-        "id": "Sat7Kids.cy",
-        "logo": "https://i.imgur.com/M0ik0i2.png",
-        "url": "https://svs.itworkscdn.net/sat7kidslive/sat7kids.smil/playlist_dvr.m3u8",
-        "categories": [
-            "kids",
-            "religious"
-        ],
-        "country": "CY"
-    },
-    {
-        "name": "ADO TV",
-        "id": "ADOTV.bj",
-        "logo": "https://i.imgur.com/pxFamLr.png",
-        "url": "https://strhls.streamakaci.tv/ortb/ortb2-multi/playlist.m3u8",
-        "categories": [
-            "kids",
-            "sports"
-        ],
-        "country": "BJ"
-    },
-    {
-        "name": "Nei Monggol TV Children Channel",
-        "id": "NeiMonggolTVChildrenChannel.cn",
-        "logo": "https://i.imgur.com/MOMEgMQ.png",
-        "url": "http://play1-qk.nmtv.cn/live/1686560464515368.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "CN"
-    },
-    {
-        "name": "Duronto TV",
-        "id": "DurontoTV.bd",
-        "logo": "https://i.imgur.com/gXsddRK.png",
-        "url": "https://tvsen4.aynaott.com/durontotv/index.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "BD"
-    },
-    {
-        "name": "EBS Kids",
-        "id": "EBSKids.kr",
-        "logo": "https://i.imgur.com/62oo8Bx.png",
-        "url": "https://ebsonair.ebs.co.kr/ebsufamilypc/familypc1m/playlist.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "KR"
     },
     {
         "name": "Kuriakos Kids",
@@ -1022,15 +974,66 @@
         "country": "PT"
     },
     {
-        "name": "JapanimTV",
-        "id": "JapanimTV.be",
-        "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/6b97e19f-4243-4d48-b794-ff8cf54d795f-profile_image-300x300.png",
-        "url": "https://foxkidstv.be:3369/stream/play.m3u8",
+        "name": "ADO TV",
+        "id": "ADOTV.bj",
+        "logo": "https://i.imgur.com/pxFamLr.png",
+        "url": "https://strhls.streamakaci.tv/ortb/ortb2-multi/playlist.m3u8",
         "categories": [
-            "animation",
+            "kids",
+            "sports"
+        ],
+        "country": "BJ"
+    },
+    {
+        "name": "Sat 7 Kids",
+        "id": "Sat7Kids.cy",
+        "logo": "https://i.imgur.com/M0ik0i2.png",
+        "url": "https://svs.itworkscdn.net/sat7kidslive/sat7kids.smil/playlist_dvr.m3u8",
+        "categories": [
+            "kids",
+            "religious"
+        ],
+        "country": "CY"
+    },
+    {
+        "name": "Nei Monggol TV Children Channel",
+        "id": "NeiMonggolTVChildrenChannel.cn",
+        "logo": "https://i.imgur.com/MOMEgMQ.png",
+        "url": "http://play1-qk.nmtv.cn/live/1686560464515368.m3u8",
+        "categories": [
             "kids"
         ],
-        "country": "BE"
+        "country": "CN"
+    },
+    {
+        "name": "EBS Kids",
+        "id": "EBSKids.kr",
+        "logo": "https://i.imgur.com/62oo8Bx.png",
+        "url": "https://ebsonair.ebs.co.kr/ebsufamilypc/familypc1m/playlist.m3u8",
+        "categories": [
+            "kids"
+        ],
+        "country": "KR"
+    },
+    {
+        "name": "Duronto TV",
+        "id": "DurontoTV.bd",
+        "logo": "https://i.imgur.com/gXsddRK.png",
+        "url": "https://tvsen4.aynaott.com/durontotv/index.m3u8",
+        "categories": [
+            "kids"
+        ],
+        "country": "BD"
+    },
+    {
+        "name": "ABC Kids",
+        "id": "ABCKids.au",
+        "logo": "https://static.wikia.nocookie.net/logopedia/images/2/29/ABC_Kids_%282020%29.svg/revision/latest/scale-to-width-down/512",
+        "url": "https://c.mjh.nz/abc-kids.m3u8",
+        "categories": [
+            "kids"
+        ],
+        "country": "AU"
     },
     {
         "name": "ABC ME",
@@ -1044,25 +1047,14 @@
         "country": "AU"
     },
     {
-        "name": "ABC Kids",
-        "id": "ABCKids.au",
-        "logo": "https://static.wikia.nocookie.net/logopedia/images/2/29/ABC_Kids_%282020%29.svg/revision/latest/scale-to-width-down/512",
-        "url": "https://c.mjh.nz/abc-kids.m3u8",
+        "name": "GEM Junior",
+        "id": "GEMJunior.tr",
+        "logo": "https://i.imgur.com/jK8yzj2.png",
+        "url": "https://wild-dawn-81ef.srmhoburfqyupzwxbu.workers.dev/?url=https://ca-rt.onetv.app/gemjunior/index-0.m3u8",
         "categories": [
             "kids"
         ],
-        "country": "AU"
-    },
-    {
-        "name": "QTV-6",
-        "id": "QTV6.cn",
-        "logo": "https://www.tvchinese.net/uploads/tv/qdtv6.jpg",
-        "url": "http://video10.qtv.com.cn/drm/qtv6at/manifest.m3u8",
-        "categories": [
-            "lifestyle",
-            "kids"
-        ],
-        "country": "CN"
+        "country": "TR"
     },
     {
         "name": "Extrema Kids TV",
@@ -1074,76 +1066,6 @@
             "kids"
         ],
         "country": "CR"
-    },
-    {
-        "name": "GEM Kids",
-        "id": "GEMKids.tr",
-        "logo": "https://i.imgur.com/ArkjaFk.png",
-        "url": "https://wild-dawn-81ef.srmhoburfqyupzwxbu.workers.dev/?url=https://ca-rt.onetv.app/gemkids/index-0.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "TR"
-    },
-    {
-        "name": "GEM Junior",
-        "id": "GEMJunior.tr",
-        "logo": "https://i.imgur.com/jK8yzj2.png",
-        "url": "https://wild-dawn-81ef.srmhoburfqyupzwxbu.workers.dev/?url=https://ca-rt.onetv.app/gemjunior/index-0.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "TR"
-    },
-    {
-        "name": "TRT Cocuk",
-        "id": "TRTCocuk.tr",
-        "logo": "https://i.postimg.cc/1z9vRz14/trtcocuk.png",
-        "url": "https://tv-trtcocuk.medya.trt.com.tr/master.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "TR"
-    },
-    {
-        "name": "TRT Diyanet Cocuk",
-        "id": "TRTDiyanetCocuk.tr",
-        "logo": "https://i.imgur.com/8PmXz9t.png",
-        "url": "https://tv-trtdiyanetcocuk.medya.trt.com.tr/master.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "TR"
-    },
-    {
-        "name": "Smile TV",
-        "id": "SmileTV.gr",
-        "logo": "https://i.imgur.com/IAb4Gbf.png",
-        "url": "https://s1.cystream.net/live/smile/playlist.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "GR"
-    },
-    {
-        "name": "Minika Cocuk",
-        "id": "MinikaCocuk.tr",
-        "logo": "https://i.imgur.com/VCywMTv.png",
-        "url": "https://trkvz-live.daioncdn.net/minikago_cocuk/minikago_cocuk.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "TR"
-    },
-    {
-        "name": "Minika Go",
-        "id": "MinikaGo.tr",
-        "logo": "https://i.imgur.com/qIoipDq.png",
-        "url": "https://trkvz-live.daioncdn.net/minikago/minikago.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "TR"
     },
     {
         "name": "Taha TV",
@@ -1167,6 +1089,66 @@
         "country": "EE"
     },
     {
+        "name": "GEM Kids",
+        "id": "GEMKids.tr",
+        "logo": "https://i.imgur.com/ArkjaFk.png",
+        "url": "https://wild-dawn-81ef.srmhoburfqyupzwxbu.workers.dev/?url=https://ca-rt.onetv.app/gemkids/index-0.m3u8",
+        "categories": [
+            "kids"
+        ],
+        "country": "TR"
+    },
+    {
+        "name": "Minika Cocuk",
+        "id": "MinikaCocuk.tr",
+        "logo": "https://i.imgur.com/VCywMTv.png",
+        "url": "https://trkvz-live.daioncdn.net/minikago_cocuk/minikago_cocuk.m3u8",
+        "categories": [
+            "kids"
+        ],
+        "country": "TR"
+    },
+    {
+        "name": "Minika Go",
+        "id": "MinikaGo.tr",
+        "logo": "https://i.imgur.com/qIoipDq.png",
+        "url": "https://trkvz-live.daioncdn.net/minikago/minikago.m3u8",
+        "categories": [
+            "kids"
+        ],
+        "country": "TR"
+    },
+    {
+        "name": "TRT Diyanet Cocuk",
+        "id": "TRTDiyanetCocuk.tr",
+        "logo": "https://i.imgur.com/8PmXz9t.png",
+        "url": "https://tv-trtdiyanetcocuk.medya.trt.com.tr/master.m3u8",
+        "categories": [
+            "kids"
+        ],
+        "country": "TR"
+    },
+    {
+        "name": "TRT Cocuk",
+        "id": "TRTCocuk.tr",
+        "logo": "https://i.postimg.cc/1z9vRz14/trtcocuk.png",
+        "url": "https://tv-trtcocuk.medya.trt.com.tr/master.m3u8",
+        "categories": [
+            "kids"
+        ],
+        "country": "TR"
+    },
+    {
+        "name": "Kids TV",
+        "id": "KidsTV.id",
+        "logo": "https://i.imgur.com/B5YiUIP.png",
+        "url": "http://ana.betaiptv.cloud:80/tunasilecek05@1125/qPKUtybAPc/161596",
+        "categories": [
+            "kids"
+        ],
+        "country": "ID"
+    },
+    {
         "name": "Clan Internacional",
         "id": "ClanInternacional.es",
         "logo": "https://i.imgur.com/03jFV68.png",
@@ -1176,6 +1158,16 @@
             "public"
         ],
         "country": "ES"
+    },
+    {
+        "name": "ZooMoo",
+        "id": "ZooMoo.sg",
+        "logo": "https://i.imgur.com/ciTJrnl.png",
+        "url": "https://cdn4.skygo.mn/live/disk1/Zoomoo/HLSv3-FTA/Zoomoo.m3u8",
+        "categories": [
+            "kids"
+        ],
+        "country": "SG"
     },
     {
         "name": "Logos TV Kids",
@@ -1189,35 +1181,14 @@
         "country": "ES"
     },
     {
-        "name": "Kids TV",
-        "id": "KidsTV.id",
-        "logo": "https://i.imgur.com/B5YiUIP.png",
-        "url": "http://ana.betaiptv.cloud:80/tunasilecek05@1125/qPKUtybAPc/161596",
+        "name": "Biznet Kids",
+        "id": "BiznetKids.id",
+        "logo": "https://i.imgur.com/J5QNqJ0.png",
+        "url": "http://livestream.biznetvideo.net/biznet_kids/smil:kids.smil/chunklist_w417362857_b2256000_slen_tkYml6a2V5bGl2ZXN0YXJ0dGltZT0wJmJpemtleWxpdmVlbmR0aW1lPTAmYml6a2V5bGl2ZUN1c3RvbVBhcmFtZXRlcj1teVBhcmFtZXRlciZiaXprZXlsaXZlaGFzaD1xQXJpMU0yeHVfTUFsbkh3VlJ0T3MyNGxSOFlfSFNEaWpOMkNSTmdoaWZVbGxoWXFRU0Rsa2QwcUU4Q2tad3hD.m3u8",
         "categories": [
             "kids"
         ],
         "country": "ID"
-    },
-    {
-        "name": "ZooMoo",
-        "id": "ZooMoo.sg",
-        "logo": "https://i.imgur.com/ciTJrnl.png",
-        "url": "https://cdn4.skygo.mn/live/disk1/Zoomoo/HLSv3-FTA/Zoomoo.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "SG"
-    },
-    {
-        "name": "Clan",
-        "id": "Clan.es",
-        "logo": "https://i.imgur.com/03jFV68.png",
-        "url": "https://ztnr.rtve.es/ztnr/5466990.m3u8",
-        "categories": [
-            "kids",
-            "public"
-        ],
-        "country": "ES"
     },
     {
         "name": "Amou Yazid TV",
@@ -1230,16 +1201,6 @@
         "country": "DZ"
     },
     {
-        "name": "Biznet Kids",
-        "id": "BiznetKids.id",
-        "logo": "https://i.imgur.com/J5QNqJ0.png",
-        "url": "http://livestream.biznetvideo.net/biznet_kids/smil:kids.smil/chunklist_w417362857_b2256000_slen_tkYml6a2V5bGl2ZXN0YXJ0dGltZT0wJmJpemtleWxpdmVlbmR0aW1lPTAmYml6a2V5bGl2ZUN1c3RvbVBhcmFtZXRlcj1teVBhcmFtZXRlciZiaXprZXlsaXZlaGFzaD1xQXJpMU0yeHVfTUFsbkh3VlJ0T3MyNGxSOFlfSFNEaWpOMkNSTmdoaWZVbGxoWXFRU0Rsa2QwcUU4Q2tad3hD.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "ID"
-    },
-    {
         "name": "VTV",
         "id": "VTV.id",
         "logo": "https://i.postimg.cc/cJRJr3BR/2560px-VTV-Indonesia-White-2023-svg.png",
@@ -1248,5 +1209,16 @@
             "kids"
         ],
         "country": "ID"
+    },
+    {
+        "name": "Clan",
+        "id": "Clan.es",
+        "logo": "https://i.imgur.com/03jFV68.png",
+        "url": "https://ztnr.rtve.es/ztnr/5466990.m3u8",
+        "categories": [
+            "kids",
+            "public"
+        ],
+        "country": "ES"
     }
 ]
