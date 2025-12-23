@@ -10,16 +10,6 @@
         "country": "CA"
     },
     {
-        "name": "Horse & Country TV",
-        "id": "HorseCountryTV.uk",
-        "logo": "https://i.imgur.com/1x6zYZr.png",
-        "url": "https://hncfree-samsung-uk.amagi.tv/playlist.m3u8",
-        "categories": [
-            "outdoor"
-        ],
-        "country": "UK"
-    },
-    {
         "name": "Outdoor America",
         "id": "OutdoorAmerica.us",
         "logo": "https://i.imgur.com/UKfimFD.png",
@@ -30,10 +20,30 @@
         "country": "US"
     },
     {
+        "name": "Horse & Country TV",
+        "id": "HorseCountryTV.uk",
+        "logo": "https://i.imgur.com/1x6zYZr.png",
+        "url": "https://hncfree-samsung-uk.amagi.tv/playlist.m3u8",
+        "categories": [
+            "outdoor"
+        ],
+        "country": "UK"
+    },
+    {
         "name": "Outdoor Channel",
         "id": "OutdoorChannel.us",
         "logo": "https://i.imgur.com/Kh4MWaY.png",
         "url": "https://fl1.moveonjoy.com/OUTDOOR_CHANNEL/index.m3u8",
+        "categories": [
+            "outdoor"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Duck Hunting TV",
+        "id": "DuckHuntingTV.us",
+        "logo": "https://image.roku.com/developer_channels/prod/b2a80f0a20fc338f22a8289f23d20d19d958470ff1b8df3845c57cbc54ec1245.png",
+        "url": "https://main.duckhunting.playout.vju.tv/duckhuntingtv/main.m3u8",
         "categories": [
             "outdoor"
         ],
@@ -70,16 +80,6 @@
         "country": "US"
     },
     {
-        "name": "AKC TV Meet the Breeds",
-        "id": "AKCTVMeettheBreeds.us",
-        "logo": "https://i.imgur.com/66avgdk.png",
-        "url": "https://install.akctvcontrol.com/speed/broadcast/139/desktop-playlist.m3u8",
-        "categories": [
-            "outdoor"
-        ],
-        "country": "US"
-    },
-    {
         "name": "AKC TV Puppies",
         "id": "AKCTVPuppies.us",
         "logo": "https://i.imgur.com/2nzRS60.png",
@@ -100,20 +100,20 @@
         "country": "US"
     },
     {
-        "name": "30A Darcizzle Offshore",
-        "id": "30ADarcizzleOffshore.us",
-        "logo": "https://i.imgur.com/Q4l2uao.png",
-        "url": "https://30a-tv.com/darcizzle.m3u8",
+        "name": "AKC TV Meet the Breeds",
+        "id": "AKCTVMeettheBreeds.us",
+        "logo": "https://i.imgur.com/66avgdk.png",
+        "url": "https://install.akctvcontrol.com/speed/broadcast/139/desktop-playlist.m3u8",
         "categories": [
             "outdoor"
         ],
         "country": "US"
     },
     {
-        "name": "Duck Hunting TV",
-        "id": "DuckHuntingTV.us",
-        "logo": "https://image.roku.com/developer_channels/prod/b2a80f0a20fc338f22a8289f23d20d19d958470ff1b8df3845c57cbc54ec1245.png",
-        "url": "https://main.duckhunting.playout.vju.tv/duckhuntingtv/main.m3u8",
+        "name": "30A Darcizzle Offshore",
+        "id": "30ADarcizzleOffshore.us",
+        "logo": "https://i.imgur.com/Q4l2uao.png",
+        "url": "https://30a-tv.com/darcizzle.m3u8",
         "categories": [
             "outdoor"
         ],
@@ -139,6 +139,26 @@
             "outdoor"
         ],
         "country": "RO"
+    },
+    {
+        "name": "Moya Planeta",
+        "id": "MoyaPlaneta.ru",
+        "logo": "https://i.imgur.com/uIiAdBv.png",
+        "url": "http://194.143.148.28:8080/MoyaPlanetaHD/index.m3u8",
+        "categories": [
+            "outdoor"
+        ],
+        "country": "RU"
+    },
+    {
+        "name": "Konniy mir",
+        "id": "Konniymir.ru",
+        "logo": "https://i.imgur.com/X6otbK0.png",
+        "url": "https://cdn-01.bonus-tv.ru/kmir/playlist.m3u8",
+        "categories": [
+            "outdoor"
+        ],
+        "country": "RU"
     },
     {
         "name": "Swamiji TV European",
@@ -181,26 +201,6 @@
         "country": "CO"
     },
     {
-        "name": "Moya Planeta",
-        "id": "MoyaPlaneta.ru",
-        "logo": "https://i.imgur.com/uIiAdBv.png",
-        "url": "http://194.143.148.28:8080/MoyaPlanetaHD/index.m3u8",
-        "categories": [
-            "outdoor"
-        ],
-        "country": "RU"
-    },
-    {
-        "name": "Konniy mir",
-        "id": "Konniymir.ru",
-        "logo": "https://i.imgur.com/X6otbK0.png",
-        "url": "https://cdn-01.bonus-tv.ru/kmir/playlist.m3u8",
-        "categories": [
-            "outdoor"
-        ],
-        "country": "RU"
-    },
-    {
         "name": "Italian Fishing TV",
         "id": "ItalianFishingTV.it",
         "logo": "https://i.imgur.com/qrn6tUO.png",
@@ -211,10 +211,10 @@
         "country": "IT"
     },
     {
-        "name": "Peer TV Alto Adige",
-        "id": "PeerTVAltoAdige.it",
-        "logo": "https://www.peer.biz/peertv-iptv/peer-tv-alto-adige.png",
-        "url": "https://iptv.peer.biz/live/peertv-it.m3u8",
+        "name": "Peer TV Sudtirol",
+        "id": "PeerTVSudtirol.it",
+        "logo": "https://www.peer.biz/peertv-iptv/peer-tv-suedtirol.png",
+        "url": "https://iptv.peer.biz/live/peertv.m3u8",
         "categories": [
             "outdoor",
             "travel"
@@ -233,10 +233,10 @@
         "country": "IT"
     },
     {
-        "name": "Peer TV Sudtirol",
-        "id": "PeerTVSudtirol.it",
-        "logo": "https://www.peer.biz/peertv-iptv/peer-tv-suedtirol.png",
-        "url": "https://iptv.peer.biz/live/peertv.m3u8",
+        "name": "Peer TV Alto Adige",
+        "id": "PeerTVAltoAdige.it",
+        "logo": "https://www.peer.biz/peertv-iptv/peer-tv-alto-adige.png",
+        "url": "https://iptv.peer.biz/live/peertv-it.m3u8",
         "categories": [
             "outdoor",
             "travel"
