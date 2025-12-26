@@ -10,14 +10,6 @@
         "country": "PS"
     },
     {
-        "name": "Rajeen TV",
-        "id": "RajeenTV.ps",
-        "logo": "https://i.imgur.com/6Cx22ya.png",
-        "url": "https://mn-nl.mncdn.com/palabroad/live/playlist.m3u8",
-        "categories": [],
-        "country": "PS"
-    },
-    {
         "name": "Palestine Satellite Channel",
         "id": "PalestineSatelliteChannel.ps",
         "logo": "https://i.imgur.com/4B5FvmX.png",
@@ -28,12 +20,30 @@
         "country": "PS"
     },
     {
+        "name": "Rajeen TV",
+        "id": "RajeenTV.ps",
+        "logo": "https://i.imgur.com/6Cx22ya.png",
+        "url": "https://mn-nl.mncdn.com/palabroad/live/playlist.m3u8",
+        "categories": [],
+        "country": "PS"
+    },
+    {
         "name": "Holy Quran Radio Nablus",
         "id": "HolyQuranRadioNablus.ps",
         "logo": "https://quran-radio.com/assets/images/site/quran-radio-logo-h-rtl.png",
         "url": "http://streaming.zaytonatube.com:8080/holyquran/holyquran/video.m3u8",
         "categories": [
             "religious"
+        ],
+        "country": "PS"
+    },
+    {
+        "name": "Nablus TV",
+        "id": "NablusTV.ps",
+        "logo": "https://i.imgur.com/GoLhaDK.png",
+        "url": "http://htvmada.mada.ps:8888/nabluslive/index.m3u8",
+        "categories": [
+            "news"
         ],
         "country": "PS"
     },
@@ -48,20 +58,12 @@
         "country": "PS"
     },
     {
-        "name": "Shabab FM",
-        "id": "ShababFM.ps",
-        "logo": "https://i.imgur.com/4Cyz4Bn.png",
-        "url": "https://streaming.zaytonatube.com:8081/ShababFM/shabab/index.m3u8",
-        "categories": [],
-        "country": "PS"
-    },
-    {
-        "name": "Radio Albalad TV",
-        "id": "RadioAlbaladTV.ps",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/7/71/Nothing_whitespace_blank.png",
-        "url": "https://streaming.zaytonatube.com:8081/radioalbalad/radioalbalad/index.m3u8",
+        "name": "Al Najah News",
+        "id": "AlNajahNews.ps",
+        "logo": "https://i.imgur.com/c2bwn4G.png",
+        "url": "https://streaming.najah.edu:8443/hls/AlNajah.m3u8",
         "categories": [
-            "general"
+            "news"
         ],
         "country": "PS"
     },
@@ -74,13 +76,11 @@
         "country": "PS"
     },
     {
-        "name": "Al Najah News",
-        "id": "AlNajahNews.ps",
-        "logo": "https://i.imgur.com/c2bwn4G.png",
-        "url": "https://streaming.najah.edu:8443/hls/AlNajah.m3u8",
-        "categories": [
-            "news"
-        ],
+        "name": "Shabab FM",
+        "id": "ShababFM.ps",
+        "logo": "https://i.imgur.com/4Cyz4Bn.png",
+        "url": "https://streaming.zaytonatube.com:8081/ShababFM/shabab/index.m3u8",
+        "categories": [],
         "country": "PS"
     },
     {
@@ -90,16 +90,6 @@
         "url": "https://live.paltodaytv.com/paltv/live/playlist.m3u8",
         "categories": [
             "news"
-        ],
-        "country": "PS"
-    },
-    {
-        "name": "Palestine Edu",
-        "id": "PalestineEdu.ps",
-        "logo": "https://i.imgur.com/AwVHXyC.png",
-        "url": "https://pbc.furrera.ps/PalestineEDU/index.m3u8",
-        "categories": [
-            "education"
         ],
         "country": "PS"
     },
@@ -120,6 +110,16 @@
         "url": "https://pbc.furrera.ps/musawahd/index.m3u8",
         "categories": [
             "general"
+        ],
+        "country": "PS"
+    },
+    {
+        "name": "Palestine Edu",
+        "id": "PalestineEdu.ps",
+        "logo": "https://i.imgur.com/AwVHXyC.png",
+        "url": "https://pbc.furrera.ps/PalestineEDU/index.m3u8",
+        "categories": [
+            "education"
         ],
         "country": "PS"
     },

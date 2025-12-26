@@ -111,6 +111,16 @@
         "country": "US"
     },
     {
+        "name": "Bloomberg Originals",
+        "id": "BloombergOriginals.us",
+        "logo": "https://www.theofficialboard.com/img/twitterCompanyBigImages/32361.jpg",
+        "url": "https://www.bloomberg.com/media-manifest/streams/originals-global.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "US"
+    },
+    {
         "name": "Bloomberg TV",
         "id": "BloombergTV.us",
         "logo": "https://i.imgur.com/OuogLHx.png",
@@ -125,6 +135,36 @@
         "id": "ZeeBusiness.in",
         "logo": "https://i.imgur.com/vkWBtL4.png",
         "url": "https://dwby15d04agvq.cloudfront.net/index_1.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "IN"
+    },
+    {
+        "name": "CNBC Awaaz",
+        "id": "CNBCAwaaz.in",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/CNBC_Awaaz_logo.png/512px-CNBC_Awaaz_logo.png",
+        "url": "https://n18syndication.akamaized.net/bpk-tv/CNBC_Awaaz_NW18_MOB/output01/master.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "IN"
+    },
+    {
+        "name": "CNBC Bajar",
+        "id": "CNBCBajar.in",
+        "logo": "https://i.imgur.com/cORao6C.png",
+        "url": "https://n18syndication.akamaized.net/bpk-tv/CNBC_Bazaar_NW18_MOB/output01/master.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "IN"
+    },
+    {
+        "name": "NDTV Profit",
+        "id": "NDTVProfit.in",
+        "logo": "https://i.imgur.com/WK4tZ6p.png",
+        "url": "https://ndtvprofitelemarchana.akamaized.net/hls/live/2003680-b/ndtvprofit/master.m3u8",
         "categories": [
             "business"
         ],
@@ -149,16 +189,6 @@
             "business"
         ],
         "country": "RO"
-    },
-    {
-        "name": "NDTV Profit",
-        "id": "NDTVProfit.in",
-        "logo": "https://i.imgur.com/WK4tZ6p.png",
-        "url": "https://ndtvprofitelemarchana.akamaized.net/hls/live/2003680-b/ndtvprofit/master.m3u8",
-        "categories": [
-            "business"
-        ],
-        "country": "IN"
     },
     {
         "name": "Tevex",
@@ -202,17 +232,6 @@
         "country": "IT"
     },
     {
-        "name": "Asharq News",
-        "id": "AsharqNews.sa",
-        "logo": "https://i.imgur.com/bqRC3sl.png",
-        "url": "https://svs.itworkscdn.net/bloomberarlive/bloomberg.smil/playlist_dvr.m3u8",
-        "categories": [
-            "business",
-            "news"
-        ],
-        "country": "SA"
-    },
-    {
         "name": "Asharq News Portrait",
         "id": "AsharqNewsPortrait.sa",
         "logo": "https://i.imgur.com/bqRC3sl.png",
@@ -224,14 +243,15 @@
         "country": "SA"
     },
     {
-        "name": "Bloomberg TV Mongolia",
-        "id": "BloombergTVMongolia.mn",
-        "logo": "https://i.imgur.com/OuogLHx.png",
-        "url": "https://cdn4.skygo.mn/live/disk1/BloombergMon/HLSv3-FTA/BloombergMon.m3u8",
+        "name": "Asharq News",
+        "id": "AsharqNews.sa",
+        "logo": "https://i.imgur.com/bqRC3sl.png",
+        "url": "https://svs.itworkscdn.net/bloomberarlive/bloomberg.smil/playlist_dvr.m3u8",
         "categories": [
-            "business"
+            "business",
+            "news"
         ],
-        "country": "MN"
+        "country": "SA"
     },
     {
         "name": "Business 24 Africa",
@@ -255,6 +275,16 @@
         "country": "SA"
     },
     {
+        "name": "Bloomberg TV Mongolia",
+        "id": "BloombergTVMongolia.mn",
+        "logo": "https://i.imgur.com/OuogLHx.png",
+        "url": "https://cdn4.skygo.mn/live/disk1/BloombergMon/HLSv3-FTA/BloombergMon.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "MN"
+    },
+    {
         "name": "Telewizja Biznesowa",
         "id": "TelewizjaBiznesowa.pl",
         "logo": "https://i.imgur.com/XC7i7ZL.png",
@@ -275,16 +305,6 @@
         "country": "AU"
     },
     {
-        "name": "DeFiance Media",
-        "id": "DeFianceMedia.pr",
-        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5e6HtuC9SEacvU98D5CWN9eBhERsc_WU73KZAyKHaePqMkJloAQ1lGfSGHqg-W_j5Z2g&usqp=CAU",
-        "url": "https://amg01529-defiancetv-defiancemedia-glewed-tre8x.amagi.tv/playlist.m3u8",
-        "categories": [
-            "business"
-        ],
-        "country": "PR"
-    },
-    {
         "name": "Nei Monggol TV Economic & Life Channel",
         "id": "NeiMonggolTVEconomicLifeChannel.cn",
         "logo": "https://i.imgur.com/M4xXzIr.png",
@@ -293,6 +313,16 @@
             "business"
         ],
         "country": "CN"
+    },
+    {
+        "name": "DeFiance Media",
+        "id": "DeFianceMedia.pr",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5e6HtuC9SEacvU98D5CWN9eBhERsc_WU73KZAyKHaePqMkJloAQ1lGfSGHqg-W_j5Z2g&usqp=CAU",
+        "url": "https://amg01529-defiancetv-defiancemedia-glewed-tre8x.amagi.tv/playlist.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "PR"
     },
     {
         "name": "CNBC-e",
