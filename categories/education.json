@@ -20,16 +20,6 @@
         "country": "BR"
     },
     {
-        "name": "Canal Educacao",
-        "id": "CanalEducacao.br",
-        "logo": "https://i.imgur.com/OOB7nrS.png",
-        "url": "https://canaleducacao-stream.ebc.com.br/index.m3u8",
-        "categories": [
-            "education"
-        ],
-        "country": "BR"
-    },
-    {
         "name": "TVK 2",
         "id": "TVK2.kh",
         "logo": "https://i.imgur.com/L36ptO2.png",
@@ -40,13 +30,23 @@
         "country": "KH"
     },
     {
-        "name": "TVE RS",
-        "id": "TVERS.br",
-        "logo": "https://i.imgur.com/MQ6lJpS.png",
-        "url": "https://streaming.procergs.com.br:8443/tve/stve/playlist.m3u8",
+        "name": "Canal Educacao",
+        "id": "CanalEducacao.br",
+        "logo": "https://i.imgur.com/OOB7nrS.png",
+        "url": "https://canaleducacao-stream.ebc.com.br/index.m3u8",
         "categories": [
-            "culture",
             "education"
+        ],
+        "country": "BR"
+    },
+    {
+        "name": "Unisul TV",
+        "id": "UnisulTV.br",
+        "logo": "https://i.imgur.com/N0TvAFz.png",
+        "url": "https://sitetv.brasilstream.com.br/hls/sitetv/index.m3u8?token=",
+        "categories": [
+            "education",
+            "culture"
         ],
         "country": "BR"
     },
@@ -61,16 +61,6 @@
         "country": "KH"
     },
     {
-        "name": "Animaux",
-        "id": "Animaux.fr",
-        "logo": "https://i.imgur.com/FM9FVAG.png",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/animaux/browser-dash/animaux.mpd",
-        "categories": [
-            "education"
-        ],
-        "country": "FR"
-    },
-    {
         "name": "CFTU-DT",
         "id": "CFTUDT.ca",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/9/97/Savoir_m%C3%A9dia_logo_3.png",
@@ -79,6 +69,16 @@
             "education"
         ],
         "country": "CA"
+    },
+    {
+        "name": "Animaux",
+        "id": "Animaux.fr",
+        "logo": "https://i.imgur.com/FM9FVAG.png",
+        "url": "https://viamotionhsi.netplus.ch/live/eds/animaux/browser-dash/animaux.mpd",
+        "categories": [
+            "education"
+        ],
+        "country": "FR"
     },
     {
         "name": "Shams TV",
@@ -132,16 +132,6 @@
         "country": "US"
     },
     {
-        "name": "WKMJ-DT1",
-        "id": "WKMJDT1.us",
-        "logo": "https://i.imgur.com/U9HFzJk.png",
-        "url": "https://2-fss-1.streamhoster.com/pl_134/amlst:200914-1282960/playlist.m3u8",
-        "categories": [
-            "education"
-        ],
-        "country": "US"
-    },
-    {
         "name": "PBS Kids Eastern/Central",
         "id": "PBSKidsEasternCentral.us",
         "logo": "https://i.imgur.com/ambc9le.png",
@@ -149,6 +139,16 @@
         "categories": [
             "education",
             "kids"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "WKMJ-DT1",
+        "id": "WKMJDT1.us",
+        "logo": "https://i.imgur.com/U9HFzJk.png",
+        "url": "https://2-fss-1.streamhoster.com/pl_134/amlst:200914-1282960/playlist.m3u8",
+        "categories": [
+            "education"
         ],
         "country": "US"
     },
@@ -173,20 +173,20 @@
         "country": "HN"
     },
     {
-        "name": "English Club TV",
-        "id": "EnglishClubTV.uk",
-        "logo": "https://i.imgur.com/9FMvaRK.png",
-        "url": "https://dash2.antik.sk/live/test_ectv_hd_1200/playlist.m3u8",
+        "name": "Al Hiwar TV",
+        "id": "AlHiwarTV.uk",
+        "logo": "https://i.imgur.com/UjOxwdd.png",
+        "url": "https://mn-nl.mncdn.com/alhiwar_live/smil:alhiwar.smil/playlist.m3u8",
         "categories": [
             "education"
         ],
         "country": "UK"
     },
     {
-        "name": "Al Hiwar TV",
-        "id": "AlHiwarTV.uk",
-        "logo": "https://i.imgur.com/UjOxwdd.png",
-        "url": "https://mn-nl.mncdn.com/alhiwar_live/smil:alhiwar.smil/playlist.m3u8",
+        "name": "English Club TV",
+        "id": "EnglishClubTV.uk",
+        "logo": "https://i.imgur.com/9FMvaRK.png",
+        "url": "https://dash2.antik.sk/live/test_ectv_hd_1200/playlist.m3u8",
         "categories": [
             "education"
         ],
@@ -233,6 +233,16 @@
         "country": "US"
     },
     {
+        "name": "Create",
+        "id": "Create.us",
+        "logo": "https://i.imgur.com/OIJTECP.png",
+        "url": "https://create.lls.pbs.org/index.m3u8",
+        "categories": [
+            "education"
+        ],
+        "country": "US"
+    },
+    {
         "name": "NCM Educational & Kids Channel",
         "id": "NCMEducationalKidsChannel.us",
         "logo": "https://i.imgur.com/3YPvfPn.png",
@@ -240,16 +250,6 @@
         "categories": [
             "education",
             "kids"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Create",
-        "id": "Create.us",
-        "logo": "https://i.imgur.com/OIJTECP.png",
-        "url": "https://create.lls.pbs.org/index.m3u8",
-        "categories": [
-            "education"
         ],
         "country": "US"
     },
@@ -274,6 +274,16 @@
         "country": "US"
     },
     {
+        "name": "MSTV",
+        "id": "MSTV.us",
+        "logo": "https://i.imgur.com/x0lJqSp.png",
+        "url": "https://reflect-mcsb-vod.cablecast.tv/live-16/live/live.m3u8",
+        "categories": [
+            "education"
+        ],
+        "country": "US"
+    },
+    {
         "name": "KOCT Channel 19",
         "id": "KOCTChannel19.us",
         "logo": "https://i.imgur.com/6C71KwP.png",
@@ -284,11 +294,32 @@
         "country": "US"
     },
     {
-        "name": "MSTV",
-        "id": "MSTV.us",
-        "logo": "https://i.imgur.com/x0lJqSp.png",
-        "url": "https://reflect-mcsb-vod.cablecast.tv/live-16/live/live.m3u8",
+        "name": "SMCTV Channel 24",
+        "id": "SMCTVChannel24.us",
+        "logo": "https://i.imgur.com/4Autljp.png",
+        "url": "https://livestream.telvue.com/santamariactv2/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
         "categories": [
+            "education"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "CreaTV Channel 28",
+        "id": "CreaTVChannel28.us",
+        "logo": "https://i.imgur.com/rvQdzL1.png",
+        "url": "https://reflect-creatv.cablecast.tv/live-14/live/live.m3u8",
+        "categories": [
+            "education"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "MCN6 Arts Channel",
+        "id": "MCN6ArtsChannel.us",
+        "logo": "https://i.imgur.com/j6IiysJ.png",
+        "url": "https://d18fcxaqfnwjhj.cloudfront.net/CDN_Ingest/MCN6_COMEDY.smil/Playlist.m3u8",
+        "categories": [
+            "culture",
             "education"
         ],
         "country": "US"
@@ -315,30 +346,20 @@
         "country": "US"
     },
     {
-        "name": "Leominster TV Educational",
-        "id": "LeominsterTVEducational.us",
-        "logo": "https://i.imgur.com/Cy94oLl.png",
-        "url": "https://livestream.telvue.com/leominster2/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
-        "categories": [
-            "education"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "SMCTV Channel 24",
-        "id": "SMCTVChannel24.us",
-        "logo": "https://i.imgur.com/4Autljp.png",
-        "url": "https://livestream.telvue.com/santamariactv2/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
-        "categories": [
-            "education"
-        ],
-        "country": "US"
-    },
-    {
         "name": "Nashua ETV",
         "id": "NashuaETV.us",
         "logo": "https://i.imgur.com/iv9Vfcb.png",
         "url": "https://livestream.telvue.com/nashuanh2/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
+        "categories": [
+            "education"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Leominster TV Educational",
+        "id": "LeominsterTVEducational.us",
+        "logo": "https://i.imgur.com/Cy94oLl.png",
+        "url": "https://livestream.telvue.com/leominster2/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
         "categories": [
             "education"
         ],
@@ -355,57 +376,6 @@
         "country": "US"
     },
     {
-        "name": "MCN6 Arts Channel",
-        "id": "MCN6ArtsChannel.us",
-        "logo": "https://i.imgur.com/j6IiysJ.png",
-        "url": "https://d18fcxaqfnwjhj.cloudfront.net/CDN_Ingest/MCN6_COMEDY.smil/Playlist.m3u8",
-        "categories": [
-            "culture",
-            "education"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "World Channel",
-        "id": "WorldChannel.us",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/3/36/World_Channel_2023.svg",
-        "url": "https://world.lls.pbs.org/index.m3u8",
-        "categories": [
-            "education"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "CreaTV Channel 28",
-        "id": "CreaTVChannel28.us",
-        "logo": "https://i.imgur.com/rvQdzL1.png",
-        "url": "https://reflect-creatv.cablecast.tv/live-14/live/live.m3u8",
-        "categories": [
-            "education"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Red Apple 21",
-        "id": "RedApple21.us",
-        "logo": "https://i.imgur.com/ICcQUCH.png",
-        "url": "https://cs.ebmcdn.net/eastbay-live-hs-1/fcps/mp4:fcps/playlist.m3u8",
-        "categories": [
-            "education"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "KMOS-DT1",
-        "id": "KMOSDT1.us",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/8/89/PBS_logo_2019.svg",
-        "url": "https://hls-kmosdt.lls.cdn.pbs.org/hls/live/index.m3u8",
-        "categories": [
-            "education"
-        ],
-        "country": "US"
-    },
-    {
         "name": "Cloudflare TV",
         "id": "CloudflareTV.us",
         "logo": "https://i.imgur.com/l4m0is8.jpeg",
@@ -416,30 +386,10 @@
         "country": "US"
     },
     {
-        "name": "LA36",
-        "id": "LA36.us",
-        "logo": "https://i.imgur.com/JxTzUEq.png",
-        "url": "https://reflect-channel36-la.cablecast.tv/live-3/live/stream-1/live.m3u8",
-        "categories": [
-            "education"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Vision TV",
-        "id": "VisionTV.us",
-        "logo": "https://i.imgur.com/XnxPIqn.png",
-        "url": "https://otv3.ocfl.net/VisionTV/smil:VisionTV.smil/playlist.m3u8",
-        "categories": [
-            "education"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Midpen Media Center Channel 28",
-        "id": "MidpenMediaCenterChannel28.us",
-        "logo": "https://i.imgur.com/RPJiolQ.png",
-        "url": "https://5c2974786200d.streamlock.net/live-chan28/ngrp:ch28_all/playlist.m3u8",
+        "name": "World Channel",
+        "id": "WorldChannel.us",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/3/36/World_Channel_2023.svg",
+        "url": "https://world.lls.pbs.org/index.m3u8",
         "categories": [
             "education"
         ],
@@ -456,35 +406,22 @@
         "country": "US"
     },
     {
-        "name": "PBS Kids Pacific",
-        "id": "PBSKidsPacific.us",
-        "logo": "https://i.imgur.com/ambc9le.png",
-        "url": "https://livestream.pbskids.org/out/v1/11f2e6b73eaa4887b3746cb863960e79/pst.m3u8",
+        "name": "Vision TV",
+        "id": "VisionTV.us",
+        "logo": "https://i.imgur.com/XnxPIqn.png",
+        "url": "https://otv3.ocfl.net/VisionTV/smil:VisionTV.smil/playlist.m3u8",
         "categories": [
-            "education",
-            "kids"
+            "education"
         ],
         "country": "US"
     },
     {
-        "name": "PBS Kids Alaska",
-        "id": "PBSKidsAlaska.us",
-        "logo": "https://i.imgur.com/ambc9le.png",
-        "url": "https://livestream.pbskids.org/out/v1/94b88ad58fc14f84a9382341f1c00b82/akst.m3u8",
+        "name": "PSD TV",
+        "id": "PSDTV.us",
+        "logo": "https://i.imgur.com/djT0Q8q.png",
+        "url": "https://reflect-broadcast-psdschools.cablecast.tv/live-6/live/live.m3u8",
         "categories": [
-            "education",
-            "kids"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "PBS Kids Hawaii",
-        "id": "PBSKidsHawaii.us",
-        "logo": "https://i.imgur.com/ambc9le.png",
-        "url": "https://livestream.pbskids.org/out/v1/aa31792fee094b24b09045483f04d150/hast.m3u8",
-        "categories": [
-            "education",
-            "kids"
+            "education"
         ],
         "country": "US"
     },
@@ -511,10 +448,74 @@
         "country": "US"
     },
     {
+        "name": "PBS Kids Hawaii",
+        "id": "PBSKidsHawaii.us",
+        "logo": "https://i.imgur.com/ambc9le.png",
+        "url": "https://livestream.pbskids.org/out/v1/aa31792fee094b24b09045483f04d150/hast.m3u8",
+        "categories": [
+            "education",
+            "kids"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "PBS Kids Alaska",
+        "id": "PBSKidsAlaska.us",
+        "logo": "https://i.imgur.com/ambc9le.png",
+        "url": "https://livestream.pbskids.org/out/v1/94b88ad58fc14f84a9382341f1c00b82/akst.m3u8",
+        "categories": [
+            "education",
+            "kids"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "PBS Kids Pacific",
+        "id": "PBSKidsPacific.us",
+        "logo": "https://i.imgur.com/ambc9le.png",
+        "url": "https://livestream.pbskids.org/out/v1/11f2e6b73eaa4887b3746cb863960e79/pst.m3u8",
+        "categories": [
+            "education",
+            "kids"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Classic Arts Showcase",
+        "id": "ClassicArtsShowcase.us",
+        "logo": "https://i.imgur.com/M6FFkc3.png",
+        "url": "https://classicarts.akamaized.net/hls/live/1024257/CAS/master.m3u8",
+        "categories": [
+            "culture",
+            "education"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "KMOS-DT1",
+        "id": "KMOSDT1.us",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/8/89/PBS_logo_2019.svg",
+        "url": "https://hls-kmosdt.lls.cdn.pbs.org/hls/live/index.m3u8",
+        "categories": [
+            "education"
+        ],
+        "country": "US"
+    },
+    {
         "name": "CCPS Education Channel",
         "id": "CCPSEducationChannel.us",
         "logo": "https://i.imgur.com/62S7dI8.png",
         "url": "https://watch.collierschools.com/EducationChannel/educhannel.stream/playlist.m3u8",
+        "categories": [
+            "education"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "LA36",
+        "id": "LA36.us",
+        "logo": "https://i.imgur.com/JxTzUEq.png",
+        "url": "https://reflect-channel36-la.cablecast.tv/live-3/live/stream-1/live.m3u8",
         "categories": [
             "education"
         ],
@@ -531,22 +532,31 @@
         "country": "US"
     },
     {
-        "name": "PSD TV",
-        "id": "PSDTV.us",
-        "logo": "https://i.imgur.com/djT0Q8q.png",
-        "url": "https://reflect-broadcast-psdschools.cablecast.tv/live-6/live/live.m3u8",
+        "name": "Midpen Media Center Channel 28",
+        "id": "MidpenMediaCenterChannel28.us",
+        "logo": "https://i.imgur.com/RPJiolQ.png",
+        "url": "https://5c2974786200d.streamlock.net/live-chan28/ngrp:ch28_all/playlist.m3u8",
         "categories": [
             "education"
         ],
         "country": "US"
     },
     {
-        "name": "Classic Arts Showcase",
-        "id": "ClassicArtsShowcase.us",
-        "logo": "https://i.imgur.com/M6FFkc3.png",
-        "url": "https://classicarts.akamaized.net/hls/live/1024257/CAS/master.m3u8",
+        "name": "Red Apple 21",
+        "id": "RedApple21.us",
+        "logo": "https://i.imgur.com/ICcQUCH.png",
+        "url": "https://cs.ebmcdn.net/eastbay-live-hs-1/fcps/mp4:fcps/playlist.m3u8",
         "categories": [
-            "culture",
+            "education"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "LETV",
+        "id": "LETV.us",
+        "logo": "https://i.imgur.com/d5w2pT4.png",
+        "url": "https://livestream.telvue.com/lexmedia2/f7b44cfafd5c52223d5498196c8a2e7b.sdp/lexmedia2/stream1/playlist.m3u8",
+        "categories": [
             "education"
         ],
         "country": "US"
@@ -556,6 +566,16 @@
         "id": "KiteVicters.in",
         "logo": "https://i.imgur.com/kj4OEsb.png",
         "url": "https://932y4x26ljv8-hls-live.5centscdn.com/victers/tv.stream/playlist.m3u8",
+        "categories": [
+            "education"
+        ],
+        "country": "IN"
+    },
+    {
+        "name": "Vyas Channel",
+        "id": "VyasChannel.in",
+        "logo": "https://www.yupptv.com/seo_img/UGC_GEC_big.jpg",
+        "url": "https://hls.media.nic.in/hls/live/vyas/vyas.m3u8",
         "categories": [
             "education"
         ],
@@ -583,16 +603,6 @@
         "country": "IN"
     },
     {
-        "name": "Vyas Channel",
-        "id": "VyasChannel.in",
-        "logo": "https://www.yupptv.com/seo_img/UGC_GEC_big.jpg",
-        "url": "https://hls.media.nic.in/hls/live/vyas/vyas.m3u8",
-        "categories": [
-            "education"
-        ],
-        "country": "IN"
-    },
-    {
         "name": "Manas TV",
         "id": "ManasTV.kg",
         "logo": "https://i.ibb.co/2Kvcj5Q/manas.jpg",
@@ -603,17 +613,6 @@
             "entertainment"
         ],
         "country": "KG"
-    },
-    {
-        "name": "Charana TV",
-        "id": "CharanaTV.lk",
-        "logo": "https://www.lyngsat.com/logo/tv/cc/charana-tv-lk.png",
-        "url": "https://edge3-moblive.yuppcdn.net/transhd2/smil:chtv05.smil/index.m3u8",
-        "categories": [
-            "education",
-            "entertainment"
-        ],
-        "country": "LK"
     },
     {
         "name": "Eduvision",
@@ -636,14 +635,15 @@
         "country": "RU"
     },
     {
-        "name": "iSTUFF",
-        "id": "iSTUFF.de",
-        "logo": "https://i.imgur.com/1V3UXVb.jpg",
-        "url": "https://relay2.cdn.fem-net.de/hls/loop/istuff_live/istuff_live-720p.m3u8",
+        "name": "Charana TV",
+        "id": "CharanaTV.lk",
+        "logo": "https://www.lyngsat.com/logo/tv/cc/charana-tv-lk.png",
+        "url": "https://edge3-moblive.yuppcdn.net/transhd2/smil:chtv05.smil/index.m3u8",
         "categories": [
-            "education"
+            "education",
+            "entertainment"
         ],
-        "country": "DE"
+        "country": "LK"
     },
     {
         "name": "Kan Educational",
@@ -666,20 +666,20 @@
         "country": "PS"
     },
     {
-        "name": "NRWision",
-        "id": "NRWision.de",
-        "logo": "https://i.imgur.com/RkF2Kmx.png",
-        "url": "https://fms.nrwision.de/live/ngrp:livestreamHD.stream/playlist.m3u8",
+        "name": "iSTUFF",
+        "id": "iSTUFF.de",
+        "logo": "https://i.imgur.com/1V3UXVb.jpg",
+        "url": "https://relay2.cdn.fem-net.de/hls/loop/istuff_live/istuff_live-720p.m3u8",
         "categories": [
             "education"
         ],
         "country": "DE"
     },
     {
-        "name": "ARD-alpha",
-        "id": "ARDalpha.de",
-        "logo": "https://i.postimg.cc/NMDNj0hp/ardalpha.png",
-        "url": "https://mcdn.br.de/br/fs/ard_alpha/hls/de/master.m3u8",
+        "name": "NRWision",
+        "id": "NRWision.de",
+        "logo": "https://i.imgur.com/RkF2Kmx.png",
+        "url": "https://fms.nrwision.de/live/ngrp:livestreamHD.stream/playlist.m3u8",
         "categories": [
             "education"
         ],
@@ -696,13 +696,23 @@
         "country": "EC"
     },
     {
-        "name": "7 STORIA",
-        "id": "7STORIA.it",
-        "logo": "https://i.imgur.com/rF3tpbR.jpeg",
-        "url": "https://stream10.xdevel.com/video2s976543-2104/stream/playlist.m3u8",
+        "name": "ARD-alpha",
+        "id": "ARDalpha.de",
+        "logo": "https://i.postimg.cc/NMDNj0hp/ardalpha.png",
+        "url": "https://mcdn.br.de/br/fs/ard_alpha/hls/de/master.m3u8",
         "categories": [
-            "education",
-            "documentary"
+            "education"
+        ],
+        "country": "DE"
+    },
+    {
+        "name": "Telepace 3",
+        "id": "Telepace3.it",
+        "logo": "https://i.imgur.com/hE4i2ft.png",
+        "url": "https://932y4273djv8-hls-live.mariatvcdn.it/teleradiopace3/d2274c22e9ee09eb2eda01ed0496f8f5.sdp/playlist.m3u8",
+        "categories": [
+            "religious",
+            "education"
         ],
         "country": "IT"
     },
@@ -717,13 +727,13 @@
         "country": "IT"
     },
     {
-        "name": "Telepace 3",
-        "id": "Telepace3.it",
-        "logo": "https://i.imgur.com/hE4i2ft.png",
-        "url": "https://932y4273djv8-hls-live.mariatvcdn.it/teleradiopace3/d2274c22e9ee09eb2eda01ed0496f8f5.sdp/playlist.m3u8",
+        "name": "7 STORIA",
+        "id": "7STORIA.it",
+        "logo": "https://i.imgur.com/rF3tpbR.jpeg",
+        "url": "https://stream10.xdevel.com/video2s976543-2104/stream/playlist.m3u8",
         "categories": [
-            "religious",
-            "education"
+            "education",
+            "documentary"
         ],
         "country": "IT"
     },
@@ -750,52 +760,10 @@
         "country": "MN"
     },
     {
-        "name": "Jalisco TV",
-        "id": "JaliscoTV.mx",
-        "logo": "https://i.imgur.com/N4meE8I.png",
-        "url": "https://video0.rogohosting.com:19360/sisjalisciense/sisjalisciense.m3u8",
-        "categories": [
-            "culture",
-            "education"
-        ],
-        "country": "MX"
-    },
-    {
         "name": "XEIPN-TDT",
         "id": "XEIPNTDT.mx",
         "logo": "https://i.imgur.com/K0351vF.png",
         "url": "https://vivo.canaloncelive.tv/alivepkgr3/ngrp:cepro_all/playlist.m3u8",
-        "categories": [
-            "education"
-        ],
-        "country": "MX"
-    },
-    {
-        "name": "XHSPR-TDT1",
-        "id": "XHSPRTDT1.mx",
-        "logo": "https://i.imgur.com/AWLWu91.png",
-        "url": "https://s5.mexside.net:1936/canal14/canal14/playlist.m3u8",
-        "categories": [
-            "education",
-            "culture"
-        ],
-        "country": "MX"
-    },
-    {
-        "name": "XHUNES-TDT",
-        "id": "XHUNESTDT.mx",
-        "logo": "https://i.imgur.com/LbZkdca.png",
-        "url": "https://tv91.hostingnuclear.com:19360/xhunestv/xhunestv.m3u8",
-        "categories": [
-            "education"
-        ],
-        "country": "MX"
-    },
-    {
-        "name": "ILCE Canal 15 Summa Saberes",
-        "id": "ILCECanal15SummaSaberes.mx",
-        "logo": "https://i.imgur.com/r7czgOc.png",
-        "url": "https://live-ilce.ovp-vivaro.digital/ovp-origin-abr/ngrp:6359ef999f3fb_all/playlist.m3u8",
         "categories": [
             "education"
         ],
@@ -816,6 +784,37 @@
         "id": "XHPBZCTDT2.mx",
         "logo": "https://i.imgur.com/dbJKErB.png",
         "url": "https://5d0d1d7a6be9e.streamlock.net/sicom/canal2/playlist.m3u8",
+        "categories": [
+            "education"
+        ],
+        "country": "MX"
+    },
+    {
+        "name": "XHSPR-TDT1",
+        "id": "XHSPRTDT1.mx",
+        "logo": "https://i.imgur.com/AWLWu91.png",
+        "url": "https://s5.mexside.net:1936/canal14/canal14/playlist.m3u8",
+        "categories": [
+            "education",
+            "culture"
+        ],
+        "country": "MX"
+    },
+    {
+        "name": "ILCE Canal 15 Summa Saberes",
+        "id": "ILCECanal15SummaSaberes.mx",
+        "logo": "https://i.imgur.com/r7czgOc.png",
+        "url": "https://live-ilce.ovp-vivaro.digital/ovp-origin-abr/ngrp:6359ef999f3fb_all/playlist.m3u8",
+        "categories": [
+            "education"
+        ],
+        "country": "MX"
+    },
+    {
+        "name": "XHUNES-TDT",
+        "id": "XHUNESTDT.mx",
+        "logo": "https://i.imgur.com/LbZkdca.png",
+        "url": "https://tv91.hostingnuclear.com:19360/xhunestv/xhunestv.m3u8",
         "categories": [
             "education"
         ],
@@ -843,16 +842,6 @@
         "country": "GT"
     },
     {
-        "name": "ALTV",
-        "id": "ALTV.th",
-        "logo": "https://i.imgur.com/MCbCSWv.png",
-        "url": "https://thaipbs-ujxrch.cdn.byteark.com/live/playlist.m3u8",
-        "categories": [
-            "education"
-        ],
-        "country": "TH"
-    },
-    {
         "name": "ETV",
         "id": "ETV.th",
         "logo": "https://i.imgur.com/HTnQGcs.png",
@@ -863,70 +852,10 @@
         "country": "TH"
     },
     {
-        "name": "DLTV 11",
-        "id": "DLTV11.th",
-        "logo": "https://i.imgur.com/hFk2b5s.png",
-        "url": "https://cdn-live.dltv.ac.th/dltv11.m3u8",
-        "categories": [
-            "education"
-        ],
-        "country": "TH"
-    },
-    {
-        "name": "DLTV 10",
-        "id": "DLTV10.th",
-        "logo": "https://i.imgur.com/TgN81Zr.png",
-        "url": "https://cdn-live.dltv.ac.th/dltv10.m3u8",
-        "categories": [
-            "education"
-        ],
-        "country": "TH"
-    },
-    {
-        "name": "DLTV 6",
-        "id": "DLTV6.th",
-        "logo": "https://i.imgur.com/qeIHWC0.png",
-        "url": "https://cdn-live.dltv.ac.th/dltv06.m3u8",
-        "categories": [
-            "education"
-        ],
-        "country": "TH"
-    },
-    {
-        "name": "DLTV 15",
-        "id": "DLTV15.th",
-        "logo": "https://i.imgur.com/onJi2b6.png",
-        "url": "https://cdn-live.dltv.ac.th/dltv15.m3u8",
-        "categories": [
-            "education"
-        ],
-        "country": "TH"
-    },
-    {
-        "name": "DLTV 8",
-        "id": "DLTV8.th",
-        "logo": "https://i.imgur.com/xIwn5Ha.png",
-        "url": "https://cdn-live.dltv.ac.th/dltv08.m3u8",
-        "categories": [
-            "education"
-        ],
-        "country": "TH"
-    },
-    {
-        "name": "DLTV 12",
-        "id": "DLTV12.th",
-        "logo": "https://i.imgur.com/ITt6lY7.png",
-        "url": "https://cdn-live.dltv.ac.th/dltv12.m3u8",
-        "categories": [
-            "education"
-        ],
-        "country": "TH"
-    },
-    {
-        "name": "DLTV 4",
-        "id": "DLTV4.th",
-        "logo": "https://i.imgur.com/WkpoQhU.png",
-        "url": "https://cdn-live.dltv.ac.th/dltv04.m3u8",
+        "name": "ALTV",
+        "id": "ALTV.th",
+        "logo": "https://i.imgur.com/MCbCSWv.png",
+        "url": "https://thaipbs-ujxrch.cdn.byteark.com/live/playlist.m3u8",
         "categories": [
             "education"
         ],
@@ -943,40 +872,20 @@
         "country": "TH"
     },
     {
-        "name": "DLTV 13",
-        "id": "DLTV13.th",
-        "logo": "https://i.imgur.com/asB5w3v.png",
-        "url": "https://cdn-live.dltv.ac.th/dltv13.m3u8",
+        "name": "DLTV 15",
+        "id": "DLTV15.th",
+        "logo": "https://i.imgur.com/onJi2b6.png",
+        "url": "https://cdn-live.dltv.ac.th/dltv15.m3u8",
         "categories": [
             "education"
         ],
         "country": "TH"
     },
     {
-        "name": "DLTV 14",
-        "id": "DLTV14.th",
-        "logo": "https://i.imgur.com/HOjZRNS.png",
-        "url": "https://cdn-live.dltv.ac.th/dltv14.m3u8",
-        "categories": [
-            "education"
-        ],
-        "country": "TH"
-    },
-    {
-        "name": "DLTV 2",
-        "id": "DLTV2.th",
-        "logo": "https://i.imgur.com/lDBSTfE.png",
-        "url": "https://cdn-live.dltv.ac.th/dltv02.m3u8",
-        "categories": [
-            "education"
-        ],
-        "country": "TH"
-    },
-    {
-        "name": "DLTV 3",
-        "id": "DLTV3.th",
-        "logo": "https://i.imgur.com/wmrxerm.png",
-        "url": "https://cdn-live.dltv.ac.th/dltv03.m3u8",
+        "name": "DLTV 4",
+        "id": "DLTV4.th",
+        "logo": "https://i.imgur.com/WkpoQhU.png",
+        "url": "https://cdn-live.dltv.ac.th/dltv04.m3u8",
         "categories": [
             "education"
         ],
@@ -987,6 +896,26 @@
         "id": "DLTV5.th",
         "logo": "https://i.imgur.com/J1E89jX.png",
         "url": "https://cdn-live.dltv.ac.th/dltv05.m3u8",
+        "categories": [
+            "education"
+        ],
+        "country": "TH"
+    },
+    {
+        "name": "DLTV 13",
+        "id": "DLTV13.th",
+        "logo": "https://i.imgur.com/asB5w3v.png",
+        "url": "https://cdn-live.dltv.ac.th/dltv13.m3u8",
+        "categories": [
+            "education"
+        ],
+        "country": "TH"
+    },
+    {
+        "name": "DLTV 6",
+        "id": "DLTV6.th",
+        "logo": "https://i.imgur.com/qeIHWC0.png",
+        "url": "https://cdn-live.dltv.ac.th/dltv06.m3u8",
         "categories": [
             "education"
         ],
@@ -1013,14 +942,84 @@
         "country": "TH"
     },
     {
-        "name": "Unifranz",
-        "id": "Unifranz.bo",
-        "logo": "https://unifranz.edu.bo/wp-content/themes/unifranz-web/public/images/logos/logo-light-min.442cee.svg",
-        "url": "https://live.enhdtv.com:8081/8192/index.m3u8",
+        "name": "DLTV 10",
+        "id": "DLTV10.th",
+        "logo": "https://i.imgur.com/TgN81Zr.png",
+        "url": "https://cdn-live.dltv.ac.th/dltv10.m3u8",
+        "categories": [
+            "education"
+        ],
+        "country": "TH"
+    },
+    {
+        "name": "DLTV 8",
+        "id": "DLTV8.th",
+        "logo": "https://i.imgur.com/xIwn5Ha.png",
+        "url": "https://cdn-live.dltv.ac.th/dltv08.m3u8",
+        "categories": [
+            "education"
+        ],
+        "country": "TH"
+    },
+    {
+        "name": "DLTV 14",
+        "id": "DLTV14.th",
+        "logo": "https://i.imgur.com/HOjZRNS.png",
+        "url": "https://cdn-live.dltv.ac.th/dltv14.m3u8",
+        "categories": [
+            "education"
+        ],
+        "country": "TH"
+    },
+    {
+        "name": "DLTV 3",
+        "id": "DLTV3.th",
+        "logo": "https://i.imgur.com/wmrxerm.png",
+        "url": "https://cdn-live.dltv.ac.th/dltv03.m3u8",
+        "categories": [
+            "education"
+        ],
+        "country": "TH"
+    },
+    {
+        "name": "DLTV 12",
+        "id": "DLTV12.th",
+        "logo": "https://i.imgur.com/ITt6lY7.png",
+        "url": "https://cdn-live.dltv.ac.th/dltv12.m3u8",
+        "categories": [
+            "education"
+        ],
+        "country": "TH"
+    },
+    {
+        "name": "DLTV 2",
+        "id": "DLTV2.th",
+        "logo": "https://i.imgur.com/lDBSTfE.png",
+        "url": "https://cdn-live.dltv.ac.th/dltv02.m3u8",
+        "categories": [
+            "education"
+        ],
+        "country": "TH"
+    },
+    {
+        "name": "DLTV 11",
+        "id": "DLTV11.th",
+        "logo": "https://i.imgur.com/hFk2b5s.png",
+        "url": "https://cdn-live.dltv.ac.th/dltv11.m3u8",
+        "categories": [
+            "education"
+        ],
+        "country": "TH"
+    },
+    {
+        "name": "UMSA TVU Internacional",
+        "id": "UMSATVUInternacional.bo",
+        "logo": "https://tvu.umsa.bo/documents/780216/12171558/Logo+TVU-Int.png/b67c9c61-7516-e38a-a425-72e61f3824c6?t=1751574228493",
+        "url": "https://live.enhdtv.com:8081/8026/tracks-v1a1/mono.m3u8",
         "categories": [
             "education",
-            "entertainment",
-            "news"
+            "science",
+            "documentary"
         ],
         "country": "BO"
     },
@@ -1037,14 +1036,14 @@
         "country": "BO"
     },
     {
-        "name": "UMSA TVU Internacional",
-        "id": "UMSATVUInternacional.bo",
-        "logo": "https://tvu.umsa.bo/documents/780216/12171558/Logo+TVU-Int.png/b67c9c61-7516-e38a-a425-72e61f3824c6?t=1751574228493",
-        "url": "https://live.enhdtv.com:8081/8026/tracks-v1a1/mono.m3u8",
+        "name": "Unifranz",
+        "id": "Unifranz.bo",
+        "logo": "https://unifranz.edu.bo/wp-content/themes/unifranz-web/public/images/logos/logo-light-min.442cee.svg",
+        "url": "https://live.enhdtv.com:8081/8192/index.m3u8",
         "categories": [
             "education",
-            "science",
-            "documentary"
+            "entertainment",
+            "news"
         ],
         "country": "BO"
     },
@@ -1140,20 +1139,20 @@
         "country": "KR"
     },
     {
-        "name": "TRT EBA Ilkokul",
-        "id": "TRTEBAIlkokul.tr",
-        "logo": "https://i.imgur.com/CRBfZi4.png",
-        "url": "https://tv-e-okul00.medya.trt.com.tr/master.m3u8",
+        "name": "TRT EBA Lise",
+        "id": "TRTEBALise.tr",
+        "logo": "https://i.imgur.com/vj2L2L2.png",
+        "url": "https://tv-e-okul02.medya.trt.com.tr/master.m3u8",
         "categories": [
             "education"
         ],
         "country": "TR"
     },
     {
-        "name": "TRT EBA Lise",
-        "id": "TRTEBALise.tr",
-        "logo": "https://i.imgur.com/vj2L2L2.png",
-        "url": "https://tv-e-okul02.medya.trt.com.tr/master.m3u8",
+        "name": "TRT EBA Ilkokul",
+        "id": "TRTEBAIlkokul.tr",
+        "logo": "https://i.imgur.com/CRBfZi4.png",
+        "url": "https://tv-e-okul00.medya.trt.com.tr/master.m3u8",
         "categories": [
             "education"
         ],

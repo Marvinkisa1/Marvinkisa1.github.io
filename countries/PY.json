@@ -10,10 +10,21 @@
         "country": "PY"
     },
     {
-        "name": "Suceso TV",
-        "id": "SucesoTV.py",
-        "logo": "https://i.imgur.com/BwRNes1.png",
-        "url": "https://live.enhdtv.com:8081/8060/index.m3u8",
+        "name": "Next HD",
+        "id": "NextHD.py",
+        "logo": "https://i.imgur.com/c2rF3SS.png",
+        "url": "https://live.enhdtv.com:19360/nexthd/nexthd.m3u8",
+        "categories": [
+            "movies",
+            "music"
+        ],
+        "country": "PY"
+    },
+    {
+        "name": "C9N",
+        "id": "C9N.py",
+        "logo": "https://i.imgur.com/Cp4zJ7O.png",
+        "url": "https://d1y0t05eznkmpn.cloudfront.net/index.m3u8",
         "categories": [
             "news"
         ],
@@ -30,17 +41,6 @@
         "country": "PY"
     },
     {
-        "name": "Next HD",
-        "id": "NextHD.py",
-        "logo": "https://i.imgur.com/c2rF3SS.png",
-        "url": "https://live.enhdtv.com:19360/nexthd/nexthd.m3u8",
-        "categories": [
-            "movies",
-            "music"
-        ],
-        "country": "PY"
-    },
-    {
         "name": "GO TV",
         "id": "GOTV.py",
         "logo": "https://i.ibb.co/jkvYVyz/Captura.png",
@@ -52,12 +52,11 @@
         "country": "PY"
     },
     {
-        "name": "Caritas TV",
-        "id": "CaritasTV.py",
-        "logo": "https://i.ibb.co/rwkpQx6/unnamed-2.png",
-        "url": "https://rds3.desdeparaguay.net/caritastv/caritastv/playlist.m3u8",
+        "name": "Bruno Masi TV",
+        "id": "BrunoMasiTV.py",
+        "logo": "https://i.ibb.co/QFmyjZN/unnamed-1.png",
+        "url": "https://rds3.desdeparaguay.net/brunomasitv/brunomasitv/playlist.m3u8",
         "categories": [
-            "religious",
             "general"
         ],
         "country": "PY"
@@ -73,20 +72,23 @@
         "country": "PY"
     },
     {
-        "name": "MiTV",
-        "id": "MiTV.py",
-        "logo": "https://i.imgur.com/sgrEt9z.png",
-        "url": "https://rds3.desdeparaguay.net/mitv/mitv/playlist.m3u8",
-        "categories": [],
+        "name": "Caritas TV",
+        "id": "CaritasTV.py",
+        "logo": "https://i.ibb.co/rwkpQx6/unnamed-2.png",
+        "url": "https://rds3.desdeparaguay.net/caritastv/caritastv/playlist.m3u8",
+        "categories": [
+            "religious",
+            "general"
+        ],
         "country": "PY"
     },
     {
-        "name": "Bruno Masi TV",
-        "id": "BrunoMasiTV.py",
-        "logo": "https://i.ibb.co/QFmyjZN/unnamed-1.png",
-        "url": "https://rds3.desdeparaguay.net/brunomasitv/brunomasitv/playlist.m3u8",
+        "name": "Dismar Radio TV",
+        "id": "DismarRadioTV.py",
+        "logo": "https://i.imgur.com/KOuxdMD.png",
+        "url": "https://rds3.desdeparaguay.net/dismartv/dismartv/playlist.m3u8",
         "categories": [
-            "general"
+            "music"
         ],
         "country": "PY"
     },
