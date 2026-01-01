@@ -20,6 +20,16 @@
         "country": "CZ"
     },
     {
+        "name": "Minimax CEE",
+        "id": "MinimaxCEE.cz",
+        "logo": "https://i.imgur.com/WWOlm1x.png",
+        "url": "http://88.212.15.19/live/test_minimax/playlist.m3u8",
+        "categories": [
+            "kids"
+        ],
+        "country": "CZ"
+    },
+    {
         "name": "CT24",
         "id": "CT24.cz",
         "logo": "https://i.postimg.cc/VsXdVHQs/ct24.png",
@@ -50,32 +60,22 @@
         "country": "CZ"
     },
     {
-        "name": "CT Decko",
-        "id": "CTDecko.cz",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/%C4%8CT-D_logo.svg/512px-%C4%8CT-D_logo.svg.png",
-        "url": "http://88.212.15.19/live/ct_art_avc_25p/playlist.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "CZ"
-    },
-    {
-        "name": "Minimax CEE",
-        "id": "MinimaxCEE.cz",
-        "logo": "https://i.imgur.com/WWOlm1x.png",
-        "url": "http://88.212.15.19/live/test_minimax/playlist.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "CZ"
-    },
-    {
         "name": "Kino Barrandov",
         "id": "KinoBarrandov.cz",
         "logo": "https://i.postimg.cc/LXw07B7L/kinobarrandov.png",
         "url": "http://83.167.253.107/hdmi1_ext",
         "categories": [
             "movies"
+        ],
+        "country": "CZ"
+    },
+    {
+        "name": "CT Decko",
+        "id": "CTDecko.cz",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/%C4%8CT-D_logo.svg/512px-%C4%8CT-D_logo.svg.png",
+        "url": "http://88.212.15.19/live/ct_art_avc_25p/playlist.m3u8",
+        "categories": [
+            "kids"
         ],
         "country": "CZ"
     },
@@ -98,20 +98,10 @@
         "country": "CZ"
     },
     {
-        "name": "Plzen TV",
-        "id": "PlzenTV.cz",
-        "logo": "https://i.imgur.com/TxLKSqL.png",
-        "url": "https://vysilani.zaktv.cz/broadcast/hls/ptv/index.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "CZ"
-    },
-    {
-        "name": "JC1",
-        "id": "JC1.cz",
-        "logo": "https://i.imgur.com/AM8YtcV.png",
-        "url": "https://stream.jc1.cz/hls/jc1.m3u8",
+        "name": "Jihoceska televize",
+        "id": "Jihoceskatelevize.cz",
+        "logo": "https://i.imgur.com/Hi8hZzl.png",
+        "url": "https://vysilani.zaktv.cz/broadcast/hls/jtv/index.m3u8",
         "categories": [
             "general"
         ],
@@ -126,10 +116,28 @@
         "country": "CZ"
     },
     {
-        "name": "Jihoceska televize",
-        "id": "Jihoceskatelevize.cz",
-        "logo": "https://i.imgur.com/Hi8hZzl.png",
-        "url": "https://vysilani.zaktv.cz/broadcast/hls/jtv/index.m3u8",
+        "name": "Plzen TV",
+        "id": "PlzenTV.cz",
+        "logo": "https://i.imgur.com/TxLKSqL.png",
+        "url": "https://vysilani.zaktv.cz/broadcast/hls/ptv/index.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "CZ"
+    },
+    {
+        "name": "Elektrika TV",
+        "id": "ElektrikaTV.cz",
+        "logo": "https://i.imgur.com/OLd5od5.png",
+        "url": "https://rtmp.elektrika.cz/live/myStream.sdp/playlist.m3u8",
+        "categories": [],
+        "country": "CZ"
+    },
+    {
+        "name": "JC1",
+        "id": "JC1.cz",
+        "logo": "https://i.imgur.com/AM8YtcV.png",
+        "url": "https://stream.jc1.cz/hls/jc1.m3u8",
         "categories": [
             "general"
         ],
@@ -146,16 +154,6 @@
         "country": "CZ"
     },
     {
-        "name": "Ocko Expres",
-        "id": "OckoExpres.cz",
-        "logo": "https://i.postimg.cc/7L1nkv6x/ockoexpres.png",
-        "url": "https://ocko-live.ssl.cdn.cra.cz/channels/ocko_expres/playlist.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "CZ"
-    },
-    {
         "name": "Ocko Gold",
         "id": "OckoGold.cz",
         "logo": "https://i.imgur.com/nrWNyLc.jpg",
@@ -166,11 +164,13 @@
         "country": "CZ"
     },
     {
-        "name": "Elektrika TV",
-        "id": "ElektrikaTV.cz",
-        "logo": "https://i.imgur.com/OLd5od5.png",
-        "url": "https://rtmp.elektrika.cz/live/myStream.sdp/playlist.m3u8",
-        "categories": [],
+        "name": "Ocko Expres",
+        "id": "OckoExpres.cz",
+        "logo": "https://i.postimg.cc/7L1nkv6x/ockoexpres.png",
+        "url": "https://ocko-live.ssl.cdn.cra.cz/channels/ocko_expres/playlist.m3u8",
+        "categories": [
+            "music"
+        ],
         "country": "CZ"
     },
     {
@@ -184,10 +184,10 @@
         "country": "CZ"
     },
     {
-        "name": "TV Brno 1",
-        "id": "TVBrno1.cz",
-        "logo": "https://i.imgur.com/8Xm3WSn.png",
-        "url": "https://stream.polar.cz/tvbrno1/tvbrno1live-1/playlist.m3u8",
+        "name": "Polar2",
+        "id": "Polar2.cz",
+        "logo": "https://i.imgur.com/hCPiMYZ.png",
+        "url": "https://stream.polar.cz/polar2/polarlive2-1/playlist.m3u8",
         "categories": [
             "general"
         ],
@@ -202,10 +202,10 @@
         "country": "CZ"
     },
     {
-        "name": "Polar2",
-        "id": "Polar2.cz",
-        "logo": "https://i.imgur.com/hCPiMYZ.png",
-        "url": "https://stream.polar.cz/polar2/polarlive2-1/playlist.m3u8",
+        "name": "TV Brno 1",
+        "id": "TVBrno1.cz",
+        "logo": "https://i.imgur.com/8Xm3WSn.png",
+        "url": "https://stream.polar.cz/tvbrno1/tvbrno1live-1/playlist.m3u8",
         "categories": [
             "general"
         ],

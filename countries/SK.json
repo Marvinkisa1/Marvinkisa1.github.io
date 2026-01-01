@@ -18,6 +18,14 @@
         "country": "SK"
     },
     {
+        "name": "TV8",
+        "id": "TV8.sk",
+        "logo": "https://i.imgur.com/Z7URrp1.png",
+        "url": "http://109.74.145.11:1935/tv8/mp4:tv8.stream_360p/playlist.m3u8",
+        "categories": [],
+        "country": "SK"
+    },
+    {
         "name": "Sport",
         "id": "Sport.sk",
         "logo": "https://i.imgur.com/oAtcxNZ.png",
@@ -28,11 +36,13 @@
         "country": "SK"
     },
     {
-        "name": "TV8",
-        "id": "TV8.sk",
-        "logo": "https://i.imgur.com/Z7URrp1.png",
-        "url": "http://109.74.145.11:1935/tv8/mp4:tv8.stream_360p/playlist.m3u8",
-        "categories": [],
+        "name": ":24",
+        "id": "24.sk",
+        "logo": "https://i.imgur.com/tTCuczU.png",
+        "url": "http://88.212.15.27/live/test_trojka_25p/playlist.m3u8",
+        "categories": [
+            "news"
+        ],
         "country": "SK"
     },
     {
@@ -42,16 +52,6 @@
         "url": "http://88.212.15.27/live/test_markiza_25p/playlist.m3u8",
         "categories": [
             "general"
-        ],
-        "country": "SK"
-    },
-    {
-        "name": ":24",
-        "id": "24.sk",
-        "logo": "https://i.imgur.com/tTCuczU.png",
-        "url": "http://88.212.15.27/live/test_trojka_25p/playlist.m3u8",
-        "categories": [
-            "news"
         ],
         "country": "SK"
     },
@@ -76,20 +76,20 @@
         "country": "SK"
     },
     {
-        "name": "ducktv",
-        "id": "ducktv.sk",
-        "logo": "https://i.imgur.com/gRFQ35W.png",
-        "url": "https://stream.ads.ottera.tv/playlist.m3u8?network_id=13168",
+        "name": "Zapadoslovenska TV",
+        "id": "ZapadoslovenskaTV.sk",
+        "logo": "https://i.imgur.com/D72Y1IB.png",
+        "url": "https://dash2.antik.sk/live/test_zapadoslovenska/playlist.m3u8",
         "categories": [
-            "kids"
+            "general"
         ],
         "country": "SK"
     },
     {
-        "name": "MTR",
-        "id": "MTR.sk",
-        "logo": "https://www.mtr.sk/img/logo-mtr-0.png",
-        "url": "https://cdnsk003.panaccess.com/local/Ruzomberok/index.m3u8",
+        "name": "NZTV",
+        "id": "NZTV.sk",
+        "logo": "https://i.imgur.com/jGZlnzT.png",
+        "url": "https://dash2.antik.sk/live/test_nove_zamky/playlist.m3u8",
         "categories": [
             "general"
         ],
@@ -116,30 +116,10 @@
         "country": "SK"
     },
     {
-        "name": "Zapadoslovenska TV",
-        "id": "ZapadoslovenskaTV.sk",
-        "logo": "https://i.imgur.com/D72Y1IB.png",
-        "url": "https://dash2.antik.sk/live/test_zapadoslovenska/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "SK"
-    },
-    {
-        "name": "NZTV",
-        "id": "NZTV.sk",
-        "logo": "https://i.imgur.com/jGZlnzT.png",
-        "url": "https://dash2.antik.sk/live/test_nove_zamky/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "SK"
-    },
-    {
-        "name": "TV Mistral",
-        "id": "TVMistral.sk",
-        "logo": "https://i.imgur.com/IOJ6rcb.jpeg",
-        "url": "https://dash3.antik.sk/live/test_mistral_atktv/playlist.m3u8",
+        "name": "MTR",
+        "id": "MTR.sk",
+        "logo": "https://www.mtr.sk/img/logo-mtr-0.png",
+        "url": "https://cdnsk003.panaccess.com/local/Ruzomberok/index.m3u8",
         "categories": [
             "general"
         ],
@@ -172,6 +152,16 @@
         "country": "SK"
     },
     {
+        "name": "TV Mistral",
+        "id": "TVMistral.sk",
+        "logo": "https://i.imgur.com/IOJ6rcb.jpeg",
+        "url": "https://dash3.antik.sk/live/test_mistral_atktv/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "SK"
+    },
+    {
         "name": "TV Nitricka",
         "id": "TVNitricka.sk",
         "logo": "https://i.imgur.com/iwWyG1A.png",
@@ -187,16 +177,6 @@
         "logo": "https://i.imgur.com/Sco4x8t.png",
         "url": "https://dash4.antik.sk/live/test_tv9/playlist.m3u8",
         "categories": [],
-        "country": "SK"
-    },
-    {
-        "name": "Regio TV",
-        "id": "RegioTV.sk",
-        "logo": "https://i.imgur.com/WlF6tlZ.png",
-        "url": "http://tv.geniusnet.sk:8081/regiotv/pl.m3u8",
-        "categories": [
-            "general"
-        ],
         "country": "SK"
     },
     {
@@ -216,19 +196,23 @@
         "country": "SK"
     },
     {
-        "name": "BTV",
-        "id": "BTV.sk",
-        "logo": "https://i.imgur.com/5CZ6HHn.png",
-        "url": "https://fs3.kabelko.sk/9011/index.m3u8?token=btv",
-        "categories": [],
+        "name": "Regio TV",
+        "id": "RegioTV.sk",
+        "logo": "https://i.imgur.com/WlF6tlZ.png",
+        "url": "http://tv.geniusnet.sk:8081/regiotv/pl.m3u8",
+        "categories": [
+            "general"
+        ],
         "country": "SK"
     },
     {
-        "name": "TVT",
-        "id": "TVT.sk",
-        "logo": "https://i.imgur.com/QG0iZlG.png",
-        "url": "https://5ca49f2417d90.streamlock.net/live/turzovka/playlist.m3u8",
-        "categories": [],
+        "name": "ducktv",
+        "id": "ducktv.sk",
+        "logo": "https://i.imgur.com/gRFQ35W.png",
+        "url": "https://stream.ads.ottera.tv/playlist.m3u8?network_id=13168",
+        "categories": [
+            "kids"
+        ],
         "country": "SK"
     },
     {
@@ -247,6 +231,22 @@
         "categories": [
             "general"
         ],
+        "country": "SK"
+    },
+    {
+        "name": "TVT",
+        "id": "TVT.sk",
+        "logo": "https://i.imgur.com/QG0iZlG.png",
+        "url": "https://5ca49f2417d90.streamlock.net/live/turzovka/playlist.m3u8",
+        "categories": [],
+        "country": "SK"
+    },
+    {
+        "name": "BTV",
+        "id": "BTV.sk",
+        "logo": "https://i.imgur.com/5CZ6HHn.png",
+        "url": "https://fs3.kabelko.sk/9011/index.m3u8?token=btv",
+        "categories": [],
         "country": "SK"
     },
     {
