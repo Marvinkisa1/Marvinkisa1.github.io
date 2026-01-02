@@ -18,6 +18,14 @@
         "country": "FI"
     },
     {
+        "name": "Yle Teema & Fem",
+        "id": "YleTeemaFem.fi",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Yle_Teema_%26_Fem.svg/512px-Yle_Teema_%26_Fem.svg.png",
+        "url": "https://yletvworld.akamaized.net/hls/live/622547/yletvteemafemw/index.m3u8",
+        "categories": [],
+        "country": "FI"
+    },
+    {
         "name": "Yle TV2",
         "id": "YleTV2.fi",
         "logo": "https://i.imgur.com/4xkc6PL.png",
@@ -26,11 +34,13 @@
         "country": "FI"
     },
     {
-        "name": "Yle Teema & Fem",
-        "id": "YleTeemaFem.fi",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Yle_Teema_%26_Fem.svg/512px-Yle_Teema_%26_Fem.svg.png",
-        "url": "https://yletvworld.akamaized.net/hls/live/622547/yletvteemafemw/index.m3u8",
-        "categories": [],
+        "name": "MTV Uutiset",
+        "id": "MTVUutiset.fi",
+        "logo": "https://i.imgur.com/ZO8ShOK.png",
+        "url": "https://live.streaming.a2d.tv/asset/20025962.isml/.m3u8",
+        "categories": [
+            "news"
+        ],
         "country": "FI"
     },
     {
@@ -94,12 +104,20 @@
         "country": "FI"
     },
     {
-        "name": "MTV Uutiset",
-        "id": "MTVUutiset.fi",
-        "logo": "https://i.imgur.com/ZO8ShOK.png",
-        "url": "https://live.streaming.a2d.tv/asset/20025962.isml/.m3u8",
+        "name": "STAR Channel",
+        "id": "STARChannel.fi",
+        "logo": "https://i.postimg.cc/0QSQ3S0F/starchannel.png",
+        "url": "https://live-fi.tvkaista.net/star-channel/live.m3u8",
+        "categories": [],
+        "country": "FI"
+    },
+    {
+        "name": "Liv",
+        "id": "Liv.fi",
+        "logo": "https://i.imgur.com/k6NsXBj.png",
+        "url": "https://live-fi.tvkaista.net/liv/live.m3u8?hd=true",
         "categories": [
-            "news"
+            "entertainment"
         ],
         "country": "FI"
     },

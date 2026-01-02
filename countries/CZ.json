@@ -1,11 +1,11 @@
 [
     {
-        "name": "TV Nova",
-        "id": "TVNova.cz",
-        "logo": "https://i.imgur.com/77ztmd9.png",
-        "url": "http://88.212.15.19/live/nova_avc_25p/playlist.m3u8",
+        "name": "Minimax CEE",
+        "id": "MinimaxCEE.cz",
+        "logo": "https://i.imgur.com/WWOlm1x.png",
+        "url": "http://88.212.15.19/live/test_minimax/playlist.m3u8",
         "categories": [
-            "general"
+            "kids"
         ],
         "country": "CZ"
     },
@@ -20,16 +20,6 @@
         "country": "CZ"
     },
     {
-        "name": "Minimax CEE",
-        "id": "MinimaxCEE.cz",
-        "logo": "https://i.imgur.com/WWOlm1x.png",
-        "url": "http://88.212.15.19/live/test_minimax/playlist.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "CZ"
-    },
-    {
         "name": "CT24",
         "id": "CT24.cz",
         "logo": "https://i.postimg.cc/VsXdVHQs/ct24.png",
@@ -40,12 +30,32 @@
         "country": "CZ"
     },
     {
+        "name": "TV Nova",
+        "id": "TVNova.cz",
+        "logo": "https://i.imgur.com/77ztmd9.png",
+        "url": "http://88.212.15.19/live/nova_avc_25p/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "CZ"
+    },
+    {
         "name": "CT Sport",
         "id": "CTSport.cz",
         "logo": "https://i.postimg.cc/GhQ9c8mZ/ctsport.png",
         "url": "http://88.212.15.19/live/test_ctsport_25p/playlist.m3u8",
         "categories": [
             "sports"
+        ],
+        "country": "CZ"
+    },
+    {
+        "name": "CT Decko",
+        "id": "CTDecko.cz",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/%C4%8CT-D_logo.svg/512px-%C4%8CT-D_logo.svg.png",
+        "url": "http://88.212.15.19/live/ct_art_avc_25p/playlist.m3u8",
+        "categories": [
+            "kids"
         ],
         "country": "CZ"
     },
@@ -70,31 +80,11 @@
         "country": "CZ"
     },
     {
-        "name": "CT Decko",
-        "id": "CTDecko.cz",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/%C4%8CT-D_logo.svg/512px-%C4%8CT-D_logo.svg.png",
-        "url": "http://88.212.15.19/live/ct_art_avc_25p/playlist.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "CZ"
-    },
-    {
         "name": "Mnau TV",
         "id": "MnauTV.cz",
         "logo": "https://i.imgur.com/deVHJKS.png",
         "url": "https://5ca49f2417d90.streamlock.net/mnau/livestream/playlist.m3u8",
         "categories": [],
-        "country": "CZ"
-    },
-    {
-        "name": "OIK TV",
-        "id": "OIKTV.cz",
-        "logo": "https://i.imgur.com/1mXxQ02.png",
-        "url": "https://streamer05.low-latency.cz/oiktv/index.m3u8",
-        "categories": [
-            "general"
-        ],
         "country": "CZ"
     },
     {
@@ -126,6 +116,16 @@
         "country": "CZ"
     },
     {
+        "name": "OIK TV",
+        "id": "OIKTV.cz",
+        "logo": "https://i.imgur.com/1mXxQ02.png",
+        "url": "https://streamer05.low-latency.cz/oiktv/index.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "CZ"
+    },
+    {
         "name": "Elektrika TV",
         "id": "ElektrikaTV.cz",
         "logo": "https://i.imgur.com/OLd5od5.png",
@@ -140,16 +140,6 @@
         "url": "https://stream.jc1.cz/hls/jc1.m3u8",
         "categories": [
             "general"
-        ],
-        "country": "CZ"
-    },
-    {
-        "name": "Ocko",
-        "id": "Ocko.cz",
-        "logo": "https://i.postimg.cc/wBYQZx9f/ocko.png",
-        "url": "https://ocko-live.ssl.cdn.cra.cz/channels/ocko/playlist.m3u8",
-        "categories": [
-            "music"
         ],
         "country": "CZ"
     },
@@ -174,22 +164,22 @@
         "country": "CZ"
     },
     {
-        "name": "Polar TV",
-        "id": "PolarTV.cz",
-        "logo": "https://i.imgur.com/pTJHIX1.png",
-        "url": "https://stream.polar.cz/polar/polarlive-1/playlist.m3u8",
+        "name": "Ocko",
+        "id": "Ocko.cz",
+        "logo": "https://i.postimg.cc/wBYQZx9f/ocko.png",
+        "url": "https://ocko-live.ssl.cdn.cra.cz/channels/ocko/playlist.m3u8",
         "categories": [
-            "general"
+            "music"
         ],
         "country": "CZ"
     },
     {
-        "name": "Polar2",
-        "id": "Polar2.cz",
-        "logo": "https://i.imgur.com/hCPiMYZ.png",
-        "url": "https://stream.polar.cz/polar2/polarlive2-1/playlist.m3u8",
+        "name": "Retro Music TV",
+        "id": "RetroMusicTV.cz",
+        "logo": "https://i.imgur.com/pyOjdZs.png",
+        "url": "https://stream.mediawork.cz/retrotv/smil:retrotv2.smil/playlist.m3u8",
         "categories": [
-            "general"
+            "music"
         ],
         "country": "CZ"
     },
@@ -212,12 +202,22 @@
         "country": "CZ"
     },
     {
-        "name": "Retro Music TV",
-        "id": "RetroMusicTV.cz",
-        "logo": "https://i.imgur.com/pyOjdZs.png",
-        "url": "https://stream.mediawork.cz/retrotv/smil:retrotv2.smil/playlist.m3u8",
+        "name": "Polar TV",
+        "id": "PolarTV.cz",
+        "logo": "https://i.imgur.com/pTJHIX1.png",
+        "url": "https://stream.polar.cz/polar/polarlive-1/playlist.m3u8",
         "categories": [
-            "music"
+            "general"
+        ],
+        "country": "CZ"
+    },
+    {
+        "name": "Polar2",
+        "id": "Polar2.cz",
+        "logo": "https://i.imgur.com/hCPiMYZ.png",
+        "url": "https://stream.polar.cz/polar2/polarlive2-1/playlist.m3u8",
+        "categories": [
+            "general"
         ],
         "country": "CZ"
     },

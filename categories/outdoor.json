@@ -20,6 +20,16 @@
         "country": "UK"
     },
     {
+        "name": "Waypoint TV",
+        "id": "WaypointTV.us",
+        "logo": "https://i.imgur.com/9vvlJN9.png",
+        "url": "https://amg00381-waypointcommuni-waypointtv-xumo-syiru.amagi.tv/playlist.m3u8",
+        "categories": [
+            "outdoor"
+        ],
+        "country": "US"
+    },
+    {
         "name": "Outside TV",
         "id": "OutsideTV.us",
         "logo": "https://a.jsrdn.com/hls/22765/outside-tv/extras/1080_logo.png",
@@ -34,16 +44,6 @@
         "id": "OutdoorAmerica.us",
         "logo": "https://i.imgur.com/UKfimFD.png",
         "url": "https://linear-600.frequency.stream/dist/xumo/600/hls/master/playlist.m3u8",
-        "categories": [
-            "outdoor"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Waypoint TV",
-        "id": "WaypointTV.us",
-        "logo": "https://i.imgur.com/9vvlJN9.png",
-        "url": "https://amg00381-waypointcommuni-waypointtv-xumo-syiru.amagi.tv/playlist.m3u8",
         "categories": [
             "outdoor"
         ],
@@ -70,20 +70,20 @@
         "country": "US"
     },
     {
-        "name": "AKC TV",
-        "id": "AKCTV.us",
-        "logo": "https://i.imgur.com/XRTfoSp.png",
-        "url": "https://install.akctvcontrol.com/speed/broadcast/138/desktop-playlist.m3u8",
+        "name": "AKC TV Puppies",
+        "id": "AKCTVPuppies.us",
+        "logo": "https://i.imgur.com/2nzRS60.png",
+        "url": "https://install.akctvcontrol.com/speed/broadcast/140/desktop-playlist.m3u8",
         "categories": [
             "outdoor"
         ],
         "country": "US"
     },
     {
-        "name": "AKC TV Puppies",
-        "id": "AKCTVPuppies.us",
-        "logo": "https://i.imgur.com/2nzRS60.png",
-        "url": "https://install.akctvcontrol.com/speed/broadcast/140/desktop-playlist.m3u8",
+        "name": "AKC TV",
+        "id": "AKCTV.us",
+        "logo": "https://i.imgur.com/XRTfoSp.png",
+        "url": "https://install.akctvcontrol.com/speed/broadcast/138/desktop-playlist.m3u8",
         "categories": [
             "outdoor"
         ],
@@ -171,10 +171,10 @@
         "country": "CO"
     },
     {
-        "name": "Swamiji TV American",
-        "id": "SwamijiTVAmerican.at",
+        "name": "Swamiji TV Australian",
+        "id": "SwamijiTVAustralian.at",
         "logo": "https://i.imgur.com/nrLcuzs.png",
-        "url": "https://stream.swamiji.tv/YogaIPTV/smil:YogaStreamUS.smil/playlist.m3u8",
+        "url": "https://stream.swamiji.tv/YogaIPTV/smil:YogaStreamAU.smil/playlist.m3u8",
         "categories": [
             "outdoor"
         ],
@@ -191,10 +191,10 @@
         "country": "AT"
     },
     {
-        "name": "Swamiji TV Australian",
-        "id": "SwamijiTVAustralian.at",
+        "name": "Swamiji TV American",
+        "id": "SwamijiTVAmerican.at",
         "logo": "https://i.imgur.com/nrLcuzs.png",
-        "url": "https://stream.swamiji.tv/YogaIPTV/smil:YogaStreamAU.smil/playlist.m3u8",
+        "url": "https://stream.swamiji.tv/YogaIPTV/smil:YogaStreamUS.smil/playlist.m3u8",
         "categories": [
             "outdoor"
         ],
@@ -232,17 +232,6 @@
         "country": "IT"
     },
     {
-        "name": "Peer TV South Tyrol",
-        "id": "PeerTVSouthTyrol.it",
-        "logo": "https://www.peer.biz/peertv-iptv/peer-tv-south-tyrol.png",
-        "url": "https://iptv.peer.biz/live/peertv-en.m3u8",
-        "categories": [
-            "outdoor",
-            "travel"
-        ],
-        "country": "IT"
-    },
-    {
         "name": "Peer TV Alto Adige",
         "id": "PeerTVAltoAdige.it",
         "logo": "https://www.peer.biz/peertv-iptv/peer-tv-alto-adige.png",
@@ -258,6 +247,17 @@
         "id": "PeerTVSudtirol.it",
         "logo": "https://www.peer.biz/peertv-iptv/peer-tv-suedtirol.png",
         "url": "https://iptv.peer.biz/live/peertv.m3u8",
+        "categories": [
+            "outdoor",
+            "travel"
+        ],
+        "country": "IT"
+    },
+    {
+        "name": "Peer TV South Tyrol",
+        "id": "PeerTVSouthTyrol.it",
+        "logo": "https://www.peer.biz/peertv-iptv/peer-tv-south-tyrol.png",
+        "url": "https://iptv.peer.biz/live/peertv-en.m3u8",
         "categories": [
             "outdoor",
             "travel"
