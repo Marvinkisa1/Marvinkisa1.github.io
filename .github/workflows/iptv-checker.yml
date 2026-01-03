@@ -1,0 +1,58 @@
+name: IPTV Channel Checker
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  check-iptv-channels:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install aiohttp m3u8 tqdm requests beautifulsoup4 fuzzywuzzy python-Levenshtein
+
+      - name: Run IPTV checker script
+        env:
+          CHANNELS_URL: ${{ secrets.CHANNELS_URL }}
+          STREAMS_URL: ${{ secrets.STREAMS_URL }}
+          KENYA_BASE_URL: ${{ secrets.KENYA_BASE_URL }}
+          M3U_URL_1: ${{ secrets.M3U_URL_1 }}
+          M3U_URL_2: ${{ secrets.M3U_URL_2 }}
+          MAX_CONCURRENT: 200
+        run: |
+          python iptv_checker.py
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iptv-channel-results
+          path: |
+            working_channels.json
+            categories/
+            countries/
+
+      - name: Commit updated files
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          git add working_channels.json categories/ countries/
+          git commit -m "Daily update: IPTV channel lists" || echo "No changes to commit"
+          git push https://x-access-token:${GITHUB_TOKEN}@github.com/Marvinkisa1/Marvinkisa1.github.io.git
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
