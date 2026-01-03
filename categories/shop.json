@@ -20,26 +20,6 @@
         "country": "US"
     },
     {
-        "name": "Lao-Thai TV",
-        "id": "LaoThaiTV.us",
-        "logo": "https://i.imgur.com/q6cQzbv.png",
-        "url": "https://livefta.malimarcdn.com/ftaedge00/laothaius.sdp/playlist.m3u8",
-        "categories": [
-            "shop"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Uniquely Thai",
-        "id": "UniquelyThai.vn",
-        "logo": "https://i.imgur.com/cTSDB8O.png",
-        "url": "https://livefta.malimarcdn.com/ftaedge00/uniquely.sdp/playlist.m3u8",
-        "categories": [
-            "shop"
-        ],
-        "country": "VN"
-    },
-    {
         "name": "Tea TV",
         "id": "TeaTV.vn",
         "logo": "https://i.imgur.com/WorbnyD.jpg",
@@ -48,6 +28,16 @@
             "shop"
         ],
         "country": "VN"
+    },
+    {
+        "name": "Lao-Thai TV",
+        "id": "LaoThaiTV.us",
+        "logo": "https://i.imgur.com/q6cQzbv.png",
+        "url": "https://livefta.malimarcdn.com/ftaedge00/laothaius.sdp/playlist.m3u8",
+        "categories": [
+            "shop"
+        ],
+        "country": "US"
     },
     {
         "name": "Lao SV TV",
@@ -60,10 +50,20 @@
         "country": "VN"
     },
     {
-        "name": "TJC",
-        "id": "TJC.uk",
-        "logo": "https://i.imgur.com/fk5rEje.png",
-        "url": "https://cdn-shop-lc-01.vos360.video/Content/HLS_HLS/Live/channel(HDTJCcustomGFX)/master.m3u8",
+        "name": "Uniquely Thai",
+        "id": "UniquelyThai.vn",
+        "logo": "https://i.imgur.com/cTSDB8O.png",
+        "url": "https://livefta.malimarcdn.com/ftaedge00/uniquely.sdp/playlist.m3u8",
+        "categories": [
+            "shop"
+        ],
+        "country": "VN"
+    },
+    {
+        "name": "QVC",
+        "id": "QVC.uk",
+        "logo": "https://i.imgur.com/6TWUVrh.png",
+        "url": "https://qvcuk-live.akamaized.net/hls/live/2097112/qvc/master.m3u8",
         "categories": [
             "shop"
         ],
@@ -74,16 +74,6 @@
         "id": "QVCStyle.uk",
         "logo": "https://i.imgur.com/6HZlLL3.png",
         "url": "https://qvcuk-live.akamaized.net/hls/live/2097112/qst/master.m3u8",
-        "categories": [
-            "shop"
-        ],
-        "country": "UK"
-    },
-    {
-        "name": "QVC",
-        "id": "QVC.uk",
-        "logo": "https://i.imgur.com/6TWUVrh.png",
-        "url": "https://qvcuk-live.akamaized.net/hls/live/2097112/qvc/master.m3u8",
         "categories": [
             "shop"
         ],
@@ -110,20 +100,31 @@
         "country": "UK"
     },
     {
-        "name": "HSN",
-        "id": "HSN.us",
-        "logo": "https://i.imgur.com/rnZN7rD.png",
-        "url": "https://qvc-amd-live.akamaized.net/hls/live/2034113/lshsn1uswest/master.m3u8",
+        "name": "TJC",
+        "id": "TJC.uk",
+        "logo": "https://i.imgur.com/fk5rEje.png",
+        "url": "https://cdn-shop-lc-01.vos360.video/Content/HLS_HLS/Live/channel(HDTJCcustomGFX)/master.m3u8",
         "categories": [
             "shop"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "Fashion Finds",
+        "id": "FashionFinds.us",
+        "logo": "https://i.imgur.com/GvDRZgq.png",
+        "url": "https://qvc-amd-live.akamaized.net/hls/live/2034113/lsqvc5us/master.m3u8",
+        "categories": [
+            "shop",
+            "lifestyle"
         ],
         "country": "US"
     },
     {
-        "name": "QVC2",
-        "id": "QVC2.us",
-        "logo": "https://i.imgur.com/NxbDjfI.png",
-        "url": "https://qvc-amd-live.akamaized.net/hls/live/2034113/lsqvc2us/master.m3u8",
+        "name": "HSN",
+        "id": "HSN.us",
+        "logo": "https://i.imgur.com/rnZN7rD.png",
+        "url": "https://qvc-amd-live.akamaized.net/hls/live/2034113/lshsn1uswest/master.m3u8",
         "categories": [
             "shop"
         ],
@@ -140,6 +141,17 @@
         "country": "US"
     },
     {
+        "name": "In the Kitchen",
+        "id": "IntheKitchen.us",
+        "logo": "https://i.imgur.com/HrRUd6r.png",
+        "url": "https://qvc-amd-live.akamaized.net/hls/live/2034113/lsqvc4us/master.m3u8",
+        "categories": [
+            "shop",
+            "cooking"
+        ],
+        "country": "US"
+    },
+    {
         "name": "HSN2",
         "id": "HSN2.us",
         "logo": "https://i.imgur.com/R6oC2A3.png",
@@ -150,24 +162,12 @@
         "country": "US"
     },
     {
-        "name": "Fashion Finds",
-        "id": "FashionFinds.us",
-        "logo": "https://i.imgur.com/GvDRZgq.png",
-        "url": "https://qvc-amd-live.akamaized.net/hls/live/2034113/lsqvc5us/master.m3u8",
+        "name": "QVC2",
+        "id": "QVC2.us",
+        "logo": "https://i.imgur.com/NxbDjfI.png",
+        "url": "https://qvc-amd-live.akamaized.net/hls/live/2034113/lsqvc2us/master.m3u8",
         "categories": [
-            "shop",
-            "lifestyle"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "In the Kitchen",
-        "id": "IntheKitchen.us",
-        "logo": "https://i.imgur.com/HrRUd6r.png",
-        "url": "https://qvc-amd-live.akamaized.net/hls/live/2034113/lsqvc4us/master.m3u8",
-        "categories": [
-            "shop",
-            "cooking"
+            "shop"
         ],
         "country": "US"
     },
@@ -252,30 +252,20 @@
         "country": "RU"
     },
     {
-        "name": "Shop Channel",
-        "id": "ShopChannel.jp",
-        "logo": "https://i.postimg.cc/wMqPSBfX/shopchannel.png",
-        "url": "https://stream3.shopch.jp/HLS/master.m3u8",
-        "categories": [
-            "shop"
-        ],
-        "country": "JP"
-    },
-    {
-        "name": "QVC Zwei",
-        "id": "QVCZwei.de",
-        "logo": "https://i.imgur.com/f94kPed.png",
-        "url": "https://qvcde-live.akamaized.net/hls/live/2097104/qps/master.m3u8",
+        "name": "KaufBei TV",
+        "id": "KaufBeiTV.de",
+        "logo": "https://i.imgur.com/CVJWiM0.png",
+        "url": "https://elephant.t62a.com/hls/8103/index.m3u8",
         "categories": [
             "shop"
         ],
         "country": "DE"
     },
     {
-        "name": "QVC Style",
-        "id": "QVCStyle.de",
-        "logo": "https://i.imgur.com/DwdkHGj.png",
-        "url": "https://qvcde-live.akamaized.net/hls/live/2097104/qby/master.m3u8",
+        "name": "QVC Zwei",
+        "id": "QVCZwei.de",
+        "logo": "https://i.imgur.com/f94kPed.png",
+        "url": "https://qvcde-live.akamaized.net/hls/live/2097104/qps/master.m3u8",
         "categories": [
             "shop"
         ],
@@ -292,14 +282,34 @@
         "country": "DE"
     },
     {
-        "name": "KaufBei TV",
-        "id": "KaufBeiTV.de",
-        "logo": "https://i.imgur.com/CVJWiM0.png",
-        "url": "https://elephant.t62a.com/hls/8103/index.m3u8",
+        "name": "QVC Style",
+        "id": "QVCStyle.de",
+        "logo": "https://i.imgur.com/DwdkHGj.png",
+        "url": "https://qvcde-live.akamaized.net/hls/live/2097104/qby/master.m3u8",
         "categories": [
             "shop"
         ],
         "country": "DE"
+    },
+    {
+        "name": "Shop Channel",
+        "id": "ShopChannel.jp",
+        "logo": "https://i.postimg.cc/wMqPSBfX/shopchannel.png",
+        "url": "https://stream3.shopch.jp/HLS/master.m3u8",
+        "categories": [
+            "shop"
+        ],
+        "country": "JP"
+    },
+    {
+        "name": "TUSO",
+        "id": "TUSO.ua",
+        "logo": "https://i.imgur.com/kb4B9wN.png",
+        "url": "https://tuso.cdn-01.cosmonova.net.ua/hls/tuso_ua.m3u8",
+        "categories": [
+            "shop"
+        ],
+        "country": "UA"
     },
     {
         "name": "QVC",
@@ -312,20 +322,20 @@
         "country": "JP"
     },
     {
+        "name": "ET Mall 60",
+        "id": "ETMall60.tw",
+        "logo": "https://i.imgur.com/nvm6dyH.png",
+        "url": "https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV18.m3u8",
+        "categories": [
+            "shop"
+        ],
+        "country": "TW"
+    },
+    {
         "name": "HSE Extra",
         "id": "HSEExtra.de",
         "logo": "https://i.imgur.com/nvMpbip.png",
         "url": "https://hse24extra.akamaized.net/hls/live/2006596/hse24extra/playlist.m3u8",
-        "categories": [
-            "shop"
-        ],
-        "country": "DE"
-    },
-    {
-        "name": "Juwelo",
-        "id": "Juwelo.de",
-        "logo": "https://i.imgur.com/vmX8Qin.png",
-        "url": "https://sdn-global-live-streaming-packager-cache.3qsdn.com/7441/7441_264_live.m3u8",
         "categories": [
             "shop"
         ],
@@ -342,16 +352,6 @@
         "country": "DE"
     },
     {
-        "name": "1-2-3.tv",
-        "id": "123tv.de",
-        "logo": "https://i.imgur.com/slSUDNX.png",
-        "url": "https://123tv-mx1.flex-cdn.net/index.m3u8",
-        "categories": [
-            "shop"
-        ],
-        "country": "DE"
-    },
-    {
         "name": "HSE Trend",
         "id": "HSETrend.de",
         "logo": "https://i.imgur.com/qwh2urX.png",
@@ -362,24 +362,14 @@
         "country": "DE"
     },
     {
-        "name": "TUSO",
-        "id": "TUSO.ua",
-        "logo": "https://i.imgur.com/kb4B9wN.png",
-        "url": "https://tuso.cdn-01.cosmonova.net.ua/hls/tuso_ua.m3u8",
+        "name": "1-2-3.tv",
+        "id": "123tv.de",
+        "logo": "https://i.imgur.com/slSUDNX.png",
+        "url": "https://123tv-mx1.flex-cdn.net/index.m3u8",
         "categories": [
             "shop"
         ],
-        "country": "UA"
-    },
-    {
-        "name": "ET Mall 60",
-        "id": "ETMall60.tw",
-        "logo": "https://i.imgur.com/nvm6dyH.png",
-        "url": "https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV18.m3u8",
-        "categories": [
-            "shop"
-        ],
-        "country": "TW"
+        "country": "DE"
     },
     {
         "name": "Juwelo",
@@ -392,6 +382,16 @@
         "country": "IT"
     },
     {
+        "name": "Juwelo",
+        "id": "Juwelo.de",
+        "logo": "https://i.imgur.com/vmX8Qin.png",
+        "url": "https://sdn-global-live-streaming-packager-cache.3qsdn.com/7441/7441_264_live.m3u8",
+        "categories": [
+            "shop"
+        ],
+        "country": "DE"
+    },
+    {
         "name": "InWild",
         "id": "InWild.it",
         "logo": "https://i.imgur.com/48atMgj.png",
@@ -399,16 +399,6 @@
         "categories": [
             "shop",
             "outdoor"
-        ],
-        "country": "IT"
-    },
-    {
-        "name": "Casa Italia 53",
-        "id": "CasaItalia53.it",
-        "logo": "https://i.imgur.com/X8BI1Md.png",
-        "url": "https://ovp-live.akamaized.net/ac115_live/canale3.smil/playlist.m3u8",
-        "categories": [
-            "shop"
         ],
         "country": "IT"
     },
@@ -423,6 +413,16 @@
         "country": "DE"
     },
     {
+        "name": "LS TV",
+        "id": "LSTV.la",
+        "logo": "https://i.imgur.com/fs3dQ6J.png",
+        "url": "https://livefta.malimarcdn.com/ftaedge00/laostv.sdp/playlist.m3u8",
+        "categories": [
+            "shop"
+        ],
+        "country": "LA"
+    },
+    {
         "name": "QVC",
         "id": "QVC.it",
         "logo": "https://i.imgur.com/6TWUVrh.png",
@@ -433,14 +433,14 @@
         "country": "IT"
     },
     {
-        "name": "LS TV",
-        "id": "LSTV.la",
-        "logo": "https://i.imgur.com/fs3dQ6J.png",
-        "url": "https://livefta.malimarcdn.com/ftaedge00/laostv.sdp/playlist.m3u8",
+        "name": "Casa Italia 53",
+        "id": "CasaItalia53.it",
+        "logo": "https://i.imgur.com/X8BI1Md.png",
+        "url": "https://ovp-live.akamaized.net/ac115_live/canale3.smil/playlist.m3u8",
         "categories": [
             "shop"
         ],
-        "country": "LA"
+        "country": "IT"
     },
     {
         "name": "TVSN Jewellery",
@@ -463,20 +463,20 @@
         "country": "AU"
     },
     {
-        "name": "Expo Channel",
-        "id": "ExpoChannel.au",
-        "logo": "https://i.imgur.com/2KzCShW.png",
-        "url": "https://tvsnhlslivetest.akamaized.net/hls/live/2034711/EXPO-MSL4/master.m3u8",
+        "name": "TVSN",
+        "id": "TVSN.au",
+        "logo": "https://i.imgur.com/lmoAFm3.png",
+        "url": "https://tvsnhlslivetest.akamaized.net/hls/live/2034711/TVSN-MSL4/master.m3u8",
         "categories": [
             "shop"
         ],
         "country": "AU"
     },
     {
-        "name": "TVSN",
-        "id": "TVSN.au",
-        "logo": "https://i.imgur.com/lmoAFm3.png",
-        "url": "https://tvsnhlslivetest.akamaized.net/hls/live/2034711/TVSN-MSL4/master.m3u8",
+        "name": "Expo Channel",
+        "id": "ExpoChannel.au",
+        "logo": "https://i.imgur.com/2KzCShW.png",
+        "url": "https://tvsnhlslivetest.akamaized.net/hls/live/2034711/EXPO-MSL4/master.m3u8",
         "categories": [
             "shop"
         ],
@@ -513,20 +513,20 @@
         "country": "KR"
     },
     {
-        "name": "Shinsegae TV Shopping",
-        "id": "ShinsegaeTVShopping.kr",
-        "logo": "https://i.imgur.com/Hq3yjqA.png",
-        "url": "https://liveout.catenoid.net/live-02-shinsegaetvshopping/shinsegaetvshopping_720p/playlist.m3u8",
+        "name": "W Shopping",
+        "id": "WShopping.kr",
+        "logo": "https://i.imgur.com/hfXjVJd.png",
+        "url": "https://liveout.catenoid.net/live-05-wshopping/wshopping_1500k/playlist.m3u8",
         "categories": [
             "shop"
         ],
         "country": "KR"
     },
     {
-        "name": "W Shopping",
-        "id": "WShopping.kr",
-        "logo": "https://i.imgur.com/hfXjVJd.png",
-        "url": "https://liveout.catenoid.net/live-05-wshopping/wshopping_1500k/playlist.m3u8",
+        "name": "Shinsegae TV Shopping",
+        "id": "ShinsegaeTVShopping.kr",
+        "logo": "https://i.imgur.com/Hq3yjqA.png",
+        "url": "https://liveout.catenoid.net/live-02-shinsegaetvshopping/shinsegaetvshopping_720p/playlist.m3u8",
         "categories": [
             "shop"
         ],
@@ -593,20 +593,20 @@
         "country": "KR"
     },
     {
-        "name": "CJ OnStyle",
-        "id": "CJOnStyle.kr",
-        "logo": "https://i.imgur.com/JiSfEBv.png",
-        "url": "https://live-ch1.cjonstyle.net/cjmalllive/stream2/playlist.m3u8",
+        "name": "Hyundai Home Shopping + Shop",
+        "id": "HyundaiHomeShoppingPlusShop.kr",
+        "logo": "https://i.imgur.com/DoNOuZE.png",
+        "url": "https://dtvstreaming.hyundaihmall.com/newcjp3/_definst_/newcjpstream.smil/playlist.m3u8",
         "categories": [
             "shop"
         ],
         "country": "KR"
     },
     {
-        "name": "Hyundai Home Shopping + Shop",
-        "id": "HyundaiHomeShoppingPlusShop.kr",
-        "logo": "https://i.imgur.com/DoNOuZE.png",
-        "url": "https://dtvstreaming.hyundaihmall.com/newcjp3/_definst_/newcjpstream.smil/playlist.m3u8",
+        "name": "CJ OnStyle",
+        "id": "CJOnStyle.kr",
+        "logo": "https://i.imgur.com/JiSfEBv.png",
+        "url": "https://live-ch1.cjonstyle.net/cjmalllive/stream2/playlist.m3u8",
         "categories": [
             "shop"
         ],
