@@ -34,21 +34,28 @@ M3U_URLS = [
     os.getenv("M3U_URL_2", "")
 ]
 
+# Additional M3U for news and XXX to get more channels
+ADDITIONAL_M3U = [
+    "https://iptv-org.github.io/iptv/categories/news.m3u",
+    "https://iptv-org.github.io/iptv/categories/xxx.m3u"
+]
+
 # File paths
-WORKING_CHANNELS_FILE = "working_channels.json"
+WORKING_CHANNELS_BASE = "working_channels"
 CATEGORIES_DIR = "categories"
 COUNTRIES_DIR = "countries"
 
 # Settings - Optimized for speed but still thorough
-MAX_CONCURRENT = int(os.getenv("MAX_CONCURRENT", 50))  # Balanced concurrency
+MAX_CONCURRENT = int(os.getenv("MAX_CONCURRENT", 100))  # Increased for efficiency
 INITIAL_TIMEOUT = 20  # Increased for reliability
 MAX_TIMEOUT = 30  # Balanced maximum timeout
-RETRIES = 3  # Increased retries
+RETRIES = 2  # Reduced for efficiency
 BATCH_DELAY = 0.1
 BATCH_SIZE = 500
 USE_HEAD_METHOD = True
 BYTE_RANGE_CHECK = False  # Disabled for broader compatibility
 KENYA_HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
+MAX_FILE_SIZE = 2 * 1024 * 1024  # 2MB
 
 # Unwanted extensions for filtering
 UNWANTED_EXTENSIONS = ['.mkv', '.mp4', '.avi', '.mov', '.flv', '.wmv']
@@ -57,6 +64,68 @@ UNWANTED_EXTENSIONS = ['.mkv', '.mp4', '.avi', '.mov', '.flv', '.wmv']
 SCRAPER_HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
 }
+
+def delete_split_files(base_name):
+    """Delete all split files and the base file if exists."""
+    ext = '.json'
+    if os.path.exists(base_name + ext):
+        os.remove(base_name + ext)
+    part = 1
+    while True:
+        part_file = f"{base_name}{part}{ext}"
+        if not os.path.exists(part_file):
+            break
+        os.remove(part_file)
+        part += 1
+
+def load_split_json(base_name):
+    """Load data from split JSON files or the base file."""
+    ext = '.json'
+    all_data = []
+    part = 1
+    while True:
+        part_file = f"{base_name}{part}{ext}"
+        if not os.path.exists(part_file):
+            break
+        with open(part_file, 'r', encoding='utf-8') as f:
+            all_data.extend(json.load(f))
+        part += 1
+    if not all_data and os.path.exists(base_name + ext):
+        with open(base_name + ext, 'r', encoding='utf-8') as f:
+            all_data = json.load(f)
+    return all_data
+
+def save_split_json(base_name, data):
+    """Save data to JSON, splitting if exceeds MAX_FILE_SIZE."""
+    if not data:
+        return
+    ext = '.json'
+    # Try full
+    full_json_str = json.dumps(data, indent=4, ensure_ascii=False)
+    if len(full_json_str.encode('utf-8')) <= MAX_FILE_SIZE:
+        with open(base_name + ext, 'w', encoding='utf-8') as f:
+            f.write(full_json_str)
+        return
+    # Split incrementally
+    part_num = 1
+    current_chunk = []
+    for item in data:
+        temp_chunk = current_chunk + [item]
+        temp_json_str = json.dumps(temp_chunk, indent=4, ensure_ascii=False)
+        if len(temp_json_str.encode('utf-8')) > MAX_FILE_SIZE:
+            # Save current chunk
+            part_file = f"{base_name}{part_num}{ext}"
+            with open(part_file, 'w', encoding='utf-8') as f:
+                f.write(json.dumps(current_chunk, indent=4, ensure_ascii=False))
+            part_num += 1
+            current_chunk = [item]
+        else:
+            current_chunk = temp_chunk
+    # Save last chunk
+    if current_chunk:
+        part_file = f"{base_name}{part_num}{ext}"
+        with open(part_file, 'w', encoding='utf-8') as f:
+            f.write(json.dumps(current_chunk, indent=4, ensure_ascii=False))
 
 def scrape_daily_m3u_urls(max_working=5):
     """Scrape daily working M3U URLs from world-iptv.club."""
@@ -342,8 +411,8 @@ class M3UProcessor:
         """Extract categories from group-title, assuming format like 'TR/ Category'"""
         if not group_title:
             return ['general']
-        parts = [p.strip() for p in group_title.split('/') if p.strip()]
-        if len(parts) > 1 and re.match(r'^[A-Z]{2}$', parts[0]):
+        parts = [p.strip().lower() for p in group_title.split('/') if p.strip()]
+        if len(parts) > 1 and re.match(r'^[a-z]{2}$', parts[0]):
             return parts[1:]
         return parts
 
@@ -423,47 +492,33 @@ def load_existing_data():
         "all_existing_channels": []
     }
 
-    if os.path.exists(WORKING_CHANNELS_FILE):
-        with open(WORKING_CHANNELS_FILE, "r", encoding="utf-8") as f:
-            channels = json.load(f)
-            channels = remove_duplicates(channels)
-            for channel in channels:
-                channel["country"] = channel.get("country", "Unknown")
-                channel["categories"] = channel.get("categories", [])
-            existing_data["working_channels"] = channels
-            existing_data["all_existing_channels"].extend(channels)
+    existing_data["working_channels"] = load_split_json(WORKING_CHANNELS_BASE)
+    existing_data["all_existing_channels"].extend(existing_data["working_channels"])
 
     if os.path.exists(COUNTRIES_DIR):
         for filename in os.listdir(COUNTRIES_DIR):
             if filename.endswith(".json") and filename != ".json":
+                base = os.path.join(COUNTRIES_DIR, filename[:-5])
+                channels = load_split_json(base)
                 country = filename[:-5]
-                with open(os.path.join(COUNTRIES_DIR, filename), "r", encoding="utf-8") as f:
-                    channels = json.load(f)
-                    channels = remove_duplicates(channels)
-                    for channel in channels:
-                        channel["country"] = channel.get("country", "Unknown")
-                        channel["categories"] = channel.get("categories", [])
-                    existing_data["countries"][country] = channels
-                    existing_data["all_existing_channels"].extend(channels)
+                existing_data["countries"][country] = channels
+                existing_data["all_existing_channels"].extend(channels)
 
     if os.path.exists(CATEGORIES_DIR):
         for filename in os.listdir(CATEGORIES_DIR):
             if filename.endswith(".json"):
+                base = os.path.join(CATEGORIES_DIR, filename[:-5])
+                channels = load_split_json(base)
                 category = filename[:-5]
-                with open(os.path.join(CATEGORIES_DIR, filename), "r", encoding="utf-8") as f:
-                    channels = json.load(f)
-                    channels = remove_duplicates(channels)
-                    for channel in channels:
-                        channel["country"] = channel.get("country", "Unknown")
-                        channel["categories"] = channel.get("categories", [])
-                    existing_data["categories"][category] = channels
-                    existing_data["all_existing_channels"].extend(channels)
+                existing_data["categories"][category] = channels
+                existing_data["all_existing_channels"].extend(channels)
 
     existing_data["all_existing_channels"] = remove_duplicates(existing_data["all_existing_channels"])
     return existing_data
 
 def clear_directories():
     """Clear all JSON files in countries and categories directories to prevent stale data."""
+    delete_split_files(WORKING_CHANNELS_BASE)
     for dir_path in [COUNTRIES_DIR, CATEGORIES_DIR]:
         if os.path.exists(dir_path):
             shutil.rmtree(dir_path)
@@ -475,23 +530,19 @@ def save_channels(channels, country_files, category_files, append=False):
     """
     if not append:
         clear_directories()
-        if os.path.exists(WORKING_CHANNELS_FILE):
-            os.remove(WORKING_CHANNELS_FILE)
 
     os.makedirs(COUNTRIES_DIR, exist_ok=True)
     os.makedirs(CATEGORIES_DIR, exist_ok=True)
 
     channels = remove_duplicates(channels)
     
-    if append and os.path.exists(WORKING_CHANNELS_FILE):
-        with open(WORKING_CHANNELS_FILE, "r", encoding="utf-8") as f:
-            current_channels = json.load(f)
-        current_channels.extend(channels)
-        channels = remove_duplicates(current_channels)
+    if append:
+        existing_working = load_split_json(WORKING_CHANNELS_BASE)
+        existing_working.extend(channels)
+        channels = remove_duplicates(existing_working)
     
     # Write (replace or updated) working channels file
-    with open(WORKING_CHANNELS_FILE, "w", encoding="utf-8") as f:
-        json.dump(channels, f, indent=4, ensure_ascii=False)
+    save_split_json(WORKING_CHANNELS_BASE, channels)
 
     # For country files
     for country, country_channels in country_files.items():
@@ -502,17 +553,15 @@ def save_channels(channels, country_files, category_files, append=False):
             continue
         
         country_channels = remove_duplicates(country_channels)
-        country_file = os.path.join(COUNTRIES_DIR, f"{safe_country}.json")
+        country_base = os.path.join(COUNTRIES_DIR, safe_country)
         
-        if append and os.path.exists(country_file):
-            with open(country_file, "r", encoding="utf-8") as f:
-                current_country_channels = json.load(f)
-            current_country_channels.extend(country_channels)
-            country_channels = remove_duplicates(current_country_channels)
+        if append:
+            existing_country = load_split_json(country_base)
+            existing_country.extend(country_channels)
+            country_channels = remove_duplicates(existing_country)
         
         # Write (replace or updated)
-        with open(country_file, "w", encoding="utf-8") as f:
-            json.dump(country_channels, f, indent=4, ensure_ascii=False)
+        save_split_json(country_base, country_channels)
 
     # For category files
     for category, category_channels in category_files.items():
@@ -523,17 +572,15 @@ def save_channels(channels, country_files, category_files, append=False):
             continue
         
         category_channels = remove_duplicates(category_channels)
-        category_file = os.path.join(CATEGORIES_DIR, f"{safe_category}.json")
+        category_base = os.path.join(CATEGORIES_DIR, safe_category)
         
-        if append and os.path.exists(category_file):
-            with open(category_file, "r", encoding="utf-8") as f:
-                current_category_channels = json.load(f)
-            current_category_channels.extend(category_channels)
-            category_channels = remove_duplicates(current_category_channels)
+        if append:
+            existing_category = load_split_json(category_base)
+            existing_category.extend(category_channels)
+            category_channels = remove_duplicates(existing_category)
         
         # Write (replace or updated)
-        with open(category_file, "w", encoding="utf-8") as f:
-            json.dump(category_channels, f, indent=4, ensure_ascii=False)
+        save_split_json(category_base, category_channels)
 
 def update_logos_for_null_channels(channels, logos_data):
     """Update logos for channels with logo: null using logos.json data"""
@@ -1071,40 +1118,37 @@ def sync_working_channels():
     
     This ensures consistency after cleaning, without reintroducing removed channels.
     """
-    logging.info("Syncing all channels to working_channels.json...")
+    logging.info("Syncing all channels to working_channels...")
     
     all_channels = []
     
     if os.path.exists(COUNTRIES_DIR):
         for filename in os.listdir(COUNTRIES_DIR):
             if filename.endswith(".json"):
-                country_file = os.path.join(COUNTRIES_DIR, filename)
-                with open(country_file, "r", encoding="utf-8") as f:
-                    channels = json.load(f)
-                    all_channels.extend(remove_duplicates(channels))
+                base = os.path.join(COUNTRIES_DIR, filename[:-5])
+                channels = load_split_json(base)
+                all_channels.extend(remove_duplicates(channels))
     
     if os.path.exists(CATEGORIES_DIR):
         for filename in os.listdir(CATEGORIES_DIR):
             if filename.endswith(".json"):
-                category_file = os.path.join(CATEGORIES_DIR, filename)
-                with open(category_file, "r", encoding="utf-8") as f:
-                    channels = json.load(f)
-                    all_channels.extend(remove_duplicates(channels))
+                base = os.path.join(CATEGORIES_DIR, filename[:-5])
+                channels = load_split_json(base)
+                all_channels.extend(remove_duplicates(channels))
     
     all_channels = remove_duplicates(all_channels)
     
-    with open(WORKING_CHANNELS_FILE, "w", encoding="utf-8") as f:
-        json.dump(all_channels, f, indent=4, ensure_ascii=False)
+    save_split_json(WORKING_CHANNELS_BASE, all_channels)
     
-    logging.info(f"Synced {len(all_channels)} channels to working_channels.json")
+    logging.info(f"Synced {len(all_channels)} channels to working_channels")
 
-async def process_m3u_urls(session, logos_data, checker):
+async def process_m3u_urls(session, logos_data, checker, m3u_urls):
     """Process M3U URLs and return count of working channels (all, not just sports)."""
     logging.info("\n=== Step 2: Processing M3U URLs ===")
     processor = M3UProcessor()
     all_channels = []
     
-    for m3u_url in M3U_URLS:
+    for m3u_url in m3u_urls:
         if not m3u_url:
             continue
             
@@ -1152,8 +1196,8 @@ async def main():
     # Step 0: Scrape daily M3U URLs and update M3U_URLS
     logging.info("\n=== Step 0: Scraping daily M3U URLs ===")
     scraped_m3u = scrape_daily_m3u_urls(max_working=5)
-    M3U_URLS = scraped_m3u  # Override with scraped URLs (up to 5)
-    logging.info(f"Updated M3U_URLS with {len(M3U_URLS)} scraped working URLs")
+    M3U_URLS = scraped_m3u + ADDITIONAL_M3U  # Add news and xxx m3u
+    logging.info(f"Updated M3U_URLS with {len(M3U_URLS)} URLs (scraped + additional)")
     
     checker = FastChecker()
     
@@ -1182,7 +1226,7 @@ async def main():
         logging.info("\n=== Step 1.5: Scraping Uganda channels ===")
         ug_channels_count = await fetch_and_process_uganda_channels(session, checker, logos_data)
         
-        m3u_channels_count = await process_m3u_urls(session, logos_data, checker)
+        m3u_channels_count = await process_m3u_urls(session, logos_data, checker, M3U_URLS)
         
         logging.info("\n=== Step 3: Checking IPTV-org channels ===")
         try:
@@ -1202,10 +1246,6 @@ async def main():
                 existing_data = load_existing_data()
                 all_existing_channels = existing_data["all_existing_channels"]
                 existing_urls = {ch.get("url") for ch in all_existing_channels if ch.get("url")}
-
-                if not os.path.exists(WORKING_CHANNELS_FILE):
-                    with open(WORKING_CHANNELS_FILE, "w", encoding="utf-8") as f:
-                        json.dump([], f)
 
                 valid_channels_count = await validate_channels(
                     session, checker, all_existing_channels, iptv_channel_ids, logos_data
