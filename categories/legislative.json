@@ -20,16 +20,6 @@
         "country": "BR"
     },
     {
-        "name": "TV Camara",
-        "id": "TVCamara.br",
-        "logo": "https://i.imgur.com/Sdou1Ab.png",
-        "url": "https://stream3.camara.gov.br/tv1/manifest.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "BR"
-    },
-    {
         "name": "TV Camara 2",
         "id": "TVCamara2.br",
         "logo": "https://i.imgur.com/dHrUG1R.png",
@@ -40,14 +30,14 @@
         "country": "BR"
     },
     {
-        "name": "Public Senat 24/24",
-        "id": "PublicSenat2424.fr",
-        "logo": "https://i.imgur.com/nHWWLBP.png",
-        "url": "https://raw.githubusercontent.com/Sibprod/streams/main/ressources/dm/py/hls/publicsenat.m3u8",
+        "name": "TV Camara",
+        "id": "TVCamara.br",
+        "logo": "https://i.imgur.com/Sdou1Ab.png",
+        "url": "https://stream3.camara.gov.br/tv1/manifest.m3u8",
         "categories": [
             "legislative"
         ],
-        "country": "FR"
+        "country": "BR"
     },
     {
         "name": "Legislative Assembly of Ontario",
@@ -68,6 +58,16 @@
             "legislative"
         ],
         "country": "CA"
+    },
+    {
+        "name": "Public Senat 24/24",
+        "id": "PublicSenat2424.fr",
+        "logo": "https://i.imgur.com/nHWWLBP.png",
+        "url": "https://raw.githubusercontent.com/Sibprod/streams/main/ressources/dm/py/hls/publicsenat.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "FR"
     },
     {
         "name": "LCP",
@@ -110,10 +110,10 @@
         "country": "CA"
     },
     {
-        "name": "City of Vacaville Channel 26",
-        "id": "CityofVacavilleChannel26.us",
-        "logo": "https://i.imgur.com/dvuGdxg.png",
-        "url": "https://cdn3.wowza.com/5/RXJNMFI3VlVkOEFP/vacaville/G0228_002/playlist.m3u8",
+        "name": "Cupertino City Channel",
+        "id": "CupertinoCityChannel.us",
+        "logo": "https://i.imgur.com/p9Jn0Dy.png",
+        "url": "https://cdn3.wowza.com/5/dk84U1p2UUdoMGxT/cupertino/G0067_003/playlist.m3u8",
         "categories": [
             "legislative"
         ],
@@ -130,16 +130,6 @@
         "country": "US"
     },
     {
-        "name": "Olelo 49",
-        "id": "Olelo49.us",
-        "logo": "https://i.imgur.com/4C5Xp8M.png",
-        "url": "https://cdn3.wowza.com/5/V2Y2VmhqMEFDTUkx/olelo/G0125_009/playlist.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "US"
-    },
-    {
         "name": "Stockton Gov TV",
         "id": "StocktonGovTV.us",
         "logo": "https://i.imgur.com/Ko4m4iw.png",
@@ -150,10 +140,10 @@
         "country": "US"
     },
     {
-        "name": "Denver 8 TV",
-        "id": "Denver8TV.us",
-        "logo": "https://i.imgur.com/wMIy5jb.png",
-        "url": "https://cdn3.wowza.com/5/bGZUOHp2TnhudnM2/denver/G0080_002/playlist.m3u8",
+        "name": "Olelo 49",
+        "id": "Olelo49.us",
+        "logo": "https://i.imgur.com/4C5Xp8M.png",
+        "url": "https://cdn3.wowza.com/5/V2Y2VmhqMEFDTUkx/olelo/G0125_009/playlist.m3u8",
         "categories": [
             "legislative"
         ],
@@ -170,30 +160,70 @@
         "country": "US"
     },
     {
-        "name": "Cupertino City Channel",
-        "id": "CupertinoCityChannel.us",
-        "logo": "https://i.imgur.com/p9Jn0Dy.png",
-        "url": "https://cdn3.wowza.com/5/dk84U1p2UUdoMGxT/cupertino/G0067_003/playlist.m3u8",
+        "name": "City of Vacaville Channel 26",
+        "id": "CityofVacavilleChannel26.us",
+        "logo": "https://i.imgur.com/dvuGdxg.png",
+        "url": "https://cdn3.wowza.com/5/RXJNMFI3VlVkOEFP/vacaville/G0228_002/playlist.m3u8",
         "categories": [
             "legislative"
         ],
         "country": "US"
     },
     {
-        "name": "HTV 1 Houston Television",
-        "id": "HTV1HoustonTelevision.us",
-        "logo": "https://i.imgur.com/zvj1boM.jpg",
-        "url": "https://stream.swagit.com/live-edge/houstontx/smil:hd-16x9-2-a/playlist.m3u8",
+        "name": "Denver 8 TV",
+        "id": "Denver8TV.us",
+        "logo": "https://i.imgur.com/wMIy5jb.png",
+        "url": "https://cdn3.wowza.com/5/bGZUOHp2TnhudnM2/denver/G0080_002/playlist.m3u8",
         "categories": [
             "legislative"
         ],
         "country": "US"
     },
     {
-        "name": "HTV 2 Houston Television",
-        "id": "HTV2HoustonTelevision.us",
-        "logo": "https://i.imgur.com/zvj1boM.jpg",
-        "url": "https://stream.swagit.com/live-edge/houstontx/smil:hd-16x9-2-b/playlist.m3u8",
+        "name": "NBTV",
+        "id": "NBTV.us",
+        "logo": "https://i.imgur.com/wKSZn6x.png",
+        "url": "https://cdn3.wowza.com/5/RXJNMFI3VlVkOEFP/newportbeach/G0064_003/playlist.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "PHXTV",
+        "id": "PHXTV.us",
+        "logo": "https://i.imgur.com/RkTKR6x.png",
+        "url": "https://cdn3.wowza.com/5/bGZUOHp2TnhudnM2/phoenix/G1498_006/playlist.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "CityTV 20 Santa Monica",
+        "id": "CityTV20SantaMonica.us",
+        "logo": "https://i.imgur.com/NY4fOLy.png",
+        "url": "https://cdn3.wowza.com/5/bGZUOHp2TnhudnM2/santamonica/G0039_002/playlist.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "City of Fort Pierce",
+        "id": "CityofFortPierce.us",
+        "logo": "https://i.imgur.com/2ChoSsi.png",
+        "url": "https://edge-f.swagit.com/live/fortpiercefl/live-1-a/playlist.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Glendale 11 AZ",
+        "id": "Glendale11AZ.us",
+        "logo": "https://i.imgur.com/jehiyV7.png",
+        "url": "https://edge-f.swagit.com/live/glendaleaz/live-1-a-1/playlist.m3u8",
         "categories": [
             "legislative"
         ],
@@ -220,6 +250,16 @@
         "country": "US"
     },
     {
+        "name": "Olelo 54",
+        "id": "Olelo54.us",
+        "logo": "https://i.imgur.com/8BG31QL.png",
+        "url": "https://cdn3.wowza.com/5/V2Y2VmhqMEFDTUkx/olelo/G0125_012/playlist.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "US"
+    },
+    {
         "name": "MBTV",
         "id": "MBTV.us",
         "logo": "https://i.imgur.com/LyqFr9E.png",
@@ -230,10 +270,10 @@
         "country": "US"
     },
     {
-        "name": "City of Fort Pierce",
-        "id": "CityofFortPierce.us",
-        "logo": "https://i.imgur.com/2ChoSsi.png",
-        "url": "https://edge-f.swagit.com/live/fortpiercefl/live-1-a/playlist.m3u8",
+        "name": "LBTV",
+        "id": "LBTV.us",
+        "logo": "https://i.imgur.com/DjkVuFF.png",
+        "url": "https://edge-f.swagit.com/live/longbeachca/live-3-a/playlist.m3u8",
         "categories": [
             "legislative"
         ],
@@ -250,50 +290,10 @@
         "country": "US"
     },
     {
-        "name": "Glendale 11 AZ",
-        "id": "Glendale11AZ.us",
-        "logo": "https://i.imgur.com/jehiyV7.png",
-        "url": "https://edge-f.swagit.com/live/glendaleaz/live-1-a-1/playlist.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "PHXTV",
-        "id": "PHXTV.us",
-        "logo": "https://i.imgur.com/RkTKR6x.png",
-        "url": "https://cdn3.wowza.com/5/bGZUOHp2TnhudnM2/phoenix/G1498_006/playlist.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Olelo 54",
-        "id": "Olelo54.us",
-        "logo": "https://i.imgur.com/8BG31QL.png",
-        "url": "https://cdn3.wowza.com/5/V2Y2VmhqMEFDTUkx/olelo/G0125_012/playlist.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "CityTV 20 Santa Monica",
-        "id": "CityTV20SantaMonica.us",
-        "logo": "https://i.imgur.com/NY4fOLy.png",
-        "url": "https://cdn3.wowza.com/5/bGZUOHp2TnhudnM2/santamonica/G0039_002/playlist.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "NBTV",
-        "id": "NBTV.us",
-        "logo": "https://i.imgur.com/wKSZn6x.png",
-        "url": "https://cdn3.wowza.com/5/RXJNMFI3VlVkOEFP/newportbeach/G0064_003/playlist.m3u8",
+        "name": "HTV 1 Houston Television",
+        "id": "HTV1HoustonTelevision.us",
+        "logo": "https://i.imgur.com/zvj1boM.jpg",
+        "url": "https://stream.swagit.com/live-edge/houstontx/smil:hd-16x9-2-a/playlist.m3u8",
         "categories": [
             "legislative"
         ],
@@ -310,10 +310,10 @@
         "country": "US"
     },
     {
-        "name": "LBTV",
-        "id": "LBTV.us",
-        "logo": "https://i.imgur.com/DjkVuFF.png",
-        "url": "https://edge-f.swagit.com/live/longbeachca/live-3-a/playlist.m3u8",
+        "name": "HTV 2 Houston Television",
+        "id": "HTV2HoustonTelevision.us",
+        "logo": "https://i.imgur.com/zvj1boM.jpg",
+        "url": "https://stream.swagit.com/live-edge/houstontx/smil:hd-16x9-2-b/playlist.m3u8",
         "categories": [
             "legislative"
         ],
@@ -340,80 +340,10 @@
         "country": "US"
     },
     {
-        "name": "Greensboro TV",
-        "id": "GreensboroTV.us",
-        "logo": "",
-        "url": "https://lin12.isilive.ca/live/greensboro/GTN/index.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "WLCT96",
-        "id": "WLCT96.us",
-        "logo": "https://i.imgur.com/ooby0ka.png",
-        "url": "https://5a5c57d042315.streamlock.net/live11704001/ngrp:government_all/playlist.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Community 12TV",
-        "id": "Community12TV.us",
-        "logo": "https://i.imgur.com/Oel3q43.png",
-        "url": "https://lin10.isilive.ca/live/gainesville/live/index.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "KTOP",
-        "id": "KTOP.us",
-        "logo": "https://i.imgur.com/duM548G.png",
-        "url": "https://cdn3.wowza.com/5/cHYzekYzM2kvTVFH/oakland/G0219_002/playlist.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "CityTV Whittier",
-        "id": "CityTVWhittier.us",
-        "logo": "https://i.imgur.com/68n7ifH.png",
-        "url": "https://whittier.cablecast.tv/live/stream-1/live.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "CFM TV Channel 98",
-        "id": "CFMTVChannel98.us",
-        "logo": "https://i.imgur.com/LGs524I.png",
-        "url": "https://cdn3.wowza.com/5/djRwZmQvTEJidmZD/cityftmyers/G2083_002/playlist.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Yuma77",
-        "id": "Yuma77.us",
-        "logo": "https://i.imgur.com/KBriwwj.png",
-        "url": "http://g-med.xyz:25461/live/zikojelica/E845P2V9ae/75407.ts",
-        "categories": [
-            "legislative"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Channel 10",
-        "id": "Channel10.us",
-        "logo": "https://spcity.org/ImageRepository/Document?documentID=4246",
-        "url": "https://cdn3.wowza.com/5/cFh0V0QwUVc4SDl2/santa-paula/G0930_002/playlist.m3u8",
+        "name": "Hillsborough TV",
+        "id": "HillsboroughTV.us",
+        "logo": "https://i.imgur.com/fUne7FX.png",
+        "url": "https://cdn3.wowza.com/5/M0lyamVmM2JWcjhQ/hillsboroughcounty/G2155_002/playlist.m3u8",
         "categories": [
             "legislative"
         ],
@@ -430,20 +360,10 @@
         "country": "US"
     },
     {
-        "name": "Placentia TV",
-        "id": "PlacentiaTV.us",
-        "logo": "https://i.imgur.com/CKwmLLN.png",
-        "url": "https://cdn3.wowza.com/5/M0lyamVmM2JWcjhQ/placentia/G0928_002/playlist.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Hillsborough TV",
-        "id": "HillsboroughTV.us",
-        "logo": "https://i.imgur.com/fUne7FX.png",
-        "url": "https://cdn3.wowza.com/5/M0lyamVmM2JWcjhQ/hillsboroughcounty/G2155_002/playlist.m3u8",
+        "name": "KTOP",
+        "id": "KTOP.us",
+        "logo": "https://i.imgur.com/duM548G.png",
+        "url": "https://cdn3.wowza.com/5/cHYzekYzM2kvTVFH/oakland/G0219_002/playlist.m3u8",
         "categories": [
             "legislative"
         ],
@@ -460,10 +380,10 @@
         "country": "US"
     },
     {
-        "name": "Coral Gables TV",
-        "id": "CoralGablesTV.us",
-        "logo": "https://i.imgur.com/Z7QvRzd.png",
-        "url": "https://cdn3.wowza.com/5/R09KQXpaMWlrRjly/coralgables/G0937_004/playlist.m3u8",
+        "name": "COStv",
+        "id": "COStv.us",
+        "logo": "https://i.imgur.com/IVqjCRE.png",
+        "url": "https://irctv.cablecast.tv/live/stream-1/live.m3u8",
         "categories": [
             "legislative"
         ],
@@ -480,90 +400,10 @@
         "country": "US"
     },
     {
-        "name": "Martin County TV",
-        "id": "MartinCountyTV.us",
-        "logo": "https://i.imgur.com/7VzlbLp.png",
-        "url": "https://cdn3.wowza.com/5/UWpORHhLSEs5SkJs/martin/G0074_002/playlist.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "CT-N Court Feed",
-        "id": "CTNCourtFeed.us",
-        "logo": "https://i.imgur.com/pb0TFQt.jpeg",
-        "url": "http://video.ct-n.com/live/ctnSupreme/playlist_DVR.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "CT-N TV Conneticut",
-        "id": "CTNTVConneticut.us",
-        "logo": "https://i.imgur.com/pb0TFQt.jpg",
-        "url": "http://video.ct-n.com/live/ctnstream/playlist_DVR.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "PSL TV",
-        "id": "PSLTV.us",
-        "logo": "https://i.imgur.com/kzdRmTN.png",
-        "url": "https://cdn3.wowza.com/5/UWpORHhLSEs5SkJs/psl/G0262_003/playlist.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "City of Pompano Beach",
-        "id": "CityofPompanoBeach.us",
-        "logo": "https://i.imgur.com/Bv9OGrH.png",
-        "url": "https://cdn3.wowza.com/5/M0lyamVmM2JWcjhQ/pompano/G0765_005/playlist.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Lex TV",
-        "id": "LexTV.us",
-        "logo": "https://i.imgur.com/a36SPo6.png",
-        "url": "https://cdn3.wowza.com/5/M0lyamVmM2JWcjhQ/lfucg/G0264_005/playlist.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "CT-N Live Stream 2",
-        "id": "CTNLiveStream2.us",
-        "logo": "https://i.imgur.com/pb0TFQt.jpeg",
-        "url": "http://video.ct-n.com/live/web2stream/playlist.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "TV4",
-        "id": "TV4.us",
-        "logo": "https://i.imgur.com/CRvQ6sF.png",
-        "url": "https://cdn3.wowza.com/5/UWpORHhLSEs5SkJs/bullheadcity/G0860_002/playlist.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Escambia County TV",
-        "id": "EscambiaCountyTV.us",
-        "logo": "https://i.imgur.com/TAvJdpo.png",
-        "url": "https://cpcdn.azureedge.net/ESCAMBIACOFLLIVE1/ESCAMBIACOFLLIVE1/playlist.m3u8",
+        "name": "CFM TV Channel 98",
+        "id": "CFMTVChannel98.us",
+        "logo": "https://i.imgur.com/LGs524I.png",
+        "url": "https://cdn3.wowza.com/5/djRwZmQvTEJidmZD/cityftmyers/G2083_002/playlist.m3u8",
         "categories": [
             "legislative"
         ],
@@ -580,10 +420,110 @@
         "country": "US"
     },
     {
-        "name": "Capital City Connection Montgomery",
-        "id": "CapitalCityConnectionMontgomery.us",
-        "logo": "https://image.roku.com/developer_channels/prod/a2cb55884ff88035ebbbb32ef9c60a228314d0a2ac4c86722aff5ea1cb9abcd8.png",
-        "url": "https://capitalcityconnection.cablecast.tv/live/stream-1/live.m3u8",
+        "name": "Placentia TV",
+        "id": "PlacentiaTV.us",
+        "logo": "https://i.imgur.com/CKwmLLN.png",
+        "url": "https://cdn3.wowza.com/5/M0lyamVmM2JWcjhQ/placentia/G0928_002/playlist.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Martin County TV",
+        "id": "MartinCountyTV.us",
+        "logo": "https://i.imgur.com/7VzlbLp.png",
+        "url": "https://cdn3.wowza.com/5/UWpORHhLSEs5SkJs/martin/G0074_002/playlist.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Community 12TV",
+        "id": "Community12TV.us",
+        "logo": "https://i.imgur.com/Oel3q43.png",
+        "url": "https://lin10.isilive.ca/live/gainesville/live/index.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "City of Pompano Beach",
+        "id": "CityofPompanoBeach.us",
+        "logo": "https://i.imgur.com/Bv9OGrH.png",
+        "url": "https://cdn3.wowza.com/5/M0lyamVmM2JWcjhQ/pompano/G0765_005/playlist.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "WLCT96",
+        "id": "WLCT96.us",
+        "logo": "https://i.imgur.com/ooby0ka.png",
+        "url": "https://5a5c57d042315.streamlock.net/live11704001/ngrp:government_all/playlist.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "TV4",
+        "id": "TV4.us",
+        "logo": "https://i.imgur.com/CRvQ6sF.png",
+        "url": "https://cdn3.wowza.com/5/UWpORHhLSEs5SkJs/bullheadcity/G0860_002/playlist.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "PSL TV",
+        "id": "PSLTV.us",
+        "logo": "https://i.imgur.com/kzdRmTN.png",
+        "url": "https://cdn3.wowza.com/5/UWpORHhLSEs5SkJs/psl/G0262_003/playlist.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Lex TV",
+        "id": "LexTV.us",
+        "logo": "https://i.imgur.com/a36SPo6.png",
+        "url": "https://cdn3.wowza.com/5/M0lyamVmM2JWcjhQ/lfucg/G0264_005/playlist.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Channel 10",
+        "id": "Channel10.us",
+        "logo": "https://spcity.org/ImageRepository/Document?documentID=4246",
+        "url": "https://cdn3.wowza.com/5/cFh0V0QwUVc4SDl2/santa-paula/G0930_002/playlist.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Greensboro TV",
+        "id": "GreensboroTV.us",
+        "logo": "",
+        "url": "https://lin12.isilive.ca/live/greensboro/GTN/index.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Coral Gables TV",
+        "id": "CoralGablesTV.us",
+        "logo": "https://i.imgur.com/Z7QvRzd.png",
+        "url": "https://cdn3.wowza.com/5/R09KQXpaMWlrRjly/coralgables/G0937_004/playlist.m3u8",
         "categories": [
             "legislative"
         ],
@@ -620,6 +560,16 @@
         "country": "US"
     },
     {
+        "name": "Escambia County TV",
+        "id": "EscambiaCountyTV.us",
+        "logo": "https://i.imgur.com/TAvJdpo.png",
+        "url": "https://cpcdn.azureedge.net/ESCAMBIACOFLLIVE1/ESCAMBIACOFLLIVE1/playlist.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "US"
+    },
+    {
         "name": "Pasco TV",
         "id": "PascoTV.us",
         "logo": "https://i.imgur.com/CM91sME.png",
@@ -630,10 +580,10 @@
         "country": "US"
     },
     {
-        "name": "C-SPAN",
-        "id": "CSPAN.us",
-        "logo": "https://i.postimg.cc/wTcR7404/cspan.png",
-        "url": "https://fl1.moveonjoy.com/C-SPAN/index.m3u8",
+        "name": "Yuma77",
+        "id": "Yuma77.us",
+        "logo": "https://i.imgur.com/KBriwwj.png",
+        "url": "http://g-med.xyz:25461/live/zikojelica/E845P2V9ae/75407.ts",
         "categories": [
             "legislative"
         ],
@@ -650,20 +600,90 @@
         "country": "US"
     },
     {
-        "name": "COStv",
-        "id": "COStv.us",
-        "logo": "https://i.imgur.com/IVqjCRE.png",
-        "url": "https://irctv.cablecast.tv/live/stream-1/live.m3u8",
+        "name": "CityTV Whittier",
+        "id": "CityTVWhittier.us",
+        "logo": "https://i.imgur.com/68n7ifH.png",
+        "url": "https://whittier.cablecast.tv/live/stream-1/live.m3u8",
         "categories": [
             "legislative"
         ],
         "country": "US"
     },
     {
-        "name": "Brevard Government Access TV",
-        "id": "BrevardGovernmentAccessTV.us",
-        "logo": "https://i.imgur.com/eUTDIQ2.png",
-        "url": "https://cdn3.wowza.com/5/cXdyRHF0Z3kxN0k2/brevardfl/G2111_002/playlist.m3u8",
+        "name": "Capital City Connection Montgomery",
+        "id": "CapitalCityConnectionMontgomery.us",
+        "logo": "https://image.roku.com/developer_channels/prod/a2cb55884ff88035ebbbb32ef9c60a228314d0a2ac4c86722aff5ea1cb9abcd8.png",
+        "url": "https://capitalcityconnection.cablecast.tv/live/stream-1/live.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "CT-N TV Conneticut",
+        "id": "CTNTVConneticut.us",
+        "logo": "https://i.imgur.com/pb0TFQt.jpg",
+        "url": "http://video.ct-n.com/live/ctnstream/playlist_DVR.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "CT-N Live Stream 2",
+        "id": "CTNLiveStream2.us",
+        "logo": "https://i.imgur.com/pb0TFQt.jpeg",
+        "url": "http://video.ct-n.com/live/web2stream/playlist.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "CT-N Court Feed",
+        "id": "CTNCourtFeed.us",
+        "logo": "https://i.imgur.com/pb0TFQt.jpeg",
+        "url": "http://video.ct-n.com/live/ctnSupreme/playlist_DVR.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Midpen Media Center Channel 29",
+        "id": "MidpenMediaCenterChannel29.us",
+        "logo": "https://i.imgur.com/RPJiolQ.png",
+        "url": "https://5c2974786200d.streamlock.net/live-chan29/ngrp:ch29_all/playlist.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Cruz TV",
+        "id": "CruzTV.us",
+        "logo": "https://i.imgur.com/qOO2SaH.png",
+        "url": "https://reflect-communitytv.cablecast.tv/live-4/live/stream-2/live.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "SFGovTV",
+        "id": "SFGovTV.us",
+        "logo": "https://i.imgur.com/uYXuwmV.png",
+        "url": "https://cdn3.wowza.com/5/ZFdxUW9BQWt2UWRL/sanfrancisco/G0051_048/playlist.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "YouDotGov",
+        "id": "YouDotGov.us",
+        "logo": "https://i.imgur.com/4Mc7baR.png",
+        "url": "https://reflect-communitytv.cablecast.tv/live-3/live/stream-1/live.m3u8",
         "categories": [
             "legislative"
         ],
@@ -690,6 +710,16 @@
         "country": "US"
     },
     {
+        "name": "Brevard Government Access TV",
+        "id": "BrevardGovernmentAccessTV.us",
+        "logo": "https://i.imgur.com/eUTDIQ2.png",
+        "url": "https://cdn3.wowza.com/5/cXdyRHF0Z3kxN0k2/brevardfl/G2111_002/playlist.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "US"
+    },
+    {
         "name": "BPTV",
         "id": "BPTV.us",
         "logo": "https://i.imgur.com/ObNBL7L.png",
@@ -710,30 +740,10 @@
         "country": "US"
     },
     {
-        "name": "Cypress Channel 36",
-        "id": "CypressChannel36.us",
-        "logo": "https://i.imgur.com/vOvoHBC.png",
-        "url": "https://livestream-us-east-edge-2.granicusops.com/live/cypressca/live-1-a/playlist.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Cruz TV",
-        "id": "CruzTV.us",
-        "logo": "https://i.imgur.com/qOO2SaH.png",
-        "url": "https://reflect-communitytv.cablecast.tv/live-4/live/stream-2/live.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "YouDotGov",
-        "id": "YouDotGov.us",
-        "logo": "https://i.imgur.com/4Mc7baR.png",
-        "url": "https://reflect-communitytv.cablecast.tv/live-3/live/stream-1/live.m3u8",
+        "name": "C-SPAN",
+        "id": "CSPAN.us",
+        "logo": "https://i.postimg.cc/wTcR7404/cspan.png",
+        "url": "https://fl1.moveonjoy.com/C-SPAN/index.m3u8",
         "categories": [
             "legislative"
         ],
@@ -750,16 +760,6 @@
         "country": "US"
     },
     {
-        "name": "Midpen Media Center Channel 29",
-        "id": "MidpenMediaCenterChannel29.us",
-        "logo": "https://i.imgur.com/RPJiolQ.png",
-        "url": "https://5c2974786200d.streamlock.net/live-chan29/ngrp:ch29_all/playlist.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "US"
-    },
-    {
         "name": "Rocky Hill Channel 16",
         "id": "RockyHillChannel16.us",
         "logo": "https://i.imgur.com/2ZDcH2L.png",
@@ -770,10 +770,10 @@
         "country": "US"
     },
     {
-        "name": "Orange TV",
-        "id": "OrangeTV.us",
-        "logo": "https://i.imgur.com/ANfTXIe.png",
-        "url": "http://otv3.ocfl.net:1936/OrangeTV/smil:OrangeTV.smil/playlist.m3u8",
+        "name": "Cypress Channel 36",
+        "id": "CypressChannel36.us",
+        "logo": "https://i.imgur.com/vOvoHBC.png",
+        "url": "https://livestream-us-east-edge-2.granicusops.com/live/cypressca/live-1-a/playlist.m3u8",
         "categories": [
             "legislative"
         ],
@@ -800,6 +800,66 @@
         "country": "US"
     },
     {
+        "name": "Orange Government Access TV",
+        "id": "OrangeGovernmentAccessTV.us",
+        "logo": "https://i.imgur.com/hyPTfxA.png",
+        "url": "https://livestream.telvue.com/ogat1/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "LakeFront TV",
+        "id": "LakeFrontTV.us",
+        "logo": "https://i.imgur.com/ROb1BNG.png",
+        "url": "https://reflect-lakefront-leesburgflorida.cablecast.tv/live-6/live/live.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "DerryTV 17",
+        "id": "DerryTV17.us",
+        "logo": "https://i.imgur.com/MRR6UL3.png",
+        "url": "https://livestream.telvue.com/derrynh1/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "G10TV",
+        "id": "G10TV.us",
+        "logo": "https://i.imgur.com/5VPgAxB.jpg",
+        "url": "https://reflect-jacksonville.cablecast.tv/live-8/live/live.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "AccessVision Channel 17",
+        "id": "AccessVisionChannel17.us",
+        "logo": "https://i.imgur.com/vi4TCdb.png",
+        "url": "https://livestream.telvue.com/accvision2/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Leominster TV Government",
+        "id": "LeominsterTVGovernment.us",
+        "logo": "https://i.imgur.com/aHkRDQw.png",
+        "url": "https://livestream.telvue.com/leominster3/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "US"
+    },
+    {
         "name": "Thornton 8",
         "id": "Thornton8.us",
         "logo": "https://i.imgur.com/C013OWn.png",
@@ -820,56 +880,6 @@
         "country": "US"
     },
     {
-        "name": "KBRI-8",
-        "id": "KBRI8.us",
-        "logo": "https://i.imgur.com/r8lLsyh.png",
-        "url": "https://brightonco.cablecast.tv/live-4/live/live.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "AccessVision Channel 17",
-        "id": "AccessVisionChannel17.us",
-        "logo": "https://i.imgur.com/vi4TCdb.png",
-        "url": "https://livestream.telvue.com/accvision2/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Government TV 16",
-        "id": "GovernmentTV16.us",
-        "logo": "https://i.imgur.com/iv9Vfcb.png",
-        "url": "https://livestream.telvue.com/nashuanh3/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Yuma Channel 73",
-        "id": "YumaChannel73.us",
-        "logo": "https://i.imgur.com/QsFBCWv.png",
-        "url": "https://livestream.telvue.com/yumaaz2/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "G10TV",
-        "id": "G10TV.us",
-        "logo": "https://i.imgur.com/5VPgAxB.jpg",
-        "url": "https://reflect-jacksonville.cablecast.tv/live-8/live/live.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "US"
-    },
-    {
         "name": "Yuma Channel 72",
         "id": "YumaChannel72.us",
         "logo": "https://i.imgur.com/QsFBCWv.png",
@@ -880,50 +890,10 @@
         "country": "US"
     },
     {
-        "name": "Leominster TV Government",
-        "id": "LeominsterTVGovernment.us",
-        "logo": "https://i.imgur.com/aHkRDQw.png",
-        "url": "https://livestream.telvue.com/leominster3/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "DerryTV 17",
-        "id": "DerryTV17.us",
-        "logo": "https://i.imgur.com/MRR6UL3.png",
-        "url": "https://livestream.telvue.com/derrynh1/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Orange Government Access TV",
-        "id": "OrangeGovernmentAccessTV.us",
-        "logo": "https://i.imgur.com/hyPTfxA.png",
-        "url": "https://livestream.telvue.com/ogat1/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "CMAP Channel 17",
-        "id": "CMAPChannel17.us",
-        "logo": "https://i.imgur.com/wlYUEYc.png",
-        "url": "https://livestream.telvue.com/cmap1/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "LGTV",
-        "id": "LGTV.us",
-        "logo": "https://i.imgur.com/d5w2pT4.png",
-        "url": "https://livestream.telvue.com/lexmedia3/f7b44cfafd5c52223d5498196c8a2e7b.sdp/lexmedia3/stream1/playlist.m3u8",
+        "name": "KBRI-8",
+        "id": "KBRI8.us",
+        "logo": "https://i.imgur.com/r8lLsyh.png",
+        "url": "https://brightonco.cablecast.tv/live-4/live/live.m3u8",
         "categories": [
             "legislative"
         ],
@@ -940,10 +910,30 @@
         "country": "US"
     },
     {
-        "name": "LakeFront TV",
-        "id": "LakeFrontTV.us",
-        "logo": "https://i.imgur.com/ROb1BNG.png",
-        "url": "https://reflect-lakefront-leesburgflorida.cablecast.tv/live-6/live/live.m3u8",
+        "name": "Yuma Channel 73",
+        "id": "YumaChannel73.us",
+        "logo": "https://i.imgur.com/QsFBCWv.png",
+        "url": "https://livestream.telvue.com/yumaaz2/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Government TV 16",
+        "id": "GovernmentTV16.us",
+        "logo": "https://i.imgur.com/iv9Vfcb.png",
+        "url": "https://livestream.telvue.com/nashuanh3/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "CMAP Channel 17",
+        "id": "CMAPChannel17.us",
+        "logo": "https://i.imgur.com/wlYUEYc.png",
+        "url": "https://livestream.telvue.com/cmap1/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
         "categories": [
             "legislative"
         ],
@@ -960,24 +950,24 @@
         "country": "US"
     },
     {
-        "name": "SFGovTV",
-        "id": "SFGovTV.us",
-        "logo": "https://i.imgur.com/uYXuwmV.png",
-        "url": "https://cdn3.wowza.com/5/ZFdxUW9BQWt2UWRL/sanfrancisco/G0051_048/playlist.m3u8",
+        "name": "LGTV",
+        "id": "LGTV.us",
+        "logo": "https://i.imgur.com/d5w2pT4.png",
+        "url": "https://livestream.telvue.com/lexmedia3/f7b44cfafd5c52223d5498196c8a2e7b.sdp/lexmedia3/stream1/playlist.m3u8",
         "categories": [
             "legislative"
         ],
         "country": "US"
     },
     {
-        "name": "Lok Sabha TV",
-        "id": "LokSabhaTV.in",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Lok_Sabha_TV_logo.jpg",
-        "url": "https://playhls.media.nic.in/hls/live/lstv/lstv.m3u8",
+        "name": "Orange TV",
+        "id": "OrangeTV.us",
+        "logo": "https://i.imgur.com/ANfTXIe.png",
+        "url": "http://otv3.ocfl.net:1936/OrangeTV/smil:OrangeTV.smil/playlist.m3u8",
         "categories": [
             "legislative"
         ],
-        "country": "IN"
+        "country": "US"
     },
     {
         "name": "Sansad TV",
@@ -990,10 +980,10 @@
         "country": "IN"
     },
     {
-        "name": "Sansad TV 2",
-        "id": "SansadTV2.in",
-        "logo": "https://dtil.tmsimg.com/assets/s143761_ld_h15_aa.png",
-        "url": "https://playhls.media.nic.in/hls/live/rstv/rstv.m3u8",
+        "name": "Lok Sabha TV",
+        "id": "LokSabhaTV.in",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Lok_Sabha_TV_logo.jpg",
+        "url": "https://playhls.media.nic.in/hls/live/lstv/lstv.m3u8",
         "categories": [
             "legislative"
         ],
@@ -1008,6 +998,16 @@
             "legislative"
         ],
         "country": "SK"
+    },
+    {
+        "name": "Sansad TV 2",
+        "id": "SansadTV2.in",
+        "logo": "https://dtil.tmsimg.com/assets/s143761_ld_h15_aa.png",
+        "url": "https://playhls.media.nic.in/hls/live/rstv/rstv.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "IN"
     },
     {
         "name": "Congreso TV",
@@ -1030,16 +1030,6 @@
         "country": "MD"
     },
     {
-        "name": "Parlamentsfernsehen 4",
-        "id": "Parlamentsfernsehen4.de",
-        "logo": "https://i.imgur.com/mksEgwx.png",
-        "url": "https://bttv-live-z.r53.cdn.tv1.eu/13014bundestag-hk4/_definst_/live/video/hk4_de.smil/playlist.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "DE"
-    },
-    {
         "name": "Parlamentsfernsehen 3",
         "id": "Parlamentsfernsehen3.de",
         "logo": "https://i.imgur.com/mksEgwx.png",
@@ -1054,6 +1044,16 @@
         "id": "Parlamentsfernsehen2.de",
         "logo": "https://i.imgur.com/mksEgwx.png",
         "url": "https://bttv-live-z.r53.cdn.tv1.eu/13014bundestag-hk2/_definst_/live/video/hk2_de.smil/playlist.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "DE"
+    },
+    {
+        "name": "Parlamentsfernsehen 4",
+        "id": "Parlamentsfernsehen4.de",
+        "logo": "https://i.imgur.com/mksEgwx.png",
+        "url": "https://bttv-live-z.r53.cdn.tv1.eu/13014bundestag-hk4/_definst_/live/video/hk4_de.smil/playlist.m3u8",
         "categories": [
             "legislative"
         ],
@@ -1120,16 +1120,6 @@
         "country": "MX"
     },
     {
-        "name": "RTM Parlimen Dewan Rakyat",
-        "id": "RTMParlimenDewanRakyat.my",
-        "logo": "https://i.postimg.cc/mgrVsTMY/header.png",
-        "url": "https://d25tgymtnqzu8s.cloudfront.net/smil:rakyat/playlist.m3u8?id=7",
-        "categories": [
-            "legislative"
-        ],
-        "country": "MY"
-    },
-    {
         "name": "RTM Parlimen Dewan Negara",
         "id": "RTMParlimenDewanNegara.my",
         "logo": "https://i.postimg.cc/mgrVsTMY/header.png",
@@ -1140,14 +1130,14 @@
         "country": "MY"
     },
     {
-        "name": "The Parliamentary Channel",
-        "id": "TheParliamentaryChannel.bs",
-        "logo": "https://i.imgur.com/YjPJ8zZ.png",
-        "url": "https://zns-edge1.streamcomedia.cloud/abr_parliamentarychannel/abr-parliament_streams/playlist.m3u8",
+        "name": "RTM Parlimen Dewan Rakyat",
+        "id": "RTMParlimenDewanRakyat.my",
+        "logo": "https://i.postimg.cc/mgrVsTMY/header.png",
+        "url": "https://d25tgymtnqzu8s.cloudfront.net/smil:rakyat/playlist.m3u8?id=7",
         "categories": [
             "legislative"
         ],
-        "country": "BS"
+        "country": "MY"
     },
     {
         "name": "Icrtv Colima",
@@ -1160,14 +1150,14 @@
         "country": "MX"
     },
     {
-        "name": "Thai Parliament Television",
-        "id": "ThaiParliamentTelevision.th",
-        "logo": "https://i.imgur.com/Okcnmt6.png",
-        "url": "https://tv-live.tpchannel.org/live/tv.m3u8",
+        "name": "The Parliamentary Channel",
+        "id": "TheParliamentaryChannel.bs",
+        "logo": "https://i.imgur.com/YjPJ8zZ.png",
+        "url": "https://zns-edge1.streamcomedia.cloud/abr_parliamentarychannel/abr-parliament_streams/playlist.m3u8",
         "categories": [
             "legislative"
         ],
-        "country": "TH"
+        "country": "BS"
     },
     {
         "name": "Parliament of Malta",
@@ -1180,20 +1170,30 @@
         "country": "MT"
     },
     {
-        "name": "Orszaggyules: OGY TAB",
-        "id": "OrszaggyulesOGYTAB.hu",
-        "logo": "https://i.imgur.com/hbblRpZ.png",
-        "url": "https://tab.parlament.hu:446/edgelive/smil:mkogytab.smil/playlist.m3u8",
+        "name": "Thai Parliament Television",
+        "id": "ThaiParliamentTelevision.th",
+        "logo": "https://i.imgur.com/Okcnmt6.png",
+        "url": "https://tv-live.tpchannel.org/live/tv.m3u8",
         "categories": [
             "legislative"
         ],
-        "country": "HU"
+        "country": "TH"
     },
     {
         "name": "Orszaggyules: OGY plenaris",
         "id": "OrszaggyulesOGYplenaris.hu",
         "logo": "https://i.imgur.com/hbblRpZ.png",
         "url": "https://plenaris.parlament.hu:446/edgelive/smil:mkogyplen.smil/playlist.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "HU"
+    },
+    {
+        "name": "Orszaggyules: OGY TAB",
+        "id": "OrszaggyulesOGYTAB.hu",
+        "logo": "https://i.imgur.com/hbblRpZ.png",
+        "url": "https://tab.parlament.hu:446/edgelive/smil:mkogytab.smil/playlist.m3u8",
         "categories": [
             "legislative"
         ],
@@ -1210,16 +1210,6 @@
         "country": "PT"
     },
     {
-        "name": "National Assembly TV",
-        "id": "NationalAssemblyTV.kr",
-        "logo": "https://i.imgur.com/UKdB8vD.png",
-        "url": "https://github.com/BellezaEmporium/IPTV_Exception/raw/master/channels/kr/natv.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "KR"
-    },
-    {
         "name": "KTV",
         "id": "KTV.kr",
         "logo": "https://i.ibb.co/WkrLDJW/Screenshot-20230714-135036-removebg-preview.png",
@@ -1227,6 +1217,16 @@
         "categories": [
             "legislative",
             "news"
+        ],
+        "country": "KR"
+    },
+    {
+        "name": "National Assembly TV",
+        "id": "NationalAssemblyTV.kr",
+        "logo": "https://i.imgur.com/UKdB8vD.png",
+        "url": "https://github.com/BellezaEmporium/IPTV_Exception/raw/master/channels/kr/natv.m3u8",
+        "categories": [
+            "legislative"
         ],
         "country": "KR"
     },
@@ -1271,16 +1271,6 @@
         "country": "LU"
     },
     {
-        "name": "Canal Parlamento",
-        "id": "CanalParlamento.es",
-        "logo": "https://i.imgur.com/BUO0wH6.png",
-        "url": "https://congresodirecto.akamaized.net/hls/live/2037973/canalparlamento/master.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "ES"
-    },
-    {
         "name": "Congreso de los Diputados 1",
         "id": "CongresodelosDiputados1.es",
         "logo": "https://i.imgur.com/3Qxpe72.png",
@@ -1301,20 +1291,30 @@
         "country": "ES"
     },
     {
-        "name": "Congreso de los Diputados 2",
-        "id": "CongresodelosDiputados2.es",
-        "logo": "https://i.imgur.com/ffN2LE3.png",
-        "url": "https://congresodirecto.akamaized.net/hls/live/2038275/canal2/master.m3u8",
+        "name": "Congreso de los Diputados 5",
+        "id": "CongresodelosDiputados5.es",
+        "logo": "https://i.imgur.com/2LAzcH8.jpg",
+        "url": "https://congresodirecto.akamaized.net/hls/live/2038278/canal5/master.m3u8",
         "categories": [
             "legislative"
         ],
         "country": "ES"
     },
     {
-        "name": "Congreso de los Diputados 5",
-        "id": "CongresodelosDiputados5.es",
-        "logo": "https://i.imgur.com/2LAzcH8.jpg",
-        "url": "https://congresodirecto.akamaized.net/hls/live/2038278/canal5/master.m3u8",
+        "name": "Canal Parlamento",
+        "id": "CanalParlamento.es",
+        "logo": "https://i.imgur.com/BUO0wH6.png",
+        "url": "https://congresodirecto.akamaized.net/hls/live/2037973/canalparlamento/master.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "ES"
+    },
+    {
+        "name": "Congreso de los Diputados 2",
+        "id": "CongresodelosDiputados2.es",
+        "logo": "https://i.imgur.com/ffN2LE3.png",
+        "url": "https://congresodirecto.akamaized.net/hls/live/2038275/canal2/master.m3u8",
         "categories": [
             "legislative"
         ],
