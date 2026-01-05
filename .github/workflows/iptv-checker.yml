@@ -6,12 +6,11 @@ on:
       - main
   workflow_dispatch:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 0 * * *"  # Runs daily at midnight UTC
 
 jobs:
   check-iptv-channels:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -30,6 +29,7 @@ jobs:
         env:
           CHANNELS_URL: ${{ secrets.CHANNELS_URL }}
           STREAMS_URL: ${{ secrets.STREAMS_URL }}
+          LOGOS_URL: https://iptv-org.github.io/api/logos.json
           KENYA_BASE_URL: ${{ secrets.KENYA_BASE_URL }}
           M3U_URL_1: ${{ secrets.M3U_URL_1 }}
           M3U_URL_2: ${{ secrets.M3U_URL_2 }}
@@ -37,22 +37,31 @@ jobs:
         run: |
           python iptv_checker.py
 
-      - name: Upload results
+      - name: Upload results as artifact
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: iptv-channel-results
           path: |
-            working_channels.json
+            working_channels*.json
             categories/
             countries/
 
-      - name: Commit updated files
+      - name: Commit and push updated files
         run: |
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
-          git add working_channels.json categories/ countries/
-          git commit -m "Daily update: IPTV channel lists" || echo "No changes to commit"
-          git push https://x-access-token:${GITHUB_TOKEN}@github.com/Marvinkisa1/Marvinkisa1.github.io.git
+          
+          # Add ALL working_channels files (single or split) + folders
+          git add working_channels*.json categories/ countries/
+          
+          # Only commit if there are actual changes
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          
+          git commit -m "Daily update: IPTV channel lists"
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/Marvinkisa1/Marvinkisa1.github.io.git HEAD:main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
