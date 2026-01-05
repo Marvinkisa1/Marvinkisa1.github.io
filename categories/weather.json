@@ -10,17 +10,6 @@
         "country": "CH"
     },
     {
-        "name": "WMUR-DT1",
-        "id": "WMURDT1.us",
-        "logo": "https://upload.wikimedia.org/wikipedia/en/7/72/WMURCurrentLogo.png",
-        "url": "https://aegis-cloudfront-1.tubi.video/b77ffe96-c5d1-43a7-8687-306ff244d725/playlist.m3u8",
-        "categories": [
-            "news",
-            "weather"
-        ],
-        "country": "US"
-    },
-    {
         "name": "Sky News Weather",
         "id": "SkyNewsWeather.uk",
         "logo": "https://i.postimg.cc/5tj8kWSX/skynewsweather.png",
@@ -31,12 +20,11 @@
         "country": "UK"
     },
     {
-        "name": "WBRZ-DT1",
-        "id": "WBRZDT1.us",
-        "logo": "https://i.imgur.com/n057TgX.png",
-        "url": "https://d2a6g6zgxepbwi.cloudfront.net/wbrz-edge/weather.stream_360p/playlist.m3u8",
+        "name": "AccuWeather NOW",
+        "id": "AccuWeatherNOW.us",
+        "logo": "https://i.imgur.com/M8wbVYK.png",
+        "url": "https://accuweather-xumo.amagi.tv/playlist.m3u8",
         "categories": [
-            "news",
             "weather"
         ],
         "country": "US"
@@ -46,16 +34,6 @@
         "id": "FoxWeather.us",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Fox_Weather_logo.svg/512px-Fox_Weather_logo.svg.png",
         "url": "https://foxweather-xumo.amagi.tv/playlist.m3u8",
-        "categories": [
-            "weather"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "AccuWeather NOW",
-        "id": "AccuWeatherNOW.us",
-        "logo": "https://i.imgur.com/M8wbVYK.png",
-        "url": "https://accuweather-xumo.amagi.tv/playlist.m3u8",
         "categories": [
             "weather"
         ],
@@ -111,5 +89,291 @@
             "weather"
         ],
         "country": "ES"
+    },
+    {
+        "name": "USA: ABC NEWS LIVE",
+        "id": "usaabcnewslive",
+        "logo": "https://puddintap.click/ico/new/USA/abc_news_live_.png",
+        "url": "http://zerotwo.access.ly:2096/8038148170/7316254809/814528",
+        "categories": [
+            "usa | news",
+            "weather"
+        ],
+        "country": ""
+    },
+    {
+        "name": "USA: C-SPAN 3",
+        "id": "usacspan3",
+        "logo": "https://puddintap.click/ico/USA-Color/cspan3.png",
+        "url": "http://zerotwo.access.ly:2096/8038148170/7316254809/814505",
+        "categories": [
+            "usa | news",
+            "weather"
+        ],
+        "country": ""
+    },
+    {
+        "name": "USA: WGN/CW CHICAGO",
+        "id": "usawgncwchicago",
+        "logo": "https://puddintap.click/ico/new/USA/USA_WGN_CHICAGO.png",
+        "url": "http://zerotwo.access.ly:2096/8038148170/7316254809/814524",
+        "categories": [
+            "usa | news",
+            "weather"
+        ],
+        "country": ""
+    },
+    {
+        "name": "USA: ONE AMERICA NEWS (OAN)",
+        "id": "usaoneamericanewsoan",
+        "logo": "https://puddintap.click/ico/USA-Color/oan.png",
+        "url": "http://zerotwo.access.ly:2096/8038148170/7316254809/814521",
+        "categories": [
+            "usa | news",
+            "weather"
+        ],
+        "country": ""
+    },
+    {
+        "name": "USA: CHEDDAR NEWS",
+        "id": "usacheddarnews",
+        "logo": "https://puddintap.click/ico/USA-Color/cheddar.png",
+        "url": "http://zerotwo.access.ly:2096/8038148170/7316254809/814506",
+        "categories": [
+            "usa | news",
+            "weather"
+        ],
+        "country": ""
+    },
+    {
+        "name": "USA: ACCUWEATHER",
+        "id": "usaaccuweather",
+        "logo": "https://puddintap.click/ico/USA-Color/accuweather.png",
+        "url": "http://zerotwo.access.ly:2096/8038148170/7316254809/814498",
+        "categories": [
+            "usa | news",
+            "weather"
+        ],
+        "country": ""
+    },
+    {
+        "name": "USA: CNBC",
+        "id": "usacnbc",
+        "logo": "https://puddintap.click/ico/USA-Color/CNBC.png",
+        "url": "http://zerotwo.access.ly:2096/8038148170/7316254809/814507",
+        "categories": [
+            "usa | news",
+            "weather"
+        ],
+        "country": ""
+    },
+    {
+        "name": "USA: C-SPAN 2",
+        "id": "usacspan2",
+        "logo": "https://puddintap.click/ico/USA-Color/cspan2.png",
+        "url": "http://zerotwo.access.ly:2096/8038148170/7316254809/814504",
+        "categories": [
+            "usa | news",
+            "weather"
+        ],
+        "country": ""
+    },
+    {
+        "name": "USA: BLOOMBERG",
+        "id": "usabloomberg",
+        "logo": "https://puddintap.click/ico/USA-Color/bloomberg-television-logo.png",
+        "url": "http://zerotwo.access.ly:2096/8038148170/7316254809/814502",
+        "categories": [
+            "usa | news",
+            "weather"
+        ],
+        "country": ""
+    },
+    {
+        "name": "USA: FOX NEWS",
+        "id": "usafoxnews",
+        "logo": "https://puddintap.click/ico/USA-Color/FOXNEWSCHANNEL.png",
+        "url": "http://zerotwo.access.ly:2096/8038148170/7316254809/814512",
+        "categories": [
+            "usa | news",
+            "weather"
+        ],
+        "country": ""
+    },
+    {
+        "name": "USA: FOX BUSINESS",
+        "id": "usafoxbusiness",
+        "logo": "https://puddintap.click/ico/USA-Color/fox_biz.png",
+        "url": "http://zerotwo.access.ly:2096/8038148170/7316254809/814510",
+        "categories": [
+            "usa | news",
+            "weather"
+        ],
+        "country": ""
+    },
+    {
+        "name": "USA: CNBC WORLD",
+        "id": "usacnbcworld",
+        "logo": "https://puddintap.click/ico/USA-Color/cnbc-world.png",
+        "url": "http://zerotwo.access.ly:2096/8038148170/7316254809/814508",
+        "categories": [
+            "usa | news",
+            "weather"
+        ],
+        "country": ""
+    },
+    {
+        "name": "USA: REAL AMERICAS VOICE",
+        "id": "usarealamericasvoice",
+        "logo": "https://www.samsung.com/us/smg/content/dam/s7/home/televisions-home-theater/tvs/tvplus/all-channels/08242021/old/RealAmericaVoice_1000x1000circle.png",
+        "url": "http://zerotwo.access.ly:2096/8038148170/7316254809/814527",
+        "categories": [
+            "usa | news",
+            "weather"
+        ],
+        "country": ""
+    },
+    {
+        "name": "USA: C-SPAN",
+        "id": "usacspan",
+        "logo": "https://puddintap.click/ico/USA-Color/cspan.png",
+        "url": "http://zerotwo.access.ly:2096/8038148170/7316254809/814503",
+        "categories": [
+            "usa | news",
+            "weather"
+        ],
+        "country": ""
+    },
+    {
+        "name": "USA: CNN",
+        "id": "usacnn",
+        "logo": "https://puddintap.click/ico/USA-Color/CNN.png",
+        "url": "http://zerotwo.access.ly:2096/8038148170/7316254809/814509",
+        "categories": [
+            "usa | news",
+            "weather"
+        ],
+        "country": ""
+    },
+    {
+        "name": "USA: THE GRIO",
+        "id": "usathegrio",
+        "logo": "https://puddintap.click/ico/new/Unsorted/USA_THE_GRIO.png",
+        "url": "http://zerotwo.access.ly:2096/8038148170/7316254809/814501",
+        "categories": [
+            "usa | news",
+            "weather"
+        ],
+        "country": ""
+    },
+    {
+        "name": "USA: FOX LIVE NOW",
+        "id": "usafoxlivenow",
+        "logo": "https://puddintap.click/ico/new/Unsorted/USA_FOX_LIVE_NOW.png",
+        "url": "http://zerotwo.access.ly:2096/8038148170/7316254809/814511",
+        "categories": [
+            "usa | news",
+            "weather"
+        ],
+        "country": ""
+    },
+    {
+        "name": "USA: MSNBC",
+        "id": "usamsnbc",
+        "logo": "https://puddintap.click/ico/USA-Color/MSNBC.png",
+        "url": "http://zerotwo.access.ly:2096/8038148170/7316254809/814516",
+        "categories": [
+            "usa | news",
+            "weather"
+        ],
+        "country": ""
+    },
+    {
+        "name": "USA: HLN",
+        "id": "usahln",
+        "logo": "https://puddintap.click/ico/USA-Color/HLN.png",
+        "url": "http://zerotwo.access.ly:2096/8038148170/7316254809/814514",
+        "categories": [
+            "usa | news",
+            "weather"
+        ],
+        "country": ""
+    },
+    {
+        "name": "USA: THE WEATHER CHANNEL",
+        "id": "usatheweatherchannel",
+        "logo": "https://puddintap.click/ico/USA-Color/THEWEATHERCHANNEL.png",
+        "url": "http://zerotwo.access.ly:2096/8038148170/7316254809/814522",
+        "categories": [
+            "usa | news",
+            "weather"
+        ],
+        "country": ""
+    },
+    {
+        "name": "USA: NEWSMAX",
+        "id": "usanewsmax",
+        "logo": "https://puddintap.click/ico/USA-Color/newsmaxtv.png",
+        "url": "http://zerotwo.access.ly:2096/8038148170/7316254809/814519",
+        "categories": [
+            "usa | news",
+            "weather"
+        ],
+        "country": ""
+    },
+    {
+        "name": "USA: WEATHER NATION",
+        "id": "usaweathernation",
+        "logo": "https://puddintap.click/ico/USA-Color/weathernation.png",
+        "url": "http://zerotwo.access.ly:2096/8038148170/7316254809/814523",
+        "categories": [
+            "usa | news",
+            "weather"
+        ],
+        "country": ""
+    },
+    {
+        "name": "USA: BBC WORLD NEWS",
+        "id": "usabbcworldnews",
+        "logo": "https://puddintap.click/ico/USA-Color/bbcworldnews.png",
+        "url": "http://zerotwo.access.ly:2096/8038148170/7316254809/814500",
+        "categories": [
+            "usa | news",
+            "weather"
+        ],
+        "country": ""
+    },
+    {
+        "name": "USA: INFOWARS NETWORK",
+        "id": "usainfowarsnetwork",
+        "logo": "https://puddintap.click/ico/new/USA/USA_INFOWARS_NETWORK.png",
+        "url": "http://zerotwo.access.ly:2096/8038148170/7316254809/814515",
+        "categories": [
+            "usa | news",
+            "weather"
+        ],
+        "country": ""
+    },
+    {
+        "name": "USA: NEWSY SCRIPPS",
+        "id": "usanewsyscripps",
+        "logo": "https://puddintap.click/ico/USA-Color/newsy.png",
+        "url": "http://zerotwo.access.ly:2096/8038148170/7316254809/814520",
+        "categories": [
+            "usa | news",
+            "weather"
+        ],
+        "country": ""
+    },
+    {
+        "name": "USA: NEWSNATION",
+        "id": "usanewsnation",
+        "logo": "https://www.pngkey.com/png/full/788-7889177_news-nation.png",
+        "url": "http://zerotwo.access.ly:2096/8038148170/7316254809/814525",
+        "categories": [
+            "usa | news",
+            "weather"
+        ],
+        "country": ""
     }
 ]
