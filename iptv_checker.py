@@ -55,7 +55,7 @@ BATCH_SIZE = 500
 USE_HEAD_METHOD = True
 BYTE_RANGE_CHECK = False  # Disabled for broader compatibility
 KENYA_HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
-MAX_FILE_SIZE = 2 * 1024 * 1024  # 2MB
+MAX_CHANNELS_PER_FILE = 4000
 
 # Unwanted extensions for filtering
 UNWANTED_EXTENSIONS = ['.mkv', '.mp4', '.avi', '.mov', '.flv', '.wmv']
@@ -96,36 +96,21 @@ def load_split_json(base_name):
     return all_data
 
 def save_split_json(base_name, data):
-    """Save data to JSON, splitting if exceeds MAX_FILE_SIZE."""
+    """Save data to JSON, splitting if exceeds MAX_CHANNELS_PER_FILE."""
     if not data:
         return
     ext = '.json'
-    # Try full
-    full_json_str = json.dumps(data, indent=4, ensure_ascii=False)
-    if len(full_json_str.encode('utf-8')) <= MAX_FILE_SIZE:
+    if len(data) <= MAX_CHANNELS_PER_FILE:
         with open(base_name + ext, 'w', encoding='utf-8') as f:
-            f.write(full_json_str)
-        return
-    # Split incrementally
-    part_num = 1
-    current_chunk = []
-    for item in data:
-        temp_chunk = current_chunk + [item]
-        temp_json_str = json.dumps(temp_chunk, indent=4, ensure_ascii=False)
-        if len(temp_json_str.encode('utf-8')) > MAX_FILE_SIZE:
-            # Save current chunk
+            json.dump(data, f, indent=4, ensure_ascii=False)
+    else:
+        part_num = 1
+        for i in range(0, len(data), MAX_CHANNELS_PER_FILE):
+            chunk = data[i:i + MAX_CHANNELS_PER_FILE]
             part_file = f"{base_name}{part_num}{ext}"
             with open(part_file, 'w', encoding='utf-8') as f:
-                f.write(json.dumps(current_chunk, indent=4, ensure_ascii=False))
+                json.dump(chunk, f, indent=4, ensure_ascii=False)
             part_num += 1
-            current_chunk = [item]
-        else:
-            current_chunk = temp_chunk
-    # Save last chunk
-    if current_chunk:
-        part_file = f"{base_name}{part_num}{ext}"
-        with open(part_file, 'w', encoding='utf-8') as f:
-            f.write(json.dumps(current_chunk, indent=4, ensure_ascii=False))
 
 def scrape_daily_m3u_urls(max_working=5):
     """Scrape daily working M3U URLs from world-iptv.club."""
