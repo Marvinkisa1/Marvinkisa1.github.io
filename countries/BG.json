@@ -10,16 +10,6 @@
         "country": "BG"
     },
     {
-        "name": "Plovdiv Orthodox TV",
-        "id": "PlovdivOrthodoxTV.bg",
-        "logo": "",
-        "url": "http://78.130.149.196:1935/live/pptv.stream/playlist.m3u8",
-        "categories": [
-            "religious"
-        ],
-        "country": "BG"
-    },
-    {
         "name": "Max Sport 3 HD+",
         "id": "MaxSport3HD.bg",
         "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/4/45/2024_Copa_Am%C3%A9rica_logo.svg/1200px-2024_Copa_Am%C3%A9rica_logo.svg.png",
@@ -30,22 +20,12 @@
         "country": "BG"
     },
     {
-        "name": "Light Channel",
-        "id": "LightChannel.bg",
-        "logo": "https://i.imgur.com/S3Fbf8T.png",
-        "url": "https://streamer1.streamhost.org/salive/GMIlcbgM/playlist.m3u8",
+        "name": "Plovdiv Orthodox TV",
+        "id": "PlovdivOrthodoxTV.bg",
+        "logo": "",
+        "url": "http://78.130.149.196:1935/live/pptv.stream/playlist.m3u8",
         "categories": [
             "religious"
-        ],
-        "country": "BG"
-    },
-    {
-        "name": "BNT 4",
-        "id": "BNT4.bg",
-        "logo": "https://i.imgur.com/Lw8b3yu.png",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/bntworld/browser-HLS8/bntworld.m3u8",
-        "categories": [
-            "general"
         ],
         "country": "BG"
     },
@@ -60,62 +40,12 @@
         "country": "BG"
     },
     {
-        "name": "Agro TV",
-        "id": "AgroTV.bg",
-        "logo": "https://i.imgur.com/tPMNDtD.png",
-        "url": "https://restr2.bgtv.bg/agro/hls/agro.m3u8",
-        "categories": [
-            "outdoor"
-        ],
-        "country": "BG"
-    },
-    {
-        "name": "The Voice",
-        "id": "TheVoice.bg",
-        "logo": "https://i.imgur.com/OoJSmoj.png",
-        "url": "https://bss1.neterra.tv/thevoice/thevoice.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "BG"
-    },
-    {
-        "name": "Magic TV",
-        "id": "MagicTV.bg",
-        "logo": "https://i.imgur.com/n7bcrrp.png",
-        "url": "https://bss1.neterra.tv/magictv/magictv.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "BG"
-    },
-    {
-        "name": "TV Zagora",
-        "id": "TVZagora.bg",
-        "logo": "https://i.imgur.com/DvBboqe.png",
-        "url": "http://zagoratv.ddns.net:8080/tvzagora.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "BG"
-    },
-    {
         "name": "Travel TV",
         "id": "TravelTV.bg",
         "logo": "https://i.imgur.com/5xllfed.png",
         "url": "https://streamer103.neterra.tv/travel/live.m3u8",
         "categories": [
             "travel"
-        ],
-        "country": "BG"
-    },
-    {
-        "name": "Tiankov Folk",
-        "id": "TiankovFolk.bg",
-        "logo": "https://i.imgur.com/VKY4q64.png",
-        "url": "https://streamer103.neterra.tv/tiankov-folk/live.m3u8",
-        "categories": [
-            "music"
         ],
         "country": "BG"
     },
@@ -130,12 +60,32 @@
         "country": "BG"
     },
     {
+        "name": "Tiankov Folk",
+        "id": "TiankovFolk.bg",
+        "logo": "https://i.imgur.com/VKY4q64.png",
+        "url": "https://streamer103.neterra.tv/tiankov-folk/live.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "BG"
+    },
+    {
         "name": "Tiankov Orient Folk",
         "id": "TiankovOrientFolk.bg",
         "logo": "https://i.imgur.com/33LexyP.png",
         "url": "https://streamer103.neterra.tv/tiankov-orient/live.m3u8",
         "categories": [
             "music"
+        ],
+        "country": "BG"
+    },
+    {
+        "name": "BNT 4",
+        "id": "BNT4.bg",
+        "logo": "https://i.imgur.com/Lw8b3yu.png",
+        "url": "https://viamotionhsi.netplus.ch/live/eds/bntworld/browser-HLS8/bntworld.m3u8",
+        "categories": [
+            "general"
         ],
         "country": "BG"
     },
@@ -150,11 +100,61 @@
         "country": "BG"
     },
     {
+        "name": "Agro TV",
+        "id": "AgroTV.bg",
+        "logo": "https://i.imgur.com/tPMNDtD.png",
+        "url": "https://restr2.bgtv.bg/agro/hls/agro.m3u8",
+        "categories": [
+            "outdoor"
+        ],
+        "country": "BG"
+    },
+    {
+        "name": "TV Zagora",
+        "id": "TVZagora.bg",
+        "logo": "https://i.imgur.com/DvBboqe.png",
+        "url": "http://zagoratv.ddns.net:8080/tvzagora.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "BG"
+    },
+    {
         "name": "RMTV",
         "id": "RMTV.bg",
         "logo": "https://rmtv.bg/img/logo.png",
         "url": "https://transcoder1.bitcare.eu/streaming/rimextv/rmtv.m3u8",
         "categories": [],
+        "country": "BG"
+    },
+    {
+        "name": "Magic TV",
+        "id": "MagicTV.bg",
+        "logo": "https://i.imgur.com/n7bcrrp.png",
+        "url": "https://bss1.neterra.tv/magictv/magictv.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "BG"
+    },
+    {
+        "name": "The Voice",
+        "id": "TheVoice.bg",
+        "logo": "https://i.imgur.com/OoJSmoj.png",
+        "url": "https://bss1.neterra.tv/thevoice/thevoice.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "BG"
+    },
+    {
+        "name": "Light Channel",
+        "id": "LightChannel.bg",
+        "logo": "https://i.imgur.com/S3Fbf8T.png",
+        "url": "https://streamer1.streamhost.org/salive/GMIlcbgM/playlist.m3u8",
+        "categories": [
+            "religious"
+        ],
         "country": "BG"
     }
 ]
