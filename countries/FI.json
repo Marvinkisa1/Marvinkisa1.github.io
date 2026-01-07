@@ -8,18 +8,18 @@
         "country": "FI"
     },
     {
-        "name": "Yle Teema & Fem",
-        "id": "YleTeemaFem.fi",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Yle_Teema_%26_Fem.svg/512px-Yle_Teema_%26_Fem.svg.png",
-        "url": "https://yletvworld.akamaized.net/hls/live/622547/yletvteemafemw/index.m3u8",
-        "categories": [],
-        "country": "FI"
-    },
-    {
         "name": "Yle TV2",
         "id": "YleTV2.fi",
         "logo": "https://i.imgur.com/4xkc6PL.png",
         "url": "https://yletvworld.akamaized.net/hls/live/622541/yletv2w/index.m3u8",
+        "categories": [],
+        "country": "FI"
+    },
+    {
+        "name": "Yle Teema & Fem",
+        "id": "YleTeemaFem.fi",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Yle_Teema_%26_Fem.svg/512px-Yle_Teema_%26_Fem.svg.png",
+        "url": "https://yletvworld.akamaized.net/hls/live/622547/yletvteemafemw/index.m3u8",
         "categories": [],
         "country": "FI"
     },
@@ -44,14 +44,6 @@
         "country": "FI"
     },
     {
-        "name": "STAR Channel",
-        "id": "STARChannel.fi",
-        "logo": "https://i.postimg.cc/0QSQ3S0F/starchannel.png",
-        "url": "https://live-fi.tvkaista.net/star-channel/live.m3u8",
-        "categories": [],
-        "country": "FI"
-    },
-    {
         "name": "Onni TV",
         "id": "OnniTV.fi",
         "logo": "https://i.imgur.com/Vba4jUk.png",
@@ -62,13 +54,11 @@
         "country": "FI"
     },
     {
-        "name": "Nar-TV",
-        "id": "NarTV.fi",
-        "logo": "https://i.imgur.com/Ht5yePq.png",
-        "url": "https://streaming.nartv.fi/live/ngrp:NAR_TV.stream_all/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
+        "name": "STAR Channel",
+        "id": "STARChannel.fi",
+        "logo": "https://i.postimg.cc/0QSQ3S0F/starchannel.png",
+        "url": "https://live-fi.tvkaista.net/star-channel/live.m3u8",
+        "categories": [],
         "country": "FI"
     },
     {
@@ -98,6 +88,16 @@
         "url": "https://vod.tv7.fi/tv7-ee/smil:tv7-ee.smil/playlist.m3u8",
         "categories": [
             "religious"
+        ],
+        "country": "FI"
+    },
+    {
+        "name": "Nar-TV",
+        "id": "NarTV.fi",
+        "logo": "https://i.imgur.com/Ht5yePq.png",
+        "url": "https://streaming.nartv.fi/live/ngrp:NAR_TV.stream_all/playlist.m3u8",
+        "categories": [
+            "general"
         ],
         "country": "FI"
     }
