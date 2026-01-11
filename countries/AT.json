@@ -30,20 +30,20 @@
         "country": "AT"
     },
     {
-        "name": "ServusTV",
-        "id": "ServusTV.at",
-        "logo": "https://i.imgur.com/6W637Gn.png",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/servustvhd/browser-HLS8/servustvhd.m3u8",
+        "name": "ORF 1",
+        "id": "ORF1.at",
+        "logo": "https://i.postimg.cc/HLfnBjHn/orf1.png",
+        "url": "https://dash2.antik.sk/live/test_orf_eins_tizen/playlist.m3u8",
         "categories": [
-            "movies"
+            "general"
         ],
         "country": "AT"
     },
     {
-        "name": "ATV2",
-        "id": "ATV2.at",
-        "logo": "https://i.postimg.cc/pVDj8SpM/atv2.png",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/atv/browser-HLS8/atv.m3u8",
+        "name": "ORF 2",
+        "id": "ORF2.at",
+        "logo": "https://i.imgur.com/svgv2q5.png",
+        "url": "https://dash4.antik.sk/live/test_orf_zwei_tizen/playlist.m3u8",
         "categories": [
             "general"
         ],
@@ -60,6 +60,16 @@
         "country": "AT"
     },
     {
+        "name": "ATV2",
+        "id": "ATV2.at",
+        "logo": "https://i.postimg.cc/pVDj8SpM/atv2.png",
+        "url": "https://viamotionhsi.netplus.ch/live/eds/atv/browser-HLS8/atv.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "AT"
+    },
+    {
         "name": "FUEL TV",
         "id": "FUELTV.at",
         "logo": "https://i.imgur.com/I8mviBy.png",
@@ -70,20 +80,20 @@
         "country": "AT"
     },
     {
-        "name": "Antenne Steiermark",
-        "id": "AntenneSteiermark.at",
-        "logo": "https://i.imgur.com/qnappvd.jpeg",
-        "url": "https://60efd7a2b4d02.streamlock.net/a_steiermark/ngrp:livestream_all/playlist.m3u8",
+        "name": "Antenne Kaernten",
+        "id": "AntenneKaernten.at",
+        "logo": "https://i.imgur.com/nUKFDsb.jpeg",
+        "url": "https://60efd7a2b4d02.streamlock.net/a_kaernten/ngrp:livestream_all/playlist.m3u8",
         "categories": [
             "music"
         ],
         "country": "AT"
     },
     {
-        "name": "Antenne Kaernten",
-        "id": "AntenneKaernten.at",
-        "logo": "https://i.imgur.com/nUKFDsb.jpeg",
-        "url": "https://60efd7a2b4d02.streamlock.net/a_kaernten/ngrp:livestream_all/playlist.m3u8",
+        "name": "Antenne Steiermark",
+        "id": "AntenneSteiermark.at",
+        "logo": "https://i.imgur.com/qnappvd.jpeg",
+        "url": "https://60efd7a2b4d02.streamlock.net/a_steiermark/ngrp:livestream_all/playlist.m3u8",
         "categories": [
             "music"
         ],
@@ -100,42 +110,12 @@
         "country": "AT"
     },
     {
-        "name": "ORF 1",
-        "id": "ORF1.at",
-        "logo": "https://i.postimg.cc/HLfnBjHn/orf1.png",
-        "url": "https://strm.hdtvizlecanli.com/live/orf1.m3u8",
+        "name": "Swamiji TV Australian",
+        "id": "SwamijiTVAustralian.at",
+        "logo": "https://i.imgur.com/nrLcuzs.png",
+        "url": "https://stream.swamiji.tv/YogaIPTV/smil:YogaStreamAU.smil/playlist.m3u8",
         "categories": [
-            "general"
-        ],
-        "country": "AT"
-    },
-    {
-        "name": "ATV",
-        "id": "ATV.at",
-        "logo": "https://i.imgur.com/1pA0Tid.png",
-        "url": "https://strm.hdtvizlecanli.com/live/atv.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "AT"
-    },
-    {
-        "name": "FS1 Salzburg",
-        "id": "FS1Salzburg.at",
-        "logo": "https://i.imgur.com/74gMaPK.png",
-        "url": "https://stream.fs1.tv/hls/webstream.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "AT"
-    },
-    {
-        "name": "ORF 2",
-        "id": "ORF2.at",
-        "logo": "https://i.imgur.com/svgv2q5.png",
-        "url": "https://strm.hdtvizlecanli.com/live/orf2.m3u8",
-        "categories": [
-            "general"
+            "outdoor"
         ],
         "country": "AT"
     },
@@ -160,12 +140,22 @@
         "country": "AT"
     },
     {
-        "name": "Swamiji TV Australian",
-        "id": "SwamijiTVAustralian.at",
-        "logo": "https://i.imgur.com/nrLcuzs.png",
-        "url": "https://stream.swamiji.tv/YogaIPTV/smil:YogaStreamAU.smil/playlist.m3u8",
+        "name": "Kronehit",
+        "id": "Kronehit.at",
+        "logo": "https://i.imgur.com/dQJQv1X.png",
+        "url": "https://bitcdn-kronehit.bitmovin.com/v2/hls/playlist.m3u8",
         "categories": [
-            "outdoor"
+            "music"
+        ],
+        "country": "AT"
+    },
+    {
+        "name": "FS1 Salzburg",
+        "id": "FS1Salzburg.at",
+        "logo": "https://i.imgur.com/74gMaPK.png",
+        "url": "https://stream.fs1.tv/hls/webstream.m3u8",
+        "categories": [
+            "general"
         ],
         "country": "AT"
     },
@@ -178,12 +168,12 @@
         "country": "AT"
     },
     {
-        "name": "Kronehit",
-        "id": "Kronehit.at",
-        "logo": "https://i.imgur.com/dQJQv1X.png",
-        "url": "https://bitcdn-kronehit.bitmovin.com/v2/hls/playlist.m3u8",
+        "name": "KIT-TV",
+        "id": "KITTV.at",
+        "logo": "https://i.imgur.com/5rDo1Za.png",
+        "url": "https://everest.pa-hosting.de:3591/live/joseflive.m3u8",
         "categories": [
-            "music"
+            "religious"
         ],
         "country": "AT"
     },
@@ -198,13 +188,47 @@
         "country": "AT"
     },
     {
-        "name": "KIT-TV",
-        "id": "KITTV.at",
-        "logo": "https://i.imgur.com/5rDo1Za.png",
-        "url": "https://everest.pa-hosting.de:3591/live/joseflive.m3u8",
+        "name": "Steiermark TV",
+        "id": "SteiermarkTV.at",
+        "logo": "https://i.imgur.com/AJrUPze.png",
+        "url": "https://h056.video-stream-hosting.de/easycast8-live/_definst_/mp4:livestreamhd4/playlist.m3u8?ref=",
         "categories": [
-            "religious"
+            "general"
         ],
+        "country": "AT"
+    },
+    {
+        "name": "Balkan Radio Salzburg",
+        "id": "BalkanRadioSalzburg.at",
+        "logo": "https://i.imgur.com/UDyxgXf.png",
+        "url": "https://channel.streams.ovh:1936/balkanradiosalzburgtv/balkanradiosalzburgtv/playlist.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "AT"
+    },
+    {
+        "name": "R9",
+        "id": "R9.at",
+        "logo": "https://i.imgur.com/SVJiXxh.png",
+        "url": "https://ms01.w24.at/R9/smil:liveeventR9.smil/playlist.m3u8",
+        "categories": [],
+        "country": "AT"
+    },
+    {
+        "name": "W24",
+        "id": "W24.at",
+        "logo": "https://i.imgur.com/FpVNrxk.png",
+        "url": "https://ms01.w24.at/W24/smil:liveevent.smil/playlist.m3u8",
+        "categories": [],
+        "country": "AT"
+    },
+    {
+        "name": "RTV",
+        "id": "RTV.at",
+        "logo": "https://raw.githubusercontent.com/jnk22/kodinerds-iptv/master/logos/tv/rtvat.png",
+        "url": "http://iptv.rtv-ooe.at/stream.m3u8",
+        "categories": [],
         "country": "AT"
     },
     {
@@ -218,39 +242,21 @@
         "country": "AT"
     },
     {
-        "name": "ORF Kids",
-        "id": "ORFKids.at",
-        "logo": "https://i.imgur.com/Zxuah2b.png",
-        "url": "https://web12.mdn.ors.at/orf/web12/qxa/manifest.mpd",
-        "categories": [
-            "kids"
-        ],
-        "country": "AT"
-    },
-    {
-        "name": "Steiermark TV",
-        "id": "SteiermarkTV.at",
-        "logo": "https://i.imgur.com/AJrUPze.png",
-        "url": "https://h056.video-stream-hosting.de/easycast8-live/_definst_/mp4:livestreamhd4/playlist.m3u8?ref=",
-        "categories": [
-            "general"
-        ],
-        "country": "AT"
-    },
-    {
-        "name": "W24",
-        "id": "W24.at",
-        "logo": "https://i.imgur.com/FpVNrxk.png",
-        "url": "https://ms01.w24.at/W24/smil:liveevent.smil/playlist.m3u8",
+        "name": "TV 1 Oberosterreich",
+        "id": "TV1Oberosterreich.at",
+        "logo": "https://i.imgur.com/KbMkEIn.png",
+        "url": "https://streaming10.huberwebmedia.at/LiveApp/streams/238985177034727564068269_adaptive.m3u8",
         "categories": [],
         "country": "AT"
     },
     {
-        "name": "R9",
-        "id": "R9.at",
-        "logo": "https://i.imgur.com/SVJiXxh.png",
-        "url": "https://ms01.w24.at/R9/smil:liveeventR9.smil/playlist.m3u8",
-        "categories": [],
+        "name": "ServusTV",
+        "id": "ServusTV.at",
+        "logo": "https://i.imgur.com/6W637Gn.png",
+        "url": "https://viamotionhsi.netplus.ch/live/eds/servustvhd/browser-HLS8/servustvhd.m3u8",
+        "categories": [
+            "movies"
+        ],
         "country": "AT"
     },
     {
@@ -274,29 +280,13 @@
         "country": "AT"
     },
     {
-        "name": "Balkan Radio Salzburg",
-        "id": "BalkanRadioSalzburg.at",
-        "logo": "https://i.imgur.com/UDyxgXf.png",
-        "url": "https://channel.streams.ovh:1936/balkanradiosalzburgtv/balkanradiosalzburgtv/playlist.m3u8",
+        "name": "ORF Kids",
+        "id": "ORFKids.at",
+        "logo": "https://i.imgur.com/Zxuah2b.png",
+        "url": "https://web12.mdn.ors.at/orf/web12/qxa/manifest.mpd",
         "categories": [
-            "entertainment"
+            "kids"
         ],
-        "country": "AT"
-    },
-    {
-        "name": "RTV",
-        "id": "RTV.at",
-        "logo": "https://raw.githubusercontent.com/jnk22/kodinerds-iptv/master/logos/tv/rtvat.png",
-        "url": "http://iptv.rtv-ooe.at/stream.m3u8",
-        "categories": [],
-        "country": "AT"
-    },
-    {
-        "name": "TV 1 Oberosterreich",
-        "id": "TV1Oberosterreich.at",
-        "logo": "https://i.imgur.com/KbMkEIn.png",
-        "url": "https://streaming10.huberwebmedia.at/LiveApp/streams/238985177034727564068269_adaptive.m3u8",
-        "categories": [],
         "country": "AT"
     }
 ]
