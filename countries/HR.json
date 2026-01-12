@@ -1,19 +1,19 @@
 [
     {
-        "name": "HRT 2",
-        "id": "HRT2.hr",
-        "logo": "https://i.imgur.com/yyePcl1.png",
-        "url": "https://webtvstream.bhtelecom.ba/hrt2.m3u8",
+        "name": "STV",
+        "id": "STV.hr",
+        "logo": "https://i.imgur.com/Z3yRl17.png",
+        "url": "http://89.201.163.244:8080/hls/hdmi.m3u8",
         "categories": [
             "general"
         ],
         "country": "HR"
     },
     {
-        "name": "STV",
-        "id": "STV.hr",
-        "logo": "https://i.imgur.com/Z3yRl17.png",
-        "url": "http://89.201.163.244:8080/hls/hdmi.m3u8",
+        "name": "HRT 2",
+        "id": "HRT2.hr",
+        "logo": "https://i.imgur.com/yyePcl1.png",
+        "url": "https://webtvstream.bhtelecom.ba/hrt2.m3u8",
         "categories": [
             "general"
         ],
@@ -51,42 +51,20 @@
         "country": "HR"
     },
     {
+        "name": "Radio Televizija Banovina",
+        "id": "RadioTelevizijaBanovina.hr",
+        "logo": "https://i.imgur.com/gCFgC5D.png",
+        "url": "https://pool.alter-media.hr:1936/live/myStream/playlist.m3u8?DVR=",
+        "categories": [],
+        "country": "HR"
+    },
+    {
         "name": "SBTV",
         "id": "SBTV.hr",
         "logo": "https://i.imgur.com/MIampxZ.png",
         "url": "https://live.leveex.hr/hls/live.m3u8",
         "categories": [
             "general"
-        ],
-        "country": "HR"
-    },
-    {
-        "name": "TV Nova",
-        "id": "TVNova.hr",
-        "logo": "https://i.imgur.com/gFjJ7YB.png",
-        "url": "https://stream.agatin.hr:3727/live/tvnovalive.m3u8",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "HR"
-    },
-    {
-        "name": "Libertas TV",
-        "id": "LibertasTV.hr",
-        "logo": "https://i.imgur.com/4R4fhbd.png",
-        "url": "https://stream.luci.xyz/hls/LTV.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "HR"
-    },
-    {
-        "name": "CMC TV",
-        "id": "CMCTV.hr",
-        "logo": "https://i.imgur.com/FCb7Ag2.png",
-        "url": "https://stream.cmctv.hr:49998/cmc/live.m3u8",
-        "categories": [
-            "music"
         ],
         "country": "HR"
     },
@@ -101,11 +79,33 @@
         "country": "HR"
     },
     {
-        "name": "Radio Televizija Banovina",
-        "id": "RadioTelevizijaBanovina.hr",
-        "logo": "https://i.imgur.com/gCFgC5D.png",
-        "url": "https://pool.alter-media.hr:1936/live/myStream/playlist.m3u8?DVR=",
-        "categories": [],
+        "name": "CMC TV",
+        "id": "CMCTV.hr",
+        "logo": "https://i.imgur.com/FCb7Ag2.png",
+        "url": "https://stream.cmctv.hr:49998/cmc/live.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "HR"
+    },
+    {
+        "name": "Libertas TV",
+        "id": "LibertasTV.hr",
+        "logo": "https://i.imgur.com/4R4fhbd.png",
+        "url": "https://stream.luci.xyz/hls/LTV.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "HR"
+    },
+    {
+        "name": "TV Nova",
+        "id": "TVNova.hr",
+        "logo": "https://i.imgur.com/gFjJ7YB.png",
+        "url": "https://stream.agatin.hr:3727/live/tvnovalive.m3u8",
+        "categories": [
+            "entertainment"
+        ],
         "country": "HR"
     }
 ]
