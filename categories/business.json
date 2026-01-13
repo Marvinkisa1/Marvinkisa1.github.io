@@ -30,16 +30,6 @@
         "country": "UK"
     },
     {
-        "name": "CNBC",
-        "id": "CNBC.us",
-        "logo": "https://i.postimg.cc/L8LfB69D/cnbc.png",
-        "url": "http://tvpromas.com:2082/ghfds78/202020/19831",
-        "categories": [
-            "business"
-        ],
-        "country": "US"
-    },
-    {
         "name": "CNBC World",
         "id": "CNBCWorld.us",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/CNBC_World_2025.svg/2560px-CNBC_World_2025.svg.png",
@@ -60,10 +50,10 @@
         "country": "PH"
     },
     {
-        "name": "Yahoo! Finance",
-        "id": "YahooFinance.us",
-        "logo": "https://i.imgur.com/43oHsHL.png",
-        "url": "https://yahoo-vizio.amagi.tv/playlist.m3u8",
+        "name": "CNBC",
+        "id": "CNBC.us",
+        "logo": "https://i.postimg.cc/L8LfB69D/cnbc.png",
+        "url": "http://tvpromas.com:2082/ghfds78/202020/19831",
         "categories": [
             "business"
         ],
@@ -74,6 +64,16 @@
         "id": "Ameritrade.us",
         "logo": "https://images-na.ssl-images-amazon.com/images/I/71CZKwin9mL.png",
         "url": "https://tdameritrade-vizio.amagi.tv/playlist.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Yahoo! Finance",
+        "id": "YahooFinance.us",
+        "logo": "https://i.imgur.com/43oHsHL.png",
+        "url": "https://yahoo-vizio.amagi.tv/playlist.m3u8",
         "categories": [
             "business"
         ],
@@ -130,26 +130,6 @@
         "country": "US"
     },
     {
-        "name": "CNBC TV18 Prime HD",
-        "id": "CNBCTV18PrimeHD.in",
-        "logo": "https://dtil.tmsimg.com/assets/GNLZZGG00215L6T.png",
-        "url": "https://n18syndication.akamaized.net/bpk-tv/CNBC_Tv18_Prime_HD_NW18_MOB/output01/index.m3u8",
-        "categories": [
-            "business"
-        ],
-        "country": "IN"
-    },
-    {
-        "name": "Zee Business",
-        "id": "ZeeBusiness.in",
-        "logo": "https://dtil.tmsimg.com/assets/GNLZZGG00230YYJ.png",
-        "url": "https://dwby15d04agvq.cloudfront.net/index_1.m3u8",
-        "categories": [
-            "business"
-        ],
-        "country": "IN"
-    },
-    {
         "name": "CNBC Awaaz",
         "id": "CNBCAwaaz.in",
         "logo": "https://dtil.tmsimg.com/assets/GNLZZGG00216VDJ.png",
@@ -170,6 +150,36 @@
         "country": "IN"
     },
     {
+        "name": "Tevex",
+        "id": "Tevex.cl",
+        "logo": "https://i.imgur.com/FnInQRd.png",
+        "url": "https://v4.tustreaming.cl/tevexinter/index.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "CL"
+    },
+    {
+        "name": "CNBC TV18 Prime HD",
+        "id": "CNBCTV18PrimeHD.in",
+        "logo": "https://dtil.tmsimg.com/assets/GNLZZGG00215L6T.png",
+        "url": "https://n18syndication.akamaized.net/bpk-tv/CNBC_Tv18_Prime_HD_NW18_MOB/output01/index.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "IN"
+    },
+    {
+        "name": "Zee Business",
+        "id": "ZeeBusiness.in",
+        "logo": "https://dtil.tmsimg.com/assets/GNLZZGG00230YYJ.png",
+        "url": "https://dwby15d04agvq.cloudfront.net/index_1.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "IN"
+    },
+    {
         "name": "NDTV Profit",
         "id": "NDTVProfit.in",
         "logo": "https://i.imgur.com/WK4tZ6p.png",
@@ -178,16 +188,6 @@
             "business"
         ],
         "country": "IN"
-    },
-    {
-        "name": "Aleph Business",
-        "id": "AlephBusiness.ro",
-        "logo": "https://i.imgur.com/IqvZBeo.png",
-        "url": "https://streamw.m.ro/Aleph/ngrp:Alephbiz.stream_all/playlist.m3u8",
-        "categories": [
-            "business"
-        ],
-        "country": "RO"
     },
     {
         "name": "JOB TV",
@@ -200,14 +200,14 @@
         "country": "RO"
     },
     {
-        "name": "Tevex",
-        "id": "Tevex.cl",
-        "logo": "https://i.imgur.com/FnInQRd.png",
-        "url": "https://v4.tustreaming.cl/tevexinter/index.m3u8",
+        "name": "Aleph Business",
+        "id": "AlephBusiness.ro",
+        "logo": "https://i.imgur.com/IqvZBeo.png",
+        "url": "https://streamw.m.ro/Aleph/ngrp:Alephbiz.stream_all/playlist.m3u8",
         "categories": [
             "business"
         ],
-        "country": "CL"
+        "country": "RO"
     },
     {
         "name": "RBK-TV",
@@ -230,6 +230,17 @@
         "country": "IT"
     },
     {
+        "name": "Asharq News",
+        "id": "AsharqNews.sa",
+        "logo": "https://i.imgur.com/bqRC3sl.png",
+        "url": "https://svs.itworkscdn.net/bloomberarlive/bloomberg.smil/playlist_dvr.m3u8",
+        "categories": [
+            "business",
+            "news"
+        ],
+        "country": "SA"
+    },
+    {
         "name": "Bloomberg TV Mongolia",
         "id": "BloombergTVMongolia.mn",
         "logo": "https://i.imgur.com/OuogLHx.png",
@@ -248,17 +259,6 @@
             "business"
         ],
         "country": "CI"
-    },
-    {
-        "name": "Asharq News",
-        "id": "AsharqNews.sa",
-        "logo": "https://i.imgur.com/bqRC3sl.png",
-        "url": "https://svs.itworkscdn.net/bloomberarlive/bloomberg.smil/playlist_dvr.m3u8",
-        "categories": [
-            "business",
-            "news"
-        ],
-        "country": "SA"
     },
     {
         "name": "Telewizja Biznesowa",
@@ -313,6 +313,16 @@
         "country": "LU"
     },
     {
+        "name": "Cafe Trade TV",
+        "id": "CafeTradeTV.ir",
+        "logo": "https://i.ibb.co/GW4cMfc/cafe-trade-tv.png",
+        "url": "https://cafetradehls.wns.live/hls/stream.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "IR"
+    },
+    {
         "name": "CNBC-e",
         "id": "CNBCe.tr",
         "logo": "https://www.digiturkburada.com.tr/kanal3/kanal-buyuk/cnbc-e-buyuk.png?rkt=DfS6Tgv6Hjr93k3",
@@ -322,16 +332,6 @@
             "series"
         ],
         "country": "TR"
-    },
-    {
-        "name": "Cafe Trade TV",
-        "id": "CafeTradeTV.ir",
-        "logo": "https://i.ibb.co/GW4cMfc/cafe-trade-tv.png",
-        "url": "https://cafetradehls.wns.live/hls/stream.m3u8",
-        "categories": [
-            "business"
-        ],
-        "country": "IR"
     },
     {
         "name": "Negocios TV",
