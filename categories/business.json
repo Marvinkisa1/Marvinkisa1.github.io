@@ -20,20 +20,20 @@
         "country": "AE"
     },
     {
-        "name": "CNBC Europe",
-        "id": "CNBCEurope.uk",
-        "logo": "https://i.imgur.com/B6sfpDa.png",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/cnbc/browser-HLS8/cnbc.m3u8",
-        "categories": [
-            "business"
-        ],
-        "country": "UK"
-    },
-    {
         "name": "CNBC World",
         "id": "CNBCWorld.us",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/CNBC_World_2025.svg/2560px-CNBC_World_2025.svg.png",
         "url": "https://fl1.moveonjoy.com/CNBC_World/index.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "CNBC",
+        "id": "CNBC.us",
+        "logo": "https://i.postimg.cc/L8LfB69D/cnbc.png",
+        "url": "http://tvpromas.com:2082/ghfds78/202020/19831",
         "categories": [
             "business"
         ],
@@ -50,10 +50,20 @@
         "country": "PH"
     },
     {
-        "name": "CNBC",
-        "id": "CNBC.us",
-        "logo": "https://i.postimg.cc/L8LfB69D/cnbc.png",
-        "url": "http://tvpromas.com:2082/ghfds78/202020/19831",
+        "name": "CNBC Europe",
+        "id": "CNBCEurope.uk",
+        "logo": "https://i.imgur.com/B6sfpDa.png",
+        "url": "https://viamotionhsi.netplus.ch/live/eds/cnbc/browser-HLS8/cnbc.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "Yahoo! Finance",
+        "id": "YahooFinance.us",
+        "logo": "https://i.imgur.com/43oHsHL.png",
+        "url": "https://yahoo-vizio.amagi.tv/playlist.m3u8",
         "categories": [
             "business"
         ],
@@ -64,16 +74,6 @@
         "id": "Ameritrade.us",
         "logo": "https://images-na.ssl-images-amazon.com/images/I/71CZKwin9mL.png",
         "url": "https://tdameritrade-vizio.amagi.tv/playlist.m3u8",
-        "categories": [
-            "business"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Yahoo! Finance",
-        "id": "YahooFinance.us",
-        "logo": "https://i.imgur.com/43oHsHL.png",
-        "url": "https://yahoo-vizio.amagi.tv/playlist.m3u8",
         "categories": [
             "business"
         ],
@@ -100,20 +100,20 @@
         "country": "US"
     },
     {
-        "name": "Fox Business Network",
-        "id": "FoxBusinessNetwork.us",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Fox_Business.svg/512px-Fox_Business.svg.png",
-        "url": "http://g-med.xyz:25461/live/zikojelica/E845P2V9ae/19522.ts",
+        "name": "Bloomberg TV",
+        "id": "BloombergTV.us",
+        "logo": "https://i.imgur.com/OuogLHx.png",
+        "url": "https://bloomberg.com/media-manifest/streams/politics.m3u8",
         "categories": [
             "business"
         ],
         "country": "US"
     },
     {
-        "name": "Bloomberg TV",
-        "id": "BloombergTV.us",
-        "logo": "https://i.imgur.com/OuogLHx.png",
-        "url": "https://bloomberg.com/media-manifest/streams/politics.m3u8",
+        "name": "Fox Business Network",
+        "id": "FoxBusinessNetwork.us",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Fox_Business.svg/512px-Fox_Business.svg.png",
+        "url": "http://g-med.xyz:25461/live/zikojelica/E845P2V9ae/19522.ts",
         "categories": [
             "business"
         ],
@@ -130,10 +130,10 @@
         "country": "US"
     },
     {
-        "name": "CNBC TV18 Prime HD",
-        "id": "CNBCTV18PrimeHD.in",
-        "logo": "https://dtil.tmsimg.com/assets/GNLZZGG00215L6T.png",
-        "url": "https://n18syndication.akamaized.net/bpk-tv/CNBC_Tv18_Prime_HD_NW18_MOB/output01/index.m3u8",
+        "name": "Zee Business",
+        "id": "ZeeBusiness.in",
+        "logo": "https://dtil.tmsimg.com/assets/GNLZZGG00230YYJ.png",
+        "url": "https://dwby15d04agvq.cloudfront.net/index_1.m3u8",
         "categories": [
             "business"
         ],
@@ -150,20 +150,10 @@
         "country": "IN"
     },
     {
-        "name": "CNBC Bajar",
-        "id": "CNBCBajar.in",
-        "logo": "https://dtil.tmsimg.com/assets/GNLZZGG00216V90.png",
-        "url": "https://n18syndication.akamaized.net/bpk-tv/CNBC_Bazaar_NW18_MOB/output01/master.m3u8",
-        "categories": [
-            "business"
-        ],
-        "country": "IN"
-    },
-    {
-        "name": "Zee Business",
-        "id": "ZeeBusiness.in",
-        "logo": "https://dtil.tmsimg.com/assets/GNLZZGG00230YYJ.png",
-        "url": "https://dwby15d04agvq.cloudfront.net/index_1.m3u8",
+        "name": "CNBC TV18 Prime HD",
+        "id": "CNBCTV18PrimeHD.in",
+        "logo": "https://dtil.tmsimg.com/assets/GNLZZGG00215L6T.png",
+        "url": "https://n18syndication.akamaized.net/bpk-tv/CNBC_Tv18_Prime_HD_NW18_MOB/output01/index.m3u8",
         "categories": [
             "business"
         ],
@@ -174,6 +164,26 @@
         "id": "NDTVProfit.in",
         "logo": "https://i.imgur.com/WK4tZ6p.png",
         "url": "https://ndtvprofitelemarchana.akamaized.net/hls/live/2003680-b/ndtvprofit/master.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "IN"
+    },
+    {
+        "name": "Aleph Business",
+        "id": "AlephBusiness.ro",
+        "logo": "https://i.imgur.com/IqvZBeo.png",
+        "url": "https://streamw.m.ro/Aleph/ngrp:Alephbiz.stream_all/playlist.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "RO"
+    },
+    {
+        "name": "CNBC Bajar",
+        "id": "CNBCBajar.in",
+        "logo": "https://dtil.tmsimg.com/assets/GNLZZGG00216V90.png",
+        "url": "https://n18syndication.akamaized.net/bpk-tv/CNBC_Bazaar_NW18_MOB/output01/master.m3u8",
         "categories": [
             "business"
         ],
@@ -194,16 +204,6 @@
         "id": "JOBTV.ro",
         "logo": "https://i.imgur.com/UzcZNe3.png",
         "url": "https://jobtvserver.eu/hls/stream.m3u8",
-        "categories": [
-            "business"
-        ],
-        "country": "RO"
-    },
-    {
-        "name": "Aleph Business",
-        "id": "AlephBusiness.ro",
-        "logo": "https://i.imgur.com/IqvZBeo.png",
-        "url": "https://streamw.m.ro/Aleph/ngrp:Alephbiz.stream_all/playlist.m3u8",
         "categories": [
             "business"
         ],
@@ -313,6 +313,16 @@
         "country": "LU"
     },
     {
+        "name": "Cafe Trade TV",
+        "id": "CafeTradeTV.ir",
+        "logo": "https://i.ibb.co/GW4cMfc/cafe-trade-tv.png",
+        "url": "https://cafetradehls.wns.live/hls/stream.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "IR"
+    },
+    {
         "name": "CNBC-e",
         "id": "CNBCe.tr",
         "logo": "https://www.digiturkburada.com.tr/kanal3/kanal-buyuk/cnbc-e-buyuk.png?rkt=DfS6Tgv6Hjr93k3",
@@ -322,16 +332,6 @@
             "series"
         ],
         "country": "TR"
-    },
-    {
-        "name": "Cafe Trade TV",
-        "id": "CafeTradeTV.ir",
-        "logo": "https://i.ibb.co/GW4cMfc/cafe-trade-tv.png",
-        "url": "https://cafetradehls.wns.live/hls/stream.m3u8",
-        "categories": [
-            "business"
-        ],
-        "country": "IR"
     },
     {
         "name": "Negocios TV",
@@ -344,16 +344,6 @@
         "country": "ES"
     },
     {
-        "name": "CNBC Asia",
-        "id": "CNBCAsia.sg",
-        "logo": "https://i.imgur.com/Mn8Rsup.png",
-        "url": "https://liveh34.vtvprime.vn/hls/CNBC/03.m3u8",
-        "categories": [
-            "business"
-        ],
-        "country": "SG"
-    },
-    {
         "name": "CNBC Indonesia",
         "id": "CNBCIndonesia.id",
         "logo": "https://i.imgur.com/bUfeG7Y.png",
@@ -362,5 +352,15 @@
             "business"
         ],
         "country": "ID"
+    },
+    {
+        "name": "CNBC Asia",
+        "id": "CNBCAsia.sg",
+        "logo": "https://i.imgur.com/Mn8Rsup.png",
+        "url": "https://liveh34.vtvprime.vn/hls/CNBC/03.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "SG"
     }
 ]
