@@ -32,16 +32,6 @@
         "country": "DO"
     },
     {
-        "name": "AMG TV",
-        "id": "AMGTV.us",
-        "logo": "https://i.imgur.com/m5Anun9.png",
-        "url": "https://2-fss-2.streamhoster.com/pl_138/201660-1270634-1/playlist.m3u8",
-        "categories": [
-            "family"
-        ],
-        "country": "US"
-    },
-    {
         "name": "6 Wise Tv",
         "id": "6WiseTv.us",
         "logo": "https://jrlist70.pages.dev/list/wise.png",
@@ -85,6 +75,16 @@
         "country": "US"
     },
     {
+        "name": "AMG TV",
+        "id": "AMGTV.us",
+        "logo": "https://i.imgur.com/m5Anun9.png",
+        "url": "https://2-fss-2.streamhoster.com/pl_138/201660-1270634-1/playlist.m3u8",
+        "categories": [
+            "family"
+        ],
+        "country": "US"
+    },
+    {
         "name": "Freeform",
         "id": "Freeform.us",
         "logo": "https://i.imgur.com/BGAGeIf.png",
@@ -105,10 +105,10 @@
         "country": "US"
     },
     {
-        "name": "Dove Channel",
-        "id": "DoveChannel.us",
-        "logo": "",
-        "url": "https://linear-896.frequency.stream/dist/xumo/896/hls/master/playlist.m3u8",
+        "name": "Hallmark Channel",
+        "id": "HallmarkChannel.us",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Hallmark_Channel.svg/512px-Hallmark_Channel.svg.png",
+        "url": "https://fl1.moveonjoy.com/HALLMARK_CHANNEL/index.m3u8",
         "categories": [
             "family"
         ],
@@ -125,10 +125,10 @@
         "country": "US"
     },
     {
-        "name": "Hallmark Channel",
-        "id": "HallmarkChannel.us",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Hallmark_Channel.svg/512px-Hallmark_Channel.svg.png",
-        "url": "https://fl1.moveonjoy.com/HALLMARK_CHANNEL/index.m3u8",
+        "name": "Dove Channel",
+        "id": "DoveChannel.us",
+        "logo": "",
+        "url": "https://linear-896.frequency.stream/dist/xumo/896/hls/master/playlist.m3u8",
         "categories": [
             "family"
         ],
@@ -145,6 +145,18 @@
         "country": "US"
     },
     {
+        "name": "MCI Television",
+        "id": "MCITelevision.co",
+        "logo": "https://pbs.twimg.com/profile_images/1836009952420274177/FfYonU6r_400x400.jpg",
+        "url": "https://video.ejeserver.com/live/mcitelevision.m3u8",
+        "categories": [
+            "movies",
+            "family",
+            "general"
+        ],
+        "country": "CO"
+    },
+    {
         "name": "Pro100TV",
         "id": "Pro100TV.ru",
         "logo": "https://i.imgur.com/YfQEflM.png",
@@ -159,16 +171,6 @@
         "country": "RU"
     },
     {
-        "name": "STS Love",
-        "id": "STSLove.ru",
-        "logo": "https://i.imgur.com/YBVZoDd.png",
-        "url": "https://zabava-htlive.cdn.ngenix.net/hls/CH_STSLOVE/variant.m3u8",
-        "categories": [
-            "family"
-        ],
-        "country": "RU"
-    },
-    {
         "name": "STS",
         "id": "STS.ru",
         "logo": "https://i.imgur.com/ilUzAeb.png",
@@ -179,14 +181,23 @@
         "country": "RU"
     },
     {
-        "name": "1KZN TV",
-        "id": "1KZNTV.za",
-        "logo": "https://admango.cdn.mangomolo.com/analytics/uploads/188/6544bebaae.jpg",
-        "url": "https://cdn.freevisiontv.co.za/sttv/smil:1kzn.stream.smil/playlist.m3u8",
+        "name": "STS Love",
+        "id": "STSLove.ru",
+        "logo": "https://i.imgur.com/YBVZoDd.png",
+        "url": "https://zabava-htlive.cdn.ngenix.net/hls/CH_STSLOVE/variant.m3u8",
+        "categories": [
+            "family"
+        ],
+        "country": "RU"
+    },
+    {
+        "name": "Soweto TV",
+        "id": "SowetoTV.za",
+        "logo": "https://admango.cdn.mangomolo.com/analytics/uploads/188/654228e5b5.jpg",
+        "url": "https://cdn.freevisiontv.co.za/sttv/smil:soweto.stream.smil/playlist.m3u8",
         "categories": [
             "entertainment",
-            "family",
-            "general"
+            "family"
         ],
         "country": "ZA"
     },
@@ -203,13 +214,14 @@
         "country": "ZA"
     },
     {
-        "name": "Soweto TV",
-        "id": "SowetoTV.za",
-        "logo": "https://admango.cdn.mangomolo.com/analytics/uploads/188/654228e5b5.jpg",
-        "url": "https://cdn.freevisiontv.co.za/sttv/smil:soweto.stream.smil/playlist.m3u8",
+        "name": "1KZN TV",
+        "id": "1KZNTV.za",
+        "logo": "https://admango.cdn.mangomolo.com/analytics/uploads/188/6544bebaae.jpg",
+        "url": "https://cdn.freevisiontv.co.za/sttv/smil:1kzn.stream.smil/playlist.m3u8",
         "categories": [
             "entertainment",
-            "family"
+            "family",
+            "general"
         ],
         "country": "ZA"
     },
@@ -256,6 +268,16 @@
         "country": "MQ"
     },
     {
+        "name": "AVA Family",
+        "id": "AVAFamily.ir",
+        "logo": "https://i.postimg.cc/mZNchF5b/avafamily.png",
+        "url": "https://familyhls.avatv.live/hls/stream.m3u8",
+        "categories": [
+            "family"
+        ],
+        "country": "IR"
+    },
+    {
         "name": "Superscreen TV",
         "id": "SuperscreenTV.ng",
         "logo": "https://i.imgur.com/uTNmSWE.png",
@@ -265,15 +287,5 @@
             "family"
         ],
         "country": "NG"
-    },
-    {
-        "name": "AVA Family",
-        "id": "AVAFamily.ir",
-        "logo": "https://i.postimg.cc/mZNchF5b/avafamily.png",
-        "url": "https://familyhls.avatv.live/hls/stream.m3u8",
-        "categories": [
-            "family"
-        ],
-        "country": "IR"
     }
 ]

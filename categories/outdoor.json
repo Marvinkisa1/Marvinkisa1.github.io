@@ -40,30 +40,10 @@
         "country": "US"
     },
     {
-        "name": "Outdoor Channel",
-        "id": "OutdoorChannel.us",
-        "logo": "https://i.imgur.com/Kh4MWaY.png",
-        "url": "https://fl1.moveonjoy.com/OUTDOOR_CHANNEL/index.m3u8",
-        "categories": [
-            "outdoor"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Waypoint TV",
-        "id": "WaypointTV.us",
-        "logo": "https://i.imgur.com/9vvlJN9.png",
-        "url": "https://amg00381-waypointcommuni-waypointtv-xumo-syiru.amagi.tv/playlist.m3u8",
-        "categories": [
-            "outdoor"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "AKC TV",
-        "id": "AKCTV.us",
-        "logo": "https://i.imgur.com/XRTfoSp.png",
-        "url": "https://install.akctvcontrol.com/speed/broadcast/138/desktop-playlist.m3u8",
+        "name": "AKC TV Puppies",
+        "id": "AKCTVPuppies.us",
+        "logo": "https://i.imgur.com/2nzRS60.png",
+        "url": "https://install.akctvcontrol.com/speed/broadcast/140/desktop-playlist.m3u8",
         "categories": [
             "outdoor"
         ],
@@ -80,10 +60,20 @@
         "country": "US"
     },
     {
-        "name": "AKC TV Puppies",
-        "id": "AKCTVPuppies.us",
-        "logo": "https://i.imgur.com/2nzRS60.png",
-        "url": "https://install.akctvcontrol.com/speed/broadcast/140/desktop-playlist.m3u8",
+        "name": "AKC TV",
+        "id": "AKCTV.us",
+        "logo": "https://i.imgur.com/XRTfoSp.png",
+        "url": "https://install.akctvcontrol.com/speed/broadcast/138/desktop-playlist.m3u8",
+        "categories": [
+            "outdoor"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Outdoor Channel",
+        "id": "OutdoorChannel.us",
+        "logo": "https://i.imgur.com/Kh4MWaY.png",
+        "url": "https://fl1.moveonjoy.com/OUTDOOR_CHANNEL/index.m3u8",
         "categories": [
             "outdoor"
         ],
@@ -104,6 +94,16 @@
         "id": "PursuitUP.us",
         "logo": "https://i.imgur.com/5Vzwqts.png",
         "url": "https://linear-205.frequency.stream/dist/stirr/205/hls/master/playlist.m3u8",
+        "categories": [
+            "outdoor"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Waypoint TV",
+        "id": "WaypointTV.us",
+        "logo": "https://i.imgur.com/9vvlJN9.png",
+        "url": "https://amg00381-waypointcommuni-waypointtv-xumo-syiru.amagi.tv/playlist.m3u8",
         "categories": [
             "outdoor"
         ],
@@ -161,30 +161,20 @@
         "country": "RU"
     },
     {
-        "name": "UMC TV",
-        "id": "UMCTV.co",
-        "logo": "https://i.imgur.com/YQUK4wO.png",
-        "url": "https://streaming5.globalhostla.com/rtplive/unamirad/playlist.m3u8",
-        "categories": [
-            "outdoor"
-        ],
-        "country": "CO"
-    },
-    {
-        "name": "Swamiji TV European",
-        "id": "SwamijiTVEuropean.at",
+        "name": "Swamiji TV Australian",
+        "id": "SwamijiTVAustralian.at",
         "logo": "https://i.imgur.com/nrLcuzs.png",
-        "url": "https://stream.swamiji.tv/YogaIPTV/smil:YogaStream.smil/playlist.m3u8",
+        "url": "https://stream.swamiji.tv/YogaIPTV/smil:YogaStreamAU.smil/playlist.m3u8",
         "categories": [
             "outdoor"
         ],
         "country": "AT"
     },
     {
-        "name": "Swamiji TV Australian",
-        "id": "SwamijiTVAustralian.at",
+        "name": "Swamiji TV European",
+        "id": "SwamijiTVEuropean.at",
         "logo": "https://i.imgur.com/nrLcuzs.png",
-        "url": "https://stream.swamiji.tv/YogaIPTV/smil:YogaStreamAU.smil/playlist.m3u8",
+        "url": "https://stream.swamiji.tv/YogaIPTV/smil:YogaStream.smil/playlist.m3u8",
         "categories": [
             "outdoor"
         ],
@@ -199,6 +189,16 @@
             "outdoor"
         ],
         "country": "AT"
+    },
+    {
+        "name": "UMC TV",
+        "id": "UMCTV.co",
+        "logo": "https://i.imgur.com/YQUK4wO.png",
+        "url": "https://streaming5.globalhostla.com/rtplive/unamirad/playlist.m3u8",
+        "categories": [
+            "outdoor"
+        ],
+        "country": "CO"
     },
     {
         "name": "Konniy mir",
@@ -232,17 +232,6 @@
         "country": "IT"
     },
     {
-        "name": "Peer TV Alto Adige",
-        "id": "PeerTVAltoAdige.it",
-        "logo": "https://www.peer.biz/peertv-iptv/peer-tv-alto-adige.png",
-        "url": "https://iptv.peer.biz/live/peertv-it.m3u8",
-        "categories": [
-            "outdoor",
-            "travel"
-        ],
-        "country": "IT"
-    },
-    {
         "name": "Peer TV Sudtirol",
         "id": "PeerTVSudtirol.it",
         "logo": "https://www.peer.biz/peertv-iptv/peer-tv-suedtirol.png",
@@ -265,14 +254,15 @@
         "country": "IT"
     },
     {
-        "name": "Agrotendencia TV",
-        "id": "AgrotendenciaTV.cr",
-        "logo": "https://i.imgur.com/frd60hR.png",
-        "url": "https://5fc584f3f19c9.streamlock.net/agrotendencia/videoagrotendencia_hls1/playlist.m3u8",
+        "name": "Peer TV Alto Adige",
+        "id": "PeerTVAltoAdige.it",
+        "logo": "https://www.peer.biz/peertv-iptv/peer-tv-alto-adige.png",
+        "url": "https://iptv.peer.biz/live/peertv-it.m3u8",
         "categories": [
-            "outdoor"
+            "outdoor",
+            "travel"
         ],
-        "country": "CR"
+        "country": "IT"
     },
     {
         "name": "Agro TV",
@@ -283,5 +273,15 @@
             "outdoor"
         ],
         "country": "BG"
+    },
+    {
+        "name": "Agrotendencia TV",
+        "id": "AgrotendenciaTV.cr",
+        "logo": "https://i.imgur.com/frd60hR.png",
+        "url": "https://5fc584f3f19c9.streamlock.net/agrotendencia/videoagrotendencia_hls1/playlist.m3u8",
+        "categories": [
+            "outdoor"
+        ],
+        "country": "CR"
     }
 ]
