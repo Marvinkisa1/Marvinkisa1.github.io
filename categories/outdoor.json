@@ -10,16 +10,6 @@
         "country": "CA"
     },
     {
-        "name": "Outside TV",
-        "id": "OutsideTV.us",
-        "logo": "https://a.jsrdn.com/hls/22765/outside-tv/extras/1080_logo.png",
-        "url": "https://aegis-cloudfront-1.tubi.video/14e92b99-6a44-4e9d-9959-dd9ac76884b3/playlist.m3u8",
-        "categories": [
-            "outdoor"
-        ],
-        "country": "US"
-    },
-    {
         "name": "Horse & Country TV",
         "id": "HorseCountryTV.uk",
         "logo": "https://i.imgur.com/1x6zYZr.png",
@@ -28,6 +18,16 @@
             "outdoor"
         ],
         "country": "UK"
+    },
+    {
+        "name": "Outside TV",
+        "id": "OutsideTV.us",
+        "logo": "https://a.jsrdn.com/hls/22765/outside-tv/extras/1080_logo.png",
+        "url": "https://aegis-cloudfront-1.tubi.video/14e92b99-6a44-4e9d-9959-dd9ac76884b3/playlist.m3u8",
+        "categories": [
+            "outdoor"
+        ],
+        "country": "US"
     },
     {
         "name": "AKC TV Meet the Breeds",
@@ -60,20 +60,20 @@
         "country": "US"
     },
     {
-        "name": "PursuitUP",
-        "id": "PursuitUP.us",
-        "logo": "https://i.imgur.com/5Vzwqts.png",
-        "url": "https://linear-205.frequency.stream/dist/stirr/205/hls/master/playlist.m3u8",
+        "name": "Outdoor Channel",
+        "id": "OutdoorChannel.us",
+        "logo": "https://i.imgur.com/Kh4MWaY.png",
+        "url": "https://fl1.moveonjoy.com/OUTDOOR_CHANNEL/index.m3u8",
         "categories": [
             "outdoor"
         ],
         "country": "US"
     },
     {
-        "name": "Outdoor America",
-        "id": "OutdoorAmerica.us",
-        "logo": "https://i.imgur.com/UKfimFD.png",
-        "url": "https://linear-600.frequency.stream/dist/xumo/600/hls/master/playlist.m3u8",
+        "name": "PursuitUP",
+        "id": "PursuitUP.us",
+        "logo": "https://i.imgur.com/5Vzwqts.png",
+        "url": "https://linear-205.frequency.stream/dist/stirr/205/hls/master/playlist.m3u8",
         "categories": [
             "outdoor"
         ],
@@ -90,30 +90,30 @@
         "country": "US"
     },
     {
-        "name": "World Fishing Network",
-        "id": "WorldFishingNetwork.us",
-        "logo": "https://i.imgur.com/2llPsSV.png",
-        "url": "https://fl1.moveonjoy.com/WORLD_FISHING_NETWORK/index.m3u8",
-        "categories": [
-            "outdoor"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Outdoor Channel",
-        "id": "OutdoorChannel.us",
-        "logo": "https://i.imgur.com/Kh4MWaY.png",
-        "url": "https://fl1.moveonjoy.com/OUTDOOR_CHANNEL/index.m3u8",
-        "categories": [
-            "outdoor"
-        ],
-        "country": "US"
-    },
-    {
         "name": "30A Darcizzle Offshore",
         "id": "30ADarcizzleOffshore.us",
         "logo": "https://i.imgur.com/Q4l2uao.png",
         "url": "https://30a-tv.com/darcizzle.m3u8",
+        "categories": [
+            "outdoor"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Outdoor America",
+        "id": "OutdoorAmerica.us",
+        "logo": "https://i.imgur.com/UKfimFD.png",
+        "url": "https://linear-600.frequency.stream/dist/xumo/600/hls/master/playlist.m3u8",
+        "categories": [
+            "outdoor"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "World Fishing Network",
+        "id": "WorldFishingNetwork.us",
+        "logo": "https://i.imgur.com/2llPsSV.png",
+        "url": "https://fl1.moveonjoy.com/WORLD_FISHING_NETWORK/index.m3u8",
         "categories": [
             "outdoor"
         ],
@@ -161,20 +161,20 @@
         "country": "CO"
     },
     {
-        "name": "Swamiji TV European",
-        "id": "SwamijiTVEuropean.at",
+        "name": "Swamiji TV American",
+        "id": "SwamijiTVAmerican.at",
         "logo": "https://i.imgur.com/nrLcuzs.png",
-        "url": "https://stream.swamiji.tv/YogaIPTV/smil:YogaStream.smil/playlist.m3u8",
+        "url": "https://stream.swamiji.tv/YogaIPTV/smil:YogaStreamUS.smil/playlist.m3u8",
         "categories": [
             "outdoor"
         ],
         "country": "AT"
     },
     {
-        "name": "Swamiji TV American",
-        "id": "SwamijiTVAmerican.at",
+        "name": "Swamiji TV European",
+        "id": "SwamijiTVEuropean.at",
         "logo": "https://i.imgur.com/nrLcuzs.png",
-        "url": "https://stream.swamiji.tv/YogaIPTV/smil:YogaStreamUS.smil/playlist.m3u8",
+        "url": "https://stream.swamiji.tv/YogaIPTV/smil:YogaStream.smil/playlist.m3u8",
         "categories": [
             "outdoor"
         ],
@@ -201,6 +201,38 @@
         "country": "RU"
     },
     {
+        "name": "InWild",
+        "id": "InWild.it",
+        "logo": "https://i.imgur.com/48atMgj.png",
+        "url": "https://amg00861-amg00861c7-firetv-us-4725.playouts.now.amagi.tv/playlist.m3u8",
+        "categories": [
+            "shop",
+            "outdoor"
+        ],
+        "country": "IT"
+    },
+    {
+        "name": "Italian Fishing TV",
+        "id": "ItalianFishingTV.it",
+        "logo": "https://i.imgur.com/qrn6tUO.png",
+        "url": "https://fms.premio.link/fishingtv/playlist.m3u8",
+        "categories": [
+            "outdoor"
+        ],
+        "country": "IT"
+    },
+    {
+        "name": "Peer TV Alto Adige",
+        "id": "PeerTVAltoAdige.it",
+        "logo": "https://www.peer.biz/peertv-iptv/peer-tv-alto-adige.png",
+        "url": "https://iptv.peer.biz/live/peertv-it.m3u8",
+        "categories": [
+            "outdoor",
+            "travel"
+        ],
+        "country": "IT"
+    },
+    {
         "name": "Peer TV South Tyrol",
         "id": "PeerTVSouthTyrol.it",
         "logo": "https://www.peer.biz/peertv-iptv/peer-tv-south-tyrol.png",
@@ -223,36 +255,14 @@
         "country": "IT"
     },
     {
-        "name": "InWild",
-        "id": "InWild.it",
-        "logo": "https://i.imgur.com/48atMgj.png",
-        "url": "https://amg00861-amg00861c7-firetv-us-4725.playouts.now.amagi.tv/playlist.m3u8",
-        "categories": [
-            "shop",
-            "outdoor"
-        ],
-        "country": "IT"
-    },
-    {
-        "name": "Peer TV Alto Adige",
-        "id": "PeerTVAltoAdige.it",
-        "logo": "https://www.peer.biz/peertv-iptv/peer-tv-alto-adige.png",
-        "url": "https://iptv.peer.biz/live/peertv-it.m3u8",
-        "categories": [
-            "outdoor",
-            "travel"
-        ],
-        "country": "IT"
-    },
-    {
-        "name": "Italian Fishing TV",
-        "id": "ItalianFishingTV.it",
-        "logo": "https://i.imgur.com/qrn6tUO.png",
-        "url": "https://fms.premio.link/fishingtv/playlist.m3u8",
+        "name": "Agro TV",
+        "id": "AgroTV.bg",
+        "logo": "https://i.imgur.com/tPMNDtD.png",
+        "url": "https://restr2.bgtv.bg/agro/hls/agro.m3u8",
         "categories": [
             "outdoor"
         ],
-        "country": "IT"
+        "country": "BG"
     },
     {
         "name": "Agrotendencia TV",
@@ -263,15 +273,5 @@
             "outdoor"
         ],
         "country": "CR"
-    },
-    {
-        "name": "Agro TV",
-        "id": "AgroTV.bg",
-        "logo": "https://i.imgur.com/tPMNDtD.png",
-        "url": "https://restr2.bgtv.bg/agro/hls/agro.m3u8",
-        "categories": [
-            "outdoor"
-        ],
-        "country": "BG"
     }
 ]
