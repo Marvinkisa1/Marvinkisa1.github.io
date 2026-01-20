@@ -20,6 +20,16 @@
         "country": "UG"
     },
     {
+        "name": "Bloomberg TV",
+        "id": "GTV.ug",
+        "logo": "https://i.imgur.com/wm4jZtB.jpeg",
+        "url": "https://liveproduseast.global.ssl.fastly.net/us/index.m3u8",
+        "categories": [
+            "international"
+        ],
+        "country": "UG"
+    },
+    {
         "name": "Sat7 Kids",
         "id": "sat7kids.ug",
         "logo": "",
@@ -30,12 +40,12 @@
         "country": "UG"
     },
     {
-        "name": "Bloomberg TV",
-        "id": "GTV.ug",
-        "logo": "https://i.imgur.com/wm4jZtB.jpeg",
-        "url": "https://liveproduseast.global.ssl.fastly.net/us/index.m3u8",
+        "name": "DBM TV",
+        "id": "BTMTV.ug",
+        "logo": "https://i.imgur.com/NUvA2jf.png",
+        "url": "https://edge16.vedge.infomaniak.com/livecast/ik:dbmtv/manifest.m3u8",
         "categories": [
-            "international"
+            "entertainment"
         ],
         "country": "UG"
     },
@@ -50,12 +60,22 @@
         "country": "UG"
     },
     {
-        "name": "Al-Kass Sports",
-        "id": "alkasssports.ug",
-        "logo": "",
-        "url": "http://dmitwlvvll.cdn.mangomolo.com/dubaisportshd/smil:dubaisportshd.smil/chunklist_b1600000.m3u8",
+        "name": "Fort TV",
+        "id": "FORTTV.ug",
+        "logo": "https://i.ibb.co/4KN5zW9/fort-tv-logo-GENE.png",
+        "url": "https://fort.co-works.org/memfs/87017643-274a-4bc0-a786-7767a0d159c2.m3u8",
         "categories": [
-            "sports"
+            "entertainment"
+        ],
+        "country": "UG"
+    },
+    {
+        "name": "Dream TV",
+        "id": "DreamTV.ug",
+        "logo": "https://i.imgur.com/XRUDhqQ.png",
+        "url": "https://streamfi-dreamtv1.zettawiseroutes.com:8181/hls/stream_src.m3u8",
+        "categories": [
+            "religious"
         ],
         "country": "UG"
     },
@@ -70,32 +90,12 @@
         "country": "UG"
     },
     {
-        "name": "Fort TV",
-        "id": "FORTTV.ug",
-        "logo": "https://i.ibb.co/4KN5zW9/fort-tv-logo-GENE.png",
-        "url": "https://fort.co-works.org/memfs/87017643-274a-4bc0-a786-7767a0d159c2.m3u8",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "UG"
-    },
-    {
         "name": "Afrobeat TV",
         "id": "afrobeattv.ug",
         "logo": "",
         "url": "https://stream.ecable.tv/afrobeats/index.m3u8",
         "categories": [
             "entertainment"
-        ],
-        "country": "UG"
-    },
-    {
-        "name": "Dream TV",
-        "id": "DreamTV.ug",
-        "logo": "https://i.imgur.com/XRUDhqQ.png",
-        "url": "https://streamfi-dreamtv1.zettawiseroutes.com:8181/hls/stream_src.m3u8",
-        "categories": [
-            "religious"
         ],
         "country": "UG"
     },
@@ -120,22 +120,42 @@
         "country": "UG"
     },
     {
-        "name": "DBM TV",
-        "id": "BTMTV.ug",
-        "logo": "https://i.imgur.com/NUvA2jf.png",
-        "url": "https://edge16.vedge.infomaniak.com/livecast/ik:dbmtv/manifest.m3u8",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "UG"
-    },
-    {
         "name": "Praise TV",
         "id": "praisetv.ug",
         "logo": "",
         "url": "https://vsrv1.az-streamingserver.com:3555/live/dyjoqlgklive.m3u8",
         "categories": [
             "religious"
+        ],
+        "country": "UG"
+    },
+    {
+        "name": "Alpha Digital",
+        "id": "AlphaDigital.ug",
+        "logo": "https://i.imgur.com/sLt242H.png",
+        "url": "https://streamfi-alphatvdgtl1.zettawiseroutes.com:8181/hls/stream_src.m3u8",
+        "categories": [
+            "religious"
+        ],
+        "country": "UG"
+    },
+    {
+        "name": "Romanza",
+        "id": "romanza.ug",
+        "logo": "",
+        "url": "https://livecdn.premiumfree.tv/afxpstr/Romanza/tracks-v1a1/mono.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "UG"
+    },
+    {
+        "name": "Wan Luo TV",
+        "id": "WanLuoTV.ug",
+        "logo": "https://i.imgur.com/4PUUp3E.png",
+        "url": "https://stream.hydeinnovations.com/luotv-flussonic/index.m3u8",
+        "categories": [
+            "news"
         ],
         "country": "UG"
     },
@@ -160,6 +180,16 @@
         "country": "UG"
     },
     {
+        "name": "Bukedde TV 2",
+        "id": "BukeddeTV2.ug",
+        "logo": "https://i.imgur.com/ukwPZeY.png",
+        "url": "https://stream.hydeinnovations.com/bukedde2flussonic/index.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "UG"
+    },
+    {
         "name": "FUFA TV",
         "id": "FUFATV.ug",
         "logo": "https://i.imgur.com/iIq5MqR.png",
@@ -176,36 +206,6 @@
         "url": "https://stream.hydeinnovations.com/arktv-international/index.fmp4.m3u8",
         "categories": [
             "religious"
-        ],
-        "country": "UG"
-    },
-    {
-        "name": "Wan Luo TV",
-        "id": "WanLuoTV.ug",
-        "logo": "https://i.imgur.com/4PUUp3E.png",
-        "url": "https://stream.hydeinnovations.com/luotv-flussonic/index.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "UG"
-    },
-    {
-        "name": "Bukedde TV 2",
-        "id": "BukeddeTV2.ug",
-        "logo": "https://i.imgur.com/ukwPZeY.png",
-        "url": "https://stream.hydeinnovations.com/bukedde2flussonic/index.m3u8",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "UG"
-    },
-    {
-        "name": "Romanza",
-        "id": "romanza.ug",
-        "logo": "",
-        "url": "https://livecdn.premiumfree.tv/afxpstr/Romanza/tracks-v1a1/mono.m3u8",
-        "categories": [
-            "entertainment"
         ],
         "country": "UG"
     }
