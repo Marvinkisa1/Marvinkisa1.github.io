@@ -49,13 +49,13 @@ CATEGORIES_DIR = "categories"
 COUNTRIES_DIR = "countries"
 
 # Settings - Optimized for speed but still thorough
-MAX_CONCURRENT = int(os.getenv("MAX_CONCURRENT", 100))  # Increased for efficiency
-INITIAL_TIMEOUT = 30  # Increased for reliability
-MAX_TIMEOUT = 45  # Balanced maximum timeout
-RETRIES = 3  # Increased retries for reliability
-BATCH_DELAY = 0.1
-BATCH_SIZE = 500
-USE_HEAD_METHOD = True
+MAX_CONCURRENT = int(os.getenv("MAX_CONCURRENT", 50))  # Reduced for better reliability
+INITIAL_TIMEOUT = 10  # Reduced initial timeout
+MAX_TIMEOUT = 15  # Reduced maximum timeout
+RETRIES = 2  # Reduced retries for efficiency
+BATCH_DELAY = 0.05  # Reduced delay
+BATCH_SIZE = 100  # Reduced batch size for better control
+USE_HEAD_METHOD = False  # Disabled HEAD method as it often causes issues with streams
 BYTE_RANGE_CHECK = False  # Disabled for broader compatibility
 KENYA_HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
@@ -287,132 +287,109 @@ class FastChecker:
         return any(url.lower().endswith(ext) for ext in UNWANTED_EXTENSIONS)
 
     async def check_single_url(self, session, url):
-        """Efficient but thorough URL checker with improved reliability - 99% accurate"""
+        """Improved URL checker that's more accurate for streaming URLs"""
         # Skip URLs with unwanted extensions
         if self.has_unwanted_extension(url):
             return url, False
 
         try:
-            # First try HEAD request (fastest) with proper content-type detection
-            if USE_HEAD_METHOD:
-                try:
-                    async with session.head(url, timeout=self.timeout, allow_redirects=True,
-                                            headers={
-                                                'Accept': '*/*',
-                                                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-                                                'Connection': 'keep-alive',
-                                                'Accept-Encoding': 'gzip, deflate'  # Remove br from Accept-Encoding
-                                            }, ssl=False) as response:
-                        if response.status == 200:
-                            content_type = response.headers.get('Content-Type', '').lower()
-                            content_length = int(response.headers.get('Content-Length', '0'))
-
-                            # Improved content type detection
-                            if 'video/' in content_type or 'audio/' in content_type:
+            # For streaming URLs, we need to be more lenient
+            # Many streaming servers don't follow standard HTTP patterns
+            
+            # Check if it's an m3u8 URL
+            is_m3u8 = url.endswith('.m3u8') or '.m3u8?' in url
+            
+            # Try GET request with streaming-friendly settings
+            async with session.get(url, timeout=self.timeout, allow_redirects=True,
+                                   headers={
+                                       'Accept': '*/*',
+                                       'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+                                       'Connection': 'keep-alive',
+                                       'Accept-Encoding': 'gzip, deflate',
+                                       'Range': 'bytes=0-1024'  # Request only first 1KB
+                                   }, ssl=False) as response:
+                
+                # For m3u8 files, we need different validation
+                if is_m3u8:
+                    if response.status in [200, 206]:
+                        try:
+                            content = await response.text()
+                            # Check for m3u8 markers
+                            if '#EXTM3U' in content or '#EXTINF' in content:
+                                logging.debug(f"Valid m3u8 found: {url}")
                                 return url, True
-                            elif 'application/' in content_type and (
-                                    'mpegurl' in content_type or 'vnd.apple.mpegurl' in content_type):
+                            # Some m3u8 might be binary or encrypted but still valid
+                            elif len(content) > 0:
+                                # Could be a valid m3u8 with different encoding
+                                logging.debug(f"Non-standard m3u8 but status OK: {url}")
                                 return url, True
-                            elif 'text/plain' in content_type and content_length > 100:
-                                # Might be m3u8 file
-                                pass
-                            elif 'text/html' in content_type and content_length > 50000:
-                                # Large HTML likely error page
-                                return url, False
-                            else:
-                                # Non-HTML, assume good for now, will verify with GET
-                                pass
-                        elif response.status in [301, 302, 307, 308]:
-                            # Redirects handled by allow_redirects
-                            pass
-                        elif response.status in [403, 404, 500, 502, 503]:
-                            return url, False
-                except (aiohttp.ClientError, asyncio.TimeoutError):
-                    pass  # Fall through to GET
-
-            # GET request with comprehensive checks
-            try:
-                async with session.get(url, timeout=self.timeout, allow_redirects=True,
-                                       headers={
-                                           'Accept': '*/*',
-                                           'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-                                           'Connection': 'keep-alive',
-                                           'Accept-Encoding': 'gzip, deflate'  # Remove br from Accept-Encoding
-                                       }, ssl=False) as response:
-                    if response.status == 200:
-                        # Read first 2KB for analysis
-                        content = await response.content.read(2048)
-
-                        # Check for HTML error pages
+                        except:
+                            # Binary content, might still be valid
+                            logging.debug(f"Binary m3u8 content: {url}")
+                            return url, True
+                    elif response.status in [301, 302, 307, 308]:
+                        # Redirects for m3u8 are common
+                        location = response.headers.get('Location', '')
+                        if location:
+                            logging.debug(f"M3U8 redirect to: {location}")
+                            return url, True
+                
+                # For non-m3u8 URLs
+                if response.status == 200:
+                    # For streaming URLs, even empty responses might be valid
+                    content_type = response.headers.get('Content-Type', '').lower()
+                    
+                    # Check if it's a video/audio stream
+                    if 'video/' in content_type or 'audio/' in content_type:
+                        return url, True
+                    
+                    # Check if it's an application stream
+                    if 'application/' in content_type:
+                        if 'octet-stream' in content_type or 'mpegurl' in content_type:
+                            return url, True
+                    
+                    # Read a small amount to check content
+                    try:
+                        content = await response.content.read(512)
                         if len(content) > 0:
-                            content_str = content.decode('utf-8', errors='ignore').lower()
-
-                            # Strong HTML detection
-                            html_indicators = ['<!doctype', '<html', '<head', '<body', '<title>', '</html>']
-                            if any(indicator in content_str for indicator in html_indicators):
-                                # Check if it's a small HTML (likely error page)
-                                if len(content_str) < 5000:
-                                    logging.debug(f"Detected HTML error page for {url}")
-                                    return url, False
-
-                            # Check for common error messages
-                            error_indicators = ['error', '404', 'not found', 'access denied', 'forbidden', 'unavailable']
-                            if any(indicator in content_str for indicator in error_indicators):
-                                if len(content_str) < 10000:  # Small error page
-                                    return url, False
-
-                            # For m3u8 files, verify format
-                            if url.endswith('.m3u8') or '.m3u8?' in url:
-                                try:
-                                    content_str_full = content.decode('utf-8', errors='ignore')
-                                    if '#EXTM3U' in content_str_full or '#EXTINF' in content_str_full:
-                                        return url, True
-                                    else:
-                                        # Not a valid m3u8
-                                        return url, False
-                                except:
-                                    # Binary content, might still be valid stream
-                                    pass
-
-                            # Check content-type header
-                            content_type = response.headers.get('Content-Type', '').lower()
-                            if 'video/' in content_type or 'audio/' in content_type:
-                                return url, True
-                            elif 'application/' in content_type:
-                                if 'octet-stream' in content_type or 'mpegurl' in content_type:
-                                    return url, True
-
-                            # If we get binary data (non-text), assume it's a stream
+                            # Try to decode as text to check for HTML
                             try:
-                                # Try to decode as text - if it fails, it's binary
-                                content.decode('utf-8')
-                                # If we can decode, check if it's not HTML
-                                if not any(indicator in content_str for indicator in html_indicators):
+                                content_str = content.decode('utf-8', errors='ignore').lower()
+                                # Check for HTML error pages
+                                html_indicators = ['<!doctype', '<html', '<head', '<body', '<title>']
+                                if any(indicator in content_str for indicator in html_indicators):
+                                    # Check if it's a small HTML (likely error page)
+                                    if len(content_str) < 5000:
+                                        logging.debug(f"Detected HTML error page for {url}")
+                                        return url, False
+                                else:
+                                    # Not HTML, likely a stream
                                     return url, True
                             except:
                                 # Binary content, likely a stream
                                 return url, True
-
-                        # Empty response
-                        return url, False
-
-                    elif response.status in [301, 302, 307, 308]:
-                        # Check redirect location
-                        location = response.headers.get('Location', '')
-                        if location and (location.endswith('.m3u8') or '.m3u8?' in location):
-                            return url, True
-
-                    return url, False
-
-            except (aiohttp.ClientError, asyncio.TimeoutError) as e:
-                logging.debug(f"Connection error for {url}: {e}")
-                return url, False
-            except Exception as e:
-                logging.debug(f"Other error checking {url}: {e}")
+                    except:
+                        # Failed to read content but status is 200
+                        return url, True
+                
+                # Accept 206 Partial Content for streams
+                elif response.status == 206:
+                    return url, True
+                
+                # Accept redirects for streaming URLs
+                elif response.status in [301, 302, 307, 308]:
+                    return url, True
+                
                 return url, False
 
+        except asyncio.TimeoutError:
+            logging.debug(f"Timeout checking {url}")
+            return url, False
+        except aiohttp.ClientError as e:
+            logging.debug(f"Client error checking {url}: {e}")
+            return url, False
         except Exception as e:
-            logging.debug(f"Outer exception for {url}: {e}")
+            logging.debug(f"Error checking {url}: {e}")
             return url, False
 
 
@@ -430,7 +407,7 @@ class M3UProcessor:
     async def fetch_m3u_content(self, session, m3u_url):
         """Fetch M3U content from URL"""
         try:
-            async with session.get(m3u_url, timeout=ClientTimeout(total=INITIAL_TIMEOUT),
+            async with session.get(m3u_url, timeout=ClientTimeout(total=30),
                                    headers={
                                        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
                                        'Accept': '*/*',
@@ -610,7 +587,7 @@ def remove_duplicates(channels):
 async def fetch_json(session, url):
     try:
         async with session.get(url, headers={
-            "Accept-Encoding": "gzip, deflate",  # Remove br from Accept-Encoding
+            "Accept-Encoding": "gzip, deflate",
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
             "Accept": "application/json, text/plain, */*"
         }, ssl=False) as response:
@@ -786,6 +763,8 @@ async def validate_channels(session, checker, all_existing_channels, iptv_channe
             matching_logos = [l for l in logos_data if l["channel"] == ch_id]
             if matching_logos:
                 channel["logo"] = matching_logos[0]["url"]
+            
+            # Check if working
             for retry in range(RETRIES):
                 checker.timeout = ClientTimeout(total=min(INITIAL_TIMEOUT * (retry + 1), MAX_TIMEOUT))
                 _, is_working = await checker.check_single_url(session, channel_url)
@@ -803,7 +782,7 @@ async def validate_channels(session, checker, all_existing_channels, iptv_channe
             return None
 
     total_channels = len(all_existing_channels)
-    batch_size = 500
+    batch_size = BATCH_SIZE
 
     for batch_start in range(0, total_channels, batch_size):
         batch_end = min(batch_start + batch_size, total_channels)
@@ -855,6 +834,8 @@ async def check_iptv_channels(session, checker, channels_data, streams_dict, exi
                 channel_logos = [l for l in logos_data if l["channel"] == ch_id]
                 if channel_logos:
                     logo_url = channel_logos[0]["url"]
+            
+            # Check if working
             for retry in range(RETRIES):
                 checker.timeout = ClientTimeout(total=min(INITIAL_TIMEOUT * (retry + 1), MAX_TIMEOUT))
                 _, is_working = await checker.check_single_url(session, url)
@@ -876,7 +857,7 @@ async def check_iptv_channels(session, checker, channels_data, streams_dict, exi
             return None
 
     total_channels = len(channels_to_check)
-    batch_size = 300
+    batch_size = BATCH_SIZE
 
     for batch_start in range(0, total_channels, batch_size):
         batch_end = min(batch_start + batch_size, total_channels)
@@ -925,12 +906,13 @@ async def check_single_m3u8_url(session, url, timeout=20):
                                }, ssl=False) as response:
             if response.status == 200:
                 content = await response.text()
-                playlist = m3u8.loads(content)
-                if playlist.segments or playlist.playlists:
+                # For m3u8, we're more lenient - just check if we got content
+                if content and ('#EXTM3U' in content or '#EXTINF' in content or len(content) > 10):
                     logging.info(f"Valid m3u8 found: {url}")
                     return url, True
                 else:
-                    logging.info(f"m3u8 parsing failed but keeping URL: {url}")
+                    # Even if content is weird, status 200 for m3u8 is often valid
+                    logging.info(f"M3U8 with status 200: {url}")
                     return url, True
     except Exception as e:
         logging.error(f"Failed to check {url} (timeout={timeout}s): {e}")
@@ -1111,56 +1093,7 @@ async def fetch_and_process_uganda_channels(session, checker, logos_data):
         return 0
     except requests.exceptions.RequestException as e:
         logging.error(f"Request error fetching Uganda API: {e}")
-        # Fall back to aiohttp with manual decompression
-        try:
-            logging.info("Trying aiohttp with manual decompression...")
-            async with session.get(api_url, timeout=45, ssl=False, headers={
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-                'Accept': 'application/json, text/plain, */*',
-                'Accept-Encoding': 'gzip, deflate',  # Explicitly don't accept br
-                'Connection': 'keep-alive',
-                'Cache-Control': 'no-cache'
-            }) as response:
-                logging.info(f"Uganda API response status: {response.status}")
-                if response.status == 200:
-                    # Read raw bytes and manually decode
-                    content = await response.read()
-                    # Try to decode as text
-                    try:
-                        text = content.decode('utf-8')
-                    except UnicodeDecodeError:
-                        # Try other encodings
-                        try:
-                            text = content.decode('latin-1')
-                        except:
-                            text = content.decode('utf-8', errors='ignore')
-                    
-                    logging.info(f"Uganda API response length: {len(text)} chars")
-                    
-                    try:
-                        data = json.loads(text)
-                    except json.JSONDecodeError:
-                        # Try to fix JSON
-                        text = text.strip()
-                        if text.startswith('{') and text.endswith('}'):
-                            data = json.loads(text)
-                        elif text.startswith('[') and text.endswith(']'):
-                            data = json.loads(text)
-                        else:
-                            logging.error("Invalid JSON response")
-                            return 0
-                    
-                    posts = data.get("posts", [])
-                    if not posts and isinstance(data, list):
-                        posts = data
-                    
-                    logging.info(f"Fetched {len(posts)} posts from Uganda API")
-                else:
-                    logging.error(f"Failed to fetch Uganda API: Status {response.status}")
-                    return 0
-        except Exception as e:
-            logging.error(f"Error fetching Uganda API with aiohttp: {e}")
-            return 0
+        return 0
     except Exception as e:
         logging.error(f"Error fetching Uganda API: {e}")
         return 0
@@ -1360,7 +1293,7 @@ async def clean_and_replace_channels(session, checker, all_channels, streams_dic
             non_working_channels += 1
 
     total_channels = len(all_channels)
-    batch_size = 400
+    batch_size = BATCH_SIZE
 
     for batch_start in range(0, total_channels, batch_size):
         batch_end = min(batch_start + batch_size, total_channels)
@@ -1438,14 +1371,33 @@ async def process_m3u_urls(session, logos_data, checker, m3u_urls):
             channels = processor.parse_m3u(content)
             logging.info(f"Found {len(channels)} channels in {m3u_url}")
 
-            # Process all channels, not just sports
-            check_tasks = [checker.check_single_url(session, channel['url']) for channel in channels]
-            check_results = await asyncio.gather(*check_tasks)
-
+            # Process channels in smaller batches to avoid overwhelming the system
             working_channels = []
-            for i, (url, is_working) in enumerate(check_results):
-                if is_working:
-                    working_channels.append(channels[i])
+            total_channels = len(channels)
+            
+            for batch_start in range(0, total_channels, BATCH_SIZE):
+                batch_end = min(batch_start + BATCH_SIZE, total_channels)
+                current_batch = channels[batch_start:batch_end]
+                
+                # Create tasks for current batch
+                check_tasks = []
+                for channel in current_batch:
+                    url = channel.get('url')
+                    if url and not processor.has_unwanted_extension(url):
+                        check_tasks.append(checker.check_single_url(session, url))
+                    else:
+                        check_tasks.append(asyncio.sleep(0))  # Placeholder for skipped channels
+                
+                # Check current batch
+                check_results = await asyncio.gather(*check_tasks)
+                
+                # Add working channels from this batch
+                for i, (url, is_working) in enumerate(check_results):
+                    if is_working and current_batch[i]:
+                        working_channels.append(current_batch[i])
+                
+                # Small delay between batches
+                await asyncio.sleep(BATCH_DELAY)
 
             logging.info(f"Found {len(working_channels)} working channels in {m3u_url}")
 
