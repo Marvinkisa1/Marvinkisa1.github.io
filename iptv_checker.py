@@ -61,7 +61,7 @@ KENYA_HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
     'Accept-Language': 'en-US,en;q=0.5',
-    'Accept-Encoding': 'gzip, deflate, br',
+    'Accept-Encoding': 'gzip, deflate',
     'Connection': 'keep-alive',
     'Upgrade-Insecure-Requests': '1',
     'Sec-Fetch-Dest': 'document',
@@ -80,7 +80,7 @@ SCRAPER_HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
     'Accept-Language': 'en-US,en;q=0.5',
-    'Accept-Encoding': 'gzip, deflate, br',
+    'Accept-Encoding': 'gzip, deflate',
     'Connection': 'keep-alive',
     'Upgrade-Insecure-Requests': '1',
     'Sec-Fetch-Dest': 'document',
@@ -300,7 +300,8 @@ class FastChecker:
                                             headers={
                                                 'Accept': '*/*',
                                                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-                                                'Connection': 'keep-alive'
+                                                'Connection': 'keep-alive',
+                                                'Accept-Encoding': 'gzip, deflate'  # Remove br from Accept-Encoding
                                             }, ssl=False) as response:
                         if response.status == 200:
                             content_type = response.headers.get('Content-Type', '').lower()
@@ -335,7 +336,8 @@ class FastChecker:
                                        headers={
                                            'Accept': '*/*',
                                            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-                                           'Connection': 'keep-alive'
+                                           'Connection': 'keep-alive',
+                                           'Accept-Encoding': 'gzip, deflate'  # Remove br from Accept-Encoding
                                        }, ssl=False) as response:
                     if response.status == 200:
                         # Read first 2KB for analysis
@@ -431,7 +433,8 @@ class M3UProcessor:
             async with session.get(m3u_url, timeout=ClientTimeout(total=INITIAL_TIMEOUT),
                                    headers={
                                        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-                                       'Accept': '*/*'
+                                       'Accept': '*/*',
+                                       'Accept-Encoding': 'gzip, deflate'
                                    }, ssl=False) as response:
                 if response.status == 200:
                     return await response.text()
@@ -607,7 +610,7 @@ def remove_duplicates(channels):
 async def fetch_json(session, url):
     try:
         async with session.get(url, headers={
-            "Accept-Encoding": "gzip",
+            "Accept-Encoding": "gzip, deflate",  # Remove br from Accept-Encoding
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
             "Accept": "application/json, text/plain, */*"
         }, ssl=False) as response:
@@ -916,7 +919,10 @@ async def check_single_m3u8_url(session, url, timeout=20):
 
     try:
         async with session.get(url, timeout=aiohttp.ClientTimeout(total=timeout),
-                               headers={'User-Agent': 'Mozilla/5.0'}, ssl=False) as response:
+                               headers={
+                                   'User-Agent': 'Mozilla/5.0',
+                                   'Accept-Encoding': 'gzip, deflate'
+                               }, ssl=False) as response:
             if response.status == 200:
                 content = await response.text()
                 playlist = m3u8.loads(content)
@@ -1051,57 +1057,110 @@ async def fetch_and_process_uganda_channels(session, checker, logos_data):
     # Log the URL being accessed
     logging.info(f"Fetching Uganda API from: {api_url}")
     
+    # Try using requests instead of aiohttp for the Uganda API to avoid Brotli issue
     try:
-        async with session.get(api_url, timeout=45, ssl=False, headers={
+        logging.info("Trying Uganda API with requests library to avoid Brotli issue...")
+        response = requests.get(api_url, headers={
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
             'Accept': 'application/json, text/plain, */*',
-            'Accept-Encoding': 'gzip, deflate, br',
+            'Accept-Encoding': 'gzip, deflate',  # Only accept gzip and deflate, not br
             'Connection': 'keep-alive',
             'Cache-Control': 'no-cache'
-        }) as response:
-            logging.info(f"Uganda API response status: {response.status}")
-            if response.status == 200:
-                text = await response.text()
-                logging.info(f"Uganda API response length: {len(text)} chars")
+        }, timeout=30, verify=False)
+        
+        logging.info(f"Uganda API response status: {response.status_code}")
+        if response.status_code == 200:
+            text = response.text
+            logging.info(f"Uganda API response length: {len(text)} chars")
+            if len(text) > 500:
                 logging.info(f"Uganda API response first 500 chars: {text[:500]}")
-                
-                try:
+            
+            try:
+                data = json.loads(text)
+            except json.JSONDecodeError as e:
+                logging.error(f"Failed to parse Uganda API response as JSON: {e}")
+                # Try to fix common JSON issues
+                text = text.strip()
+                if text.startswith('{') and text.endswith('}'):
                     data = json.loads(text)
-                except json.JSONDecodeError as e:
-                    logging.error(f"Failed to parse Uganda API response as JSON: {e}")
-                    # Try to fix common JSON issues
-                    text = text.strip()
-                    if text.startswith('{') and text.endswith('}'):
-                        data = json.loads(text)
-                    elif text.startswith('[') and text.endswith(']'):
-                        data = json.loads(text)
-                    else:
-                        # Try to extract JSON from text
-                        json_match = re.search(r'(\{.*\}|\[.*\])', text, re.DOTALL)
-                        if json_match:
-                            try:
-                                data = json.loads(json_match.group(0))
-                            except:
-                                logging.error("Could not extract valid JSON from response")
-                                return 0
-                        else:
-                            logging.error("No valid JSON found in response")
+                elif text.startswith('[') and text.endswith(']'):
+                    data = json.loads(text)
+                else:
+                    # Try to extract JSON from text
+                    json_match = re.search(r'(\{.*\}|\[.*\])', text, re.DOTALL)
+                    if json_match:
+                        try:
+                            data = json.loads(json_match.group(0))
+                        except:
+                            logging.error("Could not extract valid JSON from response")
                             return 0
-                
-                posts = data.get("posts", [])
-                if not posts and isinstance(data, list):
-                    posts = data  # Sometimes the API returns an array directly
-                
-                logging.info(f"Fetched {len(posts)} posts from Uganda API")
-            else:
-                logging.error(f"Failed to fetch Uganda API: Status {response.status}")
-                return 0
-    except asyncio.TimeoutError:
-        logging.error("Uganda API request timed out after 45 seconds")
+                    else:
+                        logging.error("No valid JSON found in response")
+                        return 0
+            
+            posts = data.get("posts", [])
+            if not posts and isinstance(data, list):
+                posts = data  # Sometimes the API returns an array directly
+            
+            logging.info(f"Fetched {len(posts)} posts from Uganda API")
+        else:
+            logging.error(f"Failed to fetch Uganda API: Status {response.status_code}")
+            return 0
+    except requests.exceptions.Timeout:
+        logging.error("Uganda API request timed out after 30 seconds")
         return 0
-    except aiohttp.ClientError as e:
-        logging.error(f"Client error fetching Uganda API: {e}")
-        return 0
+    except requests.exceptions.RequestException as e:
+        logging.error(f"Request error fetching Uganda API: {e}")
+        # Fall back to aiohttp with manual decompression
+        try:
+            logging.info("Trying aiohttp with manual decompression...")
+            async with session.get(api_url, timeout=45, ssl=False, headers={
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+                'Accept': 'application/json, text/plain, */*',
+                'Accept-Encoding': 'gzip, deflate',  # Explicitly don't accept br
+                'Connection': 'keep-alive',
+                'Cache-Control': 'no-cache'
+            }) as response:
+                logging.info(f"Uganda API response status: {response.status}")
+                if response.status == 200:
+                    # Read raw bytes and manually decode
+                    content = await response.read()
+                    # Try to decode as text
+                    try:
+                        text = content.decode('utf-8')
+                    except UnicodeDecodeError:
+                        # Try other encodings
+                        try:
+                            text = content.decode('latin-1')
+                        except:
+                            text = content.decode('utf-8', errors='ignore')
+                    
+                    logging.info(f"Uganda API response length: {len(text)} chars")
+                    
+                    try:
+                        data = json.loads(text)
+                    except json.JSONDecodeError:
+                        # Try to fix JSON
+                        text = text.strip()
+                        if text.startswith('{') and text.endswith('}'):
+                            data = json.loads(text)
+                        elif text.startswith('[') and text.endswith(']'):
+                            data = json.loads(text)
+                        else:
+                            logging.error("Invalid JSON response")
+                            return 0
+                    
+                    posts = data.get("posts", [])
+                    if not posts and isinstance(data, list):
+                        posts = data
+                    
+                    logging.info(f"Fetched {len(posts)} posts from Uganda API")
+                else:
+                    logging.error(f"Failed to fetch Uganda API: Status {response.status}")
+                    return 0
+        except Exception as e:
+            logging.error(f"Error fetching Uganda API with aiohttp: {e}")
+            return 0
     except Exception as e:
         logging.error(f"Error fetching Uganda API: {e}")
         return 0
