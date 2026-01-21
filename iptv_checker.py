@@ -167,12 +167,44 @@ def sync_working_channels():
     save_split_json(WORKING_CHANNELS_BASE, all_channels)
     logging.info(f"Synced {len(all_channels)} channels to main file")
 
+# ─── IMPORTANT: This is the missing function ────────────────────────────────
+def load_existing_data():
+    data = {
+        "working_channels": [],
+        "countries": {},
+        "categories": {},
+        "all_existing_channels": []
+    }
+    data["working_channels"] = load_split_json(WORKING_CHANNELS_BASE)
+    data["all_existing_channels"].extend(data["working_channels"])
+
+    if os.path.exists(COUNTRIES_DIR):
+        for f in os.listdir(COUNTRIES_DIR):
+            if f.endswith(".json"):
+                base = os.path.join(COUNTRIES_DIR, f[:-5])
+                chs = load_split_json(base)
+                data["countries"][f[:-5]] = chs
+                data["all_existing_channels"].extend(chs)
+
+    if os.path.exists(CATEGORIES_DIR):
+        for f in os.listdir(CATEGORIES_DIR):
+            if f.endswith(".json"):
+                base = os.path.join(CATEGORIES_DIR, f[:-5])
+                chs = load_split_json(base)
+                data["categories"][f[:-5]] = chs
+                data["all_existing_channels"].extend(chs)
+
+    data["all_existing_channels"] = remove_duplicates(data["all_existing_channels"])
+    return data
+
 def load_all_existing_channels():
+    # Quick check if any data exists at all
     if not os.path.exists(WORKING_CHANNELS_BASE + ".json") and not any(
-        f.startswith(WORKING_CHANNELS_BASE) and f.endswith(".json")
-        for f in os.listdir(".")
+        f.startswith(WORKING_CHANNELS_BASE) and f.endswith(".json") for f in os.listdir(".")
     ):
+        logging.info("No existing channel files found.")
         return []
+
     data = load_existing_data()
     return data["all_existing_channels"]
 
@@ -470,6 +502,7 @@ async def validate_all_channels(session, checker):
                 for cat in ch.get("categories", []):
                     category_map.setdefault(cat, []).append(ch)
                 return ch
+            logging.debug(f"Removed dead channel: {ch.get('name')} → {ch.get('url')}")
             return None
 
     tasks = [check(ch) for ch in all_channels]
@@ -481,7 +514,7 @@ async def validate_all_channels(session, checker):
         save_channels(kept, country_map, category_map, append=False)
         logging.info(f"Kept {len(kept)} working channels after full validation")
     else:
-        logging.info("No working channels remained after validation")
+        logging.info("No working channels remained after validation — all removed")
 
     return kept, country_map, category_map
 
@@ -543,18 +576,21 @@ async def main():
         logos_data = await fetch_json(session, LOGOS_URL)
         logging.info(f"Loaded {len(logos_data)} logos")
 
-        # Step 1: Validate & clean ALL existing channels
-        _, _, _ = await validate_all_channels(session, checker)
+        # Step 1: Check ALL existing channels — remove dead ones
+        kept, _, _ = await validate_all_channels(session, checker)
 
-        # Step 2: Add new channels from M3U sources (only working ones)
+        # Step 2: Add new working channels from M3U sources
         new_count = await add_new_from_m3u(session, logos_data, checker, all_m3u_urls)
 
-        # Step 3: Final sync
+        # Step 3: Final sync of all surviving channels
         sync_working_channels()
 
+    total_final = len(kept) + new_count
     logging.info("──────────────────────────────────────────────")
-    logging.info(f"Finished. New working channels added: {new_count}")
-    logging.info("All existing channels were checked — broken ones removed.")
+    logging.info(f"Finished. Final working channels: {total_final}")
+    logging.info(f"  - Survived validation: {len(kept)}")
+    logging.info(f"  - Newly added from M3U: {new_count}")
+    logging.info("All channels (old + new) were checked. Dead links removed.")
     logging.info("──────────────────────────────────────────────")
 
 async def fetch_json(session, url):
