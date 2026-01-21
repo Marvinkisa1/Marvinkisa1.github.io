@@ -5,7 +5,7 @@ import os
 import m3u8
 from tqdm import tqdm
 from aiohttp import ClientTimeout, TCPConnector
-from urllib.parse import urlparse, urljoin
+from urllib.parse import urlparse, urljoin, quote
 import requests
 from bs4 import BeautifulSoup
 import re
@@ -28,6 +28,7 @@ CHANNELS_URL = os.getenv("CHANNELS_URL", "https://iptv-org.github.io/api/channel
 STREAMS_URL = os.getenv("STREAMS_URL", "https://iptv-org.github.io/api/streams.json")
 LOGOS_URL = os.getenv("LOGOS_URL", "https://iptv-org.github.io/api/logos.json")
 KENYA_BASE_URL = os.getenv("KENYA_BASE_URL", "")
+# Properly encoded Uganda API URL
 UGANDA_API_URL = "https://apps.moochatplus.net/bash/api/api.php?get_posts&page=1&count=100&api_key=cda11bx8aITlKsXCpNB7yVLnOdEGqg342ZFrQzJRetkSoUMi9w"
 M3U_URLS = [
     os.getenv("M3U_URL_1", ""),
@@ -49,14 +50,26 @@ COUNTRIES_DIR = "countries"
 
 # Settings - Optimized for speed but still thorough
 MAX_CONCURRENT = int(os.getenv("MAX_CONCURRENT", 100))  # Increased for efficiency
-INITIAL_TIMEOUT = 20  # Increased for reliability
-MAX_TIMEOUT = 30  # Balanced maximum timeout
-RETRIES = 2  # Reduced for efficiency
+INITIAL_TIMEOUT = 30  # Increased for reliability
+MAX_TIMEOUT = 45  # Balanced maximum timeout
+RETRIES = 3  # Increased retries for reliability
 BATCH_DELAY = 0.1
 BATCH_SIZE = 500
 USE_HEAD_METHOD = True
 BYTE_RANGE_CHECK = False  # Disabled for broader compatibility
-KENYA_HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
+KENYA_HEADERS = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+    'Accept-Language': 'en-US,en;q=0.5',
+    'Accept-Encoding': 'gzip, deflate, br',
+    'Connection': 'keep-alive',
+    'Upgrade-Insecure-Requests': '1',
+    'Sec-Fetch-Dest': 'document',
+    'Sec-Fetch-Mode': 'navigate',
+    'Sec-Fetch-Site': 'none',
+    'Sec-Fetch-User': '?1',
+    'Cache-Control': 'max-age=0'
+}
 MAX_CHANNELS_PER_FILE = 4000
 
 # Unwanted extensions for filtering
@@ -64,7 +77,17 @@ UNWANTED_EXTENSIONS = ['.mkv', '.mp4', '.avi', '.mov', '.flv', '.wmv']
 
 # Scraper headers
 SCRAPER_HEADERS = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+    'Accept-Language': 'en-US,en;q=0.5',
+    'Accept-Encoding': 'gzip, deflate, br',
+    'Connection': 'keep-alive',
+    'Upgrade-Insecure-Requests': '1',
+    'Sec-Fetch-Dest': 'document',
+    'Sec-Fetch-Mode': 'navigate',
+    'Sec-Fetch-Site': 'none',
+    'Sec-Fetch-User': '?1',
+    'Cache-Control': 'max-age=0'
 }
 
 
@@ -127,7 +150,7 @@ def scrape_daily_m3u_urls(max_working=5):
     # Fetch the category page
     url = 'https://world-iptv.club/category/iptv/'
     try:
-        response = requests.get(url, headers=SCRAPER_HEADERS)
+        response = requests.get(url, headers=SCRAPER_HEADERS, timeout=30)
         if response.status_code != 200:
             logging.error(f"Failed to fetch the page: {response.status_code}")
             return []
@@ -251,7 +274,8 @@ class FastChecker:
             limit=MAX_CONCURRENT,
             force_close=True,
             enable_cleanup_closed=True,
-            ttl_dns_cache=300
+            ttl_dns_cache=300,
+            ssl=False  # Try without SSL verification
         )
         self.timeout = ClientTimeout(total=INITIAL_TIMEOUT)
         self.semaphore = asyncio.Semaphore(MAX_CONCURRENT)
@@ -273,7 +297,11 @@ class FastChecker:
             if USE_HEAD_METHOD:
                 try:
                     async with session.head(url, timeout=self.timeout, allow_redirects=True,
-                                            headers={'Accept': '*/*', 'User-Agent': 'Mozilla/5.0'}) as response:
+                                            headers={
+                                                'Accept': '*/*',
+                                                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+                                                'Connection': 'keep-alive'
+                                            }, ssl=False) as response:
                         if response.status == 200:
                             content_type = response.headers.get('Content-Type', '').lower()
                             content_length = int(response.headers.get('Content-Length', '0'))
@@ -304,7 +332,11 @@ class FastChecker:
             # GET request with comprehensive checks
             try:
                 async with session.get(url, timeout=self.timeout, allow_redirects=True,
-                                       headers={'Accept': '*/*', 'User-Agent': 'Mozilla/5.0'}) as response:
+                                       headers={
+                                           'Accept': '*/*',
+                                           'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+                                           'Connection': 'keep-alive'
+                                       }, ssl=False) as response:
                     if response.status == 200:
                         # Read first 2KB for analysis
                         content = await response.content.read(2048)
@@ -396,7 +428,11 @@ class M3UProcessor:
     async def fetch_m3u_content(self, session, m3u_url):
         """Fetch M3U content from URL"""
         try:
-            async with session.get(m3u_url, timeout=ClientTimeout(total=INITIAL_TIMEOUT)) as response:
+            async with session.get(m3u_url, timeout=ClientTimeout(total=INITIAL_TIMEOUT),
+                                   headers={
+                                       'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+                                       'Accept': '*/*'
+                                   }, ssl=False) as response:
                 if response.status == 200:
                     return await response.text()
                 else:
@@ -570,12 +606,25 @@ def remove_duplicates(channels):
 
 async def fetch_json(session, url):
     try:
-        async with session.get(url, headers={"Accept-Encoding": "gzip"}) as response:
+        async with session.get(url, headers={
+            "Accept-Encoding": "gzip",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+            "Accept": "application/json, text/plain, */*"
+        }, ssl=False) as response:
             response.raise_for_status()
             text = await response.text()
-            return json.loads(text)
-    except json.JSONDecodeError as e:
-        logging.error(f"JSON decoding error for {url}: {e}")
+            try:
+                return json.loads(text)
+            except json.JSONDecodeError:
+                # Try to fix common JSON issues
+                text = text.strip()
+                if text.startswith('{') and text.endswith('}'):
+                    return json.loads(text)
+                elif text.startswith('[') and text.endswith(']'):
+                    return json.loads(text)
+                else:
+                    logging.error(f"Invalid JSON format for {url}")
+                    return []
     except Exception as e:
         logging.error(f"Error fetching {url}: {e}")
     return []
@@ -846,7 +895,7 @@ def get_m3u8_from_page(url_data):
     """Extract m3u8 URLs from a page."""
     url, index = url_data
     try:
-        response = requests.get(url, headers=KENYA_HEADERS, timeout=10)
+        response = requests.get(url, headers=KENYA_HEADERS, timeout=15)
         m3u8_pattern = r'(https?://[^\s"]+\.m3u8)'
         m3u8_links = re.findall(m3u8_pattern, response.text)
 
@@ -859,14 +908,15 @@ def get_m3u8_from_page(url_data):
         return []
 
 
-async def check_single_m3u8_url(session, url, timeout=15):
+async def check_single_m3u8_url(session, url, timeout=20):
     """Check if a single m3u8 URL is valid."""
     # Skip URLs with unwanted extensions
     if any(url.lower().endswith(ext) for ext in UNWANTED_EXTENSIONS):
         return url, False
 
     try:
-        async with session.get(url, timeout=aiohttp.ClientTimeout(total=timeout)) as response:
+        async with session.get(url, timeout=aiohttp.ClientTimeout(total=timeout),
+                               headers={'User-Agent': 'Mozilla/5.0'}, ssl=False) as response:
             if response.status == 200:
                 content = await response.text()
                 playlist = m3u8.loads(content)
@@ -883,7 +933,7 @@ async def check_single_m3u8_url(session, url, timeout=15):
 
 async def check_m3u8_urls(urls):
     """Check multiple m3u8 URLs and return the first working one."""
-    async with aiohttp.ClientSession() as session:
+    async with aiohttp.ClientSession(connector=TCPConnector(ssl=False)) as session:
         tasks = [check_single_m3u8_url(session, url) for url in urls]
         results = await asyncio.gather(*tasks)
         for url, is_valid in results:
@@ -902,7 +952,7 @@ def scrape_kenya_tv_channels(logos_data):
             logging.error("KENYA_BASE_URL is not set. Skipping Kenya TV scrape.")
             return []
 
-        response = requests.get(KENYA_BASE_URL, headers=KENYA_HEADERS, timeout=10)
+        response = requests.get(KENYA_BASE_URL, headers=KENYA_HEADERS, timeout=15)
         logging.info("Main page downloaded")
         soup = BeautifulSoup(response.text, 'html.parser')
 
@@ -994,16 +1044,64 @@ async def fetch_and_process_uganda_channels(session, checker, logos_data):
             return SequenceMatcher(None, a, b).ratio()
 
     logging.info("Starting Uganda channels fetch...")
+    
+    # Use the properly encoded URL
     api_url = UGANDA_API_URL
+    
+    # Log the URL being accessed
+    logging.info(f"Fetching Uganda API from: {api_url}")
+    
     try:
-        async with session.get(api_url) as response:
+        async with session.get(api_url, timeout=45, ssl=False, headers={
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+            'Accept': 'application/json, text/plain, */*',
+            'Accept-Encoding': 'gzip, deflate, br',
+            'Connection': 'keep-alive',
+            'Cache-Control': 'no-cache'
+        }) as response:
+            logging.info(f"Uganda API response status: {response.status}")
             if response.status == 200:
-                data = await response.json()
+                text = await response.text()
+                logging.info(f"Uganda API response length: {len(text)} chars")
+                logging.info(f"Uganda API response first 500 chars: {text[:500]}")
+                
+                try:
+                    data = json.loads(text)
+                except json.JSONDecodeError as e:
+                    logging.error(f"Failed to parse Uganda API response as JSON: {e}")
+                    # Try to fix common JSON issues
+                    text = text.strip()
+                    if text.startswith('{') and text.endswith('}'):
+                        data = json.loads(text)
+                    elif text.startswith('[') and text.endswith(']'):
+                        data = json.loads(text)
+                    else:
+                        # Try to extract JSON from text
+                        json_match = re.search(r'(\{.*\}|\[.*\])', text, re.DOTALL)
+                        if json_match:
+                            try:
+                                data = json.loads(json_match.group(0))
+                            except:
+                                logging.error("Could not extract valid JSON from response")
+                                return 0
+                        else:
+                            logging.error("No valid JSON found in response")
+                            return 0
+                
                 posts = data.get("posts", [])
+                if not posts and isinstance(data, list):
+                    posts = data  # Sometimes the API returns an array directly
+                
                 logging.info(f"Fetched {len(posts)} posts from Uganda API")
             else:
                 logging.error(f"Failed to fetch Uganda API: Status {response.status}")
                 return 0
+    except asyncio.TimeoutError:
+        logging.error("Uganda API request timed out after 45 seconds")
+        return 0
+    except aiohttp.ClientError as e:
+        logging.error(f"Client error fetching Uganda API: {e}")
+        return 0
     except Exception as e:
         logging.error(f"Error fetching Uganda API: {e}")
         return 0
@@ -1017,10 +1115,14 @@ async def fetch_and_process_uganda_channels(session, checker, logos_data):
     match_threshold = 0.8
 
     async def process_post(post):
-        name = str(post.get("channel_name", "").strip())
+        if not isinstance(post, dict):
+            logging.warning(f"Skipping non-dict post: {post}")
+            return None
+            
+        name = str(post.get("channel_name", post.get("name", "")).strip())
         if not name:
             return None
-        url = post.get("channel_url")
+        url = post.get("channel_url", post.get("url", ""))
         if not url:
             return None
 
@@ -1029,7 +1131,7 @@ async def fetch_and_process_uganda_channels(session, checker, logos_data):
             logging.info(f"Skipping unwanted extension URL for channel: {name}")
             return None
 
-        category = post.get("category_name", "").lower().strip()
+        category = post.get("category_name", post.get("category", "")).lower().strip()
         if not category:
             category = "entertainment"  # default
 
@@ -1323,6 +1425,7 @@ async def main():
 
     async with aiohttp.ClientSession(connector=checker.connector) as session:
         # Fetch logos data first
+        logging.info("Fetching logos data...")
         logos_data = await fetch_json(session, LOGOS_URL)
         logging.info(f"Loaded {len(logos_data)} logos from {LOGOS_URL}")
 
@@ -1346,6 +1449,7 @@ async def main():
         logging.info("\n=== Step 1.5: Scraping Uganda channels ===")
         ug_channels_count = await fetch_and_process_uganda_channels(session, checker, logos_data)
 
+        logging.info("\n=== Step 2: Processing M3U URLs ===")
         m3u_channels_count = await process_m3u_urls(session, logos_data, checker, M3U_URLS)
 
         logging.info("\n=== Step 3: Checking IPTV-org channels ===")
@@ -1355,6 +1459,7 @@ async def main():
                 streams_dict = {}
                 channels_data = []
             else:
+                logging.info("Fetching IPTV-org data...")
                 channels_data, streams_data = await asyncio.gather(
                     fetch_json(session, CHANNELS_URL),
                     fetch_json(session, STREAMS_URL),
@@ -1417,4 +1522,6 @@ if __name__ == "__main__":
         asyncio.run(main())
     except Exception as e:
         logging.error(f"Script failed: {e}")
+        import traceback
+        traceback.print_exc()
         sys.exit(1)
