@@ -6,7 +6,7 @@ on:
       - main
   workflow_dispatch:
   schedule:
-    - cron: "0 0 * * *"  # Runs daily at midnight UTC
+    - cron: "0 */5 * * *"     # Every 5 hours: 00:00, 05:00, 10:00, 15:00, 20:00 UTC
 
 jobs:
   check-iptv-channels:
@@ -52,16 +52,16 @@ jobs:
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
           
-          # Add ALL working_channels files (single or split) + folders
-          git add working_channels*.json categories/ countries/
+          # Stage all relevant files (split json files + directories)
+          git add working_channels*.json categories/ countries/ || true
           
-          # Only commit if there are actual changes
+          # Only commit if there are real changes
           if git diff --staged --quiet; then
-            echo "No changes to commit"
+            echo "No changes detected - skipping commit"
             exit 0
           fi
           
-          git commit -m "Daily update: IPTV channel lists"
+          git commit -m "Automated update: IPTV channel lists (5-hour schedule)"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/Marvinkisa1/Marvinkisa1.github.io.git HEAD:main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
