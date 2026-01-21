@@ -30,7 +30,6 @@ logging.basicConfig(
 MAX_CONCURRENT     = int(os.getenv("MAX_CONCURRENT", 120))
 INITIAL_TIMEOUT    = 16
 MAX_TIMEOUT        = 32
-RETRIES            = 2
 USE_HEAD_METHOD    = True
 BATCH_SIZE         = 400
 
@@ -46,13 +45,13 @@ SCRAPER_HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36'
 }
 
-# ─── Primary M3U sources (your requested links) ─────────────────────────────
+# ─── Primary M3U sources ────────────────────────────────────────────────────
 M3U_BASE_SOURCES = [
     "https://raw.githubusercontent.com/ipstreet312/freeiptv/refs/heads/master/all.m3u",
     "https://raw.githubusercontent.com/abusaeeidx/IPTV-Scraper-Zilla/refs/heads/main/combined-playlist.m3u",
 ]
 
-# Will be filled by world-iptv.club scraper
+# Filled by scraper
 SCRAPED_M3U_URLS = []
 
 CHANNELS_URL = "https://iptv-org.github.io/api/channels.json"
@@ -277,57 +276,140 @@ def scrape_world_iptv_latest_playlists(max_attempts=8):
     logging.info(f"Scraped {len(SCRAPED_M3U_URLS)} potential fresh M3U links")
     return working
 
-# ─── Stricter checker ───────────────────────────────────────────────────────
+# ─── Improved production-ready checker ──────────────────────────────────────
 class StrictFastChecker:
     def __init__(self):
-        self.connector = TCPConnector(limit=MAX_CONCURRENT, force_close=True, enable_cleanup_closed=True)
-        self.timeout = ClientTimeout(total=INITIAL_TIMEOUT, connect=6, sock_connect=5, sock_read=12)
+        self.connector = TCPConnector(
+            limit=MAX_CONCURRENT,
+            force_close=True,
+            enable_cleanup_closed=True,
+            ttl_dns_cache=300
+        )
         self.semaphore = asyncio.Semaphore(MAX_CONCURRENT)
 
-    def has_unwanted_extension(self, url):
+    def has_unwanted_extension(self, url: str) -> bool:
         if not url:
             return False
         return any(url.lower().endswith(ext) for ext in UNWANTED_EXTENSIONS)
 
-    async def check_single_url(self, session, url):
+    async def check_single_url(self, session: aiohttp.ClientSession, url: str) -> tuple[str, bool]:
+        """
+        Production-grade live stream checker.
+        Goal: Extremely low false-negative rate for working HLS / TS streams.
+        """
         if self.has_unwanted_extension(url):
             return url, False
 
-        quick = ClientTimeout(total=8, connect=4, sock_connect=4, sock_read=6)
+        timeouts = [
+            ClientTimeout(total=7.0,  connect=3.0, sock_connect=2.5, sock_read=4.0),
+            ClientTimeout(total=12.0, connect=4.0, sock_connect=3.5, sock_read=7.0),
+            ClientTimeout(total=22.0, connect=5.0, sock_connect=4.5, sock_read=14.0),
+        ]
 
-        # HEAD first
-        if USE_HEAD_METHOD:
+        headers = {
+            "User-Agent": SCRAPER_HEADERS["User-Agent"],
+            "Accept": "*/*",
+            "Connection": "keep-alive",
+        }
+
+        for attempt, timeout in enumerate(timeouts, 1):
             try:
-                async with session.head(url, timeout=quick, allow_redirects=True) as resp:
-                    if resp.status != 200:
-                        return url, False
-                    ct = resp.headers.get('Content-Type', '').lower()
-                    if 'text/html' in ct and 'video' not in ct:
-                        return url, False
-            except:
-                pass
+                # ── HEAD (fast negative / strong positive) ───────────────────
+                if USE_HEAD_METHOD:
+                    async with session.head(url, timeout=timeout, allow_redirects=True, headers=headers) as resp:
+                        if resp.status in (403, 404, 410):
+                            return url, False
 
-        # GET + inspect
-        try:
-            async with session.get(url, timeout=self.timeout, allow_redirects=True) as resp:
-                if resp.status != 200:
-                    return url, False
+                        ct = resp.headers.get("content-type", "").lower()
 
-                chunk = await resp.content.read(4096)
-                try:
-                    text = chunk.decode('utf-8', errors='ignore').lower()
-                    if any(kw in text for kw in ['#extm3u', '#extinf', '#ext-x-version', '#ext-x-stream-inf']):
+                        # Very strong accept signals
+                        if any(k in ct for k in [
+                            "application/vnd.apple.mpegurl",
+                            "application/x-mpegurl",
+                            "video/mp2t",
+                            "application/octet-stream"  # very common for real streams
+                        ]):
+                            return url, True
+
+                        # Very strong reject
+                        if "text/html" in ct and "video" not in ct:
+                            if resp.headers.get("content-length", "0") != "0":
+                                return url, False
+
+                # ── GET + smart inspection ──────────────────────────────────
+                async with session.get(
+                    url,
+                    timeout=timeout,
+                    allow_redirects=True,
+                    headers={**headers, "Range": "bytes=0-16383"},  # ask ~16KB
+                ) as resp:
+
+                    if resp.status >= 400:
+                        continue
+
+                    # ── Try to read meaningful prefix ───────────────────────
+                    try:
+                        chunk = await asyncio.wait_for(resp.content.read(16384), timeout=8.0)
+                    except asyncio.TimeoutError:
+                        # Slow but maybe still alive → give benefit of doubt
                         return url, True
-                    if text.strip().startswith(('http://', 'https://')):
-                        return url, True
-                    logging.debug(f"No HLS markers → rejected {url[:100]}")
-                    return url, False
-                except UnicodeDecodeError:
-                    return url, False  # binary → reject
+                    except Exception:
+                        chunk = b""
 
-        except Exception as e:
-            logging.debug(f"Reject {url[:90]} → {type(e).__name__}")
-            return url, False
+                    # ── Text decode attempt ─────────────────────────────────
+                    text_sample = ""
+                    try:
+                        text_sample = chunk.decode("utf-8", errors="ignore").lower()
+                        text_sample = text_sample[:2048]  # limit inspection
+                    except:
+                        pass
+
+                    # ── Very strong positive matches ────────────────────────
+                    hls_markers = [
+                        "#extm3u", "#ext-x-version", "#ext-x-stream-inf",
+                        "#ext-x-media", "#ext-x-targetduration", "#ext-x-playlist-type"
+                    ]
+                    if any(m in text_sample for m in hls_markers):
+                        return url, True
+
+                    # Raw MPEG-TS segment (very common)
+                    if len(chunk) > 500 and chunk.startswith(b"G@") or chunk[0:1] == b"\x47":
+                        return url, True
+
+                    # Some servers return direct next-segment URL
+                    if text_sample.strip().startswith(("http://", "https://")):
+                        return url, True
+
+                    # Content-type + status + size is often enough
+                    ct = resp.headers.get("content-type", "").lower()
+                    cl = int(resp.headers.get("content-length", 0))
+
+                    if any(k in ct for k in [
+                        "mpegurl", "mp2t", "octet-stream", "video/"
+                    ]) and cl > 200:
+                        return url, True
+
+                    # ── Strong negatives ────────────────────────────────────
+                    if "text/html" in ct and ("<html" in text_sample or "<!doctype" in text_sample):
+                        return url, False
+
+                    if cl == 0 and len(chunk) < 100:
+                        continue
+
+                    # Uncertain → next attempt / longer timeout
+
+            except (aiohttp.ClientOSError, aiohttp.ServerTimeoutError,
+                    aiohttp.ClientConnectorError, asyncio.TimeoutError) as e:
+                # Network / timeout → retry
+                await asyncio.sleep(0.5 * attempt)
+                continue
+
+            except Exception as e:
+                logging.debug(f"Unexpected error on attempt {attempt} for {url}: {type(e).__name__}")
+                continue
+
+        # After all attempts — only accept if we had at least one promising response
+        return url, False
 
 # ─── M3U Processor ──────────────────────────────────────────────────────────
 class M3UProcessor:
@@ -409,9 +491,7 @@ class M3UProcessor:
             return parts[1:] or ["general"]
         return parts or ["general"]
 
-# ─── Other functions (Kenya, Uganda, IPTV-org, cleaning) ─────────────────────
-# (kept minimal - you can expand them later if needed)
-
+# ─── Process M3U URLs ───────────────────────────────────────────────────────
 async def process_m3u_urls(session, logos_data, checker, m3u_urls):
     processor = M3UProcessor()
     total_working = 0
@@ -429,10 +509,22 @@ async def process_m3u_urls(session, logos_data, checker, m3u_urls):
         if not channels:
             continue
 
-        tasks = [checker.check_single_url(session, ch['url']) for ch in channels]
-        results = await asyncio.gather(*tasks)
+        # Use semaphore to limit concurrency
+        async def check_with_sem(ch):
+            async with checker.semaphore:
+                return await checker.check_single_url(session, ch['url'])
 
-        working = [channels[i] for i, (_, ok) in enumerate(results) if ok]
+        tasks = [check_with_sem(ch) for ch in channels]
+        results = await asyncio.gather(*tasks, return_exceptions=True)
+
+        working = []
+        for i, result in enumerate(results):
+            if isinstance(result, Exception):
+                continue
+            url_checked, ok = result
+            if ok:
+                working.append(channels[i])
+
         formatted = processor.format_channel_data(working, logos_data)
         total_working += len(formatted)
 
@@ -445,12 +537,23 @@ async def process_m3u_urls(session, logos_data, checker, m3u_urls):
     if total_working > 0:
         save_channels([], country_files, category_files, append=True)
         logging.info(f"Added {total_working} working channels from M3U sources")
+
     return total_working
 
+# ─── Fetch JSON helper ──────────────────────────────────────────────────────
+async def fetch_json(session, url):
+    try:
+        async with session.get(url) as r:
+            if r.status == 200:
+                return await r.json()
+    except:
+        pass
+    return []
+
+# ─── Main ───────────────────────────────────────────────────────────────────
 async def main():
     logging.info("IPTV collection started...")
 
-    # ── 0. Scrape fresh links from world-iptv.club ──────────────────────────
     logging.info("Searching recent playlists on world-iptv.club...")
     scrape_world_iptv_latest_playlists(max_attempts=8)
 
@@ -463,25 +566,12 @@ async def main():
         logos_data = await fetch_json(session, LOGOS_URL)
         logging.info(f"Loaded {len(logos_data)} logos")
 
-        # Process all M3U sources (your two + scraped ones)
         m3u_count = await process_m3u_urls(session, logos_data, checker, all_m3u_urls)
-
-        # You can add back Kenya / Uganda / IPTV-org logic here if you want
-        # For now focusing on M3U part you emphasized
 
         sync_working_channels()
 
     logging.info("Finished.")
     logging.info(f"Final working M3U channels added: {m3u_count}")
-
-async def fetch_json(session, url):
-    try:
-        async with session.get(url) as r:
-            if r.status == 200:
-                return await r.json()
-    except:
-        pass
-    return []
 
 if __name__ == "__main__":
     try:
