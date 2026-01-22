@@ -768,90 +768,106 @@ async def check_m3u8_urls(urls):
                 return url
         return None
 
-def scrape_kenya_tv_channels(logos_data):
+async def scrape_kenya_tv_channels(logos_data):
     """Scrape Kenya TV channels and assign logos from LOGOS_URL."""
     start_time = time.time()
     logging.info("Starting Kenya TV scrape...")
-    
+
     try:
         if not KENYA_BASE_URL:
             logging.error("KENYA_BASE_URL is not set. Skipping Kenya TV scrape.")
             return []
-        
+
         response = requests.get(KENYA_BASE_URL, headers=KENYA_HEADERS, timeout=10)
         logging.info("Main page downloaded")
+
         soup = BeautifulSoup(response.text, 'html.parser')
-        
+
         main_tag = soup.find('main')
         if not main_tag:
             logging.error("No main tag found")
             return []
-            
+
         section = main_tag.find('section', class_='tv-grid-container')
         if not section:
             logging.error("No tv-grid-container section found")
             return []
-            
+
         tv_cards = section.find_all('article', class_='tv-card')
         logging.info(f"Found {len(tv_cards)} TV cards")
-        
+
         results = []
         urls_to_process = []
-        
+
         for i, card in enumerate(tv_cards, 1):
             img_container = card.find('div', class_='img-container')
-            if img_container:
-                a_tag = img_container.find('a')
-                if a_tag:
-                    img_tag = a_tag.find('img')
-                    if img_tag:
-                        href = a_tag.get('href', '')
-                        full_url = href if href.startswith('http') else KENYA_BASE_URL + href
-                        channel_name = img_tag.get('alt', '')
-                        channel_id = f"{re.sub(r'[^a-zA-Z0-9]', '', channel_name).lower()}.ke"
-                        
-                        # Get logo from logos_data
-                        logo_url = ""
-                        matching_logos = [l for l in logos_data if l["channel"] == channel_id]
-                        if matching_logos:
-                            logo_url = matching_logos[0]["url"]
-                        
-                        channel_data = {
-                            "name": channel_name,
-                            "id": channel_id,
-                            "logo": logo_url,
-                            "url": None,
-                            "categories": ["general"],
-                            "country": "KE"
-                        }
-                        results.append(channel_data)
-                        urls_to_process.append((full_url, i))
-                        logging.info(f"[{i}/{len(tv_cards)}] Collected basic info: {channel_data['name']}")
-        
+            if not img_container:
+                continue
+
+            a_tag = img_container.find('a')
+            img_tag = img_container.find('img')
+            if not a_tag or not img_tag:
+                continue
+
+            href = a_tag.get('href', '')
+            full_url = href if href.startswith('http') else KENYA_BASE_URL + href
+            channel_name = img_tag.get('alt', '').strip()
+
+            if not channel_name:
+                continue
+
+            channel_id = f"{re.sub(r'[^a-zA-Z0-9]', '', channel_name).lower()}.ke"
+
+            # Assign logo from logos_data
+            logo_url = ""
+            matching_logos = [l for l in logos_data if l["channel"] == channel_id]
+            if matching_logos:
+                logo_url = matching_logos[0]["url"]
+
+            channel_data = {
+                "name": channel_name,
+                "id": channel_id,
+                "logo": logo_url,
+                "url": None,
+                "categories": ["general"],
+                "country": "KE"
+            }
+
+            results.append(channel_data)
+            urls_to_process.append((full_url, i))
+
+            logging.info(f"[{i}/{len(tv_cards)}] Collected: {channel_name}")
+
+        # ---- blocking page scraping stays in threads (correct) ----
         with ThreadPoolExecutor(max_workers=5) as executor:
             m3u8_lists = list(executor.map(get_m3u8_from_page, urls_to_process))
-        
+
         logging.info("Checking m3u8 URLs for validity...")
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
-        valid_urls = loop.run_until_complete(asyncio.gather(
+
+        # ---- ASYNC VALIDATION (NO NEW EVENT LOOP) ----
+        valid_urls = await asyncio.gather(
             *[check_m3u8_urls(url_list) for url_list in m3u8_lists]
-        ))
-        
+        )
+
         filtered_results = []
         for channel_data, valid_url in zip(results, valid_urls):
             if valid_url:
-                channel_data['url'] = valid_url
+                channel_data["url"] = valid_url
                 filtered_results.append(channel_data)
-            
-        logging.info(f"Found {len(filtered_results)} channels with working m3u8 URLs out of {len(results)} total channels")
+
+        logging.info(
+            f"Found {len(filtered_results)} working channels "
+            f"out of {len(results)} total channels"
+        )
+
         logging.info(f"Completed in {time.time() - start_time:.2f} seconds")
-        
+
         return remove_duplicates(filtered_results)
-        
+
     except Exception as e:
-        logging.error(f"Error occurred in Kenya TV scrape: {str(e)}")
+        logging.error(f"Error occurred in Kenya TV scrape: {e}")
         return []
+
 
 async def fetch_and_process_uganda_channels(session, checker, logos_data):
     """Fetch and process Uganda channels from API, check working URLs, assign logos, and save."""
