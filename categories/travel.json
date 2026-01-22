@@ -30,10 +30,20 @@
         "country": "DO"
     },
     {
-        "name": "Beach TV Florida & Alabama",
-        "id": "BeachTVFloridaAlabama.us",
-        "logo": "https://i.imgur.com/weypM9C.png",
-        "url": "https://5ed325193d4e1.streamlock.net:444/LiveTV/DTVHD/playlist.m3u8",
+        "name": "OEPM TV",
+        "id": "OEPMTV.do",
+        "logo": "https://i.imgur.com/QghtwMB.jpeg",
+        "url": "https://cnn.hostlagarto.com/oepmtelevision/tracks-v1a1/mono.m3u8",
+        "categories": [
+            "travel"
+        ],
+        "country": "DO"
+    },
+    {
+        "name": "Beach TV Panama City",
+        "id": "BeachTVPanamaCity.us",
+        "logo": "https://i.imgur.com/HCQDvEe.png",
+        "url": "https://5ed325193d4e1.streamlock.net:444/LiveTV/BTVHD/playlist.m3u8",
         "categories": [
             "travel"
         ],
@@ -50,10 +60,10 @@
         "country": "US"
     },
     {
-        "name": "Beach TV Panama City",
-        "id": "BeachTVPanamaCity.us",
-        "logo": "https://i.imgur.com/HCQDvEe.png",
-        "url": "https://5ed325193d4e1.streamlock.net:444/LiveTV/BTVHD/playlist.m3u8",
+        "name": "Beach TV Florida & Alabama",
+        "id": "BeachTVFloridaAlabama.us",
+        "logo": "https://i.imgur.com/weypM9C.png",
+        "url": "https://5ed325193d4e1.streamlock.net:444/LiveTV/DTVHD/playlist.m3u8",
         "categories": [
             "travel"
         ],
@@ -90,6 +100,16 @@
         "country": "US"
     },
     {
+        "name": "Pluto TV Histoire",
+        "id": "PlutoTVHistoire.us",
+        "logo": "https://i.imgur.com/JE5xcCV.png",
+        "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/611e771e2f5f180007002224/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=8e063bd3-1f2c-11ef-86d8-5d587df108c6&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=a7663e8d-062c-4293-9b93-a2bd07b5cb20",
+        "categories": [
+            "travel"
+        ],
+        "country": "US"
+    },
+    {
         "name": "GoUSA TV",
         "id": "GoUSATV.us",
         "logo": "https://i.imgur.com/x90ALip.png",
@@ -104,16 +124,6 @@
         "id": "Go2Travel.us",
         "logo": "https://go2travel.tv/wp-content/uploads/2022/11/go2-logo.png",
         "url": "https://go2thls.wns.live/hls/stream.m3u8",
-        "categories": [
-            "travel"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Pluto TV Histoire",
-        "id": "PlutoTVHistoire.us",
-        "logo": "https://i.imgur.com/JE5xcCV.png",
-        "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/611e771e2f5f180007002224/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=8e063bd3-1f2c-11ef-86d8-5d587df108c6&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=a7663e8d-062c-4293-9b93-a2bd07b5cb20",
         "categories": [
             "travel"
         ],
@@ -151,16 +161,6 @@
         "country": "TJ"
     },
     {
-        "name": "Schladming-Dachstein TV",
-        "id": "SchladmingDachsteinTV.at",
-        "logo": "https://i.ibb.co/VjnzhMM/Logo-Schl-Dachstein-TV-HP-JPG.jpg",
-        "url": "https://m317.video-stream-hosting.de/gzSoftware-live/_definst_/smil:livestream.smil/playlist.m3u8",
-        "categories": [
-            "travel"
-        ],
-        "country": "AT"
-    },
-    {
         "name": "Teleputeshestviya",
         "id": "Teleputeshestviya.ru",
         "logo": "https://i.imgur.com/eXJm1n3.png",
@@ -171,15 +171,14 @@
         "country": "RU"
     },
     {
-        "name": "Peer TV South Tyrol",
-        "id": "PeerTVSouthTyrol.it",
-        "logo": "https://www.peer.biz/peertv-iptv/peer-tv-south-tyrol.png",
-        "url": "https://iptv.peer.biz/live/peertv-en.m3u8",
+        "name": "Schladming-Dachstein TV",
+        "id": "SchladmingDachsteinTV.at",
+        "logo": "https://i.ibb.co/VjnzhMM/Logo-Schl-Dachstein-TV-HP-JPG.jpg",
+        "url": "https://m317.video-stream-hosting.de/gzSoftware-live/_definst_/smil:livestream.smil/playlist.m3u8",
         "categories": [
-            "outdoor",
             "travel"
         ],
-        "country": "IT"
+        "country": "AT"
     },
     {
         "name": "Peer TV Alto Adige",
@@ -197,6 +196,17 @@
         "id": "PeerTVSudtirol.it",
         "logo": "https://www.peer.biz/peertv-iptv/peer-tv-suedtirol.png",
         "url": "https://iptv.peer.biz/live/peertv.m3u8",
+        "categories": [
+            "outdoor",
+            "travel"
+        ],
+        "country": "IT"
+    },
+    {
+        "name": "Peer TV South Tyrol",
+        "id": "PeerTVSouthTyrol.it",
+        "logo": "https://www.peer.biz/peertv-iptv/peer-tv-south-tyrol.png",
+        "url": "https://iptv.peer.biz/live/peertv-en.m3u8",
         "categories": [
             "outdoor",
             "travel"
@@ -224,16 +234,6 @@
         "country": "BG"
     },
     {
-        "name": "Maldives TV",
-        "id": "MaldivesTV.mv",
-        "logo": "https://i.imgur.com/Zl2FmFC.png",
-        "url": "https://lana.psm.mv/live/mtv.m3u8",
-        "categories": [
-            "travel"
-        ],
-        "country": "MV"
-    },
-    {
         "name": "Tanzania Safari Channel",
         "id": "TanzaniaSafariChannel.tz",
         "logo": "https://i.imgur.com/fcLFYhn.png",
@@ -244,14 +244,14 @@
         "country": "TZ"
     },
     {
-        "name": "BHA TV",
-        "id": "BHATV.bz",
-        "logo": "https://i.imgur.com/Nz5zM3H.png",
-        "url": "https://streamer2.nexgen.bz/15-BHA/index.m3u8",
+        "name": "Maldives TV",
+        "id": "MaldivesTV.mv",
+        "logo": "https://i.imgur.com/Zl2FmFC.png",
+        "url": "https://lana.psm.mv/live/mtv.m3u8",
         "categories": [
             "travel"
         ],
-        "country": "BZ"
+        "country": "MV"
     },
     {
         "name": "Costa Rica Channel",
@@ -263,6 +263,16 @@
             "travel"
         ],
         "country": "CR"
+    },
+    {
+        "name": "BHA TV",
+        "id": "BHATV.bz",
+        "logo": "https://i.imgur.com/Nz5zM3H.png",
+        "url": "https://streamer2.nexgen.bz/15-BHA/index.m3u8",
+        "categories": [
+            "travel"
+        ],
+        "country": "BZ"
     },
     {
         "name": "Aruba.TV",
