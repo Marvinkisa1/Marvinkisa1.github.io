@@ -41,7 +41,7 @@ ADDITIONAL_M3U = [
 ]
 
 # File paths
-WORKING_CHANNELS_BASE = "working_channels1"
+WORKING_CHANNELS_BASE = "working_channels"
 CATEGORIES_DIR = "categories"
 COUNTRIES_DIR = "countries"
 
