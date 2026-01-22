@@ -354,7 +354,7 @@ class M3UProcessor:
         }
 
 # ────────────────────────────────────────────────
-# Other helpers (unchanged or lightly cleaned)
+# Other helpers
 # ────────────────────────────────────────────────
 
 def remove_duplicates(channels):
@@ -423,10 +423,11 @@ def save_channels(channels, country_dict, cat_dict, append=False):
         save_split_json(base, chs)
 
 # ────────────────────────────────────────────────
-# Kenya scraper (unchanged logic)
+# Kenya scraper (FIXED - now async)
 # ────────────────────────────────────────────────
 
 def get_m3u8_from_page(args):
+    """Synchronous helper for ThreadPoolExecutor"""
     url, idx = args
     try:
         r = requests.get(url, headers=KENYA_HEADERS, timeout=12)
@@ -439,16 +440,26 @@ def get_m3u8_from_page(args):
         return []
 
 async def check_m3u8_list(session, urls, timeout=16):
+    """Check multiple m3u8 URLs and return first working one"""
     if not urls:
         return None
-    tasks = [check_single_m3u8(session, u, timeout) for u in urls[:8]]  # limit per page
+    
+    tasks = []
+    for u in urls[:8]:  # limit per page
+        task = asyncio.create_task(check_single_m3u8(session, u, timeout))
+        tasks.append(task)
+    
     results = await asyncio.gather(*tasks, return_exceptions=True)
-    for ok, url in results:
-        if isinstance(ok, bool) and ok:
-            return url
+    
+    for result in results:
+        if isinstance(result, tuple) and len(result) == 2:
+            ok, url = result
+            if ok:
+                return url
     return None
 
 async def check_single_m3u8(session, url, timeout):
+    """Check if a single m3u8 URL is valid"""
     try:
         async with session.get(url, timeout=ClientTimeout(total=timeout)) as r:
             if r.status != 200:
@@ -456,10 +467,11 @@ async def check_single_m3u8(session, url, timeout):
             txt = await r.text()
             pl = m3u8.loads(txt)
             return bool(pl.segments or pl.playlists), url
-    except:
+    except Exception as e:
         return False, url
 
-def scrape_kenya_tv_channels(logos):
+async def scrape_kenya_tv_channels(session, logos):
+    """Async version of Kenya scraper"""
     if not KENYA_BASE_URL:
         logging.warning("KENYA_BASE_URL not set → skipping Kenya scrape")
         return []
@@ -501,13 +513,14 @@ def scrape_kenya_tv_channels(logos):
             results.append(ch)
             pages.append((href, i))
 
+        # Use ThreadPoolExecutor for the synchronous HTTP requests
         with ThreadPoolExecutor(max_workers=6) as ex:
             m3u8_per_page = list(ex.map(get_m3u8_from_page, pages))
 
-        loop = asyncio.get_event_loop()
-        valid_urls = loop.run_until_complete(asyncio.gather(*[
-            check_m3u8_list(None, lst) for lst in m3u8_per_page  # dummy session - will be replaced
-        ]))
+        # Use the existing session for async checking
+        valid_urls = await asyncio.gather(*[
+            check_m3u8_list(session, lst, timeout=16) for lst in m3u8_per_page
+        ])
 
         final = []
         for ch, url in zip(results, valid_urls):
@@ -522,7 +535,7 @@ def scrape_kenya_tv_channels(logos):
         return []
 
 # ────────────────────────────────────────────────
-# Uganda (unchanged logic)
+# Uganda scraper
 # ────────────────────────────────────────────────
 
 async def fetch_and_process_uganda_channels(session, checker, logos):
@@ -595,7 +608,7 @@ async def fetch_and_process_uganda_channels(session, checker, logos):
     return len(added)
 
 # ────────────────────────────────────────────────
-# Main M3U processing (now only scraped + fixed)
+# Main M3U processing (scraped + fixed)
 # ────────────────────────────────────────────────
 
 async def process_all_m3u_sources(session, checker, logos):
@@ -651,13 +664,198 @@ async def process_all_m3u_sources(session, checker, logos):
     return len(formatted)
 
 # ────────────────────────────────────────────────
-# The rest remains mostly the same (IPTV-org, cleaning, sync, etc.)
+# IPTV-org processing
 # ────────────────────────────────────────────────
 
-# ... (keep validate_channels, check_iptv_channels, clean_and_replace_channels,
-#       sync_working_channels, update_logos_for_null_channels, etc. as they were)
+async def validate_channels(session, checker, channels, batch_size=BATCH_SIZE):
+    """Validate channels in batches"""
+    valid = []
+    total = len(channels)
+    
+    for i in range(0, total, batch_size):
+        batch = channels[i:i+batch_size]
+        urls = [ch.get('url') for ch in batch]
+        
+        tasks = [checker.check_single_url(session, url) for url in urls]
+        results = await asyncio.gather(*tasks)
+        
+        for ch, (url, ok) in zip(batch, results):
+            if ok:
+                valid.append(ch)
+        
+        logging.info(f"Validated {min(i+batch_size, total)}/{total} channels, {len(valid)} valid so far")
+    
+    return valid
 
-# Only main() needs adjustment
+async def check_iptv_channels(session, checker, logos):
+    """Process IPTV-org channels and streams"""
+    logging.info("Processing IPTV-org data...")
+    
+    # Fetch data
+    channels = await fetch_json(session, CHANNELS_URL)
+    streams = await fetch_json(session, STREAMS_URL)
+    
+    if not channels or not streams:
+        logging.error("Failed to fetch IPTV-org data")
+        return 0
+    
+    # Create lookup dictionaries
+    stream_map = {}
+    for stream in streams:
+        channel_id = stream.get('channel')
+        if channel_id and stream.get('url'):
+            if channel_id not in stream_map:
+                stream_map[channel_id] = []
+            stream_map[channel_id].append(stream['url'])
+    
+    logo_map = {logo['channel']: logo['url'] for logo in logos if 'channel' in logo and 'url' in logo}
+    
+    # Prepare channels for validation
+    channels_to_check = []
+    for channel in channels:
+        channel_id = channel.get('id')
+        if not channel_id:
+            continue
+            
+        urls = stream_map.get(channel_id, [])
+        if not urls:
+            continue
+            
+        # Take first URL for validation
+        url = urls[0]
+        
+        ch_data = {
+            'name': channel.get('name', ''),
+            'id': channel_id,
+            'logo': logo_map.get(channel_id, ''),
+            'url': url,
+            'categories': [cat.lower() for cat in channel.get('categories', ['general'])],
+            'country': channel.get('country', 'XX')
+        }
+        
+        if ch_data['country'] and isinstance(ch_data['country'], str):
+            ch_data['country'] = ch_data['country'].upper()
+        
+        channels_to_check.append(ch_data)
+    
+    logging.info(f"Checking {len(channels_to_check)} IPTV-org channels...")
+    
+    # Validate channels
+    valid_channels = await validate_channels(session, checker, channels_to_check)
+    
+    if valid_channels:
+        # Organize by country and category
+        country_dict = {}
+        cat_dict = {}
+        
+        for ch in valid_channels:
+            country = ch.get('country', 'XX')
+            country_dict.setdefault(country, []).append(ch)
+            
+            for cat in ch.get('categories', ['general']):
+                cat_dict.setdefault(cat, []).append(ch)
+        
+        # Save validated channels
+        save_channels(valid_channels, country_dict, cat_dict, append=True)
+        logging.info(f"Added {len(valid_channels)} valid IPTV-org channels")
+    
+    return len(valid_channels)
+
+# ────────────────────────────────────────────────
+# Channel cleaning and sync
+# ────────────────────────────────────────────────
+
+def clean_and_replace_channels():
+    """Remove invalid channels and deduplicate"""
+    logging.info("Cleaning and deduplicating channels...")
+    
+    all_channels = load_split_json(WORKING_CHANNELS_BASE)
+    if not all_channels:
+        logging.warning("No channels to clean")
+        return
+    
+    # Remove duplicates
+    cleaned = remove_duplicates(all_channels)
+    
+    # Remove channels with invalid URLs
+    final_channels = []
+    for ch in cleaned:
+        url = ch.get('url', '')
+        if url and url.startswith('http') and not any(url.lower().endswith(ext) for ext in UNWANTED_EXTENSIONS):
+            final_channels.append(ch)
+    
+    logging.info(f"Cleaned: {len(all_channels)} → {len(final_channels)} channels")
+    
+    # Save cleaned channels
+    save_split_json(WORKING_CHANNELS_BASE, final_channels)
+    
+    # Update country files
+    for country_file in os.listdir(COUNTRIES_DIR):
+        if country_file.endswith('.json'):
+            country_code = country_file.replace('.json', '')
+            country_channels = [ch for ch in final_channels if ch.get('country', '').upper() == country_code.upper()]
+            save_split_json(os.path.join(COUNTRIES_DIR, country_code), country_channels)
+    
+    # Update category files
+    for cat_file in os.listdir(CATEGORIES_DIR):
+        if cat_file.endswith('.json'):
+            cat_name = cat_file.replace('.json', '')
+            cat_channels = []
+            for ch in final_channels:
+                if cat_name.lower() in [c.lower() for c in ch.get('categories', [])]:
+                    cat_channels.append(ch)
+            save_split_json(os.path.join(CATEGORIES_DIR, cat_name), cat_channels)
+
+def sync_working_channels():
+    """Sync working_channels with country and category directories"""
+    logging.info("Syncing directories...")
+    
+    all_channels = load_split_json(WORKING_CHANNELS_BASE)
+    if not all_channels:
+        return
+    
+    # Sync countries
+    for country_file in os.listdir(COUNTRIES_DIR):
+        if country_file.endswith('.json'):
+            country_code = country_file.replace('.json', '')
+            country_channels = [ch for ch in all_channels if ch.get('country', '').upper() == country_code.upper()]
+            save_split_json(os.path.join(COUNTRIES_DIR, country_code), country_channels)
+    
+    # Sync categories
+    all_categories = set()
+    for ch in all_channels:
+        for cat in ch.get('categories', []):
+            all_categories.add(cat.lower())
+    
+    for cat in all_categories:
+        if cat:
+            safe_cat = re.sub(r'[^a-zA-Z0-9_-]', '', cat)
+            cat_channels = [ch for ch in all_channels if cat.lower() in [c.lower() for c in ch.get('categories', [])]]
+            save_split_json(os.path.join(CATEGORIES_DIR, safe_cat), cat_channels)
+
+def update_logos_for_null_channels(logos):
+    """Update channels with missing logos"""
+    all_channels = load_split_json(WORKING_CHANNELS_BASE)
+    if not all_channels:
+        return
+    
+    logo_map = {logo['channel']: logo['url'] for logo in logos if 'channel' in logo and 'url' in logo}
+    
+    updated_count = 0
+    for ch in all_channels:
+        if not ch.get('logo') and ch.get('id'):
+            new_logo = logo_map.get(ch['id'])
+            if new_logo:
+                ch['logo'] = new_logo
+                updated_count += 1
+    
+    if updated_count:
+        save_split_json(WORKING_CHANNELS_BASE, all_channels)
+        logging.info(f"Updated logos for {updated_count} channels")
+
+# ────────────────────────────────────────────────
+# Main function
+# ────────────────────────────────────────────────
 
 async def main():
     logging.info("IPTV collection started — only scraped + two fixed M3U sources")
@@ -668,8 +866,8 @@ async def main():
         logos = await fetch_json(session, LOGOS_URL)
         logging.info(f"Loaded {len(logos)} logos")
 
-        # Kenya
-        kenya_ch = scrape_kenya_tv_channels(logos)
+        # Kenya (now async)
+        kenya_ch = await scrape_kenya_tv_channels(session, logos)
         if kenya_ch:
             cd = {}
             catd = {}
@@ -681,15 +879,25 @@ async def main():
 
         # Uganda
         ug_count = await fetch_and_process_uganda_channels(session, checker, logos)
+        if ug_count:
+            logging.info(f"Added {ug_count} Uganda channels")
 
         # All M3U sources (scraped + fixed two)
         m3u_count = await process_all_m3u_sources(session, checker, logos)
+        if m3u_count:
+            logging.info(f"Added {m3u_count} channels from M3U sources")
 
-        # ── IPTV-org part (unchanged) ────────────────────────────────
-        # ... keep as it was ...
+        # IPTV-org processing
+        iptv_count = await check_iptv_channels(session, checker, logos)
+        if iptv_count:
+            logging.info(f"Added {iptv_count} IPTV-org channels")
 
-        # Cleaning & final sync
-        # ... keep clean_and_replace_channels, sync_working_channels ...
+        # Update logos for null channels
+        update_logos_for_null_channels(logos)
+
+        # Final cleaning and sync
+        clean_and_replace_channels()
+        sync_working_channels()
 
         logging.info("Finished.")
 
