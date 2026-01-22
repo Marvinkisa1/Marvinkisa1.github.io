@@ -1208,7 +1208,7 @@ async def main():
         logging.info(f"Loaded {len(logos_data)} logos from {LOGOS_URL}")
         
         logging.info("\n=== Step 1: Scraping Kenya TV channels ===")
-        kenya_channels = scrape_kenya_tv_channels(logos_data)
+        kenya_channels = await scrape_kenya_tv_channels(logos_data)
         
         if kenya_channels:
             country_files = {}
