@@ -139,6 +139,37 @@ def save_split_json(base_name, data):
             part_num += 1
 
 
+def remove_duplicates(channels):
+    """Remove duplicate channels using URL-based deduplication only."""
+    seen_urls = set()
+    unique_channels = []
+    duplicate_count = 0
+    
+    for channel in channels:
+        channel_url = channel.get("url", "").strip()
+        channel_name = channel.get("name", "Unknown")
+        
+        if not channel_url:
+            continue
+            
+        # Normalize URL - remove query parameters for better comparison
+        parsed_url = urlparse(channel_url)
+        normalized_url = f"{parsed_url.scheme}://{parsed_url.netloc}{parsed_url.path}".lower()
+        
+        if normalized_url in seen_urls:
+            duplicate_count += 1
+            logging.debug(f"Removed duplicate URL: {channel_name} (URL: {channel_url})")
+            continue
+            
+        seen_urls.add(normalized_url)
+        unique_channels.append(channel)
+    
+    if duplicate_count > 0:
+        logging.info(f"Removed {duplicate_count} duplicate channels (URL-based)")
+    
+    return unique_channels
+
+
 def scrape_daily_m3u_urls(max_working=5):
     """Scrape daily working M3U URLs from world-iptv.club."""
     logging.info("Starting daily M3U URL scraper...")
@@ -674,29 +705,6 @@ class M3UProcessor:
         return formatted_channels
 
 
-def remove_duplicates(channels):
-    """Remove duplicate channels by URL and ID"""
-    seen_urls = set()
-    seen_ids = set()
-    unique_channels = []
-
-    for channel in channels:
-        channel_url = channel.get("url")
-        channel_id = channel.get("id")
-
-        if not channel_url or not channel_id:
-            continue
-
-        if channel_url not in seen_urls and channel_id not in seen_ids:
-            seen_urls.add(channel_url)
-            seen_ids.add(channel_id)
-            unique_channels.append(channel)
-        else:
-            logging.info(f"Removed duplicate channel: {channel.get('name')} (URL: {channel_url}, ID: {channel_id})")
-
-    return unique_channels
-
-
 async def fetch_json(session, url):
     try:
         async with session.get(url, headers={
@@ -731,7 +739,10 @@ def load_existing_data():
         "categories": {},
         "all_existing_channels": []
     }
-    existing_data["working_channels"] = load_split_json(WORKING_CHANNELS_BASE)
+    
+    # Load working channels
+    if os.path.exists(WORKING_CHANNELS_BASE + "1.json"):
+        existing_data["working_channels"] = load_split_json(WORKING_CHANNELS_BASE)
     existing_data["all_existing_channels"].extend(existing_data["working_channels"])
 
     if os.path.exists(COUNTRIES_DIR):
@@ -1539,6 +1550,9 @@ async def main():
     global M3U_URLS  # To update the module-level variable
 
     logging.info("Starting IPTV channel collection process...")
+
+    # Clear directories at the start
+    clear_directories()
 
     # Step 0: Scrape daily M3U URLs and update M3U_URLS
     logging.info("\n=== Step 0: Scraping daily M3U URLs ===")
