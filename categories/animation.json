@@ -52,16 +52,14 @@
         "country": "DO"
     },
     {
-        "name": "BBC Three/CBBC",
-        "id": "BBCThreeCBBC.uk",
-        "logo": "https://i.imgur.com/CGXC5fp.png",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/bbc3cbbc/browser-dash/bbc3cbbc.mpd",
+        "name": "Anime Zone TV",
+        "id": "AnimeZoneTV.do",
+        "logo": "https://i.imgur.com/AHaXlCh.png",
+        "url": "http://animezonetv.net/hls/stream.m3u8",
         "categories": [
-            "family",
-            "kids",
             "animation"
         ],
-        "country": "UK"
+        "country": "DO"
     },
     {
         "name": "BBC Four/CBeebies",
@@ -71,6 +69,18 @@
         "categories": [
             "kids",
             "general",
+            "animation"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "BBC Three/CBBC",
+        "id": "BBCThreeCBBC.uk",
+        "logo": "https://i.imgur.com/CGXC5fp.png",
+        "url": "https://viamotionhsi.netplus.ch/live/eds/bbc3cbbc/browser-dash/bbc3cbbc.mpd",
+        "categories": [
+            "family",
+            "kids",
             "animation"
         ],
         "country": "UK"
@@ -98,22 +108,22 @@
         "country": "US"
     },
     {
+        "name": "Toonami Aftermath",
+        "id": "ToonamiAftermath.us",
+        "logo": "https://i.imgur.com/aSjhZK7.png",
+        "url": "http://api.toonamiaftermath.com:3000/est/playlist.m3u8",
+        "categories": [
+            "animation"
+        ],
+        "country": "US"
+    },
+    {
         "name": "RetroCrush",
         "id": "RetroCrush.us",
         "logo": "https://i.imgur.com/M40b4YI.png",
         "url": "https://cineverse.g-mana.live/media/ac7cff3c-5bc3-4745-ac4d-56aadb586d00/profile/1/profileManifest.m3u8",
         "categories": [
             "classic",
-            "animation"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Toonami Aftermath",
-        "id": "ToonamiAftermath.us",
-        "logo": "https://i.imgur.com/aSjhZK7.png",
-        "url": "http://api.toonamiaftermath.com:3000/est/playlist.m3u8",
-        "categories": [
             "animation"
         ],
         "country": "US"
@@ -140,6 +150,16 @@
         "country": "IN"
     },
     {
+        "name": "EnerGeek",
+        "id": "EnerGeek.cl",
+        "logo": "https://cdn.energeek.cl/logos/EG-Retro-2025_pfp.png",
+        "url": "https://backend.energeek.cl/webtv/egretroweb/index.m3u8?token=ZZDemoIPTVGH",
+        "categories": [
+            "animation"
+        ],
+        "country": "CL"
+    },
+    {
         "name": "Kanade",
         "id": "Kanade.cl",
         "logo": "https://static.kanade.cl/assets/img/profilepic_512px.png",
@@ -147,16 +167,6 @@
         "categories": [
             "animation",
             "entertainment"
-        ],
-        "country": "CL"
-    },
-    {
-        "name": "EnerGeek",
-        "id": "EnerGeek.cl",
-        "logo": "https://cdn.energeek.cl/logos/EG-Retro-2025_pfp.png",
-        "url": "https://backend.energeek.cl/webtv/egretroweb/index.m3u8?token=ZZDemoIPTVGH",
-        "categories": [
-            "animation"
         ],
         "country": "CL"
     },
@@ -183,17 +193,6 @@
         "country": "RU"
     },
     {
-        "name": "Pingviins",
-        "id": "Pingviins.lv",
-        "logo": "https://i.imgur.com/hfXoJIY.png",
-        "url": "https://sirius.greenhosting.ru/PingvinRu/video.m3u8",
-        "categories": [
-            "animation",
-            "kids"
-        ],
-        "country": "LV"
-    },
-    {
         "name": "Pro100TV",
         "id": "Pro100TV.ru",
         "logo": "https://i.imgur.com/YfQEflM.png",
@@ -206,6 +205,17 @@
             "animation"
         ],
         "country": "RU"
+    },
+    {
+        "name": "Pingviins",
+        "id": "Pingviins.lv",
+        "logo": "https://i.imgur.com/hfXoJIY.png",
+        "url": "https://sirius.greenhosting.ru/PingvinRu/video.m3u8",
+        "categories": [
+            "animation",
+            "kids"
+        ],
+        "country": "LV"
     },
     {
         "name": "Cartoon Classics",
@@ -241,20 +251,20 @@
         "country": "BE"
     },
     {
-        "name": "Aniplus Asia",
-        "id": "AniplusAsia.sg",
-        "logo": "https://i.imgur.com/Im3MePy.png",
-        "url": "https://amg18481-amg18481c1-amgplt0352.playout.now3.amagi.tv/playlist/amg18481-amg18481c1-amgplt0352/playlist.m3u8",
+        "name": "Animax Asia",
+        "id": "AnimaxAsia.sg",
+        "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Animax.png",
+        "url": "https://amg02159-kcglobal-amg02159c1-samsung-in-521.playouts.now.amagi.tv/playlist/amg02159-kcglobal-animax-samsungin/playlist.m3u8",
         "categories": [
             "animation"
         ],
         "country": "SG"
     },
     {
-        "name": "Animax Asia",
-        "id": "AnimaxAsia.sg",
-        "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Animax.png",
-        "url": "https://amg02159-kcglobal-amg02159c1-samsung-in-521.playouts.now.amagi.tv/playlist/amg02159-kcglobal-animax-samsungin/playlist.m3u8",
+        "name": "Aniplus Asia",
+        "id": "AniplusAsia.sg",
+        "logo": "https://i.imgur.com/Im3MePy.png",
+        "url": "https://amg18481-amg18481c1-amgplt0352.playout.now3.amagi.tv/playlist/amg18481-amg18481c1-amgplt0352/playlist.m3u8",
         "categories": [
             "animation"
         ],
