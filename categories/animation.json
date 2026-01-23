@@ -52,16 +52,6 @@
         "country": "DO"
     },
     {
-        "name": "Anime Zone TV",
-        "id": "AnimeZoneTV.do",
-        "logo": "https://i.imgur.com/AHaXlCh.png",
-        "url": "http://animezonetv.net/hls/stream.m3u8",
-        "categories": [
-            "animation"
-        ],
-        "country": "DO"
-    },
-    {
         "name": "KMBY-LD5",
         "id": "KMBYLD5.us",
         "logo": "https://i.imgur.com/px0CSti.png",
@@ -72,18 +62,6 @@
         "country": "US"
     },
     {
-        "name": "BBC Three/CBBC",
-        "id": "BBCThreeCBBC.uk",
-        "logo": "https://i.imgur.com/CGXC5fp.png",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/bbc3cbbc/browser-dash/bbc3cbbc.mpd",
-        "categories": [
-            "family",
-            "kids",
-            "animation"
-        ],
-        "country": "UK"
-    },
-    {
         "name": "BBC Four/CBeebies",
         "id": "BBCFourCBeebies.uk",
         "logo": "https://i.imgur.com/aH0PCPy.png",
@@ -91,6 +69,18 @@
         "categories": [
             "kids",
             "general",
+            "animation"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "BBC Three/CBBC",
+        "id": "BBCThreeCBBC.uk",
+        "logo": "https://i.imgur.com/CGXC5fp.png",
+        "url": "https://viamotionhsi.netplus.ch/live/eds/bbc3cbbc/browser-dash/bbc3cbbc.mpd",
+        "categories": [
+            "family",
+            "kids",
             "animation"
         ],
         "country": "UK"
@@ -129,16 +119,6 @@
         "country": "US"
     },
     {
-        "name": "Chutti TV",
-        "id": "ChuttiTV.in",
-        "logo": "https://dtil.tmsimg.com/assets/s142739_ld_h15_aa.png",
-        "url": "http://103.140.254.2:3500/live/557.m3u8",
-        "categories": [
-            "animation"
-        ],
-        "country": "IN"
-    },
-    {
         "name": "Chintu TV",
         "id": "ChintuTV.in",
         "logo": "https://dtil.tmsimg.com/assets/s142737_ld_h15_aa.png",
@@ -150,15 +130,14 @@
         "country": "IN"
     },
     {
-        "name": "Kanade",
-        "id": "Kanade.cl",
-        "logo": "https://static.kanade.cl/assets/img/profilepic_512px.png",
-        "url": "https://backend.energeek.cl/webtv/kanadeweb/index.m3u8?token=ZZDemoIPTVGH",
+        "name": "Chutti TV",
+        "id": "ChuttiTV.in",
+        "logo": "https://dtil.tmsimg.com/assets/s142739_ld_h15_aa.png",
+        "url": "http://103.140.254.2:3500/live/557.m3u8",
         "categories": [
-            "animation",
-            "entertainment"
+            "animation"
         ],
-        "country": "CL"
+        "country": "IN"
     },
     {
         "name": "EnerGeek",
@@ -171,15 +150,15 @@
         "country": "CL"
     },
     {
-        "name": "Pingviins",
-        "id": "Pingviins.lv",
-        "logo": "https://i.imgur.com/hfXoJIY.png",
-        "url": "https://sirius.greenhosting.ru/PingvinRu/video.m3u8",
+        "name": "Kanade",
+        "id": "Kanade.cl",
+        "logo": "https://static.kanade.cl/assets/img/profilepic_512px.png",
+        "url": "https://backend.energeek.cl/webtv/kanadeweb/index.m3u8?token=ZZDemoIPTVGH",
         "categories": [
             "animation",
-            "kids"
+            "entertainment"
         ],
-        "country": "LV"
+        "country": "CL"
     },
     {
         "name": "Pro100TV",
@@ -196,10 +175,21 @@
         "country": "RU"
     },
     {
-        "name": "Solnce",
-        "id": "Solnce.ru",
-        "logo": "https://i.imgur.com/HCefxaK.png",
-        "url": "http://zabava-htlive.cdn.ngenix.net/hls/CH_DISNEY/variant.m3u8",
+        "name": "Pingviins",
+        "id": "Pingviins.lv",
+        "logo": "https://i.imgur.com/hfXoJIY.png",
+        "url": "https://sirius.greenhosting.ru/PingvinRu/video.m3u8",
+        "categories": [
+            "animation",
+            "kids"
+        ],
+        "country": "LV"
+    },
+    {
+        "name": "Multimania",
+        "id": "Multimania.ru",
+        "logo": "https://i.imgur.com/abh8ZBA.png",
+        "url": "http://sirius.greenhosting.ru/MultimaniaRu/video.m3u8",
         "categories": [
             "animation",
             "kids"
@@ -207,10 +197,10 @@
         "country": "RU"
     },
     {
-        "name": "Multimania",
-        "id": "Multimania.ru",
-        "logo": "https://i.imgur.com/abh8ZBA.png",
-        "url": "http://sirius.greenhosting.ru/MultimaniaRu/video.m3u8",
+        "name": "Solnce",
+        "id": "Solnce.ru",
+        "logo": "https://i.imgur.com/HCefxaK.png",
+        "url": "http://zabava-htlive.cdn.ngenix.net/hls/CH_DISNEY/variant.m3u8",
         "categories": [
             "animation",
             "kids"
