@@ -1,30 +1,19 @@
 [
     {
-        "name": "Renome TV",
-        "id": "RenomeTV.ua",
-        "logo": "https://i.imgur.com/qL1uNlW.png",
-        "url": "http://85.238.112.40:8810/hls_sec/online/list-renome.m3u8",
+        "name": "Pervyy gorodskoy. Odessa",
+        "id": "PervyygorodskoyOdessa.ua",
+        "logo": "https://i.imgur.com/8qdc6aO.png",
+        "url": "http://91.194.79.46:8081/stream2/channel2/playlist.m3u8",
         "categories": [
             "general"
         ],
         "country": "UA"
     },
     {
-        "name": "100% NEWS",
-        "id": "100NEWS.ua",
-        "logo": "https://i.imgur.com/bSXKdK5.png",
-        "url": "http://85.238.112.40:8810/hls_sec/239.33.16.32-.m3u8",
-        "categories": [
-            "news",
-            "business"
-        ],
-        "country": "UA"
-    },
-    {
-        "name": "Pervyy gorodskoy. Odessa",
-        "id": "PervyygorodskoyOdessa.ua",
-        "logo": "https://i.imgur.com/8qdc6aO.png",
-        "url": "http://91.194.79.46:8081/stream2/channel2/playlist.m3u8",
+        "name": "Renome TV",
+        "id": "RenomeTV.ua",
+        "logo": "https://i.imgur.com/qL1uNlW.png",
+        "url": "http://85.238.112.40:8810/hls_sec/online/list-renome.m3u8",
         "categories": [
             "general"
         ],
@@ -37,6 +26,17 @@
         "url": "http://85.238.112.69:8811/hls_sec/239.0.4.18-.m3u8",
         "categories": [
             "religious"
+        ],
+        "country": "UA"
+    },
+    {
+        "name": "100% NEWS",
+        "id": "100NEWS.ua",
+        "logo": "https://i.imgur.com/bSXKdK5.png",
+        "url": "http://85.238.112.40:8810/hls_sec/239.33.16.32-.m3u8",
+        "categories": [
+            "news",
+            "business"
         ],
         "country": "UA"
     },
@@ -71,14 +71,6 @@
         "country": "UA"
     },
     {
-        "name": "TVA",
-        "id": "TVA.ua",
-        "logo": "https://i.imgur.com/PtTQ5lv.png",
-        "url": "http://rtsp.cdn.ua/tva.ua_live/livestream/playlist.m3u8",
-        "categories": [],
-        "country": "UA"
-    },
-    {
         "name": "Lugansk 24",
         "id": "Lugansk24.ua",
         "logo": "https://i.imgur.com/AihoVc0.png",
@@ -89,10 +81,28 @@
         "country": "UA"
     },
     {
+        "name": "TVA",
+        "id": "TVA.ua",
+        "logo": "https://i.imgur.com/PtTQ5lv.png",
+        "url": "http://rtsp.cdn.ua/tva.ua_live/livestream/playlist.m3u8",
+        "categories": [],
+        "country": "UA"
+    },
+    {
         "name": "Dnipro TV",
         "id": "DniproTV.ua",
         "logo": "https://i.imgur.com/mbPTVh1.png",
         "url": "http://vcdn1.produck.company:1935/out/dtv/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "UA"
+    },
+    {
+        "name": "Izmail TV",
+        "id": "IzmailTV.ua",
+        "logo": "https://i.imgur.com/CxsUpGz.png",
+        "url": "https://cdn10.live-tv.cloud/izod/izod-abr-lq/playlist.m3u8",
         "categories": [
             "general"
         ],
@@ -127,44 +137,6 @@
         "country": "UA"
     },
     {
-        "name": "Hope Channel Ukraine",
-        "id": "HopeChannelUkraine.ua",
-        "logo": "https://i.imgur.com/mUx2P29.png",
-        "url": "http://nadiya.home-net.com.ua/mob/mystream.m3u8",
-        "categories": [
-            "religious"
-        ],
-        "country": "UA"
-    },
-    {
-        "name": "Reporter",
-        "id": "Reporter.ua",
-        "logo": "https://i.imgur.com/LyA3kBR.png",
-        "url": "http://cdn1.live-tv.od.ua:8081/31chod/31chod-abr/31chod/31chod/playlist.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "UA"
-    },
-    {
-        "name": "TRK Krug",
-        "id": "TRKKrug.ua",
-        "logo": "https://i.imgur.com/CCxEt0w.png",
-        "url": "http://cdn1.live-tv.od.ua:8081/krugod/krugod-abr/krugod/krugod/playlist.m3u8",
-        "categories": [],
-        "country": "UA"
-    },
-    {
-        "name": "Telekanal RAI",
-        "id": "TelekanalRAI.ua",
-        "logo": "https://i.imgur.com/Ouv51WB.png",
-        "url": "https://stream.rai.ua/rai/stream.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "UA"
-    },
-    {
         "name": "ITV",
         "id": "ITV.ua",
         "logo": "https://i.imgur.com/NZdT9yJ.png",
@@ -175,10 +147,20 @@
         "country": "UA"
     },
     {
-        "name": "NTK TV",
-        "id": "NTKTV.ua",
-        "logo": "https://www.ntktv.ua/bitrix/templates/ntk_copy/images/logo.png",
-        "url": "https://stream.ntktv.ua/s/ntk/ntk.m3u8",
+        "name": "Hope Channel Ukraine",
+        "id": "HopeChannelUkraine.ua",
+        "logo": "https://i.imgur.com/mUx2P29.png",
+        "url": "http://nadiya.home-net.com.ua/mob/mystream.m3u8",
+        "categories": [
+            "religious"
+        ],
+        "country": "UA"
+    },
+    {
+        "name": "Telekanal RAI",
+        "id": "TelekanalRAI.ua",
+        "logo": "https://i.imgur.com/Ouv51WB.png",
+        "url": "https://stream.rai.ua/rai/stream.m3u8",
         "categories": [
             "general"
         ],
@@ -195,12 +177,68 @@
         "country": "UA"
     },
     {
+        "name": "TRK Krug",
+        "id": "TRKKrug.ua",
+        "logo": "https://i.imgur.com/CCxEt0w.png",
+        "url": "http://cdn1.live-tv.od.ua:8081/krugod/krugod-abr/krugod/krugod/playlist.m3u8",
+        "categories": [],
+        "country": "UA"
+    },
+    {
+        "name": "Reporter",
+        "id": "Reporter.ua",
+        "logo": "https://i.imgur.com/LyA3kBR.png",
+        "url": "http://cdn1.live-tv.od.ua:8081/31chod/31chod-abr/31chod/31chod/playlist.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "UA"
+    },
+    {
+        "name": "NTK TV",
+        "id": "NTKTV.ua",
+        "logo": "https://www.ntktv.ua/bitrix/templates/ntk_copy/images/logo.png",
+        "url": "https://stream.ntktv.ua/s/ntk/ntk.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "UA"
+    },
+    {
         "name": "TUSO",
         "id": "TUSO.ua",
         "logo": "https://i.imgur.com/kb4B9wN.png",
         "url": "https://tuso.cdn-01.cosmonova.net.ua/hls/tuso_ua.m3u8",
         "categories": [
             "shop"
+        ],
+        "country": "UA"
+    },
+    {
+        "name": "Skrypin.ua",
+        "id": "Skrypinua.ua",
+        "logo": "https://i.imgur.com/XtG3rfj.png",
+        "url": "https://open-cdn.lanet.tv/play/skrypin.m3u8",
+        "categories": [],
+        "country": "UA"
+    },
+    {
+        "name": "Channel 24",
+        "id": "Channel24.ua",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/24_Group_Ukraine_04.png/512px-24_Group_Ukraine_04.png",
+        "url": "https://streamvideol1.luxnet.ua/news24/smil:news24.stream.smil/playlist.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "UA"
+    },
+    {
+        "name": "Lanet.TV",
+        "id": "LanetTV.ua",
+        "logo": "https://i.imgur.com/Jdy4SoG.png",
+        "url": "https://kiev1-cdn.lanet.tv/live/1008.m3u8",
+        "categories": [
+            "entertainment"
         ],
         "country": "UA"
     },
@@ -215,36 +253,6 @@
         "country": "UA"
     },
     {
-        "name": "Cherniveckiy promin",
-        "id": "Cherniveckiypromin.ua",
-        "logo": "https://i.imgur.com/O9nQ5po.png",
-        "url": "http://langate.tv/promin/live_720/index.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "UA"
-    },
-    {
-        "name": "Channel 24",
-        "id": "Channel24.ua",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/24_Group_Ukraine_04.png/512px-24_Group_Ukraine_04.png",
-        "url": "https://streamvideol1.luxnet.ua/news24/smil:news24.stream.smil/playlist.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "UA"
-    },
-    {
-        "name": "M2",
-        "id": "M2.ua",
-        "logo": "https://i.imgur.com/AfcBWCg.png",
-        "url": "https://live.m2.tv/hls3/stream.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "UA"
-    },
-    {
         "name": "Avers",
         "id": "Avers.ua",
         "logo": "https://i.imgur.com/rHHz94D.png",
@@ -255,20 +263,12 @@
         "country": "UA"
     },
     {
-        "name": "Skrypin.ua",
-        "id": "Skrypinua.ua",
-        "logo": "https://i.imgur.com/XtG3rfj.png",
-        "url": "https://open-cdn.lanet.tv/play/skrypin.m3u8",
-        "categories": [],
-        "country": "UA"
-    },
-    {
-        "name": "Lanet.TV",
-        "id": "LanetTV.ua",
-        "logo": "https://i.imgur.com/Jdy4SoG.png",
-        "url": "https://kiev1-cdn.lanet.tv/live/1008.m3u8",
+        "name": "M2",
+        "id": "M2.ua",
+        "logo": "https://i.imgur.com/AfcBWCg.png",
+        "url": "https://live.m2.tv/hls3/stream.m3u8",
         "categories": [
-            "entertainment"
+            "music"
         ],
         "country": "UA"
     }
