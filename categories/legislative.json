@@ -30,6 +30,16 @@
         "country": "BR"
     },
     {
+        "name": "TV Camara",
+        "id": "TVCamara.br",
+        "logo": "https://i.imgur.com/Sdou1Ab.png",
+        "url": "https://stream3.camara.gov.br/tv1/manifest.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "BR"
+    },
+    {
         "name": "TV Camara 2",
         "id": "TVCamara2.br",
         "logo": "https://i.imgur.com/dHrUG1R.png",
@@ -40,14 +50,14 @@
         "country": "BR"
     },
     {
-        "name": "TV Camara",
-        "id": "TVCamara.br",
-        "logo": "https://i.imgur.com/Sdou1Ab.png",
-        "url": "https://stream3.camara.gov.br/tv1/manifest.m3u8",
+        "name": "Legislative Assembly of British Columbia",
+        "id": "LegislativeAssemblyofBritishColumbia.ca",
+        "logo": "https://i.imgur.com/5QGxHhh.png",
+        "url": "https://cdn3.wowza.com/5/YldIU1hsTlljRWZF/hbs-prim-house-httpo/HouseP.smil/playlist.m3u8",
         "categories": [
             "legislative"
         ],
-        "country": "BR"
+        "country": "CA"
     },
     {
         "name": "Legislative Assembly TV Nunavut",
@@ -84,16 +94,6 @@
         "id": "LegislativeAssemblyofBritishColumbiaCommitteeA.ca",
         "logo": "https://www.lyngsat.com/logo/tv/ll/legislative-assembly-of-british-columbia-ca.png",
         "url": "https://cdn3.wowza.com/5/YldIU1hsTlljRWZF/hbs-prim-dougfir-httpo/DougFirP.smil/playlist.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "CA"
-    },
-    {
-        "name": "Legislative Assembly of British Columbia",
-        "id": "LegislativeAssemblyofBritishColumbia.ca",
-        "logo": "https://i.imgur.com/5QGxHhh.png",
-        "url": "https://cdn3.wowza.com/5/YldIU1hsTlljRWZF/hbs-prim-house-httpo/HouseP.smil/playlist.m3u8",
         "categories": [
             "legislative"
         ],
@@ -140,16 +140,6 @@
         "country": "US"
     },
     {
-        "name": "ACTV",
-        "id": "ACTV.us",
-        "logo": "https://i.imgur.com/Z6lB0Ww.png",
-        "url": "https://castus-vod-dev.s3.amazonaws.com/vod_clients/athens/live/ch2/video.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "US"
-    },
-    {
         "name": "COStv",
         "id": "COStv.us",
         "logo": "https://i.imgur.com/IVqjCRE.png",
@@ -160,10 +150,10 @@
         "country": "US"
     },
     {
-        "name": "BATV Government TV",
-        "id": "BATVGovernmentTV.us",
-        "logo": "https://i.imgur.com/VPGIfVh.png",
-        "url": "https://reflect-batv.cablecast.tv/live-3/live/live.m3u8",
+        "name": "ACTV",
+        "id": "ACTV.us",
+        "logo": "https://i.imgur.com/Z6lB0Ww.png",
+        "url": "https://castus-vod-dev.s3.amazonaws.com/vod_clients/athens/live/ch2/video.m3u8",
         "categories": [
             "legislative"
         ],
@@ -180,10 +170,10 @@
         "country": "US"
     },
     {
-        "name": "LGTV",
-        "id": "LGTV.us",
-        "logo": "https://i.imgur.com/d5w2pT4.png",
-        "url": "https://livestream.telvue.com/lexmedia3/f7b44cfafd5c52223d5498196c8a2e7b.sdp/lexmedia3/stream1/playlist.m3u8",
+        "name": "BATV Government TV",
+        "id": "BATVGovernmentTV.us",
+        "logo": "https://i.imgur.com/VPGIfVh.png",
+        "url": "https://reflect-batv.cablecast.tv/live-3/live/live.m3u8",
         "categories": [
             "legislative"
         ],
@@ -200,40 +190,20 @@
         "country": "US"
     },
     {
-        "name": "CT-N TV Conneticut",
-        "id": "CTNTVConneticut.us",
-        "logo": "https://i.imgur.com/pb0TFQt.jpg",
-        "url": "http://video.ct-n.com/live/ctnstream/playlist_DVR.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "CT-N Live Stream 2",
-        "id": "CTNLiveStream2.us",
-        "logo": "https://i.imgur.com/pb0TFQt.jpeg",
-        "url": "http://video.ct-n.com/live/web2stream/playlist.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "CT-N Court Feed",
-        "id": "CTNCourtFeed.us",
-        "logo": "https://i.imgur.com/pb0TFQt.jpeg",
-        "url": "http://video.ct-n.com/live/ctnSupreme/playlist_DVR.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "US"
-    },
-    {
         "name": "Government TV 16",
         "id": "GovernmentTV16.us",
         "logo": "https://i.imgur.com/iv9Vfcb.png",
         "url": "https://livestream.telvue.com/nashuanh3/f7b44cfafd5c52223d5498196c8a2e7b.sdp/playlist.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "LGTV",
+        "id": "LGTV.us",
+        "logo": "https://i.imgur.com/d5w2pT4.png",
+        "url": "https://livestream.telvue.com/lexmedia3/f7b44cfafd5c52223d5498196c8a2e7b.sdp/lexmedia3/stream1/playlist.m3u8",
         "categories": [
             "legislative"
         ],
@@ -250,20 +220,40 @@
         "country": "US"
     },
     {
-        "name": "C-SPAN 2",
-        "id": "CSPAN2.us",
-        "logo": "https://i.imgur.com/9B6XIQC.png",
-        "url": "http://fl1.moveonjoy.com/C-SPAN/index.m3u8",
+        "name": "CT-N Live Stream 2",
+        "id": "CTNLiveStream2.us",
+        "logo": "https://i.imgur.com/pb0TFQt.jpeg",
+        "url": "http://video.ct-n.com/live/web2stream/playlist.m3u8",
         "categories": [
             "legislative"
         ],
         "country": "US"
     },
     {
-        "name": "Apple Valley Channel 180",
-        "id": "AppleValleyChannel180.us",
-        "logo": "https://i.imgur.com/3h9RkFA.png",
-        "url": "https://reflect-applevalley.cablecast.tv/live-3/live/live.m3u8",
+        "name": "CT-N TV Conneticut",
+        "id": "CTNTVConneticut.us",
+        "logo": "https://i.imgur.com/pb0TFQt.jpg",
+        "url": "http://video.ct-n.com/live/ctnstream/playlist_DVR.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "CT-N Court Feed",
+        "id": "CTNCourtFeed.us",
+        "logo": "https://i.imgur.com/pb0TFQt.jpeg",
+        "url": "http://video.ct-n.com/live/ctnSupreme/playlist_DVR.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "C-SPAN 2",
+        "id": "CSPAN2.us",
+        "logo": "https://i.imgur.com/9B6XIQC.png",
+        "url": "http://fl1.moveonjoy.com/C-SPAN/index.m3u8",
         "categories": [
             "legislative"
         ],
@@ -280,14 +270,14 @@
         "country": "US"
     },
     {
-        "name": "TV NRSR",
-        "id": "TVNRSR.sk",
-        "logo": "https://i.imgur.com/hsJsu3I.png",
-        "url": "https://n11.stv.livebox.sk/stv-tv/stv4.stream/playlist.m3u8",
+        "name": "Apple Valley Channel 180",
+        "id": "AppleValleyChannel180.us",
+        "logo": "https://i.imgur.com/3h9RkFA.png",
+        "url": "https://reflect-applevalley.cablecast.tv/live-3/live/live.m3u8",
         "categories": [
             "legislative"
         ],
-        "country": "SK"
+        "country": "US"
     },
     {
         "name": "Sansad TV 2",
@@ -310,6 +300,16 @@
         "country": "IN"
     },
     {
+        "name": "TV NRSR",
+        "id": "TVNRSR.sk",
+        "logo": "https://i.imgur.com/hsJsu3I.png",
+        "url": "https://n11.stv.livebox.sk/stv-tv/stv4.stream/playlist.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "SK"
+    },
+    {
         "name": "Privesc.Eu TV",
         "id": "PrivescEuTV.md",
         "logo": "https://i.imgur.com/ukBacSn.png",
@@ -320,20 +320,20 @@
         "country": "MD"
     },
     {
-        "name": "Parlamentsfernsehen 3",
-        "id": "Parlamentsfernsehen3.de",
+        "name": "Parlamentsfernsehen 4",
+        "id": "Parlamentsfernsehen4.de",
         "logo": "https://i.imgur.com/mksEgwx.png",
-        "url": "https://bttv-live-z.r53.cdn.tv1.eu/13014bundestag-hk3/_definst_/live/video/hk3_de.smil/playlist.m3u8",
+        "url": "https://bttv-live-z.r53.cdn.tv1.eu/13014bundestag-hk4/_definst_/live/video/hk4_de.smil/playlist.m3u8",
         "categories": [
             "legislative"
         ],
         "country": "DE"
     },
     {
-        "name": "Parlamentsfernsehen 4",
-        "id": "Parlamentsfernsehen4.de",
+        "name": "Parlamentsfernsehen 3",
+        "id": "Parlamentsfernsehen3.de",
         "logo": "https://i.imgur.com/mksEgwx.png",
-        "url": "https://bttv-live-z.r53.cdn.tv1.eu/13014bundestag-hk4/_definst_/live/video/hk4_de.smil/playlist.m3u8",
+        "url": "https://bttv-live-z.r53.cdn.tv1.eu/13014bundestag-hk3/_definst_/live/video/hk3_de.smil/playlist.m3u8",
         "categories": [
             "legislative"
         ],
@@ -358,16 +358,6 @@
             "legislative"
         ],
         "country": "DE"
-    },
-    {
-        "name": "Canal Parlamento del Congreso de Jalisco",
-        "id": "CanalParlamentodelCongresodeJalisco.mx",
-        "logo": "https://i.imgur.com/fLpkHfZ.png",
-        "url": "https://60417ddeaf0d9.streamlock.net/srtc/smil:srtc.smil/playlist.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "MX"
     },
     {
         "name": "Senato TV",
@@ -400,20 +390,20 @@
         "country": "IT"
     },
     {
-        "name": "TV from the Danish Parliament",
-        "id": "TVfromtheDanishParliament.dk",
-        "logo": "https://i.imgur.com/RqQDUzX.png",
-        "url": "https://cdnapi.kaltura.com/p/2158211/sp/327418300/playManifest/entryId/1_24gfa7qq/protocol/https/format/applehttp/a.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "DK"
-    },
-    {
         "name": "Icrtv Colima",
         "id": "IcrtvColima.mx",
         "logo": "https://i.imgur.com/iUks0ot.png",
         "url": "https://5fc584f3f19c9.streamlock.net/icrtvcolima/smil:icrtvcolima.smil/playlist.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "MX"
+    },
+    {
+        "name": "Canal Parlamento del Congreso de Jalisco",
+        "id": "CanalParlamentodelCongresodeJalisco.mx",
+        "logo": "https://i.imgur.com/fLpkHfZ.png",
+        "url": "https://60417ddeaf0d9.streamlock.net/srtc/smil:srtc.smil/playlist.m3u8",
         "categories": [
             "legislative"
         ],
@@ -440,14 +430,24 @@
         "country": "MX"
     },
     {
-        "name": "RTM Parlimen Dewan Negara",
-        "id": "RTMParlimenDewanNegara.my",
-        "logo": "https://i.postimg.cc/mgrVsTMY/header.png",
-        "url": "https://d25tgymtnqzu8s.cloudfront.net/smil:negara/playlist.m3u8?id=8",
+        "name": "The Parliamentary Channel",
+        "id": "TheParliamentaryChannel.bs",
+        "logo": "https://i.imgur.com/YjPJ8zZ.png",
+        "url": "https://zns-edge1.streamcomedia.cloud/abr_parliamentarychannel/abr-parliament_streams/playlist.m3u8",
         "categories": [
             "legislative"
         ],
-        "country": "MY"
+        "country": "BS"
+    },
+    {
+        "name": "TV from the Danish Parliament",
+        "id": "TVfromtheDanishParliament.dk",
+        "logo": "https://i.imgur.com/RqQDUzX.png",
+        "url": "https://cdnapi.kaltura.com/p/2158211/sp/327418300/playManifest/entryId/1_24gfa7qq/protocol/https/format/applehttp/a.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "DK"
     },
     {
         "name": "RTM Parlimen Dewan Rakyat",
@@ -460,14 +460,14 @@
         "country": "MY"
     },
     {
-        "name": "The Parliamentary Channel",
-        "id": "TheParliamentaryChannel.bs",
-        "logo": "https://i.imgur.com/YjPJ8zZ.png",
-        "url": "https://zns-edge1.streamcomedia.cloud/abr_parliamentarychannel/abr-parliament_streams/playlist.m3u8",
+        "name": "RTM Parlimen Dewan Negara",
+        "id": "RTMParlimenDewanNegara.my",
+        "logo": "https://i.postimg.cc/mgrVsTMY/header.png",
+        "url": "https://d25tgymtnqzu8s.cloudfront.net/smil:negara/playlist.m3u8?id=8",
         "categories": [
             "legislative"
         ],
-        "country": "BS"
+        "country": "MY"
     },
     {
         "name": "Thai Parliament Television",
@@ -551,20 +551,20 @@
         "country": "GR"
     },
     {
-        "name": "Hellenic Parliament TV 3",
-        "id": "HellenicParliamentTV3.gr",
+        "name": "Hellenic Parliament TV 2",
+        "id": "HellenicParliamentTV2.gr",
         "logo": "https://i.imgur.com/o2cvqv3.png",
-        "url": "https://streamer-cache.grnet.gr/parliament/hls/webtv3.m3u8",
+        "url": "https://streamer-cache.grnet.gr/parliament/hls/webtv2.m3u8",
         "categories": [
             "legislative"
         ],
         "country": "GR"
     },
     {
-        "name": "Hellenic Parliament TV 2",
-        "id": "HellenicParliamentTV2.gr",
+        "name": "Hellenic Parliament TV 3",
+        "id": "HellenicParliamentTV3.gr",
         "logo": "https://i.imgur.com/o2cvqv3.png",
-        "url": "https://streamer-cache.grnet.gr/parliament/hls/webtv2.m3u8",
+        "url": "https://streamer-cache.grnet.gr/parliament/hls/webtv3.m3u8",
         "categories": [
             "legislative"
         ],
