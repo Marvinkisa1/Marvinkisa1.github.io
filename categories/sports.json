@@ -40,6 +40,47 @@
         "country": "CA"
     },
     {
+        "name": "L'Equipe",
+        "id": "LEquipe.fr",
+        "logo": "https://i.imgur.com/t35zhM9.png",
+        "url": "https://viamotionhsi.netplus.ch/live/eds/lequipe21/browser-dash/lequipe21.mpd",
+        "categories": [
+            "sports"
+        ],
+        "country": "FR"
+    },
+    {
+        "name": "TSN2",
+        "id": "TSN2.ca",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/TSN2.svg/512px-TSN2.svg.png",
+        "url": "https://tvpass.org/live/tsn2/sd",
+        "categories": [
+            "sports"
+        ],
+        "country": "CA"
+    },
+    {
+        "name": "TSN4",
+        "id": "TSN4.ca",
+        "logo": "https://i.imgur.com/qJyAWU8.png",
+        "url": "https://tvpass.org/live/tsn4/sd",
+        "categories": [
+            "sports"
+        ],
+        "country": "CA"
+    },
+    {
+        "name": "Africa 24 Sport",
+        "id": "Africa24Sport.fr",
+        "logo": "https://i0.wp.com/africa24tv.com/wp-content/uploads/2023/12/LOGO-AFRICASPORT-4-HD-sans-fond.png?fit=512%2C107&ssl=1",
+        "url": "https://africa24.vedge.infomaniak.com/livecast/ik:africa24sport/manifest.m3u8",
+        "categories": [
+            "news",
+            "sports"
+        ],
+        "country": "FR"
+    },
+    {
         "name": "TSN5",
         "id": "TSN5.ca",
         "logo": "https://i.imgur.com/HEzHpzz.png",
@@ -68,27 +109,6 @@
             "sports"
         ],
         "country": "CA"
-    },
-    {
-        "name": "L'Equipe",
-        "id": "LEquipe.fr",
-        "logo": "https://i.imgur.com/t35zhM9.png",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/lequipe21/browser-dash/lequipe21.mpd",
-        "categories": [
-            "sports"
-        ],
-        "country": "FR"
-    },
-    {
-        "name": "Africa 24 Sport",
-        "id": "Africa24Sport.fr",
-        "logo": "https://i0.wp.com/africa24tv.com/wp-content/uploads/2023/12/LOGO-AFRICASPORT-4-HD-sans-fond.png?fit=512%2C107&ssl=1",
-        "url": "https://africa24.vedge.infomaniak.com/livecast/ik:africa24sport/manifest.m3u8",
-        "categories": [
-            "news",
-            "sports"
-        ],
-        "country": "FR"
     },
     {
         "name": "RTSH Sport",
@@ -133,17 +153,6 @@
         "country": "DO"
     },
     {
-        "name": "Dong Nai TV 2",
-        "id": "DongNaiTV2.vn",
-        "logo": "https://i.imgur.com/tNKPSkO.png",
-        "url": "http://118.107.85.4:1935/live/smil:DNTV2.smil/playlist.m3u8",
-        "categories": [
-            "sports",
-            "entertainment"
-        ],
-        "country": "VN"
-    },
-    {
         "name": "HTV Sports",
         "id": "HTVSports.vn",
         "logo": "https://i.postimg.cc/Y2ZTQRBw/HTV-Th-thao-logo-2022.png",
@@ -152,16 +161,6 @@
             "sports"
         ],
         "country": "VN"
-    },
-    {
-        "name": "Premier Sports",
-        "id": "PremierSports.ph",
-        "logo": "https://i.imgur.com/BURPHzI.png",
-        "url": "https://amg19223-amg19223c3-amgplt0351.playout.now3.amagi.tv/playlist/amg19223-amg19223c3-amgplt0351/playlist.m3u8",
-        "categories": [
-            "sports"
-        ],
-        "country": "PH"
     },
     {
         "name": "Colimdo TV",
@@ -174,14 +173,15 @@
         "country": "DO"
     },
     {
-        "name": "Belarus-5",
-        "id": "Belarus5.by",
-        "logo": "https://i.imgur.com/NJsRFud.png",
-        "url": "https://ngtrk.dc.beltelecom.by/ngtrk/smil:belarus5.smil/playlist.m3u8",
+        "name": "Dong Nai TV 2",
+        "id": "DongNaiTV2.vn",
+        "logo": "https://i.imgur.com/tNKPSkO.png",
+        "url": "http://118.107.85.4:1935/live/smil:DNTV2.smil/playlist.m3u8",
         "categories": [
-            "sports"
+            "sports",
+            "entertainment"
         ],
-        "country": "BY"
+        "country": "VN"
     },
     {
         "name": "Premier Sports 2",
@@ -194,6 +194,36 @@
         "country": "PH"
     },
     {
+        "name": "Belarus-5",
+        "id": "Belarus5.by",
+        "logo": "https://i.imgur.com/NJsRFud.png",
+        "url": "https://ngtrk.dc.beltelecom.by/ngtrk/smil:belarus5.smil/playlist.m3u8",
+        "categories": [
+            "sports"
+        ],
+        "country": "BY"
+    },
+    {
+        "name": "Premier Sports",
+        "id": "PremierSports.ph",
+        "logo": "https://i.imgur.com/BURPHzI.png",
+        "url": "https://amg19223-amg19223c3-amgplt0351.playout.now3.amagi.tv/playlist/amg19223-amg19223c3-amgplt0351/playlist.m3u8",
+        "categories": [
+            "sports"
+        ],
+        "country": "PH"
+    },
+    {
+        "name": "beIN SPORTS XTRA en Espanol",
+        "id": "beINSPORTSXTRAenEspanol.us",
+        "logo": "https://i.imgur.com/V562tpO.png",
+        "url": "https://bein-esp-xumo.amagi.tv/playlist.m3u8",
+        "categories": [
+            "sports"
+        ],
+        "country": "US"
+    },
+    {
         "name": "DAZN Combat",
         "id": "DAZNCombat.uk",
         "logo": "https://i.postimg.cc/VsW3Jsrz/logo-DAZN-Combat.png",
@@ -204,16 +234,6 @@
         "country": "UK"
     },
     {
-        "name": "Stadium",
-        "id": "Stadium.us",
-        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Stadium_%28sports_network%29_logo.svg/512px-Stadium_%28sports_network%29_logo.svg.png",
-        "url": "https://aegis-cloudfront-1.tubi.video/74681dcc-e6d0-4add-ad67-a22ad9c152e6/playlist.m3u8",
-        "categories": [
-            "sports"
-        ],
-        "country": "US"
-    },
-    {
         "name": "Right Now TV",
         "id": "RightNowTV.us",
         "logo": "https://i.imgur.com/OxbIla4.png",
@@ -221,16 +241,6 @@
         "categories": [
             "sports",
             "entertainment"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "MLB",
-        "id": "MLB.us",
-        "logo": "https://i.imgur.com/ym3su2J.png",
-        "url": "https://aegis-cloudfront-1.tubi.video/36ef2f9d-7100-4c4d-b41a-dbf41ab7e461/playlist.m3u8",
-        "categories": [
-            "sports"
         ],
         "country": "US"
     },
@@ -245,50 +255,40 @@
         "country": "US"
     },
     {
-        "name": "ACC Digital Network",
-        "id": "ACCDigitalNetwork.us",
-        "logo": "https://i.imgur.com/V6Kaqha.png",
-        "url": "https://aegis-cloudfront-1.tubi.video/a1e671ae-d1c2-4e39-99c7-889e83056fd2/playlist.m3u8",
+        "name": "TVS Women Sports",
+        "id": "TVSWomenSports.us",
+        "logo": "https://i.imgur.com/8hC4PfF.png",
+        "url": "https://rpn.bozztv.com/gusa/gusa-tvswsn/index.m3u8",
         "categories": [
             "sports"
         ],
         "country": "US"
     },
     {
-        "name": "PGA Tour",
-        "id": "PGATour.us",
-        "logo": "https://i.imgur.com/J0TY9dG.png",
-        "url": "https://aegis-cloudfront-1.tubi.video/9c59800e-fa9a-4539-b8e5-5769918e7c5a/playlist.m3u8",
+        "name": "TVS Sports",
+        "id": "TVSSports.us",
+        "logo": "https://i.imgur.com/Lwwq62E.png",
+        "url": "https://rpn.bozztv.com/gusa/gusa-tvssports/index.m3u8",
         "categories": [
             "sports"
         ],
         "country": "US"
     },
     {
-        "name": "beIN SPORTS XTRA en Espanol",
-        "id": "beINSPORTSXTRAenEspanol.us",
-        "logo": "https://i.imgur.com/V562tpO.png",
-        "url": "https://bein-esp-xumo.amagi.tv/playlist.m3u8",
+        "name": "TVS Turbo",
+        "id": "TVSTurbo.us",
+        "logo": "https://i.imgur.com/7zYIbU1.png",
+        "url": "https://rpn.bozztv.com/gusa/gusa-tvsturbo/index.m3u8",
         "categories": [
             "sports"
         ],
         "country": "US"
     },
     {
-        "name": "Swerve Sports",
-        "id": "SwerveSports.us",
-        "logo": "https://i.imgur.com/GT0Yi2T.png",
-        "url": "https://linear-253.frequency.stream/dist/xumo/253/hls/master/playlist.m3u8",
-        "categories": [
-            "sports"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "NHRA TV",
-        "id": "NHRATV.us",
-        "logo": "https://i.imgur.com/jZgcm4k.png",
-        "url": "https://aegis-cloudfront-1.tubi.video/b8c5eb48-349b-454f-9625-63911ee923f5/playlist.m3u8",
+        "name": "TVS Sports Bureau",
+        "id": "TVSSportsBureau.us",
+        "logo": "",
+        "url": "https://rpn.bozztv.com/gusa/gusa-tvssportsbureau/index.m3u8",
         "categories": [
             "sports"
         ],
@@ -315,40 +315,70 @@
         "country": "US"
     },
     {
-        "name": "TVS Sports",
-        "id": "TVSSports.us",
-        "logo": "https://i.imgur.com/Lwwq62E.png",
-        "url": "https://rpn.bozztv.com/gusa/gusa-tvssports/index.m3u8",
+        "name": "ACC Digital Network",
+        "id": "ACCDigitalNetwork.us",
+        "logo": "https://i.imgur.com/V6Kaqha.png",
+        "url": "https://aegis-cloudfront-1.tubi.video/a1e671ae-d1c2-4e39-99c7-889e83056fd2/playlist.m3u8",
         "categories": [
             "sports"
         ],
         "country": "US"
     },
     {
-        "name": "TVS Sports Bureau",
-        "id": "TVSSportsBureau.us",
-        "logo": "",
-        "url": "https://rpn.bozztv.com/gusa/gusa-tvssportsbureau/index.m3u8",
+        "name": "PGA Tour",
+        "id": "PGATour.us",
+        "logo": "https://i.imgur.com/J0TY9dG.png",
+        "url": "https://aegis-cloudfront-1.tubi.video/9c59800e-fa9a-4539-b8e5-5769918e7c5a/playlist.m3u8",
         "categories": [
             "sports"
         ],
         "country": "US"
     },
     {
-        "name": "TVS Turbo",
-        "id": "TVSTurbo.us",
-        "logo": "https://i.imgur.com/7zYIbU1.png",
-        "url": "https://rpn.bozztv.com/gusa/gusa-tvsturbo/index.m3u8",
+        "name": "MLB",
+        "id": "MLB.us",
+        "logo": "https://i.imgur.com/ym3su2J.png",
+        "url": "https://aegis-cloudfront-1.tubi.video/36ef2f9d-7100-4c4d-b41a-dbf41ab7e461/playlist.m3u8",
         "categories": [
             "sports"
         ],
         "country": "US"
     },
     {
-        "name": "TVS Women Sports",
-        "id": "TVSWomenSports.us",
-        "logo": "https://i.imgur.com/8hC4PfF.png",
-        "url": "https://rpn.bozztv.com/gusa/gusa-tvswsn/index.m3u8",
+        "name": "Stadium",
+        "id": "Stadium.us",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Stadium_%28sports_network%29_logo.svg/512px-Stadium_%28sports_network%29_logo.svg.png",
+        "url": "https://aegis-cloudfront-1.tubi.video/74681dcc-e6d0-4add-ad67-a22ad9c152e6/playlist.m3u8",
+        "categories": [
+            "sports"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "NHRA TV",
+        "id": "NHRATV.us",
+        "logo": "https://i.imgur.com/jZgcm4k.png",
+        "url": "https://aegis-cloudfront-1.tubi.video/b8c5eb48-349b-454f-9625-63911ee923f5/playlist.m3u8",
+        "categories": [
+            "sports"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Swerve Sports",
+        "id": "SwerveSports.us",
+        "logo": "https://i.imgur.com/GT0Yi2T.png",
+        "url": "https://linear-253.frequency.stream/dist/xumo/253/hls/master/playlist.m3u8",
+        "categories": [
+            "sports"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Racer Network",
+        "id": "RacerNetwork.us",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/7/74/Racer_Network.jpg",
+        "url": "https://amg00378-mavtv-amg00378c2-samsung-nz-1791.playouts.now.amagi.tv/playlist/amg00378-mavtvfast-motorsportsnetwork-samsungnz/playlist.m3u8",
         "categories": [
             "sports"
         ],
@@ -359,6 +389,16 @@
         "id": "TVSClassicSports.us",
         "logo": "https://i.imgur.com/auR0Mi6.png",
         "url": "https://rpn.bozztv.com/gusa/gusa-tvs/index.m3u8",
+        "categories": [
+            "sports"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Lacrosse TV",
+        "id": "LacrosseTV.us",
+        "logo": "https://yt3.googleusercontent.com/ytc/AIdro_m_xSJFydxZ9QBU-85OuchjmzS0Bo0_Tukmk7to8hBfyl8=s512-c-k-c0x00ffffff-no-rj",
+        "url": "https://1840769862.rsc.cdn77.org/FTF/LSN_SCTE.m3u8",
         "categories": [
             "sports"
         ],
@@ -385,10 +425,10 @@
         "country": "US"
     },
     {
-        "name": "Racer Network",
-        "id": "RacerNetwork.us",
-        "logo": "https://upload.wikimedia.org/wikipedia/en/7/74/Racer_Network.jpg",
-        "url": "https://amg00378-mavtv-amg00378c2-samsung-nz-1791.playouts.now.amagi.tv/playlist/amg00378-mavtvfast-motorsportsnetwork-samsungnz/playlist.m3u8",
+        "name": "PokerGo",
+        "id": "PokerGo.us",
+        "logo": "https://i.imgur.com/1603HED.png",
+        "url": "https://linear-426.frequency.stream/dist/xumo/426/hls/master/playlist.m3u8",
         "categories": [
             "sports"
         ],
@@ -399,26 +439,6 @@
         "id": "MSG.us",
         "logo": "https://i.imgur.com/SEQFh0P.png",
         "url": "https://fl1.moveonjoy.com/MSG/index.m3u8",
-        "categories": [
-            "sports"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Lacrosse TV",
-        "id": "LacrosseTV.us",
-        "logo": "https://yt3.googleusercontent.com/ytc/AIdro_m_xSJFydxZ9QBU-85OuchjmzS0Bo0_Tukmk7to8hBfyl8=s512-c-k-c0x00ffffff-no-rj",
-        "url": "https://1840769862.rsc.cdn77.org/FTF/LSN_SCTE.m3u8",
-        "categories": [
-            "sports"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "PokerGo",
-        "id": "PokerGo.us",
-        "logo": "https://i.imgur.com/1603HED.png",
-        "url": "https://linear-426.frequency.stream/dist/xumo/426/hls/master/playlist.m3u8",
         "categories": [
             "sports"
         ],
@@ -465,30 +485,10 @@
         "country": "US"
     },
     {
-        "name": "SportsGrid",
-        "id": "SportsGrid.us",
-        "logo": "https://i.imgur.com/ulGKX30.png",
-        "url": "https://sportsgrid-samsungus.amagi.tv/playlist.m3u8",
-        "categories": [
-            "sports"
-        ],
-        "country": "US"
-    },
-    {
         "name": "ACL Cornhole TV",
         "id": "ACLCornholeTV.us",
         "logo": "https://i.imgur.com/lBIq2ZD.png",
         "url": "https://1815337252.rsc.cdn77.org/HLS/CORNHOLETV.m3u8",
-        "categories": [
-            "sports"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "30A Golf Kingdom",
-        "id": "30AGolfKingdom.us",
-        "logo": "https://golfkingdom.net/wp-content/uploads/2022/04/golf-kingdom-st.jpg",
-        "url": "https://30a-tv.com/feeds/vidaa/golf.m3u8",
         "categories": [
             "sports"
         ],
@@ -505,6 +505,26 @@
         "country": "US"
     },
     {
+        "name": "W14DK-D5",
+        "id": "W14DKD5.us",
+        "logo": "https://i.imgur.com/D4mZ8ll.png",
+        "url": "https://2-fss-2.streamhoster.com/pl_118/204972-2205186-1/playlist.m3u8",
+        "categories": [
+            "sports"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "SportsGrid",
+        "id": "SportsGrid.us",
+        "logo": "https://i.imgur.com/ulGKX30.png",
+        "url": "https://sportsgrid-samsungus.amagi.tv/playlist.m3u8",
+        "categories": [
+            "sports"
+        ],
+        "country": "US"
+    },
+    {
         "name": "Willow Sports",
         "id": "WillowSports.us",
         "logo": "https://provider-static.plex.tv/epg/cms/production/acf3d1d8-c53e-49ca-86e9-0d9410b106b4/Willow_Sports_dark_Background_1500_1000_color.png",
@@ -515,20 +535,10 @@
         "country": "US"
     },
     {
-        "name": "MLB Network",
-        "id": "MLBNetwork.us",
-        "logo": "https://i.imgur.com/sA5V39D.png",
-        "url": "https://fl1.moveonjoy.com/MLB_NETWORK/index.m3u8",
-        "categories": [
-            "sports"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Marquee Sports Network",
-        "id": "MarqueeSportsNetwork.us",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Marquee_Sports_Network_Logo.svg/512px-Marquee_Sports_Network_Logo.svg.png",
-        "url": "https://fl1.moveonjoy.com/MARQUEE_SPORTS_NETWORK/index.m3u8",
+        "name": "30A Golf Kingdom",
+        "id": "30AGolfKingdom.us",
+        "logo": "https://golfkingdom.net/wp-content/uploads/2022/04/golf-kingdom-st.jpg",
+        "url": "https://30a-tv.com/feeds/vidaa/golf.m3u8",
         "categories": [
             "sports"
         ],
@@ -545,6 +555,26 @@
         "country": "US"
     },
     {
+        "name": "Marquee Sports Network",
+        "id": "MarqueeSportsNetwork.us",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Marquee_Sports_Network_Logo.svg/512px-Marquee_Sports_Network_Logo.svg.png",
+        "url": "https://fl1.moveonjoy.com/MARQUEE_SPORTS_NETWORK/index.m3u8",
+        "categories": [
+            "sports"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "MLB Network",
+        "id": "MLBNetwork.us",
+        "logo": "https://i.imgur.com/sA5V39D.png",
+        "url": "https://fl1.moveonjoy.com/MLB_NETWORK/index.m3u8",
+        "categories": [
+            "sports"
+        ],
+        "country": "US"
+    },
+    {
         "name": "CBS Sports Network USA",
         "id": "CBSSportsNetworkUSA.us",
         "logo": "https://i.imgur.com/A8CnA8g.png",
@@ -555,30 +585,10 @@
         "country": "US"
     },
     {
-        "name": "NBC Sports Philadelphia",
-        "id": "NBCSportsPhiladelphia.us",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/NBC_Sports_Philadelphia.png/512px-NBC_Sports_Philadelphia.png",
-        "url": "https://tvpass.org/live/nbc-sports-philadelphia/sd",
-        "categories": [
-            "sports"
-        ],
-        "country": "US"
-    },
-    {
         "name": "NBC Sports Bay Area",
         "id": "NBCSportsBayArea.us",
         "logo": "https://i.imgur.com/MTgUVKx.png",
         "url": "https://tvpass.org/live/nbc-sports-bay-area/sd",
-        "categories": [
-            "sports"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "NBC Sports Boston",
-        "id": "NBCSportsBoston.us",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/NBC_Sports_Boston.png/512px-NBC_Sports_Boston.png",
-        "url": "https://tvpass.org/live/nbc-sports-boston/sd",
         "categories": [
             "sports"
         ],
@@ -615,6 +625,17 @@
         "country": "CL"
     },
     {
+        "name": "LRT Plius",
+        "id": "LRTPlius.lt",
+        "logo": "https://i.postimg.cc/595RpvgY/lrtplius.png",
+        "url": "https://stream-live.lrt.lt/plius/master.m3u8",
+        "categories": [
+            "culture",
+            "sports"
+        ],
+        "country": "LT"
+    },
+    {
         "name": "Monterrico TV",
         "id": "MonterricoTV.pe",
         "logo": "https://i.imgur.com/SuVO9T7.png",
@@ -635,6 +656,16 @@
         "country": "PE"
     },
     {
+        "name": "Futbol",
+        "id": "Futbol.tj",
+        "logo": "https://i.imgur.com/RngmCDn.png",
+        "url": "https://live.teleradiocom.tj/8/3m.m3u8",
+        "categories": [
+            "sports"
+        ],
+        "country": "TJ"
+    },
+    {
         "name": "Turf Movil",
         "id": "TurfMovil.cl",
         "logo": "https://i.imgur.com/TwIe4lK.png",
@@ -645,41 +676,10 @@
         "country": "CL"
     },
     {
-        "name": "LRT Plius",
-        "id": "LRTPlius.lt",
-        "logo": "https://i.postimg.cc/595RpvgY/lrtplius.png",
-        "url": "https://stream-live.lrt.lt/plius/master.m3u8",
-        "categories": [
-            "culture",
-            "sports"
-        ],
-        "country": "LT"
-    },
-    {
-        "name": "MMA-TV.com",
-        "id": "MMATVcom.ru",
-        "logo": "https://i.imgur.com/QhdxNsB.png",
-        "url": "https://streams2.sofast.tv/vglive-sk-462904/playlist.m3u8",
-        "categories": [
-            "sports"
-        ],
-        "country": "RU"
-    },
-    {
         "name": "Match! Strana",
         "id": "MatchStrana.ru",
         "logo": "https://i.imgur.com/X02s2UE.png",
         "url": "http://31.148.48.15/Match_Strana/index.m3u8",
-        "categories": [
-            "sports"
-        ],
-        "country": "RU"
-    },
-    {
-        "name": "Football",
-        "id": "Football.ru",
-        "logo": "https://i.imgur.com/pEuaZVx.png",
-        "url": "http://31.148.48.15/Futbol_HD/index.m3u8",
         "categories": [
             "sports"
         ],
@@ -706,14 +706,24 @@
         "country": "AT"
     },
     {
-        "name": "Futbol",
-        "id": "Futbol.tj",
-        "logo": "https://i.imgur.com/RngmCDn.png",
-        "url": "https://live.teleradiocom.tj/8/3m.m3u8",
+        "name": "Football",
+        "id": "Football.ru",
+        "logo": "https://i.imgur.com/pEuaZVx.png",
+        "url": "http://31.148.48.15/Futbol_HD/index.m3u8",
         "categories": [
             "sports"
         ],
-        "country": "TJ"
+        "country": "RU"
+    },
+    {
+        "name": "MMA-TV.com",
+        "id": "MMATVcom.ru",
+        "logo": "https://i.imgur.com/QhdxNsB.png",
+        "url": "https://streams2.sofast.tv/vglive-sk-462904/playlist.m3u8",
+        "categories": [
+            "sports"
+        ],
+        "country": "RU"
     },
     {
         "name": "Astrahan.Ru Sport",
@@ -746,16 +756,6 @@
         "country": "DE"
     },
     {
-        "name": "Bahrain Sports 2",
-        "id": "BahrainSports2.bh",
-        "logo": "https://i.imgur.com/ZkuZmIo.png",
-        "url": "https://5c7b683162943.streamlock.net/live/ngrp:bahrainsportstwo_all/playlist.m3u8",
-        "categories": [
-            "sports"
-        ],
-        "country": "BH"
-    },
-    {
         "name": "FUFA TV",
         "id": "FUFATV.ug",
         "logo": "https://i.imgur.com/iIq5MqR.png",
@@ -784,6 +784,16 @@
             "sports"
         ],
         "country": "KZ"
+    },
+    {
+        "name": "Bahrain Sports 2",
+        "id": "BahrainSports2.bh",
+        "logo": "https://i.imgur.com/ZkuZmIo.png",
+        "url": "https://5c7b683162943.streamlock.net/live/ngrp:bahrainsportstwo_all/playlist.m3u8",
+        "categories": [
+            "sports"
+        ],
+        "country": "BH"
     },
     {
         "name": "Sportitalia",
@@ -837,40 +847,20 @@
         "country": "IT"
     },
     {
-        "name": "Premier Sports 2",
-        "id": "PremierSports2.mn",
-        "logo": "https://i.imgur.com/eMNWhDq.png",
-        "url": "https://cdn4.skygo.mn/live/disk1/SPSPlay/HLS-FTA/SPSPlay.m3u8",
-        "categories": [
-            "sports"
-        ],
-        "country": "MN"
-    },
-    {
-        "name": "TR Sport",
-        "id": "TRSport.it",
-        "logo": "https://i.imgur.com/ELXmaqg.png",
-        "url": "https://livetr.teleromagna.it/mia/live/playlist.m3u8",
+        "name": "ACI Sport TV",
+        "id": "ACISportTV.it",
+        "logo": "https://i.imgur.com/U8cHMOt.png",
+        "url": "https://webstream.multistream.it/memfs/e2cb3629-c1a2-495b-b43a-9eb386f04ed8.m3u8",
         "categories": [
             "sports"
         ],
         "country": "IT"
     },
     {
-        "name": "MNB Sport",
-        "id": "MNBSport.mn",
-        "logo": "https://i.imgur.com/z854PC3.png",
-        "url": "https://live.mnb.mn/hls/mnb_sport.stream.m3u8",
-        "categories": [
-            "sports"
-        ],
-        "country": "MN"
-    },
-    {
-        "name": "ACI Sport TV",
-        "id": "ACISportTV.it",
-        "logo": "https://i.imgur.com/U8cHMOt.png",
-        "url": "https://webstream.multistream.it/memfs/e2cb3629-c1a2-495b-b43a-9eb386f04ed8.m3u8",
+        "name": "TR Sport",
+        "id": "TRSport.it",
+        "logo": "https://i.imgur.com/ELXmaqg.png",
+        "url": "https://livetr.teleromagna.it/mia/live/playlist.m3u8",
         "categories": [
             "sports"
         ],
@@ -887,10 +877,10 @@
         "country": "MN"
     },
     {
-        "name": "Premier Sports 5",
-        "id": "PremierSports5.mn",
-        "logo": "https://i.imgur.com/LkIe9gR.png",
-        "url": "http://cdn4.skygo.mn/live/disk1/SPSPlus/HLS-FTA/SPSPlus.m3u8",
+        "name": "MNB Sport",
+        "id": "MNBSport.mn",
+        "logo": "https://i.imgur.com/z854PC3.png",
+        "url": "https://live.mnb.mn/hls/mnb_sport.stream.m3u8",
         "categories": [
             "sports"
         ],
@@ -907,6 +897,26 @@
         "country": "MN"
     },
     {
+        "name": "Premier Sports 5",
+        "id": "PremierSports5.mn",
+        "logo": "https://i.imgur.com/LkIe9gR.png",
+        "url": "http://cdn4.skygo.mn/live/disk1/SPSPlus/HLS-FTA/SPSPlus.m3u8",
+        "categories": [
+            "sports"
+        ],
+        "country": "MN"
+    },
+    {
+        "name": "Premier Sports 2",
+        "id": "PremierSports2.mn",
+        "logo": "https://i.imgur.com/eMNWhDq.png",
+        "url": "https://cdn4.skygo.mn/live/disk1/SPSPlay/HLS-FTA/SPSPlay.m3u8",
+        "categories": [
+            "sports"
+        ],
+        "country": "MN"
+    },
+    {
         "name": "ITV Deportes",
         "id": "ITVDeportes.mx",
         "logo": "https://iili.io/J1kV1Bn.png",
@@ -916,16 +926,6 @@
             "sports"
         ],
         "country": "MX"
-    },
-    {
-        "name": "RACER International",
-        "id": "RACERInternational.pl",
-        "logo": "",
-        "url": "https://amg00378-mavtv-amg00378c2-rakuten-us-1048.playouts.now.amagi.tv/playlist/amg00378-mavtvfast-motorsportsnetwork-rakutenus/playlist.m3u8",
-        "categories": [
-            "sports"
-        ],
-        "country": "PL"
     },
     {
         "name": "ATG Live",
@@ -946,6 +946,16 @@
             "sports"
         ],
         "country": "MK"
+    },
+    {
+        "name": "RACER International",
+        "id": "RACERInternational.pl",
+        "logo": "",
+        "url": "https://amg00378-mavtv-amg00378c2-rakuten-us-1048.playouts.now.amagi.tv/playlist/amg00378-mavtvfast-motorsportsnetwork-rakutenus/playlist.m3u8",
+        "categories": [
+            "sports"
+        ],
+        "country": "PL"
     },
     {
         "name": "TDM Sports",
@@ -978,16 +988,6 @@
         "country": "BO"
     },
     {
-        "name": "Tigo Sports",
-        "id": "TigoSports.sv",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Tigo_Sports_2025.png/512px-Tigo_Sports_2025.png",
-        "url": "https://channel03.tigosports.com.sv/out/v1/31f36d52d558475ca18799d8ca5e4b40/index.m3u8",
-        "categories": [
-            "sports"
-        ],
-        "country": "SV"
-    },
-    {
         "name": "TNC Sports",
         "id": "TNCSports.bz",
         "logo": "https://i.imgur.com/jT2VFzA.jpeg",
@@ -1008,10 +1008,10 @@
         "country": "GR"
     },
     {
-        "name": "Cosmote Sport 9",
-        "id": "CosmoteSport9.gr",
-        "logo": "https://i.imgur.com/3YwAXcH.png",
-        "url": "http://138.2.160.168:8080/fetch?COSMOTESPORT9",
+        "name": "Cosmote Sport 5",
+        "id": "CosmoteSport5.gr",
+        "logo": "https://i.imgur.com/0GKXahH.png",
+        "url": "http://138.2.160.168:8080/fetch?COSMOTESPORT5",
         "categories": [
             "sports"
         ],
@@ -1038,16 +1038,6 @@
         "country": "GR"
     },
     {
-        "name": "Cosmote Sport 5",
-        "id": "CosmoteSport5.gr",
-        "logo": "https://i.imgur.com/0GKXahH.png",
-        "url": "http://138.2.160.168:8080/fetch?COSMOTESPORT5",
-        "categories": [
-            "sports"
-        ],
-        "country": "GR"
-    },
-    {
         "name": "Cosmote Sport 3",
         "id": "CosmoteSport3.gr",
         "logo": "https://i.imgur.com/V5qKXx9.png",
@@ -1062,6 +1052,16 @@
         "id": "CosmoteSport6.gr",
         "logo": "https://i.imgur.com/KG6VWN1.png",
         "url": "http://138.2.160.168:8080/fetch?COSMOTESPORT6",
+        "categories": [
+            "sports"
+        ],
+        "country": "GR"
+    },
+    {
+        "name": "Cosmote Sport 9",
+        "id": "CosmoteSport9.gr",
+        "logo": "https://i.imgur.com/3YwAXcH.png",
+        "url": "http://138.2.160.168:8080/fetch?COSMOTESPORT9",
         "categories": [
             "sports"
         ],
@@ -1102,16 +1102,6 @@
         "id": "AS3SportTV.ve",
         "logo": "https://i.ibb.co/bRmGbsyV/A3-SPORTTV.jpg",
         "url": "https://streamtv.as3sport.online:3394/hybrid/play.m3u8",
-        "categories": [
-            "sports"
-        ],
-        "country": "VE"
-    },
-    {
-        "name": "Meridiano TV",
-        "id": "MeridianoTV.ve",
-        "logo": "https://i.imgur.com/I6gsUqD.png",
-        "url": "https://e1.viginet.vectormax.com:5210/quickstart/114-934-21/index.m3u8",
         "categories": [
             "sports"
         ],
