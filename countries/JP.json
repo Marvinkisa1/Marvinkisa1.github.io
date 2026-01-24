@@ -1,30 +1,53 @@
 [
     {
-        "name": "JOAB-DTV",
-        "id": "JOABDTV.jp",
-        "logo": "https://i.imgur.com/WxtftlO.png",
-        "url": "http://cdns.jp-primehome.com:8000/zhongying/live/playlist.m3u8?cid=gd02",
+        "name": "NHK World-Japan",
+        "id": "NHKWorldJapan.jp",
+        "logo": "https://i.postimg.cc/prRQTsmD/nhkworldjapan.png",
+        "url": "https://cdn4.skygo.mn/live/disk1/NHK_World/HLSv3-FTA/NHK_World.m3u8",
         "categories": [
-            "education"
+            "news",
+            "culture"
         ],
         "country": "JP"
     },
     {
-        "name": "NHK BS",
-        "id": "NHKBS.jp",
-        "logo": "https://i.imgur.com/t0uZcSR.png",
-        "url": "http://cdns.jp-primehome.com:8000/zhongying/live/playlist.m3u8?cid=bs11",
+        "name": "Shop Channel",
+        "id": "ShopChannel.jp",
+        "logo": "https://i.postimg.cc/wMqPSBfX/shopchannel.png",
+        "url": "https://stream3.shopch.jp/HLS/master.m3u8",
+        "categories": [
+            "shop"
+        ],
+        "country": "JP"
+    },
+    {
+        "name": "NHK Kishou-Saigai",
+        "id": "NHKKishouSaigai.jp",
+        "logo": "https://i.imgur.com/oWKCBIz.png",
+        "url": "https://newssimul-stream.nhk.jp/hls/live/2010561/nhknewssimul/master.m3u8",
+        "categories": [
+            "weather"
+        ],
+        "country": "JP"
+    },
+    {
+        "name": "JORX-DTV",
+        "id": "JORXDTV.jp",
+        "logo": "https://i.imgur.com/dUn2GRn.png",
+        "url": "https://tbs5.mov3.co/hls/tbs.m3u8",
         "categories": [
             "general"
         ],
         "country": "JP"
     },
     {
-        "name": "WOWOW Live",
-        "id": "WOWOWLive.jp",
-        "logo": "https://i.imgur.com/jPAYT5F.png",
-        "url": "http://cdns.jp-primehome.com:8000/zhongying/live/playlist.m3u8?cid=bs20",
-        "categories": [],
+        "name": "QVC",
+        "id": "QVC.jp",
+        "logo": "https://i.imgur.com/6TWUVrh.png",
+        "url": "https://cdn-live1.qvc.jp/iPhone/1501/1501.m3u8",
+        "categories": [
+            "shop"
+        ],
         "country": "JP"
     }
 ]

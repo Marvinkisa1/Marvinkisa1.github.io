@@ -1,39 +1,35 @@
 [
     {
-        "name": "H2 HD",
-        "id": "skyhistory2.uk",
-        "logo": "",
-        "url": "http://hdlocal.de:8080/tvcolor/edSp53dtjfLj/11301",
+        "name": "Wonder",
+        "id": "Wonder.uk",
+        "logo": "https://i.imgur.com/LquGNbh.png",
+        "url": "https://lds-wonder-plex.amagi.tv/playlist.m3u8",
+        "categories": [],
+        "country": "UK"
+    },
+    {
+        "name": "VoxAfrica",
+        "id": "VoxAfrica.uk",
+        "logo": "https://i.postimg.cc/Jn6SJk5s/voxafrica.png",
+        "url": "http://69.64.57.208/voxafrica/playlist.m3u8",
+        "categories": [],
+        "country": "UK"
+    },
+    {
+        "name": "CGTN Europe",
+        "id": "CGTNEurope.uk",
+        "logo": "https://i.imgur.com/oz0FQsE.png",
+        "url": "https://raw.githubusercontent.com/Sibprod/streams/main/ressources/dm/py/hls/cgtneurope.m3u8",
         "categories": [
-            "general"
+            "news"
         ],
         "country": "UK"
     },
     {
-        "name": "HOME HD",
-        "id": "HOMEHD.uk",
-        "logo": "http://x.pure-redirect.com/astra28.2/1_0_1_1965_0_0_11AAF61_0_0_0.png",
-        "url": "http://hdlocal.de:8080/tvcolor/edSp53dtjfLj/11280",
-        "categories": [
-            "bouquet anglais"
-        ],
-        "country": "UK"
-    },
-    {
-        "name": "BBC 3 HD",
-        "id": "bbcthree.uk",
-        "logo": "http://x.pure-redirect.com/astra28.2/1_0_19_1B1D_802_2_11A0000_0_0_0.png",
-        "url": "http://hdlocal.de:8080/tvcolor/edSp53dtjfLj/11225",
-        "categories": [
-            "bouquet anglais"
-        ],
-        "country": "UK"
-    },
-    {
-        "name": "LIVERPOOL FC HD",
-        "id": "liverpoolfctv.uk",
-        "logo": "http://x.pure-redirect.com/astra28.2/1_0_1_F06_7D7_2_11A0000_0_0_0.png",
-        "url": "http://hdlocal.de:8080/tvcolor/edSp53dtjfLj/4186",
+        "name": "BBC NEWS HD",
+        "id": "bbconehd.uk",
+        "logo": "http://x.pure-redirect.com/astra28.2/1_0_1_2876_800_2_11A0000_0_0_0.png",
+        "url": "http://hdlocal.de:8080/tvcolor/edSp53dtjfLj/10883",
         "categories": [
             "bouquet anglais"
         ],
@@ -50,30 +46,10 @@
         "country": "UK"
     },
     {
-        "name": "BBC NEWS HD",
-        "id": "bbconehd.uk",
-        "logo": "http://x.pure-redirect.com/astra28.2/1_0_1_2876_800_2_11A0000_0_0_0.png",
-        "url": "http://hdlocal.de:8080/tvcolor/edSp53dtjfLj/10883",
-        "categories": [
-            "bouquet anglais"
-        ],
-        "country": "UK"
-    },
-    {
-        "name": "SKY CINEMA GREATS HD",
-        "id": "skycinemagreat.uk",
-        "logo": "http://x.pure-redirect.com/sky_cinema.png",
-        "url": "http://hdlocal.de:8080/tvcolor/edSp53dtjfLj/11238",
-        "categories": [
-            "bouquet anglais"
-        ],
-        "country": "UK"
-    },
-    {
-        "name": "BLOOMBERG HD",
-        "id": "boomerang.uk",
-        "logo": "http://x.pure-redirect.com/bloombergtv.png",
-        "url": "http://hdlocal.de:8080/tvcolor/edSp53dtjfLj/10882",
+        "name": "CHELSEA TV HD",
+        "id": "CHELSEATVHD.uk",
+        "logo": "http://x.pure-redirect.com/astra28.2/1_0_19_FC6_7F0_2_11A0000_0_0_0.png",
+        "url": "http://hdlocal.de:8080/tvcolor/edSp53dtjfLj/4184",
         "categories": [
             "bouquet anglais"
         ],
@@ -100,20 +76,30 @@
         "country": "UK"
     },
     {
-        "name": "RTE ONE HD",
-        "id": "RTEONEHD.uk",
-        "logo": "http://x.pure-redirect.com/astra28.2/1_0_19_F51_7EC_2_11A0000_0_0_0.png",
-        "url": "http://hdlocal.de:8080/tvcolor/edSp53dtjfLj/11234",
+        "name": "HOME HD",
+        "id": "HOMEHD.uk",
+        "logo": "http://x.pure-redirect.com/astra28.2/1_0_1_1965_0_0_11AAF61_0_0_0.png",
+        "url": "http://hdlocal.de:8080/tvcolor/edSp53dtjfLj/11280",
         "categories": [
             "bouquet anglais"
         ],
         "country": "UK"
     },
     {
-        "name": "MOVIES4MEN HD",
-        "id": "greatmovies.uk",
-        "logo": "data:image/jpeg;base64,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",
-        "url": "http://hdlocal.de:8080/tvcolor/edSp53dtjfLj/11254",
+        "name": "BBC 3 HD",
+        "id": "bbcthree.uk",
+        "logo": "http://x.pure-redirect.com/astra28.2/1_0_19_1B1D_802_2_11A0000_0_0_0.png",
+        "url": "http://hdlocal.de:8080/tvcolor/edSp53dtjfLj/11225",
+        "categories": [
+            "bouquet anglais"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "SKY ONE HD",
+        "id": "skyreplay.uk",
+        "logo": "",
+        "url": "http://hdlocal.de:8080/tvcolor/edSp53dtjfLj/11194",
         "categories": [
             "bouquet anglais"
         ],
@@ -140,22 +126,156 @@
         "country": "UK"
     },
     {
-        "name": "SKY ONE HD",
-        "id": "skyreplay.uk",
-        "logo": "",
-        "url": "http://hdlocal.de:8080/tvcolor/edSp53dtjfLj/11194",
+        "name": "LIVERPOOL FC HD",
+        "id": "liverpoolfctv.uk",
+        "logo": "http://x.pure-redirect.com/astra28.2/1_0_1_F06_7D7_2_11A0000_0_0_0.png",
+        "url": "http://hdlocal.de:8080/tvcolor/edSp53dtjfLj/4186",
         "categories": [
             "bouquet anglais"
         ],
         "country": "UK"
     },
     {
-        "name": "CHELSEA TV HD",
-        "id": "CHELSEATVHD.uk",
-        "logo": "http://x.pure-redirect.com/astra28.2/1_0_19_FC6_7F0_2_11A0000_0_0_0.png",
-        "url": "http://hdlocal.de:8080/tvcolor/edSp53dtjfLj/4184",
+        "name": "RTE ONE HD",
+        "id": "RTEONEHD.uk",
+        "logo": "http://x.pure-redirect.com/astra28.2/1_0_19_F51_7EC_2_11A0000_0_0_0.png",
+        "url": "http://hdlocal.de:8080/tvcolor/edSp53dtjfLj/11234",
         "categories": [
             "bouquet anglais"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "MOVIES4MEN HD",
+        "id": "greatmovies.uk",
+        "logo": "data:image/jpeg;base64,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",
+        "url": "http://hdlocal.de:8080/tvcolor/edSp53dtjfLj/11254",
+        "categories": [
+            "bouquet anglais"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "SKY CINEMA GREATS HD",
+        "id": "skycinemagreat.uk",
+        "logo": "http://x.pure-redirect.com/sky_cinema.png",
+        "url": "http://hdlocal.de:8080/tvcolor/edSp53dtjfLj/11238",
+        "categories": [
+            "bouquet anglais"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "BLOOMBERG HD",
+        "id": "boomerang.uk",
+        "logo": "http://x.pure-redirect.com/bloombergtv.png",
+        "url": "http://hdlocal.de:8080/tvcolor/edSp53dtjfLj/10882",
+        "categories": [
+            "bouquet anglais"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "H2 HD",
+        "id": "skyhistory2.uk",
+        "logo": "",
+        "url": "http://hdlocal.de:8080/tvcolor/edSp53dtjfLj/11301",
+        "categories": [
+            "general"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "WildEarth",
+        "id": "WildEarth.uk",
+        "logo": "https://i.imgur.com/Vhv5gjN.png",
+        "url": "https://wildearth-xumo.amagi.tv/master.m3u8",
+        "categories": [],
+        "country": "UK"
+    },
+    {
+        "name": "Safeer TV",
+        "id": "SafeerTV.uk",
+        "logo": "https://image.roku.com/developer_channels/prod/8389e15af8fe49ac7c36d201c24ebf62fbe5b22897c2879ca26ae936e0ed308d.png",
+        "url": "https://cdn3.wowza.com/1/YStGZlJRdktzZkdK/VXROZWNW/hls/live/playlist.m3u8",
+        "categories": [
+            "religious"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "Zee TV UK",
+        "id": "ZeeTVUK.uk",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Zee_TV_Logo_2025.svg",
+        "url": "http://cors.tundracast.com:2000/https://streamer2.nexgen.bz/ZEE/index.m3u8",
+        "categories": [],
+        "country": "UK"
+    },
+    {
+        "name": "Sony Max",
+        "id": "SonyMax.uk",
+        "logo": "https://i.imgur.com/LBICKI5.png",
+        "url": "http://cors.tundracast.com:2000/https://streamer2.nexgen.bz/SONYMAX/index.m3u8",
+        "categories": [],
+        "country": "UK"
+    },
+    {
+        "name": "Miracle TV",
+        "id": "MiracleTV.uk",
+        "logo": "https://i.imgur.com/pTn8Vc3.png",
+        "url": "https://viewmedia7219.bozztv.com/wmedia/viewmedia100/web_030/Stream/playlist.m3u8",
+        "categories": [
+            "religious"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "Akaal Channel",
+        "id": "AkaalChannel.uk",
+        "logo": "https://i.imgur.com/K81vNbk.png",
+        "url": "https://cdn-globecast.akamaized.net/live/eds/akaal_tv/hls1_smart_akaal/akaal_tv.m3u8",
+        "categories": [
+            "religious"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "Channel 4",
+        "id": "Channel4.uk",
+        "logo": "https://d2n0069hmnqmmx.cloudfront.net/epgdata/1.0/newchanlogos/512/512/skychb1621.png",
+        "url": "https://viamotionhsi.netplus.ch/live/eds/channel4/browser-dash/channel4.mpd",
+        "categories": [
+            "general"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "More4",
+        "id": "More4.uk",
+        "logo": "https://i.imgur.com/cx5YcAU.png",
+        "url": "https://viamotionhsi.netplus.ch/live/eds/more4/browser-HLS8/more4.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "ITV3",
+        "id": "ITV3.uk",
+        "logo": "https://i.imgur.com/JuyM2z5.png",
+        "url": "https://viamotionhsi.netplus.ch/live/eds/itv3/browser-dash/itv3.mpd",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "ITV2",
+        "id": "ITV2.uk",
+        "logo": "https://i.imgur.com/2BpUK0W.png",
+        "url": "https://viamotionhsi.netplus.ch/live/eds/itv2/browser-HLS8/itv2.m3u8",
+        "categories": [
+            "general"
         ],
         "country": "UK"
     },
@@ -172,12 +292,12 @@
         "country": "UK"
     },
     {
-        "name": "ITV3",
-        "id": "ITV3.uk",
-        "logo": "https://i.imgur.com/JuyM2z5.png",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/itv3/browser-dash/itv3.mpd",
+        "name": "CNBC Europe",
+        "id": "CNBCEurope.uk",
+        "logo": "https://i.imgur.com/B6sfpDa.png",
+        "url": "https://viamotionhsi.netplus.ch/live/eds/cnbc/browser-HLS8/cnbc.m3u8",
         "categories": [
-            "entertainment"
+            "business"
         ],
         "country": "UK"
     },
@@ -188,16 +308,6 @@
         "url": "https://viamotionhsi.netplus.ch/live/eds/film4/browser-dash/film4.mpd",
         "categories": [
             "movies"
-        ],
-        "country": "UK"
-    },
-    {
-        "name": "Channel 4",
-        "id": "Channel4.uk",
-        "logo": "https://d2n0069hmnqmmx.cloudfront.net/epgdata/1.0/newchanlogos/512/512/skychb1621.png",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/channel4/browser-dash/channel4.mpd",
-        "categories": [
-            "general"
         ],
         "country": "UK"
     },
@@ -214,23 +324,559 @@
         "country": "UK"
     },
     {
-        "name": "BBC News",
-        "id": "BBCNews.uk",
-        "logo": "https://dtil.tmsimg.com/assets/s158142_ld_h15_aa.png",
-        "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/65d92a8c8b24c80008e285c0/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=6c26f5a2-30d3-11ef-9cf5-e9ddff8ff496&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=9f1a48db-9022-43d1-bb25-ba665285192f",
+        "name": "BBC Persian",
+        "id": "BBCPersian.uk",
+        "logo": "https://i.imgur.com/4uTMnPb.png",
+        "url": "https://vs-hls-pushb-ww.live.cf.md.bbci.co.uk/x=4/i=urn:bbc:pips:service:bbc_persian_tv/pc_hd_abr_v2.m3u8",
         "categories": [
             "news"
         ],
         "country": "UK"
     },
     {
-        "name": "Top Gear",
-        "id": "TopGear.uk",
-        "logo": "https://i.imgur.com/S6Su6QH.png",
-        "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/636adc255bcf470007d6e0e2/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=6c2c73e5-30d3-11ef-9cf5-e9ddff8ff496&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=53184ebc-5f69-44c0-bf0c-94707d648913",
+        "name": "BBC Arabic",
+        "id": "BBCArabic.uk",
+        "logo": "https://i.imgur.com/ScyTG6P.png",
+        "url": "https://vs-hls-pushb-ww.live.cf.md.bbci.co.uk/x=4/i=urn:bbc:pips:service:bbc_arabic_tv/pc_hd_abr_v2.m3u8",
         "categories": [
-            "entertainment",
-            "auto"
+            "news"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "CNBC UK",
+        "id": "CNBCUK.uk",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/CNBC_logo.svg/512px-CNBC_logo.svg.png",
+        "url": "https://amg01079-nbcuuk-amg01079c2-lg-gb-2030.playouts.now.amagi.tv/playlist.m3u8",
+        "categories": [
+            "news",
+            "business"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "Discover Film",
+        "id": "DiscoverFilm.uk",
+        "logo": "https://i.imgur.com/oMnpsQ5.png",
+        "url": "https://discoverfilm-discoverfilm-1-nl.samsung.wurl.tv/playlist.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "Totalmusic",
+        "id": "Totalmusic.uk",
+        "logo": "https://static.elektamedia.com/ch/tmc_main.png",
+        "url": "https://cdn.global.elektamedia.com/live/c7eds/Totalmusic/SA_LIVE_hls_enc/master.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "Totalmusic 2000s",
+        "id": "Totalmusic2000s.uk",
+        "logo": "https://static.elektamedia.com/ch/tmc_00s.png",
+        "url": "https://cdn.global.elektamedia.com/live/c7eds/Totalmusic_00s/SA_LIVE_hls_enc/master.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "ENT Channel",
+        "id": "ENTChannel.uk",
+        "logo": "https://static.elektamedia.com/ch/entch.png",
+        "url": "https://cdn.global.elektamedia.com/live/c7eds/ENT_Channel/SA_LIVE_hls_enc/master.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "Totalmusic Dance",
+        "id": "TotalmusicDance.uk",
+        "logo": "https://static.elektamedia.com/ch/tmc_dance.png",
+        "url": "https://cdn.global.elektamedia.com/live/c7eds/Totalmusic_Dance/SA_LIVE_hls_enc/master.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "Totalmusic 80s",
+        "id": "Totalmusic80s.uk",
+        "logo": "https://static.elektamedia.com/ch/tmc_80s.png",
+        "url": "https://cdn.global.elektamedia.com/live/c7eds/Totalmusic_80s/SA_LIVE_hls_enc/master.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "Totalmusic Concerts",
+        "id": "TotalmusicConcerts.uk",
+        "logo": "https://static.elektamedia.com/ch/tmc_concerts.png",
+        "url": "https://cdn.global.elektamedia.com/live/c7eds/Totalmusic_Concerts/SA_LIVE_hls_enc/master.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "Afghanistan International",
+        "id": "AfghanistanInternational.uk",
+        "logo": "https://i.imgur.com/r8MmFRX.png",
+        "url": "https://hls.afintl.com/hls/stream.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "BBC Drama",
+        "id": "BBCDrama.uk",
+        "logo": "https://i.imgur.com/HctHhLL.png",
+        "url": "https://amg00793-amg00793c40-rakuten-es-5444.playouts.now.amagi.tv/playlist.m3u8",
+        "categories": [
+            "series"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "ENT Family",
+        "id": "ENTFamily.uk",
+        "logo": "https://static.elektamedia.com/ch/entf.png",
+        "url": "https://cdn.global.elektamedia.com/live/c7eds/ENT_Family/SA_LIVE_hls_enc/master.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "Horse & Country TV",
+        "id": "HorseCountryTV.uk",
+        "logo": "https://i.imgur.com/1x6zYZr.png",
+        "url": "https://hncfree-samsung-uk.amagi.tv/playlist.m3u8",
+        "categories": [
+            "outdoor"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "BBC Four",
+        "id": "BBCFour.uk",
+        "logo": "https://i.postimg.cc/XJrTmFB9/bbcfour.png",
+        "url": "https://streamer.nexyl.uk/48559ccd-6400-457d-8acc-06b9e24c2ed8.m3u8",
+        "categories": [
+            "documentary",
+            "culture"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "Faith World TV",
+        "id": "FaithWorldTV.uk",
+        "logo": "https://i.imgur.com/RLHRjQ3.png",
+        "url": "https://faithworldtv.abs.tv/1826926230/index.m3u8",
+        "categories": [
+            "religious"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "GREAT! movies",
+        "id": "GREATmovies.uk",
+        "logo": "https://d2n0069hmnqmmx.cloudfront.net/epgdata/1.0/newchanlogos/512/512/skychb3709.png",
+        "url": "https://amg01753-narrativeuk-amg01753c3-lg-gb-1833.playouts.now.amagi.tv/playlist/amg01753-narrativeuk-greatmovies-lggb/playlist.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "GREAT! romance",
+        "id": "GREATromance.uk",
+        "logo": "https://d2n0069hmnqmmx.cloudfront.net/epgdata/1.0/newchanlogos/512/512/skychb3643.png",
+        "url": "https://amg01753-narrativeuk-amg01753c2-lg-gb-1832.playouts.now.amagi.tv/playlist/amg01753-narrativeuk-greatchristmas-lggb/playlist.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "FMTV",
+        "id": "FMTV.uk",
+        "logo": "https://i.imgur.com/vPxvbVv.png",
+        "url": "https://s2.tvdatta.com:3307/hybrid/play.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "Islam Channel Urdu",
+        "id": "IslamChannelUrdu.uk",
+        "logo": "https://i.imgur.com/j1ZBAgg.png",
+        "url": "https://live-islamtv-urdu.simplestreamcdn.com/live13/islamtv_urdu/bitrate1.isml/live.m3u8",
+        "categories": [
+            "religious"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "BBC News Pashto",
+        "id": "BBCNewsPashto.uk",
+        "logo": "https://static.files.bbci.co.uk/ws/simorgh-assets/public/pashto/images/metadata/poster-1024x576.png",
+        "url": "https://vs-hls-pushb-ww-live.akamaized.net/x=4/i=urn:bbc:pips:service:world_service_stream_07/t=3840/v=pv14/b=5070016/main.m3u8",
+        "categories": [],
+        "country": "UK"
+    },
+    {
+        "name": "English Club TV",
+        "id": "EnglishClubTV.uk",
+        "logo": "https://i.imgur.com/9FMvaRK.png",
+        "url": "https://dash2.antik.sk/live/test_ectv_hd_1200/playlist.m3u8",
+        "categories": [
+            "education"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "Anand TV",
+        "id": "AnandTV.uk",
+        "logo": "https://i.imgur.com/5VOPFzs.png",
+        "url": "https://live-anandtv.anandmedia.net/anandtvapp/anandtv/index.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "Nolly Africa",
+        "id": "NollyAfrica.uk",
+        "logo": "https://i.imgur.com/IxtGpti.png",
+        "url": "https://amg02784-nollyafricafast-amg02784c1-cineverse-us-1124.playouts.now.amagi.tv/playlist/amg02784-nollyafricafast-nollyafricahd-cineverseus/playlist.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "Mr Bean Live Action",
+        "id": "MrBeanLiveAction.uk",
+        "logo": "https://d2yv6y0n3qsl5c.cloudfront.net/MBEANP/MrBeanLiveAction-LG_LOGO_800x200.png",
+        "url": "https://amg00627-amg00627c40-rakuten-uk-5725.playouts.now.amagi.tv/playlist/amg00627-banijayfast-mrbeanpopupcc-rakutenuk/playlist.m3u8",
+        "categories": [
+            "comedy",
+            "kids"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "TJC",
+        "id": "TJC.uk",
+        "logo": "https://i.imgur.com/fk5rEje.png",
+        "url": "https://cdn-shop-lc-01.vos360.video/Content/HLS_HLS/Live/channel(HDTJCcustomGFX)/master.m3u8",
+        "categories": [
+            "shop"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "Tiny Pop",
+        "id": "TinyPop.uk",
+        "logo": "https://i.imgur.com/zCTf71x.png",
+        "url": "https://amg01753-narrativeuk-amg01753c1-rakuten-uk-2339.playouts.now.amagi.tv/playlist.m3u8",
+        "categories": [
+            "kids"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "Now 90s00s",
+        "id": "Now90s00s.uk",
+        "logo": "",
+        "url": "https://amg01076-amg01076c19-rakuten-gb-8653.playouts.now.amagi.tv/playlist/amg01076-lightning-now90s00s-rakutengb/playlist.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "Kanshi TV",
+        "id": "KanshiTV.uk",
+        "logo": "https://i.imgur.com/w6uXMrK.png",
+        "url": "https://live.kanshitv.co.uk/mobile/kanshitvkey.m3u8",
+        "categories": [
+            "religious"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "Sheffield Live TV",
+        "id": "SheffieldLiveTV.uk",
+        "logo": "https://i.imgur.com/p0QzCFs.png",
+        "url": "http://tv.sheffieldlive.org/hls/main.m3u8",
+        "categories": [],
+        "country": "UK"
+    },
+    {
+        "name": "Hobby Maker",
+        "id": "HobbyMaker.uk",
+        "logo": "https://i.imgur.com/VWHp5Tl.png",
+        "url": "https://lo3.gemporia.com/abrhobbymakerukgfx/smil:livestreamFullHD.smil/playlist.m3u8",
+        "categories": [
+            "lifestyle"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "BBC Lifestyle",
+        "id": "BBCLifestyle.uk",
+        "logo": "https://i.imgur.com/9mzJJ3y.png",
+        "url": "https://cdn4.skygo.mn/live/disk1/BBC_lifestyle/HLSv3-FTA/BBC_lifestyle.m3u8",
+        "categories": [
+            "lifestyle"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "Dunya News UK",
+        "id": "DunyaNewsUK.uk",
+        "logo": "https://i.imgur.com/dtrTfZC.png",
+        "url": "https://ukintl.dunyanews.tv/liveuk/ngrp:dunyalive_all/playlist.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "Pop",
+        "id": "Pop.uk",
+        "logo": "https://i.imgur.com/fGUlCY3.png",
+        "url": "https://narrative-popkids-rakuten.amagi.tv/playlist.m3u8",
+        "categories": [],
+        "country": "UK"
+    },
+    {
+        "name": "NOW Rock",
+        "id": "NOWRock.uk",
+        "logo": "https://i.imgur.com/GuM4GnX.png",
+        "url": "https://lightning-now90s-rakuten.amagi.tv/playlist.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "IraneFarda TV",
+        "id": "IraneFardaTV.uk",
+        "logo": "https://i.imgur.com/ixgcgZY.png",
+        "url": "https://hls.iranfarda.live/hls/stream.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "QVC Style",
+        "id": "QVCStyle.uk",
+        "logo": "https://i.imgur.com/6HZlLL3.png",
+        "url": "https://qvcuk-live.akamaized.net/hls/live/2097112/qst/master.m3u8",
+        "categories": [
+            "shop"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "Now 70s",
+        "id": "Now70s.uk",
+        "logo": "https://i.imgur.com/qiCCX5X.png",
+        "url": "https://lightning-now70s-rakuten.amagi.tv/playlist.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "QVC Extra",
+        "id": "QVCExtra.uk",
+        "logo": "https://i.imgur.com/TIe5T9Z.png",
+        "url": "https://qvcuk-live.akamaized.net/hls/live/2097112/qex/master.m3u8",
+        "categories": [
+            "shop"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "MTA1 World",
+        "id": "MTA1World.uk",
+        "logo": "https://i.imgur.com/bYiRfAg.png",
+        "url": "https://chlivemta1.akamaized.net/hls/live/2008145/mta1/playlist.m3u8",
+        "categories": [
+            "religious"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "MTA3 Al-Arabia",
+        "id": "MTA3AlArabia.uk",
+        "logo": "https://i.imgur.com/m3PEldJ.png",
+        "url": "https://chlivemta1.akamaized.net/hls/live/2010556/mta3alarabia/playlist.m3u8",
+        "categories": [
+            "religious"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "Noor TV",
+        "id": "NoorTV.uk",
+        "logo": "https://i.imgur.com/DlKgIuQ.png",
+        "url": "https://sscsott.com/srt/noortvuk/index.m3u8",
+        "categories": [
+            "religious"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "MTA5 Africa",
+        "id": "MTA5Africa.uk",
+        "logo": "https://i.imgur.com/9Cobb2i.png",
+        "url": "https://chlivemta.akamaized.net/hls/live/2010555/mtaafrica2/playlist.m3u8",
+        "categories": [
+            "religious"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "Latest TV",
+        "id": "LatestTV.uk",
+        "logo": "https://i.imgur.com/Cl1iGEb.jpeg",
+        "url": "https://5a0e89631aa14.streamlock.net/live/LatestTelevision/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "MTA2 Europe",
+        "id": "MTA2Europe.uk",
+        "logo": "https://i.imgur.com/aVts0sz.png",
+        "url": "https://chlivemta1.akamaized.net/hls/live/2008145/mta2/playlist.m3u8",
+        "categories": [
+            "religious"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "MTA8 America",
+        "id": "MTA8America.uk",
+        "logo": "https://i.imgur.com/CF6X9wB.png",
+        "url": "https://chlivemta.akamaized.net/hls/live/2016718/mta8/playlist.m3u8",
+        "categories": [
+            "religious"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "MTA4 Africa",
+        "id": "MTA4Africa.uk",
+        "logo": "https://i.imgur.com/lmVeQQX.png",
+        "url": "https://chlivemta.akamaized.net/hls/live/2010555/mtaafrica1/playlist.m3u8",
+        "categories": [
+            "religious"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "QVC",
+        "id": "QVC.uk",
+        "logo": "https://i.imgur.com/6TWUVrh.png",
+        "url": "https://qvcuk-live.akamaized.net/hls/live/2097112/qvc/master.m3u8",
+        "categories": [
+            "shop"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "QVC Beauty",
+        "id": "QVCBeauty.uk",
+        "logo": "https://i.imgur.com/ZBHtqk1.png",
+        "url": "https://qvcuk-live.akamaized.net/hls/live/2097112/qby/master.m3u8",
+        "categories": [
+            "shop"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "Garshom TV",
+        "id": "GarshomTV.uk",
+        "logo": "https://i.imgur.com/KnbwUyb.png",
+        "url": "https://og2qd3aal7an-hls-live.5centscdn.com/garshomtv/d0dbe915091d400bd8ee7f27f0791303.sdp/playlist.m3u8",
+        "categories": [
+            "culture"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "Magnavision TV",
+        "id": "MagnavisionTV.uk",
+        "logo": "https://i.imgur.com/mUHixbi.png",
+        "url": "https://j78dpa3edq5r-hls-live.5centscdn.com/abr/0864028584026e6ad9cdf922473177a4/playlist.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "MTA7 Asia",
+        "id": "MTA7Asia.uk",
+        "logo": "https://i.imgur.com/3Nl8Tpu.png",
+        "url": "https://livemtaasia.akamaized.net/hls/live/2039224/mtaasia2/playlist.m3u8",
+        "categories": [
+            "religious"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "MTA6 Asia",
+        "id": "MTA6Asia.uk",
+        "logo": "https://i.imgur.com/nhCNPJI.png",
+        "url": "https://livemtaasia.akamaized.net/hls/live/2039224/mta6asia/playlist.m3u8",
+        "categories": [
+            "religious"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "Now 80s",
+        "id": "Now80s.uk",
+        "logo": "https://i.imgur.com/YyPnMeB.png",
+        "url": "https://lightning-now80s-rakuten.amagi.tv/playlist.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "V2BEAT TV",
+        "id": "V2BEATTV.uk",
+        "logo": "https://i.imgur.com/PXGqyLn.png",
+        "url": "https://abr.de1se01.v2beat.live/playlist.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "DAZN Combat",
+        "id": "DAZNCombat.uk",
+        "logo": "https://i.postimg.cc/VsW3Jsrz/logo-DAZN-Combat.png",
+        "url": "https://dazn-combat-rakuten.amagi.tv/hls/amagi_hls_data_rakutenAA-dazn-combat-rakuten/CDN/master.m3u8",
+        "categories": [
+            "sports"
         ],
         "country": "UK"
     }
