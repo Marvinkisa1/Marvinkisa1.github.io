@@ -62,18 +62,6 @@
         "country": "DO"
     },
     {
-        "name": "BBC Four/CBeebies",
-        "id": "BBCFourCBeebies.uk",
-        "logo": "https://i.imgur.com/aH0PCPy.png",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/bbc4cbeebies/browser-dash/bbc4cbeebies.mpd",
-        "categories": [
-            "kids",
-            "general",
-            "animation"
-        ],
-        "country": "UK"
-    },
-    {
         "name": "BBC Three/CBBC",
         "id": "BBCThreeCBBC.uk",
         "logo": "https://i.imgur.com/CGXC5fp.png",
@@ -86,14 +74,16 @@
         "country": "UK"
     },
     {
-        "name": "KMBY-LD5",
-        "id": "KMBYLD5.us",
-        "logo": "https://i.imgur.com/px0CSti.png",
-        "url": "https://2-fss-2.streamhoster.com/pl_138/205510-3094608-1/playlist.m3u8",
+        "name": "BBC Four/CBeebies",
+        "id": "BBCFourCBeebies.uk",
+        "logo": "https://i.imgur.com/aH0PCPy.png",
+        "url": "https://viamotionhsi.netplus.ch/live/eds/bbc4cbeebies/browser-dash/bbc4cbeebies.mpd",
         "categories": [
+            "kids",
+            "general",
             "animation"
         ],
-        "country": "US"
+        "country": "UK"
     },
     {
         "name": "3ABN Kids",
@@ -108,10 +98,10 @@
         "country": "US"
     },
     {
-        "name": "Toonami Aftermath",
-        "id": "ToonamiAftermath.us",
-        "logo": "https://i.imgur.com/aSjhZK7.png",
-        "url": "http://api.toonamiaftermath.com:3000/est/playlist.m3u8",
+        "name": "KMBY-LD5",
+        "id": "KMBYLD5.us",
+        "logo": "https://i.imgur.com/px0CSti.png",
+        "url": "https://2-fss-2.streamhoster.com/pl_138/205510-3094608-1/playlist.m3u8",
         "categories": [
             "animation"
         ],
@@ -124,6 +114,16 @@
         "url": "https://cineverse.g-mana.live/media/ac7cff3c-5bc3-4745-ac4d-56aadb586d00/profile/1/profileManifest.m3u8",
         "categories": [
             "classic",
+            "animation"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Toonami Aftermath",
+        "id": "ToonamiAftermath.us",
+        "logo": "https://i.imgur.com/aSjhZK7.png",
+        "url": "http://api.toonamiaftermath.com:3000/est/playlist.m3u8",
+        "categories": [
             "animation"
         ],
         "country": "US"
@@ -171,28 +171,6 @@
         "country": "CL"
     },
     {
-        "name": "Solnce",
-        "id": "Solnce.ru",
-        "logo": "https://i.imgur.com/HCefxaK.png",
-        "url": "http://zabava-htlive.cdn.ngenix.net/hls/CH_DISNEY/variant.m3u8",
-        "categories": [
-            "animation",
-            "kids"
-        ],
-        "country": "RU"
-    },
-    {
-        "name": "Multimania",
-        "id": "Multimania.ru",
-        "logo": "https://i.imgur.com/abh8ZBA.png",
-        "url": "http://sirius.greenhosting.ru/MultimaniaRu/video.m3u8",
-        "categories": [
-            "animation",
-            "kids"
-        ],
-        "country": "RU"
-    },
-    {
         "name": "Pro100TV",
         "id": "Pro100TV.ru",
         "logo": "https://i.imgur.com/YfQEflM.png",
@@ -216,6 +194,28 @@
             "kids"
         ],
         "country": "LV"
+    },
+    {
+        "name": "Multimania",
+        "id": "Multimania.ru",
+        "logo": "https://i.imgur.com/abh8ZBA.png",
+        "url": "http://sirius.greenhosting.ru/MultimaniaRu/video.m3u8",
+        "categories": [
+            "animation",
+            "kids"
+        ],
+        "country": "RU"
+    },
+    {
+        "name": "Solnce",
+        "id": "Solnce.ru",
+        "logo": "https://i.imgur.com/HCefxaK.png",
+        "url": "http://zabava-htlive.cdn.ngenix.net/hls/CH_DISNEY/variant.m3u8",
+        "categories": [
+            "animation",
+            "kids"
+        ],
+        "country": "RU"
     },
     {
         "name": "Cartoon Classics",
