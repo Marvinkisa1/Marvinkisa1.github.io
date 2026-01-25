@@ -10,12 +10,12 @@
         "country": "IQ"
     },
     {
-        "name": "ABNsat",
-        "id": "ABNsat.iq",
-        "logo": "https://i.imgur.com/WhPlJzh.jpeg",
-        "url": "https://mediaserver.abnvideos.com/streams/abnsat.m3u8",
+        "name": "Kurdsat News",
+        "id": "KurdsatNews.iq",
+        "logo": "https://i.imgur.com/F3XRwkt.png",
+        "url": "https://hlspackager.akamaized.net/live/DB/KURDSAT_NEWS/HLS/KURDSAT_NEWS.m3u8",
         "categories": [
-            "religious"
+            "news"
         ],
         "country": "IQ"
     },
@@ -30,12 +30,12 @@
         "country": "IQ"
     },
     {
-        "name": "Kurdsat News",
-        "id": "KurdsatNews.iq",
-        "logo": "https://i.imgur.com/F3XRwkt.png",
-        "url": "https://hlspackager.akamaized.net/live/DB/KURDSAT_NEWS/HLS/KURDSAT_NEWS.m3u8",
+        "name": "ABNsat",
+        "id": "ABNsat.iq",
+        "logo": "https://i.imgur.com/WhPlJzh.jpeg",
+        "url": "https://mediaserver.abnvideos.com/streams/abnsat.m3u8",
         "categories": [
-            "news"
+            "religious"
         ],
         "country": "IQ"
     },
@@ -50,26 +50,6 @@
         "country": "IQ"
     },
     {
-        "name": "Shams TV",
-        "id": "ShamsTV.iq",
-        "logo": "https://i.postimg.cc/PJdsTyx8/shamstv.png",
-        "url": "https://stream.shams.tv/hls/stream.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "IQ"
-    },
-    {
-        "name": "Dijlah TV",
-        "id": "DijlahTV.iq",
-        "logo": "https://i.imgur.com/kyzH3G5.png",
-        "url": "https://ghaasiflu.online/Dijlah/index.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "IQ"
-    },
-    {
         "name": "NUBAR Plus +",
         "id": "NUBARPlusPlus.iq",
         "logo": "https://i.ibb.co/XpgWb6B/IMG-20230628-140407.jpg",
@@ -80,11 +60,13 @@
         "country": "IQ"
     },
     {
-        "name": "UTV",
-        "id": "UTV.iq",
-        "logo": "https://i.imgur.com/9qFHjnu.png",
-        "url": "https://mn-nl.mncdn.com/utviraqi2/64c80359/index.m3u8",
-        "categories": [],
+        "name": "Shams TV",
+        "id": "ShamsTV.iq",
+        "logo": "https://i.postimg.cc/PJdsTyx8/shamstv.png",
+        "url": "https://stream.shams.tv/hls/stream.m3u8",
+        "categories": [
+            "news"
+        ],
         "country": "IQ"
     },
     {
@@ -118,16 +100,6 @@
         "country": "IQ"
     },
     {
-        "name": "Al Sharqiya News",
-        "id": "AlSharqiyaNews.iq",
-        "logo": "https://i.imgur.com/PeAcXB9.png",
-        "url": "https://5d94523502c2d.streamlock.net/alsharqiyalive/mystream/playlist.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "IQ"
-    },
-    {
         "name": "Avar TV",
         "id": "AvarTV.iq",
         "logo": "https://i.imgur.com/JazFBkW.jpeg",
@@ -136,13 +108,21 @@
         "country": "IQ"
     },
     {
-        "name": "Imam Hussein TV 1",
-        "id": "ImamHusseinTV1.iq",
-        "logo": "https://i.imgur.com/pDdUvz7.png",
-        "url": "https://live.imamhossaintv.com/live/ih1.m3u8",
+        "name": "Dijlah TV",
+        "id": "DijlahTV.iq",
+        "logo": "https://i.imgur.com/kyzH3G5.png",
+        "url": "https://ghaasiflu.online/Dijlah/index.m3u8",
         "categories": [
-            "religious"
+            "news"
         ],
+        "country": "IQ"
+    },
+    {
+        "name": "UTV",
+        "id": "UTV.iq",
+        "logo": "https://i.imgur.com/9qFHjnu.png",
+        "url": "https://mn-nl.mncdn.com/utviraqi2/64c80359/index.m3u8",
+        "categories": [],
         "country": "IQ"
     },
     {
@@ -156,20 +136,20 @@
         "country": "IQ"
     },
     {
-        "name": "Al Sharqiya",
-        "id": "AlSharqiya.iq",
-        "logo": "https://i.imgur.com/mJIG5IV.png",
-        "url": "https://5d94523502c2d.streamlock.net/home/mystream/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "IQ"
-    },
-    {
         "name": "Imam Hussein TV 3",
         "id": "ImamHusseinTV3.iq",
         "logo": "https://i.imgur.com/emQRHQZ.png",
         "url": "https://live.imamhossaintv.com/live/ih3.m3u8",
+        "categories": [
+            "religious"
+        ],
+        "country": "IQ"
+    },
+    {
+        "name": "Imam Hussein TV 1",
+        "id": "ImamHusseinTV1.iq",
+        "logo": "https://i.imgur.com/pDdUvz7.png",
+        "url": "https://live.imamhossaintv.com/live/ih1.m3u8",
         "categories": [
             "religious"
         ],
@@ -186,10 +166,30 @@
         "country": "IQ"
     },
     {
-        "name": "BeitolAbbas TV Channel",
-        "id": "BeitolAbbasTVChannel.iq",
-        "logo": "https://i.imgur.com/s8PfUQy.png",
-        "url": "https://live.beitolabbas.tv/live/beitolabbastv.m3u8",
+        "name": "Al Sharqiya News",
+        "id": "AlSharqiyaNews.iq",
+        "logo": "https://i.imgur.com/PeAcXB9.png",
+        "url": "https://5d94523502c2d.streamlock.net/alsharqiyalive/mystream/playlist.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "IQ"
+    },
+    {
+        "name": "Al Sharqiya",
+        "id": "AlSharqiya.iq",
+        "logo": "https://i.imgur.com/mJIG5IV.png",
+        "url": "https://5d94523502c2d.streamlock.net/home/mystream/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "IQ"
+    },
+    {
+        "name": "Marjaeyat TV Persian",
+        "id": "MarjaeyatTVPersian.iq",
+        "logo": "https://i.imgur.com/fCj05f0.png",
+        "url": "https://livefa.marjaeyattv.com/mtv_fa/playlist.m3u8",
         "categories": [
             "religious"
         ],
@@ -206,10 +206,10 @@
         "country": "IQ"
     },
     {
-        "name": "Marjaeyat TV Persian",
-        "id": "MarjaeyatTVPersian.iq",
-        "logo": "https://i.imgur.com/fCj05f0.png",
-        "url": "https://livefa.marjaeyattv.com/mtv_fa/playlist.m3u8",
+        "name": "BeitolAbbas TV Channel",
+        "id": "BeitolAbbasTVChannel.iq",
+        "logo": "https://i.imgur.com/s8PfUQy.png",
+        "url": "https://live.beitolabbas.tv/live/beitolabbastv.m3u8",
         "categories": [
             "religious"
         ],
