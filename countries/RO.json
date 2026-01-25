@@ -1,13 +1,5 @@
 [
     {
-        "name": "TVSat",
-        "id": "TVSat.ro",
-        "logo": "https://i.imgur.com/54GHZMv.png",
-        "url": "http://89.38.8.130:39443",
-        "categories": [],
-        "country": "RO"
-    },
-    {
         "name": "Rapsodia TV",
         "id": "RapsodiaTV.ro",
         "logo": "https://i.imgur.com/mwMG7BB.png",
@@ -26,32 +18,6 @@
         "country": "RO"
     },
     {
-        "name": "TV SE",
-        "id": "TVSE.ro",
-        "logo": "https://i.imgur.com/r4zKU1e.png",
-        "url": "http://89.38.8.130:39419",
-        "categories": [],
-        "country": "RO"
-    },
-    {
-        "name": "TV Buzau",
-        "id": "TVBuzau.ro",
-        "logo": "https://i.imgur.com/GhFmUVO.png",
-        "url": "http://78.96.33.89:8080",
-        "categories": [
-            "general"
-        ],
-        "country": "RO"
-    },
-    {
-        "name": "TVPlus Suceava",
-        "id": "TVPlusSuceava.ro",
-        "logo": "https://i.imgur.com/f4fzoLe.png",
-        "url": "http://85.186.146.34:8080",
-        "categories": [],
-        "country": "RO"
-    },
-    {
         "name": "Impact TV Dance",
         "id": "ImpactTVDance.ro",
         "logo": "https://i.imgur.com/G5mNdpE.png",
@@ -66,16 +32,6 @@
         "id": "ImpactTVManele.ro",
         "logo": "https://i.imgur.com/G5mNdpE.png",
         "url": "https://online.tvimpact.live/hls/impact_tv.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "RO"
-    },
-    {
-        "name": "Traditional TV",
-        "id": "TraditionalTV.ro",
-        "logo": "https://i.ibb.co/G5bNH48/Traditional-TV-HD.png",
-        "url": "http://83.103.149.75:8085/udp/239.30.0.9:4000",
         "categories": [
             "music"
         ],
@@ -474,41 +430,83 @@
         "country": "RO"
     },
     {
-        "name": "ZU TV",
-        "id": "ZUTV.ro",
-        "logo": "https://i.imgur.com/1gtkGhB.png",
-        "url": "https://hls.rundletv.eu.org/LIVE$RadioZU/6.m3u8/Level/300720051?end=END&start=LIVE",
+        "name": "Angelus TV",
+        "id": "AngelusTV.ro",
+        "logo": "https://i.postimg.cc/hvrqgnMB/angelustv.png",
+        "url": "https://video.angelustv.ro/hls/angelustv.m3u8",
         "categories": [
-            "music"
+            "religious"
         ],
         "country": "RO"
     },
     {
-        "name": "Happy Channel",
-        "id": "HappyChannel.ro",
-        "logo": "https://i.imgur.com/kpFaiku.png",
-        "url": "https://hls.rundletv.eu.org/LIVE$HappyChannel/6.m3u8/Level/300720051?end=END&start=LIVE",
+        "name": "Euronews Romania",
+        "id": "EuronewsRomania.ro",
+        "logo": "https://i.imgur.com/jUOVUXt.png",
+        "url": "https://ythls.armelin.one/channel/UCbATDExtWstHnwWELZnXNZA.m3u8",
         "categories": [
-            "entertainment"
+            "news"
         ],
         "country": "RO"
     },
     {
-        "name": "Antena 1",
-        "id": "Antena1.ro",
-        "logo": "https://i.imgur.com/EPmwuuv.png",
-        "url": "https://hls.rundletv.eu.org/LIVE$Antena1/6.m3u8/Level/300720051?end=END&start=LIVE",
+        "name": "IasiTV Life",
+        "id": "IasiTVLife.ro",
+        "logo": "https://i.imgur.com/HY7EL5e.png",
+        "url": "https://tv.streambox.ro/hls/itv/index.m3u8",
         "categories": [
             "general"
         ],
         "country": "RO"
     },
     {
-        "name": "PRO TV",
-        "id": "PROTV.ro",
-        "logo": "https://i.imgur.com/zVk3WlT.png",
-        "url": "https://hls.rundletv.eu.org/LIVE$ProTV/Level/300720051?end=END&start=LIVE",
-        "categories": [],
+        "name": "JOB TV",
+        "id": "JOBTV.ro",
+        "logo": "https://i.imgur.com/UzcZNe3.png",
+        "url": "https://jobtvserver.eu/hls/stream.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "RO"
+    },
+    {
+        "name": "Mooz Dance",
+        "id": "MoozDance.ro",
+        "logo": "https://i.imgur.com/aX70RD2.png",
+        "url": "https://rtmp.digitalbroadcast.ro/moozdance/moozdance.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "RO"
+    },
+    {
+        "name": "Mooz Hits",
+        "id": "MoozHits.ro",
+        "logo": "https://i.imgur.com/GwATd3Y.png",
+        "url": "https://rtmp.digitalbroadcast.ro/moozhits/moozhits.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "RO"
+    },
+    {
+        "name": "Mooz Ro!",
+        "id": "MoozRo.ro",
+        "logo": "https://i.imgur.com/Ft24x5T.png",
+        "url": "https://rtmp.digitalbroadcast.ro/moozro/moozro.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "RO"
+    },
+    {
+        "name": "Realitatea Sportiva",
+        "id": "RealitateaSportiva.ro",
+        "logo": "https://i.imgur.com/BaEyZto.png",
+        "url": "https://stream.realitatea.net/realitatea/sportiva_md/ts:playlist.m3u8",
+        "categories": [
+            "sports"
+        ],
         "country": "RO"
     }
 ]

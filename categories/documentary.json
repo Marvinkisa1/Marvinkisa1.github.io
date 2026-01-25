@@ -20,14 +20,25 @@
         "country": "FR"
     },
     {
-        "name": "Ecovision",
-        "id": "Ecovision.do",
-        "logo": "https://imgur.com/a/pUlIJZX.png",
-        "url": "https://streaming.grupomediosdelnorte.com:19360/ecovision/ecovision.m3u8",
+        "name": "Persiana Travel",
+        "id": "PersianaTravel.fr",
+        "logo": "https://i.postimg.cc/RF9L97qj/persiana-Travel.png",
+        "url": "https://mardomhls.wns.live/hls/stream.m3u8",
         "categories": [
             "documentary"
         ],
-        "country": "DO"
+        "country": "FR"
+    },
+    {
+        "name": "BBC Four",
+        "id": "BBCFour.uk",
+        "logo": "https://i.postimg.cc/XJrTmFB9/bbcfour.png",
+        "url": "https://streamer.nexyl.uk/48559ccd-6400-457d-8acc-06b9e24c2ed8.m3u8",
+        "categories": [
+            "documentary",
+            "culture"
+        ],
+        "country": "UK"
     },
     {
         "name": "Dateline 24/7",
@@ -60,43 +71,12 @@
         "country": "US"
     },
     {
-        "name": "BBC Four",
-        "id": "BBCFour.uk",
-        "logo": "https://i.postimg.cc/XJrTmFB9/bbcfour.png",
-        "url": "https://streamer.nexyl.uk/48559ccd-6400-457d-8acc-06b9e24c2ed8.m3u8",
-        "categories": [
-            "documentary",
-            "culture"
-        ],
-        "country": "UK"
-    },
-    {
         "name": "The Nest",
         "id": "TheNest.us",
         "logo": "https://iili.io/JGqD21e.png",
         "url": "https://fast-channels.sinclairstoryline.com/THENEST/index.m3u8",
         "categories": [
             "entertainment",
-            "documentary"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "National Geographic Wild",
-        "id": "NationalGeographicWild.us",
-        "logo": "https://i.postimg.cc/cL2mQJfD/nationalgeographicwild.png",
-        "url": "http://xworld-blue.com:25461/play/uIBrPNsF_DzJ0RMHq-nTwwdqpoUVyETnt-cSk-My55yx3gVkNIswH1bvEBJr2C8Q/ts",
-        "categories": [
-            "documentary"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "National Geographic",
-        "id": "NationalGeographic.us",
-        "logo": "https://i.postimg.cc/FsPGHpzX/nationalgeographic.png",
-        "url": "http://tv1site.com:8080//live/esref/YaxDb84dGxfW/5941.ts",
-        "categories": [
             "documentary"
         ],
         "country": "US"
@@ -153,6 +133,156 @@
         "country": "US"
     },
     {
+        "name": "Archivos Forenses",
+        "id": "ArchivosForenses.us",
+        "logo": "https://i.imgur.com/Pxrl9Ug.png",
+        "url": "https://service-stitcher.clusters.pluto.tv/stitch/hls/channel/5efb8c19b2678b000780d032/master.m3u8?advertisingId=&appName=web&appVersion=5.14.0-0f5ca04c21649b8c8aad4e56266a23b96d73b83a&app_name=web&clientDeviceType=0&clientID=6fbead95-26b1-415d-998f-1bdef62d10be&clientModelNumber=na&deviceDNT=false&deviceId=6fbead95-26b1-415d-998f-1bdef62d10be&deviceLat=19.4358&deviceLon=-99.1441&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=88.0.4324.150&marketingRegion=VE&serverSideAds=false&sessionID=b8e5a857-714a-11eb-b532-0242ac110002&sid=b8e5a857-714a-11eb-b532-0242ac110002&userId=",
+        "categories": [
+            "documentary"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Crime 360",
+        "id": "Crime360.us",
+        "logo": "https://i.imgur.com/IjtaG1m.png",
+        "url": "https://live-manifest.production-public.tubi.io/live/d65f6697-9fd2-477f-a56d-26cea1b939b7/playlist.m3u8",
+        "categories": [
+            "documentary"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Dallas Cowboys Cheerleaders",
+        "id": "DallasCowboysCheerleaders.us",
+        "logo": "https://i.imgur.com/73HlRCg.png",
+        "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/5d40855b3fb0855028c99b6f/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=6c287c40-30d3-11ef-9cf5-e9ddff8ff496&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=92a113fc-f35c-4160-9c63-27cd8537a39f",
+        "categories": [
+            "documentary"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Dossiers FBI",
+        "id": "DossiersFBI.us",
+        "logo": "https://i.imgur.com/8Zx6dA7.png",
+        "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/5f8edad922b10b000753bc37/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=8e057883-1f2c-11ef-86d8-5d587df108c6&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=a243842a-2a92-4ca0-bdea-73f35b29bf5c",
+        "categories": [
+            "documentary"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Forensic Files",
+        "id": "ForensicFiles.us",
+        "logo": "https://i.imgur.com/V5vvuLK.png",
+        "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/5bb1af6a268cae539bcedb0a/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=6c28ca68-30d3-11ef-9cf5-e9ddff8ff496&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=859d292d-044e-4dc8-b889-003fa718d02e",
+        "categories": [
+            "documentary"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Ink Master",
+        "id": "InkMaster.us",
+        "logo": "https://i.imgur.com/DiBojYh.png",
+        "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/60807fd5db701400078219c2/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=6c293f98-30d3-11ef-9cf5-e9ddff8ff496&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=ebedec3d-689a-4150-a2fd-4e2e34eb982c",
+        "categories": [
+            "documentary"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Pluto TV Animals",
+        "id": "PlutoTVAnimals.us",
+        "logo": "https://i.imgur.com/N00seOn.png",
+        "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/5d767ae7b456c8cf265ce922/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=84ae5268-4b92-11ef-aece-533610f1ea34&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=f4297955-3ff8-4299-b8e4-ca974cec3c7a",
+        "categories": [
+            "documentary"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Pluto TV History",
+        "id": "PlutoTVHistory.us",
+        "logo": "https://i.imgur.com/XkQD5kM.png",
+        "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/5a4d35dfa5c02e717a234f86/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=6c2aed48-30d3-11ef-9cf5-e9ddff8ff496&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=6b0c9a3d-9786-4dee-8eea-1dfcbea2ee1b",
+        "categories": [
+            "documentary"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Pluto TV Inside",
+        "id": "PlutoTVInside.us",
+        "logo": "https://i.imgur.com/Tb4GNml.png",
+        "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/5f8ed3892ed7bb000741a1d2/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=8e055174-1f2c-11ef-86d8-5d587df108c6&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=487dd86d-4b70-41e0-bab7-33de0eda4283",
+        "categories": [
+            "documentary"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Pluto TV Investigacao",
+        "id": "PlutoTVInvestigacao.us",
+        "logo": "https://i.imgur.com/JlQq0YJ.png",
+        "url": "https://service-stitcher.clusters.pluto.tv/v1/stitch/embed/hls/channel/5f32cf37c9ff2b00082adbc8/master.m3u8?advertisingId=channel&appName=rokuchannel&appVersion=1.0&bmodel=bm1&channel_id=channel&content=channel&content_rating=ROKU_ADS_CONTENT_RATING&content_type=livefeed&coppa=false&deviceDNT=1&deviceId=channel&deviceMake=rokuChannel&deviceModel=web&deviceType=rokuChannel&deviceVersion=1.0&embedPartner=rokuChannel&genre=ROKU_ADS_CONTENT_GENRE&is_lat=1&platform=web&rdid=channel&studio_id=viacom&tags=ROKU_CONTENT_TAGS",
+        "categories": [
+            "documentary"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Pluto TV Investigation",
+        "id": "PlutoTVInvestigation.us",
+        "logo": "https://i.imgur.com/8LdACfR.png",
+        "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/5f914f4b36d67d0007a91a04/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=8e057885-1f2c-11ef-86d8-5d587df108c6&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=a6c08e34-78b6-42cf-bca2-5017c1566c3c",
+        "categories": [
+            "documentary"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Pluto TV Mystery",
+        "id": "PlutoTVMystery.us",
+        "logo": "https://i.imgur.com/oXpLEXI.png",
+        "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/617aad99b68ef100072608cd/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=84aec792-4b92-11ef-aece-533610f1ea34&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=2b2bcb00-9a00-402e-b731-873dc95db9fc",
+        "categories": [
+            "documentary"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Pluto TV Paranormal",
+        "id": "PlutoTVParanormal.us",
+        "logo": "https://i.imgur.com/ApN6nfw.png",
+        "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/5adf96e3e738977e2c31cb04/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=6c2b1455-30d3-11ef-9cf5-e9ddff8ff496&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=a6d0c5d3-d3a3-4e4b-acd3-5b277ebb8723",
+        "categories": [
+            "documentary"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Spike Pluto TV",
+        "id": "SpikePlutoTV.us",
+        "logo": "https://i.imgur.com/woY8Ecb.png",
+        "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/5812bcc8237a6ff45d16c407/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=6c2bb098-30d3-11ef-9cf5-e9ddff8ff496&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=7817c7c9-18cd-4d07-835d-350e94a68d2b",
+        "categories": [
+            "documentary"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Teen Mom",
+        "id": "TeenMom.us",
+        "logo": "https://i.imgur.com/8o3ClCV.png",
+        "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/6127e12ed140e900077e7b6f/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=6c2bfeb3-30d3-11ef-9cf5-e9ddff8ff496&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=773b4ab9-534b-435a-904e-6819ef8dfb5e",
+        "categories": [
+            "documentary"
+        ],
+        "country": "US"
+    },
+    {
         "name": "History TV18",
         "id": "HistoryTV18.in",
         "logo": "https://dtil.tmsimg.com/assets/s143133_ld_h15_aa.png",
@@ -194,6 +324,16 @@
         "country": "CL"
     },
     {
+        "name": "N24 Doku Austria",
+        "id": "N24DokuAustria.at",
+        "logo": "https://i.imgur.com/qgoXJu4.png",
+        "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/60080e8a4bf36000076a81b1/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=1b1f1163-4b81-11ef-a8ac-e146e4e7be02&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=3c70bac9-b6d8-44d7-bde9-a992a6bfd7ab",
+        "categories": [
+            "documentary"
+        ],
+        "country": "AT"
+    },
+    {
         "name": "HDL",
         "id": "HDL.ru",
         "logo": "https://i.imgur.com/tKgmhxh.png",
@@ -222,16 +362,6 @@
             "documentary"
         ],
         "country": "RU"
-    },
-    {
-        "name": "kabel eins Doku",
-        "id": "kabeleinsDoku.de",
-        "logo": "https://i.postimg.cc/Fs1xMLmH/kabeleinsdoku.png",
-        "url": "http://79.232.88.203:9981/stream/channelid/81078517",
-        "categories": [
-            "documentary"
-        ],
-        "country": "DE"
     },
     {
         "name": "Nauka",
@@ -264,10 +394,61 @@
         "country": "RU"
     },
     {
+        "name": "City Eden KinoDok",
+        "id": "CityEdenKinoDok.ru",
+        "logo": "https://i.imgur.com/itRbMX3.png",
+        "url": "https://cityeden.catcast.tv/content/38354/index.m3u8",
+        "categories": [
+            "documentary",
+            "series"
+        ],
+        "country": "RU"
+    },
+    {
+        "name": "kabel eins Doku",
+        "id": "kabeleinsDoku.de",
+        "logo": "https://i.postimg.cc/Fs1xMLmH/kabeleinsdoku.png",
+        "url": "http://79.232.88.203:9981/stream/channelid/81078517",
+        "categories": [
+            "documentary"
+        ],
+        "country": "DE"
+    },
+    {
         "name": "Dokusat",
         "id": "Dokusat.de",
         "logo": "https://i.imgur.com/GadfTwF.png",
         "url": "https://muc3.iptv-playoutcenter.de/dokusat/dokusat1/playlist.m3u8",
+        "categories": [
+            "documentary"
+        ],
+        "country": "DE"
+    },
+    {
+        "name": "Autentic History",
+        "id": "AutenticHistory.de",
+        "logo": "https://d3b6luslimvglo.cloudfront.net/images/79/rlaxximages/channels-rescaled/icon-white/autentichistory_white.png",
+        "url": "https://9e754fa707344ccca6d84955c8fcaf36.mediatailor.us-east-1.amazonaws.com/v1/master/44f73ba4d03e9607dcd9bebdcb8494d86964f1d8/RlaxxTV-eu_AutenticHistory/playlist.m3u8",
+        "categories": [
+            "documentary"
+        ],
+        "country": "DE"
+    },
+    {
+        "name": "N24 Doku",
+        "id": "N24Doku.de",
+        "logo": "https://i.postimg.cc/hPK3jh0T/n24doku.png",
+        "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/60080e8a4bf36000076a81b1/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=84ae2b55-4b92-11ef-aece-533610f1ea34&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=39199e43-689e-4f83-9f74-b89605373bf0",
+        "categories": [
+            "documentary"
+        ],
+        "country": "DE"
+    },
+    {
+        "name": "Terra Mater WILD",
+        "id": "TerraMaterWILD.de",
+        "logo": "https://d3b6luslimvglo.cloudfront.net/images/79/rlaxximages/channels-rescaled/icon-white/terramaterwild_white.png",
+        "url": "https://53ff3982.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmxheHhUVi1ldV9UZXJyYU1hdGVyV2lsZF9ITFM/playlist.m3u8",
         "categories": [
             "documentary"
         ],
@@ -284,6 +465,17 @@
         "country": "CZ"
     },
     {
+        "name": "7 STORIA",
+        "id": "7STORIA.it",
+        "logo": "https://i.imgur.com/rF3tpbR.jpeg",
+        "url": "https://stream10.xdevel.com/video2s976543-2104/stream/playlist.m3u8",
+        "categories": [
+            "education",
+            "documentary"
+        ],
+        "country": "IT"
+    },
+    {
         "name": "HRT 3",
         "id": "HRT3.hr",
         "logo": "https://i.imgur.com/4OrOJRx.png",
@@ -293,36 +485,6 @@
             "documentary"
         ],
         "country": "HR"
-    },
-    {
-        "name": "Polsat Viasat Nature",
-        "id": "PolsatViasatNature.pl",
-        "logo": "https://i.imgur.com/TUcM0oS.png",
-        "url": "https://liveovh010.cda.pl/enc104/polsatviasatnaturehdraw/polsatviasatnaturehdraw.mpd",
-        "categories": [
-            "documentary"
-        ],
-        "country": "PL"
-    },
-    {
-        "name": "Polsat Viasat Explore",
-        "id": "PolsatViasatExplore.pl",
-        "logo": "https://i.imgur.com/gDlqO9h.png",
-        "url": "https://liveovh010.cda.pl/enc107/polsatviasatexplorehdraw/polsatviasatexplorehdraw.mpd",
-        "categories": [
-            "documentary"
-        ],
-        "country": "PL"
-    },
-    {
-        "name": "Polsat Viasat History",
-        "id": "PolsatViasatHistory.pl",
-        "logo": "https://i.imgur.com/X16UGUf.png",
-        "url": "https://liveovh010.cda.pl/enc105/polsatviasathistoryhdraw/polsatviasathistoryhdraw.mpd",
-        "categories": [
-            "documentary"
-        ],
-        "country": "PL"
     },
     {
         "name": "CGTN Documentary",

@@ -1,45 +1,5 @@
 [
     {
-        "name": "Public Senat 24/24",
-        "id": "PublicSenat2424.fr",
-        "logo": "https://i.imgur.com/nHWWLBP.png",
-        "url": "https://raw.githubusercontent.com/Sibprod/streams/main/ressources/dm/py/hls/publicsenat.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "FR"
-    },
-    {
-        "name": "MOI TV",
-        "id": "MOITV.kh",
-        "logo": "https://i.imgur.com/fbI2ybo.png",
-        "url": "http://202.62.56.22:8080/hls/MOITV.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "KH"
-    },
-    {
-        "name": "Legislative Assembly of British Columbia",
-        "id": "LegislativeAssemblyofBritishColumbia.ca",
-        "logo": "https://i.imgur.com/5QGxHhh.png",
-        "url": "https://cdn3.wowza.com/5/YldIU1hsTlljRWZF/hbs-prim-house-httpo/HouseP.smil/playlist.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "CA"
-    },
-    {
-        "name": "Legislative Assembly of British Columbia Committee A",
-        "id": "LegislativeAssemblyofBritishColumbiaCommitteeA.ca",
-        "logo": "https://www.lyngsat.com/logo/tv/ll/legislative-assembly-of-british-columbia-ca.png",
-        "url": "https://cdn3.wowza.com/5/YldIU1hsTlljRWZF/hbs-prim-dougfir-httpo/DougFirP.smil/playlist.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "CA"
-    },
-    {
         "name": "Canal Gov",
         "id": "CanalGov.br",
         "logo": "https://i.imgur.com/rHPY0Yv.png",
@@ -70,6 +30,46 @@
         "country": "BR"
     },
     {
+        "name": "MOI TV",
+        "id": "MOITV.kh",
+        "logo": "https://i.imgur.com/fbI2ybo.png",
+        "url": "http://202.62.56.22:8080/hls/MOITV.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "KH"
+    },
+    {
+        "name": "LCP",
+        "id": "LCP.fr",
+        "logo": "https://i.imgur.com/k7UImOJ.png",
+        "url": "https://viamotionhsi.netplus.ch/live/eds/lcp/browser-HLS8/lcp.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "FR"
+    },
+    {
+        "name": "Legislative Assembly of British Columbia",
+        "id": "LegislativeAssemblyofBritishColumbia.ca",
+        "logo": "https://i.imgur.com/5QGxHhh.png",
+        "url": "https://cdn3.wowza.com/5/YldIU1hsTlljRWZF/hbs-prim-house-httpo/HouseP.smil/playlist.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "CA"
+    },
+    {
+        "name": "Legislative Assembly of British Columbia Committee A",
+        "id": "LegislativeAssemblyofBritishColumbiaCommitteeA.ca",
+        "logo": "https://www.lyngsat.com/logo/tv/ll/legislative-assembly-of-british-columbia-ca.png",
+        "url": "https://cdn3.wowza.com/5/YldIU1hsTlljRWZF/hbs-prim-dougfir-httpo/DougFirP.smil/playlist.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "CA"
+    },
+    {
         "name": "Ontario Parliamentary Network",
         "id": "OntarioParliamentaryNetwork.ca",
         "logo": "https://i.imgur.com/xKXs6ER.png",
@@ -78,16 +78,6 @@
             "legislative"
         ],
         "country": "CA"
-    },
-    {
-        "name": "Parliament TV",
-        "id": "ParliamentTV.nz",
-        "logo": "https://i.imgur.com/2aHW4q7.png",
-        "url": "https://ptvlive.kordia.net.nz/out/v1/daf20b9a9ec5449dadd734e50ce52b74/index.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "NZ"
     },
     {
         "name": "Legislative Assembly TV Nunavut",
@@ -110,14 +100,84 @@
         "country": "CA"
     },
     {
-        "name": "LCP",
-        "id": "LCP.fr",
-        "logo": "https://i.imgur.com/k7UImOJ.png",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/lcp/browser-HLS8/lcp.m3u8",
+        "name": "Parliament TV",
+        "id": "ParliamentTV.nz",
+        "logo": "https://i.imgur.com/2aHW4q7.png",
+        "url": "https://ptvlive.kordia.net.nz/out/v1/daf20b9a9ec5449dadd734e50ce52b74/index.m3u8",
         "categories": [
             "legislative"
         ],
-        "country": "FR"
+        "country": "NZ"
+    },
+    {
+        "name": "Tweede Kamer: Actualiteitenkanaal",
+        "id": "TweedeKamerActualiteitenkanaal.nl",
+        "logo": "https://i.imgur.com/X9fezZ8.png",
+        "url": "https://livestreaming.b67buv2.tweedekamer.nl/live/evenementenkanaal/index.m3u8?hd=1&keyframes=1&subtitles=live",
+        "categories": [
+            "legislative"
+        ],
+        "country": "NL"
+    },
+    {
+        "name": "Tweede Kamer: Enquetezaal",
+        "id": "TweedeKamerEnquetezaal.nl",
+        "logo": "https://i.imgur.com/X9fezZ8.png",
+        "url": "https://livestreaming.b67buv2.tweedekamer.nl/live/enquetezaal/index.m3u8?hd=1&keyframes=1&subtitles=live",
+        "categories": [
+            "legislative"
+        ],
+        "country": "NL"
+    },
+    {
+        "name": "Tweede Kamer: Groen van Prinstererzaal",
+        "id": "TweedeKamerGroenvanPrinstererzaal.nl",
+        "logo": "https://i.imgur.com/X9fezZ8.png",
+        "url": "https://livestreaming.b67buv2.tweedekamer.nl/live/groenvanprinstererzaal/index.m3u8?hd=1&keyframes=1&subtitles=live",
+        "categories": [
+            "legislative"
+        ],
+        "country": "NL"
+    },
+    {
+        "name": "Tweede Kamer: Max van der Stoelzaal",
+        "id": "TweedeKamerMaxvanderStoelzaal.nl",
+        "logo": "https://i.imgur.com/X9fezZ8.png",
+        "url": "https://livestreaming.b67buv2.tweedekamer.nl/live/maxvanderstoelzaal/index.m3u8?hd=1&keyframes=1&subtitles=live",
+        "categories": [
+            "legislative"
+        ],
+        "country": "NL"
+    },
+    {
+        "name": "Tweede Kamer: Suze Groenewegzaal",
+        "id": "TweedeKamerSuzeGroenewegzaal.nl",
+        "logo": "https://i.imgur.com/X9fezZ8.png",
+        "url": "https://livestreaming.b67buv2.tweedekamer.nl/live/suzegroenewegzaal/index.m3u8?hd=1&keyframes=1&subtitles=live",
+        "categories": [
+            "legislative"
+        ],
+        "country": "NL"
+    },
+    {
+        "name": "Tweede Kamer: Troelstrazaal",
+        "id": "TweedeKamerTroelstrazaal.nl",
+        "logo": "https://i.imgur.com/X9fezZ8.png",
+        "url": "https://livestreaming.b67buv2.tweedekamer.nl/live/troelstrazaal/index.m3u8?hd=1&keyframes=1&subtitles=live",
+        "categories": [
+            "legislative"
+        ],
+        "country": "NL"
+    },
+    {
+        "name": "Tweede Kamer: Wttewaall van Stoetwegenzaal",
+        "id": "TweedeKamerWttewaallvanStoetwegenzaal.nl",
+        "logo": "https://i.imgur.com/X9fezZ8.png",
+        "url": "https://livestreaming.b67buv2.tweedekamer.nl/live/wttewaallvanstoetwegenzaal/index.m3u8?hd=1&keyframes=1&subtitles=live",
+        "categories": [
+            "legislative"
+        ],
+        "country": "NL"
     },
     {
         "name": "Stockton Gov TV",
@@ -250,30 +310,10 @@
         "country": "US"
     },
     {
-        "name": "BATV Government TV",
-        "id": "BATVGovernmentTV.us",
-        "logo": "https://i.imgur.com/VPGIfVh.png",
-        "url": "https://reflect-batv.cablecast.tv/live-3/live/live.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "US"
-    },
-    {
         "name": "C-SPAN 2",
         "id": "CSPAN2.us",
         "logo": "https://i.imgur.com/9B6XIQC.png",
         "url": "http://fl1.moveonjoy.com/C-SPAN/index.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Apple Valley Channel 180",
-        "id": "AppleValleyChannel180.us",
-        "logo": "https://i.imgur.com/3h9RkFA.png",
-        "url": "https://reflect-applevalley.cablecast.tv/live-3/live/live.m3u8",
         "categories": [
             "legislative"
         ],
@@ -310,6 +350,26 @@
         "country": "SK"
     },
     {
+        "name": "Duma TV",
+        "id": "DumaTV.ru",
+        "logo": "https://i.imgur.com/JvlO3PU.png",
+        "url": "https://dumatv.iptv2022.com/index.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "RU"
+    },
+    {
+        "name": "Privesc.Eu TV",
+        "id": "PrivescEuTV.md",
+        "logo": "https://i.imgur.com/ukBacSn.png",
+        "url": "https://cachestar.privesc.eu/liniar/moldova/playlist.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "MD"
+    },
+    {
         "name": "Parlamentsfernsehen 3",
         "id": "Parlamentsfernsehen3.de",
         "logo": "https://i.imgur.com/mksEgwx.png",
@@ -338,16 +398,6 @@
             "legislative"
         ],
         "country": "DE"
-    },
-    {
-        "name": "Privesc.Eu TV",
-        "id": "PrivescEuTV.md",
-        "logo": "https://i.imgur.com/ukBacSn.png",
-        "url": "https://cachestar.privesc.eu/liniar/moldova/playlist.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "MD"
     },
     {
         "name": "Parlamentsfernsehen 1",
@@ -410,26 +460,6 @@
         "country": "MX"
     },
     {
-        "name": "RTM Parlimen Dewan Negara",
-        "id": "RTMParlimenDewanNegara.my",
-        "logo": "https://i.postimg.cc/mgrVsTMY/header.png",
-        "url": "https://d25tgymtnqzu8s.cloudfront.net/smil:negara/playlist.m3u8?id=8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "MY"
-    },
-    {
-        "name": "RTM Parlimen Dewan Rakyat",
-        "id": "RTMParlimenDewanRakyat.my",
-        "logo": "https://i.postimg.cc/mgrVsTMY/header.png",
-        "url": "https://d25tgymtnqzu8s.cloudfront.net/smil:rakyat/playlist.m3u8?id=7",
-        "categories": [
-            "legislative"
-        ],
-        "country": "MY"
-    },
-    {
         "name": "Icrtv Colima",
         "id": "IcrtvColima.mx",
         "logo": "https://i.imgur.com/iUks0ot.png",
@@ -450,16 +480,6 @@
         "country": "MX"
     },
     {
-        "name": "TV from the Danish Parliament",
-        "id": "TVfromtheDanishParliament.dk",
-        "logo": "https://i.imgur.com/RqQDUzX.png",
-        "url": "https://cdnapi.kaltura.com/p/2158211/sp/327418300/playManifest/entryId/1_24gfa7qq/protocol/https/format/applehttp/a.m3u8",
-        "categories": [
-            "legislative"
-        ],
-        "country": "DK"
-    },
-    {
         "name": "The Parliamentary Channel",
         "id": "TheParliamentaryChannel.bs",
         "logo": "https://i.imgur.com/YjPJ8zZ.png",
@@ -470,14 +490,14 @@
         "country": "BS"
     },
     {
-        "name": "Orszaggyules: OGY plenaris",
-        "id": "OrszaggyulesOGYplenaris.hu",
-        "logo": "https://i.imgur.com/hbblRpZ.png",
-        "url": "https://plenaris.parlament.hu:446/edgelive/smil:mkogyplen.smil/playlist.m3u8",
+        "name": "TV from the Danish Parliament",
+        "id": "TVfromtheDanishParliament.dk",
+        "logo": "https://i.imgur.com/RqQDUzX.png",
+        "url": "https://cdnapi.kaltura.com/p/2158211/sp/327418300/playManifest/entryId/1_24gfa7qq/protocol/https/format/applehttp/a.m3u8",
         "categories": [
             "legislative"
         ],
-        "country": "HU"
+        "country": "DK"
     },
     {
         "name": "Thai Parliament Television",
@@ -490,6 +510,16 @@
         "country": "TH"
     },
     {
+        "name": "Orszaggyules: OGY plenaris",
+        "id": "OrszaggyulesOGYplenaris.hu",
+        "logo": "https://i.imgur.com/hbblRpZ.png",
+        "url": "https://plenaris.parlament.hu:446/edgelive/smil:mkogyplen.smil/playlist.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "HU"
+    },
+    {
         "name": "Orszaggyules: OGY TAB",
         "id": "OrszaggyulesOGYTAB.hu",
         "logo": "https://i.imgur.com/hbblRpZ.png",
@@ -500,14 +530,14 @@
         "country": "HU"
     },
     {
-        "name": "Parliament of Malta",
-        "id": "ParliamentofMalta.mt",
-        "logo": "https://upload.wikimedia.org/wikipedia/en/5/53/Logo_of_the_Parliament_of_Malta.png",
-        "url": "http://80.79.6.221:25461/smash/public/23",
+        "name": "Legislative Assembly of El Salvador",
+        "id": "LegislativeAssemblyofElSalvador.sv",
+        "logo": "https://i.imgur.com/OBuiCyb.png",
+        "url": "https://streaming.asamblea.gob.sv/hls/plenariahd.m3u8",
         "categories": [
             "legislative"
         ],
-        "country": "MT"
+        "country": "SV"
     },
     {
         "name": "ARTV",
