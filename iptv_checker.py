@@ -17,13 +17,22 @@ import sys
 from fuzzywuzzy import fuzz
 import shutil
 from difflib import SequenceMatcher
-import html  # For decoding entities like &#038; to &
+import html
 from datetime import date, timedelta
+from typing import List, Dict, Set, Tuple, Optional
+import hashlib
 
 # Configure logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.StreamHandler(),
+        logging.FileHandler('iptv_collector.log')
+    ]
+)
 
-# URLs (loaded from environment variables, no defaults to ensure secrecy)
+# URLs
 CHANNELS_URL = os.getenv("CHANNELS_URL", "https://iptv-org.github.io/api/channels.json")
 STREAMS_URL = os.getenv("STREAMS_URL", "https://iptv-org.github.io/api/streams.json")
 LOGOS_URL = os.getenv("LOGOS_URL", "https://iptv-org.github.io/api/logos.json")
@@ -34,7 +43,7 @@ M3U_URLS = [
     os.getenv("M3U_URL_2", "")
 ]
 
-# Additional M3U for news and XXX to get more channels
+# Additional M3U
 ADDITIONAL_M3U = [
     "https://raw.githubusercontent.com/ipstreet312/freeiptv/refs/heads/master/all.m3u",
     "https://raw.githubusercontent.com/abusaeeidx/IPTV-Scraper-Zilla/refs/heads/main/combined-playlist.m3u"
@@ -44,28 +53,40 @@ ADDITIONAL_M3U = [
 WORKING_CHANNELS_BASE = "working_channels"
 CATEGORIES_DIR = "categories"
 COUNTRIES_DIR = "countries"
+FAILED_CHANNELS_FILE = "failed_channels.json"
 
-# Settings - Optimized for speed but still thorough
-MAX_CONCURRENT = int(os.getenv("MAX_CONCURRENT", 100))  # Increased for efficiency
-INITIAL_TIMEOUT = 20  # Increased for reliability
-MAX_TIMEOUT = 30  # Balanced maximum timeout
-RETRIES = 2  # Reduced for efficiency
+# Settings
+MAX_CONCURRENT = int(os.getenv("MAX_CONCURRENT", 100))
+INITIAL_TIMEOUT = 25
+MAX_TIMEOUT = 40
+RETRIES = 3
 BATCH_DELAY = 0.1
-BATCH_SIZE = 500
+BATCH_SIZE = 400
 USE_HEAD_METHOD = True
-BYTE_RANGE_CHECK = False  # Disabled for broader compatibility
 KENYA_HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
 MAX_CHANNELS_PER_FILE = 4000
+MIN_STREAM_SIZE = 100  # Minimum bytes to consider a stream valid
 
-# Unwanted extensions for filtering
-UNWANTED_EXTENSIONS = ['.mkv', '.mp4', '.avi', '.mov', '.flv', '.wmv']
+# Unwanted extensions - Direct video/audio files to reject
+UNWANTED_EXTENSIONS = [
+    '.mkv', '.mp4', '.avi', '.mov', '.flv', '.wmv', 
+    '.mp3', '.aac', '.wav', '.wma', '.ogg', '.flac',  # Audio files
+    '.webm', '.m4v', '.3gp', '.vob', '.ogv', '.mpg', '.mpeg',  # More video formats
+    '.wma', '.m4a', '.opus', '.mk3d', '.mka', '.mks'  # More media formats
+]
 
 # Scraper headers
 SCRAPER_HEADERS = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+    'Accept': '*/*',
+    'Accept-Language': 'en-US,en;q=0.9',
+    'Accept-Encoding': 'gzip, deflate',
+    'Connection': 'keep-alive',
+    'Cache-Control': 'no-cache',
+    'Pragma': 'no-cache'
 }
 
-def delete_split_files(base_name):
+def delete_split_files(base_name: str):
     """Delete all split files and the base file if exists."""
     ext = '.json'
     if os.path.exists(base_name + ext):
@@ -78,31 +99,52 @@ def delete_split_files(base_name):
         os.remove(part_file)
         part += 1
 
-def load_split_json(base_name):
+def load_split_json(base_name: str) -> List[Dict]:
     """Load data from split JSON files or the base file."""
     ext = '.json'
     all_data = []
+    
+    # First try the base file
+    if os.path.exists(base_name + ext):
+        try:
+            with open(base_name + ext, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                if isinstance(data, list):
+                    all_data.extend(data)
+        except Exception as e:
+            logging.error(f"Error loading {base_name}.json: {e}")
+    
+    # Then try split files
     part = 1
     while True:
         part_file = f"{base_name}{part}{ext}"
         if not os.path.exists(part_file):
             break
-        with open(part_file, 'r', encoding='utf-8') as f:
-            all_data.extend(json.load(f))
+        try:
+            with open(part_file, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                if isinstance(data, list):
+                    all_data.extend(data)
+        except Exception as e:
+            logging.error(f"Error loading {part_file}: {e}")
         part += 1
-    if not all_data and os.path.exists(base_name + ext):
-        with open(base_name + ext, 'r', encoding='utf-8') as f:
-            all_data = json.load(f)
+    
     return all_data
 
-def save_split_json(base_name, data):
+def save_split_json(base_name: str, data: List[Dict]):
     """Save data to JSON, splitting if exceeds MAX_CHANNELS_PER_FILE."""
     if not data:
         return
+    
     ext = '.json'
+    
+    # Delete old files first
+    delete_split_files(base_name)
+    
     if len(data) <= MAX_CHANNELS_PER_FILE:
         with open(base_name + ext, 'w', encoding='utf-8') as f:
             json.dump(data, f, indent=4, ensure_ascii=False)
+        logging.info(f"Saved {len(data)} channels to {base_name}.json")
     else:
         part_num = 1
         for i in range(0, len(data), MAX_CHANNELS_PER_FILE):
@@ -110,33 +152,29 @@ def save_split_json(base_name, data):
             part_file = f"{base_name}{part_num}{ext}"
             with open(part_file, 'w', encoding='utf-8') as f:
                 json.dump(chunk, f, indent=4, ensure_ascii=False)
+            logging.info(f"Saved {len(chunk)} channels to {part_file}")
             part_num += 1
 
-def scrape_daily_m3u_urls(max_working=5):
+def scrape_daily_m3u_urls(max_working: int = 5) -> List[str]:
     """Scrape daily working M3U URLs from world-iptv.club."""
     logging.info("Starting daily M3U URL scraper...")
     
-    # Get current date in DD-MM-YYYY format
     current_date = date.today().strftime("%d-%m-%Y")
-
-    # Fetch the category page
+    
     url = 'https://world-iptv.club/category/iptv/'
     try:
-        response = requests.get(url, headers=SCRAPER_HEADERS)
+        response = requests.get(url, headers=SCRAPER_HEADERS, timeout=30)
         if response.status_code != 200:
             logging.error(f"Failed to fetch the page: {response.status_code}")
             return []
     except Exception as e:
         logging.error(f"Error fetching category page: {e}")
         return []
-
+    
     content = response.text
-
-    # Regex to find all href attributes (general, to catch more)
     pattern = r'<a\s+[^>]*href=[\'"]([^\'"]+)[\'"]'
     matches = re.findall(pattern, content, re.IGNORECASE)
-
-    # Convert to full URLs, filter for those containing 'm3u', and remove duplicates
+    
     urls = []
     seen = set()
     for match in matches:
@@ -146,108 +184,73 @@ def scrape_daily_m3u_urls(max_working=5):
             elif match.startswith('http'):
                 full_url = match
             else:
-                continue  # Skip invalid
-        
+                continue
+            
             if full_url not in seen:
                 seen.add(full_url)
                 urls.append(full_url)
-
-    # Filter for URLs containing the current date like -DD-MM-YYYY/
+    
     current_urls = [u for u in urls if f'-{current_date}/' in u]
-
-    # If none for current, try previous day
+    
     prev_date = None
     if not current_urls:
         prev_date = (date.today() - timedelta(days=1)).strftime("%d-%m-%Y")
         current_urls = [u for u in urls if f'-{prev_date}/' in u]
-
-    # Get up to the first 5
+    
     top_5_urls = current_urls[:5]
-
+    
     if not top_5_urls:
         fallback_date = (date.today() - timedelta(days=2)).strftime("%d-%m-%Y")
         logging.warning(f"No URLs found for recent dates: {current_date}, {prev_date or 'N/A'}, or {fallback_date}")
         return []
-
+    
     date_used = current_date if f'-{current_date}/' in top_5_urls[0] else prev_date
     logging.info(f"Using date: {date_used}")
-    logging.info("Scraped playlist pages:")
-    for i, link in enumerate(top_5_urls, 1):
-        logging.info(f"{i}. {link}")
-
-    # Now, visit each and extract .m3u / get.php links
+    
     working_m3u = []
     for page_url in top_5_urls:
         logging.info(f"\nFetching {page_url}...")
         try:
             resp = requests.get(page_url, headers=SCRAPER_HEADERS, timeout=30)
             if resp.status_code != 200:
-                logging.warning(f"Failed to fetch page: {resp.status_code}")
                 continue
-        except Exception as e:
-            logging.error(f"Error fetching page: {e}")
+        except Exception:
             continue
         
         page_content = resp.text
-        
-        # Broader pattern for M3U: .m3u or get.php?...type=m3u/m3u_plus/m3u8
         m3u_pattern = r'(?:\.m3u|get\.php\?.*?type=(?:m3u|m3u_plus|m3u8))'
-        
-        # Extract from hrefs
         href_pattern = r'<a\s+[^>]*href=[\'"]([^\'"]+)[\'"]'
         all_hrefs = re.findall(href_pattern, page_content, re.IGNORECASE)
         href_m3u = [html.unescape(h) for h in all_hrefs if re.search(m3u_pattern, h, re.IGNORECASE)]
         
-        # Fallback/Enhance: Extract from raw text
         text_pattern = r'https?://[^\s<>"\']+'
         all_urls_in_text = re.findall(text_pattern, page_content)
         text_m3u = [html.unescape(u) for u in all_urls_in_text if re.search(m3u_pattern, u, re.IGNORECASE)]
         
-        # Union, make full, dedupe
         m3u_matches = list(set(href_m3u + text_m3u))
         m3u_matches = [urljoin(page_url, m) if not m.startswith('http') else m for m in m3u_matches]
-        m3u_matches = list(dict.fromkeys(m3u_matches))  # Preserve order, remove dups
+        m3u_matches = list(dict.fromkeys(m3u_matches))
         
-        logging.info(f"Found {len(m3u_matches)} potential M3U/stream links on this page.")
-        
-        for idx, m3u_match in enumerate(m3u_matches):
-            full_m3u = m3u_match  # Already full and decoded
-            
-            logging.info(f"  Testing {idx+1}: {full_m3u}")
-            
-            # Test if working: GET and check status and non-empty content
+        for m3u_match in m3u_matches:
+            full_m3u = m3u_match
             try:
                 m3u_resp = requests.get(full_m3u, headers=SCRAPER_HEADERS, timeout=30, stream=True)
-                status = m3u_resp.status_code
-                content_len = len(m3u_resp.content)
-                content_preview = m3u_resp.text[:100] + '...' if len(m3u_resp.text) > 100 else m3u_resp.text
-                
-                logging.info(f"    Status: {status}, Length: {content_len}")
-                if content_len <= 100:  # Only preview if small/relevant
-                    logging.info(f"    Preview: {content_preview}")
-                
-                # Enhanced check: M3U signature + optional content-type
-                is_m3u = status == 200 and content_len > 50 and '#EXT' in m3u_resp.text
-                if is_m3u or 'm3u' in m3u_resp.headers.get('content-type', '').lower():
-                    working_m3u.append(full_m3u)
-                    logging.info(f"    -> WORKING!")
-                    if len(working_m3u) >= max_working:
-                        break
-                else:
-                    logging.info(f"    -> Not working (status, size, or format issue)")
-            except Exception as e:
-                logging.error(f"    -> Error: {e}")
-            
+                if m3u_resp.status_code == 200 and len(m3u_resp.content) > 100:
+                    if '#EXT' in m3u_resp.text:
+                        working_m3u.append(full_m3u)
+                        if len(working_m3u) >= max_working:
+                            break
+            except Exception:
+                continue
+        
         if len(working_m3u) >= max_working:
             break
-
+    
     if working_m3u:
-        logging.info(f"Scraped {len(working_m3u)} working M3U URLs:")
-        for i, m3u in enumerate(working_m3u, 1):
-            logging.info(f"{i}. {m3u}")
+        logging.info(f"Scraped {len(working_m3u)} working M3U URLs")
     else:
-        logging.warning("No working M3U URLs found after testing all.")
-
+        logging.warning("No working M3U URLs found")
+    
     return working_m3u
 
 class FastChecker:
@@ -256,118 +259,340 @@ class FastChecker:
             limit=MAX_CONCURRENT,
             force_close=True,
             enable_cleanup_closed=True,
-            ttl_dns_cache=300
+            ttl_dns_cache=300,
+            ssl=False
         )
         self.timeout = ClientTimeout(total=INITIAL_TIMEOUT)
         self.semaphore = asyncio.Semaphore(MAX_CONCURRENT)
-
-    def has_unwanted_extension(self, url):
-        """Check if URL has unwanted video file extension"""
+        self.session_headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Accept': '*/*',
+            'Accept-Language': 'en-US,en;q=0.9',
+            'Accept-Encoding': 'gzip, deflate',
+            'Connection': 'keep-alive',
+            'Cache-Control': 'no-cache',
+            'Pragma': 'no-cache'
+        }
+        self.working_cache = {}
+        self.failed_cache = {}
+        
+    def has_unwanted_extension(self, url: str) -> bool:
+        """Check if URL has unwanted video/audio file extension."""
+        if not url:
+            return True
+            
+        url_lower = url.lower()
+        # Remove query parameters for extension checking
+        url_without_query = url_lower.split('?')[0].split('#')[0]
+        
+        # Check for direct video/audio file extensions
+        return any(url_without_query.endswith(ext) for ext in UNWANTED_EXTENSIONS)
+    
+    def is_valid_stream_url(self, url: str) -> bool:
+        """Check if URL is a valid stream URL (not direct video/audio file)."""
         if not url:
             return False
-        return any(url.lower().endswith(ext) for ext in UNWANTED_EXTENSIONS)
-
-    async def check_single_url(self, session, url):
-        """Efficient but thorough URL checker with improved reliability"""
+        
+        # First, reject unwanted extensions
+        if self.has_unwanted_extension(url):
+            return False
+        
+        url_lower = url.lower()
+        
+        # Accept streaming formats
+        streaming_formats = ['.m3u8', '.m3u']
+        if any(url_lower.endswith(fmt) or fmt in url_lower for fmt in streaming_formats):
+            return True
+        
+        # Accept URLs with streaming patterns
+        streaming_patterns = [
+            '/live.m3u8', '/stream.m3u8', '/playlist.m3u8', 
+            '/chunklist.m3u8', '/index.m3u8', '/hls/', '/live/',
+            'type=m3u8', 'format=m3u8', 'stream=true', 'live=true'
+        ]
+        
+        if any(pattern in url_lower for pattern in streaming_patterns):
+            return True
+        
+        # Special handling for .ts files - only accept if they're clearly HLS segments
+        if '.ts' in url_lower:
+            # Check if it's in an HLS context
+            if any(x in url_lower for x in ['m3u8', 'hls', '/seg', '/chunk', 'segment']):
+                return True
+            # Otherwise reject as direct video file
+            return False
+        
+        # Check for other streaming indicators
+        streaming_keywords = ['/live.', '/stream.', '/manifest.', 'm3u8', 'hls.']
+        url_path = urlparse(url_lower).path
+        
+        # Check path for streaming indicators
+        if any(keyword in url_path for keyword in streaming_keywords):
+            return True
+        
+        # If URL has no extension but contains streaming keywords
+        if not re.search(r'\.[a-z0-9]{2,4}(?:\?|$)', url_lower):
+            # No clear extension, check for streaming patterns in whole URL
+            if any(keyword in url_lower for keyword in ['/live', '/stream', '/hls', 'm3u8']):
+                return True
+        
+        return False
+    
+    async def validate_m3u8_content(self, content: str, url: str) -> bool:
+        """Validate m3u8 content thoroughly."""
+        if not content:
+            logging.debug(f"No content for m3u8: {url}")
+            return False
+        
+        # Must have M3U header
+        if '#EXTM3U' not in content:
+            logging.debug(f"m3u8 missing header: {url}")
+            return False
+        
+        try:
+            # Try to parse the playlist
+            playlist = m3u8.loads(content)
+            
+            # Check if it's a valid playlist
+            if playlist.is_variant:
+                # Master playlist should have variants
+                if not playlist.playlists:
+                    logging.debug(f"Master playlist without variants: {url}")
+                    return False
+                return True
+            else:
+                # Media playlist should have segments
+                if not playlist.segments:
+                    logging.debug(f"Media playlist without segments: {url}")
+                    return False
+                return True
+                
+        except Exception as e:
+            logging.debug(f"m3u8 parsing failed for {url}: {e}")
+            # Even if parsing fails, check for stream content
+            stream_indicators = ['#EXTINF:', '#EXT-X-STREAM-INF:', '.ts', 'http://', 'https://']
+            has_stream_content = any(indicator in content for indicator in stream_indicators)
+            return has_stream_content
+    
+    async def check_stream_directly(self, session: aiohttp.ClientSession, url: str, timeout: int) -> Tuple[bool, Optional[str]]:
+        """Check a stream URL directly with thorough validation."""
+        try:
+            async with session.get(
+                url,
+                timeout=ClientTimeout(total=timeout),
+                headers=self.session_headers,
+                allow_redirects=True,
+                raise_for_status=False
+            ) as response:
+                
+                # Check status code
+                if response.status not in [200, 206]:
+                    return False, f"HTTP {response.status}"
+                
+                # Check content type
+                content_type = response.headers.get('Content-Type', '').lower()
+                
+                # Reject HTML pages and suspicious content types
+                if 'text/html' in content_type:
+                    # Read a bit to confirm
+                    chunk = await response.content.read(1024)
+                    if chunk:
+                        try:
+                            text = chunk.decode('utf-8', errors='ignore').lower()
+                            if '<html' in text or '<!doctype' in text:
+                                return False, "HTML page"
+                        except:
+                            pass
+                
+                # Read first chunk to check content
+                chunk = await response.content.read(32768)  # 32KB for better detection
+                if not chunk or len(chunk) < MIN_STREAM_SIZE:
+                    return False, f"Too small ({len(chunk) if chunk else 0} bytes)"
+                
+                # Check for common error patterns
+                try:
+                    text = chunk.decode('utf-8', errors='ignore').lower()
+                    
+                    # Error page indicators
+                    error_patterns = [
+                        '<html', '<!doctype', '<body', '<head', '<title>',
+                        'error', '404', 'not found', 'forbidden', 'access denied',
+                        'cloudflare', 'nginx', 'apache', 'this site can\'t be reached',
+                        'the page cannot be found', '403 forbidden', '500 internal server error',
+                        '502 bad gateway', '503 service unavailable', '504 gateway timeout'
+                    ]
+                    
+                    # Count error indicators
+                    error_count = sum(1 for pattern in error_patterns if pattern in text)
+                    if error_count >= 2:
+                        return False, f"Error page detected"
+                    
+                    # Check if it's m3u8/m3u content
+                    is_m3u = '.m3u8' in url.lower() or '.m3u' in url.lower() or 'm3u8' in content_type
+                    if is_m3u or '#EXTM3U' in text.upper():
+                        # Read more for m3u validation if needed
+                        if len(chunk) < 65536:
+                            more_chunk = await response.content.read(65536 - len(chunk))
+                            if more_chunk:
+                                text += more_chunk.decode('utf-8', errors='ignore')
+                        
+                        if not await self.validate_m3u8_content(text.upper(), url):
+                            return False, "Invalid m3u8 content"
+                        return True, "Valid m3u8 stream"
+                    
+                    # Check for other playlist formats
+                    if '#EXTINF' in text.upper():
+                        return True, "M3U playlist"
+                    
+                except UnicodeDecodeError:
+                    # Binary content - likely a media stream or segment
+                    # Check if it's a .ts segment
+                    if '.ts' in url.lower():
+                        return True, "TS segment"
+                    # For other binary content, check if it's large enough to be media
+                    if len(chunk) >= 4096:  # At least 4KB of binary data
+                        return True, "Binary stream data"
+                    return False, "Small binary file"
+                
+                # If we get here and it's not an error page, accept it
+                # Some streams might send plain text manifests or other formats
+                return True, "Stream data"
+                
+        except asyncio.TimeoutError:
+            return False, "Timeout"
+        except aiohttp.ClientError as e:
+            return False, f"Client error: {str(e)}"
+        except Exception as e:
+            return False, f"Error: {str(e)}"
+    
+    async def check_single_url(self, session: aiohttp.ClientSession, url: str) -> Tuple[str, bool, Optional[str]]:
+        """Check a single URL with multiple strategies."""
         # Skip URLs with unwanted extensions
         if self.has_unwanted_extension(url):
-            return url, False
-            
-        try:
-            # First try HEAD request (fastest)
-            if USE_HEAD_METHOD:
-                try:
-                    async with session.head(url, timeout=self.timeout, allow_redirects=True) as response:
-                        if response.status == 200:
-                            content_type = response.headers.get('Content-Type', '').lower()
-                            if 'text/html' in content_type:
-                                # Potential error page, fall through to GET
-                                pass
-                            else:
-                                # Non-HTML, assume good
-                                return url, True
-                        elif response.status in [301, 302, 307, 308]:
-                            # Redirects handled by allow_redirects, but re-check final
-                            pass
-                        return url, False  # Non-200
-                except (aiohttp.ClientError, asyncio.TimeoutError):
-                    pass  # Fall through to GET
-            
-            # GET request with improved checks
+            return url, False, "Unwanted extension"
+        
+        # Check if it's a valid stream URL
+        if not self.is_valid_stream_url(url):
+            return url, False, "Not a valid stream URL"
+        
+        # Check cache first
+        if url in self.working_cache:
+            return url, True, "Cached"
+        if url in self.failed_cache:
+            return url, False, self.failed_cache[url]
+        
+        for attempt in range(RETRIES + 1):
             try:
-                async with session.get(url, timeout=self.timeout, allow_redirects=True) as response:
-                    if response.status == 200:
-                        try:
-                            content = await response.content.read(1024)
-                            content_str = content.decode('utf-8', errors='ignore').lower()
-                            if '<html' in content_str or '<!doctype' in content_str:
-                                logging.debug(f"Detected HTML error page for {url}")
-                                return url, False
-                        except:
-                            # Binary content, assume stream
-                            pass
-                        
-                        # For m3u8, extra validation
-                        content_type = response.headers.get('Content-Type', '').lower()
-                        if url.endswith('.m3u8') or 'm3u8' in content_type:
-                            try:
-                                content_str = content.decode('utf-8', errors='ignore')
-                                if '#EXTM3U' not in content_str:
-                                    logging.debug(f"m3u8 without header for {url}, but status 200")
-                            except:
-                                pass  # Assume good
-                        
-                        return url, True
-                    return url, False
-            except (aiohttp.ClientError, asyncio.TimeoutError):
-                return url, False
-        except Exception:
-            return url, False
+                current_timeout = min(INITIAL_TIMEOUT * (attempt + 1), MAX_TIMEOUT)
+                
+                # Use GET with thorough validation
+                is_working, reason = await self.check_stream_directly(session, url, current_timeout)
+                
+                if is_working:
+                    self.working_cache[url] = True
+                    return url, True, reason
+                else:
+                    # Cache failures only on final attempt
+                    if attempt == RETRIES:
+                        self.failed_cache[url] = reason
+                    await asyncio.sleep(0.5 * (attempt + 1))
+                    
+            except Exception as e:
+                if attempt == RETRIES:
+                    self.failed_cache[url] = str(e)
+                await asyncio.sleep(0.5 * (attempt + 1))
+        
+        return url, False, self.failed_cache.get(url, "All attempts failed")
 
 class M3UProcessor:
     def __init__(self):
         self.unwanted_extensions = UNWANTED_EXTENSIONS
-        self.failed_urls = []
-
-    def has_unwanted_extension(self, url):
-        """Check if URL has unwanted video file extension"""
+        
+    def has_unwanted_extension(self, url: str) -> bool:
+        """Check if URL has unwanted video/audio file extension."""
+        if not url:
+            return True
+            
+        url_lower = url.lower()
+        # Remove query parameters for extension checking
+        url_without_query = url_lower.split('?')[0].split('#')[0]
+        
+        return any(url_without_query.endswith(ext) for ext in self.unwanted_extensions)
+    
+    def is_valid_stream_url(self, url: str) -> bool:
+        """Check if URL is a valid stream URL (not direct video/audio file)."""
         if not url:
             return False
-        return any(url.lower().endswith(ext) for ext in self.unwanted_extensions)
-
-    async def fetch_m3u_content(self, session, m3u_url):
-        """Fetch M3U content from URL"""
+        
+        # First, reject unwanted extensions
+        if self.has_unwanted_extension(url):
+            return False
+        
+        url_lower = url.lower()
+        
+        # Accept streaming formats
+        streaming_formats = ['.m3u8', '.m3u']
+        if any(url_lower.endswith(fmt) or fmt in url_lower for fmt in streaming_formats):
+            return True
+        
+        # Accept URLs with streaming patterns
+        streaming_patterns = [
+            '/live.m3u8', '/stream.m3u8', '/playlist.m3u8', 
+            '/chunklist.m3u8', '/index.m3u8', '/hls/', '/live/',
+            'type=m3u8', 'format=m3u8', 'stream=true', 'live=true'
+        ]
+        
+        if any(pattern in url_lower for pattern in streaming_patterns):
+            return True
+        
+        # Special handling for .ts files
+        if '.ts' in url_lower:
+            # Only accept if clearly HLS segment
+            if any(x in url_lower for x in ['m3u8', 'hls', '/seg', '/chunk', 'segment']):
+                return True
+            return False
+        
+        # Check for other streaming indicators
+        url_path = urlparse(url_lower).path
+        if any(keyword in url_path for keyword in ['/live.', '/stream.', '/manifest.']):
+            return True
+        
+        return False
+    
+    async def fetch_m3u_content(self, session: aiohttp.ClientSession, m3u_url: str) -> Optional[str]:
+        """Fetch M3U content from URL."""
         try:
             async with session.get(m3u_url, timeout=ClientTimeout(total=INITIAL_TIMEOUT)) as response:
                 if response.status == 200:
                     return await response.text()
-                else:
-                    logging.error(f"Failed to fetch M3U content from {m3u_url}: Status {response.status}")
-                    return None
+                return None
         except Exception as e:
-            logging.error(f"Error fetching M3U content from {m3u_url}: {e}")
+            logging.debug(f"Error fetching M3U {m3u_url}: {e}")
             return None
-
-    def parse_m3u(self, content):
-        """Parse M3U content and extract channel information"""
+    
+    def parse_m3u(self, content: str) -> List[Dict]:
+        """Parse M3U content and extract channel information, filtering out non-stream URLs."""
         channels = []
         current_channel = {}
         
         for line in content.split('\n'):
             line = line.strip()
-            if line.startswith('#EXTINF:-1'):
+            if line.startswith('#EXTINF:-1') or line.startswith('#EXTINF:'):
                 current_channel = self._parse_extinf_line(line)
             elif line and not line.startswith('#') and current_channel:
-                # Skip URLs with unwanted extensions
-                if not self.has_unwanted_extension(line):
+                # Only include if it's a valid stream URL
+                if self.is_valid_stream_url(line):
                     current_channel['url'] = line
                     channels.append(current_channel)
+                else:
+                    logging.debug(f"Filtered out non-stream URL: {line}")
                 current_channel = {}
         
+        logging.info(f"Filtered M3U: {len(channels)} valid stream URLs found")
         return channels
-
-    def _parse_extinf_line(self, line):
-        """Parse EXTINF line and extract metadata with improved country and name extraction"""
+    
+    def _parse_extinf_line(self, line: str) -> Dict:
+        """Parse EXTINF line and extract metadata."""
         attrs = dict(re.findall(r'(\S+)="([^"]*)"', line))
         channel_name = line.split(',')[-1].strip()
         
@@ -391,22 +616,21 @@ class M3UProcessor:
             'country_code': country_code,
             'raw_name': channel_name
         }
-
-    def _extract_categories(self, group_title):
-        """Extract categories from group-title, assuming format like 'TR/ Category'"""
+    
+    def _extract_categories(self, group_title: str) -> List[str]:
+        """Extract categories from group-title."""
         if not group_title:
             return ['general']
         parts = [p.strip().lower() for p in group_title.split('/') if p.strip()]
         if len(parts) > 1 and re.match(r'^[a-z]{2}$', parts[0]):
             return parts[1:]
         return parts
-
-    def format_channel_data(self, channels, logos_data):
-        """Format channel data into the desired JSON structure, preferring tvg-logo, using tvg-id for ID, extracting categories"""
+    
+    def format_channel_data(self, channels: List[Dict], logos_data: List[Dict]) -> List[Dict]:
+        """Format channel data into JSON structure."""
         formatted_channels = []
         
         for channel in channels:
-            # Prefer tvg-id for channel_id
             if channel['tvg_id']:
                 channel_id = channel['tvg_id'].lower()
             else:
@@ -416,7 +640,6 @@ class M3UProcessor:
                 country_code = channel['country_code']
                 channel_id = f"{base_id}.{country_code.lower()}" if country_code else base_id.lower()
             
-            # Prefer tvg-logo, fallback to logos_data
             logo_url = channel.get('tvg_logo', '')
             if not logo_url:
                 matching_logos = [l for l in logos_data if l["channel"] == channel_id]
@@ -434,8 +657,8 @@ class M3UProcessor:
         
         return formatted_channels
 
-def remove_duplicates(channels):
-    """Remove duplicate channels by URL and ID"""
+def remove_duplicates(channels: List[Dict]) -> List[Dict]:
+    """Remove duplicate channels by URL and ID."""
     seen_urls = set()
     seen_ids = set()
     unique_channels = []
@@ -446,49 +669,52 @@ def remove_duplicates(channels):
         
         if not channel_url or not channel_id:
             continue
-            
-        if channel_url not in seen_urls and channel_id not in seen_ids:
-            seen_urls.add(channel_url)
+        
+        # Use normalized URL for comparison (lowercase, remove trailing slash)
+        normalized_url = channel_url.lower().rstrip('/')
+        url_hash = hashlib.md5(normalized_url.encode()).hexdigest()
+        
+        if url_hash not in seen_urls and channel_id not in seen_ids:
+            seen_urls.add(url_hash)
             seen_ids.add(channel_id)
             unique_channels.append(channel)
         else:
-            logging.info(f"Removed duplicate channel: {channel.get('name')} (URL: {channel_url}, ID: {channel_id})")
+            logging.debug(f"Removed duplicate: {channel.get('name')} - {channel_url}")
     
     return unique_channels
 
-async def fetch_json(session, url):
+async def fetch_json(session: aiohttp.ClientSession, url: str) -> List[Dict]:
+    """Fetch JSON data from URL."""
     try:
-        async with session.get(url, headers={"Accept-Encoding": "gzip"}) as response:
-            response.raise_for_status()
-            text = await response.text()
-            return json.loads(text)
-    except json.JSONDecodeError as e:
-        logging.error(f"JSON decoding error for {url}: {e}")
+        async with session.get(url, headers=SCRAPER_HEADERS) as response:
+            if response.status == 200:
+                text = await response.text()
+                return json.loads(text)
     except Exception as e:
         logging.error(f"Error fetching {url}: {e}")
     return []
 
-def load_existing_data():
-    """Load all existing channel data from files, ensuring consistency."""
+def load_existing_data() -> Dict:
+    """Load all existing channel data from files."""
     existing_data = {
         "working_channels": [],
         "countries": {},
         "categories": {},
         "all_existing_channels": []
     }
-
+    
     existing_data["working_channels"] = load_split_json(WORKING_CHANNELS_BASE)
     existing_data["all_existing_channels"].extend(existing_data["working_channels"])
-
+    
     if os.path.exists(COUNTRIES_DIR):
         for filename in os.listdir(COUNTRIES_DIR):
-            if filename.endswith(".json") and filename != ".json":
+            if filename.endswith(".json"):
                 base = os.path.join(COUNTRIES_DIR, filename[:-5])
                 channels = load_split_json(base)
                 country = filename[:-5]
                 existing_data["countries"][country] = channels
                 existing_data["all_existing_channels"].extend(channels)
-
+    
     if os.path.exists(CATEGORIES_DIR):
         for filename in os.listdir(CATEGORIES_DIR):
             if filename.endswith(".json"):
@@ -497,28 +723,26 @@ def load_existing_data():
                 category = filename[:-5]
                 existing_data["categories"][category] = channels
                 existing_data["all_existing_channels"].extend(channels)
-
+    
     existing_data["all_existing_channels"] = remove_duplicates(existing_data["all_existing_channels"])
     return existing_data
 
 def clear_directories():
-    """Clear all JSON files in countries and categories directories to prevent stale data."""
+    """Clear all JSON files in countries and categories directories."""
     delete_split_files(WORKING_CHANNELS_BASE)
     for dir_path in [COUNTRIES_DIR, CATEGORIES_DIR]:
         if os.path.exists(dir_path):
             shutil.rmtree(dir_path)
         os.makedirs(dir_path, exist_ok=True)
 
-def save_channels(channels, country_files, category_files, append=False):
-    """Save channels to files - can replace or append to existing content.
-    When append=False, clears directories first to ensure no stale files remain.
-    """
+def save_channels(channels: List[Dict], country_files: Dict, category_files: Dict, append: bool = False):
+    """Save channels to files."""
     if not append:
         clear_directories()
-
+    
     os.makedirs(COUNTRIES_DIR, exist_ok=True)
     os.makedirs(CATEGORIES_DIR, exist_ok=True)
-
+    
     channels = remove_duplicates(channels)
     
     if append:
@@ -526,10 +750,8 @@ def save_channels(channels, country_files, category_files, append=False):
         existing_working.extend(channels)
         channels = remove_duplicates(existing_working)
     
-    # Write (replace or updated) working channels file
     save_split_json(WORKING_CHANNELS_BASE, channels)
-
-    # For country files
+    
     for country, country_channels in country_files.items():
         if not country or country == "Unknown":
             continue
@@ -545,10 +767,8 @@ def save_channels(channels, country_files, category_files, append=False):
             existing_country.extend(country_channels)
             country_channels = remove_duplicates(existing_country)
         
-        # Write (replace or updated)
         save_split_json(country_base, country_channels)
-
-    # For category files
+    
     for category, category_channels in category_files.items():
         if not category:
             continue
@@ -564,114 +784,117 @@ def save_channels(channels, country_files, category_files, append=False):
             existing_category.extend(category_channels)
             category_channels = remove_duplicates(existing_category)
         
-        # Write (replace or updated)
         save_split_json(category_base, category_channels)
 
-def update_logos_for_null_channels(channels, logos_data):
-    """Update logos for channels with logo: null using logos.json data"""
+def update_logos_for_null_channels(channels: List[Dict], logos_data: List[Dict]) -> List[Dict]:
+    """Update logos for channels with null logos."""
     updated_count = 0
     
     for channel in channels:
-        if channel.get("logo") is None or channel.get("logo") == "null" or not channel.get("logo"):
+        if not channel.get("logo") or channel.get("logo") in [None, "null", ""]:
             channel_id = channel.get("id")
             if channel_id:
                 matching_logos = [logo for logo in logos_data if logo["channel"] == channel_id]
                 if matching_logos:
                     channel["logo"] = matching_logos[0]["url"]
                     updated_count += 1
-                    logging.info(f"Updated logo for {channel_id}: {matching_logos[0]['url']}")
     
-    logging.info(f"Updated logos for {updated_count} channels with logo: null")
+    logging.info(f"Updated logos for {updated_count} channels")
     return channels
 
-async def validate_channels(session, checker, all_existing_channels, iptv_channel_ids, logos_data):
+async def validate_channels(session: aiohttp.ClientSession, checker: FastChecker, 
+                          all_existing_channels: List[Dict], iptv_channel_ids: Set, 
+                          logos_data: List[Dict]) -> int:
     """Validate existing channels and collect only working ones."""
     valid_channels_count = 0
     valid_channels = []
     country_files = {}
     category_files = {}
-
+    
     all_existing_channels = update_logos_for_null_channels(all_existing_channels, logos_data)
-
-    async def validate_channel(channel):
+    
+    async def validate_channel(channel: Dict) -> Optional[Dict]:
         async with checker.semaphore:
             channel_url = channel.get("url")
             if not channel_url:
                 return None
-
-            # Skip URLs with unwanted extensions
+            
             if checker.has_unwanted_extension(channel_url):
                 return None
-
-            # Ensure logo is from logos_data
-            ch_id = channel["id"]
-            matching_logos = [l for l in logos_data if l["channel"] == ch_id]
-            if matching_logos:
-                channel["logo"] = matching_logos[0]["url"]
-
-            for retry in range(RETRIES):
-                checker.timeout = ClientTimeout(total=min(INITIAL_TIMEOUT * (retry + 1), MAX_TIMEOUT))
-                _, is_working = await checker.check_single_url(session, channel_url)
-                if is_working:
-                    channel_copy = channel.copy()
-                    channel_copy["country"] = channel.get("country", "Unknown")
-                    channel_copy["categories"] = channel.get("categories", [])
-                    valid_channels.append(channel_copy)
-                    country = channel_copy["country"]
-                    country_files.setdefault(country, []).append(channel_copy)
-                    for cat in channel_copy["categories"]:
-                        category_files.setdefault(cat, []).append(channel_copy)
-                    return channel_copy
-                await asyncio.sleep(0.1 * (retry + 1))
+            
+            ch_id = channel.get("id")
+            if ch_id:
+                matching_logos = [l for l in logos_data if l["channel"] == ch_id]
+                if matching_logos:
+                    channel["logo"] = matching_logos[0]["url"]
+            
+            url, is_working, reason = await checker.check_single_url(session, channel_url)
+            if is_working:
+                channel_copy = channel.copy()
+                channel_copy["country"] = channel.get("country", "Unknown")
+                channel_copy["categories"] = channel.get("categories", [])
+                return channel_copy
             return None
-
-    total_channels = len(all_existing_channels)
-    batch_size = 500
     
-    for batch_start in range(0, total_channels, batch_size):
-        batch_end = min(batch_start + batch_size, total_channels)
-        current_batch = all_existing_channels[batch_start:batch_end]
+    total_channels = len(all_existing_channels)
+    
+    with tqdm(total=total_channels, desc="Validating channels") as pbar:
+        batch_size = BATCH_SIZE
         
-        tasks = [validate_channel(channel) for channel in current_batch]
-        results = await asyncio.gather(*tasks, return_exceptions=True)
-        for result in results:
-            if isinstance(result, Exception):
-                logging.error(f"Exception in validation: {result}")
-            elif result:
-                valid_channels_count += 1
-
+        for batch_start in range(0, total_channels, batch_size):
+            batch_end = min(batch_start + batch_size, total_channels)
+            current_batch = all_existing_channels[batch_start:batch_end]
+            
+            tasks = [validate_channel(channel) for channel in current_batch]
+            results = await asyncio.gather(*tasks, return_exceptions=True)
+            
+            for result in results:
+                if isinstance(result, Exception):
+                    continue
+                elif result:
+                    valid_channels.append(result)
+                    country = result.get("country", "Unknown")
+                    if country and country != "Unknown":
+                        country_files.setdefault(country, []).append(result)
+                    for cat in result.get("categories", []):
+                        if cat:
+                            category_files.setdefault(cat, []).append(result)
+                    valid_channels_count += 1
+            
+            pbar.update(len(current_batch))
+            await asyncio.sleep(BATCH_DELAY)
+    
     save_channels(valid_channels, country_files, category_files, append=False)
-
+    logging.info(f"Validated {valid_channels_count} working channels")
     return valid_channels_count
 
-async def check_iptv_channels(session, checker, channels_data, streams_dict, existing_urls, logos_data):
+async def check_iptv_channels(session: aiohttp.ClientSession, checker: FastChecker,
+                            channels_data: List[Dict], streams_dict: Dict,
+                            existing_urls: Set, logos_data: List[Dict]) -> int:
     """Check and add new IPTV channels that are working."""
     new_iptv_channels_count = 0
     new_channels = []
     country_files = {}
     category_files = {}
-
+    
     channels_to_check = [
-        channel
-        for channel in channels_data
-        if channel.get("id") in streams_dict
-        and streams_dict[channel["id"]].get("url") not in existing_urls
+        channel for channel in channels_data
+        if channel.get("id") in streams_dict and 
+        streams_dict[channel["id"]].get("url") not in existing_urls
     ]
-
-    async def process_channel(channel):
+    
+    async def process_channel(channel: Dict) -> Optional[Dict]:
         async with checker.semaphore:
             stream = streams_dict[channel["id"]]
             url = stream.get("url")
             if not url:
                 return None
-
-            # Skip URLs with unwanted extensions
+            
             if checker.has_unwanted_extension(url):
                 return None
-
-            # Get logo from logos_data, prioritizing feed match
+            
             logo_url = ""
-            ch_id = channel["id"]
+            ch_id = channel.get("id")
             feed = stream.get("feed")
             
             matching_logos = [l for l in logos_data if l["channel"] == ch_id and l.get("feed") == feed]
@@ -681,84 +904,87 @@ async def check_iptv_channels(session, checker, channels_data, streams_dict, exi
                 channel_logos = [l for l in logos_data if l["channel"] == ch_id]
                 if channel_logos:
                     logo_url = channel_logos[0]["url"]
-
-            for retry in range(RETRIES):
-                checker.timeout = ClientTimeout(total=min(INITIAL_TIMEOUT * (retry + 1), MAX_TIMEOUT))
-                _, is_working = await checker.check_single_url(session, url)
-                if is_working:
-                    channel_data = {
-                        "name": channel.get("name", "Unknown"),
-                        "id": channel.get("id"),
-                        "logo": logo_url,
-                        "url": url,
-                        "categories": channel.get("categories", []),
-                        "country": channel.get("country", "Unknown"),
-                    }
-                    new_channels.append(channel_data)
-                    country_files.setdefault(channel_data["country"], []).append(channel_data)
-                    for cat in channel_data["categories"]:
-                        category_files.setdefault(cat, []).append(channel_data)
-                    return channel_data
-                await asyncio.sleep(0.1 * (retry + 1))
+            
+            url, is_working, reason = await checker.check_single_url(session, url)
+            if is_working:
+                channel_data = {
+                    "name": channel.get("name", "Unknown"),
+                    "id": channel.get("id"),
+                    "logo": logo_url,
+                    "url": url,
+                    "categories": channel.get("categories", []),
+                    "country": channel.get("country", "Unknown"),
+                }
+                return channel_data
             return None
-
-    total_channels = len(channels_to_check)
-    batch_size = 300
     
-    for batch_start in range(0, total_channels, batch_size):
-        batch_end = min(batch_start + batch_size, total_channels)
-        current_batch = channels_to_check[batch_start:batch_end]
+    total_channels = len(channels_to_check)
+    
+    with tqdm(total=total_channels, desc="Checking IPTV channels") as pbar:
+        batch_size = BATCH_SIZE
         
-        tasks = [process_channel(channel) for channel in current_batch]
-        results = await asyncio.gather(*tasks, return_exceptions=True)
-        for result in results:
-            if isinstance(result, Exception):
-                logging.error(f"Error processing channel: {result}")
-            elif result:
-                new_iptv_channels_count += 1
-
+        for batch_start in range(0, total_channels, batch_size):
+            batch_end = min(batch_start + batch_size, total_channels)
+            current_batch = channels_to_check[batch_start:batch_end]
+            
+            tasks = [process_channel(channel) for channel in current_batch]
+            results = await asyncio.gather(*tasks, return_exceptions=True)
+            
+            for result in results:
+                if isinstance(result, Exception):
+                    continue
+                elif result:
+                    new_channels.append(result)
+                    country = result.get("country", "Unknown")
+                    if country and country != "Unknown":
+                        country_files.setdefault(country, []).append(result)
+                    for cat in result.get("categories", []):
+                        if cat:
+                            category_files.setdefault(cat, []).append(result)
+                    new_iptv_channels_count += 1
+            
+            pbar.update(len(current_batch))
+            await asyncio.sleep(BATCH_DELAY)
+    
     save_channels(new_channels, country_files, category_files, append=True)
-
+    logging.info(f"Added {new_iptv_channels_count} new IPTV channels")
     return new_iptv_channels_count
 
-def get_m3u8_from_page(url_data):
+def get_m3u8_from_page(url_data: Tuple[str, int]) -> List[str]:
     """Extract m3u8 URLs from a page."""
     url, index = url_data
     try:
         response = requests.get(url, headers=KENYA_HEADERS, timeout=10)
         m3u8_pattern = r'(https?://[^\s\'"]+\.m3u8)'
         m3u8_links = re.findall(m3u8_pattern, response.text)
-        
         valid_m3u8_links = [link for link in m3u8_links if 'youtube' not in link.lower()]
-        
-        logging.info(f"[{index}] Processed linked page: {url} - Found {len(valid_m3u8_links)} valid m3u8 links")
         return valid_m3u8_links
     except Exception as e:
-        logging.error(f"[{index}] Error processing {url}: {str(e)}")
+        logging.error(f"Error processing {url}: {e}")
         return []
 
-async def check_single_m3u8_url(session, url, timeout=15):
+async def check_single_m3u8_url(session: aiohttp.ClientSession, url: str, timeout: int = 15) -> Tuple[str, bool]:
     """Check if a single m3u8 URL is valid."""
-    # Skip URLs with unwanted extensions
     if any(url.lower().endswith(ext) for ext in UNWANTED_EXTENSIONS):
         return url, False
-        
+    
     try:
         async with session.get(url, timeout=aiohttp.ClientTimeout(total=timeout)) as response:
             if response.status == 200:
                 content = await response.text()
-                playlist = m3u8.loads(content)
-                if playlist.segments or playlist.playlists:
-                    logging.info(f"Valid m3u8 found: {url}")
-                    return url, True
-                else:
-                    logging.info(f"m3u8 parsing failed but keeping URL: {url}")
-                    return url, True
-    except Exception as e:
-        logging.error(f"Failed to check {url} (timeout={timeout}s): {e}")
+                if '#EXTM3U' in content:
+                    try:
+                        playlist = m3u8.loads(content)
+                        if playlist.segments or playlist.playlists:
+                            return url, True
+                    except:
+                        if any(x in content for x in ['#EXTINF:', '#EXT-X-STREAM-INF:', '.ts']):
+                            return url, True
+    except Exception:
+        pass
     return url, False
 
-async def check_m3u8_urls(urls):
+async def check_m3u8_urls(urls: List[str]) -> Optional[str]:
     """Check multiple m3u8 URLs and return the first working one."""
     async with aiohttp.ClientSession() as session:
         tasks = [check_single_m3u8_url(session, url) for url in urls]
@@ -768,62 +994,54 @@ async def check_m3u8_urls(urls):
                 return url
         return None
 
-async def scrape_kenya_tv_channels(logos_data):
+async def scrape_kenya_tv_channels(logos_data: List[Dict]) -> List[Dict]:
     """Scrape Kenya TV channels and assign logos from LOGOS_URL."""
     start_time = time.time()
     logging.info("Starting Kenya TV scrape...")
-
+    
     try:
         if not KENYA_BASE_URL:
-            logging.error("KENYA_BASE_URL is not set. Skipping Kenya TV scrape.")
+            logging.error("KENYA_BASE_URL is not set")
             return []
-
+        
         response = requests.get(KENYA_BASE_URL, headers=KENYA_HEADERS, timeout=10)
-        logging.info("Main page downloaded")
-
         soup = BeautifulSoup(response.text, 'html.parser')
-
+        
         main_tag = soup.find('main')
         if not main_tag:
-            logging.error("No main tag found")
             return []
-
+        
         section = main_tag.find('section', class_='tv-grid-container')
         if not section:
-            logging.error("No tv-grid-container section found")
             return []
-
+        
         tv_cards = section.find_all('article', class_='tv-card')
-        logging.info(f"Found {len(tv_cards)} TV cards")
-
         results = []
         urls_to_process = []
-
+        
         for i, card in enumerate(tv_cards, 1):
             img_container = card.find('div', class_='img-container')
             if not img_container:
                 continue
-
+            
             a_tag = img_container.find('a')
             img_tag = img_container.find('img')
             if not a_tag or not img_tag:
                 continue
-
+            
             href = a_tag.get('href', '')
             full_url = href if href.startswith('http') else KENYA_BASE_URL + href
             channel_name = img_tag.get('alt', '').strip()
-
+            
             if not channel_name:
                 continue
-
+            
             channel_id = f"{re.sub(r'[^a-zA-Z0-9]', '', channel_name).lower()}.ke"
-
-            # Assign logo from logos_data
             logo_url = ""
             matching_logos = [l for l in logos_data if l["channel"] == channel_id]
             if matching_logos:
                 logo_url = matching_logos[0]["url"]
-
+            
             channel_data = {
                 "name": channel_name,
                 "id": channel_id,
@@ -832,126 +1050,92 @@ async def scrape_kenya_tv_channels(logos_data):
                 "categories": ["general"],
                 "country": "KE"
             }
-
+            
             results.append(channel_data)
             urls_to_process.append((full_url, i))
-
-            logging.info(f"[{i}/{len(tv_cards)}] Collected: {channel_name}")
-
-        # ---- blocking page scraping stays in threads (correct) ----
+        
         with ThreadPoolExecutor(max_workers=5) as executor:
             m3u8_lists = list(executor.map(get_m3u8_from_page, urls_to_process))
-
-        logging.info("Checking m3u8 URLs for validity...")
-
-        # ---- ASYNC VALIDATION (NO NEW EVENT LOOP) ----
+        
         valid_urls = await asyncio.gather(
             *[check_m3u8_urls(url_list) for url_list in m3u8_lists]
         )
-
+        
         filtered_results = []
         for channel_data, valid_url in zip(results, valid_urls):
             if valid_url:
                 channel_data["url"] = valid_url
                 filtered_results.append(channel_data)
-
-        logging.info(
-            f"Found {len(filtered_results)} working channels "
-            f"out of {len(results)} total channels"
-        )
-
-        logging.info(f"Completed in {time.time() - start_time:.2f} seconds")
-
+        
+        logging.info(f"Found {len(filtered_results)} working Kenya channels in {time.time() - start_time:.2f}s")
         return remove_duplicates(filtered_results)
-
+    
     except Exception as e:
-        logging.error(f"Error occurred in Kenya TV scrape: {e}")
+        logging.error(f"Error in Kenya TV scrape: {e}")
         return []
 
-
-async def fetch_and_process_uganda_channels(session, checker, logos_data):
-    """Fetch and process Uganda channels from API, check working URLs, assign logos, and save."""
-    def normalize(name):
-        # Simple and general: lowercase and remove non-alphanumeric (no specific stripping)
+async def fetch_and_process_uganda_channels(session: aiohttp.ClientSession, 
+                                          checker: FastChecker, 
+                                          logos_data: List[Dict]) -> int:
+    """Fetch and process Uganda channels from API."""
+    def normalize(name: str) -> str:
         name = name.lower()
         name = re.sub(r'[^a-z0-9]', '', name)
         return name
-
-    def get_score(a, b):
-        # Substring-boosted for dynamic names (e.g., logo embedded in channel name with prefixes/suffixes)
-        if a in b or b in a:
-            return 1.0
-        else:
-            return SequenceMatcher(None, a, b).ratio()
-
+    
     logging.info("Starting Uganda channels fetch...")
-    api_url = UGANDA_API_URL
+    
     try:
-        async with session.get(api_url) as response:
+        async with session.get(UGANDA_API_URL) as response:
             if response.status == 200:
                 data = await response.json()
                 posts = data.get("posts", [])
-                logging.info(f"Fetched {len(posts)} posts from Uganda API")
             else:
-                logging.error(f"Failed to fetch Uganda API: Status {response.status}")
+                logging.error(f"Failed to fetch Uganda API: {response.status}")
                 return 0
     except Exception as e:
         logging.error(f"Error fetching Uganda API: {e}")
         return 0
-    # Pre-filter Uganda logos as dicts for easy URL access
+    
     ug_logos = [l for l in logos_data if str(l["channel"]).lower().endswith('.ug')]
     channels = []
     country_files = {"UG": []}
     category_files = {}
-    # Threshold for a "good" match (0.8 for high confidence, dynamic)
-    match_threshold = 0.8
-    async def process_post(post):
+    
+    async def process_post(post: Dict) -> Optional[Dict]:
         name = str(post.get("channel_name", "").strip())
         if not name:
             return None
+        
         url = post.get("channel_url")
         if not url:
             return None
-           
-        # Skip URLs with unwanted extensions
+        
         if any(url.lower().endswith(ext) for ext in UNWANTED_EXTENSIONS):
-            logging.info(f"Skipping unwanted extension URL for channel: {name}")
             return None
-           
-        category = post.get("category_name", "").lower().strip()
-        if not category:
-            category = "entertainment" # default
-        # Improved logo search using substring-boosted fuzzy matching
+        
+        category = post.get("category_name", "").lower().strip() or "entertainment"
+        
         logo = ""
-        best_logo_data = None
+        ch_id = None
         best_score = 0
-       
-        # Normalize the input name for searching
         norm_inp = normalize(name)
-       
+        
         for logo_data in ug_logos:
             logo_channel = logo_data["channel"]
-            # Normalize the key, removing the domain extension like .ug
             norm_key = normalize(logo_channel.split('.')[0])
-           
-            # Calculate boosted similarity score
-            score = get_score(norm_inp, norm_key)
-           
+            score = SequenceMatcher(None, norm_inp, norm_key).ratio()
+            
             if score > best_score:
                 best_score = score
-                best_logo_data = logo_data
-       
-        ch_id = None
-        if best_logo_data and best_score >= match_threshold:
-            logo = best_logo_data["url"]  # Assign the logo URL
-            ch_id = best_logo_data['channel'] # Use matched logo channel as ID
-            logging.info(f"Logo match for {name} (ID: {ch_id}): {logo} with score {best_score:.2f}")
-        else:
-            # Fallback to normalized ID (no logo)
+                if best_score >= 0.8:
+                    logo = logo_data["url"]
+                    ch_id = logo_data['channel']
+        
+        if not ch_id:
             base_id = norm_inp
             ch_id = f"{base_id}.ug"
-            logging.info(f"No good logo match for {name} (best score: {best_score:.2f}) | No logo assigned | Fallback ID: {ch_id}")
-       
+        
         channel = {
             "name": name,
             "id": ch_id,
@@ -960,40 +1144,34 @@ async def fetch_and_process_uganda_channels(session, checker, logos_data):
             "categories": [category],
             "country": "UG"
         }
-        # Check if working
-        is_working = False
-        for retry in range(RETRIES):
-            checker.timeout = ClientTimeout(total=min(INITIAL_TIMEOUT * (retry + 1), MAX_TIMEOUT))
-            _, is_working = await checker.check_single_url(session, url)
-            if is_working:
-                break
-            await asyncio.sleep(0.1 * (retry + 1))
+        
+        url, is_working, reason = await checker.check_single_url(session, url)
         if is_working:
             return channel
         return None
+    
     tasks = [process_post(post) for post in posts]
     results = await asyncio.gather(*tasks, return_exceptions=True)
+    
     for result in results:
         if isinstance(result, Exception):
-            logging.error(f"Error processing Uganda post: {result}")
+            continue
         elif result:
             channels.append(result)
             country_files["UG"].append(result)
             cat = result["categories"][0]
             category_files.setdefault(cat, []).append(result)
+    
     if channels:
         save_channels(channels, country_files, category_files, append=True)
         logging.info(f"Added {len(channels)} working Uganda channels")
+    
     return len(channels)
 
-async def clean_and_replace_channels(session, checker, all_channels, streams_dict, m3u_channels, logos_data):
-    """Check all channels, replace non-working URLs if possible, and ensure only working channels are kept.
-    
-    This function guarantees:
-    - All working channels (original or replaced) are retained.
-    - All non-working channels without replacements are removed.
-    - Directories are cleared before saving to prevent stale data.
-    """
+async def clean_and_replace_channels(session: aiohttp.ClientSession, checker: FastChecker,
+                                   all_channels: List[Dict], streams_dict: Dict,
+                                   m3u_channels: List[Dict], logos_data: List[Dict]) -> Tuple[int, int, int]:
+    """Clean non-working channels and replace URLs if possible."""
     logging.info("\n=== Step 5: Cleaning non-working channels and replacing URLs ===")
     
     all_channels = update_logos_for_null_channels(all_channels, logos_data)
@@ -1003,69 +1181,61 @@ async def clean_and_replace_channels(session, checker, all_channels, streams_dic
     non_working_channels = 0
     country_files = {}
     category_files = {}
-
-    async def find_replacement_url(channel, streams_dict, m3u_channels, session, checker):
-        """Attempt to find a working replacement URL for a channel."""
+    
+    # Track failed channels for debugging
+    failed_channels_info = []
+    
+    async def find_replacement_url(channel: Dict, streams_dict: Dict, 
+                                 m3u_channels: List[Dict], 
+                                 session: aiohttp.ClientSession, 
+                                 checker: FastChecker) -> Optional[str]:
         channel_id = channel.get("id")
         channel_name = channel.get("name", "").lower()
-
+        
+        # Check IPTV-org streams
         if streams_dict and channel_id in streams_dict:
             new_url = streams_dict[channel_id].get("url")
             if new_url and not checker.has_unwanted_extension(new_url):
-                for retry in range(RETRIES):
-                    checker.timeout = ClientTimeout(total=min(INITIAL_TIMEOUT * (retry + 1), MAX_TIMEOUT))
-                    _, is_working = await checker.check_single_url(session, new_url)
-                    if is_working:
-                        logging.info(f"Found working replacement URL from IPTV-org for {channel_name}: {new_url}")
-                        return new_url
-                    await asyncio.sleep(0.3 * (retry + 1))
-
+                url, is_working, reason = await checker.check_single_url(session, new_url)
+                if is_working:
+                    logging.debug(f"Found replacement from IPTV-org for {channel_name}")
+                    return new_url
+        
+        # Check M3U channels by name similarity
         if m3u_channels:
             for m3u_channel in m3u_channels:
                 m3u_name = m3u_channel.get("display_name", "").lower()
                 if fuzz.ratio(channel_name, m3u_name) > 80:
                     new_url = m3u_channel.get("url")
                     if new_url and not checker.has_unwanted_extension(new_url):
-                        for retry in range(RETRIES):
-                            checker.timeout = ClientTimeout(total=min(INITIAL_TIMEOUT * (retry + 1), MAX_TIMEOUT))
-                            _, is_working = await checker.check_single_url(session, new_url)
-                            if is_working:
-                                logging.info(f"Found working replacement URL from M3U for {channel_name}: {new_url}")
-                                return new_url
-                            await asyncio.sleep(0.3 * (retry + 1))
-
-        logging.info(f"No working replacement URL found for {channel_name}")
+                        url, is_working, reason = await checker.check_single_url(session, new_url)
+                        if is_working:
+                            logging.debug(f"Found replacement from M3U for {channel_name}")
+                            return new_url
+        
         return None
-
-    async def check_and_process_channel(channel):
+    
+    async def check_and_process_channel(channel: Dict):
         nonlocal valid_channels, non_working_channels, replaced_channels
+        
         channel_url = channel.get("url")
         channel_name = channel.get("name", "Unknown")
-
+        
         if not channel_url:
-            logging.info(f"Skipping channel with no URL: {channel_name}")
             return
-
-        # Skip URLs with unwanted extensions
+        
         if checker.has_unwanted_extension(channel_url):
-            logging.info(f"Skipping channel with unwanted extension: {channel_name} ({channel_url})")
             non_working_channels += 1
             return
-
-        # Ensure logo is from logos_data
+        
         channel_id = channel.get("id")
-        matching_logos = [logo for logo in logos_data if logo["channel"] == channel_id]
-        if matching_logos:
-            channel["logo"] = matching_logos[0]["url"]
-
-        is_working = False
-        for retry in range(RETRIES):
-            checker.timeout = ClientTimeout(total=min(INITIAL_TIMEOUT * (retry + 1), MAX_TIMEOUT))
-            _, is_working = await checker.check_single_url(session, channel_url)
-            if is_working:
-                break
-            await asyncio.sleep(0.1 * (retry + 1))
-
+        if channel_id:
+            matching_logos = [logo for logo in logos_data if logo["channel"] == channel_id]
+            if matching_logos:
+                channel["logo"] = matching_logos[0]["url"]
+        
+        url, is_working, reason = await checker.check_single_url(session, channel_url)
+        
         if is_working:
             valid_channels.append(channel)
             country = channel.get("country", "Unknown")
@@ -1074,51 +1244,61 @@ async def clean_and_replace_channels(session, checker, all_channels, streams_dic
             for cat in channel.get("categories", []):
                 if cat:
                     category_files.setdefault(cat, []).append(channel)
-            return
-
-        logging.info(f"Channel not working: {channel_name} ({channel_url}). Attempting replacement.")
-        new_url = await find_replacement_url(channel, streams_dict, m3u_channels, session, checker)
-        if new_url:
-            channel["url"] = new_url  # Update in place for simplicity
-            valid_channels.append(channel)
-            country = channel.get("country", "Unknown")
-            if country and country != "Unknown":
-                country_files.setdefault(country, []).append(channel)
-            for cat in channel.get("categories", []):
-                if cat:
-                    category_files.setdefault(cat, []).append(channel)
-            replaced_channels += 1
         else:
-            logging.info(f"No replacement found for {channel_name}. Removing channel.")
-            non_working_channels += 1
-
-    total_channels = len(all_channels)
-    batch_size = 400
+            logging.debug(f"Channel not working: {channel_name} - {reason}")
+            new_url = await find_replacement_url(channel, streams_dict, m3u_channels, session, checker)
+            
+            if new_url:
+                channel["url"] = new_url
+                valid_channels.append(channel)
+                country = channel.get("country", "Unknown")
+                if country and country != "Unknown":
+                    country_files.setdefault(country, []).append(channel)
+                for cat in channel.get("categories", []):
+                    if cat:
+                        category_files.setdefault(cat, []).append(channel)
+                replaced_channels += 1
+            else:
+                non_working_channels += 1
+                failed_channels_info.append({
+                    "name": channel_name,
+                    "id": channel_id,
+                    "url": channel_url,
+                    "reason": reason
+                })
     
-    for batch_start in range(0, total_channels, batch_size):
-        batch_end = min(batch_start + batch_size, total_channels)
-        current_batch = all_channels[batch_start:batch_end]
+    total_channels = len(all_channels)
+    
+    with tqdm(total=total_channels, desc="Cleaning channels") as pbar:
+        batch_size = BATCH_SIZE
         
-        tasks = [check_and_process_channel(channel) for channel in current_batch]
-        results = await asyncio.gather(*tasks, return_exceptions=True)
-        for result in results:
-            if isinstance(result, Exception):
-                logging.error(f"Error processing channel: {result}")
-
-    # Save only valid channels, clearing directories first
+        for batch_start in range(0, total_channels, batch_size):
+            batch_end = min(batch_start + batch_size, total_channels)
+            current_batch = all_channels[batch_start:batch_end]
+            
+            tasks = [check_and_process_channel(channel) for channel in current_batch]
+            await asyncio.gather(*tasks)
+            
+            pbar.update(len(current_batch))
+            await asyncio.sleep(BATCH_DELAY)
+    
+    # Save failed channels for debugging
+    if failed_channels_info:
+        with open(FAILED_CHANNELS_FILE, 'w', encoding='utf-8') as f:
+            json.dump(failed_channels_info, f, indent=4, ensure_ascii=False)
+        logging.info(f"Saved {len(failed_channels_info)} failed channels to {FAILED_CHANNELS_FILE}")
+    
+    # IMPORTANT: Use append=False to replace all files
     save_channels(valid_channels, country_files, category_files, append=False)
-
+    
     logging.info(f"Replaced {replaced_channels} channels with new URLs")
-    logging.info(f"Removed {non_working_channels} non-working channels (no replacement found)")
+    logging.info(f"Removed {non_working_channels} non-working channels")
     logging.info(f"Total channels after cleaning: {len(valid_channels)}")
-
+    
     return len(valid_channels), non_working_channels, replaced_channels
 
 def sync_working_channels():
-    """Sync all channels from country and category files to the main working_channels.json.
-    
-    This ensures consistency after cleaning, without reintroducing removed channels.
-    """
+    """Sync all channels from country and category files to the main working_channels.json."""
     logging.info("Syncing all channels to working_channels...")
     
     all_channels = []
@@ -1128,23 +1308,24 @@ def sync_working_channels():
             if filename.endswith(".json"):
                 base = os.path.join(COUNTRIES_DIR, filename[:-5])
                 channels = load_split_json(base)
-                all_channels.extend(remove_duplicates(channels))
+                all_channels.extend(channels)
     
     if os.path.exists(CATEGORIES_DIR):
         for filename in os.listdir(CATEGORIES_DIR):
             if filename.endswith(".json"):
                 base = os.path.join(CATEGORIES_DIR, filename[:-5])
                 channels = load_split_json(base)
-                all_channels.extend(remove_duplicates(channels))
+                all_channels.extend(channels)
     
     all_channels = remove_duplicates(all_channels)
-    
     save_split_json(WORKING_CHANNELS_BASE, all_channels)
     
     logging.info(f"Synced {len(all_channels)} channels to working_channels")
+    return len(all_channels)
 
-async def process_m3u_urls(session, logos_data, checker, m3u_urls):
-    """Process M3U URLs and return count of working channels (all, not just sports)."""
+async def process_m3u_urls(session: aiohttp.ClientSession, logos_data: List[Dict],
+                          checker: FastChecker, m3u_urls: List[str]) -> int:
+    """Process M3U URLs and return count of working channels."""
     logging.info("\n=== Step 2: Processing M3U URLs ===")
     processor = M3UProcessor()
     all_channels = []
@@ -1152,20 +1333,20 @@ async def process_m3u_urls(session, logos_data, checker, m3u_urls):
     for m3u_url in m3u_urls:
         if not m3u_url:
             continue
-            
+        
         logging.info(f"Processing M3U URL: {m3u_url}")
         content = await processor.fetch_m3u_content(session, m3u_url)
         if content:
             channels = processor.parse_m3u(content)
             logging.info(f"Found {len(channels)} channels in {m3u_url}")
             
-            # Process all channels, not just sports
-            check_tasks = [checker.check_single_url(session, channel['url']) for channel in channels]
+            check_tasks = [checker.check_single_url(session, channel['url']) 
+                          for channel in channels if 'url' in channel]
             check_results = await asyncio.gather(*check_tasks)
             
             working_channels = []
-            for i, (url, is_working) in enumerate(check_results):
-                if is_working:
+            for i, (url, is_working, reason) in enumerate(check_results):
+                if is_working and i < len(channels):
                     working_channels.append(channels[i])
             
             logging.info(f"Found {len(working_channels)} working channels in {m3u_url}")
@@ -1189,23 +1370,113 @@ async def process_m3u_urls(session, logos_data, checker, m3u_urls):
     
     return len(all_channels)
 
+async def perform_final_validation(session: aiohttp.ClientSession, 
+                                 checker: FastChecker, 
+                                 max_workers: int = 50) -> Tuple[int, int]:
+    """Perform final validation on all collected channels."""
+    logging.info("\n=== Step 7: Final validation of all channels ===")
+    
+    all_channels = load_split_json(WORKING_CHANNELS_BASE)
+    
+    if not all_channels:
+        logging.warning("No channels to validate")
+        return 0, 0
+    
+    logging.info(f"Validating {len(all_channels)} channels...")
+    
+    working_channels = []
+    failed_channels_info = []
+    
+    semaphore = asyncio.Semaphore(max_workers)
+    
+    async def validate_channel(channel: Dict) -> Optional[Dict]:
+        async with semaphore:
+            url = channel.get("url")
+            if not url:
+                return None
+            
+            # Use more aggressive checking for final validation
+            url, is_working, reason = await checker.check_single_url(session, url)
+            
+            if is_working:
+                return channel
+            else:
+                # Track why it failed
+                failed_channels_info.append({
+                    "name": channel.get("name", "Unknown"),
+                    "id": channel.get("id"),
+                    "url": url,
+                    "reason": reason
+                })
+                return None
+    
+    with tqdm(total=len(all_channels), desc="Final validation") as pbar:
+        batch_size = 100
+        
+        for batch_start in range(0, len(all_channels), batch_size):
+            batch_end = min(batch_start + batch_size, len(all_channels))
+            batch = all_channels[batch_start:batch_end]
+            
+            tasks = [validate_channel(channel) for channel in batch]
+            results = await asyncio.gather(*tasks, return_exceptions=True)
+            
+            for result in results:
+                if isinstance(result, Exception):
+                    continue
+                elif result:
+                    working_channels.append(result)
+            
+            pbar.update(len(batch))
+            await asyncio.sleep(0.2)
+    
+    # Save only working channels
+    if working_channels:
+        country_files = {}
+        category_files = {}
+        
+        for channel in working_channels:
+            country = channel.get("country", "Unknown")
+            if country and country != "Unknown":
+                country_files.setdefault(country, []).append(channel)
+            
+            for cat in channel.get("categories", []):
+                if cat:
+                    category_files.setdefault(cat, []).append(channel)
+        
+        # IMPORTANT: Use append=False to replace all files
+        save_channels(working_channels, country_files, category_files, append=False)
+        
+        logging.info(f"Final validation complete: {len(working_channels)} working channels, {len(failed_channels_info)} failed")
+        
+        if failed_channels_info:
+            # Save failed channels for debugging
+            failed_file = "final_failed_channels.json"
+            with open(failed_file, 'w', encoding='utf-8') as f:
+                json.dump(failed_channels_info, f, indent=4, ensure_ascii=False)
+            logging.info(f"Saved failed channels to {failed_file}")
+    
+    return len(working_channels), len(failed_channels_info)
+
 async def main():
-    global M3U_URLS  # To update the module-level variable
+    global M3U_URLS
     
     logging.info("Starting IPTV channel collection process...")
     
-    # Step 0: Scrape daily M3U URLs and update M3U_URLS
+    # Step 0: Scrape daily M3U URLs
     logging.info("\n=== Step 0: Scraping daily M3U URLs ===")
     scraped_m3u = scrape_daily_m3u_urls(max_working=5)
-    M3U_URLS = scraped_m3u + ADDITIONAL_M3U  # Add news and xxx m3u
-    logging.info(f"Updated M3U_URLS with {len(M3U_URLS)} URLs (scraped + additional)")
+    M3U_URLS = scraped_m3u + ADDITIONAL_M3U
+    logging.info(f"Updated M3U_URLS with {len(M3U_URLS)} URLs")
     
     checker = FastChecker()
     
-    async with aiohttp.ClientSession(connector=checker.connector) as session:
+    async with aiohttp.ClientSession(
+        connector=checker.connector,
+        headers=checker.session_headers
+    ) as session:
         # Fetch logos data first
         logos_data = await fetch_json(session, LOGOS_URL)
-        logging.info(f"Loaded {len(logos_data)} logos from {LOGOS_URL}")
+        logging.info(f"Loaded {len(logos_data)} logos")
         
         logging.info("\n=== Step 1: Scraping Kenya TV channels ===")
         kenya_channels = await scrape_kenya_tv_channels(logos_data)
@@ -1222,17 +1493,18 @@ async def main():
                     category_files.setdefault(category, []).append(channel)
             
             save_channels(kenya_channels, country_files, category_files, append=True)
-            logging.info(f"Added {len(kenya_channels)} Kenya channels to working channels")
-
+            logging.info(f"Added {len(kenya_channels)} Kenya channels")
+        
         logging.info("\n=== Step 1.5: Scraping Uganda channels ===")
         ug_channels_count = await fetch_and_process_uganda_channels(session, checker, logos_data)
         
+        logging.info("\n=== Step 2: Processing M3U URLs ===")
         m3u_channels_count = await process_m3u_urls(session, logos_data, checker, M3U_URLS)
         
         logging.info("\n=== Step 3: Checking IPTV-org channels ===")
         try:
             if not CHANNELS_URL or not STREAMS_URL:
-                logging.error("CHANNELS_URL or STREAMS_URL is not set. Skipping IPTV-org channels.")
+                logging.error("CHANNELS_URL or STREAMS_URL is not set")
                 streams_dict = {}
                 channels_data = []
             else:
@@ -1240,37 +1512,33 @@ async def main():
                     fetch_json(session, CHANNELS_URL),
                     fetch_json(session, STREAMS_URL),
                 )
-
+                
                 streams_dict = {stream["channel"]: stream for stream in streams_data if stream.get("channel")}
                 iptv_channel_ids = set(streams_dict.keys())
-
+                
                 existing_data = load_existing_data()
                 all_existing_channels = existing_data["all_existing_channels"]
                 existing_urls = {ch.get("url") for ch in all_existing_channels if ch.get("url")}
-
+                
                 valid_channels_count = await validate_channels(
                     session, checker, all_existing_channels, iptv_channel_ids, logos_data
                 )
-
+                
                 new_iptv_channels_count = await check_iptv_channels(
                     session, checker, channels_data, streams_dict, existing_urls, logos_data
                 )
-
-                total_channels = valid_channels_count + new_iptv_channels_count + m3u_channels_count + ug_channels_count + len(kenya_channels)
+                
+                total_channels = (valid_channels_count + new_iptv_channels_count + 
+                                m3u_channels_count + ug_channels_count + len(kenya_channels))
                 logging.info(f"\nTotal working channels before cleaning: {total_channels}")
-                logging.info(f"Working manual channels: {valid_channels_count}")
-                logging.info(f"New working IPTV channels: {new_iptv_channels_count}")
-                logging.info(f"New working M3U channels: {m3u_channels_count}")
-                logging.info(f"New working Uganda channels: {ug_channels_count}")
-                logging.info(f"New working Kenya channels: {len(kenya_channels)}")
         except Exception as e:
             logging.error(f"Error in IPTV-org processing: {e}")
             streams_dict = {}
             channels_data = []
-
+        
         logging.info("\n=== Step 4: Syncing channels ===")
         sync_working_channels()
-
+        
         logging.info("\n=== Step 5: Cleaning non-working channels and replacing URLs ===")
         existing_data = load_existing_data()
         all_existing_channels = existing_data["all_existing_channels"]
@@ -1288,18 +1556,24 @@ async def main():
         valid_channels_count, non_working_count, replaced_count = await clean_and_replace_channels(
             session, checker, all_existing_channels, streams_dict, m3u_channels, logos_data
         )
-
+        
         logging.info("\n=== Step 6: Syncing updated channels ===")
         sync_working_channels()
-
+        
+        logging.info("\n=== Step 7: Final validation ===")
+        final_working_count, final_failed_count = await perform_final_validation(session, checker, max_workers=50)
+        
         logging.info("\n=== Process completed ===")
-        logging.info(f"Final count: {valid_channels_count} channels")
-        logging.info(f"Removed non-working channels: {non_working_count}")
+        logging.info(f"Final count: {final_working_count} verified working channels")
+        logging.info(f"Total removed non-working channels: {non_working_count + final_failed_count}")
         logging.info(f"Channels replaced: {replaced_count}")
 
 if __name__ == "__main__":
     try:
         asyncio.run(main())
+    except KeyboardInterrupt:
+        logging.info("Process interrupted by user")
+        sys.exit(0)
     except Exception as e:
-        logging.error(f"Script failed: {e}")
+        logging.error(f"Script failed: {e}", exc_info=True)
         sys.exit(1)
