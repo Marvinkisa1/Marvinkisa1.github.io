@@ -18,7 +18,7 @@ from fuzzywuzzy import fuzz
 import shutil
 from difflib import SequenceMatcher
 import html
-from datetime import datetime, timezone, timedelta, date
+from datetime import date, timedelta
 from typing import List, Dict, Set, Tuple, Optional
 import hashlib
 
@@ -86,317 +86,6 @@ SCRAPER_HEADERS = {
     'Pragma': 'no-cache'
 }
 
-# ==================== DATE EXTRACTION FUNCTIONS ====================
-
-def extract_post_datetime(html: str) -> Optional[datetime]:
-    """Extract post datetime from HTML using meta tags with proper fallback strategy.
-    
-    Priority order:
-    1. article:published_time
-    2. article:modified_time
-    3. Visible <time> tag (fallback)
-    
-    Returns:
-        datetime object in UTC, or None if no valid date found
-    """
-    soup = BeautifulSoup(html, "lxml")
-    
-    # Priority 1: published_time
-    published_meta = soup.find("meta", property="article:published_time")
-    if published_meta and published_meta.get("content"):
-        try:
-            dt_str = published_meta["content"]
-            # Handle Z suffix
-            if dt_str.endswith('Z'):
-                dt_str = dt_str[:-1] + '+00:00'
-            return datetime.fromisoformat(dt_str)
-        except (ValueError, AttributeError) as e:
-            logging.debug(f"Failed to parse published_time: {e}")
-    
-    # Priority 2: modified_time
-    modified_meta = soup.find("meta", property="article:modified_time")
-    if modified_meta and modified_meta.get("content"):
-        try:
-            dt_str = modified_meta["content"]
-            if dt_str.endswith('Z'):
-                dt_str = dt_str[:-1] + '+00:00'
-            return datetime.fromisoformat(dt_str)
-        except (ValueError, AttributeError) as e:
-            logging.debug(f"Failed to parse modified_time: {e}")
-    
-    # Priority 3: Visible time tag (fallback)
-    time_tag = soup.find("time")
-    if time_tag and time_tag.get("datetime"):
-        try:
-            dt_str = time_tag["datetime"]
-            if dt_str.endswith('Z'):
-                dt_str = dt_str[:-1] + '+00:00'
-            return datetime.fromisoformat(dt_str)
-        except (ValueError, AttributeError) as e:
-            logging.debug(f"Failed to parse time tag: {e}")
-    
-    logging.debug("No valid datetime found in post")
-    return None
-
-
-def is_recent(post_dt: Optional[datetime], days: int = 3) -> bool:
-    """Check if post datetime is within the rolling window.
-    
-    Args:
-        post_dt: Datetime object (must be timezone-aware or naive in UTC)
-        days: Number of days for the rolling window
-    
-    Returns:
-        True if post is within the window, False otherwise
-    """
-    if not post_dt:
-        return False
-    
-    # Ensure we have timezone-aware datetime for comparison
-    now = datetime.now(timezone.utc)
-    
-    # If post_dt is naive, assume it's in UTC
-    if post_dt.tzinfo is None:
-        post_dt = post_dt.replace(tzinfo=timezone.utc)
-    else:
-        # Convert to UTC if it has a timezone
-        post_dt = post_dt.astimezone(timezone.utc)
-    
-    cutoff_date = now - timedelta(days=days)
-    return post_dt >= cutoff_date
-
-
-def normalize_url(url: str) -> str:
-    """Normalize URL for deduplication - remove credentials and standardize."""
-    try:
-        parsed = urlparse(url)
-        
-        # Remove username/password from URL for deduplication
-        clean_netloc = parsed.netloc.split('@')[-1] if '@' in parsed.netloc else parsed.netloc
-        
-        # Standardize path (remove trailing slash)
-        clean_path = parsed.path.rstrip('/')
-        
-        # Reconstruct URL without auth
-        clean_url = f"{parsed.scheme}://{clean_netloc}{clean_path}"
-        if parsed.query:
-            clean_url += f"?{parsed.query}"
-        
-        return clean_url.lower()
-    except Exception:
-        return url.lower()
-
-
-def extract_m3u_urls_from_page(html: str, base_url: str) -> List[str]:
-    """Extract M3U URLs from page content, deduplicating by normalized URL."""
-    m3u_urls = set()
-    
-    soup = BeautifulSoup(html, "lxml")
-    
-    # Pattern for M3U file detection
-    m3u_patterns = [
-        r'\.m3u8?',
-        r'get\.php\?.*?type=(?:m3u|m3u_plus|m3u8)',
-        r'playlist\.m3u8?',
-        r'stream\.m3u8?'
-    ]
-    pattern_combined = '|'.join(f'({p})' for p in m3u_patterns)
-    
-    # Extract from href attributes
-    for link in soup.find_all('a', href=True):
-        href = link['href']
-        if re.search(pattern_combined, href, re.IGNORECASE):
-            full_url = urljoin(base_url, href)
-            normalized = normalize_url(full_url)
-            m3u_urls.add(normalized)
-    
-    # Extract from text content (in case URLs are not in hrefs)
-    text_pattern = r'https?://[^\s<>"\']+\.m3u8?'
-    text_urls = re.findall(text_pattern, html, re.IGNORECASE)
-    for url in text_urls:
-        full_url = urljoin(base_url, url)
-        normalized = normalize_url(full_url)
-        m3u_urls.add(normalized)
-    
-    # Also look for get.php with type parameter
-    get_pattern = r'get\.php\?[^"\']*type=(?:m3u|m3u_plus|m3u8)[^"\']*'
-    get_matches = re.findall(get_pattern, html, re.IGNORECASE)
-    for match in get_matches:
-        full_url = urljoin(base_url, match)
-        normalized = normalize_url(full_url)
-        m3u_urls.add(normalized)
-    
-    return list(m3u_urls)
-
-
-def scrape_daily_m3u_urls(max_working: int = 5) -> List[str]:
-    """Scrape M3U URLs from recent posts (within 3 days) on world-iptv.club.
-    
-    Features:
-    - Uses proper date extraction with BeautifulSoup
-    - 3-day rolling window filtering
-    - Early exit optimization for pagination
-    - URL deduplication across all sources
-    - Tests URLs and returns only working ones
-    
-    Args:
-        max_working: Maximum number of working M3U URLs to return
-    
-    Returns:
-        List of working M3U URLs
-    """
-    logging.info("Starting improved daily M3U URL scraper...")
-    
-    # Setup
-    base_category_url = 'https://world-iptv.club/category/iptv/'
-    all_m3u_urls = set()
-    working_m3u_urls = []
-    cutoff_date = datetime.now(timezone.utc) - timedelta(days=3)
-    
-    # Pagination loop
-    current_page_url = base_category_url
-    page_count = 0
-    max_pages = 10  # Safety limit
-    
-    while current_page_url and page_count < max_pages:
-        page_count += 1
-        logging.info(f"Fetching category page {page_count}: {current_page_url}")
-        
-        try:
-            resp = requests.get(current_page_url, headers=SCRAPER_HEADERS, timeout=30)
-            resp.raise_for_status()
-        except Exception as e:
-            logging.error(f"Failed to fetch category page {current_page_url}: {e}")
-            break
-        
-        soup = BeautifulSoup(resp.text, "lxml")
-        
-        # Find all post links on the category page
-        post_links = []
-        
-        # Look for common post link patterns
-        for link in soup.find_all('a', href=True):
-            href = link['href']
-            # Filter out category pages, home page, etc.
-            if ('/category/' not in href and 
-                not href.endswith('/') and
-                href.startswith('https://world-iptv.club/') and
-                href != 'https://world-iptv.club/' and
-                'page' not in href):
-                post_links.append(href)
-        
-        # Also look for article links specifically
-        for article in soup.find_all('article'):
-            link = article.find('a', href=True)
-            if link and link['href'] not in post_links:
-                post_links.append(link['href'])
-        
-        post_links = list(set(post_links))
-        logging.info(f"Found {len(post_links)} potential posts on page {page_count}")
-        
-        # Process each post
-        should_stop_pagination = False
-        
-        for post_url in post_links:
-            logging.debug(f"Fetching post: {post_url}")
-            
-            try:
-                post_resp = requests.get(post_url, headers=SCRAPER_HEADERS, timeout=30)
-                post_resp.raise_for_status()
-            except Exception as e:
-                logging.debug(f"Failed to fetch post {post_url}: {e}")
-                continue
-            
-            # Extract post datetime
-            post_dt = extract_post_datetime(post_resp.text)
-            
-            if not post_dt:
-                logging.debug(f"Could not extract date from post: {post_url}")
-                # If we can't get date, check the URL for date patterns as fallback
-                date_pattern = r'/(\d{4})/(\d{2})/(\d{2})/'
-                match = re.search(date_pattern, post_url)
-                if match:
-                    try:
-                        year, month, day = map(int, match.groups())
-                        post_dt = datetime(year, month, day, tzinfo=timezone.utc)
-                    except ValueError:
-                        continue
-                else:
-                    continue
-            
-            # Ensure datetime is timezone-aware
-            if post_dt.tzinfo is None:
-                post_dt = post_dt.replace(tzinfo=timezone.utc)
-            else:
-                post_dt = post_dt.astimezone(timezone.utc)
-            
-            # Check if post is recent
-            if post_dt < cutoff_date:
-                logging.info(f"Reached posts older than cutoff ({post_dt.isoformat()}) - stopping pagination")
-                should_stop_pagination = True
-                break
-            
-            logging.info(f"Processing post from {post_dt.isoformat()}")
-            
-            # Extract M3U URLs from this post
-            post_m3u_urls = extract_m3u_urls_from_page(post_resp.text, post_url)
-            
-            # Add to our collection
-            for url in post_m3u_urls:
-                all_m3u_urls.add(url)
-            
-            logging.debug(f"Found {len(post_m3u_urls)} M3U URLs in post")
-        
-        if should_stop_pagination:
-            break
-        
-        # Find next page
-        next_link = soup.find('a', class_='next')
-        if not next_link:
-            next_link = soup.find('a', string=re.compile(r'Next|»', re.I))
-        
-        current_page_url = next_link['href'] if next_link and next_link.get('href') else None
-    
-    # Now test all collected M3U URLs
-    logging.info(f"Testing {len(all_m3u_urls)} unique M3U URLs...")
-    
-    for m3u_url in all_m3u_urls:
-        if len(working_m3u_urls) >= max_working:
-            break
-        
-        try:
-            # Test the M3U URL
-            m3u_resp = requests.get(m3u_url, headers=SCRAPER_HEADERS, timeout=30, stream=True)
-            if m3u_resp.status_code == 200:
-                # Read first chunk to check content
-                chunk = m3u_resp.raw.read(1024)
-                if chunk:
-                    try:
-                        content = chunk.decode('utf-8', errors='ignore')
-                        # Check if it looks like a valid M3U file
-                        if '#EXTM3U' in content and len(content) > 50:
-                            working_m3u_urls.append(m3u_url)
-                            logging.info(f"✓ Working M3U: {m3u_url}")
-                        else:
-                            logging.debug(f"Invalid M3U content: {m3u_url}")
-                    except UnicodeDecodeError:
-                        logging.debug(f"Binary content, not M3U: {m3u_url}")
-                else:
-                    logging.debug(f"Empty response: {m3u_url}")
-            else:
-                logging.debug(f"HTTP {m3u_resp.status_code} for: {m3u_url}")
-        except Exception as e:
-            logging.debug(f"Failed to test {m3u_url}: {e}")
-    
-    if working_m3u_urls:
-        logging.info(f"Found {len(working_m3u_urls)} working M3U URLs")
-    else:
-        logging.warning("No working M3U URLs found")
-    
-    return working_m3u_urls
-
-# ==================== FILE MANAGEMENT FUNCTIONS ====================
-
 def delete_split_files(base_name: str):
     """Delete all split files and the base file if exists."""
     ext = '.json'
@@ -409,7 +98,6 @@ def delete_split_files(base_name: str):
             break
         os.remove(part_file)
         part += 1
-
 
 def load_split_json(base_name: str) -> List[Dict]:
     """Load data from split JSON files or the base file."""
@@ -443,7 +131,6 @@ def load_split_json(base_name: str) -> List[Dict]:
     
     return all_data
 
-
 def save_split_json(base_name: str, data: List[Dict]):
     """Save data to JSON, splitting if exceeds MAX_CHANNELS_PER_FILE."""
     if not data:
@@ -468,8 +155,103 @@ def save_split_json(base_name: str, data: List[Dict]):
             logging.info(f"Saved {len(chunk)} channels to {part_file}")
             part_num += 1
 
-
-# ==================== FAST CHECKER CLASS ====================
+def scrape_daily_m3u_urls(max_working: int = 5) -> List[str]:
+    """Scrape daily working M3U URLs from world-iptv.club."""
+    logging.info("Starting daily M3U URL scraper...")
+    
+    current_date = date.today().strftime("%d-%m-%Y")
+    
+    url = 'https://world-iptv.club/category/iptv/'
+    try:
+        response = requests.get(url, headers=SCRAPER_HEADERS, timeout=30)
+        if response.status_code != 200:
+            logging.error(f"Failed to fetch the page: {response.status_code}")
+            return []
+    except Exception as e:
+        logging.error(f"Error fetching category page: {e}")
+        return []
+    
+    content = response.text
+    pattern = r'<a\s+[^>]*href=[\'"]([^\'"]+)[\'"]'
+    matches = re.findall(pattern, content, re.IGNORECASE)
+    
+    urls = []
+    seen = set()
+    for match in matches:
+        if 'm3u' in match.lower():
+            if match.startswith('/'):
+                full_url = 'https://world-iptv.club' + match
+            elif match.startswith('http'):
+                full_url = match
+            else:
+                continue
+            
+            if full_url not in seen:
+                seen.add(full_url)
+                urls.append(full_url)
+    
+    current_urls = [u for u in urls if f'-{current_date}/' in u]
+    
+    prev_date = None
+    if not current_urls:
+        prev_date = (date.today() - timedelta(days=1)).strftime("%d-%m-%Y")
+        current_urls = [u for u in urls if f'-{prev_date}/' in u]
+    
+    top_5_urls = current_urls[:5]
+    
+    if not top_5_urls:
+        fallback_date = (date.today() - timedelta(days=2)).strftime("%d-%m-%Y")
+        logging.warning(f"No URLs found for recent dates: {current_date}, {prev_date or 'N/A'}, or {fallback_date}")
+        return []
+    
+    date_used = current_date if f'-{current_date}/' in top_5_urls[0] else prev_date
+    logging.info(f"Using date: {date_used}")
+    
+    working_m3u = []
+    for page_url in top_5_urls:
+        logging.info(f"\nFetching {page_url}...")
+        try:
+            resp = requests.get(page_url, headers=SCRAPER_HEADERS, timeout=30)
+            if resp.status_code != 200:
+                continue
+        except Exception:
+            continue
+        
+        page_content = resp.text
+        m3u_pattern = r'(?:\.m3u|get\.php\?.*?type=(?:m3u|m3u_plus|m3u8))'
+        href_pattern = r'<a\s+[^>]*href=[\'"]([^\'"]+)[\'"]'
+        all_hrefs = re.findall(href_pattern, page_content, re.IGNORECASE)
+        href_m3u = [html.unescape(h) for h in all_hrefs if re.search(m3u_pattern, h, re.IGNORECASE)]
+        
+        text_pattern = r'https?://[^\s<>"\']+'
+        all_urls_in_text = re.findall(text_pattern, page_content)
+        text_m3u = [html.unescape(u) for u in all_urls_in_text if re.search(m3u_pattern, u, re.IGNORECASE)]
+        
+        m3u_matches = list(set(href_m3u + text_m3u))
+        m3u_matches = [urljoin(page_url, m) if not m.startswith('http') else m for m in m3u_matches]
+        m3u_matches = list(dict.fromkeys(m3u_matches))
+        
+        for m3u_match in m3u_matches:
+            full_m3u = m3u_match
+            try:
+                m3u_resp = requests.get(full_m3u, headers=SCRAPER_HEADERS, timeout=30, stream=True)
+                if m3u_resp.status_code == 200 and len(m3u_resp.content) > 100:
+                    if '#EXT' in m3u_resp.text:
+                        working_m3u.append(full_m3u)
+                        if len(working_m3u) >= max_working:
+                            break
+            except Exception:
+                continue
+        
+        if len(working_m3u) >= max_working:
+            break
+    
+    if working_m3u:
+        logging.info(f"Scraped {len(working_m3u)} working M3U URLs")
+    else:
+        logging.warning("No working M3U URLs found")
+    
+    return working_m3u
 
 class FastChecker:
     def __init__(self):
@@ -722,9 +504,6 @@ class FastChecker:
         
         return url, False, self.failed_cache.get(url, "All attempts failed")
 
-
-# ==================== M3U PROCESSOR CLASS ====================
-
 class M3UProcessor:
     def __init__(self):
         self.unwanted_extensions = UNWANTED_EXTENSIONS
@@ -878,9 +657,6 @@ class M3UProcessor:
         
         return formatted_channels
 
-
-# ==================== UTILITY FUNCTIONS ====================
-
 def remove_duplicates(channels: List[Dict]) -> List[Dict]:
     """Remove duplicate channels by URL and ID."""
     seen_urls = set()
@@ -907,7 +683,6 @@ def remove_duplicates(channels: List[Dict]) -> List[Dict]:
     
     return unique_channels
 
-
 async def fetch_json(session: aiohttp.ClientSession, url: str) -> List[Dict]:
     """Fetch JSON data from URL."""
     try:
@@ -918,7 +693,6 @@ async def fetch_json(session: aiohttp.ClientSession, url: str) -> List[Dict]:
     except Exception as e:
         logging.error(f"Error fetching {url}: {e}")
     return []
-
 
 def load_existing_data() -> Dict:
     """Load all existing channel data from files."""
@@ -953,7 +727,6 @@ def load_existing_data() -> Dict:
     existing_data["all_existing_channels"] = remove_duplicates(existing_data["all_existing_channels"])
     return existing_data
 
-
 def clear_directories():
     """Clear all JSON files in countries and categories directories."""
     delete_split_files(WORKING_CHANNELS_BASE)
@@ -961,7 +734,6 @@ def clear_directories():
         if os.path.exists(dir_path):
             shutil.rmtree(dir_path)
         os.makedirs(dir_path, exist_ok=True)
-
 
 def save_channels(channels: List[Dict], country_files: Dict, category_files: Dict, append: bool = False):
     """Save channels to files."""
@@ -1014,7 +786,6 @@ def save_channels(channels: List[Dict], country_files: Dict, category_files: Dic
         
         save_split_json(category_base, category_channels)
 
-
 def update_logos_for_null_channels(channels: List[Dict], logos_data: List[Dict]) -> List[Dict]:
     """Update logos for channels with null logos."""
     updated_count = 0
@@ -1030,9 +801,6 @@ def update_logos_for_null_channels(channels: List[Dict], logos_data: List[Dict])
     
     logging.info(f"Updated logos for {updated_count} channels")
     return channels
-
-
-# ==================== VALIDATION FUNCTIONS ====================
 
 async def validate_channels(session: aiohttp.ClientSession, checker: FastChecker, 
                           all_existing_channels: List[Dict], iptv_channel_ids: Set, 
@@ -1099,7 +867,6 @@ async def validate_channels(session: aiohttp.ClientSession, checker: FastChecker
     save_channels(valid_channels, country_files, category_files, append=False)
     logging.info(f"Validated {valid_channels_count} working channels")
     return valid_channels_count
-
 
 async def check_iptv_channels(session: aiohttp.ClientSession, checker: FastChecker,
                             channels_data: List[Dict], streams_dict: Dict,
@@ -1183,9 +950,6 @@ async def check_iptv_channels(session: aiohttp.ClientSession, checker: FastCheck
     logging.info(f"Added {new_iptv_channels_count} new IPTV channels")
     return new_iptv_channels_count
 
-
-# ==================== KENYA TV SCRAPING ====================
-
 def get_m3u8_from_page(url_data: Tuple[str, int]) -> List[str]:
     """Extract m3u8 URLs from a page."""
     url, index = url_data
@@ -1198,7 +962,6 @@ def get_m3u8_from_page(url_data: Tuple[str, int]) -> List[str]:
     except Exception as e:
         logging.error(f"Error processing {url}: {e}")
         return []
-
 
 async def check_single_m3u8_url(session: aiohttp.ClientSession, url: str, timeout: int = 15) -> Tuple[str, bool]:
     """Check if a single m3u8 URL is valid."""
@@ -1221,7 +984,6 @@ async def check_single_m3u8_url(session: aiohttp.ClientSession, url: str, timeou
         pass
     return url, False
 
-
 async def check_m3u8_urls(urls: List[str]) -> Optional[str]:
     """Check multiple m3u8 URLs and return the first working one."""
     async with aiohttp.ClientSession() as session:
@@ -1231,7 +993,6 @@ async def check_m3u8_urls(urls: List[str]) -> Optional[str]:
             if is_valid:
                 return url
         return None
-
 
 async def scrape_kenya_tv_channels(logos_data: List[Dict]) -> List[Dict]:
     """Scrape Kenya TV channels and assign logos from LOGOS_URL."""
@@ -1312,9 +1073,6 @@ async def scrape_kenya_tv_channels(logos_data: List[Dict]) -> List[Dict]:
     except Exception as e:
         logging.error(f"Error in Kenya TV scrape: {e}")
         return []
-
-
-# ==================== UGANDA CHANNELS ====================
 
 async def fetch_and_process_uganda_channels(session: aiohttp.ClientSession, 
                                           checker: FastChecker, 
@@ -1409,9 +1167,6 @@ async def fetch_and_process_uganda_channels(session: aiohttp.ClientSession,
         logging.info(f"Added {len(channels)} working Uganda channels")
     
     return len(channels)
-
-
-# ==================== CLEANING AND REPLACEMENT ====================
 
 async def clean_and_replace_channels(session: aiohttp.ClientSession, checker: FastChecker,
                                    all_channels: List[Dict], streams_dict: Dict,
@@ -1542,7 +1297,6 @@ async def clean_and_replace_channels(session: aiohttp.ClientSession, checker: Fa
     
     return len(valid_channels), non_working_channels, replaced_channels
 
-
 def sync_working_channels():
     """Sync all channels from country and category files to the main working_channels.json."""
     logging.info("Syncing all channels to working_channels...")
@@ -1568,9 +1322,6 @@ def sync_working_channels():
     
     logging.info(f"Synced {len(all_channels)} channels to working_channels")
     return len(all_channels)
-
-
-# ==================== M3U URL PROCESSING ====================
 
 async def process_m3u_urls(session: aiohttp.ClientSession, logos_data: List[Dict],
                           checker: FastChecker, m3u_urls: List[str]) -> int:
@@ -1618,9 +1369,6 @@ async def process_m3u_urls(session: aiohttp.ClientSession, logos_data: List[Dict
         logging.info(f"Added {len(all_channels)} working channels from M3U URLs")
     
     return len(all_channels)
-
-
-# ==================== FINAL VALIDATION ====================
 
 async def perform_final_validation(session: aiohttp.ClientSession, 
                                  checker: FastChecker, 
@@ -1709,9 +1457,6 @@ async def perform_final_validation(session: aiohttp.ClientSession,
     
     return len(working_channels), len(failed_channels_info)
 
-
-# ==================== MAIN FUNCTION ====================
-
 async def main():
     global M3U_URLS
     
@@ -1721,7 +1466,7 @@ async def main():
     logging.info("\n=== Step 0: Scraping daily M3U URLs ===")
     scraped_m3u = scrape_daily_m3u_urls(max_working=5)
     M3U_URLS = scraped_m3u + ADDITIONAL_M3U
-    logging.info(f"Updated M3U_URLS with {len(M3U_URLS)} URLs ({len(scraped_m3u)} new)")
+    logging.info(f"Updated M3U_URLS with {len(M3U_URLS)} URLs")
     
     checker = FastChecker()
     
@@ -1822,7 +1567,6 @@ async def main():
         logging.info(f"Final count: {final_working_count} verified working channels")
         logging.info(f"Total removed non-working channels: {non_working_count + final_failed_count}")
         logging.info(f"Channels replaced: {replaced_count}")
-
 
 if __name__ == "__main__":
     try:
