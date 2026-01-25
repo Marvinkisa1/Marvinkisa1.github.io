@@ -30,12 +30,32 @@
         "country": "UG"
     },
     {
+        "name": "Sat7 Kids",
+        "id": "sat7kids.ug",
+        "logo": "",
+        "url": "https://svs.itworkscdn.net/sat7kidslive/sat7kids.smil/playlist.m3u8",
+        "categories": [
+            "kids"
+        ],
+        "country": "UG"
+    },
+    {
         "name": "Salt TV",
         "id": "SaltTV.ug",
         "logo": "https://i.imgur.com/AK9nE6Y.png",
         "url": "https://live.salttelevision.com/hls/stream.m3u8",
         "categories": [
             "religious"
+        ],
+        "country": "UG"
+    },
+    {
+        "name": "Afrobeat TV",
+        "id": "afrobeattv.ug",
+        "logo": "",
+        "url": "https://stream.ecable.tv/afrobeats/index.m3u8",
+        "categories": [
+            "entertainment"
         ],
         "country": "UG"
     },
@@ -50,42 +70,12 @@
         "country": "UG"
     },
     {
-        "name": "Sat7 Kids",
-        "id": "sat7kids.ug",
-        "logo": "",
-        "url": "https://svs.itworkscdn.net/sat7kidslive/sat7kids.smil/playlist.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "UG"
-    },
-    {
         "name": "Al Jazeera",
         "id": "aljazeera.ug",
         "logo": "",
         "url": "https://live-hls-web-aje-fa.getaj.net/AJE/index.m3u8",
         "categories": [
             "international"
-        ],
-        "country": "UG"
-    },
-    {
-        "name": "BTV",
-        "id": "BTV.ug",
-        "logo": "https://i.imgur.com/rcHZ1al.png",
-        "url": "https://streamfi-alphadgtl1.zettawiseroutes.com:8181/hls/stream.m3u8",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "UG"
-    },
-    {
-        "name": "Doxa TV",
-        "id": "DoxaTV.ug",
-        "logo": "https://i.imgur.com/Lo3PJPA.png",
-        "url": "https://streamfi-alphadgtl1.zettawiseroutes.com:8181/hls/stream_src.m3u8",
-        "categories": [
-            "religious"
         ],
         "country": "UG"
     },
@@ -120,30 +110,20 @@
         "country": "UG"
     },
     {
-        "name": "ACW UG TV",
-        "id": "ACWUGTV.ug",
-        "logo": "https://i.imgur.com/8pzEmcJ.jpeg",
-        "url": "https://live.acwugtv.com/hls/stream.m3u8",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "UG"
-    },
-    {
-        "name": "Afrobeat TV",
-        "id": "afrobeattv.ug",
-        "logo": "",
-        "url": "https://stream.ecable.tv/afrobeats/index.m3u8",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "UG"
-    },
-    {
         "name": "DBM TV",
         "id": "BTMTV.ug",
         "logo": "https://i.imgur.com/NUvA2jf.png",
         "url": "https://edge16.vedge.infomaniak.com/livecast/ik:dbmtv/manifest.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "UG"
+    },
+    {
+        "name": "ACW UG TV",
+        "id": "ACWUGTV.ug",
+        "logo": "https://i.imgur.com/8pzEmcJ.jpeg",
+        "url": "https://live.acwugtv.com/hls/stream.m3u8",
         "categories": [
             "entertainment"
         ],
@@ -156,36 +136,6 @@
         "url": "https://vsrv1.az-streamingserver.com:3555/live/dyjoqlgklive.m3u8",
         "categories": [
             "religious"
-        ],
-        "country": "UG"
-    },
-    {
-        "name": "Wan Luo TV",
-        "id": "WanLuoTV.ug",
-        "logo": "https://i.imgur.com/4PUUp3E.png",
-        "url": "https://stream.hydeinnovations.com/luotv-flussonic/index.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "UG"
-    },
-    {
-        "name": "Bukedde TV 1",
-        "id": "BukeddeTV1.ug",
-        "logo": "https://i.imgur.com/HFq5QlJ.png",
-        "url": "https://stream.hydeinnovations.com/bukedde1flussonic/index.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "UG"
-    },
-    {
-        "name": "TV West",
-        "id": "TVWest.ug",
-        "logo": "https://i.imgur.com/EiJzkIz.png",
-        "url": "https://stream.hydeinnovations.com/tvwest-flussonic/index.m3u8",
-        "categories": [
-            "news"
         ],
         "country": "UG"
     },
@@ -206,6 +156,36 @@
         "url": "https://stream.hydeinnovations.com/arktv-international/index.fmp4.m3u8",
         "categories": [
             "religious"
+        ],
+        "country": "UG"
+    },
+    {
+        "name": "Bukedde TV 1",
+        "id": "BukeddeTV1.ug",
+        "logo": "https://i.imgur.com/HFq5QlJ.png",
+        "url": "https://stream.hydeinnovations.com/bukedde1flussonic/index.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "UG"
+    },
+    {
+        "name": "Wan Luo TV",
+        "id": "WanLuoTV.ug",
+        "logo": "https://i.imgur.com/4PUUp3E.png",
+        "url": "https://stream.hydeinnovations.com/luotv-flussonic/index.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "UG"
+    },
+    {
+        "name": "TV West",
+        "id": "TVWest.ug",
+        "logo": "https://i.imgur.com/EiJzkIz.png",
+        "url": "https://stream.hydeinnovations.com/tvwest-flussonic/index.m3u8",
+        "categories": [
+            "news"
         ],
         "country": "UG"
     },

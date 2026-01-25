@@ -26,16 +26,6 @@
         "country": "PL"
     },
     {
-        "name": "TVP World",
-        "id": "TVPWorld.pl",
-        "logo": "https://i.imgur.com/lB4MgRI.png",
-        "url": "https://dash2.antik.sk/live/test_tvp_world/playlist.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "PL"
-    },
-    {
         "name": "TVP Info",
         "id": "TVPInfo.pl",
         "logo": "https://i.postimg.cc/NMHjPBCf/tvpinfo.png",
@@ -44,18 +34,10 @@
         "country": "PL"
     },
     {
-        "name": "TVP Polonia",
-        "id": "TVPPolonia.pl",
-        "logo": "https://i.postimg.cc/yxTBwdmB/tvppolonia.png",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/tvpolonia/browser-HLS8/tvpolonia.m3u8",
-        "categories": [],
-        "country": "PL"
-    },
-    {
-        "name": "Super Express TV",
-        "id": "SuperExpressTV.pl",
-        "logo": "https://i.imgur.com/HuIsALV.png",
-        "url": "https://s-pl-01.mediatool.tv/playout/sepl-abr/index.m3u8",
+        "name": "TVP World",
+        "id": "TVPWorld.pl",
+        "logo": "https://i.imgur.com/lB4MgRI.png",
+        "url": "https://dash2.antik.sk/live/test_tvp_world/playlist.m3u8",
         "categories": [
             "news"
         ],
@@ -80,10 +62,20 @@
         "country": "PL"
     },
     {
-        "name": "TV Trwam",
-        "id": "TVTrwam.pl",
-        "logo": "https://i.imgur.com/yq10wS5.png",
-        "url": "https://live-ch1.trwam.cf.insyscd.net/out/v1/b99041a282774d4a8fe84a54243af5de/trwamtv-live-ch1.mpd",
+        "name": "Super Express TV",
+        "id": "SuperExpressTV.pl",
+        "logo": "https://i.imgur.com/HuIsALV.png",
+        "url": "https://s-pl-01.mediatool.tv/playout/sepl-abr/index.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "PL"
+    },
+    {
+        "name": "Strongman Champions League",
+        "id": "StrongmanChampionsLeague.pl",
+        "logo": "https://images-0.rakuten.tv/storage/global-live-channel/translation/artwork/30ccc088-dca7-4458-ad5a-328fef06e1ca-width200-quality90.png",
+        "url": "https://rightsboosterltd-scl-1-us.xumo.wurl.tv/playlist.m3u8",
         "categories": [],
         "country": "PL"
     },
@@ -98,19 +90,21 @@
         "country": "PL"
     },
     {
-        "name": "Strongman Champions League",
-        "id": "StrongmanChampionsLeague.pl",
-        "logo": "https://images-0.rakuten.tv/storage/global-live-channel/translation/artwork/30ccc088-dca7-4458-ad5a-328fef06e1ca-width200-quality90.png",
-        "url": "https://rightsboosterltd-scl-1-us.xumo.wurl.tv/playlist.m3u8",
-        "categories": [],
-        "country": "PL"
-    },
-    {
         "name": "Shades of Black",
         "id": "ShadesofBlack.pl",
         "logo": "https://images-3.rakuten.tv/storage/global-live-channel/translation/artwork/e989f6d8-1ea1-44fe-97a5-9715c22c98b9-width200-quality90.jpeg",
         "url": "https://xumo-fusebeats.amagi.tv/playlist.m3u8",
         "categories": [],
+        "country": "PL"
+    },
+    {
+        "name": "Telewizja Luban",
+        "id": "TelewizjaLuban.pl",
+        "logo": "https://i.imgur.com/t2BGp0G.jpeg",
+        "url": "http://stream.herissons.cloud/hls/tvluban.m3u8",
+        "categories": [
+            "general"
+        ],
         "country": "PL"
     },
     {
@@ -125,177 +119,20 @@
         "country": "PL"
     },
     {
-        "name": "Telewizja Luban",
-        "id": "TelewizjaLuban.pl",
-        "logo": "https://i.imgur.com/t2BGp0G.jpeg",
-        "url": "http://stream.herissons.cloud/hls/tvluban.m3u8",
+        "name": "TV Trwam",
+        "id": "TVTrwam.pl",
+        "logo": "https://i.imgur.com/yq10wS5.png",
+        "url": "https://live-ch1.trwam.cf.insyscd.net/out/v1/b99041a282774d4a8fe84a54243af5de/trwamtv-live-ch1.mpd",
+        "categories": [],
+        "country": "PL"
+    },
+    {
+        "name": "TV ASTA",
+        "id": "TVASTA.pl",
+        "logo": "https://i.imgur.com/5g7lq9N.png",
+        "url": "https://5cce8c6f0e84c.streamlock.net/LiveCast/smil:PlayStream9.smil/playlist.m3u8",
         "categories": [
             "general"
-        ],
-        "country": "PL"
-    },
-    {
-        "name": "Polsat News 2",
-        "id": "PolsatNews2.pl",
-        "logo": "https://i.postimg.cc/y83ydgfY/polsatnews2.png",
-        "url": "https://turbotv.io/play/link/75409b46-e472-4a51-9077-abd80596670f/eyJpdiI6Ik9uRkVaekdYWDUxSU9GbTF2Mm9YR2c9PSIsInZhbHVlIjoiNy9Gc3NQWXNPSFZFeFcybVBOcWYyM1JyUDRIUVFCemhOeFVLUmJjQys0VWR6VFhnMHh0L3ZmQ1VIOCsrQUN4Y2tVdldRQ3RHV2NqL3psQmtPNlJtS0dqY1ZvV3hqNVp5WllvWFZ0U0dJdVE9IiwibWFjIjoiN2EwZTJhNDhiNTBlZjAwMDlhYzczYzE2NGNlODQ1YWQ0OWNmYWMwYjk0ZTUyN2E4ODE1OTg4MzYwNzA1ZDFhMCIsInRhZyI6IiJ9.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "PL"
-    },
-    {
-        "name": "4 Fun TV",
-        "id": "4FunTV.pl",
-        "logo": "https://i.imgur.com/rI1wo2l.png",
-        "url": "https://stream.4fun.tv:8888/hls/4f.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "PL"
-    },
-    {
-        "name": "Polsat Rodzina",
-        "id": "PolsatRodzina.pl",
-        "logo": "https://i.imgur.com/IS0AW48.png",
-        "url": "https://turbotv.io/play/link/97155b27-7b0c-4af7-9b67-a9ae172d89bf/eyJpdiI6IkdDTWN5bG8zTlpiSTFPdDhXbERSRUE9PSIsInZhbHVlIjoiRHJqdWhFRWdnN2p0ZjRHOEloWjcwNUVldmw4b2l0VjJ0Z2g1ZXFueWtQMU9ldzN2aFVwL1laeVVGNDFaVW1lUGhoQ2praGNsWVdCb212NUd1Y1N6VXBLSzF6bDd5TDZ3WjRQL0MxSlBRcUE9IiwibWFjIjoiNmQwNTc3N2UwNWUzZjQzOGJjMmE0MmM0YjYxMWQ4ZWZiZDg3ODQzNjIyOTY1ZTI2Y2FkMzQwMWVkN2FlYTY1MSIsInRhZyI6IiJ9.m3u8",
-        "categories": [],
-        "country": "PL"
-    },
-    {
-        "name": "4 Fun Kids",
-        "id": "4FunKids.pl",
-        "logo": "https://i.imgur.com/2JO5Y8c.png",
-        "url": "https://stream.4fun.tv:8889/hls/4fk_high/index.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "PL"
-    },
-    {
-        "name": "TV Kujawy",
-        "id": "TVKujawy.pl",
-        "logo": "https://i.imgur.com/dGP7cIW.png",
-        "url": "http://stream.tvkujawy.pl:8080/live/broadcast.m3u8",
-        "categories": [],
-        "country": "PL"
-    },
-    {
-        "name": "Disney Channel",
-        "id": "DisneyChannel.pl",
-        "logo": "https://i.postimg.cc/854KwmH1/disneychannel.png",
-        "url": "https://liveovh011.cda.pl/enc103/disneychannelhdraw/disneychannelhdraw.m3u8",
-        "categories": [
-            "kids"
-        ],
-        "country": "PL"
-    },
-    {
-        "name": "TVP1",
-        "id": "TVP1.pl",
-        "logo": "https://i.imgur.com/ewpSjBs.png",
-        "url": "https://liveovh011.cda.pl/enc115/tvp1hdraw/tvp1hdraw.m3u8",
-        "categories": [],
-        "country": "PL"
-    },
-    {
-        "name": "2x2",
-        "id": "2x2.pl",
-        "logo": "https://www.tvpolsat.info/wp-content/uploads/2023/03/2x2-logo.png",
-        "url": "https://liveovh011.cda.pl/enc117/2x2hdraw/2x2hdraw.m3u8",
-        "categories": [],
-        "country": "PL"
-    },
-    {
-        "name": "TVP2",
-        "id": "TVP2.pl",
-        "logo": "https://i.imgur.com/XxCc32B.png",
-        "url": "https://liveovh011.cda.pl/enc115/tvp2hdraw/tvp2hdraw.m3u8",
-        "categories": [],
-        "country": "PL"
-    },
-    {
-        "name": "Puls 2",
-        "id": "Puls2.pl",
-        "logo": "https://i.imgur.com/EOnzPiZ.png",
-        "url": "https://liveovh009.cda.pl/enc103/puls2raw/puls2raw.mpd",
-        "categories": [],
-        "country": "PL"
-    },
-    {
-        "name": "Junior Music",
-        "id": "JuniorMusic.pl",
-        "logo": "https://i.imgur.com/RE2RXQJ.png",
-        "url": "https://liveovh011.cda.pl/enc117/topkidsjrhdraw/topkidsjrhdraw.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "PL"
-    },
-    {
-        "name": "WP TV",
-        "id": "WPTV.pl",
-        "logo": "https://ocdn.eu/ptv2-images-transforms/1/NIbkrRsb2dvLW1pZ3JhdGVkL3dwLnBuZ5KVAmQAwsOVAgAowsM",
-        "url": "https://liveovh010.cda.pl/enc109/wphdraw/wphdraw.m3u8",
-        "categories": [],
-        "country": "PL"
-    },
-    {
-        "name": "Motowizja",
-        "id": "Motowizja.pl",
-        "logo": "https://ocdn.eu/ptv2-images-transforms/1/bqxkrtsb2dvLW1pZ3JhdGVkL21vdG93aXpqYS5wbmeSlQJkAMLDlQIAKMLD",
-        "url": "https://liveovh009.cda.pl/enc116/motowizjahdraw/motowizjahdraw.m3u8",
-        "categories": [
-            "auto"
-        ],
-        "country": "PL"
-    },
-    {
-        "name": "Polsat Viasat History",
-        "id": "PolsatViasatHistory.pl",
-        "logo": "https://i.imgur.com/X16UGUf.png",
-        "url": "https://liveovh010.cda.pl/enc105/polsatviasathistoryhdraw/polsatviasathistoryhdraw.mpd",
-        "categories": [
-            "documentary"
-        ],
-        "country": "PL"
-    },
-    {
-        "name": "Kino Polska",
-        "id": "KinoPolska.pl",
-        "logo": "https://i.imgur.com/lbl8K23.png",
-        "url": "https://liveovh010.cda.pl/enc005/kinopolskahdraw/kinopolskahdraw.mpd",
-        "categories": [
-            "movies"
-        ],
-        "country": "PL"
-    },
-    {
-        "name": "Antena HD",
-        "id": "AntenaHD.pl",
-        "logo": "https://i.imgur.com/obwYQZC.png",
-        "url": "https://liveovh009.cda.pl/enc114/antenatvhdraw/antenatvhdraw.m3u8",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "PL"
-    },
-    {
-        "name": "Power TV",
-        "id": "PowerTV.pl",
-        "logo": "https://i.imgur.com/YtaCmIc.png",
-        "url": "https://liveovh009.cda.pl/enc120/powertvhdraw/powertvhdraw.m3u8",
-        "categories": [],
-        "country": "PL"
-    },
-    {
-        "name": "Paramount Network",
-        "id": "ParamountNetwork.pl",
-        "logo": "https://i.postimg.cc/Hxy2hJyh/paramountnetwork.png",
-        "url": "https://liveovh010.cda.pl/enc028/paramountnetworkhdraw/paramountnetworkhdraw.mpd",
-        "categories": [
-            "series",
-            "movies"
         ],
         "country": "PL"
     },
@@ -308,10 +145,10 @@
         "country": "PL"
     },
     {
-        "name": "Polsat Viasat Explore",
-        "id": "PolsatViasatExplore.pl",
-        "logo": "https://i.imgur.com/gDlqO9h.png",
-        "url": "https://liveovh010.cda.pl/enc107/polsatviasatexplorehdraw/polsatviasatexplorehdraw.mpd",
+        "name": "Polsat Viasat Nature",
+        "id": "PolsatViasatNature.pl",
+        "logo": "https://i.imgur.com/TUcM0oS.png",
+        "url": "https://liveovh010.cda.pl/enc104/polsatviasatnaturehdraw/polsatviasatnaturehdraw.mpd",
         "categories": [
             "documentary"
         ],
@@ -326,12 +163,41 @@
         "country": "PL"
     },
     {
-        "name": "Polsat Viasat Nature",
-        "id": "PolsatViasatNature.pl",
-        "logo": "https://i.imgur.com/TUcM0oS.png",
-        "url": "https://liveovh010.cda.pl/enc104/polsatviasatnaturehdraw/polsatviasatnaturehdraw.mpd",
+        "name": "Polsat Viasat History",
+        "id": "PolsatViasatHistory.pl",
+        "logo": "https://i.imgur.com/X16UGUf.png",
+        "url": "https://liveovh010.cda.pl/enc105/polsatviasathistoryhdraw/polsatviasathistoryhdraw.mpd",
         "categories": [
             "documentary"
+        ],
+        "country": "PL"
+    },
+    {
+        "name": "Nickelodeon",
+        "id": "Nickelodeon.pl",
+        "logo": "https://i.imgur.com/E84jnP8.png",
+        "url": "https://liveovh010.cda.pl/enc010/nickelodeonraw/nickelodeonraw.mpd",
+        "categories": [
+            "kids"
+        ],
+        "country": "PL"
+    },
+    {
+        "name": "WP TV",
+        "id": "WPTV.pl",
+        "logo": "https://ocdn.eu/ptv2-images-transforms/1/NIbkrRsb2dvLW1pZ3JhdGVkL3dwLnBuZ5KVAmQAwsOVAgAowsM",
+        "url": "https://liveovh010.cda.pl/enc109/wphdraw/wphdraw.m3u8",
+        "categories": [],
+        "country": "PL"
+    },
+    {
+        "name": "Paramount Network",
+        "id": "ParamountNetwork.pl",
+        "logo": "https://i.postimg.cc/Hxy2hJyh/paramountnetwork.png",
+        "url": "https://liveovh010.cda.pl/enc028/paramountnetworkhdraw/paramountnetworkhdraw.mpd",
+        "categories": [
+            "series",
+            "movies"
         ],
         "country": "PL"
     },
@@ -352,14 +218,6 @@
         "country": "PL"
     },
     {
-        "name": "TVC",
-        "id": "TVC.pl",
-        "logo": "https://i.imgur.com/1Wmib2f.png",
-        "url": "https://liveovh010.cda.pl/enc118/tvchdraw/tvchdraw.m3u8",
-        "categories": [],
-        "country": "PL"
-    },
-    {
         "name": "Nat Geo People",
         "id": "NatGeoPeople.pl",
         "logo": "https://i.postimg.cc/WpwXQTP3/natgeopeople.png",
@@ -370,20 +228,140 @@
         "country": "PL"
     },
     {
-        "name": "Nickelodeon",
-        "id": "Nickelodeon.pl",
-        "logo": "https://i.imgur.com/E84jnP8.png",
-        "url": "https://liveovh010.cda.pl/enc010/nickelodeonraw/nickelodeonraw.mpd",
+        "name": "Nick Jr.",
+        "id": "NickJr.pl",
+        "logo": "https://i.postimg.cc/tJB6gpQj/nickjr.png",
+        "url": "https://liveovh010.cda.pl/enc010/nickjrraw/nickjrraw.mpd",
         "categories": [
             "kids"
         ],
         "country": "PL"
     },
     {
-        "name": "TV ASTA",
-        "id": "TVASTA.pl",
-        "logo": "https://i.imgur.com/5g7lq9N.png",
-        "url": "https://5cce8c6f0e84c.streamlock.net/LiveCast/smil:PlayStream9.smil/playlist.m3u8",
+        "name": "Polsat Viasat Explore",
+        "id": "PolsatViasatExplore.pl",
+        "logo": "https://i.imgur.com/gDlqO9h.png",
+        "url": "https://liveovh010.cda.pl/enc107/polsatviasatexplorehdraw/polsatviasatexplorehdraw.mpd",
+        "categories": [
+            "documentary"
+        ],
+        "country": "PL"
+    },
+    {
+        "name": "TVC",
+        "id": "TVC.pl",
+        "logo": "https://i.imgur.com/1Wmib2f.png",
+        "url": "https://liveovh010.cda.pl/enc118/tvchdraw/tvchdraw.m3u8",
+        "categories": [],
+        "country": "PL"
+    },
+    {
+        "name": "Comedy Central",
+        "id": "ComedyCentral.pl",
+        "logo": "https://i.postimg.cc/Dysd5c51/comedycentral.png",
+        "url": "https://liveovh010.cda.pl/enc006/comedycentralhdraw/comedycentralhdraw.mpd",
+        "categories": [
+            "comedy"
+        ],
+        "country": "PL"
+    },
+    {
+        "name": "Kino Polska",
+        "id": "KinoPolska.pl",
+        "logo": "https://i.imgur.com/lbl8K23.png",
+        "url": "https://liveovh010.cda.pl/enc005/kinopolskahdraw/kinopolskahdraw.mpd",
+        "categories": [
+            "movies"
+        ],
+        "country": "PL"
+    },
+    {
+        "name": "Polsat Rodzina",
+        "id": "PolsatRodzina.pl",
+        "logo": "https://i.imgur.com/IS0AW48.png",
+        "url": "https://turbotv.io/play/link/97155b27-7b0c-4af7-9b67-a9ae172d89bf/eyJpdiI6IkdDTWN5bG8zTlpiSTFPdDhXbERSRUE9PSIsInZhbHVlIjoiRHJqdWhFRWdnN2p0ZjRHOEloWjcwNUVldmw4b2l0VjJ0Z2g1ZXFueWtQMU9ldzN2aFVwL1laeVVGNDFaVW1lUGhoQ2praGNsWVdCb212NUd1Y1N6VXBLSzF6bDd5TDZ3WjRQL0MxSlBRcUE9IiwibWFjIjoiNmQwNTc3N2UwNWUzZjQzOGJjMmE0MmM0YjYxMWQ4ZWZiZDg3ODQzNjIyOTY1ZTI2Y2FkMzQwMWVkN2FlYTY1MSIsInRhZyI6IiJ9.m3u8",
+        "categories": [],
+        "country": "PL"
+    },
+    {
+        "name": "Polsat News 2",
+        "id": "PolsatNews2.pl",
+        "logo": "https://i.postimg.cc/y83ydgfY/polsatnews2.png",
+        "url": "https://turbotv.io/play/link/75409b46-e472-4a51-9077-abd80596670f/eyJpdiI6Ik9uRkVaekdYWDUxSU9GbTF2Mm9YR2c9PSIsInZhbHVlIjoiNy9Gc3NQWXNPSFZFeFcybVBOcWYyM1JyUDRIUVFCemhOeFVLUmJjQys0VWR6VFhnMHh0L3ZmQ1VIOCsrQUN4Y2tVdldRQ3RHV2NqL3psQmtPNlJtS0dqY1ZvV3hqNVp5WllvWFZ0U0dJdVE9IiwibWFjIjoiN2EwZTJhNDhiNTBlZjAwMDlhYzczYzE2NGNlODQ1YWQ0OWNmYWMwYjk0ZTUyN2E4ODE1OTg4MzYwNzA1ZDFhMCIsInRhZyI6IiJ9.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "PL"
+    },
+    {
+        "name": "Junior Music",
+        "id": "JuniorMusic.pl",
+        "logo": "https://i.imgur.com/RE2RXQJ.png",
+        "url": "https://liveovh011.cda.pl/enc117/topkidsjrhdraw/topkidsjrhdraw.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "PL"
+    },
+    {
+        "name": "Disney Channel",
+        "id": "DisneyChannel.pl",
+        "logo": "https://i.postimg.cc/854KwmH1/disneychannel.png",
+        "url": "https://liveovh011.cda.pl/enc103/disneychannelhdraw/disneychannelhdraw.m3u8",
+        "categories": [
+            "kids"
+        ],
+        "country": "PL"
+    },
+    {
+        "name": "4 Fun TV",
+        "id": "4FunTV.pl",
+        "logo": "https://i.imgur.com/rI1wo2l.png",
+        "url": "https://stream.4fun.tv:8888/hls/4f.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "PL"
+    },
+    {
+        "name": "TVP2",
+        "id": "TVP2.pl",
+        "logo": "https://i.imgur.com/XxCc32B.png",
+        "url": "https://liveovh011.cda.pl/enc115/tvp2hdraw/tvp2hdraw.m3u8",
+        "categories": [],
+        "country": "PL"
+    },
+    {
+        "name": "TVP1",
+        "id": "TVP1.pl",
+        "logo": "https://i.imgur.com/ewpSjBs.png",
+        "url": "https://liveovh011.cda.pl/enc115/tvp1hdraw/tvp1hdraw.m3u8",
+        "categories": [],
+        "country": "PL"
+    },
+    {
+        "name": "2x2",
+        "id": "2x2.pl",
+        "logo": "https://www.tvpolsat.info/wp-content/uploads/2023/03/2x2-logo.png",
+        "url": "https://liveovh011.cda.pl/enc117/2x2hdraw/2x2hdraw.m3u8",
+        "categories": [],
+        "country": "PL"
+    },
+    {
+        "name": "4 Fun Kids",
+        "id": "4FunKids.pl",
+        "logo": "https://i.imgur.com/2JO5Y8c.png",
+        "url": "https://stream.4fun.tv:8889/hls/4fk_high/index.m3u8",
+        "categories": [
+            "kids"
+        ],
+        "country": "PL"
+    },
+    {
+        "name": "Szlagier TV",
+        "id": "SzlagierTV.pl",
+        "logo": "https://i.imgur.com/VQk19Ng.png",
+        "url": "https://vefgpbwcjjjbxfng.naszatv.pl/tracks-v1a1/mono.ts.m3u8",
         "categories": [
             "general"
         ],
@@ -400,41 +378,11 @@
         "country": "PL"
     },
     {
-        "name": "Comedy Central",
-        "id": "ComedyCentral.pl",
-        "logo": "https://i.postimg.cc/Dysd5c51/comedycentral.png",
-        "url": "https://liveovh010.cda.pl/enc006/comedycentralhdraw/comedycentralhdraw.mpd",
-        "categories": [
-            "comedy"
-        ],
-        "country": "PL"
-    },
-    {
-        "name": "Nick Jr.",
-        "id": "NickJr.pl",
-        "logo": "https://i.postimg.cc/tJB6gpQj/nickjr.png",
-        "url": "https://liveovh010.cda.pl/enc010/nickjrraw/nickjrraw.mpd",
-        "categories": [
-            "kids"
-        ],
-        "country": "PL"
-    },
-    {
-        "name": "TVT Zgorzelec",
-        "id": "TVTZgorzelec.pl",
-        "logo": "https://i.imgur.com/zhzVpgf.jpg",
-        "url": "http://gargoyle.tomkow.pl/hls/tvt.m3u8",
+        "name": "Twoja.TV",
+        "id": "TwojaTV.pl",
+        "logo": "https://i.ibb.co/vxntQD60/twojatv-hd-online.png",
+        "url": "https://stream.twoja.tv/ttv_hls/live.m3u8",
         "categories": [],
-        "country": "PL"
-    },
-    {
-        "name": "BTB Music",
-        "id": "BTBMusic.pl",
-        "logo": "https://btb.j00r.us/images/logo_BTBMusic.webp",
-        "url": "https://panel.btb.j00r.us/memfs/ebaffae6-0086-49d7-843d-57f2c561de86.m3u8",
-        "categories": [
-            "music"
-        ],
         "country": "PL"
     },
     {
@@ -448,10 +396,36 @@
         "country": "PL"
     },
     {
-        "name": "Radiowa Czworka",
-        "id": "RadiowaCzworka.pl",
-        "logo": "https://i.imgur.com/VAtxF7k.png",
-        "url": "https://stream14.polskieradio.pl/pr4_video/video_pr4.stream/playlist.m3u8",
+        "name": "Puls 2",
+        "id": "Puls2.pl",
+        "logo": "https://i.imgur.com/EOnzPiZ.png",
+        "url": "https://liveovh009.cda.pl/enc103/puls2raw/puls2raw.mpd",
+        "categories": [],
+        "country": "PL"
+    },
+    {
+        "name": "Power TV",
+        "id": "PowerTV.pl",
+        "logo": "https://i.imgur.com/YtaCmIc.png",
+        "url": "https://liveovh009.cda.pl/enc120/powertvhdraw/powertvhdraw.m3u8",
+        "categories": [],
+        "country": "PL"
+    },
+    {
+        "name": "Motowizja",
+        "id": "Motowizja.pl",
+        "logo": "https://ocdn.eu/ptv2-images-transforms/1/bqxkrtsb2dvLW1pZ3JhdGVkL21vdG93aXpqYS5wbmeSlQJkAMLDlQIAKMLD",
+        "url": "https://liveovh009.cda.pl/enc116/motowizjahdraw/motowizjahdraw.m3u8",
+        "categories": [
+            "auto"
+        ],
+        "country": "PL"
+    },
+    {
+        "name": "Antena HD",
+        "id": "AntenaHD.pl",
+        "logo": "https://i.imgur.com/obwYQZC.png",
+        "url": "https://liveovh009.cda.pl/enc114/antenatvhdraw/antenatvhdraw.m3u8",
         "categories": [
             "entertainment"
         ],
@@ -469,6 +443,24 @@
         "country": "PL"
     },
     {
+        "name": "Radiowa Czworka",
+        "id": "RadiowaCzworka.pl",
+        "logo": "https://i.imgur.com/VAtxF7k.png",
+        "url": "https://stream14.polskieradio.pl/pr4_video/video_pr4.stream/playlist.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "PL"
+    },
+    {
+        "name": "TV Kujawy",
+        "id": "TVKujawy.pl",
+        "logo": "https://i.imgur.com/dGP7cIW.png",
+        "url": "http://stream.tvkujawy.pl:8080/live/broadcast.m3u8",
+        "categories": [],
+        "country": "PL"
+    },
+    {
         "name": "dlaCiebie.tv",
         "id": "dlaCiebietv.pl",
         "logo": "https://i.imgur.com/Tf32BJa.png",
@@ -479,20 +471,18 @@
         "country": "PL"
     },
     {
-        "name": "Szlagier TV",
-        "id": "SzlagierTV.pl",
-        "logo": "https://i.imgur.com/VQk19Ng.png",
-        "url": "https://vefgpbwcjjjbxfng.naszatv.pl/tracks-v1a1/mono.ts.m3u8",
-        "categories": [
-            "general"
-        ],
+        "name": "TVT Zgorzelec",
+        "id": "TVTZgorzelec.pl",
+        "logo": "https://i.imgur.com/zhzVpgf.jpg",
+        "url": "http://gargoyle.tomkow.pl/hls/tvt.m3u8",
+        "categories": [],
         "country": "PL"
     },
     {
-        "name": "Twoja.TV",
-        "id": "TwojaTV.pl",
-        "logo": "https://i.ibb.co/vxntQD60/twojatv-hd-online.png",
-        "url": "https://stream.twoja.tv/ttv_hls/live.m3u8",
+        "name": "TVP Polonia",
+        "id": "TVPPolonia.pl",
+        "logo": "https://i.postimg.cc/yxTBwdmB/tvppolonia.png",
+        "url": "https://viamotionhsi.netplus.ch/live/eds/tvpolonia/browser-HLS8/tvpolonia.m3u8",
         "categories": [],
         "country": "PL"
     },
@@ -502,6 +492,16 @@
         "logo": "https://i.imgur.com/HQ8UyhL.png",
         "url": "https://str.onnetwork.tv/hls/onnet-358726_hi/index.m3u8",
         "categories": [],
+        "country": "PL"
+    },
+    {
+        "name": "BTB Music",
+        "id": "BTBMusic.pl",
+        "logo": "https://btb.j00r.us/images/logo_BTBMusic.webp",
+        "url": "https://panel.btb.j00r.us/memfs/ebaffae6-0086-49d7-843d-57f2c561de86.m3u8",
+        "categories": [
+            "music"
+        ],
         "country": "PL"
     }
 ]
