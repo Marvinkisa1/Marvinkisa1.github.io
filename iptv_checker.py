@@ -197,7 +197,7 @@ def scrape_daily_m3u_urls(max_working: int = 5) -> List[str]:
         prev_date = (date.today() - timedelta(days=1)).strftime("%d-%m-%Y")
         current_urls = [u for u in urls if f'-{prev_date}/' in u]
     
-    top_5_urls = current_urls[:5]
+    top_5_urls = current_urls[:20]
     
     if not top_5_urls:
         fallback_date = (date.today() - timedelta(days=2)).strftime("%d-%m-%Y")
