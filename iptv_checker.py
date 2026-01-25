@@ -208,6 +208,8 @@ def scrape_daily_m3u_urls(max_working: int = 5) -> List[str]:
     logging.info(f"Using date: {date_used}")
     
     working_m3u = []
+    processed_domains = set()  # Track processed domains
+    
     for page_url in top_5_urls:
         logging.info(f"\nFetching {page_url}...")
         try:
@@ -233,11 +235,37 @@ def scrape_daily_m3u_urls(max_working: int = 5) -> List[str]:
         
         for m3u_match in m3u_matches:
             full_m3u = m3u_match
+            
+            # Extract domain (hostname:port) from URL, ignoring username/password
+            try:
+                # Remove http:// or https://
+                if '://' in full_m3u:
+                    netloc = full_m3u.split('://')[1].split('/')[0]
+                else:
+                    netloc = full_m3u.split('/')[0]
+                
+                # Remove username/password if present (tvappapk@domain)
+                if '@' in netloc:
+                    netloc = netloc.split('@')[1]
+                
+                # Keep port if specified
+                domain_key = netloc
+                
+                if domain_key in processed_domains:
+                    logging.info(f"Skipping duplicate domain: {domain_key}")
+                    continue
+                    
+            except Exception as e:
+                logging.warning(f"Could not parse domain from URL {full_m3u}: {e}")
+                domain_key = None
+            
             try:
                 m3u_resp = requests.get(full_m3u, headers=SCRAPER_HEADERS, timeout=30, stream=True)
                 if m3u_resp.status_code == 200 and len(m3u_resp.content) > 100:
                     if '#EXT' in m3u_resp.text:
                         working_m3u.append(full_m3u)
+                        if domain_key:
+                            processed_domains.add(domain_key)
                         if len(working_m3u) >= max_working:
                             break
             except Exception:
