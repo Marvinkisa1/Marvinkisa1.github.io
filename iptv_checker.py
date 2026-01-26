@@ -5,7 +5,7 @@ import os
 import m3u8
 from tqdm import tqdm
 from aiohttp import ClientTimeout, TCPConnector
-from urllib.parse import urlparse, urljoin
+from urllib.parse import urlparse, urljoin, parse_qs
 import requests
 from bs4 import BeautifulSoup
 import re
@@ -83,7 +83,9 @@ SCRAPER_HEADERS = {
     'Accept-Encoding': 'gzip, deflate',
     'Connection': 'keep-alive',
     'Cache-Control': 'no-cache',
-    'Pragma': 'no-cache'
+    'Pragma': 'no-cache',
+    'Referer': 'https://world-iptv.club/',
+    'Origin': 'https://world-iptv.club'
 }
 
 def delete_split_files(base_name: str):
@@ -271,7 +273,9 @@ class FastChecker:
             'Accept-Encoding': 'gzip, deflate',
             'Connection': 'keep-alive',
             'Cache-Control': 'no-cache',
-            'Pragma': 'no-cache'
+            'Pragma': 'no-cache',
+            'Referer': 'https://world-iptv.club/',
+            'Origin': 'https://world-iptv.club'
         }
         self.working_cache = {}
         self.failed_cache = {}
@@ -308,11 +312,27 @@ class FastChecker:
         streaming_patterns = [
             '/live.m3u8', '/stream.m3u8', '/playlist.m3u8', 
             '/chunklist.m3u8', '/index.m3u8', '/hls/', '/live/',
-            'type=m3u8', 'format=m3u8', 'stream=true', 'live=true'
+            'type=m3u8', 'type=m3u', 'type=m3u_plus', 'format=m3u8', 
+            'stream=true', 'live=true'
         ]
         
         if any(pattern in url_lower for pattern in streaming_patterns):
             return True
+        
+        # Special handling for provider URLs (like get.php with M3U parameters)
+        if '/get.php?' in url_lower:
+            try:
+                parsed = urlparse(url_lower)
+                query_params = parse_qs(parsed.query)
+                # Check if it has type parameter indicating M3U content
+                if any(param in query_params for param in ['type', 'format']):
+                    for param in ['type', 'format']:
+                        if param in query_params:
+                            param_value = query_params[param][0].lower()
+                            if any(m3u_type in param_value for m3u_type in ['m3u', 'm3u8', 'm3u_plus']):
+                                return True
+            except Exception:
+                pass
         
         # Special handling for .ts files - only accept if they're clearly HLS segments
         if '.ts' in url_lower:
@@ -386,28 +406,56 @@ class FastChecker:
             ) as response:
                 
                 # Check status code
-                if response.status not in [200, 206]:
+                if response.status not in [200, 206, 302, 307]:
                     return False, f"HTTP {response.status}"
+                
+                # Handle redirects
+                if response.status in [302, 307]:
+                    redirect_url = response.headers.get('Location')
+                    if redirect_url:
+                        logging.debug(f"Following redirect to: {redirect_url}")
+                        # Follow redirect with same headers
+                        async with session.get(
+                            redirect_url,
+                            timeout=ClientTimeout(total=timeout),
+                            headers=self.session_headers,
+                            allow_redirects=True,
+                            raise_for_status=False
+                        ) as redirect_response:
+                            if redirect_response.status != 200:
+                                return False, f"Redirect failed: HTTP {redirect_response.status}"
+                            response = redirect_response
+                    else:
+                        return False, "Redirect without location"
                 
                 # Check content type
                 content_type = response.headers.get('Content-Type', '').lower()
                 
-                # Reject HTML pages and suspicious content types
-                if 'text/html' in content_type:
-                    # Read a bit to confirm
-                    chunk = await response.content.read(1024)
-                    if chunk:
-                        try:
-                            text = chunk.decode('utf-8', errors='ignore').lower()
-                            if '<html' in text or '<!doctype' in text:
-                                return False, "HTML page"
-                        except:
-                            pass
+                # For M3U playlists, accept various content types
+                is_m3u_url = '.m3u8' in url.lower() or '.m3u' in url.lower() or '/get.php?' in url.lower()
+                if is_m3u_url:
+                    # Accept a wider range of content types for M3U
+                    acceptable_m3u_types = ['application/vnd.apple.mpegurl', 'audio/x-mpegurl', 
+                                           'application/x-mpegurl', 'text/plain', 'application/octet-stream']
+                    if content_type and not any(ct in content_type for ct in acceptable_m3u_types):
+                        logging.debug(f"Unexpected content type for M3U: {content_type}")
                 
                 # Read first chunk to check content
                 chunk = await response.content.read(32768)  # 32KB for better detection
-                if not chunk or len(chunk) < MIN_STREAM_SIZE:
-                    return False, f"Too small ({len(chunk) if chunk else 0} bytes)"
+                if not chunk:
+                    return False, "Empty response"
+                
+                if len(chunk) < MIN_STREAM_SIZE:
+                    # For M3U URLs, check if it's valid M3U content even if small
+                    if is_m3u_url:
+                        try:
+                            text = chunk.decode('utf-8', errors='ignore')
+                            if '#EXTM3U' in text:
+                                # Small but valid M3U
+                                return True, "Valid m3u8 stream"
+                        except:
+                            pass
+                    return False, f"Too small ({len(chunk)} bytes)"
                 
                 # Check for common error patterns
                 try:
@@ -428,8 +476,8 @@ class FastChecker:
                         return False, f"Error page detected"
                     
                     # Check if it's m3u8/m3u content
-                    is_m3u = '.m3u8' in url.lower() or '.m3u' in url.lower() or 'm3u8' in content_type
-                    if is_m3u or '#EXTM3U' in text.upper():
+                    is_m3u = is_m3u_url or '#EXTM3U' in text.upper()
+                    if is_m3u:
                         # Read more for m3u validation if needed
                         if len(chunk) < 65536:
                             more_chunk = await response.content.read(65536 - len(chunk))
@@ -443,6 +491,13 @@ class FastChecker:
                     # Check for other playlist formats
                     if '#EXTINF' in text.upper():
                         return True, "M3U playlist"
+                    
+                    # For non-M3U content, check if it looks like binary data (likely media stream)
+                    # Count non-printable characters
+                    if len(chunk) > 1024:
+                        non_printable = sum(1 for b in chunk[:1024] if b < 32 and b not in [9, 10, 13])
+                        if non_printable > 700:  # Mostly binary data
+                            return True, "Binary stream data"
                     
                 except UnicodeDecodeError:
                     # Binary content - likely a media stream or segment
@@ -539,11 +594,27 @@ class M3UProcessor:
         streaming_patterns = [
             '/live.m3u8', '/stream.m3u8', '/playlist.m3u8', 
             '/chunklist.m3u8', '/index.m3u8', '/hls/', '/live/',
-            'type=m3u8', 'format=m3u8', 'stream=true', 'live=true'
+            'type=m3u8', 'type=m3u', 'type=m3u_plus', 'format=m3u8', 
+            'stream=true', 'live=true'
         ]
         
         if any(pattern in url_lower for pattern in streaming_patterns):
             return True
+        
+        # Special handling for provider URLs (like get.php with M3U parameters)
+        if '/get.php?' in url_lower:
+            try:
+                parsed = urlparse(url_lower)
+                query_params = parse_qs(parsed.query)
+                # Check if it has type parameter indicating M3U content
+                if any(param in query_params for param in ['type', 'format']):
+                    for param in ['type', 'format']:
+                        if param in query_params:
+                            param_value = query_params[param][0].lower()
+                            if any(m3u_type in param_value for m3u_type in ['m3u', 'm3u8', 'm3u_plus']):
+                                return True
+            except Exception:
+                pass
         
         # Special handling for .ts files
         if '.ts' in url_lower:
@@ -562,10 +633,24 @@ class M3UProcessor:
     async def fetch_m3u_content(self, session: aiohttp.ClientSession, m3u_url: str) -> Optional[str]:
         """Fetch M3U content from URL."""
         try:
-            async with session.get(m3u_url, timeout=ClientTimeout(total=INITIAL_TIMEOUT)) as response:
+            headers = {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                'Accept': '*/*',
+                'Accept-Language': 'en-US,en;q=0.9',
+                'Accept-Encoding': 'gzip, deflate',
+                'Connection': 'keep-alive',
+                'Cache-Control': 'no-cache',
+                'Pragma': 'no-cache',
+                'Referer': 'https://world-iptv.club/',
+                'Origin': 'https://world-iptv.club'
+            }
+            
+            async with session.get(m3u_url, timeout=ClientTimeout(total=INITIAL_TIMEOUT), headers=headers) as response:
                 if response.status == 200:
                     return await response.text()
-                return None
+                else:
+                    logging.debug(f"Failed to fetch M3U {m3u_url}: HTTP {response.status}")
+                    return None
         except Exception as e:
             logging.debug(f"Error fetching M3U {m3u_url}: {e}")
             return None
@@ -580,15 +665,12 @@ class M3UProcessor:
             if line.startswith('#EXTINF:-1') or line.startswith('#EXTINF:'):
                 current_channel = self._parse_extinf_line(line)
             elif line and not line.startswith('#') and current_channel:
-                # Only include if it's a valid stream URL
-                if self.is_valid_stream_url(line):
-                    current_channel['url'] = line
-                    channels.append(current_channel)
-                else:
-                    logging.debug(f"Filtered out non-stream URL: {line}")
+                # Try to accept the URL and validate later
+                current_channel['url'] = line
+                channels.append(current_channel)
                 current_channel = {}
         
-        logging.info(f"Filtered M3U: {len(channels)} valid stream URLs found")
+        logging.info(f"Parsed M3U: {len(channels)} URLs found (will be validated later)")
         return channels
     
     def _parse_extinf_line(self, line: str) -> Dict:
