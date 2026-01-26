@@ -21,7 +21,6 @@ import html
 from datetime import date, timedelta
 from typing import List, Dict, Set, Tuple, Optional
 import hashlib
-import base64
 
 # Configure logging
 logging.basicConfig(
@@ -209,8 +208,6 @@ def scrape_daily_m3u_urls(max_working: int = 5) -> List[str]:
     logging.info(f"Using date: {date_used}")
     
     working_m3u = []
-    processed_domains = set()  # Track processed domains
-    
     for page_url in top_5_urls:
         logging.info(f"\nFetching {page_url}...")
         try:
@@ -236,37 +233,11 @@ def scrape_daily_m3u_urls(max_working: int = 5) -> List[str]:
         
         for m3u_match in m3u_matches:
             full_m3u = m3u_match
-            
-            # Extract domain (hostname:port) from URL, ignoring username/password
-            try:
-                # Remove http:// or https://
-                if '://' in full_m3u:
-                    netloc = full_m3u.split('://')[1].split('/')[0]
-                else:
-                    netloc = full_m3u.split('/')[0]
-                
-                # Remove username/password if present (tvappapk@domain)
-                if '@' in netloc:
-                    netloc = netloc.split('@')[1]
-                
-                # Keep port if specified
-                domain_key = netloc
-                
-                if domain_key in processed_domains:
-                    logging.info(f"Skipping duplicate domain: {domain_key}")
-                    continue
-                    
-            except Exception as e:
-                logging.warning(f"Could not parse domain from URL {full_m3u}: {e}")
-                domain_key = None
-            
             try:
                 m3u_resp = requests.get(full_m3u, headers=SCRAPER_HEADERS, timeout=30, stream=True)
                 if m3u_resp.status_code == 200 and len(m3u_resp.content) > 100:
                     if '#EXT' in m3u_resp.text:
                         working_m3u.append(full_m3u)
-                        if domain_key:
-                            processed_domains.add(domain_key)
                         if len(working_m3u) >= max_working:
                             break
             except Exception:
@@ -536,7 +507,6 @@ class FastChecker:
 class M3UProcessor:
     def __init__(self):
         self.unwanted_extensions = UNWANTED_EXTENSIONS
-        self.session_headers = None
         
     def has_unwanted_extension(self, url: str) -> bool:
         """Check if URL has unwanted video/audio file extension."""
@@ -569,8 +539,7 @@ class M3UProcessor:
         streaming_patterns = [
             '/live.m3u8', '/stream.m3u8', '/playlist.m3u8', 
             '/chunklist.m3u8', '/index.m3u8', '/hls/', '/live/',
-            'type=m3u8', 'format=m3u8', 'stream=true', 'live=true',
-            'get.php', 'player.php', 'live.php', 'stream.php'
+            'type=m3u8', 'format=m3u8', 'stream=true', 'live=true'
         ]
         
         if any(pattern in url_lower for pattern in streaming_patterns):
@@ -585,325 +554,165 @@ class M3UProcessor:
         
         # Check for other streaming indicators
         url_path = urlparse(url_lower).path
-        if any(keyword in url_path for keyword in ['/live.', '/stream.', '/manifest.', '/watch.', '/tv.']):
+        if any(keyword in url_path for keyword in ['/live.', '/stream.', '/manifest.']):
             return True
         
-        # If no extension but looks like a streaming endpoint
-        if not '.' in url_path.split('/')[-1] and any(x in url_lower for x in ['/live', '/stream', '/tv', '/channel']):
-            return True
-            
         return False
     
-    async def fetch_m3u_content_with_retry(self, session: aiohttp.ClientSession, m3u_url: str, max_retries: int = 3) -> Optional[str]:
-        """Fetch M3U content from URL with retry logic."""
-        for attempt in range(max_retries):
-            try:
-                timeout = ClientTimeout(total=INITIAL_TIMEOUT * (attempt + 1))
-                
-                # Check if URL has authentication credentials
-                parsed_url = urlparse(m3u_url)
-                has_auth = parsed_url.username is not None
-                
-                # Set appropriate headers
-                headers = self.session_headers.copy() if self.session_headers else SCRAPER_HEADERS.copy()
-                if has_auth:
-                    # Remove auth from URL and add to headers if needed
-                    # Some servers don't like auth in URL
-                    headers['Authorization'] = f'Basic {base64.b64encode(f"{parsed_url.username}:{parsed_url.password}".encode()).decode()}'
-                    # Reconstruct URL without auth
-                    clean_url = f"{parsed_url.scheme}://{parsed_url.hostname}"
-                    if parsed_url.port:
-                        clean_url += f":{parsed_url.port}"
-                    clean_url += parsed_url.path
-                    if parsed_url.query:
-                        clean_url += f"?{parsed_url.query}"
-                    m3u_url = clean_url
-                
-                async with session.get(m3u_url, timeout=timeout, headers=headers) as response:
-                    if response.status == 200:
-                        content = await response.text()
-                        # Check if content is actually M3U
-                        if '#EXTM3U' in content.upper() or '#EXTINF:' in content.upper():
-                            return content
-                        else:
-                            # Check if it's redirecting to another URL
-                            if len(content) < 500 and 'http' in content.lower():
-                                # Might be a redirect URL in the content
-                                urls = re.findall(r'(https?://[^\s]+)', content)
-                                if urls:
-                                    # Try the found URL
-                                    return await self.fetch_m3u_content_with_retry(session, urls[0], max_retries - attempt - 1)
-                    
-                    # If we get here, wait and retry
-                    if attempt < max_retries - 1:
-                        wait_time = 2 ** attempt  # Exponential backoff
-                        logging.debug(f"Retry {attempt + 1} for {m3u_url} in {wait_time}s")
-                        await asyncio.sleep(wait_time)
-                        
-            except Exception as e:
-                logging.debug(f"Attempt {attempt + 1} failed for {m3u_url}: {e}")
-                if attempt < max_retries - 1:
-                    await asyncio.sleep(2 ** attempt)
-                continue
-        
-        return None
+    async def fetch_m3u_content(self, session: aiohttp.ClientSession, m3u_url: str) -> Optional[str]:
+        """Fetch M3U content from URL."""
+        try:
+            # Use browser-like headers
+            headers = {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                'Accept': '*/*',
+                'Accept-Language': 'en-US,en;q=0.9',
+                'Accept-Encoding': 'gzip, deflate',
+                'Connection': 'keep-alive',
+                'Cache-Control': 'no-cache',
+                'Pragma': 'no-cache',
+                'Referer': 'https://www.google.com/',
+                'DNT': '1',
+                'Upgrade-Insecure-Requests': '1',
+                'Sec-Fetch-Dest': 'document',
+                'Sec-Fetch-Mode': 'navigate',
+                'Sec-Fetch-Site': 'none',
+                'Sec-Fetch-User': '?1'
+            }
+            
+            async with session.get(m3u_url, timeout=ClientTimeout(total=30), headers=headers) as response:
+                if response.status == 200:
+                    content = await response.text()
+                    # Check if it's actually M3U content
+                    if content and ('#EXTM3U' in content or '#EXTINF:' in content):
+                        return content
+                    else:
+                        logging.debug(f"Content doesn't look like M3U from {m3u_url}. Preview: {content[:200] if content else 'EMPTY'}")
+                        return None
+                else:
+                    logging.debug(f"Failed to fetch M3U {m3u_url}: HTTP {response.status}")
+                    return None
+        except asyncio.TimeoutError:
+            logging.debug(f"Timeout fetching M3U {m3u_url}")
+            return None
+        except Exception as e:
+            logging.debug(f"Error fetching M3U {m3u_url}: {e}")
+            return None
     
-    def parse_m3u_adaptive(self, content: str, source_url: str = "") -> List[Dict]:
-        """Parse M3U content with adaptive parsing for different formats."""
+    def parse_m3u(self, content: str) -> List[Dict]:
+        """Parse M3U content and extract channel information, filtering out non-stream URLs."""
         channels = []
         current_channel = {}
         
         lines = content.split('\n')
-        i = 0
         
-        while i < len(lines):
+        for i in range(len(lines)):
             line = lines[i].strip()
             
-            # Handle different M3U formats
+            # Look for EXTINF lines
             if line.startswith('#EXTINF'):
-                # Parse EXTINF line
-                current_channel = self._parse_extinf_line_adaptive(line)
+                current_channel = self._parse_extinf_line(line)
                 
-                # Look for URL in next non-empty, non-comment line
-                j = i + 1
-                while j < len(lines) and (not lines[j].strip() or lines[j].strip().startswith('#')):
-                    j += 1
-                
-                if j < len(lines):
-                    url_line = lines[j].strip()
-                    if url_line and not url_line.startswith('#'):
-                        # Handle relative URLs
-                        if not url_line.startswith(('http://', 'https://', 'rtmp://', 'rtsp://')):
-                            if source_url:
-                                # Try to construct absolute URL
-                                base_url = '/'.join(source_url.split('/')[:-1]) if '/' in source_url else source_url
-                                if base_url and base_url.startswith('http'):
-                                    url_line = urljoin(base_url + '/', url_line)
-                        
-                        if self.is_valid_stream_url(url_line):
-                            current_channel['url'] = url_line
+                # Look ahead for the URL (next non-empty, non-comment line)
+                for j in range(i + 1, min(i + 5, len(lines))):  # Look up to 5 lines ahead
+                    next_line = lines[j].strip()
+                    if next_line and not next_line.startswith('#'):
+                        # Found a potential URL
+                        if self.is_valid_stream_url(next_line):
+                            current_channel['url'] = next_line
                             channels.append(current_channel)
-                        i = j  # Skip the URL line
-                    else:
-                        # No URL found, discard this channel
-                        current_channel = {}
-            
-            i += 1
+                        else:
+                            logging.debug(f"Filtered out non-stream URL: {next_line}")
+                        break  # Found URL, stop looking
+                current_channel = {}
         
-        logging.info(f"Parsed {len(channels)} channels from M3U content")
+        logging.info(f"Found {len(channels)} channels in M3U content")
         return channels
     
-    def _parse_extinf_line_adaptive(self, line: str) -> Dict:
-        """Parse EXTINF line adaptively for different formats."""
-        # Remove #EXTINF: prefix
-        if line.startswith('#EXTINF:'):
-            line = line[8:]
+    def _parse_extinf_line(self, line: str) -> Dict:
+        """Parse EXTINF line and extract metadata."""
+        # Extract attributes using regex
+        attrs = dict(re.findall(r'(\S+)="([^"]*)"', line))
         
-        # Extract duration if present
-        duration = None
+        # Get channel name (everything after the last comma)
         if ',' in line:
-            # Format: #EXTINF:-1 tvg-id="..." tvg-name="..." ...,Channel Name
-            # or: #EXTINF:-1,Channel Name
-            parts = line.split(',', 1)
-            if len(parts) == 2:
-                attributes_part = parts[0].strip()
-                channel_name = parts[1].strip()
-                
-                # Parse attributes
-                attrs = {}
-                # Try different attribute parsing methods
-                # Method 1: tvg-id="value"
-                attr_matches = re.findall(r'(\S+)="([^"]*)"', attributes_part)
-                for key, value in attr_matches:
-                    attrs[key.lower()] = value
-                
-                # Method 2: key=value without quotes
-                attr_matches = re.findall(r'(\S+)=([^\s"]+)', attributes_part)
-                for key, value in attr_matches:
-                    attrs[key.lower()] = value
-                
-                # Extract country code from channel name
-                country_code = ''
-                clean_name = channel_name
-                
-                # Try different country code patterns
-                patterns = [
-                    r'^\|([A-Z]{2})\|',  # |US| Channel Name
-                    r'^([A-Z]{2})/',      # US/Channel Name
-                    r'^([A-Z]{2})\|',     # US|Channel Name
-                    r'^\[([A-Z]{2})\]',   # [US] Channel Name
-                    r'^([A-Z]{2}):',      # US: Channel Name
-                ]
-                
-                for pattern in patterns:
-                    match = re.match(pattern, channel_name)
-                    if match:
-                        country_code = match.group(1)
-                        clean_name = channel_name[match.end():].strip()
-                        break
-                
-                return {
-                    'tvg_id': attrs.get('tvg-id', attrs.get('tvg_id', '')),
-                    'tvg_name': attrs.get('tvg-name', attrs.get('tvg_name', '')),
-                    'tvg_logo': attrs.get('tvg-logo', attrs.get('tvg_logo', '')),
-                    'group_title': attrs.get('group-title', attrs.get('group_title', '')),
-                    'display_name': clean_name,
-                    'country_code': country_code,
-                    'raw_name': channel_name
-                }
+            channel_name = line.split(',')[-1].strip()
+        else:
+            channel_name = line.strip()
         
-        # Fallback: return minimal info
+        # Extract country code if present
+        country_code = ''
+        clean_name = channel_name
+        
+        # Try different patterns for country code
+        patterns = [
+            r'^\|([A-Z]{2})\|',
+            r'^([A-Z]{2})/',
+            r'^([A-Z]{2})\|',
+            r'^\[([A-Z]{2})\]',
+            r'^([A-Z]{2}):'
+        ]
+        
+        for pattern in patterns:
+            match = re.match(pattern, channel_name)
+            if match:
+                country_code = match.group(1)
+                clean_name = channel_name[match.end():].strip()
+                break
+        
         return {
-            'tvg_id': '',
-            'tvg_name': '',
-            'tvg_logo': '',
-            'group_title': '',
-            'display_name': line if ',' not in line else line.split(',')[-1],
-            'country_code': '',
-            'raw_name': line if ',' not in line else line.split(',')[-1]
+            'tvg_id': attrs.get('tvg-id', '') or attrs.get('tvg-ID', ''),
+            'tvg_name': attrs.get('tvg-name', ''),
+            'tvg_logo': attrs.get('tvg-logo', ''),
+            'group_title': attrs.get('group-title', ''),
+            'display_name': clean_name,
+            'country_code': country_code,
+            'raw_name': channel_name
         }
     
-    async def process_m3u_url_robust(self, session: aiohttp.ClientSession, m3u_url: str, 
-                                   checker: FastChecker, max_retries: int = 3) -> List[Dict]:
-        """Process a single M3U URL with robust error handling and retries."""
-        for attempt in range(max_retries):
-            try:
-                logging.info(f"Processing M3U URL (attempt {attempt + 1}): {m3u_url[:100]}...")
-                
-                # Fetch content with retry
-                content = await self.fetch_m3u_content_with_retry(session, m3u_url, max_retries=2)
-                
-                if not content:
-                    logging.warning(f"No valid M3U content retrieved from {m3u_url}")
-                    await asyncio.sleep(2 ** attempt)  # Exponential backoff
-                    continue
-                
-                # Try different parsing strategies
-                channels = []
-                
-                # Strategy 1: Standard M3U parsing
-                try:
-                    channels = self.parse_m3u_adaptive(content, m3u_url)
-                except Exception as e:
-                    logging.debug(f"Standard parsing failed: {e}")
-                    channels = []
-                
-                # Strategy 2: Fallback parsing if no channels found
-                if not channels:
-                    # Try simpler line-by-line parsing
-                    channels = self._fallback_parse_m3u(content, m3u_url)
-                
-                if not channels:
-                    logging.warning(f"No channels parsed from {m3u_url}")
-                    await asyncio.sleep(2 ** attempt)
-                    continue
-                
-                # Check which channels are working
-                working_channels = []
-                
-                # Check URLs in batches
-                batch_size = 50
-                for i in range(0, len(channels), batch_size):
-                    batch = channels[i:i + batch_size]
-                    
-                    check_tasks = []
-                    for channel in batch:
-                        if 'url' in channel:
-                            check_tasks.append(checker.check_single_url(session, channel['url']))
-                    
-                    if check_tasks:
-                        check_results = await asyncio.gather(*check_tasks, return_exceptions=True)
-                        
-                        for j, result in enumerate(check_results):
-                            if isinstance(result, Exception):
-                                continue
-                            
-                            url, is_working, reason = result
-                            if is_working and j < len(batch):
-                                working_channels.append(batch[j])
-                    
-                    # Small delay between batches
-                    if i + batch_size < len(channels):
-                        await asyncio.sleep(0.5)
-                
-                logging.info(f"Found {len(working_channels)} working channels in {m3u_url}")
-                return working_channels
-                
-            except Exception as e:
-                logging.error(f"Error processing M3U URL {m3u_url} (attempt {attempt + 1}): {e}")
-                if attempt < max_retries - 1:
-                    wait_time = 3 * (attempt + 1)
-                    logging.info(f"Retrying in {wait_time} seconds...")
-                    await asyncio.sleep(wait_time)
-                continue
+    def _extract_categories(self, group_title: str) -> List[str]:
+        """Extract categories from group-title."""
+        if not group_title:
+            return ['general']
         
-        return []
-    
-    def _fallback_parse_m3u(self, content: str, source_url: str) -> List[Dict]:
-        """Fallback M3U parsing for non-standard formats."""
-        channels = []
-        lines = content.split('\n')
+        group_title = group_title.strip().lower()
         
-        current_name = ""
-        for i, line in enumerate(lines):
-            line = line.strip()
-            
-            if line.startswith('#EXTINF'):
-                # Try to extract channel name
-                if ',' in line:
-                    current_name = line.split(',')[-1].strip()
-                elif 'tvg-name="' in line:
-                    match = re.search(r'tvg-name="([^"]+)"', line)
-                    if match:
-                        current_name = match.group(1)
-            
-            elif line and not line.startswith('#') and current_name:
-                # This might be a URL
-                if self.is_valid_stream_url(line):
-                    # Handle relative URLs
-                    url = line
-                    if not url.startswith(('http://', 'https://', 'rtmp://', 'rtsp://')):
-                        if source_url:
-                            base_url = '/'.join(source_url.split('/')[:-1]) if '/' in source_url else source_url
-                            if base_url and base_url.startswith('http'):
-                                url = urljoin(base_url + '/', url)
-                    
-                    channels.append({
-                        'tvg_id': '',
-                        'tvg_name': '',
-                        'tvg_logo': '',
-                        'group_title': '',
-                        'display_name': current_name,
-                        'country_code': '',
-                        'raw_name': current_name,
-                        'url': url
-                    })
-                current_name = ""
+        # Remove country prefix if present
+        group_title = re.sub(r'^[a-z]{2}[:/|\s]*', '', group_title)
         
-        return channels
+        # Split by common separators
+        separators = ['/', '|', ',', ';', '-']
+        for sep in separators:
+            if sep in group_title:
+                parts = [p.strip() for p in group_title.split(sep) if p.strip()]
+                if parts:
+                    return parts
+        
+        return [group_title]
     
     def format_channel_data(self, channels: List[Dict], logos_data: List[Dict]) -> List[Dict]:
         """Format channel data into JSON structure."""
         formatted_channels = []
         
         for channel in channels:
-            if channel.get('tvg_id'):
+            # Generate channel ID
+            if channel['tvg_id']:
                 channel_id = channel['tvg_id'].lower()
             else:
-                # Generate ID from display name
+                # Create ID from display name
                 base_id = re.sub(r'[^a-zA-Z0-9]', '', channel['display_name'])
                 if not base_id:
                     base_id = re.sub(r'[^a-zA-Z0-9]', '', channel['raw_name'])
                 
                 if not base_id:
                     # Use hash of URL as fallback
-                    import hashlib
                     url = channel.get('url', '')
                     if url:
                         base_id = hashlib.md5(url.encode()).hexdigest()[:8]
                     else:
                         base_id = f"channel_{len(formatted_channels)}"
                 
+                # Add country code if available
                 country_code = channel['country_code']
                 if country_code:
                     channel_id = f"{base_id}.{country_code.lower()}"
@@ -913,17 +722,19 @@ class M3UProcessor:
             # Clean up the channel ID
             channel_id = channel_id.replace('..', '.').strip('.')
             
+            # Find logo
             logo_url = channel.get('tvg_logo', '')
             if not logo_url and logos_data:
                 # Try to find logo by channel ID
-                matching_logos = [l for l in logos_data if l.get("channel") == channel_id]
+                matching_logos = [l for l in logos_data if l["channel"] == channel_id]
                 if matching_logos:
-                    logo_url = matching_logos[0].get("url", "")
+                    logo_url = matching_logos[0]["url"]
                 else:
                     # Try fuzzy matching by name
-                    channel_name_lower = channel['display_name'].lower()
+                    channel_name = channel['display_name'].lower()
                     for logo in logos_data:
-                        if logo.get("channel") and channel_name_lower in logo["channel"].lower():
+                        logo_channel = logo.get("channel", "").lower()
+                        if channel_name and logo_channel and channel_name in logo_channel:
                             logo_url = logo.get("url", "")
                             break
             
@@ -931,33 +742,12 @@ class M3UProcessor:
                 'name': channel['display_name'],
                 'id': channel_id,
                 'logo': logo_url,
-                'url': channel.get('url', ''),
+                'url': channel['url'],
                 'categories': self._extract_categories(channel['group_title']),
                 'country': channel['country_code']
             })
         
         return formatted_channels
-    
-    def _extract_categories(self, group_title: str) -> List[str]:
-        """Extract categories from group-title."""
-        if not group_title:
-            return ['general']
-        
-        # Clean up group title
-        group_title = group_title.strip().lower()
-        
-        # Remove country prefixes like "US|" or "US/"
-        group_title = re.sub(r'^[a-z]{2}[\|/]\s*', '', group_title)
-        
-        # Split by common separators
-        separators = ['/', '|', ',', ';', '-', '>']
-        for sep in separators:
-            if sep in group_title:
-                parts = [p.strip() for p in group_title.split(sep) if p.strip()]
-                if parts:
-                    return parts
-        
-        return [group_title]
 
 def remove_duplicates(channels: List[Dict]) -> List[Dict]:
     """Remove duplicate channels by URL and ID."""
@@ -1632,36 +1422,64 @@ async def process_m3u_urls(session: aiohttp.ClientSession, logos_data: List[Dict
     processor = M3UProcessor()
     all_channels = []
     
-    # Set session headers for the processor
-    processor.session_headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-        'Accept': '*/*',
-        'Accept-Language': 'en-US,en;q=0.9',
-        'Accept-Encoding': 'gzip, deflate',
-        'Connection': 'keep-alive',
-        'Cache-Control': 'no-cache',
-        'Pragma': 'no-cache',
-        'Referer': 'https://www.google.com/'
-    }
-    
     for m3u_url in m3u_urls:
         if not m3u_url:
             continue
         
-        try:
-            # Process each M3U URL with retries
-            channels = await processor.process_m3u_url_robust(session, m3u_url, checker, max_retries=3)
-            
-            if channels:
-                formatted_channels = processor.format_channel_data(channels, logos_data)
-                all_channels.extend(formatted_channels)
-                logging.info(f"Added {len(formatted_channels)} channels from {m3u_url}")
-            else:
-                logging.warning(f"No working channels found in {m3u_url}")
-                
-        except Exception as e:
-            logging.error(f"Failed to process M3U URL {m3u_url}: {e}")
+        logging.info(f"Processing M3U URL: {m3u_url}")
+        
+        # Try to fetch content with retry
+        content = None
+        for attempt in range(3):
+            content = await processor.fetch_m3u_content(session, m3u_url)
+            if content:
+                break
+            logging.debug(f"Attempt {attempt + 1} failed for {m3u_url}")
+            await asyncio.sleep(1)
+        
+        if not content:
+            logging.warning(f"Could not fetch content from {m3u_url}")
             continue
+        
+        channels = processor.parse_m3u(content)
+        logging.info(f"Found {len(channels)} channels in {m3u_url}")
+        
+        if not channels:
+            logging.warning(f"No channels parsed from {m3u_url}")
+            continue
+        
+        # Check which channels are working
+        working_channels = []
+        batch_size = 20
+        
+        for i in range(0, len(channels), batch_size):
+            batch = channels[i:i + batch_size]
+            
+            check_tasks = []
+            for channel in batch:
+                if 'url' in channel:
+                    check_tasks.append(checker.check_single_url(session, channel['url']))
+            
+            if check_tasks:
+                check_results = await asyncio.gather(*check_tasks, return_exceptions=True)
+                
+                for j, result in enumerate(check_results):
+                    if isinstance(result, Exception):
+                        continue
+                    
+                    url, is_working, reason = result
+                    if is_working and j < len(batch):
+                        working_channels.append(batch[j])
+            
+            # Small delay between batches
+            if i + batch_size < len(channels):
+                await asyncio.sleep(0.3)
+        
+        logging.info(f"Found {len(working_channels)} working channels in {m3u_url}")
+        
+        if working_channels:
+            formatted_channels = processor.format_channel_data(working_channels, logos_data)
+            all_channels.extend(formatted_channels)
     
     if all_channels:
         country_files = {}
@@ -1773,7 +1591,7 @@ async def main():
     
     # Step 0: Scrape daily M3U URLs
     logging.info("\n=== Step 0: Scraping daily M3U URLs ===")
-    scraped_m3u = scrape_daily_m3u_urls(max_working=7)
+    scraped_m3u = scrape_daily_m3u_urls(max_working=5)
     M3U_URLS = scraped_m3u + ADDITIONAL_M3U
     logging.info(f"Updated M3U_URLS with {len(M3U_URLS)} URLs")
     
@@ -1857,9 +1675,9 @@ async def main():
         for m3u_url in M3U_URLS:
             if not m3u_url:
                 continue
-            content = await processor.fetch_m3u_content_with_retry(session, m3u_url, max_retries=2)
+            content = await processor.fetch_m3u_content(session, m3u_url)
             if content:
-                channels = processor.parse_m3u_adaptive(content, m3u_url)
+                channels = processor.parse_m3u(content)
                 m3u_channels.extend(channels)
         
         valid_channels_count, non_working_count, replaced_count = await clean_and_replace_channels(
