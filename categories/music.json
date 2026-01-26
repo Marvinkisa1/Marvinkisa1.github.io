@@ -30,24 +30,14 @@
         "country": "SX"
     },
     {
-        "name": "Wanasah",
-        "id": "Wanasah.ae",
-        "logo": "https://i.imgur.com/nLtiXNf.png",
-        "url": "https://wanasah-prod-dub-enc.edgenextcdn.net/out/v1/c84ef3128e564b74a6a796e8b6287de6/index.m3u8",
+        "name": "Play TV",
+        "id": "PlayTV.cm",
+        "logo": "https://i.imgur.com/1dmBqpf.png",
+        "url": "http://connectiktv.ddns.net:5000/playtv/@playtv/playlist.m3u8",
         "categories": [
             "music"
         ],
-        "country": "AE"
-    },
-    {
-        "name": "MBC FM",
-        "id": "MBCFM.ae",
-        "logo": "https://i.imgur.com/lF8UxvR.png",
-        "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-fm/3f36f7db6086acf058dc51681c87f8ad/index.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "AE"
+        "country": "CM"
     },
     {
         "name": "Melody",
@@ -603,6 +593,16 @@
         "country": "NL"
     },
     {
+        "name": "Salto Brasa Music",
+        "id": "SaltoBrasaMusic.nl",
+        "logo": "https://i.vimeocdn.com/portrait/31947989_640x640",
+        "url": "https://salto-streams.nl/hls/sotv1.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "NL"
+    },
+    {
         "name": "Makao TV",
         "id": "MakaoTV.do",
         "logo": "https://i.imgur.com/asD5y7i.png",
@@ -827,6 +827,16 @@
         "id": "Now80s.uk",
         "logo": "https://i.imgur.com/YyPnMeB.png",
         "url": "https://lightning-now80s-rakuten.amagi.tv/playlist.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "UK"
+    },
+    {
+        "name": "Trace Hits",
+        "id": "TraceHits.uk",
+        "logo": "https://i.imgur.com/Vvxz6KX.png",
+        "url": "https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/trace-uk/encrypted.m3u8",
         "categories": [
             "music"
         ],
@@ -1467,6 +1477,26 @@
         "country": "IN"
     },
     {
+        "name": "Punjabi Hits",
+        "id": "PunjabiHits.in",
+        "logo": "https://dtil.tmsimg.com/assets/s143691_ld_h15_aa.png",
+        "url": "https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/punjabi-hits/index.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "IN"
+    },
+    {
+        "name": "YRF Music",
+        "id": "YRFMusic.in",
+        "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/YRF_Music.png",
+        "url": "https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/yrf-music/master.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "IN"
+    },
+    {
         "name": "Impact TV Dance",
         "id": "ImpactTVDance.ro",
         "logo": "https://i.imgur.com/G5mNdpE.png",
@@ -1741,6 +1771,16 @@
         "id": "RadioLolaTV.rs",
         "logo": "https://i.imgur.com/41eE8fl.png",
         "url": "https://peer2.tdiradio.com/static/streaming-playlists/hls/7c3ea8d3-49dc-4e1b-8b1e-dc6fab71f5cf/0.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "RS"
+    },
+    {
+        "name": "TDI Radio TV",
+        "id": "TDIRadioTV.rs",
+        "logo": "https://i.imgur.com/POdTmaD.png",
+        "url": "https://peer2.tdiradio.com/static/streaming-playlists/hls/8f5d84ce-e8ac-4109-9975-9665f5605557/master.m3u8",
         "categories": [
             "music"
         ],
@@ -2064,16 +2104,6 @@
         "id": "StranaFM.ru",
         "logo": "https://i.imgur.com/WsPlKJJ.png",
         "url": "https://live-stranafm.cdnvideo.ru/stranafm/smil:stranafm.smil/playlist.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "RU"
-    },
-    {
-        "name": "Zhar Ptitsa",
-        "id": "ZharPtitsa.ru",
-        "logo": "https://i.imgur.com/19R470V.png",
-        "url": "http://streamer.rtcommufa.ru:1935/ptica/ptica1/playlist.m3u8",
         "categories": [
             "music"
         ],
@@ -2845,16 +2875,6 @@
         "id": "KlapeiTambureTV.hr",
         "logo": "https://i.imgur.com/sKj3dgc.png",
         "url": "https://stream.cmctv.hr:49998/kit/live.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "HR"
-    },
-    {
-        "name": "Extra TV",
-        "id": "ExtraTV.hr",
-        "logo": "https://i.imgur.com/5edYPBO.png",
-        "url": "https://streaming.social3.hr/ExtraTVudzdhr5/uUankWqpXD/1.m3u8",
         "categories": [
             "music"
         ],
@@ -3797,6 +3817,18 @@
         "url": "https://mic.siar.us/mic/live/mic.m3u8",
         "categories": [
             "music"
+        ],
+        "country": "ID"
+    },
+    {
+        "name": "Lingkar TV",
+        "id": "LingkarTV.id",
+        "logo": "https://lingkartv.com/assets/img/logo-square.png",
+        "url": "https://lingkartv.my.id/hls/lingkartv.m3u8",
+        "categories": [
+            "news",
+            "music",
+            "religious"
         ],
         "country": "ID"
     },
