@@ -30,6 +30,16 @@
         "country": "SX"
     },
     {
+        "name": "Play TV",
+        "id": "PlayTV.cm",
+        "logo": "https://i.imgur.com/1dmBqpf.png",
+        "url": "http://connectiktv.ddns.net:5000/playtv/@playtv/playlist.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "CM"
+    },
+    {
         "name": "Melody",
         "id": "Melody.fr",
         "logo": "https://i.imgur.com/9GVyQ6x.png",
@@ -1279,16 +1289,6 @@
         "country": "IN"
     },
     {
-        "name": "Ultimate TV",
-        "id": "UltimateTV.in",
-        "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/utvtamil.png",
-        "url": "https://stream.galaxyott.live/live/utv/index.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "IN"
-    },
-    {
         "name": "Steelbird Music",
         "id": "SteelbirdMusic.in",
         "logo": "https://i.imgur.com/Egijzx3.png",
@@ -1659,16 +1659,6 @@
         "country": "PE"
     },
     {
-        "name": "Radio Master",
-        "id": "RadioMaster.pe",
-        "logo": "https://i.imgur.com/AUoxyzP.png",
-        "url": "https://videoserver.tmcreativos.com:19360/radiomaster/radiomaster.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "PE"
-    },
-    {
         "name": "Turbo Mix Radio TV",
         "id": "TurboMixRadioTV.pe",
         "logo": "https://i.imgur.com/AsdBQa3.png",
@@ -2026,16 +2016,6 @@
         "id": "RadioShanson.ru",
         "logo": "https://i.imgur.com/lbqM3K2.png",
         "url": "http://chanson-video.hostingradio.ru:8080/hls/chansonabr/live.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "RU"
-    },
-    {
-        "name": "RU.TV",
-        "id": "RUTV.ru",
-        "logo": "https://i.imgur.com/Z7HUU7V.png",
-        "url": "https://hls-03-video.webcaramba.com/rutv/live.m3u8",
         "categories": [
             "music"
         ],
@@ -2723,6 +2703,16 @@
         "country": "MX"
     },
     {
+        "name": "Radio y Television Budokan",
+        "id": "RadioyTelevisionBudokan.mx",
+        "logo": "https://i.imgur.com/1rfoSt8.png",
+        "url": "https://stella.streamerr.co:3065/live/budokantvlive.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "MX"
+    },
+    {
         "name": "D3 TV",
         "id": "D3TV.ml",
         "logo": "https://i.imgur.com/uFEIBtB.png",
@@ -2753,10 +2743,30 @@
         "country": "MK"
     },
     {
-        "name": "Folk TV",
-        "id": "FolkTV.mk",
-        "logo": "https://i.imgur.com/4b9aZ9P.png",
-        "url": "https://stream.nasatv.com.mk/folktv/hls/folktv_live.m3u8",
+        "name": "Jazz TV",
+        "id": "JazzTV.mk",
+        "logo": "https://i.imgur.com/CbQlSFX.png",
+        "url": "https://stream.nasatv.com.mk/jazztv/hls/jazztv_live.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "MK"
+    },
+    {
+        "name": "Love TV",
+        "id": "LoveTV.mk",
+        "logo": "https://i.imgur.com/B8iaejQ.png",
+        "url": "https://stream.nasatv.com.mk/lovetv/hls/lovetv_live.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "MK"
+    },
+    {
+        "name": "Rock TV",
+        "id": "RockTV.mk",
+        "logo": "https://i.imgur.com/Y9miDQo.png",
+        "url": "https://stream.nasatv.com.mk/rocktv/hls/rocktv_live.m3u8",
         "categories": [
             "music"
         ],
@@ -2773,30 +2783,10 @@
         "country": "PL"
     },
     {
-        "name": "Junior Music",
-        "id": "JuniorMusic.pl",
-        "logo": "https://i.imgur.com/RE2RXQJ.png",
-        "url": "https://liveovh011.cda.pl/enc117/topkidsjrhdraw/topkidsjrhdraw.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "PL"
-    },
-    {
         "name": "BTB Music",
         "id": "BTBMusic.pl",
         "logo": "https://btb.j00r.us/images/logo_BTBMusic.webp",
         "url": "https://panel.btb.j00r.us/memfs/ebaffae6-0086-49d7-843d-57f2c561de86.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "PL"
-    },
-    {
-        "name": "Eska TV",
-        "id": "EskaTV.pl",
-        "logo": "https://i.imgur.com/N0eH0Cg.png",
-        "url": "http://138.2.160.168:8081/proxy.m3u8?embed=https://wizja.cc/embed/eskatv/",
         "categories": [
             "music"
         ],
@@ -2943,6 +2933,19 @@
         "country": "GP"
     },
     {
+        "name": "CEACOM TV",
+        "id": "CEACOMTV.bo",
+        "logo": "https://i.imgur.com/hutdRfk.png",
+        "url": "https://eu1.servers10.com:8081/ceacom/index.m3u8",
+        "categories": [
+            "news",
+            "lifestyle",
+            "music",
+            "general"
+        ],
+        "country": "BO"
+    },
+    {
         "name": "Muzangala TV",
         "id": "MuzangalaTV.ao",
         "logo": "https://i.imgur.com/fBeaJoS.png",
@@ -3065,6 +3068,16 @@
         "country": "UZ"
     },
     {
+        "name": "Flex Studio Radio TV",
+        "id": "FlexStudioRadioTV.bz",
+        "logo": "https://i.imgur.com/tZjqtxd.png",
+        "url": "https://live20.bozztv.com/akamaissh101/ssh101/fsradiotv/playlist.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "BZ"
+    },
+    {
         "name": "Q-Music",
         "id": "QMusic.be",
         "logo": "https://i.imgur.com/VX5e9Xt.png",
@@ -3160,16 +3173,6 @@
         "id": "SOYPlanchaTV.cr",
         "logo": "https://i.ibb.co/P4kpMgk/1689344714578.jpg",
         "url": "https://59ef525c24caa.streamlock.net/vmtv/soyplancha/playlist.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "CR"
-    },
-    {
-        "name": "Video Tour Channel",
-        "id": "VideoTourChannel.cr",
-        "logo": "https://i.imgur.com/zEi8eMC.png",
-        "url": "http://k4.usastreams.com/videotour/videotour/playlist.m3u8",
         "categories": [
             "music"
         ],
