@@ -20,22 +20,22 @@
         "country": "FR"
     },
     {
-        "name": "L'Equipe",
-        "id": "LEquipe.fr",
-        "logo": "https://i.imgur.com/t35zhM9.png",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/lequipe21/browser-dash/lequipe21.mpd",
-        "categories": [
-            "sports"
-        ],
-        "country": "FR"
-    },
-    {
         "name": "Africa 24 Sport",
         "id": "Africa24Sport.fr",
         "logo": "https://i0.wp.com/africa24tv.com/wp-content/uploads/2023/12/LOGO-AFRICASPORT-4-HD-sans-fond.png?fit=512%2C107&ssl=1",
         "url": "https://africa24.vedge.infomaniak.com/livecast/ik:africa24sport/manifest.m3u8",
         "categories": [
             "news",
+            "sports"
+        ],
+        "country": "FR"
+    },
+    {
+        "name": "L'Equipe",
+        "id": "LEquipe.fr",
+        "logo": "https://i.imgur.com/t35zhM9.png",
+        "url": "https://raw.githubusercontent.com/ipstreet312/freeiptv/master/ressources/dmotion/py/eqpe/equipe.m3u8",
+        "categories": [
             "sports"
         ],
         "country": "FR"
@@ -55,6 +55,16 @@
         "id": "TSNTheOcho.ca",
         "logo": "https://tvpnlogopus.samsungcloud.tv/platform/image/sourcelogo/vc/00/02/34/CA1400003R3_20240709T002034SQUARE.png",
         "url": "https://d3pnbvng3bx2nj.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-rds8g35qfqrnv/TSN_The_Ocho.m3u8",
+        "categories": [
+            "sports"
+        ],
+        "country": "CA"
+    },
+    {
+        "name": "TSN3",
+        "id": "TSN3.ca",
+        "logo": "https://i.imgur.com/AYza8KO.png",
+        "url": "https://tvpass.org/live/tsn3/sd",
         "categories": [
             "sports"
         ],
@@ -140,6 +150,16 @@
         "categories": [
             "sports",
             "entertainment"
+        ],
+        "country": "VN"
+    },
+    {
+        "name": "HTV Sports",
+        "id": "HTVSports.vn",
+        "logo": "https://i.postimg.cc/Y2ZTQRBw/HTV-Th-thao-logo-2022.png",
+        "url": "https://live.fptplay53.net/epzhd1/htvcthethao_vhls.smil/chunklist.m3u8",
+        "categories": [
+            "sports"
         ],
         "country": "VN"
     },
@@ -887,16 +907,6 @@
         "country": "IT"
     },
     {
-        "name": "Rai Sport",
-        "id": "RaiSport.it",
-        "logo": "https://i.imgur.com/6PEevOM.png",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/raisport1/browser-HLS8/raisport1.m3u8",
-        "categories": [
-            "sports"
-        ],
-        "country": "IT"
-    },
-    {
         "name": "TR Sport",
         "id": "TRSport.it",
         "logo": "https://i.imgur.com/ELXmaqg.png",
@@ -1059,16 +1069,6 @@
         "country": "BO"
     },
     {
-        "name": "Radio Turrialba TV Sports",
-        "id": "RadioTurrialbaTVSports.cr",
-        "logo": "https://i.imgur.com/2ZcUXbE.png",
-        "url": "https://server2.cloundmediacp.in/turrialbatv/turrialbatv/playlist.m3u8",
-        "categories": [
-            "sports"
-        ],
-        "country": "CR"
-    },
-    {
         "name": "TJK TV",
         "id": "TJKTV.tr",
         "logo": "https://i.imgur.com/3zHdkYG.png",
@@ -1097,6 +1097,16 @@
             "sports"
         ],
         "country": "TR"
+    },
+    {
+        "name": "Viaplay TV",
+        "id": "ViaplayTV.fi",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/9/94/Viaplay_TV_logo.svg",
+        "url": "https://live-fi.tvkaista.net/viaplay-tv/live.m3u8?hd=true",
+        "categories": [
+            "sports"
+        ],
+        "country": "FI"
     },
     {
         "name": "Meridiano TV",

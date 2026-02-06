@@ -62,16 +62,6 @@
         "country": "BR"
     },
     {
-        "name": "Record News",
-        "id": "RecordNews.br",
-        "logo": "https://i.imgur.com/HZDRG0K.png",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/recordnews/browser-HLS8/recordnews.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "BR"
-    },
-    {
         "name": "TV do Povo",
         "id": "TVdoPovo.br",
         "logo": "https://i.imgur.com/58EQ5qX.png",
@@ -147,6 +137,26 @@
         "country": "BR"
     },
     {
+        "name": "TCM 10 HD",
+        "id": "TCM10HD.br",
+        "logo": "https://i.imgur.com/aMuMVvB.png",
+        "url": "https://live.tcm10.com.br/tcm10hd/stream.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "BR"
+    },
+    {
+        "name": "TV Sim Sao Mateus",
+        "id": "TVSimSaoMateus.br",
+        "logo": "https://i.imgur.com/t5oUK3C.png",
+        "url": "https://5cf4a2c2512a2.streamlock.net/8236/8236/playlist.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "BR"
+    },
+    {
         "name": "First Channel News",
         "id": "FirstChannelNews.am",
         "logo": "https://i.imgur.com/RlYJUH4.png",
@@ -187,20 +197,20 @@
         "country": "CM"
     },
     {
-        "name": "Alarabiya",
-        "id": "Alarabiya.ae",
-        "logo": "https://i.imgur.com/NXFkYFj.png",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/alarabiya/browser-HLS8/alarabiya.m3u8",
+        "name": "Al Yaum TV",
+        "id": "AlYaumTV.ae",
+        "logo": "https://i.imgur.com/rBixF3P.png",
+        "url": "https://iko-live.akamaized.net/AlyuamTV/master.m3u8",
         "categories": [
             "news"
         ],
         "country": "AE"
     },
     {
-        "name": "Al Yaum TV",
-        "id": "AlYaumTV.ae",
-        "logo": "https://i.imgur.com/rBixF3P.png",
-        "url": "https://iko-live.akamaized.net/AlyuamTV/master.m3u8",
+        "name": "Alarabiya",
+        "id": "Alarabiya.ae",
+        "logo": "https://i.imgur.com/NXFkYFj.png",
+        "url": "https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/al-arabiya/master.m3u8?ads.vf=ZxX1AzlJ9ma",
         "categories": [
             "news"
         ],
@@ -241,16 +251,6 @@
         "id": "Africa24English.fr",
         "logo": "https://africa24tv.com/wp-content/uploads/2023/12/logo-Africa24TVEnglish.png",
         "url": "https://edge20.vedge.infomaniak.com/livecast/ik:africa24english/manifest.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "FR"
-    },
-    {
-        "name": "Franceinfo",
-        "id": "Franceinfo.fr",
-        "logo": "https://i.imgur.com/eITXz6A.png",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/franceinfo/browser-HLS8/franceinfo.m3u8",
         "categories": [
             "news"
         ],
@@ -459,16 +459,6 @@
         "country": "AR"
     },
     {
-        "name": "Multivision Federal",
-        "id": "MultivisionFederal.ar",
-        "logo": "https://i.imgur.com/jX0lqy3.png",
-        "url": "https://panel.host-live.com:19360/8250/8250.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "AR"
-    },
-    {
         "name": "Canal 26",
         "id": "Canal26.ar",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Canal_26_logo_%282022%29.svg/512px-Canal_26_logo_%282022%29.svg.png",
@@ -495,16 +485,6 @@
         "url": "https://stream.arcast.com.ar/canal7catamarca/ngrp:canal7catamarca_all/playlist.m3u8?DVR=",
         "categories": [
             "culture",
-            "news"
-        ],
-        "country": "AR"
-    },
-    {
-        "name": "24/7 Canal de Noticias",
-        "id": "247CanaldeNoticias.ar",
-        "logo": "https://i.imgur.com/4hDCB1M.png",
-        "url": "https://panel.host-live.com:19360/cn247tv/cn247tv.m3u8",
-        "categories": [
             "news"
         ],
         "country": "AR"
@@ -759,6 +739,17 @@
         "id": "VinhLongTV1.vn",
         "logo": "https://i.imgur.com/5YFsqPx.png",
         "url": "https://live.fptplay53.net/epzch2/vinhlong1_abr.smil/chunklist.m3u8",
+        "categories": [
+            "news",
+            "general"
+        ],
+        "country": "VN"
+    },
+    {
+        "name": "HTV9",
+        "id": "HTV9.vn",
+        "logo": "https://i.postimg.cc/DzGTbNmH/HTV9-logo-2015.png",
+        "url": "https://live.fptplay53.net/epzhd1/htv9hd_vhls.smil/chunklist.m3u8",
         "categories": [
             "news",
             "general"
@@ -4402,16 +4393,6 @@
         "country": "IT"
     },
     {
-        "name": "Telegela 647",
-        "id": "Telegela647.it",
-        "logo": "https://i.imgur.com/ppkX45f.png",
-        "url": "https://64b16f23efbee.streamlock.net/telegela/telegela/playlist.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "IT"
-    },
-    {
         "name": "ETV",
         "id": "ETV.mn",
         "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/ETV_Mongolia_logo.png/512px-ETV_Mongolia_logo.png",
@@ -4643,16 +4624,6 @@
             "news"
         ],
         "country": "SE"
-    },
-    {
-        "name": "Prensa Latina TV",
-        "id": "PrensaLatinaTV.cu",
-        "logo": "https://i.imgur.com/jbm2S9O.jpg",
-        "url": "https://eu1.servers10.com:8081/8192/index.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "CU"
     },
     {
         "name": "TVP World",
@@ -4940,6 +4911,19 @@
         "country": "BO"
     },
     {
+        "name": "CEACOM TV",
+        "id": "CEACOMTV.bo",
+        "logo": "https://i.imgur.com/hutdRfk.png",
+        "url": "https://eu1.servers10.com:8081/ceacom/index.m3u8",
+        "categories": [
+            "news",
+            "lifestyle",
+            "music",
+            "general"
+        ],
+        "country": "BO"
+    },
+    {
         "name": "Benin Web TV",
         "id": "BeninWebTV.bj",
         "logo": "https://i.imgur.com/CYy4n0N.png",
@@ -4968,16 +4952,6 @@
             "news"
         ],
         "country": "PR"
-    },
-    {
-        "name": "Al Jazeera",
-        "id": "AlJazeera.qa",
-        "logo": "https://i.postimg.cc/02FwDqPn/aljazeera.png",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/aljazeera/browser-HLS8/aljazeera.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "QA"
     },
     {
         "name": "Al Araby TV 2",
@@ -5027,16 +5001,6 @@
         "url": "https://hlive.ktv.go.kr/live/klive_h.stream/playlist.m3u8",
         "categories": [
             "legislative",
-            "news"
-        ],
-        "country": "KR"
-    },
-    {
-        "name": "Gugbang TV",
-        "id": "GugbangTV.kr",
-        "logo": "https://i.imgur.com/f1tz5fg.png",
-        "url": "http://mediaworks.dema.mil.kr:1935/live_edge/cudo.sdp/playlist.m3u8",
-        "categories": [
             "news"
         ],
         "country": "KR"
@@ -5365,17 +5329,6 @@
         "country": "ES"
     },
     {
-        "name": "24 Horas Internacional",
-        "id": "24HorasInternacional.es",
-        "logo": "https://i.ibb.co/21sXZ3GT/24h.png",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/canal24horas/browser-HLS8/canal24horas.m3u8",
-        "categories": [
-            "news",
-            "public"
-        ],
-        "country": "ES"
-    },
-    {
         "name": "24 Horas Catalunya",
         "id": "24HorasCatalunya.es",
         "logo": "https://i.ibb.co/21sXZ3GT/24h.png",
@@ -5515,16 +5468,6 @@
         "id": "AdvocateBroadcastingNetwork.ng",
         "logo": "https://i.imgur.com/ZkBEAp7.png",
         "url": "https://viewmedia7219.bozztv.com/wmedia/viewmedia100/web_045/Stream/playlist.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "NG"
-    },
-    {
-        "name": "TVC News",
-        "id": "TVCNews.ng",
-        "logo": "https://i.imgur.com/jaSq18B.png",
-        "url": "https://viamotionhsi.netplus.ch/live/eds/tvcnews/browser-dash/tvcnews.mpd",
         "categories": [
             "news"
         ],
