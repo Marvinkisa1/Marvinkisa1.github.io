@@ -691,6 +691,16 @@
         "country": "PH"
     },
     {
+        "name": "ANC",
+        "id": "ANC.ph",
+        "logo": "https://i.imgur.com/odwRbRk.png",
+        "url": "https://cdn-ue1-prod.tsv2.amagi.tv/linear/amg01006-abs-cbn-anc-global-dash-abscbnono/index.mpd",
+        "categories": [
+            "news"
+        ],
+        "country": "PH"
+    },
+    {
         "name": "RCV TV",
         "id": "RCVTV.hn",
         "logo": "https://i.imgur.com/0TEeEFG.jpg",
@@ -1695,6 +1705,16 @@
         "id": "WTMOCD1.us",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Telemundo_31_(2019).svg/512px-Telemundo_31_(2019).svg.png",
         "url": "https://dvrfl03.bozztv.com/hondu-telexitos/index.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Fox News Channel",
+        "id": "FoxNewsChannel.us",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Fox_News_Channel_logo.svg/512px-Fox_News_Channel_logo.svg.png",
+        "url": "https://tvpass.org/live/FoxNewsChannel/sd",
         "categories": [
             "news"
         ],
@@ -3164,16 +3184,6 @@
         "country": "IN"
     },
     {
-        "name": "Tamil Janam",
-        "id": "TamilJanam.in",
-        "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Janam_Tamil.png",
-        "url": "https://app.ashokadigital.net/app/324ea1b0/index.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "IN"
-    },
-    {
         "name": "Awaaz India TV",
         "id": "AwaazIndiaTV.in",
         "logo": "https://i.imgur.com/eKQs51V.png",
@@ -3569,16 +3579,6 @@
         "id": "LivingIndiaNews.in",
         "logo": "https://dtil.tmsimg.com/assets/s143283_ld_h15_aa.png",
         "url": "https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/living-india-news/index.m3u8?ads.vf=eejrbGB4ZTy",
-        "categories": [
-            "news"
-        ],
-        "country": "IN"
-    },
-    {
-        "name": "RDX Goa",
-        "id": "RDXGoa.in",
-        "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/RDX_News.png",
-        "url": "https://g5nl6xoalpq6-hls-live.5centscdn.com/rdxgoa/d0dbe915091d400bd8ee7f27f0791303.sdp/playlist.m3u8",
         "categories": [
             "news"
         ],
@@ -4001,26 +4001,6 @@
         "id": "AlNajahNews.ps",
         "logo": "https://i.imgur.com/c2bwn4G.png",
         "url": "https://streaming.najah.edu:8443/hls/AlNajah.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "PS"
-    },
-    {
-        "name": "Kolalnas TV",
-        "id": "KolalnasTV.ps",
-        "logo": "https://i.imgur.com/OyMxcRG.png",
-        "url": "https://htvint.mada.ps/kolalnas/index.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "PS"
-    },
-    {
-        "name": "Nablus TV",
-        "id": "NablusTV.ps",
-        "logo": "https://i.imgur.com/GoLhaDK.png",
-        "url": "http://htvmada.mada.ps:8888/nabluslive/index.m3u8",
         "categories": [
             "news"
         ],
@@ -4464,17 +4444,6 @@
         "logo": "https://i.imgur.com/snIU1UA.jpg",
         "url": "https://5e50264bd6766.streamlock.net/mexiquense2/videomexiquense2/playlist.m3u8",
         "categories": [
-            "news"
-        ],
-        "country": "MX"
-    },
-    {
-        "name": "Canal 33 Tijuana",
-        "id": "Canal33Tijuana.mx",
-        "logo": "https://iili.io/JCt1Nbn.png",
-        "url": "https://5f2c1b0d880e5.streamlock.net/canal33tijuana/videocanal33tijuana/playlist.m3u8",
-        "categories": [
-            "general",
             "news"
         ],
         "country": "MX"
@@ -4988,16 +4957,6 @@
         "country": "KR"
     },
     {
-        "name": "Gugbang TV",
-        "id": "GugbangTV.kr",
-        "logo": "https://i.imgur.com/f1tz5fg.png",
-        "url": "http://mediaworks.dema.mil.kr:1935/live_edge/cudo.sdp/playlist.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "KR"
-    },
-    {
         "name": "Palestine Al Yawm",
         "id": "PalestineAlYawm.lb",
         "logo": "https://i.imgur.com/n8dSgx4.png",
@@ -5166,16 +5125,6 @@
             "news"
         ],
         "country": "VE"
-    },
-    {
-        "name": "Suceso TV",
-        "id": "SucesoTV.py",
-        "logo": "https://i.imgur.com/BwRNes1.png",
-        "url": "https://live.enhdtv.com:8081/8060/index.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "PY"
     },
     {
         "name": "Mega TV",
@@ -5352,6 +5301,16 @@
             "news"
         ],
         "country": "ES"
+    },
+    {
+        "name": "Radio Ancon",
+        "id": "RadioAncon.pa",
+        "logo": "https://i.imgur.com/xum8PNe.jpg",
+        "url": "https://www.streaming507.net:19360/anconvideo/anconvideo.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "PA"
     },
     {
         "name": "BTV",
