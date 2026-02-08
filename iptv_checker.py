@@ -293,80 +293,24 @@ class FastChecker:
         return any(url_without_query.endswith(ext) for ext in UNWANTED_EXTENSIONS)
     
     def is_valid_stream_url(self, url: str) -> bool:
-        """Check if URL is a valid stream URL (not direct video/audio file)."""
+        """Check if URL is a valid stream URL - SIMPLE VERSION."""
         if not url:
             return False
         
-        # First, reject unwanted extensions
-        if self.has_unwanted_extension(url):
-            return False
-        
-        url_lower = url.lower()
-        
-        # Accept streaming formats
-        streaming_formats = ['.m3u8', '.m3u']
-        if any(url_lower.endswith(fmt) or fmt in url_lower for fmt in streaming_formats):
-            return True
-        
-        # Accept URLs with streaming patterns
-        streaming_patterns = [
-            '/live.m3u8', '/stream.m3u8', '/playlist.m3u8', 
-            '/chunklist.m3u8', '/index.m3u8', '/hls/', '/live/',
-            'type=m3u8', 'type=m3u', 'type=m3u_plus', 'format=m3u8', 
-            'stream=true', 'live=true'
-        ]
-        
-        if any(pattern in url_lower for pattern in streaming_patterns):
-            return True
-        
-        # Special handling for provider URLs (like get.php with M3U parameters)
-        if '/get.php?' in url_lower:
-            try:
-                parsed = urlparse(url_lower)
-                query_params = parse_qs(parsed.query)
-                # Check if it has type parameter indicating M3U content
-                if any(param in query_params for param in ['type', 'format']):
-                    for param in ['type', 'format']:
-                        if param in query_params:
-                            param_value = query_params[param][0].lower()
-                            if any(m3u_type in param_value for m3u_type in ['m3u', 'm3u8', 'm3u_plus']):
-                                return True
-            except Exception:
-                pass
-        
-        # Special handling for .ts files - only accept if they're clearly HLS segments
-        if '.ts' in url_lower:
-            # Check if it's in an HLS context
-            if any(x in url_lower for x in ['m3u8', 'hls', '/seg', '/chunk', 'segment']):
-                return True
-            # Otherwise reject as direct video file
-            return False
-        
-        # Check for other streaming indicators
-        streaming_keywords = ['/live.', '/stream.', '/manifest.', 'm3u8', 'hls.']
-        url_path = urlparse(url_lower).path
-        
-        # Check path for streaming indicators
-        if any(keyword in url_path for keyword in streaming_keywords):
-            return True
-        
-        # If URL has no extension but contains streaming keywords
-        if not re.search(r'\.[a-z0-9]{2,4}(?:\?|$)', url_lower):
-            # No clear extension, check for streaming patterns in whole URL
-            if any(keyword in url_lower for keyword in ['/live', '/stream', '/hls', 'm3u8']):
-                return True
-        
-        return False
+        # Only check for unwanted extensions
+        # If it doesn't have unwanted extensions, check it
+        return not self.has_unwanted_extension(url)
     
     async def validate_m3u8_content(self, content: str, url: str) -> bool:
         """Validate m3u8 content thoroughly."""
         if not content:
-            logging.debug(f"No content for m3u8: {url}")
             return False
         
         # Must have M3U header
         if '#EXTM3U' not in content:
-            logging.debug(f"m3u8 missing header: {url}")
+            # Some streams might not have standard headers but still work
+            if '#EXTINF:' in content:
+                return True
             return False
         
         try:
@@ -375,24 +319,14 @@ class FastChecker:
             
             # Check if it's a valid playlist
             if playlist.is_variant:
-                # Master playlist should have variants
-                if not playlist.playlists:
-                    logging.debug(f"Master playlist without variants: {url}")
-                    return False
-                return True
+                return bool(playlist.playlists)
             else:
-                # Media playlist should have segments
-                if not playlist.segments:
-                    logging.debug(f"Media playlist without segments: {url}")
-                    return False
-                return True
+                return bool(playlist.segments)
                 
-        except Exception as e:
-            logging.debug(f"m3u8 parsing failed for {url}: {e}")
-            # Even if parsing fails, check for stream content
-            stream_indicators = ['#EXTINF:', '#EXT-X-STREAM-INF:', '.ts', 'http://', 'https://']
-            has_stream_content = any(indicator in content for indicator in stream_indicators)
-            return has_stream_content
+        except Exception:
+            # Check for stream content
+            stream_indicators = ['#EXTINF:', '#EXT-X-STREAM-INF:', '.ts']
+            return any(indicator in content for indicator in stream_indicators)
     
     async def check_stream_directly(self, session: aiohttp.ClientSession, url: str, timeout: int) -> Tuple[bool, Optional[str]]:
         """Check a stream URL directly with thorough validation."""
@@ -413,8 +347,7 @@ class FastChecker:
                 if response.status in [302, 307]:
                     redirect_url = response.headers.get('Location')
                     if redirect_url:
-                        logging.debug(f"Following redirect to: {redirect_url}")
-                        # Follow redirect with same headers
+                        # Follow redirect
                         async with session.get(
                             redirect_url,
                             timeout=ClientTimeout(total=timeout),
@@ -428,33 +361,19 @@ class FastChecker:
                     else:
                         return False, "Redirect without location"
                 
-                # Check content type
-                content_type = response.headers.get('Content-Type', '').lower()
-                
-                # For M3U playlists, accept various content types
-                is_m3u_url = '.m3u8' in url.lower() or '.m3u' in url.lower() or '/get.php?' in url.lower()
-                if is_m3u_url:
-                    # Accept a wider range of content types for M3U
-                    acceptable_m3u_types = ['application/vnd.apple.mpegurl', 'audio/x-mpegurl', 
-                                           'application/x-mpegurl', 'text/plain', 'application/octet-stream']
-                    if content_type and not any(ct in content_type for ct in acceptable_m3u_types):
-                        logging.debug(f"Unexpected content type for M3U: {content_type}")
-                
                 # Read first chunk to check content
-                chunk = await response.content.read(32768)  # 32KB for better detection
+                chunk = await response.content.read(32768)
                 if not chunk:
                     return False, "Empty response"
                 
                 if len(chunk) < MIN_STREAM_SIZE:
-                    # For M3U URLs, check if it's valid M3U content even if small
-                    if is_m3u_url:
-                        try:
-                            text = chunk.decode('utf-8', errors='ignore')
-                            if '#EXTM3U' in text:
-                                # Small but valid M3U
-                                return True, "Valid m3u8 stream"
-                        except:
-                            pass
+                    # Check if it's a valid but small response
+                    try:
+                        text = chunk.decode('utf-8', errors='ignore')
+                        if '#EXTM3U' in text or '#EXTINF:' in text:
+                            return True, "Small but valid playlist"
+                    except:
+                        pass
                     return False, f"Too small ({len(chunk)} bytes)"
                 
                 # Check for common error patterns
@@ -465,9 +384,7 @@ class FastChecker:
                     error_patterns = [
                         '<html', '<!doctype', '<body', '<head', '<title>',
                         'error', '404', 'not found', 'forbidden', 'access denied',
-                        'cloudflare', 'nginx', 'apache', 'this site can\'t be reached',
-                        'the page cannot be found', '403 forbidden', '500 internal server error',
-                        '502 bad gateway', '503 service unavailable', '504 gateway timeout'
+                        'cloudflare', 'nginx', 'apache'
                     ]
                     
                     # Count error indicators
@@ -476,14 +393,7 @@ class FastChecker:
                         return False, f"Error page detected"
                     
                     # Check if it's m3u8/m3u content
-                    is_m3u = is_m3u_url or '#EXTM3U' in text.upper()
-                    if is_m3u:
-                        # Read more for m3u validation if needed
-                        if len(chunk) < 65536:
-                            more_chunk = await response.content.read(65536 - len(chunk))
-                            if more_chunk:
-                                text += more_chunk.decode('utf-8', errors='ignore')
-                        
+                    if '.m3u8' in url.lower() or '.m3u' in url.lower() or '#EXTM3U' in text.upper():
                         if not await self.validate_m3u8_content(text.upper(), url):
                             return False, "Invalid m3u8 content"
                         return True, "Valid m3u8 stream"
@@ -493,7 +403,6 @@ class FastChecker:
                         return True, "M3U playlist"
                     
                     # For non-M3U content, check if it looks like binary data (likely media stream)
-                    # Count non-printable characters
                     if len(chunk) > 1024:
                         non_printable = sum(1 for b in chunk[:1024] if b < 32 and b not in [9, 10, 13])
                         if non_printable > 700:  # Mostly binary data
@@ -501,16 +410,11 @@ class FastChecker:
                     
                 except UnicodeDecodeError:
                     # Binary content - likely a media stream or segment
-                    # Check if it's a .ts segment
-                    if '.ts' in url.lower():
-                        return True, "TS segment"
-                    # For other binary content, check if it's large enough to be media
-                    if len(chunk) >= 4096:  # At least 4KB of binary data
+                    if len(chunk) >= 4096:
                         return True, "Binary stream data"
                     return False, "Small binary file"
                 
                 # If we get here and it's not an error page, accept it
-                # Some streams might send plain text manifests or other formats
                 return True, "Stream data"
                 
         except asyncio.TimeoutError:
@@ -525,10 +429,6 @@ class FastChecker:
         # Skip URLs with unwanted extensions
         if self.has_unwanted_extension(url):
             return url, False, "Unwanted extension"
-        
-        # Check if it's a valid stream URL
-        if not self.is_valid_stream_url(url):
-            return url, False, "Not a valid stream URL"
         
         # Check cache first
         if url in self.working_cache:
