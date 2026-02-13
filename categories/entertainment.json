@@ -30,6 +30,16 @@
         "country": "CM"
     },
     {
+        "name": "TR24 Television",
+        "id": "TR24Television.cm",
+        "logo": "https://i.ibb.co/fQrBY1M/tr24-telepack.jpg",
+        "url": "https://stream.it-innov.com/tr24/index.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "CM"
+    },
+    {
         "name": "KC2",
         "id": "KC2.rw",
         "logo": "https://i.imgur.com/PsYPzNc.png",
@@ -295,6 +305,16 @@
         "id": "GuaroTV.ve",
         "logo": "https://i.ibb.co/LN92K6h/IMG-20230705-154347.jpg",
         "url": "https://streamtv.intervenhosting.net:3592/stream/play.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "VE"
+    },
+    {
+        "name": "Aguacate TV",
+        "id": "AguacateTV.ve",
+        "logo": "https://i.ibb.co/wpWBsgf/IMG-20230705-154622.jpg",
+        "url": "https://streamtv.intervenhosting.net:3040/hybrid/play.m3u8",
         "categories": [
             "entertainment"
         ],
@@ -1177,6 +1197,16 @@
         "country": "IN"
     },
     {
+        "name": "KCL TV",
+        "id": "KCLTV.in",
+        "logo": "https://i.imgur.com/bkp9dIm.png",
+        "url": "https://kcltv.livebox.co.in/kclhls/live.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "IN"
+    },
+    {
         "name": "MHZ",
         "id": "MHZ.ca",
         "logo": "https://i.imgur.com/a5fw83n.jpg",
@@ -1612,26 +1642,6 @@
         "country": "DO"
     },
     {
-        "name": "R&E TV",
-        "id": "RETV.do",
-        "logo": "https://i.imgur.com/HpKQYp3.png",
-        "url": "https://live.ryetv.net/livelan/stream.m3u8",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "DO"
-    },
-    {
-        "name": "Antena 21",
-        "id": "Antena21.do",
-        "logo": "https://i.imgur.com/QE0XWLh.png",
-        "url": "https://d1p8txxph783az.cloudfront.net/index.m3u8",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "DO"
-    },
-    {
         "name": "Bellavision",
         "id": "Bellavision.do",
         "logo": "https://i.imgur.com/XqQ3kCs.png",
@@ -1817,16 +1827,6 @@
         "id": "MY5.uz",
         "logo": "https://i.imgur.com/bjlzu5k.png",
         "url": "https://st.my5.media/hls/hd/index.m3u8",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "UZ"
-    },
-    {
-        "name": "BIZ TV",
-        "id": "BIZTV.uz",
-        "logo": "https://biztv.uz/static/media/logo.5f993187.png",
-        "url": "https://fl.biztv.media/biz_tv_720_uni8jhub4h8fub4idejswh8dh3j94finbu4nidj39inwsj92in3d/index.m3u8",
         "categories": [
             "entertainment"
         ],
@@ -2043,16 +2043,6 @@
         "id": "MTVAva.fi",
         "logo": "https://i.imgur.com/WxNCiAk.png",
         "url": "https://live-fi.tvkaista.net/ava/live.m3u8",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "FI"
-    },
-    {
-        "name": "Liv",
-        "id": "Liv.fi",
-        "logo": "https://i.imgur.com/k6NsXBj.png",
-        "url": "https://live-fi.tvkaista.net/liv/live.m3u8?hd=true",
         "categories": [
             "entertainment"
         ],
@@ -2432,16 +2422,6 @@
         "id": "Mega.es",
         "logo": "https://i.imgur.com/Udrt2eK.png",
         "url": "http://176.65.146.237:8401/play/a0a5/index.m3u8",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "ES"
-    },
-    {
-        "name": "XPTV2",
-        "id": "XPTV2.es",
-        "logo": "https://i.imgur.com/74Z8ATB.png",
-        "url": "https://janus.xpbroadcasting.com:8443/hls/xptv2.m3u8",
         "categories": [
             "entertainment"
         ],
@@ -3513,6 +3493,146 @@
         "country": "US"
     },
     {
+        "name": "Antenna TV",
+        "id": "AntennaTV.us",
+        "logo": "https://i.imgur.com/ocs2DeU.png",
+        "url": "https://fl31.moveonjoy.com/Antenna_TV/index.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Aspire",
+        "id": "Aspire.us",
+        "logo": "https://i.imgur.com/TOM5qO6.png",
+        "url": "https://fl31.moveonjoy.com/Aspire/index.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "BBC America",
+        "id": "BBCAmerica.us",
+        "logo": "https://i.imgur.com/pTiiPz0.png",
+        "url": "https://fl31.moveonjoy.com/BBC_AMERICA/index.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "BET Her",
+        "id": "BETHer.us",
+        "logo": "https://i.imgur.com/oafsrlo.png",
+        "url": "https://fl2.moveonjoy.com/BET_HER/index.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Comet",
+        "id": "Comet.us",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Comet_logo.svg/512px-Comet_logo.svg.png",
+        "url": "https://fl2.moveonjoy.com/COMET/index.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Cozi TV",
+        "id": "CoziTV.us",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Cozi_TV_logo.svg/512px-Cozi_TV_logo.svg.png",
+        "url": "https://fl2.moveonjoy.com/COZI_TV/index.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "GetTV",
+        "id": "GetTV.us",
+        "logo": "https://i.imgur.com/evOWORd.png",
+        "url": "https://fl31.moveonjoy.com/GET_TV/index.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "INSP",
+        "id": "INSP.us",
+        "logo": "https://i.imgur.com/YgOC51j.png",
+        "url": "https://fl2.moveonjoy.com/INSP/index.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Lifetime",
+        "id": "Lifetime.us",
+        "logo": "https://i.postimg.cc/pLPxqRKx/lifetime.png",
+        "url": "https://fl2.moveonjoy.com/LIFETIME/index.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "MeTV",
+        "id": "MeTV.us",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/5/55/MeTV_Logo.svg/512px-MeTV_Logo.svg.png",
+        "url": "https://fl2.moveonjoy.com/ME_TV/index.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "MTV",
+        "id": "MTV.us",
+        "logo": "https://i.postimg.cc/4d3rmyGW/mtv.png",
+        "url": "https://fl2.moveonjoy.com/MTV/index.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "MTV2",
+        "id": "MTV2.us",
+        "logo": "https://i.postimg.cc/W48BNrBD/mtv2.png",
+        "url": "https://fl2.moveonjoy.com/MTV_2/index.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Oxygen",
+        "id": "Oxygen.us",
+        "logo": "https://i.postimg.cc/KjCQqG1N/oxygen.png",
+        "url": "https://fl2.moveonjoy.com/OXYGEN/index.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Pop TV",
+        "id": "PopTV.us",
+        "logo": "https://i.imgur.com/XySNnh0.png",
+        "url": "https://fl31.moveonjoy.com/Pop_TV/index.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "US"
+    },
+    {
         "name": "Fortune TV",
         "id": "FortuneTV.mm",
         "logo": "https://i.imgur.com/MM5evnD.png",
@@ -3637,6 +3757,16 @@
         "id": "RadioYguazuTV.ar",
         "logo": "https://i.imgur.com/kVi0ICm.png",
         "url": "https://live.enhdtv.com:8081/radioiguazutv/index.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "AR"
+    },
+    {
+        "name": "Metro TV",
+        "id": "MetroTV.ar",
+        "logo": "https://i.imgur.com/7f7M7zl.png",
+        "url": "https://streamtv12.ddns.net:5443/LiveApp/streams/193945633734205616732920.m3u8",
         "categories": [
             "entertainment"
         ],
