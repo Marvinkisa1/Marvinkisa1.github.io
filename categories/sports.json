@@ -120,16 +120,6 @@
         "country": "RU"
     },
     {
-        "name": "MMA-TV.com",
-        "id": "MMATVcom.ru",
-        "logo": "https://i.imgur.com/QhdxNsB.png",
-        "url": "https://streams2.sofast.tv/vglive-sk-462904/playlist.m3u8",
-        "categories": [
-            "sports"
-        ],
-        "country": "RU"
-    },
-    {
         "name": "DD Sports",
         "id": "DDSports.in",
         "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_DD_SPORTS_HD/images/LOGO_HD/LOGO_HD_image.png",
@@ -373,16 +363,6 @@
         "country": "SE"
     },
     {
-        "name": "Viaplay TV",
-        "id": "ViaplayTV.fi",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/9/94/Viaplay_TV_logo.svg",
-        "url": "https://live-fi.tvkaista.net/viaplay-tv/live.m3u8?hd=true",
-        "categories": [
-            "sports"
-        ],
-        "country": "FI"
-    },
-    {
         "name": "Monterrico TV",
         "id": "MonterricoTV.pe",
         "logo": "https://i.imgur.com/SuVO9T7.png",
@@ -483,16 +463,6 @@
         "country": "DE"
     },
     {
-        "name": "Tigo Sports",
-        "id": "TigoSports.sv",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Tigo_Sports_2025.png/512px-Tigo_Sports_2025.png",
-        "url": "https://channel03.tigosports.com.sv/out/v1/31f36d52d558475ca18799d8ca5e4b40/index.m3u8",
-        "categories": [
-            "sports"
-        ],
-        "country": "SV"
-    },
-    {
         "name": "Sports Connect",
         "id": "SportsConnect.za",
         "logo": "https://i.imgur.com/0sNWg54.png",
@@ -553,6 +523,16 @@
         "country": "PH"
     },
     {
+        "name": "Nudge Sports Channel",
+        "id": "NudgeSportsChannel.ph",
+        "logo": "https://i.imgur.com/TW0hapZ.png",
+        "url": "https://streams.comclark.com/live_input/nudge_sports/playlist.m3u8",
+        "categories": [
+            "sports"
+        ],
+        "country": "PH"
+    },
+    {
         "name": "Premier Sports 5",
         "id": "PremierSports5.mn",
         "logo": "https://i.imgur.com/LkIe9gR.png",
@@ -601,6 +581,16 @@
             "sports"
         ],
         "country": "MN"
+    },
+    {
+        "name": "Belarus-5",
+        "id": "Belarus5.by",
+        "logo": "https://i.imgur.com/NJsRFud.png",
+        "url": "https://ngtrk.dc.beltelecom.by/ngtrk/smil:belarus5.smil/playlist.m3u8",
+        "categories": [
+            "sports"
+        ],
+        "country": "BY"
     },
     {
         "name": "Alkass Five",
@@ -667,6 +657,16 @@
         "id": "AlkassTwo.qa",
         "logo": "https://i.imgur.com/8w61kFX.png",
         "url": "https://liveeu-gcp.alkassdigital.net/alkass2-p/main.m3u8",
+        "categories": [
+            "sports"
+        ],
+        "country": "QA"
+    },
+    {
+        "name": "Alkass SHOOF 2",
+        "id": "AlkassSHOOF2.qa",
+        "logo": "https://shoof.alkass.net/assets/images/shoof2.png",
+        "url": "https://liveeu-gcp.alkassdigital.net/shooflive2/main.m3u8",
         "categories": [
             "sports"
         ],
@@ -1114,27 +1114,6 @@
         "country": "US"
     },
     {
-        "name": "ACC Network",
-        "id": "ACCNetwork.us",
-        "logo": "https://i.imgur.com/TpCkbkT.png",
-        "url": "https://fl31.moveonjoy.com/ACC_NETWORK/index.m3u8",
-        "categories": [
-            "sports"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "ESPNews",
-        "id": "ESPNews.us",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/ESPNews.svg/512px-ESPNews.svg.png",
-        "url": "https://fl31.moveonjoy.com/ESPN_NEWS/index.m3u8",
-        "categories": [
-            "sports",
-            "news"
-        ],
-        "country": "US"
-    },
-    {
         "name": "ESPNU",
         "id": "ESPNU.us",
         "logo": "https://i.imgur.com/HiBrysh.png",
@@ -1165,16 +1144,6 @@
         "country": "US"
     },
     {
-        "name": "MLB Network",
-        "id": "MLBNetwork.us",
-        "logo": "https://i.imgur.com/sA5V39D.png",
-        "url": "https://fl31.moveonjoy.com/MLB_NETWORK/index.m3u8",
-        "categories": [
-            "sports"
-        ],
-        "country": "US"
-    },
-    {
         "name": "NBA TV",
         "id": "NBATV.us",
         "logo": "https://i.postimg.cc/pVCJsCD5/nbatv.png",
@@ -1189,16 +1158,6 @@
         "id": "SportsNetNewYork.us",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/SNY_logo.svg/512px-SNY_logo.svg.png",
         "url": "https://fl2.moveonjoy.com/SNY/index.m3u8",
-        "categories": [
-            "sports"
-        ],
-        "country": "US"
-    },
-    {
-        "name": "Tennis Channel",
-        "id": "TennisChannel.us",
-        "logo": "https://i.imgur.com/tsljAnY.png",
-        "url": "https://fl31.moveonjoy.com/TENNIS_CHANNEL/index.m3u8",
         "categories": [
             "sports"
         ],
