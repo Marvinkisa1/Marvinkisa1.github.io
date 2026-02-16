@@ -332,6 +332,16 @@
         "country": "KR"
     },
     {
+        "name": "Gugbang TV",
+        "id": "GugbangTV.kr",
+        "logo": "https://i.imgur.com/f1tz5fg.png",
+        "url": "http://mediaworks.dema.mil.kr:1935/live_edge/cudo.sdp/playlist.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "KR"
+    },
+    {
         "name": "Norte Informativo TV",
         "id": "NorteInformativoTV.cr",
         "logo": "https://i.ibb.co/2MNzXN7/Channels4-profile-9.jpg",
@@ -568,16 +578,6 @@
         "id": "Mir24.ru",
         "logo": "https://i.imgur.com/dj9c8Yd.png",
         "url": "http://hls.mirtv.cdnvideo.ru/mirtv-parampublish/mir24_2500/playlist.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "RU"
-    },
-    {
-        "name": "Pervyy Respublikanskiy",
-        "id": "PervyyRespublikanskiy.ru",
-        "logo": "https://i.imgur.com/ti4OMBv.png",
-        "url": "https://streaming.televizor-24-tochka.ru/live/27.m3u8",
         "categories": [
             "news"
         ],
@@ -3059,10 +3059,23 @@
         "country": "VN"
     },
     {
-        "name": "HTV9",
-        "id": "HTV9.vn",
-        "logo": "https://i.postimg.cc/DzGTbNmH/HTV9-logo-2015.png",
-        "url": "https://live.fptplay53.net/epzhd1/htv9hd_vhls.smil/chunklist.m3u8",
+        "name": "Tra Vinh TV",
+        "id": "TraVinhTV.vn",
+        "logo": "https://i.imgur.com/F12VdKO.png",
+        "url": "https://live.fptplay53.net/epzsd1/vinhlong5_vhls.smil/chunklist.m3u8",
+        "categories": [
+            "culture",
+            "entertainment",
+            "music",
+            "news"
+        ],
+        "country": "VN"
+    },
+    {
+        "name": "Vinh Long TV 1",
+        "id": "VinhLongTV1.vn",
+        "logo": "https://i.imgur.com/5YFsqPx.png",
+        "url": "https://live.fptplay53.net/epzch2/vinhlong1_abr.smil/chunklist.m3u8",
         "categories": [
             "news",
             "general"
@@ -3261,16 +3274,6 @@
         "country": "EC"
     },
     {
-        "name": "RTU",
-        "id": "RTU.ec",
-        "logo": "https://i.imgur.com/1OWvMP4.png",
-        "url": "https://video1.makrodigital.com/rtu/rtu/chunks.m3u8?nimblesessionid=",
-        "categories": [
-            "news"
-        ],
-        "country": "EC"
-    },
-    {
         "name": "Burkina Info TV",
         "id": "BurkinaInfoTV.bf",
         "logo": "https://i.imgur.com/a9v5CbU.png",
@@ -3321,6 +3324,19 @@
             "education",
             "entertainment",
             "news"
+        ],
+        "country": "BO"
+    },
+    {
+        "name": "CEACOM TV",
+        "id": "CEACOMTV.bo",
+        "logo": "https://i.imgur.com/hutdRfk.png",
+        "url": "https://eu1.servers10.com:8081/ceacom/index.m3u8",
+        "categories": [
+            "news",
+            "lifestyle",
+            "music",
+            "general"
         ],
         "country": "BO"
     },
@@ -3617,6 +3633,16 @@
         "country": "PE"
     },
     {
+        "name": "TV Peru Noticias",
+        "id": "TVPeruNoticias.pe",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/TV_Per%C3%BA_Noticias_-_2019_logo.png/512px-TV_Per%C3%BA_Noticias_-_2019_logo.png",
+        "url": "https://cdnhd.iblups.com/hls/902c1a0395264f269f1160efa00660e47.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "PE"
+    },
+    {
         "name": "Fresh News",
         "id": "FreshNews.kh",
         "logo": "https://i.imgur.com/bV6sawt.png",
@@ -3661,6 +3687,16 @@
         "id": "C9N.py",
         "logo": "https://i.imgur.com/Cp4zJ7O.png",
         "url": "https://d1y0t05eznkmpn.cloudfront.net/index.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "PY"
+    },
+    {
+        "name": "4Dmas Noticias TV",
+        "id": "4DmasNoticiasTV.py",
+        "logo": "https://i.ibb.co/1fb5BtN/unnamed.png",
+        "url": "https://rds3.desdeparaguay.net/4dmasnoticiastv/4dmasnoticiastv/playlist.m3u8",
         "categories": [
             "news"
         ],
@@ -4258,31 +4294,6 @@
         "country": "BR"
     },
     {
-        "name": "TV Modelo",
-        "id": "TVModelo.br",
-        "logo": "https://play-lh.googleusercontent.com/7kD2A0jUqWrVMxd_15RAPt9S0P9pxPMpNEc9dHOSl8Bi0DOMVlQHijXaL7ppUC5F46g",
-        "url": "https://video09.logicahost.com.br/tvmodelo/tvmodelo/playlist.m3u",
-        "categories": [
-            "general",
-            "entertainment",
-            "news"
-        ],
-        "country": "BR"
-    },
-    {
-        "name": "TV Paraense",
-        "id": "TVParaense.br",
-        "logo": "https://duckduckgo.com/i/e408ea02.png",
-        "url": "https://video09.logicahost.com.br/tvparaense/tvparaense/playlist.m3u",
-        "categories": [
-            "general",
-            "family",
-            "entertainment",
-            "news"
-        ],
-        "country": "BR"
-    },
-    {
         "name": "Canal 38",
         "id": "Canal38.br",
         "logo": "https://i.imgur.com/co7TCWC.png",
@@ -4337,16 +4348,6 @@
         "id": "BMCNews.br",
         "logo": "https://i.imgur.com/pOUY2Uz.png",
         "url": "https://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/666c9c60a7efd40008f552f0/master.m3u8?appName=web&appVersion=9.19.0&deviceDNT=0&deviceId=8ee99fa9-8924-42ef-bf8b-617216b5b280&deviceMake=firefox&deviceModel=web&deviceType=web&deviceVersion=147.0.0&serverSideAds=false&sid=8c530424-556e-4d0f-b64e-9e2d82496a7b",
-        "categories": [
-            "news"
-        ],
-        "country": "BR"
-    },
-    {
-        "name": "TV Sim Cachoeiro",
-        "id": "TVSimCachoeiro.br",
-        "logo": "https://i.imgur.com/t5oUK3C.png",
-        "url": "https://5cf4a2c2512a2.streamlock.net/8104/8104/playlist.m3u8",
         "categories": [
             "news"
         ],
