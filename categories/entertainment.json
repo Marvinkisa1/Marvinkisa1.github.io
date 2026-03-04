@@ -50,16 +50,6 @@
         "country": "RW"
     },
     {
-        "name": "B+ TV",
-        "id": "BPlusTV.rw",
-        "logo": "https://i.ibb.co/WzLwj3X/IMG-20230703-155036.jpg",
-        "url": "https://tv.btnrwanda.com:3432/live/bpluslive.m3u8",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "RW"
-    },
-    {
         "name": "Tal TV",
         "id": "TalTV.ne",
         "logo": "https://i.imgur.com/KWMP0t1.png",
@@ -118,16 +108,6 @@
             "entertainment"
         ],
         "country": "IR"
-    },
-    {
-        "name": "Jiangsu Variety Channel",
-        "id": "JiangsuVarietyChannel.cn",
-        "logo": "https://www.tvchinese.net/uploads/tv/jszy.jpg",
-        "url": "http://183.207.248.71/gitv/live1/G_JSZY/G_JSZY",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "CN"
     },
     {
         "name": "NHTV",
@@ -235,6 +215,16 @@
         "id": "IndonesianaTV.id",
         "logo": "https://i.imgur.com/192wiS1.png",
         "url": "https://tvstreamcast.com/indonesiana.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "ID"
+    },
+    {
+        "name": "Ficom Channel",
+        "id": "FicomChannel.id",
+        "logo": "",
+        "url": "https://v3.siar.us/ficomchannel/live/playlist.m3u8",
         "categories": [
             "entertainment"
         ],
@@ -568,6 +558,16 @@
         "country": "PR"
     },
     {
+        "name": "WRUA-DT1",
+        "id": "WRUADT1.pr",
+        "logo": "https://i.imgur.com/YtTlZq3.png",
+        "url": "https://link.frontlayer.com/services/hls2/fl496518/index.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "PR"
+    },
+    {
         "name": "Jaihind TV",
         "id": "JaihindTV.in",
         "logo": "https://dtil.tmsimg.com/assets/s143217_ld_h15_aa.png",
@@ -892,16 +892,6 @@
         "id": "Maiboli.in",
         "logo": "https://i.imgur.com/Aaih0rw.png",
         "url": "https://mumt01.tangotv.in/MAIBOLI/index.m3u8",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "IN"
-    },
-    {
-        "name": "Mahaa Max",
-        "id": "MahaaMax.in",
-        "logo": "https://objectstorage.ap-mumbai-1.oraclecloud.com/p/7Eg7LPw1gBcncVDrfwf__7yyrg13awaU6DmMk4gutavGYZgoAuAziv8e0aSEdU4G/n/bmaqqlwez184/b/GTPL_CHANNEL_LOGO/o/gtpl/MAHAA+MAX+LOGO.png",
-        "url": "https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/mahaa-max/index.m3u8?ads.vf=sRUYrTeLqOm",
         "categories": [
             "entertainment"
         ],
@@ -1382,6 +1372,77 @@
         "country": "IN"
     },
     {
+        "name": "Colors Bangla",
+        "id": "ColorsBangla.in",
+        "logo": "https://dtil.tmsimg.com/assets/s158145_ld_h15_aa.png",
+        "url": "http://103.229.254.25:7001/play/a0ds/index.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "IN"
+    },
+    {
+        "name": "Jaya Max",
+        "id": "JayaMax.in",
+        "logo": "https://dtil.tmsimg.com/assets/s143226_ld_h15_aa.png",
+        "url": "http://111.88.78.21:8000/play/a0wk/index.m3u8",
+        "categories": [
+            "culture",
+            "entertainment"
+        ],
+        "country": "IN"
+    },
+    {
+        "name": "MTV",
+        "id": "MTV.in",
+        "logo": "https://dtil.tmsimg.com/assets/s143558_ld_h15_aa.png",
+        "url": "http://111.88.78.21:8000/play/a0r4/index.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "IN"
+    },
+    {
+        "name": "Pulari TV",
+        "id": "PulariTV.in",
+        "logo": "https://i.imgur.com/v5urG30.png",
+        "url": "https://royalstarindia.co.in/pularitv_hls/pularitv.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "IN"
+    },
+    {
+        "name": "Star Jalsha",
+        "id": "StarJalsha.in",
+        "logo": "https://dtil.tmsimg.com/assets/s143819_ld_h15_aa.png",
+        "url": "http://103.161.153.165:8000/play/a00w/index.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "IN"
+    },
+    {
+        "name": "Sun Bangla",
+        "id": "SunBangla.in",
+        "logo": "https://dtil.tmsimg.com/assets/s143871_ld_h15_aa.png",
+        "url": "http://103.161.153.165:8000/play/a03k/index.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "IN"
+    },
+    {
+        "name": "Zee Bangla",
+        "id": "ZeeBangla.in",
+        "logo": "https://dtil.tmsimg.com/assets/GNLZZGG0022T6DC.png",
+        "url": "http://103.161.153.165:8000/play/zeebnhd/index.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "IN"
+    },
+    {
         "name": "MHZ",
         "id": "MHZ.ca",
         "logo": "https://i.imgur.com/a5fw83n.jpg",
@@ -1801,16 +1862,6 @@
         "id": "Antena21.do",
         "logo": "https://i.imgur.com/QE0XWLh.png",
         "url": "https://d1p8txxph783az.cloudfront.net/index.m3u8",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "DO"
-    },
-    {
-        "name": "TVS",
-        "id": "TVS.do",
-        "logo": "https://i.imgur.com/a2YX1oj.jpg",
-        "url": "https://imagenuniversaltv.net:3741/live/tvslive.m3u8",
         "categories": [
             "entertainment"
         ],
@@ -2571,6 +2622,16 @@
         "country": "ES"
     },
     {
+        "name": "Historia",
+        "id": "Historia.es",
+        "logo": "https://i.imgur.com/VUy8xIG.png",
+        "url": "https://d1k3vzh2ivy22k.cloudfront.net/Historia.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "ES"
+    },
+    {
         "name": "ETV+",
         "id": "ETVPlus.ee",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a2/ETV%2B_logo.png",
@@ -2766,6 +2827,16 @@
             "entertainment"
         ],
         "country": "NA"
+    },
+    {
+        "name": "Belarus-2",
+        "id": "Belarus2.by",
+        "logo": "https://i.imgur.com/BpEHpPS.png",
+        "url": "https://ngtrk.dc.beltelecom.by/ngtrk/smil:belarus2.smil/playlist.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "BY"
     },
     {
         "name": "Impact Network",
@@ -3590,6 +3661,36 @@
         "id": "TeleMIX.us",
         "logo": "https://i.ibb.co/HpX99Ks/unnamed.jpg",
         "url": "https://haititivi.com/haiti/telemix1/index.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "AMC en Espanol",
+        "id": "AMCenEspanol.us",
+        "logo": "https://i.imgur.com/L1h6W5Q.png",
+        "url": "https://pb-fmbyorn1d0n1n.akamaized.net/v1/amc_amcespanol_3/samsungheadend_us/latest/main/hls/playlist.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Canela TV",
+        "id": "CanelaTV.us",
+        "logo": "https://i.imgur.com/8Hllkpk.png",
+        "url": "https://d3cx6yargdnl7q.cloudfront.net/canelatv.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "US"
+    },
+    {
+        "name": "Midnight Pulp",
+        "id": "MidnightPulp.us",
+        "logo": "",
+        "url": "https://d18l78mi5ujmqr.cloudfront.net/playlist.m3u8",
         "categories": [
             "entertainment"
         ],
