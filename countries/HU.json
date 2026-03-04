@@ -31,16 +31,6 @@
         "country": "HU"
     },
     {
-        "name": "Rakosmente TV",
-        "id": "RakosmenteTV.hu",
-        "logo": "https://i.imgur.com/n39a2DT.png",
-        "url": "http://rakosmentetv.hu:8080/hls/rmtv.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "HU"
-    },
-    {
         "name": "DTV",
         "id": "DTV.hu",
         "logo": "https://i.imgur.com/YSpqmSO.png",
@@ -410,6 +400,58 @@
         "categories": [
             "general"
         ],
+        "country": "HU"
+    },
+    {
+        "name": "Orszaggyules: OGY plenaris",
+        "id": "OrszaggyulesOGYplenaris.hu",
+        "logo": "https://i.imgur.com/hbblRpZ.png",
+        "url": "https://plenaris.parlament.hu:446/edgelive/smil:mkogyplen.smil/playlist.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "HU"
+    },
+    {
+        "name": "Orszaggyules: OGY TAB",
+        "id": "OrszaggyulesOGYTAB.hu",
+        "logo": "https://i.imgur.com/hbblRpZ.png",
+        "url": "https://tab.parlament.hu:446/edgelive/smil:mkogytab.smil/playlist.m3u8",
+        "categories": [
+            "legislative"
+        ],
+        "country": "HU"
+    },
+    {
+        "name": "RTL",
+        "id": "RTL.hu",
+        "logo": "https://i.imgur.com/ruRshE1.png",
+        "url": "http://46.149.191.217:9005/play/a018",
+        "categories": [],
+        "country": "HU"
+    },
+    {
+        "name": "RTL Harom",
+        "id": "RTLHarom.hu",
+        "logo": "https://i.imgur.com/c4Hhhzs.png",
+        "url": "http://46.149.191.217:9005/play/a01t",
+        "categories": [],
+        "country": "HU"
+    },
+    {
+        "name": "RTL Ketto",
+        "id": "RTLKetto.hu",
+        "logo": "https://i.imgur.com/IVv0qrI.png",
+        "url": "http://46.149.191.217:9005/play/a01r",
+        "categories": [],
+        "country": "HU"
+    },
+    {
+        "name": "TV2",
+        "id": "TV2.hu",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/TV2_2008.svg/512px-TV2_2008.svg.png",
+        "url": "http://46.149.191.217:9005/play/a01q",
+        "categories": [],
         "country": "HU"
     }
 ]
