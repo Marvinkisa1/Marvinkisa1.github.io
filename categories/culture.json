@@ -363,22 +363,22 @@
         "country": "DO"
     },
     {
-        "name": "Guaymate TV",
-        "id": "GuaymateTV.do",
-        "logo": "https://i.imgur.com/PBgQi9a.png",
-        "url": "https://live20.bozztv.com/akamaissh101/ssh101/guaymatetv/playlist.m3u8",
-        "categories": [
-            "culture"
-        ],
-        "country": "DO"
-    },
-    {
         "name": "zenith",
         "id": "zenith.fr",
         "logo": "https://znth.tv/static/site_app/thy%20logo.svg",
         "url": "https://srv.zenith-tv.fr:8888/zenithwchl/main_stream.m3u8",
         "categories": [
             "general",
+            "culture"
+        ],
+        "country": "FR"
+    },
+    {
+        "name": "Berbere TV",
+        "id": "BerbereTV.fr",
+        "logo": "https://i.imgur.com/Uc2PAmL.png",
+        "url": "http://5.253.46.190:8000/play/a0fi/index.m3u8",
+        "categories": [
             "culture"
         ],
         "country": "FR"
@@ -652,6 +652,28 @@
         "country": "MA"
     },
     {
+        "name": "Athaqafia",
+        "id": "Athaqafia.ma",
+        "logo": "https://freebox.cdn.scw.iliad.fr/medium_Athaqafia_fdc90e055e.png",
+        "url": "http://5.253.46.190:8000/play/a0eb/index.m3u8",
+        "categories": [
+            "culture"
+        ],
+        "country": "MA"
+    },
+    {
+        "name": "Tele Maroc",
+        "id": "TeleMaroc.ma",
+        "logo": "https://freebox.cdn.scw.iliad.fr/medium_Tele_Maroc_900x800_ffdee4d2e4.png",
+        "url": "http://5.253.46.190:8000/play/a0cb/index.m3u8",
+        "categories": [
+            "entertainment",
+            "news",
+            "culture"
+        ],
+        "country": "MA"
+    },
+    {
         "name": "STZ TV",
         "id": "STZTV.br",
         "logo": "https://i.imgur.com/SeF2I7q.png",
@@ -673,6 +695,17 @@
         "country": "BR"
     },
     {
+        "name": "TVE RS",
+        "id": "TVERS.br",
+        "logo": "https://i.imgur.com/MQ6lJpS.png",
+        "url": "https://streaming.procergs.com.br:8443/tve/stve/playlist.m3u8",
+        "categories": [
+            "culture",
+            "education"
+        ],
+        "country": "BR"
+    },
+    {
         "name": "Malchin TV",
         "id": "MalchinTV.mn",
         "logo": "https://i.imgur.com/vCdEBZo.png",
@@ -681,16 +714,6 @@
             "culture"
         ],
         "country": "MN"
-    },
-    {
-        "name": "Belarus-3",
-        "id": "Belarus3.by",
-        "logo": "https://i.imgur.com/JkcDycn.png",
-        "url": "https://ngtrk.dc.beltelecom.by/ngtrk/smil:belarus3.smil/playlist.m3u8",
-        "categories": [
-            "culture"
-        ],
-        "country": "BY"
     },
     {
         "name": "EBS",
@@ -805,6 +828,18 @@
         "country": "US"
     },
     {
+        "name": "MBC America",
+        "id": "MBCAmerica.us",
+        "logo": "https://i.imgur.com/RRc23ra.png",
+        "url": "https://cdn-us-east-prod-ingest-infra-dacast-com.akamaized.net/624ff8f9-db18-da92-4d42-896fa2ff3eb3/source/index.m3u8",
+        "categories": [
+            "culture",
+            "entertainment",
+            "music"
+        ],
+        "country": "US"
+    },
+    {
         "name": "MRTV NRC",
         "id": "MRTVNRC.mm",
         "logo": "https://i.imgur.com/5aLFslk.jpg",
@@ -909,16 +944,6 @@
         "categories": [
             "culture",
             "education"
-        ],
-        "country": "MX"
-    },
-    {
-        "name": "El Sonorense",
-        "id": "ElSonorense.mx",
-        "logo": "https://i.imgur.com/aKvPd4g.jpg",
-        "url": "https://s5.mexside.net:1936/elsonorense/elsonorense/playlist.m3u8",
-        "categories": [
-            "culture"
         ],
         "country": "MX"
     },
