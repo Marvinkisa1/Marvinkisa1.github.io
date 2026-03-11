@@ -1,25 +1,5 @@
 [
     {
-        "name": "A&E FHD",
-        "id": "aefhd",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/A%26E_Network_logo.svg/1280px-A%26E_Network_logo.svg.png",
-        "url": "http://planettvweb.com:8091/silviah/silvia24/19120",
-        "categories": [
-            "canales de serie"
-        ],
-        "country": ""
-    },
-    {
-        "name": "TNT SERIES FHD",
-        "id": "tntseriesfhd",
-        "logo": "https://cdn.mitvstatic.com/channels/cl_tnt-series_m.png",
-        "url": "http://planettvweb.com:8091/silviah/silvia24/11613",
-        "categories": [
-            "canales de serie"
-        ],
-        "country": ""
-    },
-    {
         "name": "TNT SERIES ARG SD",
         "id": "tntseriesargsd",
         "logo": "",
@@ -54,6 +34,26 @@
         "id": "universalpremierefhd",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Universal_Premiere_2021.png",
         "url": "http://planettvweb.com:8091/amidens77445a/77445a/12449",
+        "categories": [
+            "canales de serie"
+        ],
+        "country": ""
+    },
+    {
+        "name": "UNIVERSAL CHANNEL HD ARG",
+        "id": "universalchannelhdarg",
+        "logo": "https://logostvargentina.files.wordpress.com/2008/09/d7741-universal-hd.png",
+        "url": "http://planettvweb.com:8091/silviah/silvia24/13467",
+        "categories": [
+            "canales de serie"
+        ],
+        "country": ""
+    },
+    {
+        "name": "A&E HD",
+        "id": "aehd",
+        "logo": "data:image/png;base64,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",
+        "url": "http://planettvweb.com:8091/silviah/silvia24/11604",
         "categories": [
             "canales de serie"
         ],
