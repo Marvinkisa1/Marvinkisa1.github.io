@@ -190,16 +190,6 @@
         "country": "TR"
     },
     {
-        "name": "Life TV",
-        "id": "LifeTV.tr",
-        "logo": "https://i.imgur.com/lWeJxm0.png",
-        "url": "https://live.artidijitalmedya.com/artidijital_lifetv/lifetv/playlist.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "TR"
-    },
-    {
         "name": "Kapaz TV",
         "id": "KapazTV.az",
         "logo": "https://upload.wikimedia.org/wikipedia/az/thumb/3/3e/K%C9%99p%C9%99z_TV_%282019-h.h.%29.png/500px-K%C9%99p%C9%99z_TV_%282019-h.h.%29.png",
@@ -544,6 +534,17 @@
         "country": "ID"
     },
     {
+        "name": "Sin Po TV",
+        "id": "SinPoTV.id",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Sin_Po_TV.svg/960px-Sin_Po_TV.svg.png",
+        "url": "https://cdn10jtedge.indihometv.com/atm/DASH/sinpotv/manifest.mpd",
+        "categories": [
+            "news",
+            "sports"
+        ],
+        "country": "ID"
+    },
+    {
         "name": "Espreso TV",
         "id": "EspresoTV.ua",
         "logo": "https://i.imgur.com/xNatV8K.png",
@@ -602,6 +603,16 @@
             "news"
         ],
         "country": "UA"
+    },
+    {
+        "name": "Bijoy TV",
+        "id": "BijoyTV.bd",
+        "logo": "https://i.imgur.com/Faetm0C.png",
+        "url": "https://edge2.roarzone.info:8447/roarzone/edge3/bijoy-tv/index.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "BD"
     },
     {
         "name": "Telesur",
@@ -2588,10 +2599,30 @@
         "country": "IN"
     },
     {
-        "name": "RDX Goa",
-        "id": "RDXGoa.in",
-        "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/RDX_News.png",
-        "url": "https://g5nl6xoalpq6-hls-live.5centscdn.com/rdxgoa/d0dbe915091d400bd8ee7f27f0791303.sdp/playlist.m3u8",
+        "name": "Gulistan News",
+        "id": "GulistanNews.in",
+        "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Gulistan_News.png",
+        "url": "https://live.gulistannews.in/hls/gul.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "IN"
+    },
+    {
+        "name": "Janta TV",
+        "id": "JantaTV.in",
+        "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Janta_TV.png",
+        "url": "https://live.jswk.online/IK_RTPM/live/index.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "IN"
+    },
+    {
+        "name": "JK 24x7 News",
+        "id": "JK24x7News.in",
+        "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/JK_24x7_News.png",
+        "url": "https://live.gulistannews.in/hls/jk.m3u8",
         "categories": [
             "news"
         ],
@@ -2919,16 +2950,6 @@
         "country": "DO"
     },
     {
-        "name": "Television del Este",
-        "id": "TelevisiondelEste.do",
-        "logo": "https://i.imgur.com/mmjbcGr.png",
-        "url": "https://mlb.essastream.com:8081/televisiondeleste/tracks-v1a1/mono.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "DO"
-    },
-    {
         "name": "Noticias 16",
         "id": "Noticias16.do",
         "logo": "https://www.lyngsat.com/logo/tv/nn/noticias-16-do.png",
@@ -3044,6 +3065,206 @@
         "id": "AikNews.pk",
         "logo": "https://i.imgur.com/svPXoAP.png",
         "url": "https://video.primexsports.com/pnn/live/playlist.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "PK"
+    },
+    {
+        "name": "Aaj News",
+        "id": "AajNews.pk",
+        "logo": "https://i.imgur.com/VNGnHYz.png",
+        "url": "http://115.42.65.142:9981/stream/channelid/750987367",
+        "categories": [
+            "news"
+        ],
+        "country": "PK"
+    },
+    {
+        "name": "Abb Takk",
+        "id": "AbbTakk.pk",
+        "logo": "https://i.imgur.com/D6IHRrP.png",
+        "url": "http://115.42.65.142:9981/stream/channelid/852828604",
+        "categories": [
+            "news"
+        ],
+        "country": "PK"
+    },
+    {
+        "name": "ABN News",
+        "id": "ABNNews.pk",
+        "logo": "https://www.lyngsat.com/logo/tv/aa/abn-news-pk.png",
+        "url": "https://vodzong.mjunoon.tv:8087/streamtest/ABN-161/playlist.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "PK"
+    },
+    {
+        "name": "ARY News",
+        "id": "ARYNews.pk",
+        "logo": "https://i.imgur.com/R4KtTbJ.jpg",
+        "url": "http://115.42.65.142:9981/stream/channelid/322092446",
+        "categories": [
+            "news"
+        ],
+        "country": "PK"
+    },
+    {
+        "name": "Gourmet News Network",
+        "id": "GourmetNewsNetwork.pk",
+        "logo": "https://i.imgur.com/VXVnXXi.png",
+        "url": "http://103.250.28.74:8000/play/a01c/index.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "PK"
+    },
+    {
+        "name": "Hum News",
+        "id": "HumNews.pk",
+        "logo": "https://i.imgur.com/9OroocT.png",
+        "url": "http://103.250.28.74:8000/play/a02w/index.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "PK"
+    },
+    {
+        "name": "Kohenoor News",
+        "id": "KohenoorNews.pk",
+        "logo": "https://i.imgur.com/cD3Ogdh.png",
+        "url": "http://103.250.28.74:8000/play/a00r/index.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "PK"
+    },
+    {
+        "name": "KTN News",
+        "id": "KTNNews.pk",
+        "logo": "https://i.imgur.com/RtEzpPQ.png",
+        "url": "https://vodzong.mjunoon.tv:8087/streamtest/KTNNews-151/playlist.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "PK"
+    },
+    {
+        "name": "Lahore Rang",
+        "id": "LahoreRang.pk",
+        "logo": "https://i.imgur.com/hglxHTa.png",
+        "url": "http://103.250.28.74:8000/play/a01q/index.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "PK"
+    },
+    {
+        "name": "Mashriq TV",
+        "id": "MashriqTV.pk",
+        "logo": "https://i.imgur.com/8pMiqcp.png",
+        "url": "http://103.250.28.74:8000/play/a02s/index.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "PK"
+    },
+    {
+        "name": "Metro1 News",
+        "id": "Metro1News.pk",
+        "logo": "https://i.imgur.com/qD9cj27.jpg",
+        "url": "http://103.250.28.74:8000/play/a04u/index.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "PK"
+    },
+    {
+        "name": "Neo News",
+        "id": "NeoNews.pk",
+        "logo": "https://i.imgur.com/9mrbPRs.png",
+        "url": "http://103.250.28.74:8000/play/a01p/index.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "PK"
+    },
+    {
+        "name": "News One",
+        "id": "NewsOne.pk",
+        "logo": "https://i.imgur.com/ivrRYMk.png",
+        "url": "http://103.250.28.74:8000/play/a04j/index.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "PK"
+    },
+    {
+        "name": "ON News HD",
+        "id": "ONNewsHD.pk",
+        "logo": "https://i.imgur.com/h3IUrMI.png",
+        "url": "http://103.250.28.74:8000/play/a046/index.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "PK"
+    },
+    {
+        "name": "PTV News",
+        "id": "PTVNews.pk",
+        "logo": "https://i.imgur.com/Fpn8VU7.png",
+        "url": "http://103.250.28.74:8000/play/a017/index.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "PK"
+    },
+    {
+        "name": "Public News",
+        "id": "PublicNews.pk",
+        "logo": "https://i.imgur.com/q3ij8wO.png",
+        "url": "http://103.250.28.74:8000/play/a04g/index.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "PK"
+    },
+    {
+        "name": "Roze News",
+        "id": "RozeNews.pk",
+        "logo": "https://i.imgur.com/TedWqfL.png",
+        "url": "http://103.250.28.74:8000/play/a01k/index.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "PK"
+    },
+    {
+        "name": "Sindh TV News",
+        "id": "SindhTVNews.pk",
+        "logo": "https://i.imgur.com/Ap9K1lj.png",
+        "url": "http://103.250.28.74:8000/play/a00v/index.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "PK"
+    },
+    {
+        "name": "Suno News HD",
+        "id": "SunoNewsHD.pk",
+        "logo": "https://i.imgur.com/FeSntVO.jpg",
+        "url": "http://103.250.28.74:8000/play/a02a/index.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "PK"
+    },
+    {
+        "name": "VSH News",
+        "id": "VSHNews.pk",
+        "logo": "https://i.imgur.com/pmPZoYC.png",
+        "url": "http://103.250.28.74:8000/play/a00w/index.m3u8",
         "categories": [
             "news"
         ],
@@ -3624,16 +3845,6 @@
         "id": "MegaTV.py",
         "logo": "https://i.imgur.com/CaA7l86.png",
         "url": "https://ott3.streann.com/loadbalancer/services/public/channels-secure/5e62b96e2cdcfac2dd8885dd/playlist.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "PY"
-    },
-    {
-        "name": "4Dmas Noticias TV",
-        "id": "4DmasNoticiasTV.py",
-        "logo": "https://i.ibb.co/1fb5BtN/unnamed.png",
-        "url": "https://rds3.desdeparaguay.net/4dmasnoticiastv/4dmasnoticiastv/playlist.m3u8",
         "categories": [
             "news"
         ],
