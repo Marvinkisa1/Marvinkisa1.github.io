@@ -110,16 +110,6 @@
         "country": "IR"
     },
     {
-        "name": "Jiangsu Variety Channel",
-        "id": "JiangsuVarietyChannel.cn",
-        "logo": "https://www.tvchinese.net/uploads/tv/jszy.jpg",
-        "url": "http://183.207.248.71/gitv/live1/G_JSZY/G_JSZY",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "CN"
-    },
-    {
         "name": "NHTV",
         "id": "NHTV.kr",
         "logo": "https://i.imgur.com/DfECkgB.png",
@@ -283,6 +273,26 @@
         "country": "UA"
     },
     {
+        "name": "Bonce TV",
+        "id": "BonceTV.cw",
+        "logo": "https://i.imgur.com/7cVkllH.png",
+        "url": "https://seswa.bonce.tv/hls/bonceswa.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "CW"
+    },
+    {
+        "name": "Nos Pais",
+        "id": "NosPais.cw",
+        "logo": "https://i.imgur.com/ZUob2uZ.png",
+        "url": "https://5f86a49aedff6.streamlock.net/nos_pais_24_7/nos_pais_24_7/playlist.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "CW"
+    },
+    {
         "name": "OTV",
         "id": "OTV.gh",
         "logo": "https://pbs.twimg.com/profile_images/1034118312437919744/emeWo-ag_400x400.jpg",
@@ -327,6 +337,16 @@
         "id": "AguacateTV.ve",
         "logo": "https://i.ibb.co/wpWBsgf/IMG-20230705-154622.jpg",
         "url": "https://streamtv.intervenhosting.net:3040/hybrid/play.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "VE"
+    },
+    {
+        "name": "Nortena Tv",
+        "id": "NortenaTv.ve",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjxdsPdnBB5hs1XZHDHtf0p8T861Vl1UlHE1ljD_IEtI9KlFtEAYsesMHh8RLuW6nIFLY&usqp=CAU",
+        "url": "https://vs20.live.opencaster.com/nortena933fm_00010364/index.m3u8",
         "categories": [
             "entertainment"
         ],
@@ -1982,6 +2002,36 @@
         "country": "AF"
     },
     {
+        "name": "Jim",
+        "id": "Jim.fi",
+        "logo": "https://i.imgur.com/PkMgY0K.png",
+        "url": "https://live-fi.tvkaista.net/jim/live.m3u8?hd=true",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "FI"
+    },
+    {
+        "name": "Liv",
+        "id": "Liv.fi",
+        "logo": "https://i.imgur.com/k6NsXBj.png",
+        "url": "https://live-fi.tvkaista.net/liv/live.m3u8?hd=true",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "FI"
+    },
+    {
+        "name": "MTV Ava",
+        "id": "MTVAva.fi",
+        "logo": "https://i.imgur.com/WxNCiAk.png",
+        "url": "https://live-fi.tvkaista.net/ava/live.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "FI"
+    },
+    {
         "name": "Impacto Television",
         "id": "ImpactoTelevision.pe",
         "logo": "https://i.imgur.com/bkpCGP6.png",
@@ -2371,56 +2421,6 @@
         "country": "ES"
     },
     {
-        "name": "Energy",
-        "id": "Energy.es",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Energy.svg",
-        "url": "http://45.95.78.232:8001/udp/239.106.84.4:5000",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "ES"
-    },
-    {
-        "name": "Factoria de Ficcion",
-        "id": "FactoriadeFiccion.es",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/FDF_2012.png/500px-FDF_2012.png",
-        "url": "http://45.95.78.232:8001/udp/239.106.83.7:5000",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "ES"
-    },
-    {
-        "name": "La Sexta",
-        "id": "LaSexta.es",
-        "logo": "https://i.imgur.com/aKV5voq.png",
-        "url": "http://45.95.78.232:8001/udp/239.106.83.4:5000",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "ES"
-    },
-    {
-        "name": "Mega",
-        "id": "Mega.es",
-        "logo": "https://i.imgur.com/Udrt2eK.png",
-        "url": "http://45.95.78.232:8001/udp/239.106.84.5:5000",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "ES"
-    },
-    {
-        "name": "Neox",
-        "id": "Neox.es",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Neox_2023_logo.svg/500px-Neox_2023_logo.svg.png",
-        "url": "http://45.95.78.232:8001/udp/239.106.83.8:5000",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "ES"
-    },
-    {
         "name": "ETV+",
         "id": "ETVPlus.ee",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a2/ETV%2B_logo.png",
@@ -2595,6 +2595,16 @@
             "entertainment"
         ],
         "country": "NA"
+    },
+    {
+        "name": "Belarus-2",
+        "id": "Belarus2.by",
+        "logo": "https://i.imgur.com/BpEHpPS.png",
+        "url": "https://ngtrk.dc.beltelecom.by/ngtrk/smil:belarus2.smil/playlist.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "BY"
     },
     {
         "name": "Telemundo Corpus Christi",
@@ -3465,16 +3475,6 @@
         "country": "MM"
     },
     {
-        "name": "MRTV Entertainment",
-        "id": "MRTVEntertainment.mm",
-        "logo": "https://i.imgur.com/c9q6oT0.png",
-        "url": "https://mrtvott.com/cache/MRTV-Ent-HD/master.m3u8",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "MM"
-    },
-    {
         "name": "DBM TV",
         "id": "BTMTV.ug",
         "logo": "https://i.imgur.com/NUvA2jf.png",
@@ -3610,6 +3610,16 @@
         "id": "Gametoon.nl",
         "logo": "https://upload.wikimedia.org/wikipedia/tr/b/b6/Gametoon_HD_logo.png",
         "url": "https://liveovh010.cda.pl/zkr7GNESGht4_0Wk12c78A/17538736/2782059/enc122/gametoonhdraw/gametoonhdraw.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "NL"
+    },
+    {
+        "name": "SBS6 Classics",
+        "id": "SBS6Classics.nl",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/8/8d/SBS_6_logo_2013.png",
+        "url": "https://sbs6classic.prd1.talpatvcdn.nl/v1/master/8ada1ed2ae3b9c3db6fc5e604cfa78fc7d2d745e/sbs6classic_ssai/fea54560ba684701a2143f33a9cf4489/index.m3u8",
         "categories": [
             "entertainment"
         ],
