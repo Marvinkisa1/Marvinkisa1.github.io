@@ -231,6 +231,26 @@
         "country": "CR"
     },
     {
+        "name": "Canal 3 KMK TV",
+        "id": "Canal3KMKTV.cr",
+        "logo": "https://i.imgur.com/sgRDRBK.jpg",
+        "url": "https://live20.bozztv.com/giatv/giatv-KMKTV/KMKTV/chunks.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "CR"
+    },
+    {
+        "name": "SOY Plancha TV",
+        "id": "SOYPlanchaTV.cr",
+        "logo": "https://i.ibb.co/P4kpMgk/1689344714578.jpg",
+        "url": "https://59ef525c24caa.streamlock.net/vmtv/soyplancha/playlist.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "CR"
+    },
+    {
         "name": "MuzzOne",
         "id": "MuzzOne.kz",
         "logo": "https://i.imgur.com/nHVABXh.png",
@@ -367,6 +387,16 @@
         "id": "ATNMusic.bd",
         "logo": "https://www.jagobd.com/wp-content/uploads/2015/12/atnmusic.jpg?x50681",
         "url": "https://app.ncare.live/c3VydmVyX8RpbEU9Mi8xNy8yMDE0GIDU6RgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcGVMZEJCTEFWeVN3PTOmdFsaWRtaW51aiPhnPTI/atnmusic.stream/playlist.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "BD"
+    },
+    {
+        "name": "Gaan Bangla",
+        "id": "GaanBangla.bd",
+        "logo": "https://i.imgur.com/XS9mq4n.png",
+        "url": "http://vmi3039524.contaboserver.net:5050/music/index.m3u8",
         "categories": [
             "music"
         ],
@@ -644,10 +674,61 @@
         "country": "RU"
     },
     {
-        "name": "Shanson TV",
-        "id": "ShansonTV.ru",
-        "logo": "https://i.imgur.com/Fk4sd8t.png",
-        "url": "https://hls-shansontv.cdnvideo.ru/shansontv/smil:shansontv.smil/playlist.m3u8",
+        "name": "BRIDGE Classic",
+        "id": "BRIDGEClassic.ru",
+        "logo": "https://i.imgur.com/JJTQq81.png",
+        "url": "http://31.148.48.15/Bridge_TV_Classic/index.m3u8",
+        "categories": [
+            "classic",
+            "music"
+        ],
+        "country": "RU"
+    },
+    {
+        "name": "BRIDGE Deluxe",
+        "id": "BRIDGEDeluxe.ru",
+        "logo": "https://i.imgur.com/EazL8w7.png",
+        "url": "http://31.148.48.15/Bridge_TV_HD/index.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "RU"
+    },
+    {
+        "name": "DanceHits80",
+        "id": "DanceHits80.ru",
+        "logo": "https://i.imgur.com/uMw3kks.png",
+        "url": "http://dancehits80.denvs.ru:8080/index.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "RU"
+    },
+    {
+        "name": "Fon Music",
+        "id": "FonMusic.ru",
+        "logo": "https://i.imgur.com/tXABQDE.png",
+        "url": "https://tntm.mediacdn.ru/cdn/tntmusic/playlist.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "RU"
+    },
+    {
+        "name": "o2tv",
+        "id": "o2tv.ru",
+        "logo": "https://i.imgur.com/CM6z7fA.png",
+        "url": "http://31.148.48.15/O2_HD/index.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "RU"
+    },
+    {
+        "name": "RU.TV",
+        "id": "RUTV.ru",
+        "logo": "https://i.imgur.com/Z7HUU7V.png",
+        "url": "http://31.148.48.15/RU_TV/index.m3u8",
         "categories": [
             "music"
         ],
@@ -789,16 +870,6 @@
         "id": "TarangMusic.in",
         "logo": "https://dtil.tmsimg.com/assets/s143926_ld_h15_aa.png?lock=720x540",
         "url": "https://livetv.tarangplus.in/tarangmusic-origin/live/playlist.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "IN"
-    },
-    {
-        "name": "Sana Plus",
-        "id": "SanaPlus.in",
-        "logo": "https://i.imgur.com/N6tKUZv.png",
-        "url": "https://galaxyott.live/hls/sanaplus.m3u8",
         "categories": [
             "music"
         ],
@@ -949,16 +1020,6 @@
         "id": "SteelbirdMusic.in",
         "logo": "https://i.imgur.com/Egijzx3.png",
         "url": "https://cdn2.in/SteelbirdMusicTVhls/live.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "IN"
-    },
-    {
-        "name": "ZB Music",
-        "id": "ZBMusic.in",
-        "logo": "https://i.imgur.com/k1nb8u1.jpeg",
-        "url": "https://server.zillarbarta.com/zbmusic/index.m3u8",
         "categories": [
             "music"
         ],
@@ -2406,11 +2467,12 @@
         "country": "PY"
     },
     {
-        "name": "Dismar Radio TV",
-        "id": "DismarRadioTV.py",
-        "logo": "https://i.imgur.com/KOuxdMD.png",
-        "url": "https://rds3.desdeparaguay.net/dismartv/dismartv/playlist.m3u8",
+        "name": "GO TV",
+        "id": "GOTV.py",
+        "logo": "https://i.ibb.co/jkvYVyz/Captura.png",
+        "url": "https://rds3.desdeparaguay.net/gotv/gotv/playlist.m3u8",
         "categories": [
+            "entertainment",
             "music"
         ],
         "country": "PY"
@@ -2440,6 +2502,16 @@
         "id": "RadioRAM.pl",
         "logo": "https://i.ibb.co/LXbchP5q/logo-1.png",
         "url": "https://1888165924.rsc.cdn77.org/live/RadioRAM/playlist.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "PL"
+    },
+    {
+        "name": "4 Fun TV",
+        "id": "4FunTV.pl",
+        "logo": "https://i.imgur.com/rI1wo2l.png",
+        "url": "https://stream.4fun.tv:8888/hls/4f.m3u8",
         "categories": [
             "music"
         ],
@@ -2666,6 +2738,16 @@
         "country": "IT"
     },
     {
+        "name": "Radio Piter Pan TV",
+        "id": "RadioPiterPanTV.it",
+        "logo": "https://i.imgur.com/hbqVWV4.png",
+        "url": "https://58d921499d3d3.streamlock.net/RadioPiterpanTV/livestream/playlist.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "IT"
+    },
+    {
         "name": "Lausitzwelle",
         "id": "Lausitzwelle.de",
         "logo": "https://i.imgur.com/4kYF4bK.png",
@@ -2794,6 +2876,26 @@
             "music"
         ],
         "country": "GR"
+    },
+    {
+        "name": "OneFM",
+        "id": "OneFM.lb",
+        "logo": "https://i.ibb.co/Vp2G9wTz/onefmlb.png",
+        "url": "https://hms.pfs.gdn/v1/broadcast/onefm/playlist.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "LB"
+    },
+    {
+        "name": "One TV",
+        "id": "OneTV.lb",
+        "logo": "https://i.imgur.com/O4DuR9G.png",
+        "url": "https://hms.pfs.gdn/v1/broadcast/one/playlist.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "LB"
     },
     {
         "name": "Mosaique FM",
@@ -3107,16 +3209,6 @@
             "music"
         ],
         "country": "PH"
-    },
-    {
-        "name": "Melody FM",
-        "id": "MelodyFM.jo",
-        "logo": "https://i.imgur.com/J8omcNz.png",
-        "url": "https://cdn3.wowza.com/1/OVRrOWxXUEswS2Yv/eGVxSWZy/hls/live/playlist.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "JO"
     },
     {
         "name": "Couleur 3",
@@ -3727,6 +3819,16 @@
         "id": "LoveTV.mk",
         "logo": "https://i.imgur.com/B8iaejQ.png",
         "url": "https://stream.nasatv.com.mk/lovetv/hls/lovetv_live.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "MK"
+    },
+    {
+        "name": "TopEstrada TV",
+        "id": "TopEstradaTV.mk",
+        "logo": "https://i.imgur.com/0Dh1FJZ.png",
+        "url": "http://live.topestrada.com/live/topestrada/playlist.m3u8",
         "categories": [
             "music"
         ],
