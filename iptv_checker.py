@@ -54,6 +54,7 @@ WORKING_CHANNELS_BASE = "working_channels"
 CATEGORIES_DIR = "categories"
 COUNTRIES_DIR = "countries"
 FAILED_CHANNELS_FILE = "failed_channels.json"
+CATEGORIES_SUMMARY_FILE = "categories.json"   # NEW: categories summary file
 
 # Settings
 MAX_CONCURRENT = int(os.getenv("MAX_CONCURRENT", 100))
@@ -75,6 +76,14 @@ UNWANTED_EXTENSIONS = [
     '.wma', '.m4a', '.opus', '.mk3d', '.mka', '.mks'  # More media formats
 ]
 
+# Adult keywords for detecting 18+ channels
+ADULT_KEYWORDS = [
+    'adult', '18+', '18plus', 'xxx', 'porn', 'sex', 'erotic', 'hentai',
+    'blowjob', 'fuck', 'cum', 'milf', 'teen', 'lesbian', 'gay', 'trans',
+    'webcam', 'livesex', 'onlyfans', 'playboy', 'penthouse', 'xvideos',
+    'redtube', 'youporn', 'brazzers', 'realitykings'
+]
+
 # Scraper headers
 SCRAPER_HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
@@ -87,6 +96,45 @@ SCRAPER_HEADERS = {
     'Referer': 'https://world-iptv.club/',
     'Origin': 'https://world-iptv.club'
 }
+
+def is_adult_channel(channel: Dict) -> bool:
+    """Detect if a channel is adult/18+."""
+    text = " ".join([
+        str(channel.get("name", "")).lower(),
+        str(channel.get("display_name", "")).lower(),
+        str(channel.get("group_title", "")).lower(),
+        str(channel.get("raw_name", "")).lower()
+    ])
+    if channel.get("categories"):
+        text += " " + " ".join(str(cat).lower() for cat in channel["categories"])
+    return any(keyword in text for keyword in ADULT_KEYWORDS)
+
+def add_channel_type(channel: Dict) -> Dict:
+    """Add 'type' field to channel: 'adult' or 'all'."""
+    channel_copy = channel.copy()
+    channel_copy["type"] = "adult" if is_adult_channel(channel) else "all"
+    return channel_copy
+
+def generate_categories_summary(channels: List[Dict]):
+    """Create categories.json with category names and channel counts."""
+    category_count = {}
+    for channel in channels:
+        cats = channel.get("categories", ["general"])
+        for cat in cats:
+            if not cat:
+                cat = "general"
+            key = cat.strip().lower()
+            category_count[key] = category_count.get(key, 0) + 1
+    
+    summary = [
+        {"category": cat.capitalize(), "count": count}
+        for cat, count in sorted(category_count.items(), key=lambda x: x[1], reverse=True)
+    ]
+    
+    with open(CATEGORIES_SUMMARY_FILE, 'w', encoding='utf-8') as f:
+        json.dump(summary, f, indent=4, ensure_ascii=False)
+    
+    logging.info(f"Generated {CATEGORIES_SUMMARY_FILE} with {len(summary)} categories")
 
 def delete_split_files(base_name: str):
     """Delete all split files and the base file if exists."""
@@ -718,7 +766,7 @@ def clear_directories():
         os.makedirs(dir_path, exist_ok=True)
 
 def save_channels(channels: List[Dict], country_files: Dict, category_files: Dict, append: bool = False):
-    """Save channels to files."""
+    """Save channels to files. Modified to add 'type' and generate categories.json"""
     if not append:
         clear_directories()
     
@@ -726,9 +774,11 @@ def save_channels(channels: List[Dict], country_files: Dict, category_files: Dic
     os.makedirs(CATEGORIES_DIR, exist_ok=True)
     
     channels = remove_duplicates(channels)
+    channels = [add_channel_type(ch) for ch in channels]   # Add type field to all channels
     
     if append:
         existing_working = load_split_json(WORKING_CHANNELS_BASE)
+        existing_working = [add_channel_type(ch) for ch in existing_working]
         existing_working.extend(channels)
         channels = remove_duplicates(existing_working)
     
@@ -742,10 +792,12 @@ def save_channels(channels: List[Dict], country_files: Dict, category_files: Dic
             continue
         
         country_channels = remove_duplicates(country_channels)
+        country_channels = [add_channel_type(ch) for ch in country_channels]
         country_base = os.path.join(COUNTRIES_DIR, safe_country)
         
         if append:
             existing_country = load_split_json(country_base)
+            existing_country = [add_channel_type(ch) for ch in existing_country]
             existing_country.extend(country_channels)
             country_channels = remove_duplicates(existing_country)
         
@@ -759,14 +811,20 @@ def save_channels(channels: List[Dict], country_files: Dict, category_files: Dic
             continue
         
         category_channels = remove_duplicates(category_channels)
+        category_channels = [add_channel_type(ch) for ch in category_channels]
         category_base = os.path.join(CATEGORIES_DIR, safe_category)
         
         if append:
             existing_category = load_split_json(category_base)
+            existing_category = [add_channel_type(ch) for ch in existing_category]
             existing_category.extend(category_channels)
             category_channels = remove_duplicates(existing_category)
         
         save_split_json(category_base, category_channels)
+    
+    # Generate categories.json with counts
+    all_channels = load_split_json(WORKING_CHANNELS_BASE)
+    generate_categories_summary(all_channels)
 
 def update_logos_for_null_channels(channels: List[Dict], logos_data: List[Dict]) -> List[Dict]:
     """Update logos for channels with null logos."""
