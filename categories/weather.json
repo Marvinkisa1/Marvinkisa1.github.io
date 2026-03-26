@@ -1,25 +1,5 @@
 [
     {
-        "name": "WeatherSpy",
-        "id": "WeatherSpy.au",
-        "logo": "https://i.imgur.com/GTxN2nH.png",
-        "url": "https://jukin-weatherspy-2-au.samsung.wurl.tv/playlist.m3u8",
-        "categories": [
-            "weather"
-        ],
-        "country": "AU"
-    },
-    {
-        "name": "The Weather Network",
-        "id": "TheWeatherNetwork.ca",
-        "logo": "https://i.imgur.com/V6ZUwUY.png",
-        "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/63da370e2e477400081cf8b6/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=2c7c7782-35fc-11ef-a031-2b5d494037a2&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=6b5c5f52-01b7-44d8-a06c-1f05f3169a75",
-        "categories": [
-            "weather"
-        ],
-        "country": "CA"
-    },
-    {
         "name": "3Cat Cameres del temps",
         "id": "3CatCameresdeltemps.es",
         "logo": "https://i.imgur.com/zXy2kbe.png",
@@ -28,7 +8,8 @@
             "public",
             "weather"
         ],
-        "country": "ES"
+        "country": "ES",
+        "type": "all"
     },
     {
         "name": "Meteonews",
@@ -38,7 +19,8 @@
         "categories": [
             "weather"
         ],
-        "country": "CH"
+        "country": "CH",
+        "type": "all"
     },
     {
         "name": "WMUR-DT1",
@@ -49,7 +31,8 @@
             "news",
             "weather"
         ],
-        "country": "US"
+        "country": "US",
+        "type": "all"
     },
     {
         "name": "AccuWeather NOW",
@@ -59,7 +42,8 @@
         "categories": [
             "weather"
         ],
-        "country": "US"
+        "country": "US",
+        "type": "all"
     },
     {
         "name": "Fox Weather",
@@ -69,7 +53,8 @@
         "categories": [
             "weather"
         ],
-        "country": "US"
+        "country": "US",
+        "type": "all"
     },
     {
         "name": "WeatherNation",
@@ -79,7 +64,8 @@
         "categories": [
             "weather"
         ],
-        "country": "US"
+        "country": "US",
+        "type": "all"
     },
     {
         "name": "WeatherSpy",
@@ -89,7 +75,19 @@
         "categories": [
             "weather"
         ],
-        "country": "US"
+        "country": "US",
+        "type": "all"
+    },
+    {
+        "name": "The Weather Network",
+        "id": "TheWeatherNetwork.ca",
+        "logo": "https://i.imgur.com/V6ZUwUY.png",
+        "url": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/63da370e2e477400081cf8b6/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=2c7c7782-35fc-11ef-a031-2b5d494037a2&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=6b5c5f52-01b7-44d8-a06c-1f05f3169a75",
+        "categories": [
+            "weather"
+        ],
+        "country": "CA",
+        "type": "all"
     },
     {
         "name": "NHK Kishou-Saigai",
@@ -99,7 +97,19 @@
         "categories": [
             "weather"
         ],
-        "country": "JP"
+        "country": "JP",
+        "type": "all"
+    },
+    {
+        "name": "WeatherSpy",
+        "id": "WeatherSpy.au",
+        "logo": "https://i.imgur.com/GTxN2nH.png",
+        "url": "https://jukin-weatherspy-2-au.samsung.wurl.tv/playlist.m3u8",
+        "categories": [
+            "weather"
+        ],
+        "country": "AU",
+        "type": "all"
     },
     {
         "name": "WeatherSpy",
@@ -109,7 +119,8 @@
         "categories": [
             "weather"
         ],
-        "country": "MX"
+        "country": "MX",
+        "type": "all"
     },
     {
         "name": "USA | RSBN - RIGHT SIDE BROADCASTING NETWORK",
@@ -120,6 +131,7 @@
             "usa news",
             "weather"
         ],
-        "country": ""
+        "country": "",
+        "type": "all"
     }
 ]
