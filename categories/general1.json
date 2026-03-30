@@ -571,10 +571,32 @@
         "type": "all"
     },
     {
-        "name": "Fibwi",
-        "id": "Fibwi.es",
-        "logo": "https://i.imgur.com/4vcGzcC.png",
-        "url": "https://hostcdn3.fibwi.com/fibwi_diario/index.fmp4.m3u8",
+        "name": "EsTuTele",
+        "id": "EsTuTele.es",
+        "logo": "https://i.imgur.com/bsAbcmC.png",
+        "url": "https://cloud.streamingconnect.tv/hls/estutele/estutele.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "ES",
+        "type": "all"
+    },
+    {
+        "name": "Guada TV",
+        "id": "GuadaTV.es",
+        "logo": "https://i.imgur.com/YaDNsYN.png",
+        "url": "https://cloud.streamingconnect.tv/hls/guadatv/guadatv.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "ES",
+        "type": "all"
+    },
+    {
+        "name": "Urola Telebista",
+        "id": "UrolaTelebista.es",
+        "logo": "https://i.imgur.com/V23bltn.png",
+        "url": "https://5940924978228.streamlock.net/j_Directo2/mp4:j_Directo2/playlist.m3u8",
         "categories": [
             "general"
         ],
@@ -725,20 +747,6 @@
         "type": "all"
     },
     {
-        "name": "CEACOM TV",
-        "id": "CEACOMTV.bo",
-        "logo": "https://i.imgur.com/hutdRfk.png",
-        "url": "https://eu1.servers10.com:8081/ceacom/index.m3u8",
-        "categories": [
-            "news",
-            "lifestyle",
-            "music",
-            "general"
-        ],
-        "country": "BO",
-        "type": "all"
-    },
-    {
         "name": "TV Direct 13",
         "id": "TVDirect13.cw",
         "logo": "https://i.imgur.com/T2IbQqv.png",
@@ -842,6 +850,17 @@
         "id": "RTB2HautsBasins.bf",
         "logo": "https://i0.wp.com/www.rtb.bf/wp-content/uploads/2020/01/images.jpg",
         "url": "https://edge20.vedge.infomaniak.com/livecast/ik:rtbguiriko-1/manifest.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "BF",
+        "type": "all"
+    },
+    {
+        "name": "Savane TV",
+        "id": "SavaneTV.bf",
+        "logo": "https://i.imgur.com/mv3S1Zc.png",
+        "url": "https://savane24.tv:5443/LiveApp/streams/Y4fyif69Q0ll6MeH2190896734859843.m3u8",
         "categories": [
             "general"
         ],
@@ -971,6 +990,17 @@
             "general"
         ],
         "country": "ZA",
+        "type": "all"
+    },
+    {
+        "name": "RASD TV",
+        "id": "RASDTV.eh",
+        "logo": "https://i.imgur.com/9Pb8806.png",
+        "url": "https://cloud.streamingconnect.tv/hls/rasdtv/rasdtv.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "EH",
         "type": "all"
     },
     {
@@ -2067,17 +2097,6 @@
         "type": "all"
     },
     {
-        "name": "TVS Television Network",
-        "id": "TVSTelevisionNetwork.us",
-        "logo": "",
-        "url": "https://rpn.bozztv.com/gusa/gusa-tvstn/index.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "US",
-        "type": "all"
-    },
-    {
         "name": "Vision Global TV",
         "id": "VisionGlobalTV.us",
         "logo": "https://i.imgur.com/3FaNbYD.png",
@@ -2106,18 +2125,6 @@
         "url": "https://tvr-moldova.lg.mncdn.com/tvrmoldova/smil:tvrmoldova.smil/chunklist.m3u8",
         "categories": [
             "general"
-        ],
-        "country": "MD",
-        "type": "all"
-    },
-    {
-        "name": "PRO TV Chisinau",
-        "id": "PROTVChisinau.md",
-        "logo": "https://i.imgur.com/X5PYRxF.png",
-        "url": "https://stream.protv.md/live/sursa-1/index.m3u8",
-        "categories": [
-            "general",
-            "news"
         ],
         "country": "MD",
         "type": "all"
@@ -2886,17 +2893,6 @@
         "type": "all"
     },
     {
-        "name": "Telesangil",
-        "id": "Telesangil.co",
-        "logo": "https://i.ibb.co/27Pzdvw/cropped-TELESANGIL-LOGO-1.png",
-        "url": "https://live20.bozztv.com/akamaissh101/ssh101/telesangil/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "CO",
-        "type": "all"
-    },
-    {
         "name": "Blu Radio",
         "id": "BluRadio.co",
         "logo": "https://i.imgur.com/w2t8CGT.png",
@@ -2967,17 +2963,6 @@
         "id": "HalaRamallah.ps",
         "logo": "https://i.ibb.co/swP1FDK/halaramallah-logo.png",
         "url": "https://halaramallahtv.com:2053/HRamallah-Tv/HalaRamallah/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "PS",
-        "type": "all"
-    },
-    {
-        "name": "Radio Albalad TV",
-        "id": "RadioAlbaladTV.ps",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/7/71/Nothing_whitespace_blank.png",
-        "url": "https://streaming.zaytonatube.com:8081/radioalbalad/radioalbalad/index.m3u8",
         "categories": [
             "general"
         ],
@@ -3656,17 +3641,6 @@
         "type": "all"
     },
     {
-        "name": "Radio Tele Planet Compas",
-        "id": "RadioTelePlanetCompas.ht",
-        "logo": "https://i.imgur.com/ddb4lsa.png",
-        "url": "https://5dcab9aed5331.streamlock.net/mrcompas1/livestream/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "HT",
-        "type": "all"
-    },
-    {
         "name": "ATN Bangla UK",
         "id": "ATNBanglaUK.uk",
         "logo": "https://i.imgur.com/vFpjggf.png",
@@ -3693,17 +3667,6 @@
         "id": "AnandTV.uk",
         "logo": "https://i.imgur.com/5VOPFzs.png",
         "url": "https://live-anandtv.anandmedia.net/anandtvapp/anandtv/index.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "UK",
-        "type": "all"
-    },
-    {
-        "name": "Latest TV",
-        "id": "LatestTV.uk",
-        "logo": "https://i.imgur.com/Cl1iGEb.jpeg",
-        "url": "https://5a0e89631aa14.streamlock.net/live/LatestTelevision/playlist.m3u8",
         "categories": [
             "general"
         ],
@@ -4080,6 +4043,17 @@
         "id": "CannesLerinsTV.fr",
         "logo": "https://i.imgur.com/atlgnum.png",
         "url": "https://vdo2.pro-fhi.net:3628/live/uppodsfqlive.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "FR",
+        "type": "all"
+    },
+    {
+        "name": "ici Elsass",
+        "id": "iciElsass.fr",
+        "logo": "https://upload.wikimedia.org/wikipedia/fr/6/69/Ici_Elsass.svg",
+        "url": "https://raw.githubusercontent.com/Sibprod/streams/main/ressources/dm/py/hls/icielsass.m3u8",
         "categories": [
             "general"
         ],
@@ -6141,17 +6115,6 @@
         "type": "all"
     },
     {
-        "name": "NewTV",
-        "id": "NewTV.pl",
-        "logo": "https://i.imgur.com/fH8rKs3.png",
-        "url": "https://1409502578.rsc.cdn77.org/live/stream-1/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "PL",
-        "type": "all"
-    },
-    {
         "name": "Capital TV HD",
         "id": "CapitalTVHD.np",
         "logo": "https://i.imgur.com/hb4bq1t.png",
@@ -6564,17 +6527,6 @@
         "id": "MegaTVJaen.pe",
         "logo": "https://i.imgur.com/zK1YcpJ.png",
         "url": "https://7.innovatestream.pe:19360/megatvjaen/megatvjaen.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "PE",
-        "type": "all"
-    },
-    {
-        "name": "ECO Television",
-        "id": "ECOTelevision.pe",
-        "logo": "https://i.imgur.com/ly1KU6w.png",
-        "url": "https://stream.ecoperu.tv/ECOTV/tracks-v1a1/mono.m3u8",
         "categories": [
             "general"
         ],
@@ -7099,6 +7051,17 @@
         "type": "all"
     },
     {
+        "name": "Hechos Ecuador",
+        "id": "HechosEcuador.ec",
+        "logo": "https://i.imgur.com/koMQZNX.png",
+        "url": "https://online.hechosecuador.com:5443/WebRTCApp/streams/hechosecuador.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "EC",
+        "type": "all"
+    },
+    {
         "name": "Cool TV",
         "id": "CoolTV.mk",
         "logo": "https://i.imgur.com/2tFrjUz.png",
@@ -7330,17 +7293,6 @@
         "type": "all"
     },
     {
-        "name": "Fortuna TV",
-        "id": "FortunaTV.ve",
-        "logo": "https://i.imgur.com/RPiTPnK.png",
-        "url": "https://streamtv.intervenhosting.net:3355/live/fortunatvlive.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "VE",
-        "type": "all"
-    },
-    {
         "name": "Portuguesa Television",
         "id": "PortuguesaTelevision.ve",
         "logo": "https://i.imgur.com/jHUSfGz.png",
@@ -7378,17 +7330,6 @@
         "id": "CanalOnce.ve",
         "logo": "https://i.imgur.com/puM9ASa.png",
         "url": "https://tv.streamcasthd.com:3676/live/canal11delzulialive.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "VE",
-        "type": "all"
-    },
-    {
-        "name": "Canal C del Zulia",
-        "id": "CanalCdelZulia.ve",
-        "logo": "https://i.imgur.com/ew44KOZ.png",
-        "url": "https://vs20.live.opencaster.com/cristianhilos_314b91b0/index.m3u8",
         "categories": [
             "general"
         ],
@@ -7484,6 +7425,17 @@
         "type": "all"
     },
     {
+        "name": "NTV",
+        "id": "NTV.ci",
+        "logo": "https://i.imgur.com/qqLXdHz.png",
+        "url": "https://strhlslb01.streamakaci.tv/str_ntv_ntv/str_ntv_ntv_multi/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "CI",
+        "type": "all"
+    },
+    {
         "name": "TVJ",
         "id": "TVJ.jm",
         "logo": "https://i.imgur.com/R4PoC3L.png",
@@ -7510,28 +7462,6 @@
         "id": "IgniteTelevision.gy",
         "logo": "https://i.imgur.com/aQI9tsg.jpeg",
         "url": "https://rpn.bozztv.com/ignitelive/ignitetv/ignitetv/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "GY",
-        "type": "all"
-    },
-    {
-        "name": "MTV Guyana",
-        "id": "MTVGuyana.gy",
-        "logo": "https://i.imgur.com/Ky70brA.png",
-        "url": "https://stream.mtvgy.com/mtvguyana/index.fmp4.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "GY",
-        "type": "all"
-    },
-    {
-        "name": "HGPTV",
-        "id": "HGPTV.gy",
-        "logo": "https://i.imgur.com/0aIH6V5.png",
-        "url": "https://cdn-us-east-prod-ingest-infra-dacast-com.akamaized.net/8424fb7f-99a9-87ae-3861-f0620849d11c/source/index.m3u8",
         "categories": [
             "general"
         ],
@@ -7829,17 +7759,6 @@
         "id": "TelevisionMetropolis192.hn",
         "logo": "https://i.imgur.com/QaocW5x.png",
         "url": "https://5e85d90130e77.streamlock.net/6014/6014/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "HN",
-        "type": "all"
-    },
-    {
-        "name": "Television Olanchana",
-        "id": "TelevisionOlanchana.hn",
-        "logo": "https://i.imgur.com/8LnLEQz.png",
-        "url": "https://viewhn.com/canal30/live/playlist.m3u8",
         "categories": [
             "general"
         ],
@@ -8640,6 +8559,17 @@
         "type": "all"
     },
     {
+        "name": "MRTV",
+        "id": "MRTV.mm",
+        "logo": "https://i.imgur.com/uyv7oJH.png",
+        "url": "https://mrtvott.com/cache/MRTV-HD/master.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "MM",
+        "type": "all"
+    },
+    {
         "name": "NDR Fernsehen International",
         "id": "NDRFernsehenInternational.de",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Logo_NDR_Fernsehen_2017.svg/960px-Logo_NDR_Fernsehen_2017.svg.png",
@@ -9201,6 +9131,17 @@
         "type": "all"
     },
     {
+        "name": "La Red",
+        "id": "LaRed.cl",
+        "logo": "https://i.imgur.com/nJOVM6e.png",
+        "url": "https://alba-cl-lared-lared.stream.mediatiquestream.com/index.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "CL",
+        "type": "all"
+    },
+    {
         "name": "Vizion Plus",
         "id": "VizionPlus.al",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Vizion_Plus.svg/960px-Vizion_Plus.svg.png",
@@ -9557,17 +9498,6 @@
         "type": "all"
     },
     {
-        "name": "RBATV",
-        "id": "RBATV.br",
-        "logo": "https://i.imgur.com/ZWFxlU1.png",
-        "url": "https://cdn.live.br1.jmvstream.com/w/LVW-15748/LVW15748_Yed7yzLuRC/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "BR",
-        "type": "all"
-    },
-    {
         "name": "TV Difusora Leste",
         "id": "TVDifusoraLeste.br",
         "logo": "https://i.imgur.com/hEd25Cr.png",
@@ -9594,17 +9524,6 @@
         "id": "SBTInterior.br",
         "logo": "https://i.imgur.com/IkZfa4j.png",
         "url": "https://cdn.jmvstream.com/w/LVW-10801/LVW10801_Xvg4R0u57n/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "BR",
-        "type": "all"
-    },
-    {
-        "name": "TVitape",
-        "id": "TVitape.br",
-        "logo": "https://i.imgur.com/XeqcwKe.png",
-        "url": "https://stream01.msolutionbrasil.com.br/hls/tvitape/live.m3u8",
         "categories": [
             "general"
         ],
@@ -11156,17 +11075,6 @@
         "type": "all"
     },
     {
-        "name": "Jiangsu Public & News Channel",
-        "id": "JiangsuPublicNewsChannel.cn",
-        "logo": "https://www.tvchinese.net/uploads/tv/jsgg.jpg",
-        "url": "http://183.207.248.71/gitv/live1/G_JSGG/G_JSGG",
-        "categories": [
-            "general"
-        ],
-        "country": "CN",
-        "type": "all"
-    },
-    {
         "name": "TVRI",
         "id": "TVRI.id",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/TVRILogo2019.svg/960px-TVRILogo2019.svg.png",
@@ -11409,17 +11317,6 @@
         "type": "all"
     },
     {
-        "name": "Efarina TV",
-        "id": "EfarinaTV.id",
-        "logo": "https://i.imgur.com/iYTimXh.png",
-        "url": "https://live.efarinatv.com/hls/bgtaufikganteng.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "ID",
-        "type": "all"
-    },
-    {
         "name": "Astro Blitar TV",
         "id": "AstroBlitarTV.id",
         "logo": "https://i.imgur.com/rORKbGw.png",
@@ -11457,6 +11354,28 @@
         "id": "SampitTV.id",
         "logo": "https://i.imgur.com/8cFJa8G.png",
         "url": "https://sampit-tv.siar.us/live/sampit-tv.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "ID",
+        "type": "all"
+    },
+    {
+        "name": "Jambi TV",
+        "id": "JambiTV.id",
+        "logo": "https://static.wikia.nocookie.net/logopedia/images/1/15/Jambi_TV.png",
+        "url": "https://ams.juraganstreaming.com:5443/JambiTV/streams/livestream.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "ID",
+        "type": "all"
+    },
+    {
+        "name": "Jogja TV",
+        "id": "JogjaTV.id",
+        "logo": "https://static.wikia.nocookie.net/logopedia/images/4/40/Jogjatvnew.png",
+        "url": "https://stream.jogjatv.co.id/jtvlive/stream/index.m3u8",
         "categories": [
             "general"
         ],
@@ -13006,39 +12925,6 @@
         "type": "all"
     },
     {
-        "name": "Notisur TV",
-        "id": "NotisurTV.do",
-        "logo": "https://rdomint.com/images/station/300.jpg",
-        "url": "https://ss2.tvrdomi.com:1936/notisur/notisur/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "DO",
-        "type": "all"
-    },
-    {
-        "name": "Peravia Vision",
-        "id": "PeraviaVision.do",
-        "logo": "https://i.imgur.com/k1Wj5ka.png",
-        "url": "https://ss2.tvrdomi.com:1936/peraviavision/peraviavision/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "DO",
-        "type": "all"
-    },
-    {
-        "name": "Vision 3000",
-        "id": "Vision3000.do",
-        "logo": "https://i.imgur.com/mogsnzp.png",
-        "url": "https://ss2.tvrdomi.com:1936/vision3000/vision3000/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "DO",
-        "type": "all"
-    },
-    {
         "name": "Telever",
         "id": "Telever.do",
         "logo": "https://imgur.com/ejKctXc.png",
@@ -13076,6 +12962,28 @@
         "id": "MITurnoTV.do",
         "logo": "https://imgur.com/uODDaEY.png",
         "url": "https://video.udwn.net:19360/miturnotv/miturnotv.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "DO",
+        "type": "all"
+    },
+    {
+        "name": "Nueva Vision 14",
+        "id": "NuevaVision14.do",
+        "logo": "https://imgur.com/0fWQS53.png",
+        "url": "https://live20.bozztv.com/akamaissh101/ssh101/nuevavisionhd/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "DO",
+        "type": "all"
+    },
+    {
+        "name": "Vega Teve",
+        "id": "VegaTeve.do",
+        "logo": "https://i.imgur.com/jiyMOZx.png",
+        "url": "https://cloud6.livescast.com:3797/live/vegatevelive.m3u8",
         "categories": [
             "general"
         ],
@@ -13655,17 +13563,6 @@
         "type": "all"
     },
     {
-        "name": "Multivision Canal 3",
-        "id": "MultivisionCanal3.gt",
-        "logo": "https://i.imgur.com/6bdj2BV.jpg",
-        "url": "https://stream.digitalgt.com:3136/live/multivisionlive.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "GT",
-        "type": "all"
-    },
-    {
         "name": "Nim TV",
         "id": "NimTV.gt",
         "logo": "https://i.imgur.com/mBNOSzl.png",
@@ -13692,17 +13589,6 @@
         "id": "SILTV.gt",
         "logo": "https://i.imgur.com/tWZXRVu.png",
         "url": "https://live20.bozztv.com/giatv/giatv-SilTvOnline/SilTvOnline/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "GT",
-        "type": "all"
-    },
-    {
-        "name": "Canal 13 Esquipulas",
-        "id": "Canal13Esquipulas.gt",
-        "logo": "https://i.imgur.com/INKZvlN.png",
-        "url": "https://tv91.hostingnuclear.com:19360/intercable/intercable.m3u8",
         "categories": [
             "general"
         ],
@@ -14240,6 +14126,17 @@
         "type": "all"
     },
     {
+        "name": "Kanal 33",
+        "id": "Kanal33.tr",
+        "logo": "https://i.imgur.com/5WYaoFZ.png",
+        "url": "https://edge1.socialsmart.tv/kanal33/bant1/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "TR",
+        "type": "all"
+    },
+    {
         "name": "8NTV",
         "id": "8NTV.mx",
         "logo": "https://i.imgur.com/7ecgGIG.png",
@@ -14535,6 +14432,820 @@
             "general"
         ],
         "country": "CZ",
+        "type": "all"
+    },
+    {
+        "name": "The Biggest Loser",
+        "id": "thebiggestloser",
+        "logo": "",
+        "url": "https://live-manifest.production-public.tubi.io/live/81fb64f1-6881-4ac0-b6d3-f663b4298b94/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "The Bob Ross Channel",
+        "id": "thebobrosschannel",
+        "logo": "",
+        "url": "https://live-manifest.production-public.tubi.io/live/a79bf16e-b53d-434c-a5dc-b7d3ba647cdc/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "The Breakfast Club on iHeartRadio",
+        "id": "thebreakfastcluboniheartradio",
+        "logo": "",
+        "url": "https://live-manifest.production-public.tubi.io/live/01eff731-e659-4011-9c28-bc1e7b0d8151/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "The Carol Burnett Show",
+        "id": "thecarolburnettshow",
+        "logo": "",
+        "url": "https://live-manifest.production-public.tubi.io/live/dbce464b-6541-43dd-a847-01f68b21b4ff/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "The Conners",
+        "id": "theconners",
+        "logo": "",
+        "url": "https://live-manifest.production-public.tubi.io/live/2e2e56f4-7352-4d4f-80b5-f8a9c0c494ef/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "The FBI",
+        "id": "thefbi",
+        "logo": "",
+        "url": "https://live-manifest.production-public.tubi.io/live/0e9b3dc6-8b19-4854-b0d1-df85b9ffa282/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "The FBI Files",
+        "id": "thefbifiles",
+        "logo": "",
+        "url": "https://live-manifest.production-public.tubi.io/live/8aee9cff-b626-4950-99e5-809fb599100e/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "The Jack Hanna Channel",
+        "id": "thejackhannachannel",
+        "logo": "",
+        "url": "https://live-manifest.production-public.tubi.io/live/db531789-62a9-4855-9aed-02bd32dd58bc/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "The Johnny Carson Show",
+        "id": "thejohnnycarsonshow",
+        "logo": "",
+        "url": "https://live-manifest.production-public.tubi.io/live/196721fd-dabe-4799-8edc-d8e70f63eb31/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "The Masked Singer",
+        "id": "themaskedsinger",
+        "logo": "",
+        "url": "https://live-manifest.production-public.tubi.io/live/0e38deb7-55a8-4ae3-a6a7-295b4fd8d0fc/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "The Price Is Right: The Barker Era",
+        "id": "thepriceisrightthebarkerera",
+        "logo": "",
+        "url": "https://live-manifest.production-public.tubi.io/live/86825bf7-8e1c-4fbe-ac23-01faa48ebee4/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "The Rifleman",
+        "id": "therifleman",
+        "logo": "",
+        "url": "https://live-manifest.production-public.tubi.io/live/a4fbd2ea-9b37-4cad-86fb-221be1efbc9f/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "theGrio",
+        "id": "thegrio",
+        "logo": "",
+        "url": "https://live-manifest.production-public.tubi.io/live/872ed469-a2cf-41d6-a35c-726bec708189/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "TMZ",
+        "id": "tmz",
+        "logo": "",
+        "url": "https://live-manifest.production-public.tubi.io/live/13228e92-c0a2-4c7f-b3f5-a35148426238/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Today All Day",
+        "id": "todayallday",
+        "logo": "",
+        "url": "https://live-manifest.production-public.tubi.io/live/d51de949-6ef0-4e1e-a370-4602eaf9f466/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Todo Cine",
+        "id": "todocine",
+        "logo": "",
+        "url": "https://live-manifest.production-public.tubi.io/live/d45a25a1-b1f2-42cc-81c8-5315806420d8/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Top Gear",
+        "id": "topgear",
+        "logo": "",
+        "url": "https://live-manifest.production-public.tubi.io/live/6d84d716-66f1-4f2d-8978-d0a6b99500ed/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Top Rank Classics",
+        "id": "toprankclassics",
+        "logo": "",
+        "url": "https://live-manifest.production-public.tubi.io/live/2a18fa03-db06-4f39-96c7-1751a3857698/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Torque",
+        "id": "torque",
+        "logo": "",
+        "url": "https://live-manifest.production-public.tubi.io/live/2a57c116-5540-439a-8703-8a20e21c6ea5/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Total Crime",
+        "id": "totalcrime",
+        "logo": "",
+        "url": "https://live-manifest.production-public.tubi.io/live/71fa1242-fb07-4d70-b30b-f4aaf76ddf2a/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Travel + Adventure",
+        "id": "traveladventure",
+        "logo": "",
+        "url": "https://live-manifest.production-public.tubi.io/live/399519f7-b848-4c8e-aaac-884546a1d916/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "TV One Crime & Justice",
+        "id": "tvonecrimejustice",
+        "logo": "",
+        "url": "https://live-manifest.production-public.tubi.io/live/e584c8c3-a4c4-4281-afd7-999492abcc23/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "UFC",
+        "id": "ufc",
+        "logo": "",
+        "url": "https://live-manifest.production-public.tubi.io/live/dd6d627f-f0f8-48bb-b627-7f7c4fceec37/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Unique Lives",
+        "id": "uniquelives",
+        "logo": "",
+        "url": "https://live-manifest.production-public.tubi.io/live/5602f3d6-c62c-4109-8de7-b7d2434ab63b/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Unsolved Mysteries",
+        "id": "unsolvedmysteries",
+        "logo": "",
+        "url": "https://live-manifest.production-public.tubi.io/live/35099120-35d3-463f-a923-f5e68332d6aa/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Untold Stories of the E.R.",
+        "id": "untoldstoriesoftheer",
+        "logo": "",
+        "url": "https://live-manifest.production-public.tubi.io/live/e135f994-9d0c-4128-a643-759705edf9c9/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "UnXplained Zone",
+        "id": "unxplainedzone",
+        "logo": "",
+        "url": "https://live-manifest.production-public.tubi.io/live/b78ffdc7-9b64-43b2-aa6c-1e3d5e782048/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Vice",
+        "id": "vice",
+        "logo": "",
+        "url": "https://live-manifest.production-public.tubi.io/live/3c0e97d2-21cc-49dd-a486-c268b0c2b93b/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Wanted: Dead or Alive",
+        "id": "wanteddeadoralive",
+        "logo": "",
+        "url": "https://live-manifest.production-public.tubi.io/live/f4c47d84-a50e-4053-8fd5-827f2e62a401/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Waypoint TV",
+        "id": "waypointtv",
+        "logo": "",
+        "url": "https://live-manifest.production-public.tubi.io/live/d419b6d7-3ede-4ca6-9d7c-3f34b039f7ab/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Welcome Home",
+        "id": "welcomehome",
+        "logo": "",
+        "url": "https://live-manifest.production-public.tubi.io/live/edb986fe-9600-4f83-8b6d-8593986f2f3a/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Women's Sports Network",
+        "id": "womenssportsnetwork",
+        "logo": "",
+        "url": "https://live-manifest.production-public.tubi.io/live/d4c5e01e-75ff-4e1d-abb1-d240e3a3694a/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "World's Most Evil Killers",
+        "id": "worldsmostevilkillers",
+        "logo": "",
+        "url": "https://live-manifest.production-public.tubi.io/live/8a3bfd19-8982-4a0a-b76c-14d02ea82fad/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "ÉPICURIEUX",
+        "id": "picurieux",
+        "logo": "https://i.ibb.co/4BZYXRH/epicurieux.png",
+        "url": "https://d1dzvywp5tcxbn.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-ryq1as86j3gxc/epic.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "AL QAHERA NEWS",
+        "id": "alqaheranews",
+        "logo": "https://i.ibb.co/CMk8DS1/alqahera.png",
+        "url": "https://fastly.live.brightcove.com/1843520572297019367/eu-central-1/6057955906001/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJob3N0IjoiYXltc3VjLmVncmVzcy5haGc3NmwiLCJhY2NvdW50X2lkIjoiNjA1Nzk1NTkwNjAwMSIsImVobiI6ImZhc3RseS5saXZlLmJyaWdodGNvdmUuY29tIiwiaXNzIjoiYmxpdmUtcGxheWJhY2stc291cmNlLWFwaSIsInN1YiI6InBhdGhtYXB0b2tlbiIsImF1ZCI6WyI2MDU3OTU1OTA2MDAxIl0sImp0aSI6IjE4NDM1MjA1NzIyOTcwMTkzNjcifQ.VDAy1TCwzlhiHq7touUEdjjhIJL8dl-x5KiSVpjOKWc/playlist-hls.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "LA 7",
+        "id": "la7",
+        "logo": "https://i.imgur.com/F90mpSa.png",
+        "url": "https://d1chghleocc9sm.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-evfku205gqrtf/Live.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "TVP INFO",
+        "id": "tvpinfo",
+        "logo": "https://i.ibb.co/HfF3xb5y/tvpinfopl.png",
+        "url": "https://raw.githubusercontent.com/fraudiay79/strm/refs/heads/main/platforms/links/pl/tvpinfo.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "TVP3 WARSZAWA",
+        "id": "tvp3warszawa",
+        "logo": "https://i.ibb.co/CpvvBMmp/tvp3.png",
+        "url": "https://raw.githubusercontent.com/fraudiay79/strm/refs/heads/main/platforms/links/pl/tvp3warszawa.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "GLOBAL NEWS",
+        "id": "globalnews",
+        "logo": "https://i.ibb.co/q0FfqdV/Globalnews.png",
+        "url": "https://live.corusdigitaldev.com/groupd/live/49a91e7f-1023-430f-8d66-561055f3d0f7/live.isml/live.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "INDIA TODAY",
+        "id": "indiatoday",
+        "logo": "https://i.ibb.co/94BB1cD/indiatod.jpg",
+        "url": "https://indiatodaylive.akamaized.net/hls/live/2014320/indiatoday/indiatodaylive/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Nosey",
+        "id": "nosey",
+        "logo": "",
+        "url": "https://live-manifest.production-public.tubi.io/live/d0ca4057-94d2-44df-9277-fc715b261596/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Wipeout Xtra",
+        "id": "wipeoutxtra",
+        "logo": "",
+        "url": "https://live-manifest.production-public.tubi.io/live/ea70dfb3-0a75-4ca1-9151-476fb43f6230/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Xplore",
+        "id": "xplore",
+        "logo": "",
+        "url": "https://live-manifest.production-public.tubi.io/live/f9eae274-e379-4d83-8a2b-bbb4c8f015aa/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "ORF 3",
+        "id": "orf3",
+        "logo": "https://i.ibb.co/B2XDMZCm/orfat.png",
+        "url": "https://orf3.mdn.ors.at/orf/orf3/qxa/manifest.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "NUMBER ONE",
+        "id": "numberone",
+        "logo": "https://i.ibb.co/bQHyST5/nr1tv.png",
+        "url": "https://b01c02nl.mediatriple.net/videoonlylive/mtkgeuihrlfwlive/broadcast_5c9e17cd59e8b.smil/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "[TR] Dream Turk",
+        "id": "trdreamturk",
+        "logo": "",
+        "url": "http://izletvhd.xyz:8080/byr9174/bh.byr647/446158",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "[TR] Kral Pop",
+        "id": "trkralpop",
+        "logo": "",
+        "url": "http://izletvhd.xyz:8080/byr9174/bh.byr647/446162",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "RTSH 2 HD  AL",
+        "id": "rtsh2hdal",
+        "logo": "",
+        "url": "http://live-tv.uk:8080/Crach_Iptv/Hekxbjelsofjur628264772new/5821",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Fox Life HD AL",
+        "id": "foxlifehdal",
+        "logo": "",
+        "url": "http://live-tv.uk:8080/Crach_Iptv/Hekxbjelsofjur628264772new/8359",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "De: GUTE Laune TV HD",
+        "id": "degutelaunetvhd",
+        "logo": "",
+        "url": "http://tv34.co:8080//live/hca147/b9WUBGMEP/140714.ts",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "FOX 2 Detroit",
+        "id": "fox2detroit",
+        "logo": "",
+        "url": "https://live-manifest.production-public.tubi.io/live/a63bb315-57df-4f8a-8a4b-095620773ebc/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "POPCORN (source backup)",
+        "id": "popcornsourcebackup",
+        "logo": "https://i.ibb.co/spnvQmbV/popcorn.png",
+        "url": "https://stream.ads.ottera.tv/playlist.m3u8?network_id=5940",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "NUMBER ONE TÜRK",
+        "id": "numberonetrk",
+        "logo": "https://i.ibb.co/wSPFds2/nr1turk.png",
+        "url": "https://b01c02nl.mediatriple.net/videoonlylive/mtkgeuihrlfwlive/broadcast_5c9e187770143.smil/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "LUYS TV",
+        "id": "luystv",
+        "logo": "https://i.ibb.co/KjLpH6t/luys.png",
+        "url": "https://b01c02nl.mediatriple.net/videoonlylive/mtpayqrfkgirxelive/broadcast_5e91c5ac96898.smil/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "TV 264 SAKARYA",
+        "id": "tv264sakarya",
+        "logo": "https://i.ibb.co/mHt7rQf/Tryerel.png",
+        "url": "http://mc1.mediatriple.net/videoonlylive/mtdxkkitgbrckilive/broadcast_5ee244263fd6d.smil/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "SUR 2 ANDALUCÍA",
+        "id": "sur2andaluca",
+        "logo": "https://i.ibb.co/Pt5ThHQ/andatv.png",
+        "url": "https://cdnlive.codev8.net/rtvalive/channel22.smil/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "SUR NOTICIAS ANDALUCÍA",
+        "id": "surnoticiasandaluca",
+        "logo": "https://i.ibb.co/gWcDxx9/csnan.png",
+        "url": "https://cdnlive.codev8.net/rtvalive/smil:channel42.smil/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "CINE ANDALUCÍA",
+        "id": "cineandaluca",
+        "logo": "https://i.ibb.co/0Q8h8MG/andacine.png",
+        "url": "https://cdnlive.codev8.net/rtvalive/smil:channel24.smil/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "SPORT5 STUDIO RADIO LIVE (standby link)",
+        "id": "sport5studioradiolivestandbylink",
+        "logo": "https://i.ibb.co/Yc5Yf1q/sport5il.png",
+        "url": "https://rgelive.akamaized.net/hls/live/2043151/radiolive/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "All Groove House",
+        "id": "allgroovehouse",
+        "logo": "",
+        "url": "http://cassini.shoutca.st:8179/live",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "TRT SPOR",
+        "id": "trtspor",
+        "logo": "https://i.ibb.co/3WmLjwG/trtspor22c.png",
+        "url": "http://162.212.179.33:80/dvrfl05/gin-trtspor/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "PANORAMA FM TV",
+        "id": "panoramafmtv",
+        "logo": "https://i.ibb.co/tsWQ5pz/panorama.jpg",
+        "url": "https://panoramafm-prod-dub-ak.akamaized.net/out/v1/66262e420d824475aaae794dc2d69f14/index.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "WANASAH",
+        "id": "wanasah",
+        "logo": "https://i.ibb.co/KX5tK6Q/Wanasa.png",
+        "url": "https://shls-wanasah-prod-dub.shahid.net/out/v1/c84ef3128e564b74a6a796e8b6287de6/index.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "MBC 1 USA",
+        "id": "mbc1usa",
+        "logo": "https://i.ibb.co/N19JFwZ/mbc.png",
+        "url": "https://mbc-1-usa-ak.akamaized.net/out/v1/8c1ce74bfd0743aab1026ef5b2aecfa4/index.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "MBC 3 USA",
+        "id": "mbc3usa",
+        "logo": "https://i.ibb.co/bvbsV1Z/mbc3.png",
+        "url": "https://mbc-3-usa-ak.akamaized.net/out/v1/8bbfec9446d84c9ea0dfa34edede6db9/index.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "MBC 4",
+        "id": "mbc4",
+        "logo": "https://i.ibb.co/5smk763/mbc4.png",
+        "url": "https://shls-mbc4-prod-dub.shahid.net/out/v1/c08681f81775496ab4afa2bac7ae7638/index.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "MBC 5",
+        "id": "mbc5",
+        "logo": "https://i.ibb.co/vzbhKTj/mbc5.png",
+        "url": "https://shls-mbc5-prod-dub.shahid.net/out/v1/2720564b6a4641658fdfb6884b160da2/index.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "MBC MASR USA",
+        "id": "mbcmasrusa",
+        "logo": "https://i.ibb.co/BnhWg65/mbcmasr.png",
+        "url": "https://masr-usa-ak.akamaized.net/out/v1/5fcaf05b5cd64b3cb4a969e0470080c8/index.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "MBC IRAQ",
+        "id": "mbciraq",
+        "logo": "https://i.ibb.co/rkr6JSX/mbc-iraq.png",
+        "url": "https://shls-iraq-prod-dub.shahid.net/out/v1/c9bf1e87ea66478bb20bc5c93c9d41ea/index.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "A2I TV (SN)",
+        "id": "a2itvsn",
+        "logo": "https://i.ibb.co/rKX3HQNG/afrlog.png",
+        "url": "https://stream.sen-gt.com/A2itv/myStream/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "BIS HABER (backup)",
+        "id": "bishaberbackup",
+        "logo": "https://i.ibb.co/BfM21nC/beinhaber.png",
+        "url": "https://raw.githubusercontent.com/rideordie16/YouTube/main/spor/beinsportshaber.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "TV2 ALGÉRIE",
+        "id": "tv2algrie",
+        "logo": "https://i.ibb.co/9tsD8WP/TV2Al.png",
+        "url": "http://162.212.179.33/dvrfl05/gin-canalalgerie/index.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "TVR INT",
+        "id": "tvrint",
+        "logo": "https://i.ibb.co/w46x9LM/tvri.png",
+        "url": "https://tvr-international.lg.mncdn.com/tvrinternational/smil:tvrinternational.smil/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "25 News KXXV / KRHD",
+        "id": "25newskxxvkrhd",
+        "logo": "",
+        "url": "https://live-manifest.production-public.tubi.io/live/0db2988e-37ba-47a8-9db9-067b4ec49c5f/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "",
         "type": "all"
     },
     {
@@ -19679,17 +20390,6 @@
         "id": "tillymae",
         "logo": "",
         "url": "https://xc.adultiptv.net/live/mammagiuglia/WEcw6GPQJ7/52820.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Angie_88",
-        "id": "angie88",
-        "logo": "",
-        "url": "https://xc.adultiptv.net/live/mammagiuglia/WEcw6GPQJ7/201276.m3u8",
         "categories": [
             "general"
         ],
@@ -43340,710 +44040,6 @@
         "id": "niamonroe",
         "logo": "",
         "url": "https://xc.adultiptv.net/live/adultiptv/adultiptv/533423.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Tian-xin-999",
-        "id": "tianxin999",
-        "logo": "",
-        "url": "https://xc.adultiptv.net/live/adultiptv/adultiptv/365955.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "CARTOON NETWORK AR [down]",
-        "id": "cartoonnetworkardown",
-        "logo": "https://i.ibb.co/Zxd0j45/cartoonnetwork.png",
-        "url": "https://shls-cartoon-net-prod-dub.shahid.net/out/v1/dc4aa87372374325a66be458f29eab0f/index.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "MBC BOLLYWOOD",
-        "id": "mbcbollywood",
-        "logo": "https://i.ibb.co/m5gGgfJ/mbcbollywood.png",
-        "url": "https://shls-mbcbollywood-prod-dub.shahid.net/out/v1/a79c9d7ef2a64a54a64d5c4567b3462a/index.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "CNN EN ESPAÑOL [geoblocked]",
-        "id": "cnnenespaolgeoblocked",
-        "logo": "https://i.ibb.co/XbSHxd5/cnn.png",
-        "url": "https://amg00803-amg00803c3-rakuten-us-5347.playouts.now.amagi.tv/playlist/amg00803-cnnfastinternational-cnnesponal-rakutenus/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "BBC PERSIAN",
-        "id": "bbcpersian",
-        "logo": "https://i.ibb.co/tqkV2sn/irflag.png",
-        "url": "https://vs-hls-pushb-ww-live.akamaized.net/x=4/i=urn:bbc:pips:service:bbc_persian_tv/t=3840/v=pv14/b=5070016/main.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "NATURE TIME",
-        "id": "naturetime",
-        "logo": "https://i.ibb.co/HzXTSvk/naturetime.jpg",
-        "url": "https://amg00090-blueantmedia-naturetime-samsungfr-yakbf.amagi.tv/playlist/amg00090-blueantmedia-naturetime-samsungfr/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "SYRIA TV",
-        "id": "syriatv",
-        "logo": "https://i.ibb.co/d58T05P/Syria-tv.jpg",
-        "url": "https://svs.itworkscdn.net/syriatvlive/syriatv.smil/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "ICI QUÉBEC",
-        "id": "iciqubec",
-        "logo": "https://i.ibb.co/whkNzKNr/iciteleqb.png",
-        "url": "https://rcavlive.akamaized.net/hls/live/696615/xcancbft/master.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "WAAR MEDIA",
-        "id": "waarmedia",
-        "logo": "https://i.ibb.co/cXd3MBV/symkr.png",
-        "url": "https://live.kwikmotion.com/waarmedialive/waarmedia.smil/waarmediapublish/waarmedia_source/chunks.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "FRANCE 24 AR",
-        "id": "france24ar",
-        "logo": "https://i.ibb.co/hKP8X8B/f24.png",
-        "url": "https://live.france24.com/hls/live/2037222/F24_AR_HI_HLS/master_5000.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "LN24 LES NEWS BE",
-        "id": "ln24lesnewsbe",
-        "logo": "https://i.ibb.co/nR2HsVr/ln24.png",
-        "url": "https://live-ln24.digiteka.com/1911668011/index.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "PORTO CANAL",
-        "id": "portocanal",
-        "logo": "https://i.ibb.co/WVzhVbc/portoc.png",
-        "url": "https://pull-live-156-1.global.ssl.fastly.net/pc5865dc25400thmb-ea6bf03b14fa318f7133/smil:pc1-jhrgyuoqe5865db-68tkgb14fa318f7133f03.smil/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "MBC 3",
-        "id": "mbc3",
-        "logo": "https://i.ibb.co/bvbsV1Z/mbc3.png",
-        "url": "https://shls-mbc3-prod-dub.shahid.net/out/v1/d5bbe570e1514d3d9a142657d33d85e6/index.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "TVT TOURS",
-        "id": "tvttours",
-        "logo": "https://i.ibb.co/vDRB1fK/tvtloire.png",
-        "url": "https://live-tvtours.digiteka.com/1982825398/index.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "TV MONACO",
-        "id": "tvmonaco",
-        "logo": "https://i.ibb.co/XjzvmqL/tvmonaco.jpg",
-        "url": "https://production-fast-mcrtv.content.okast.tv/channels/2116dc08-1959-465d-857f-3619daefb66b/b702b2b9-aebd-436c-be69-2118f56f3d86/master.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "20 MINUTES TV IDF",
-        "id": "20minutestvidf",
-        "logo": "https://i.ibb.co/5j6DZrt/20mn.png",
-        "url": "https://live-20minutestv.digiteka.com/1961167769/index.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "SKY NEWS",
-        "id": "skynews",
-        "logo": "https://i.ibb.co/8MBM4M1/skyn.png",
-        "url": "https://linear417-gb-hls1-prd-ak.cdn.skycdp.com/100e/Content/HLS_001_1080_30/Live/channel(skynews)/index_1080-30.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "CHAUFFE CUISINE",
-        "id": "chauffecuisine",
-        "logo": "https://i.ibb.co/674Vdzj9/chauffecuisine.png",
-        "url": "https://amg02393-awpg-amg02393c7-samsung-fr-4950.playouts.now.amagi.tv/playlist/amg02393-awpg-cachauffeencuisine-samsungfr/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "EMOTION MUSIC",
-        "id": "emotionmusic",
-        "logo": "https://i.ibb.co/Y7kyGdtG/Qello.png",
-        "url": "https://amg01736-harmonysecomgro-harmonymelody-samsungfr-n25pe.amagi.tv/playlist/amg01736-harmonysecomgro-harmonymelody-samsungfr/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "EURONEWS ES (backup)",
-        "id": "euronewsesbackup",
-        "logo": "https://i.ibb.co/VxLFYSj/euronews.png",
-        "url": "https://cdn-euronews.akamaized.net/live/eds/euronews-es/25082/euronews-es.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "TAHITI NUI TNTTV",
-        "id": "tahitinuitnttv",
-        "logo": "https://i.ibb.co/kcPbyTD/tntv.png",
-        "url": "https://tntv-samsung-fr.amagi.tv/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "STAR TVE",
-        "id": "startve",
-        "logo": "https://i.ibb.co/3T2TS2p/tvestar.jpg",
-        "url": "https://rtvelivestream-rtveplayplus.rtve.es/rtvesec/int/star_main_720.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "AL HURRA (backup)",
-        "id": "alhurrabackup",
-        "logo": "https://i.ibb.co/mNnyV1K/alhurra.png",
-        "url": "https://mbn-ingest-worldsafe.akamaized.net/hls/live/2038900/MBN_Alhurra_Worldsafe_HLS/master.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "AZ STAR",
-        "id": "azstar",
-        "logo": "https://i.ibb.co/VC7Q18V/azflag.png",
-        "url": "http://live.azstartv.com/azstar/smil:azstar.smil/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "EURONEWS PT (backup)",
-        "id": "euronewsptbackup",
-        "logo": "https://i.ibb.co/VxLFYSj/euronews.png",
-        "url": "https://cdn-euronews.akamaized.net/live/eds/euronews-pt/25077/euronews-pt.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "TRT TÜRK",
-        "id": "trttrk",
-        "logo": "https://i.ibb.co/swtn1kV/trtturk.png",
-        "url": "https://tv-trtturk.medya.trt.com.tr/master.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "OMAN TV",
-        "id": "omantv",
-        "logo": "https://i.ibb.co/GJVSFNt/oman.png",
-        "url": "https://cdn-globecast.akamaized.net/live/eds/oman_tv/hls_roku/index.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "EURONEWS IT",
-        "id": "euronewsit",
-        "logo": "https://i.ibb.co/VxLFYSj/euronews.png",
-        "url": "https://cdn-euronews.akamaized.net/live/eds/euronews-it/25085/euronews-it.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "EITB 2",
-        "id": "eitb2",
-        "logo": "https://i.ibb.co/FhXvbPN/eitb.jpg",
-        "url": "https://multimedia.eitb.eus/live-content/etb2hd-hls/master.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "CANAL DIPUTADOS",
-        "id": "canaldiputados",
-        "logo": "https://i.ibb.co/8xh76zN/parl.jpg",
-        "url": "https://congresodirecto.akamaized.net/hls/live/2038274/canal1/master.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "EITB 1",
-        "id": "eitb1",
-        "logo": "https://i.ibb.co/FhXvbPN/eitb.jpg",
-        "url": "https://multimedia.eitb.eus/live-content/etb1hd-hls/master.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "EITB INT",
-        "id": "eitbint",
-        "logo": "https://i.ibb.co/FhXvbPN/eitb.jpg",
-        "url": "https://multimedia.eitb.eus/live-content/eitbbasque-hls/master.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Anna_Six",
-        "id": "annasix",
-        "logo": "",
-        "url": "https://xc.adultiptv.net/live/fcyobxvr/rcqwjrjh/446899.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Elirpo",
-        "id": "elirpo",
-        "logo": "",
-        "url": "https://xc.adultiptv.net/live/fcyobxvr/rcqwjrjh/754340.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "maraciel",
-        "id": "maraciel",
-        "logo": "",
-        "url": "https://xc.adultiptv.net/live/fcyobxvr/rcqwjrjh/79056.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Renatawilsom",
-        "id": "renatawilsom",
-        "logo": "",
-        "url": "https://xc.adultiptv.net/live/fcyobxvr/rcqwjrjh/54908.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "BrunetteBliss69",
-        "id": "brunettebliss69",
-        "logo": "",
-        "url": "https://xc.adultiptv.net/live/fcyobxvr/rcqwjrjh/766328.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "anarhodes",
-        "id": "anarhodes",
-        "logo": "",
-        "url": "https://xc.adultiptv.net/live/fcyobxvr/rcqwjrjh/119392.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "CelesteBrucee",
-        "id": "celestebrucee",
-        "logo": "",
-        "url": "https://xc.adultiptv.net/live/fcyobxvr/rcqwjrjh/183436.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "donnaaa_evans",
-        "id": "donnaaaevans",
-        "logo": "",
-        "url": "https://xc.adultiptv.net/live/fcyobxvr/rcqwjrjh/80241.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "kefeifei",
-        "id": "kefeifei",
-        "logo": "",
-        "url": "https://xc.adultiptv.net/live/fcyobxvr/rcqwjrjh/756904.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "POWER TÜRK TAPTAZE",
-        "id": "powertrktaptaze",
-        "logo": "https://i.ibb.co/wy1H8jM/pturkttaze.png",
-        "url": "http://livetv.powerapp.com.tr/pturktaptaze/taptaze.smil/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "POWER TÜRK SLOW",
-        "id": "powertrkslow",
-        "logo": "https://i.ibb.co/rZxNWKv/pslow.png",
-        "url": "http://livetv.powerapp.com.tr/pturkslow/slow.smil/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "POWER TÜRK AKUSTİK",
-        "id": "powertrkakustk",
-        "logo": "https://i.ibb.co/FgCW885/pturkakustik.png",
-        "url": "http://livetv.powerapp.com.tr/pturkakustik/akustik.smil/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "POWER TV",
-        "id": "powertv",
-        "logo": "https://i.ibb.co/xhfcTC7/powertv.png",
-        "url": "http://livetv.powerapp.com.tr/powerTV/powerhd.smil/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "POWER DANCE",
-        "id": "powerdance",
-        "logo": "https://i.ibb.co/FVNL477/pdance.png",
-        "url": "http://livetv.powerapp.com.tr/dance/dance.smil/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "POWER LOVE",
-        "id": "powerlove",
-        "logo": "https://i.ibb.co/VLQ6cmV/plove.png",
-        "url": "http://livetv.powerapp.com.tr/plove/love.smil/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "NOURSAT EL SHABEB",
-        "id": "noursatelshabeb",
-        "logo": "https://i.ibb.co/Tgg3JpC/noursat.png",
-        "url": "https://svs.itworkscdn.net/nour3satlive/livestream/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "SHARJAH TV 2",
-        "id": "sharjahtv2",
-        "logo": "https://i.ibb.co/7KSJQYX/sharjah2.png",
-        "url": "https://svs.itworkscdn.net/smc2live/smc2tv.smil/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "AL ALARABY",
-        "id": "alalaraby",
-        "logo": "https://i.ibb.co/h27qpLJ/araby1.png",
-        "url": "https://live.kwikmotion.com/alaraby1live/alaraby_abr/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "KUSA 9NEWS",
-        "id": "kusa9news",
-        "logo": "",
-        "url": "https://live-manifest.production-public.tubi.io/live/9e58873a-95d7-418f-b0c9-a825e26d9454/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "PINK TV",
-        "id": "pinktv",
-        "logo": "https://i.ibb.co/ZJB71LL/pinktvrs.png",
-        "url": "https://edge8.pink.rs/pinktv/index.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "nakamura_san",
-        "id": "nakamurasan",
-        "logo": "",
-        "url": "https://xc.adultiptv.net/live/Omart955/3690963957/63741.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "PasiNicole",
-        "id": "pasinicole",
-        "logo": "",
-        "url": "https://xc.adultiptv.net/live/Omart955/3690963957/36234.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Princess_Angelica",
-        "id": "princessangelica",
-        "logo": "",
-        "url": "https://xc.adultiptv.net/live/Omart955/3690963957/235235.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "AnnetMoroz",
-        "id": "annetmoroz",
-        "logo": "",
-        "url": "https://xc.adultiptv.net/live/Omart955/3690963957/101424.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "riley_vice",
-        "id": "rileyvice",
-        "logo": "",
-        "url": "https://xc.adultiptv.net/live/Omart955/3690963957/585312.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Saravy_Blandon",
-        "id": "saravyblandon",
-        "logo": "",
-        "url": "https://xc.adultiptv.net/live/Omart955/3690963957/150651.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "VeolaBlanken",
-        "id": "veolablanken",
-        "logo": "",
-        "url": "https://xc.adultiptv.net/live/Omart955/3690963957/765854.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Amy_live",
-        "id": "amylive",
-        "logo": "",
-        "url": "https://xc.adultiptv.net/live/Omart955/3690963957/96505.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Alexxandra_12",
-        "id": "alexxandra12",
-        "logo": "",
-        "url": "https://xc.adultiptv.net/live/Omart955/3690963957/130072.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "anastacia55",
-        "id": "anastacia55",
-        "logo": "",
-        "url": "https://xc.adultiptv.net/live/Omart955/3690963957/767767.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Yanna_miana",
-        "id": "yannamiana",
-        "logo": "",
-        "url": "https://xc.adultiptv.net/live/Omart955/3690963957/169606.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "angellys",
-        "id": "angellys",
-        "logo": "",
-        "url": "https://xc.adultiptv.net/live/Omart955/3690963957/654704.m3u8",
         "categories": [
             "general"
         ],
