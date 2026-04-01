@@ -44,34 +44,12 @@
         "type": "all"
     },
     {
-        "name": "Suceso TV",
-        "id": "SucesoTV.py",
-        "logo": "https://i.imgur.com/BwRNes1.png",
-        "url": "https://live.enhdtv.com:8081/8060/index.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "PY",
-        "type": "all"
-    },
-    {
         "name": "Union TV",
         "id": "UnionTV.py",
         "logo": "https://i.imgur.com/No9YzNC.png",
         "url": "https://tigocloud.desdeparaguay.net/800tv/800tv/playlist.m3u8",
         "categories": [
             "general"
-        ],
-        "country": "PY",
-        "type": "all"
-    },
-    {
-        "name": "Cosmos TV",
-        "id": "CosmosTV.py",
-        "logo": "https://i.imgur.com/dAMyExY.jpg",
-        "url": "https://video.hostingcaaguazu.com:19360/cosmostv/cosmostv.m3u8",
-        "categories": [
-            "science"
         ],
         "country": "PY",
         "type": "all"
@@ -93,17 +71,6 @@
         "id": "C9N.py",
         "logo": "https://i.imgur.com/Cp4zJ7O.png",
         "url": "https://d1y0t05eznkmpn.cloudfront.net/index.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "PY",
-        "type": "all"
-    },
-    {
-        "name": "4Dmas Noticias TV",
-        "id": "4DmasNoticiasTV.py",
-        "logo": "https://i.ibb.co/1fb5BtN/unnamed.png",
-        "url": "https://rds3.desdeparaguay.net/4dmasnoticiastv/4dmasnoticiastv/playlist.m3u8",
         "categories": [
             "news"
         ],
@@ -190,10 +157,10 @@
         "type": "all"
     },
     {
-        "name": "TelePortal Canal 53.1",
-        "id": "TelePortalCanal531.py",
-        "logo": "https://i.imgur.com/brcLLUc.png",
-        "url": "https://live20.bozztv.com/giatv/giatv-miseñalhd/miseñalhd/playlist.m3u8",
+        "name": "ABC-TV Paraguay",
+        "id": "ABCTVParaguay.py",
+        "logo": "https://i.imgur.com/OqfBMGy.png",
+        "url": "http://45.184.109.10/live/69393EAE6ADBC65A68F942022362A202/7.m3u8",
         "categories": [
             "general"
         ],
@@ -201,12 +168,155 @@
         "type": "all"
     },
     {
-        "name": "Venus Media",
-        "id": "VenusMedia.py",
-        "logo": "https://i.imgur.com/XwmUbfp.png",
-        "url": "https://rds3gen.desdeparaguay.net/venusmedia/venusmedia/.m3u8",
+        "name": "Canal Pro",
+        "id": "CanalPro.py",
+        "logo": "https://i.imgur.com/ah8n7jL.png",
+        "url": "https://www.desde-paraguay.com/pro.m3u8",
+        "categories": [
+            "business"
+        ],
+        "country": "PY",
+        "type": "all"
+    },
+    {
+        "name": "E40",
+        "id": "E40.py",
+        "logo": "https://i.imgur.com/0RypDUY.png",
+        "url": "https://copacotf.desdeparaguay.net/e40tv/e40tv_py_alta/playlist.m3u8?admin=tvaccion",
         "categories": [
             "music"
+        ],
+        "country": "PY",
+        "type": "all"
+    },
+    {
+        "name": "Gen",
+        "id": "Gen.py",
+        "logo": "https://i.imgur.com/vEMnZF4.png",
+        "url": "https://copacogen.desdeparaguay.net/gentv/gentv_py_alta/playlist.m3u8?admin=nacion",
+        "categories": [
+            "general"
+        ],
+        "country": "PY",
+        "type": "all"
+    },
+    {
+        "name": "HEi Now",
+        "id": "HEiNow.py",
+        "logo": "https://i.imgur.com/oMHiGRN.png",
+        "url": "https://copacogen.desdeparaguay.net/heitv/heitv_py_alta/playlist.m3u8?admin=nacion",
+        "categories": [
+            "music"
+        ],
+        "country": "PY",
+        "type": "all"
+    },
+    {
+        "name": "Latele",
+        "id": "Latele.py",
+        "logo": "https://i.imgur.com/Qcf6Qev.png",
+        "url": "https://copacotf.desdeparaguay.net/latele/latele_py_alta/playlist.m3u8?admin=tvaccion",
+        "categories": [
+            "general"
+        ],
+        "country": "PY",
+        "type": "all"
+    },
+    {
+        "name": "Monumental TV",
+        "id": "MonumentalTV.py",
+        "logo": "https://i.imgur.com/kEcOYML.png",
+        "url": "https://copacogen.desdeparaguay.net/monumentaltv/monumentaltv_med/playlist.m3u8?admin=tvaccion",
+        "categories": [
+            "general"
+        ],
+        "country": "PY",
+        "type": "all"
+    },
+    {
+        "name": "Nandejara Ne'e TV",
+        "id": "NandejaraNeeTV.py",
+        "logo": "https://i.imgur.com/VFxuBdL.jpg",
+        "url": "https://copacogen.desdeparaguay.net/nandejaraneetv/nandejaraneetv/playlist.m3u8?admin=tvaccion",
+        "categories": [
+            "religious"
+        ],
+        "country": "PY",
+        "type": "all"
+    },
+    {
+        "name": "NPY",
+        "id": "NPY.py",
+        "logo": "https://i.imgur.com/pUEkaiW.png",
+        "url": "https://copacogen.desdeparaguay.net/npy/npy_py_alta/playlist.m3u8?admin=tvaccion",
+        "categories": [
+            "news"
+        ],
+        "country": "PY",
+        "type": "all"
+    },
+    {
+        "name": "Paraguay TV",
+        "id": "ParaguayTV.py",
+        "logo": "https://i.imgur.com/fkK7i8g.png",
+        "url": "https://stream.paraguaytv.gov.py/memfs/bbe36fed-9b49-4d1d-adaa-4bd6d1b2e386.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "PY",
+        "type": "all"
+    },
+    {
+        "name": "Paravision",
+        "id": "Paravision.py",
+        "logo": "https://i.imgur.com/yd9Dw2G.png",
+        "url": "http://45.184.109.10/live/69393EAE6ADBC65A68F942022362A202/120.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "PY",
+        "type": "all"
+    },
+    {
+        "name": "Popu TV",
+        "id": "PopuTV.py",
+        "logo": "https://i.imgur.com/UqCogyZ.png",
+        "url": "https://copacogen.desdeparaguay.net/universotv/universotv_py_alta/playlist.m3u8?admin=nacion",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "PY",
+        "type": "all"
+    },
+    {
+        "name": "Telefuturo",
+        "id": "Telefuturo.py",
+        "logo": "https://i.imgur.com/6lVrFvb.png",
+        "url": "https://copacogen.desdeparaguay.net/telefuturo/telefuturo_py_alta/media.m3u8?admin=tvaccion",
+        "categories": [
+            "general"
+        ],
+        "country": "PY",
+        "type": "all"
+    },
+    {
+        "name": "Tropicalia 93.9 FM",
+        "id": "Tropicalia939FM.py",
+        "logo": "https://i.imgur.com/oMML5Ue.png",
+        "url": "https://copacogen.desdeparaguay.net/tropicaliatv/tropicaliatv_py_alta/chunklist.m3u8?admin=nacion",
+        "categories": [
+            "music"
+        ],
+        "country": "PY",
+        "type": "all"
+    },
+    {
+        "name": "Unicanal",
+        "id": "Unicanal.py",
+        "logo": "https://i.imgur.com/cgTD2TW.png",
+        "url": "http://45.184.109.10/live/69393EAE6ADBC65A68F942022362A202/72.m3u8",
+        "categories": [
+            "news"
         ],
         "country": "PY",
         "type": "all"
