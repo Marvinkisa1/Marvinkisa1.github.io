@@ -639,17 +639,6 @@
         "type": "all"
     },
     {
-        "name": "Primer TV",
-        "id": "PrimerTV.br",
-        "logo": "https://i.imgur.com/PMptSP3.png",
-        "url": "http://200.194.238.229:8383/live/primer/playlist.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "BR",
-        "type": "all"
-    },
-    {
         "name": "IMPD TV Worldwide",
         "id": "IMPDTVWorldwide.br",
         "logo": "https://i.imgur.com/9dW3AUQ.png",
@@ -1021,7 +1010,7 @@
     {
         "name": "NickOnline",
         "id": "NickOnline.br",
-        "logo": "https://x1co.com.br/logo.png",
+        "logo": "https://x1co.com.br:8443/logo.png",
         "url": "https://x1co.com.br:8443/hls/stream.m3u8",
         "categories": [
             "kids",
@@ -1077,6 +1066,41 @@
         "url": "https://giatv.bozztv.com/giatv/giatv-kpoptvplay/kpoptvplay/playlist.m3u8",
         "categories": [
             "music"
+        ],
+        "country": "BR",
+        "type": "all"
+    },
+    {
+        "name": "TVE Bahia",
+        "id": "TVEBahia.br",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/TVE_Bahia_logo.svg/960px-TVE_Bahia_logo.svg.png",
+        "url": "http://streaming.procergs.com.br:1935/tve/stve/playlist.m3u8",
+        "categories": [],
+        "country": "BR",
+        "type": "all"
+    },
+    {
+        "name": "TVE RS",
+        "id": "TVERS.br",
+        "logo": "https://i.imgur.com/MQ6lJpS.png",
+        "url": "https://streaming.procergs.com.br:8443/tve/stve/playlist.m3u8",
+        "categories": [
+            "culture",
+            "education"
+        ],
+        "country": "BR",
+        "type": "all"
+    },
+    {
+        "name": "TV Paraense",
+        "id": "TVParaense.br",
+        "logo": "https://duckduckgo.com/i/e408ea02.png",
+        "url": "https://video09.logicahost.com.br/tvparaense/tvparaense/playlist.m3u",
+        "categories": [
+            "general",
+            "family",
+            "entertainment",
+            "news"
         ],
         "country": "BR",
         "type": "all"
