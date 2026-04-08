@@ -267,14 +267,17 @@
         "type": "all"
     },
     {
-        "name": "DSTV",
-        "id": "DSTV.bg",
-        "logo": "https://i.imgur.com/YMgzzkf.png",
-        "url": "http://46.249.95.140:8081/hls/data.m3u8",
+        "name": "CEACOM TV",
+        "id": "CEACOMTV.bo",
+        "logo": "https://i.imgur.com/hutdRfk.png",
+        "url": "https://eu1.servers10.com:8081/ceacom/index.m3u8",
         "categories": [
-            "music"
+            "news",
+            "lifestyle",
+            "music",
+            "general"
         ],
-        "country": "BG",
+        "country": "BO",
         "type": "all"
     },
     {
@@ -736,19 +739,6 @@
         "logo": "https://i.imgur.com/Lbc9cYw.png",
         "url": "https://d3vgs3ro3x6v8a.cloudfront.net/Vevo_Hip_Hop.m3u8",
         "categories": [
-            "music"
-        ],
-        "country": "US",
-        "type": "all"
-    },
-    {
-        "name": "MBC America",
-        "id": "MBCAmerica.us",
-        "logo": "https://i.imgur.com/RRc23ra.png",
-        "url": "https://cdn-us-east-prod-ingest-infra-dacast-com.akamaized.net/624ff8f9-db18-da92-4d42-896fa2ff3eb3/source/index.m3u8",
-        "categories": [
-            "culture",
-            "entertainment",
             "music"
         ],
         "country": "US",
@@ -1329,6 +1319,17 @@
         "type": "all"
     },
     {
+        "name": "Luna Estereo 106.4 FM",
+        "id": "LunaEstereo1064FM.co",
+        "logo": "https://i.imgur.com/cESeD6R.png",
+        "url": "https://servervideo.intermediacolombia.com:19360/kychbbfhdz/kychbbfhdz.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "CO",
+        "type": "all"
+    },
+    {
         "name": "Falastini TV",
         "id": "FalastiniTV.ps",
         "logo": "https://i.imgur.com/6B3Cims.png",
@@ -1644,6 +1645,28 @@
         "url": "http://31.148.48.15/Bridge_TV_Classic/index.m3u8",
         "categories": [
             "classic",
+            "music"
+        ],
+        "country": "RU",
+        "type": "all"
+    },
+    {
+        "name": "Europa Plus TV",
+        "id": "EuropaPlusTV.ru",
+        "logo": "https://i.imgur.com/GLc4qrc.png",
+        "url": "http://31.148.48.15/Europa_Plus_HD/index.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "RU",
+        "type": "all"
+    },
+    {
+        "name": "o2tv",
+        "id": "o2tv.ru",
+        "logo": "https://i.imgur.com/CM6z7fA.png",
+        "url": "http://31.148.48.15/O2_HD/index.m3u8",
+        "categories": [
             "music"
         ],
         "country": "RU",
@@ -1967,6 +1990,17 @@
         "categories": [
             "music",
             "religious"
+        ],
+        "country": "FR",
+        "type": "all"
+    },
+    {
+        "name": "Littoral FM TV",
+        "id": "LittoralFMTV.fr",
+        "logo": "https://i.imgur.com/DCZKAQ1.png",
+        "url": "https://live.creacast.com/littoralfm-ch1/stream/playlist.m3u8",
+        "categories": [
+            "music"
         ],
         "country": "FR",
         "type": "all"
@@ -2324,17 +2358,6 @@
         "type": "all"
     },
     {
-        "name": "ZB Music",
-        "id": "ZBMusic.in",
-        "logo": "https://i.imgur.com/k1nb8u1.jpeg",
-        "url": "https://server.zillarbarta.com/zbmusic/index.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "IN",
-        "type": "all"
-    },
-    {
         "name": "Super Q Panama",
         "id": "SuperQPanama.pa",
         "logo": "https://i.imgur.com/ocTnqi7.png",
@@ -2350,17 +2373,6 @@
         "id": "Planet1009FM.pa",
         "logo": "https://i.imgur.com/8ZIBs8l.png",
         "url": "https://streamlov.alsolnet.com/planet1009fm/live/playlist.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "PA",
-        "type": "all"
-    },
-    {
-        "name": "Fabulosa Estereo 100.5 FM",
-        "id": "FabulosaEstereo1005FM.pa",
-        "logo": "https://i.imgur.com/YFmzkOp.png",
-        "url": "https://www.streaming507.net:19360/videofabulosa/videofabulosa.m3u8",
         "categories": [
             "music"
         ],
@@ -3808,6 +3820,17 @@
         "type": "all"
     },
     {
+        "name": "Deluxe Lounge",
+        "id": "DeluxeLounge.de",
+        "logo": "https://i.imgur.com/pgCA35z.png",
+        "url": "https://jmp2.uk/stvp-CHAJ0500413A",
+        "categories": [
+            "music"
+        ],
+        "country": "DE",
+        "type": "all"
+    },
+    {
         "name": "First Music Channel",
         "id": "FirstMusicChannel.by",
         "logo": "https://i.imgur.com/YdyFJrl.png",
@@ -4165,6 +4188,17 @@
         "type": "all"
     },
     {
+        "name": "ZFM Zoetermeer TV",
+        "id": "ZFMZoetermeerTV.nl",
+        "logo": "https://i.imgur.com/vrjACvy.png",
+        "url": "https://zfmzoetermeer.nl/live/master.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "NL",
+        "type": "all"
+    },
+    {
         "name": "Gugak TV",
         "id": "GugakTV.kr",
         "logo": "https://i.imgur.com/Ey7Htm8.png",
@@ -4326,19 +4360,6 @@
         "url": "https://mic.siar.us/mic/live/mic.m3u8",
         "categories": [
             "music"
-        ],
-        "country": "ID",
-        "type": "all"
-    },
-    {
-        "name": "Lingkar TV",
-        "id": "LingkarTV.id",
-        "logo": "https://lingkartv.com/assets/img/logo-square.png",
-        "url": "https://lingkartv.my.id/hls/lingkartv.m3u8",
-        "categories": [
-            "news",
-            "music",
-            "religious"
         ],
         "country": "ID",
         "type": "all"
@@ -4568,17 +4589,6 @@
         "id": "CMCTV.hr",
         "logo": "https://i.imgur.com/FCb7Ag2.png",
         "url": "https://stream.cmctv.hr:49998/cmc/live.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "HR",
-        "type": "all"
-    },
-    {
-        "name": "Extra TV",
-        "id": "ExtraTV.hr",
-        "logo": "https://i.imgur.com/5edYPBO.png",
-        "url": "https://streaming.social3.hr/ExtraTVudzdhr5/uUankWqpXD/1.m3u8",
         "categories": [
             "music"
         ],

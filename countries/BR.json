@@ -825,15 +825,6 @@
         "type": "all"
     },
     {
-        "name": "Amazon Sat",
-        "id": "AmazonSat.br",
-        "logo": "https://i.imgur.com/7rjCS5i.png",
-        "url": "https://amazonsat.brasilstream.com.br/hls/amazonsat/index.m3u8",
-        "categories": [],
-        "country": "BR",
-        "type": "all"
-    },
-    {
         "name": "TV UFOP",
         "id": "TVUFOP.br",
         "logo": "https://raw.githubusercontent.com/daniloroxette/tvufop/refs/heads/main/images/tvufop_logo.png",
@@ -1100,6 +1091,37 @@
             "general",
             "family",
             "entertainment",
+            "news"
+        ],
+        "country": "BR",
+        "type": "all"
+    },
+    {
+        "name": "Primer TV",
+        "id": "PrimerTV.br",
+        "logo": "https://i.imgur.com/PMptSP3.png",
+        "url": "http://200.194.238.229:8383/live/primer/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "BR",
+        "type": "all"
+    },
+    {
+        "name": "TV Guara",
+        "id": "TVGuara.br",
+        "logo": "https://i.imgur.com/8PErNBT.png",
+        "url": "https://video02.logicahost.com.br/tvguara23/tvguara23/playlist.m3u8",
+        "categories": [],
+        "country": "BR",
+        "type": "all"
+    },
+    {
+        "name": "TV Sim Cachoeiro",
+        "id": "TVSimCachoeiro.br",
+        "logo": "https://i.imgur.com/t5oUK3C.png",
+        "url": "https://5cf4a2c2512a2.streamlock.net/8104/8104/playlist.m3u8",
+        "categories": [
             "news"
         ],
         "country": "BR",
