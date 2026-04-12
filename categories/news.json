@@ -389,17 +389,6 @@
         "type": "all"
     },
     {
-        "name": "ATV+",
-        "id": "ATVPlus.pe",
-        "logo": "https://i.imgur.com/fY9256H.png",
-        "url": "https://alba-pe-atv-atvmas.stream.mediatiquestream.com/index.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "PE",
-        "type": "all"
-    },
-    {
         "name": "RCR",
         "id": "RCR.pe",
         "logo": "https://i.imgur.com/A8TRPrF.png",
@@ -483,6 +472,17 @@
         "id": "TN.ar",
         "logo": "https://i.imgur.com/vFwPhPS.png",
         "url": "https://latam-cache-sv2-cdn.latamlive.net/TN_ENC_LIVE/index.mpd",
+        "categories": [
+            "news"
+        ],
+        "country": "AR",
+        "type": "all"
+    },
+    {
+        "name": "C5N",
+        "id": "C5N.ar",
+        "logo": "https://i.imgur.com/5ZNZYjO.png",
+        "url": "http://201.217.246.42:44310/Live/3fcb6e26785fd8d415571b26dc3cf5d3/c5n_480.m3u8",
         "categories": [
             "news"
         ],
@@ -2524,17 +2524,6 @@
         "type": "all"
     },
     {
-        "name": "RDX Goa",
-        "id": "RDXGoa.in",
-        "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/RDX_News.png",
-        "url": "https://g5nl6xoalpq6-hls-live.5centscdn.com/rdxgoa/d0dbe915091d400bd8ee7f27f0791303.sdp/playlist.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "IN",
-        "type": "all"
-    },
-    {
         "name": "Palitra News",
         "id": "PalitraNews.ge",
         "logo": "https://i.imgur.com/BW95PMF.png",
@@ -3478,17 +3467,6 @@
         "type": "all"
     },
     {
-        "name": "Euronews Romania",
-        "id": "EuronewsRomania.ro",
-        "logo": "https://i.imgur.com/jUOVUXt.png",
-        "url": "https://ythls.armelin.one/channel/UCbATDExtWstHnwWELZnXNZA.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "RO",
-        "type": "all"
-    },
-    {
         "name": "TeleMoldova +",
         "id": "TeleMoldovaPlus.ro",
         "logo": "https://i.imgur.com/8z0zLjw.jpeg",
@@ -3768,17 +3746,6 @@
         "id": "A24Paraguay.py",
         "logo": "https://i.imgur.com/XWBmjBk.png",
         "url": "http://45.184.109.10/live/69393EAE6ADBC65A68F942022362A202/6.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "PY",
-        "type": "all"
-    },
-    {
-        "name": "C9N",
-        "id": "C9N.py",
-        "logo": "https://i.imgur.com/iXkwP31.png",
-        "url": "https://d1y0t05eznkmpn.cloudfront.net/index.m3u8",
         "categories": [
             "news"
         ],
@@ -5005,6 +4972,17 @@
         "type": "all"
     },
     {
+        "name": "KGUN-TV 9.6",
+        "id": "KGUNTV96.us",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a0/Scripps_News_logo.svg/960px-Scripps_News_logo.svg.png",
+        "url": "https://jmp2.uk/plu-5459795fc9f133a519bc0bef.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "US",
+        "type": "all"
+    },
+    {
         "name": "Asharq News",
         "id": "AsharqNews.sa",
         "logo": "https://i.imgur.com/bqRC3sl.png",
@@ -5311,6 +5289,17 @@
         "type": "all"
     },
     {
+        "name": "tv9 Telemaremma",
+        "id": "tv9Telemaremma.it",
+        "logo": "https://i.imgur.com/3WAyf6H.png",
+        "url": "https://rtmp-live-ingest-us-east-1-universe-dacast-com.akamaized.net/transmuxv1/streams/2095a288-1384-ed2e-5da0-278ccbb72295.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "IT",
+        "type": "all"
+    },
+    {
         "name": "Arirang TV",
         "id": "ArirangTV.kr",
         "logo": "https://i.imgur.com/Asu5pE9.png",
@@ -5467,21 +5456,44 @@
         "type": "all"
     },
     {
+        "name": "Africa 24",
+        "id": "Africa24.fr",
+        "logo": "https://africa24tv.com/wp-content/uploads/2021/09/logo.png",
+        "url": "https://africa24.vedge.infomaniak.com/livecast/ik:africa24/manifest.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "FR",
+        "type": "all"
+    },
+    {
+        "name": "Africa 24 English",
+        "id": "Africa24English.fr",
+        "logo": "https://africa24tv.com/wp-content/uploads/2023/12/logo-Africa24TVEnglish.png",
+        "url": "https://edge20.vedge.infomaniak.com/livecast/ik:africa24english/manifest.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "FR",
+        "type": "all"
+    },
+    {
+        "name": "Africa 24 Sport",
+        "id": "Africa24Sport.fr",
+        "logo": "https://i0.wp.com/africa24tv.com/wp-content/uploads/2023/12/LOGO-AFRICASPORT-4-HD-sans-fond.png?fit=512%2C107&ssl=1",
+        "url": "https://africa24.vedge.infomaniak.com/livecast/ik:africa24sport/manifest.m3u8",
+        "categories": [
+            "news",
+            "sports"
+        ],
+        "country": "FR",
+        "type": "all"
+    },
+    {
         "name": "Tayari West",
         "id": "TayariWestTV.ug",
         "logo": "https://i.imgur.com/tbnOtUZ.jpeg",
         "url": "https://stream.hydeinnovations.com/tarari-west/index.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "UG",
-        "type": "all"
-    },
-    {
-        "name": "BBS TV",
-        "id": "BBSTV.ug",
-        "logo": "https://i.imgur.com/Hub1AXv.png",
-        "url": "https://bbstv.ug/hls/ch01/index.m3u8",
         "categories": [
             "news"
         ],
@@ -5614,17 +5626,6 @@
         "id": "PalestineToday.ps",
         "logo": "https://i.imgur.com/BS8XXug.png",
         "url": "https://live.paltodaytv.com/paltv/live/playlist.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "PS",
-        "type": "all"
-    },
-    {
-        "name": "Nablus TV",
-        "id": "NablusTV.ps",
-        "logo": "https://i.imgur.com/GoLhaDK.png",
-        "url": "http://htvmada.mada.ps:8888/nabluslive/index.m3u8",
         "categories": [
             "news"
         ],
@@ -6217,6 +6218,17 @@
         "type": "all"
     },
     {
+        "name": "M-Net Info",
+        "id": "MNetInfo.mk",
+        "logo": "https://i.ibb.co/0fnY2cj/IMG-20230419-161527.jpg",
+        "url": "https://live.mnet.mk/hls/mnet-info.m3u8",
+        "categories": [
+            "news"
+        ],
+        "country": "MK",
+        "type": "all"
+    },
+    {
         "name": "Medi1TV Afrique",
         "id": "Medi1TVAfrique.ma",
         "logo": "https://i.imgur.com/a20DHnj.png",
@@ -6309,17 +6321,6 @@
         "id": "ProbashiTVNews.ca",
         "logo": "https://i.imgur.com/7oTsfQ4.png",
         "url": "http://158.69.24.53:8080/probashi_tv/index.m3u8",
-        "categories": [
-            "news"
-        ],
-        "country": "CA",
-        "type": "all"
-    },
-    {
-        "name": "The News Forum",
-        "id": "TheNewsForum.ca",
-        "logo": "https://i.imgur.com/hhqqiqg.png",
-        "url": "http://name-port.to/live/Gregory123/Gregory321/2420047.ts",
         "categories": [
             "news"
         ],
