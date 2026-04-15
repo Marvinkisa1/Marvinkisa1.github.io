@@ -140,6 +140,17 @@
         "type": "adult"
     },
     {
+        "name": "Cine.Ar",
+        "id": "CineAr.ar",
+        "logo": "https://i.imgur.com/Iozv4tT.png",
+        "url": "http://201.217.246.42:44310/Live/3fcb6e26785fd8d415571b26dc3cf5d3/local-20.playlist.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "AR",
+        "type": "all"
+    },
+    {
         "name": "Itage TV",
         "id": "ItageTV.ng",
         "logo": "https://i.imgur.com/FP1aUPw.jpg",
@@ -294,17 +305,6 @@
         "type": "all"
     },
     {
-        "name": "ETV Cinema",
-        "id": "ETVCinema.in",
-        "logo": "https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/ETV-cinema-HD-Logo_2000_X_1125_Transpharent.png",
-        "url": "https://d1q7j6ha51ro6f.cloudfront.net/v1/master/9d43eacaed199f8d5883927e7aef514a8a08e108/ETV_CINEMA_H264-3_cloud_in/index.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "IN",
-        "type": "all"
-    },
-    {
         "name": "Pitaara",
         "id": "Pitaara.in",
         "logo": "https://dtil.tmsimg.com/assets/s143650_ld_h15_aa.png?lock=720x540",
@@ -331,17 +331,6 @@
         "id": "DhamakaMoviesB4U.in",
         "logo": "https://www.lyngsat.com/logo/tv/dd/dhamaka-movies-b4u-in.png",
         "url": "https://cdn-1.pishow.tv/live/235/master.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "IN",
-        "type": "all"
-    },
-    {
-        "name": "Star Gold Select",
-        "id": "StarGoldSelect.in",
-        "logo": "https://dtil.tmsimg.com/assets/s143817_ld_h15_aa.png?lock=720x540",
-        "url": "http://103.229.254.25:7001/play/a032/index.m3u8",
         "categories": [
             "movies"
         ],
@@ -558,17 +547,6 @@
         "type": "all"
     },
     {
-        "name": "&pictures",
-        "id": "Andpictures.in",
-        "logo": "https://dtil.tmsimg.com/assets/GNLZZGG0022J67R.png?lock=720x540",
-        "url": "http://103.229.254.25:7001/play/a033/index.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "IN",
-        "type": "all"
-    },
-    {
         "name": "Jalsha Movies",
         "id": "JalshaMovies.in",
         "logo": "https://dtil.tmsimg.com/assets/s143219_ld_h15_aa.png?lock=720x540",
@@ -651,6 +629,18 @@
         "logo": "https://jiotvimages.cdn.jio.com/dare_images/shows/2025-11-06/2511063356010.jpg",
         "url": "https://stream.sscloud7.com/live/suriyantv/index.m3u8",
         "categories": [
+            "movies"
+        ],
+        "country": "IN",
+        "type": "all"
+    },
+    {
+        "name": "ZB Cinema",
+        "id": "ZBCinema.in",
+        "logo": "https://i.imgur.com/kUg6WSk.jpeg",
+        "url": "https://server.zillarbarta.com/ZBCINEMA/index.m3u8",
+        "categories": [
+            "classic",
             "movies"
         ],
         "country": "IN",
@@ -742,18 +732,6 @@
             "movies"
         ],
         "country": "JP",
-        "type": "all"
-    },
-    {
-        "name": "Orbita Chile TV",
-        "id": "OrbitaChileTV.cl",
-        "logo": "https://i.imgur.com/gbNh79Z.png",
-        "url": "https://orbitachiletv.org/hls/0/stream.m3u8",
-        "categories": [
-            "movies",
-            "music"
-        ],
-        "country": "CL",
         "type": "all"
     },
     {
@@ -2268,24 +2246,35 @@
         "type": "all"
     },
     {
-        "name": "50 Cent Action",
-        "id": "50CentAction.us",
-        "logo": "https://provider-static.plex.tv/epg/cms/production/bcfb9977-809f-49ae-acc7-430f2c6ffb26/50CentAction_Logo_1500x1000_DarkBG_-_Chris_Connors.png",
-        "url": "https://jmp2.uk/plu-68487fb3f212bedacf5a53e3.m3u8",
-        "categories": [
-            "movies",
-            "series"
-        ],
-        "country": "US",
-        "type": "all"
-    },
-    {
         "name": "Cinecanal",
         "id": "Cinecanal.us",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/CinecanalLA.png/960px-CinecanalLA.png",
         "url": "http://201.217.246.42:44310/Live/3fcb6e26785fd8d415571b26dc3cf5d3/local-62.playlist.m3u8",
         "categories": [
             "movies"
+        ],
+        "country": "US",
+        "type": "all"
+    },
+    {
+        "name": "AXN Latin America",
+        "id": "AXNLatinAmerica.us",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/AXN_logo_%282015%29.svg/960px-AXN_logo_%282015%29.svg.png",
+        "url": "http://201.217.246.42:44310/Live/3fcb6e26785fd8d415571b26dc3cf5d3/local-77.playlist.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "US",
+        "type": "all"
+    },
+    {
+        "name": "Star Channel Latin America",
+        "id": "StarChannelLatinAmerica.us",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Star_Channel_2020.svg/960px-Star_Channel_2020.svg.png",
+        "url": "http://201.217.246.42:44310/Live/3fcb6e26785fd8d415571b26dc3cf5d3/local-68.playlist.m3u8",
+        "categories": [
+            "movies",
+            "series"
         ],
         "country": "US",
         "type": "all"
