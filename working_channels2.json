@@ -1,5 +1,50 @@
 [
     {
+        "name": "Rakuten TV Action Movies",
+        "id": "RakutenTVActionMovies.es",
+        "logo": "https://i.imgur.com/Meew6eX.png",
+        "url": "https://54045f0c40fd442c8b06df076aaf1e85.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6065/master.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "ES",
+        "type": "all"
+    },
+    {
+        "name": "Rakuten TV Comedy Movies",
+        "id": "RakutenTVComedyMovies.es",
+        "logo": "https://i.imgur.com/Meew6eX.png",
+        "url": "https://9be783d652cd4b099cf63e1dc134c4a3.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6181/master.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "ES",
+        "type": "all"
+    },
+    {
+        "name": "Rakuten TV Drama Movies",
+        "id": "RakutenTVDramaMovies.es",
+        "logo": "https://i.imgur.com/Meew6eX.png",
+        "url": "https://fee09fd665814f51b939b6d106cf5f66.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6093/master.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "ES",
+        "type": "all"
+    },
+    {
+        "name": "Rakuten TV Family Movies",
+        "id": "RakutenTVFamilyMovies.es",
+        "logo": "https://i.imgur.com/Meew6eX.png",
+        "url": "https://e3207568b726401995c25670faaf32e4.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6203/master.m3u8",
+        "categories": [
+            "family",
+            "movies"
+        ],
+        "country": "ES",
+        "type": "all"
+    },
+    {
         "name": "Rakuten TV Nordic Films",
         "id": "RakutenTVNordicFilms.es",
         "logo": "https://images-3.rakuten.tv/storage/global-live-channel/translation/artwork/ff79e878-3eea-45fc-b0cd-55d6acce9b18-width200-quality90.jpeg",
@@ -584,17 +629,6 @@
         "type": "all"
     },
     {
-        "name": "BurrianaTeVe",
-        "id": "BurrianaTeVe.es",
-        "logo": "https://i.imgur.com/G3nIGHh.png",
-        "url": "https://www.burrianateve.com/hls/btv.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "ES",
-        "type": "all"
-    },
-    {
         "name": "Univers TV",
         "id": "UniversTV.es",
         "logo": "https://i.imgur.com/EW2bfix.png",
@@ -890,15 +924,6 @@
         "type": "all"
     },
     {
-        "name": "Canal Donana",
-        "id": "CanalDonana.es",
-        "logo": "https://i.imgur.com/0WrKIxm.png",
-        "url": "https://secure5.todostreaming.es/live/division-alm.m3u8",
-        "categories": [],
-        "country": "ES",
-        "type": "all"
-    },
-    {
         "name": "Popular TV Melilla",
         "id": "PopularTVMelilla.es",
         "logo": "https://i.imgur.com/TbevWX4.png",
@@ -908,11 +933,57 @@
         "type": "all"
     },
     {
-        "name": "Telemotril",
-        "id": "Telemotril.es",
-        "logo": "https://i.imgur.com/4nspLHb.png",
-        "url": "https://5940924978228.streamlock.net/8431/8431/playlist.m3u8",
+        "name": "Fibwi",
+        "id": "Fibwi.es",
+        "logo": "https://i.imgur.com/4vcGzcC.png",
+        "url": "https://hostcdn3.fibwi.com/fibwi_diario/index.fmp4.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "ES",
+        "type": "all"
+    },
+    {
+        "name": "Radio Carnaval TV",
+        "id": "RadioCarnavalTV.es",
+        "logo": "https://i.imgur.com/cdpbkSo.png",
+        "url": "https://eu1.servers10.com:8081/8116/index.m3u8",
+        "categories": [
+            "music",
+            "entertainment"
+        ],
+        "country": "ES",
+        "type": "all"
+    },
+    {
+        "name": "Radio Television Marbella",
+        "id": "RadioTelevisionMarbella.es",
+        "logo": "https://i.imgur.com/o9Ro8TR.png",
+        "url": "https://streaming.rtvmarbella.tv/hls/streamingweb.m3u8",
         "categories": [],
+        "country": "ES",
+        "type": "all"
+    },
+    {
+        "name": "Storie Criminali",
+        "id": "StorieCriminali.es",
+        "logo": "https://images.pluto.tv/channels/66177d18c8311c0008d077d0/colorLogoPNG.png",
+        "url": "https://jmp2.uk/plu-66177d18c8311c0008d077d0.m3u8",
+        "categories": [
+            "documentary"
+        ],
+        "country": "ES",
+        "type": "adult"
+    },
+    {
+        "name": "Voyages & Saveurs",
+        "id": "VoyagesSaveurs.es",
+        "logo": "https://images.pluto.tv/channels/680291e38e1ff89c2427aefd/colorLogoPNG_1749650211442.png",
+        "url": "https://jmp2.uk/plu-680291e38e1ff89c2427aefd.m3u8",
+        "categories": [
+            "travel",
+            "lifestyle"
+        ],
         "country": "ES",
         "type": "all"
     },
@@ -1003,15 +1074,6 @@
         "id": "SukanRTM.my",
         "logo": "https://i.imgur.com/1pYYSu2.png",
         "url": "https://d25tgymtnqzu8s.cloudfront.net/smil:sukan/manifest.mpd",
-        "categories": [],
-        "country": "MY",
-        "type": "all"
-    },
-    {
-        "name": "TV2",
-        "id": "TV2.my",
-        "logo": "https://i.imgur.com/LGEdeyJ.png",
-        "url": "https://d25tgymtnqzu8s.cloudfront.net/smil:tv2/playlist.m3u8?id=2",
         "categories": [],
         "country": "MY",
         "type": "all"
@@ -1766,15 +1828,6 @@
         "type": "all"
     },
     {
-        "name": "PJTV",
-        "id": "PJTV.id",
-        "logo": "https://i.imgur.com/jxdLWpC.png",
-        "url": "https://pjtv28uhf.siar.us/live/pjtv28uhf.m3u8",
-        "categories": [],
-        "country": "ID",
-        "type": "all"
-    },
-    {
         "name": "TATV",
         "id": "TATV.id",
         "logo": "https://i.imgur.com/1f0EC7t.png",
@@ -2004,6 +2057,106 @@
         "id": "SelaparangTV.id",
         "logo": "https://upload.wikimedia.org/wikipedia/id/c/ce/Logo_Selaparang_TV.png",
         "url": "https://selaparangtv.siar.us/live/selaparangtv.m3u8",
+        "categories": [],
+        "country": "ID",
+        "type": "all"
+    },
+    {
+        "name": "Batam TV",
+        "id": "BatamTV.id",
+        "logo": "https://i.imgur.com/lo7YXnW.png",
+        "url": "http://122.248.43.242:1935/BATAMTV/_definst_/myStream/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "ID",
+        "type": "all"
+    },
+    {
+        "name": "BMS TV",
+        "id": "BMSTV.id",
+        "logo": "https://i.imgur.com/snMxng5.png",
+        "url": "https://5bf7b725107e5.streamlock.net/bmstv/bmstv/playlist.m3u8",
+        "categories": [],
+        "country": "ID",
+        "type": "all"
+    },
+    {
+        "name": "Bungo TV",
+        "id": "BungoTV.id",
+        "logo": "https://i.imgur.com/OrCrtDA.png",
+        "url": "https://5bf7b725107e5.streamlock.net/bungotv/bungotv/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "ID",
+        "type": "all"
+    },
+    {
+        "name": "Fajar TV",
+        "id": "FajarTV.id",
+        "logo": "https://i.imgur.com/mkuXxRK.png",
+        "url": "http://122.248.43.242:1935/FAJARTV/_definst_/myStream/playlist.m3u8",
+        "categories": [
+            "religious"
+        ],
+        "country": "ID",
+        "type": "all"
+    },
+    {
+        "name": "Rinjani TV",
+        "id": "RinjaniTV.id",
+        "logo": "https://lombokindustries.com/assunnah/zone/img/rinjanitv.png",
+        "url": "https://rinjanitv.cloud/hls/tvkabel.m3u8",
+        "categories": [
+            "education"
+        ],
+        "country": "ID",
+        "type": "all"
+    },
+    {
+        "name": "Sampit TV",
+        "id": "SampitTV.id",
+        "logo": "https://i.imgur.com/8cFJa8G.png",
+        "url": "https://sampit-tv.siar.us/live/sampit-tv.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "ID",
+        "type": "all"
+    },
+    {
+        "name": "Semarang TV",
+        "id": "SemarangTV.id",
+        "logo": "https://i.imgur.com/KFC2WSB.png",
+        "url": "http://116.254.112.74/hls/cakralive.m3u8",
+        "categories": [],
+        "country": "ID",
+        "type": "all"
+    },
+    {
+        "name": "Sriwijaya TV",
+        "id": "SriwijayaTV.id",
+        "logo": "https://upload.wikimedia.org/wikipedia/id/7/75/SriwijayaTV_2014.png",
+        "url": "https://sriwijayatv.siar.us/live/sriwijayatv.m3u8",
+        "categories": [],
+        "country": "ID",
+        "type": "all"
+    },
+    {
+        "name": "Sultra TV",
+        "id": "SultraTV.id",
+        "logo": "https://i.imgur.com/cmpbNJz.png",
+        "url": "http://122.248.43.242:1935/SULTRATV/_definst_/myStream/playlist.m3u8",
+        "categories": [],
+        "country": "ID",
+        "type": "all"
+    },
+    {
+        "name": "Surabaya TV",
+        "id": "SurabayaTV.id",
+        "logo": "https://i.imgur.com/jlss2ll.png",
+        "url": "https://e.siar.us/live/surabayatv.m3u8",
         "categories": [],
         "country": "ID",
         "type": "all"
@@ -3716,93 +3869,6 @@
         "type": "all"
     },
     {
-        "name": "Rai 2",
-        "id": "Rai2.it",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Rai_2_-_Logo_2016.svg/960px-Rai_2_-_Logo_2016.svg.png",
-        "url": "https://mediapolis.rai.it/relinker/relinkerServlet.htm?cont=308718",
-        "categories": [],
-        "country": "IT",
-        "type": "all"
-    },
-    {
-        "name": "Rai 4",
-        "id": "Rai4.it",
-        "logo": "https://i.imgur.com/sEY21rg.png",
-        "url": "https://mediapolisevent.rai.it/relinker/relinkerServlet.htm?cont=746966",
-        "categories": [],
-        "country": "IT",
-        "type": "all"
-    },
-    {
-        "name": "Rai 5",
-        "id": "Rai5.it",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Rai_5_-_Logo_2017.svg/960px-Rai_5_-_Logo_2017.svg.png",
-        "url": "https://mediapolis.rai.it/relinker/relinkerServlet.htm?cont=395276",
-        "categories": [],
-        "country": "IT",
-        "type": "all"
-    },
-    {
-        "name": "Rai Gulp",
-        "id": "RaiGulp.it",
-        "logo": "https://i.imgur.com/irAhPJM.png",
-        "url": "https://mediapolis.rai.it/relinker/relinkerServlet.htm?cont=746953",
-        "categories": [],
-        "country": "IT",
-        "type": "all"
-    },
-    {
-        "name": "Rai Movie",
-        "id": "RaiMovie.it",
-        "logo": "https://i.imgur.com/0FjxXU9.png",
-        "url": "https://mediapolis.rai.it/relinker/relinkerServlet.htm?cont=747002",
-        "categories": [
-            "movies"
-        ],
-        "country": "IT",
-        "type": "all"
-    },
-    {
-        "name": "Rai Premium",
-        "id": "RaiPremium.it",
-        "logo": "https://i.imgur.com/40g5Urz.png",
-        "url": "https://mediapolis.rai.it/relinker/relinkerServlet.htm?cont=746992",
-        "categories": [],
-        "country": "IT",
-        "type": "all"
-    },
-    {
-        "name": "Rai Scuola",
-        "id": "RaiScuola.it",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Rai_Scuola_-_Logo_2017.svg/960px-Rai_Scuola_-_Logo_2017.svg.png",
-        "url": "https://mediapolis.rai.it/relinker/relinkerServlet.htm?cont=747011",
-        "categories": [
-            "education"
-        ],
-        "country": "IT",
-        "type": "all"
-    },
-    {
-        "name": "Rai Storia",
-        "id": "RaiStoria.it",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Rai_Storia_-_Logo_2017.svg/960px-Rai_Storia_-_Logo_2017.svg.png",
-        "url": "https://mediapolis.rai.it/relinker/relinkerServlet.htm?cont=746990",
-        "categories": [],
-        "country": "IT",
-        "type": "all"
-    },
-    {
-        "name": "Rai Yoyo",
-        "id": "RaiYoyo.it",
-        "logo": "https://i.imgur.com/9gCxiDy.png",
-        "url": "https://mediapolis.rai.it/relinker/relinkerServlet.htm?cont=746899",
-        "categories": [
-            "kids"
-        ],
-        "country": "IT",
-        "type": "all"
-    },
-    {
         "name": "Caribbean Hot 7 TV",
         "id": "CaribbeanHot7TV.lc",
         "logo": "https://i.ibb.co/sjTS4xD/logo116x90-2.png",
@@ -4368,6 +4434,17 @@
         "id": "HLDPDTV.kr",
         "logo": "https://i.imgur.com/BBCoqIf.png",
         "url": "https://stream.ubc.co.kr/hls/ubctvstream/index.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "KR",
+        "type": "all"
+    },
+    {
+        "name": "HLAJ-DTV",
+        "id": "HLAJDTV.kr",
+        "logo": "https://i.imgur.com/JM4rxGU.png",
+        "url": "https://wowza.jejumbc.com/live/tv_jejumbc/playlist.m3u8",
         "categories": [
             "general"
         ],
@@ -5400,15 +5477,6 @@
         "type": "all"
     },
     {
-        "name": "ILTV",
-        "id": "ILTV.fr",
-        "logo": "https://i.imgur.com/fVhrJHK.png",
-        "url": "https://live.creacast.com/iltv/smil:iltv.smil/playlist.m3u8",
-        "categories": [],
-        "country": "FR",
-        "type": "all"
-    },
-    {
         "name": "Riigikogu",
         "id": "Riigikogu.ee",
         "logo": "https://i.imgur.com/dJRGDt2.png",
@@ -5744,17 +5812,6 @@
         "url": "https://fort.co-works.org/memfs/87017643-274a-4bc0-a786-7767a0d159c2.m3u8",
         "categories": [
             "entertainment"
-        ],
-        "country": "UG",
-        "type": "all"
-    },
-    {
-        "name": "BBS TV",
-        "id": "BBSTV.ug",
-        "logo": "https://i.imgur.com/Hub1AXv.png",
-        "url": "https://bbstv.ug/hls/ch01/index.m3u8",
-        "categories": [
-            "news"
         ],
         "country": "UG",
         "type": "all"
@@ -6551,17 +6608,6 @@
         "type": "all"
     },
     {
-        "name": "MI Turno TV",
-        "id": "MITurnoTV.do",
-        "logo": "https://imgur.com/uODDaEY.png",
-        "url": "https://video.udwn.net:19360/miturnotv/miturnotv.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "DO",
-        "type": "all"
-    },
-    {
         "name": "Pula TV",
         "id": "PulaTV.do",
         "logo": "https://i.imgur.com/8gSLJ2f.png",
@@ -6661,17 +6707,6 @@
         "type": "all"
     },
     {
-        "name": "Tu Musica HD",
-        "id": "TuMusicaHD.do",
-        "logo": "https://i.imgur.com/HnjUjog.png",
-        "url": "https://edge.essastream.com/tumusicahd/tracks-v1a1/mono.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "DO",
-        "type": "all"
-    },
-    {
         "name": "La Voz de Maria",
         "id": "LaVozdeMaria.do",
         "logo": "https://i.imgur.com/Zv8CxZX.png",
@@ -6709,17 +6744,6 @@
         "id": "VTVCanal32.do",
         "logo": "https://i.imgur.com/qjm4B0J.png",
         "url": "https://cnn.livestreaminggroup.info:3507/live/vtv32live.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "DO",
-        "type": "all"
-    },
-    {
-        "name": "Bonao TV",
-        "id": "BonaoTV.do",
-        "logo": "https://i.imgur.com/en1vCZB.png",
-        "url": "https://tele-stream.telecasa.net/live/st2/bonaotv-hd/index.m3u8",
         "categories": [
             "general"
         ],
@@ -7848,17 +7872,6 @@
         "type": "all"
     },
     {
-        "name": "La Descarga TV",
-        "id": "LaDescargaTV.do",
-        "logo": "https://ladescargatv.com/wp-content/uploads/2026/03/file_00000000863461f8844305726f78ecbd-1-Photoroom-2.jpg",
-        "url": "https://video.udwn.net:19360/ladescargatv/ladescargatv.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "DO",
-        "type": "all"
-    },
-    {
         "name": "RNN",
         "id": "RNN.do",
         "logo": "https://i.imgur.com/12Z9qPw.png",
@@ -8079,15 +8092,6 @@
         "type": "all"
     },
     {
-        "name": "TDN Medios",
-        "id": "TDNMedios.do",
-        "logo": "https://i.imgur.com/C8dSJM7.png",
-        "url": "https://castv10.plugstreaming.com:19360/tdntv/tdntv.m3u8",
-        "categories": [],
-        "country": "DO",
-        "type": "all"
-    },
-    {
         "name": "Tiguerito TV",
         "id": "TigueritoTV.do",
         "logo": "https://dominicanchannels.com/wp-content/uploads/tigueritos-tv.jpg",
@@ -8291,6 +8295,94 @@
         "id": "TVDaja.do",
         "logo": "https://dajatv.com/wp-content/uploads/2021/09/logo_daja_2.png",
         "url": "https://edge.essastream.com/dajatv/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "DO",
+        "type": "all"
+    },
+    {
+        "name": "Camu TV",
+        "id": "CamuTV.do",
+        "logo": "https://i.imgur.com/3d8cLm9.jpg",
+        "url": "https://live20.bozztv.com/akamaissh101/ssh101/camutv/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "DO",
+        "type": "all"
+    },
+    {
+        "name": "Claro Vision TV",
+        "id": "ClaroVisionTV.do",
+        "logo": "https://i.imgur.com/MpTgJMJ.png",
+        "url": "https://streamunoapp.com:3057/live/clarovisiontvlive.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "DO",
+        "type": "all"
+    },
+    {
+        "name": "Entuno TV",
+        "id": "EntunoTV.do",
+        "logo": "https://imgur.com/U9OsybQ.jpg",
+        "url": "https://soportedvb.click:3442/live/entunotvlive.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "DO",
+        "type": "all"
+    },
+    {
+        "name": "GET tv",
+        "id": "GETtv.do",
+        "logo": "https://www.lyngsat.com/logo/tv/gg/get-tv-do.png",
+        "url": "https://cnn.livestreaminggroup.info:3050/live/gettv/playlist.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "DO",
+        "type": "all"
+    },
+    {
+        "name": "Global TV",
+        "id": "GlobalTV.do",
+        "logo": "https://i.imgur.com/1rQaROm.png",
+        "url": "https://stmv4.voxtvhd.com.br/globaltv/globaltv/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "DO",
+        "type": "all"
+    },
+    {
+        "name": "Larivision TV",
+        "id": "LarivisionTV.do",
+        "logo": "https://www.larivision.com/web/wp-content/uploads/2025/07/logow.png",
+        "url": "https://live.larimartv.net/livelan/stream.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "DO",
+        "type": "all"
+    },
+    {
+        "name": "Notisur TV",
+        "id": "NotisurTV.do",
+        "logo": "https://rdomint.com/images/station/300.jpg",
+        "url": "https://ss2.tvrdomi.com:1936/notisur/notisur/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "DO",
+        "type": "all"
+    },
+    {
+        "name": "TV 10 San Juan",
+        "id": "TV10SanJuan.do",
+        "logo": "https://i.imgur.com/e2BXUdH.png",
+        "url": "https://59d39900ebfb8.streamlock.net/tv10sanjuan/tv10sanjuan/playlist.m3u8",
         "categories": [
             "general"
         ],
@@ -8627,17 +8719,6 @@
         "id": "ABCAdelaideHD.au",
         "logo": "",
         "url": "https://datahub11.com:443/live/XPveRqwtA8/only8dish/415355.ts",
-        "categories": [
-            "general"
-        ],
-        "country": "AU",
-        "type": "all"
-    },
-    {
-        "name": "Sky Racing #2 HD",
-        "id": "SkyRacing2HD.au",
-        "logo": "",
-        "url": "https://datahub11.com:443/live/XPveRqwtA8/only8dish/415369.ts",
         "categories": [
             "general"
         ],
@@ -9151,6 +9232,28 @@
         "type": "all"
     },
     {
+        "name": "CLTV 36",
+        "id": "CLTV36.ph",
+        "logo": "https://i.imgur.com/IUcTFQ2.png",
+        "url": "https://live.cltv36.tv:5443/LiveApp/streams/cltvlive.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "PH",
+        "type": "all"
+    },
+    {
+        "name": "Nudge Sports Channel",
+        "id": "NudgeSportsChannel.ph",
+        "logo": "https://i.imgur.com/TW0hapZ.png",
+        "url": "https://streams.comclark.com/live_input/nudge_sports/playlist.m3u8",
+        "categories": [
+            "sports"
+        ],
+        "country": "PH",
+        "type": "all"
+    },
+    {
         "name": "KK TV",
         "id": "KKTV.ao",
         "logo": "https://i.imgur.com/jWOB0oU.png",
@@ -9531,6 +9634,17 @@
         "url": "https://tv-live.tpchannel.org/live/tv.m3u8",
         "categories": [
             "legislative"
+        ],
+        "country": "TH",
+        "type": "all"
+    },
+    {
+        "name": "ETV",
+        "id": "ETV.th",
+        "logo": "https://i.imgur.com/HTnQGcs.png",
+        "url": "http://150.95.66.20:1935/live/livestream/playlist.m3u8",
+        "categories": [
+            "education"
         ],
         "country": "TH",
         "type": "all"
@@ -10144,6 +10258,17 @@
         "type": "all"
     },
     {
+        "name": "Canal 65",
+        "id": "Canal65.sv",
+        "logo": "https://i.imgur.com/P15QovY.png",
+        "url": "https://panel.streamingtv-mediacp.online:1936/tv65/tv65/playlist.m3u8",
+        "categories": [
+            "religious"
+        ],
+        "country": "SV",
+        "type": "all"
+    },
+    {
         "name": "CCTV-4 Europe",
         "id": "CCTV4Europe.cn",
         "logo": "https://i.imgur.com/HGLFdfk.png",
@@ -10536,17 +10661,6 @@
         "type": "all"
     },
     {
-        "name": "Jiangsu Public & News Channel",
-        "id": "JiangsuPublicNewsChannel.cn",
-        "logo": "https://www.tvchinese.net/uploads/tv/jsgg.jpg",
-        "url": "http://183.207.248.71/gitv/live1/G_JSGG/G_JSGG",
-        "categories": [
-            "general"
-        ],
-        "country": "CN",
-        "type": "all"
-    },
-    {
         "name": "Jiangsu Variety Channel",
         "id": "JiangsuVarietyChannel.cn",
         "logo": "https://www.tvchinese.net/uploads/tv/jszy.jpg",
@@ -10554,26 +10668,6 @@
         "categories": [
             "entertainment"
         ],
-        "country": "CN",
-        "type": "all"
-    },
-    {
-        "name": "Liaoning TV",
-        "id": "LiaoningTV.cn",
-        "logo": "https://i.imgur.com/XRfeNTd.png",
-        "url": "http://183.207.249.71/PLTV/3/224/3221225566/index.m3u8",
-        "categories": [
-            "general"
-        ],
-        "country": "CN",
-        "type": "all"
-    },
-    {
-        "name": "Anhui Satellite TV",
-        "id": "AnhuiSatelliteTV.cn",
-        "logo": "https://i.imgur.com/n5LABhB.png",
-        "url": "http://183.207.248.71/gitv/live1/AHWS/AHWS",
-        "categories": [],
         "country": "CN",
         "type": "all"
     },
@@ -11622,28 +11716,6 @@
         "type": "all"
     },
     {
-        "name": "OneFM",
-        "id": "OneFM.lb",
-        "logo": "https://i.ibb.co/Vp2G9wTz/onefmlb.png",
-        "url": "https://hms.pfs.gdn/v1/broadcast/onefm/playlist.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "LB",
-        "type": "all"
-    },
-    {
-        "name": "One TV",
-        "id": "OneTV.lb",
-        "logo": "https://i.imgur.com/O4DuR9G.png",
-        "url": "https://hms.pfs.gdn/v1/broadcast/one/playlist.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "LB",
-        "type": "all"
-    },
-    {
         "name": "Canal Clave",
         "id": "CanalClave.cu",
         "logo": "https://i.imgur.com/7tMkA4Z.png",
@@ -12659,6 +12731,17 @@
         "type": "all"
     },
     {
+        "name": "Kriti TV",
+        "id": "KritiTV.gr",
+        "logo": "https://i.imgur.com/X7jKwYl.png",
+        "url": "https://cretetvlive.siliconweb.com/cretetv/liveabr/playlist.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "GR",
+        "type": "all"
+    },
+    {
         "name": "RTK 3",
         "id": "RTK3.xk",
         "logo": "https://i.imgur.com/Ut9VcT3.png",
@@ -13116,6 +13199,17 @@
         "id": "TV8.mn",
         "logo": "https://i.imgur.com/EguOdxW.png",
         "url": "https://cdn1.skygo.mn/live/disk1/TV8HD/HLS-FTA/TV8HD.m3u8",
+        "categories": [
+            "general"
+        ],
+        "country": "MN",
+        "type": "all"
+    },
+    {
+        "name": "Star TV",
+        "id": "StarTV.mn",
+        "logo": "https://i.imgur.com/R6hxJgl.png",
+        "url": "https://cdn4.skygo.mn/live/disk1/Star/HLSv3-FTA/Star.m3u8",
         "categories": [
             "general"
         ],
@@ -14823,6 +14917,28 @@
         "url": "https://3abn.bozztv.com/3abncanada/3ABN/master.m3u8",
         "categories": [
             "religious"
+        ],
+        "country": "CA",
+        "type": "all"
+    },
+    {
+        "name": "Declassified",
+        "id": "Declassified.ca",
+        "logo": "https://images.pluto.tv/channels/62bdaf9cf1bdc500073a8bcb/colorLogoPNG.png",
+        "url": "https://jmp2.uk/plu-62bdaf9cf1bdc500073a8bcb.m3u8",
+        "categories": [
+            "documentary"
+        ],
+        "country": "CA",
+        "type": "adult"
+    },
+    {
+        "name": "Stingray Holidayscapes",
+        "id": "StingrayHolidayscapes.ca",
+        "logo": "https://images.plex.tv/photo?size=large-1920&scale=1&url=https%3A%2F%2Fprovider-static.plex.tv%2Fepg%2Fcms%2Fproduction%2F9cb4b15c-8244-4499-ae2c-9a92d4cdff6d%2F13895_SHS_Plex_Logos_Holidays_1500x1000_Dark-Background.png",
+        "url": "https://plextv.ott-channels.stingray.com/holidayscapes/master.m3u8",
+        "categories": [
+            "music"
         ],
         "country": "CA",
         "type": "all"
@@ -37453,17 +37569,6 @@
         "type": "all"
     },
     {
-        "name": "ACC Network SD",
-        "id": "accnetworksd",
-        "logo": "",
-        "url": "https://tvpass.org/live/ACCNetwork/sd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
         "name": "CNN US HD",
         "id": "cnnushd",
         "logo": "",
@@ -37479,17 +37584,6 @@
         "id": "amceasternfeedsd",
         "logo": "",
         "url": "https://tvpass.org/live/AMCEast/sd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "BBC America East HD",
-        "id": "bbcamericaeasthd",
-        "logo": "",
-        "url": "https://tvpass.org/live/BBCAmericaEast/hd",
         "categories": [
             "tvpass"
         ],
@@ -37677,28 +37771,6 @@
         "id": "americanheroeschannelhd",
         "logo": "",
         "url": "https://tvpass.org/live/AmericanHeroesChannel/hd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Fox Business SD",
-        "id": "foxbusinesssd",
-        "logo": "",
-        "url": "https://tvpass.org/live/FoxBusiness/sd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "MoreMax Eastern",
-        "id": "moremaxeastern",
-        "logo": "",
-        "url": "https://tvpass.org/live/MoreMaxEast/sd",
         "categories": [
             "tvpass"
         ],
@@ -37904,17 +37976,6 @@
         "type": "all"
     },
     {
-        "name": "The Cooking Channel HD",
-        "id": "thecookingchannelhd",
-        "logo": "",
-        "url": "https://tvpass.org/live/CookingChannel/hd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
         "name": "TV One SD",
         "id": "tvonesd",
         "logo": "",
@@ -37948,32 +38009,10 @@
         "type": "all"
     },
     {
-        "name": "Hallmark Family HD",
-        "id": "hallmarkfamilyhd",
-        "logo": "",
-        "url": "https://tvpass.org/live/HallmarkDrama/sd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
         "name": "HBO 2 Eastern Feed",
         "id": "hbo2easternfeed",
         "logo": "",
         "url": "https://tvpass.org/live/HBO2East/sd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Midatlantic Sports Network",
-        "id": "midatlanticsportsnetwork",
-        "logo": "",
-        "url": "https://tvpass.org/live/midatlantic-sports-network/sd",
         "categories": [
             "tvpass"
         ],
@@ -37996,17 +38035,6 @@
         "id": "nationalgeographicwild",
         "logo": "",
         "url": "https://tvpass.org/live/NationalGeographicWildEast/sd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Outdoor Channel US",
-        "id": "outdoorchannelus",
-        "logo": "",
-        "url": "https://tvpass.org/live/OutdoorChannel/sd",
         "categories": [
             "tvpass"
         ],
@@ -38091,54 +38119,10 @@
         "type": "all"
     },
     {
-        "name": "Fanduel Sports Southeast South Carolina SD",
-        "id": "fanduelsportssoutheastsouthcarolinasd",
-        "logo": "",
-        "url": "https://tvpass.org/live/fanduel-sports-southeast-south-carolina/sd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "FOX (KTTV) Los Angeles SD",
-        "id": "foxkttvlosangelessd",
-        "logo": "",
-        "url": "https://tvpass.org/live/fox-kttv-los-angeles-ca/sd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
         "name": "Fox Sports 1 SD",
         "id": "foxsports1sd",
         "logo": "",
         "url": "https://tvpass.org/live/FoxSports1/sd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Freeform East Feed HD",
-        "id": "freeformeastfeedhd",
-        "logo": "",
-        "url": "https://tvpass.org/live/FreeformEast/hd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "FXX USA Eastern HD",
-        "id": "fxxusaeasternhd",
-        "logo": "",
-        "url": "https://tvpass.org/live/FXXEast/hd",
         "categories": [
             "tvpass"
         ],
@@ -38168,61 +38152,6 @@
         "type": "all"
     },
     {
-        "name": "HBO Comedy HD East SD",
-        "id": "hbocomedyhdeastsd",
-        "logo": "",
-        "url": "https://tvpass.org/live/HBOComedyEast/sd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "HBO Family Eastern Feed SD",
-        "id": "hbofamilyeasternfeedsd",
-        "logo": "",
-        "url": "https://tvpass.org/live/HBOFamilyEast/sd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "HBO Family Eastern Feed HD",
-        "id": "hbofamilyeasternfeedhd",
-        "logo": "",
-        "url": "https://tvpass.org/live/HBOFamilyEast/hd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Independent Film Channel US SD",
-        "id": "independentfilmchannelussd",
-        "logo": "",
-        "url": "https://tvpass.org/live/IFCEast/sd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Lifetime Network US Eastern Feed SD",
-        "id": "lifetimenetworkuseasternfeedsd",
-        "logo": "",
-        "url": "https://tvpass.org/live/LifetimeEast/sd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
         "name": "Motor Trend HD SD",
         "id": "motortrendhdsd",
         "logo": "",
@@ -38234,32 +38163,10 @@
         "type": "all"
     },
     {
-        "name": "MTV USA Eastern Feed SD",
-        "id": "mtvusaeasternfeedsd",
-        "logo": "",
-        "url": "https://tvpass.org/live/MTVEast/sd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
         "name": "MTV USA Eastern Feed HD",
         "id": "mtvusaeasternfeedhd",
         "logo": "",
         "url": "https://tvpass.org/live/MTVEast/hd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Spectrum SportsNet LA SD",
-        "id": "spectrumsportsnetlasd",
-        "logo": "",
-        "url": "https://tvpass.org/live/spectrum-sportsnet-la/sd",
         "categories": [
             "tvpass"
         ],
@@ -38293,61 +38200,6 @@
         "id": "vicehd",
         "logo": "",
         "url": "https://tvpass.org/live/VICETV/hd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Fanduel Sports Southeast Tennessee Nashville",
-        "id": "fanduelsportssoutheasttennesseenashville",
-        "logo": "",
-        "url": "https://tvpass.org/live/fanduel-sports-southeast-tennessee-nashville/sd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "HGTV USA Eastern Feed",
-        "id": "hgtvusaeasternfeed",
-        "logo": "",
-        "url": "https://tvpass.org/live/HGTVEast/sd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "NBC Sports Boston",
-        "id": "nbcsportsboston",
-        "logo": "",
-        "url": "https://tvpass.org/live/nbc-sports-boston/sd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Altitude Sports Denver HD",
-        "id": "altitudesportsdenverhd",
-        "logo": "",
-        "url": "https://tvpass.org/live/altitude-sports-denver/hd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "AMC Eastern Feed HD",
-        "id": "amceasternfeedhd",
-        "logo": "",
-        "url": "https://tvpass.org/live/AMCEast/hd",
         "categories": [
             "tvpass"
         ],
@@ -38421,120 +38273,10 @@
         "type": "all"
     },
     {
-        "name": "E! Entertainment USA Eastern Feed SD",
-        "id": "eentertainmentusaeasternfeedsd",
-        "logo": "",
-        "url": "https://tvpass.org/live/EEast/sd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "ESPN HD",
-        "id": "espnhd",
-        "logo": "",
-        "url": "https://tvpass.org/live/ESPN/hd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "ESPN U SD",
-        "id": "espnusd",
-        "logo": "",
-        "url": "https://tvpass.org/live/ESPNU/sd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Fanduel Sports Network Detroit SD",
-        "id": "fanduelsportsnetworkdetroitsd",
-        "logo": "",
-        "url": "https://tvpass.org/live/fanduel-sports-network-detroit-hd/sd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Fanduel Sports Network Great Lakes HD",
-        "id": "fanduelsportsnetworkgreatlakeshd",
-        "logo": "",
-        "url": "https://tvpass.org/live/fanduel-sports-network-great-lakes/hd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Fanduel Sports Network North HD",
-        "id": "fanduelsportsnetworknorthhd",
-        "logo": "",
-        "url": "https://tvpass.org/live/fanduel-sports-network-north/hd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Fanduel Sports Network Oklahoma SD",
-        "id": "fanduelsportsnetworkoklahomasd",
-        "logo": "",
-        "url": "https://tvpass.org/live/fanduel-sports-network-oklahoma/sd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Fanduel Sports Sun SD",
-        "id": "fanduelsportssunsd",
-        "logo": "",
-        "url": "https://tvpass.org/live/fanduel-sports-sun/sd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
         "name": "Hallmark Eastern Feed SD",
         "id": "hallmarkeasternfeedsd",
         "logo": "",
         "url": "https://tvpass.org/live/HallmarkChannelEast/sd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "HGTV USA Eastern Feed HD",
-        "id": "hgtvusaeasternfeedhd",
-        "logo": "",
-        "url": "https://tvpass.org/live/HGTVEast/hd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "History Channel US Eastern Feed HD",
-        "id": "historychanneluseasternfeedhd",
-        "logo": "",
-        "url": "https://tvpass.org/live/HistoryEast/hd",
         "categories": [
             "tvpass"
         ],
@@ -38553,43 +38295,10 @@
         "type": "all"
     },
     {
-        "name": "LOGO East SD",
-        "id": "logoeastsd",
-        "logo": "",
-        "url": "https://tvpass.org/live/LogoEast/sd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Midatlantic Sports Network HD",
-        "id": "midatlanticsportsnetworkhd",
-        "logo": "",
-        "url": "https://tvpass.org/live/midatlantic-sports-network/hd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
         "name": "MSG Madison Square Gardens SD",
         "id": "msgmadisonsquaregardenssd",
         "logo": "",
         "url": "https://tvpass.org/live/msg-madison-square-gardens/sd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "National Geographic US Eastern SD",
-        "id": "nationalgeographicuseasternsd",
-        "logo": "",
-        "url": "https://tvpass.org/live/NationalGeographicEast/sd",
         "categories": [
             "tvpass"
         ],
@@ -38630,39 +38339,6 @@
         "type": "all"
     },
     {
-        "name": "ReelzChannel HD",
-        "id": "reelzchannelhd",
-        "logo": "",
-        "url": "https://tvpass.org/live/Reelz/hd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Space City Home Network HD",
-        "id": "spacecityhomenetworkhd",
-        "logo": "",
-        "url": "https://tvpass.org/live/space-city-home-network/hd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Sportsnet Ontario SD",
-        "id": "sportsnetontariosd",
-        "logo": "",
-        "url": "https://tvpass.org/live/sportsnet-ontario/sd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
         "name": "TMC (US) Eastern Feed SD",
         "id": "tmcuseasternfeedsd",
         "logo": "",
@@ -38689,17 +38365,6 @@
         "id": "cwwdcwdistrictofcolumbia",
         "logo": "",
         "url": "https://tvpass.org/live/cw-wdcw-district-of-columbia/sd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "NBC Sports Bay Area",
-        "id": "nbcsportsbayarea",
-        "logo": "",
-        "url": "https://tvpass.org/live/nbc-sports-bay-area/sd",
         "categories": [
             "tvpass"
         ],
@@ -38817,28 +38482,6 @@
         "type": "all"
     },
     {
-        "name": "ESPN2 HD",
-        "id": "espn2hd",
-        "logo": "",
-        "url": "https://tvpass.org/live/ESPN2/hd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Fanduel Sports Network Detroit HD",
-        "id": "fanduelsportsnetworkdetroithd",
-        "logo": "",
-        "url": "https://tvpass.org/live/fanduel-sports-network-detroit-hd/hd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
         "name": "Fanduel Sports Network Ohio Cleveland HD",
         "id": "fanduelsportsnetworkohioclevelandhd",
         "logo": "",
@@ -38861,120 +38504,10 @@
         "type": "all"
     },
     {
-        "name": "Fanduel Sports Network West HD",
-        "id": "fanduelsportsnetworkwesthd",
-        "logo": "",
-        "url": "https://tvpass.org/live/fanduel-sports-network-west/hd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Fanduel Sports Southeast Georgia HD",
-        "id": "fanduelsportssoutheastgeorgiahd",
-        "logo": "",
-        "url": "https://tvpass.org/live/fanduel-sports-southeast-georgia/hd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Fanduel Sports Tennessee East HD",
-        "id": "fanduelsportstennesseeeasthd",
-        "logo": "",
-        "url": "https://tvpass.org/live/fanduel-sports-tennessee-east/hd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "FOX (KTTV) Los Angeles HD",
-        "id": "foxkttvlosangeleshd",
-        "logo": "",
-        "url": "https://tvpass.org/live/fox-kttv-los-angeles-ca/hd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Game Show Network East HD",
-        "id": "gameshownetworkeasthd",
-        "logo": "",
-        "url": "https://tvpass.org/live/game-show-network-east/hd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Golf Channel USA HD",
-        "id": "golfchannelusahd",
-        "logo": "",
-        "url": "https://tvpass.org/live/GolfChannel/hd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "HBO Signature (HBO 3) Eastern HD",
-        "id": "hbosignaturehbo3easternhd",
-        "logo": "",
-        "url": "https://tvpass.org/live/HBOSignatureEast/hd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "HBO Zone HD East HD",
-        "id": "hbozonehdeasthd",
-        "logo": "",
-        "url": "https://tvpass.org/live/HBOZoneEast/hd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Independent Film Channel US HD",
-        "id": "independentfilmchannelushd",
-        "logo": "",
-        "url": "https://tvpass.org/live/IFCEast/hd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
         "name": "Investigation Discovery USA Eastern SD",
         "id": "investigationdiscoveryusaeasternsd",
         "logo": "",
         "url": "https://tvpass.org/live/InvestigationDiscoveryEast/sd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "ION Eastern Feed HD",
-        "id": "ioneasternfeedhd",
-        "logo": "",
-        "url": "https://tvpass.org/live/IONTVEast/hd",
         "categories": [
             "tvpass"
         ],
@@ -38993,39 +38526,6 @@
         "type": "all"
     },
     {
-        "name": "MoreMax Eastern HD",
-        "id": "moremaxeasternhd",
-        "logo": "",
-        "url": "https://tvpass.org/live/MoreMaxEast/hd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "MovieMax (Max 6) East HD",
-        "id": "moviemaxmax6easthd",
-        "logo": "",
-        "url": "https://tvpass.org/live/MovieMaxEast/hd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "MTV 2 East HD",
-        "id": "mtv2easthd",
-        "logo": "",
-        "url": "https://tvpass.org/live/mtv-2-east/hd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
         "name": "National Geographic US Eastern HD",
         "id": "nationalgeographicuseasternhd",
         "logo": "",
@@ -39037,43 +38537,10 @@
         "type": "all"
     },
     {
-        "name": "NBC Sports Bay Area HD",
-        "id": "nbcsportsbayareahd",
-        "logo": "",
-        "url": "https://tvpass.org/live/nbc-sports-bay-area/hd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "New England Sports Network HD",
-        "id": "newenglandsportsnetworkhd",
-        "logo": "",
-        "url": "https://tvpass.org/live/new-england-sports-network/hd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
         "name": "Nickelodeon USA East Feed HD",
         "id": "nickelodeonusaeastfeedhd",
         "logo": "",
         "url": "https://tvpass.org/live/NickelodeonEast/hd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "SNY Sportsnet New York Comcast HD",
-        "id": "snysportsnetnewyorkcomcasthd",
-        "logo": "",
-        "url": "https://tvpass.org/live/sny-sportsnet-new-york-comcast/hd",
         "categories": [
             "tvpass"
         ],
@@ -39147,17 +38614,6 @@
         "type": "all"
     },
     {
-        "name": "VH1 Eastern Feed HD",
-        "id": "vh1easternfeedhd",
-        "logo": "",
-        "url": "https://tvpass.org/live/VH1East/hd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
         "name": "WE (Women's Entertainment) Eastern HD",
         "id": "wewomensentertainmenteasternhd",
         "logo": "",
@@ -39169,32 +38625,10 @@
         "type": "all"
     },
     {
-        "name": "Disney XD USA Eastern Feed",
-        "id": "disneyxdusaeasternfeed",
-        "logo": "",
-        "url": "https://tvpass.org/live/DisneyXDEast/sd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
         "name": "Fanduel Sports Network North",
         "id": "fanduelsportsnetworknorth",
         "logo": "",
         "url": "https://tvpass.org/live/fanduel-sports-network-north/sd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Fanduel Sports Southeast Georgia",
-        "id": "fanduelsportssoutheastgeorgia",
-        "logo": "",
-        "url": "https://tvpass.org/live/fanduel-sports-southeast-georgia/sd",
         "categories": [
             "tvpass"
         ],
@@ -39235,32 +38669,10 @@
         "type": "all"
     },
     {
-        "name": "MeTV Toons (WJLP2) New Jersey",
-        "id": "metvtoonswjlp2newjersey",
-        "logo": "",
-        "url": "https://tvpass.org/live/metv-toons/sd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
         "name": "NFL Network",
         "id": "nflnetwork",
         "logo": "",
         "url": "https://tvpass.org/live/NFLNetwork/sd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Nick Jr. East",
-        "id": "nickjreast",
-        "logo": "",
-        "url": "https://tvpass.org/live/NickJrEast/sd",
         "categories": [
             "tvpass"
         ],
@@ -39316,6 +38728,842 @@
         "id": "wewomensentertainmenteastern",
         "logo": "",
         "url": "https://tvpass.org/live/WeTVEast/sd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "ABC (KABC) Los Angeles HD",
+        "id": "abckabclosangeleshd",
+        "logo": "",
+        "url": "https://tvpass.org/live/abc-kabc-los-angeles-ca/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "ACC Network HD",
+        "id": "accnetworkhd",
+        "logo": "",
+        "url": "https://tvpass.org/live/ACCNetwork/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Animal Planet US East SD",
+        "id": "animalplanetuseastsd",
+        "logo": "",
+        "url": "https://tvpass.org/live/AnimalPlanetEast/sd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Animal Planet US East HD",
+        "id": "animalplanetuseasthd",
+        "logo": "",
+        "url": "https://tvpass.org/live/AnimalPlanetEast/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "BBC News North America HD HD",
+        "id": "bbcnewsnorthamericahdhd",
+        "logo": "",
+        "url": "https://tvpass.org/live/BBCWorldNewsNorthAmerica/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "BET Eastern Feed HD",
+        "id": "beteasternfeedhd",
+        "logo": "",
+        "url": "https://tvpass.org/live/BETEast/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "BET Her SD",
+        "id": "bethersd",
+        "logo": "",
+        "url": "https://tvpass.org/live/BETHerEast/sd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "BET Her HD",
+        "id": "betherhd",
+        "logo": "",
+        "url": "https://tvpass.org/live/BETHerEast/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Big Ten Network HD",
+        "id": "bigtennetworkhd",
+        "logo": "",
+        "url": "https://tvpass.org/live/BTN/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Bloomberg TV USA SD",
+        "id": "bloombergtvusasd",
+        "logo": "",
+        "url": "https://tvpass.org/live/BloombergTV/sd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Bloomberg TV USA HD",
+        "id": "bloombergtvusahd",
+        "logo": "",
+        "url": "https://tvpass.org/live/BloombergTV/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Boomerang SD",
+        "id": "boomerangsd",
+        "logo": "",
+        "url": "https://tvpass.org/live/Boomerang/sd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Boomerang HD",
+        "id": "boomeranghd",
+        "logo": "",
+        "url": "https://tvpass.org/live/Boomerang/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Bravo USA Eastern Feed HD",
+        "id": "bravousaeasternfeedhd",
+        "logo": "",
+        "url": "https://tvpass.org/live/BravoEast/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "C-SPAN SD",
+        "id": "cspansd",
+        "logo": "",
+        "url": "https://tvpass.org/live/CSPAN/sd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "C-SPAN 2 HD",
+        "id": "cspan2hd",
+        "logo": "",
+        "url": "https://tvpass.org/live/CSPAN2/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Cartoon Network USA Eastern Feed SD",
+        "id": "cartoonnetworkusaeasternfeedsd",
+        "logo": "",
+        "url": "https://tvpass.org/live/CartoonNetworkEast/sd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Cartoon Network USA Eastern Feed HD",
+        "id": "cartoonnetworkusaeasternfeedhd",
+        "logo": "",
+        "url": "https://tvpass.org/live/CartoonNetworkEast/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "CBS (KCBS) Los Angeles HD",
+        "id": "cbskcbslosangeleshd",
+        "logo": "",
+        "url": "https://tvpass.org/live/cbs-kcbs-los-angeles-ca/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "CBS Sports Network USA SD",
+        "id": "cbssportsnetworkusasd",
+        "logo": "",
+        "url": "https://tvpass.org/live/CBSSportsNetworkUSA/sd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "CBS Sports Network USA HD",
+        "id": "cbssportsnetworkusahd",
+        "logo": "",
+        "url": "https://tvpass.org/live/CBSSportsNetworkUSA/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Cinemax Eastern Feed HD",
+        "id": "cinemaxeasternfeedhd",
+        "logo": "",
+        "url": "https://tvpass.org/live/CinemaxEast/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "CMT US Eastern Feed HD",
+        "id": "cmtuseasternfeedhd",
+        "logo": "",
+        "url": "https://tvpass.org/live/CMTEast/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "CNBC USA HD",
+        "id": "cnbcusahd",
+        "logo": "",
+        "url": "https://tvpass.org/live/CNBC/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "CW (KFMB-TV2) San Diego HD",
+        "id": "cwkfmbtv2sandiegohd",
+        "logo": "",
+        "url": "https://tvpass.org/live/cw-kfmbtv2-san-diego-ca/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Destination America HD",
+        "id": "destinationamericahd",
+        "logo": "",
+        "url": "https://tvpass.org/live/DestinationAmerica/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Discovery Channel (US) Eastern Feed HD",
+        "id": "discoverychanneluseasternfeedhd",
+        "logo": "",
+        "url": "https://tvpass.org/live/DiscoveryChannelEast/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Discovery Family Channel SD",
+        "id": "discoveryfamilychannelsd",
+        "logo": "",
+        "url": "https://tvpass.org/live/DiscoveryFamily/sd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Disney Eastern Feed HD",
+        "id": "disneyeasternfeedhd",
+        "logo": "",
+        "url": "https://tvpass.org/live/DisneyChannelEast/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Fanduel Sports Network Florida HD",
+        "id": "fanduelsportsnetworkfloridahd",
+        "logo": "",
+        "url": "https://tvpass.org/live/fanduel-sports-network-florida/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Fanduel Sports Network Wisconsin SD",
+        "id": "fanduelsportsnetworkwisconsinsd",
+        "logo": "",
+        "url": "https://tvpass.org/live/fanduel-sports-network-wisconsin/sd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Freeform East Feed SD",
+        "id": "freeformeastfeedsd",
+        "logo": "",
+        "url": "https://tvpass.org/live/FreeformEast/sd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "HBO Eastern Feed HD",
+        "id": "hboeasternfeedhd",
+        "logo": "",
+        "url": "https://tvpass.org/live/HBOEast/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Investigation Discovery USA Eastern HD",
+        "id": "investigationdiscoveryusaeasternhd",
+        "logo": "",
+        "url": "https://tvpass.org/live/InvestigationDiscoveryEast/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "MeTV Toons (WJLP2) New Jersey HD",
+        "id": "metvtoonswjlp2newjerseyhd",
+        "logo": "",
+        "url": "https://tvpass.org/live/metv-toons/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "MLB Network HD",
+        "id": "mlbnetworkhd",
+        "logo": "",
+        "url": "https://tvpass.org/live/MLBNetwork/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "MSG Madison Square Gardens HD",
+        "id": "msgmadisonsquaregardenshd",
+        "logo": "",
+        "url": "https://tvpass.org/live/msg-madison-square-gardens/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "MSNBC USA HD",
+        "id": "msnbcusahd",
+        "logo": "",
+        "url": "https://tvpass.org/live/MSNBC/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Nick Jr. East HD",
+        "id": "nickjreasthd",
+        "logo": "",
+        "url": "https://tvpass.org/live/NickJrEast/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Nicktoons East HD",
+        "id": "nicktoonseasthd",
+        "logo": "",
+        "url": "https://tvpass.org/live/NicktoonsEast/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Oprah Winfrey Network USA Eastern HD",
+        "id": "oprahwinfreynetworkusaeasternhd",
+        "logo": "",
+        "url": "https://tvpass.org/live/OWNEast/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Outdoor Channel US HD",
+        "id": "outdoorchannelushd",
+        "logo": "",
+        "url": "https://tvpass.org/live/OutdoorChannel/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Science HD",
+        "id": "sciencehd",
+        "logo": "",
+        "url": "https://tvpass.org/live/Science/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Showtime Eastern Feed HD",
+        "id": "showtimeeasternfeedhd",
+        "logo": "",
+        "url": "https://tvpass.org/live/ShowtimeEast/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Showtime 2 Eastern SD",
+        "id": "showtime2easternsd",
+        "logo": "",
+        "url": "https://tvpass.org/live/Showtime2East/sd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Showtime 2 Eastern HD",
+        "id": "showtime2easternhd",
+        "logo": "",
+        "url": "https://tvpass.org/live/Showtime2East/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Sportsnet (East) HD",
+        "id": "sportsneteasthd",
+        "logo": "",
+        "url": "https://tvpass.org/live/sportsnet-east/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Sportsnet One SD",
+        "id": "sportsnetonesd",
+        "logo": "",
+        "url": "https://tvpass.org/live/sportsnet-one/sd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Sportsnet One HD",
+        "id": "sportsnetonehd",
+        "logo": "",
+        "url": "https://tvpass.org/live/sportsnet-one/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Sportsnet Ontario HD",
+        "id": "sportsnetontariohd",
+        "logo": "",
+        "url": "https://tvpass.org/live/sportsnet-ontario/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "TBS East SD",
+        "id": "tbseastsd",
+        "logo": "",
+        "url": "https://tvpass.org/live/TBSEast/sd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "TeenNick Eastern HD",
+        "id": "teennickeasternhd",
+        "logo": "",
+        "url": "https://tvpass.org/live/TeenNickEast/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "adult"
+    },
+    {
+        "name": "TLC USA Eastern SD",
+        "id": "tlcusaeasternsd",
+        "logo": "",
+        "url": "https://tvpass.org/live/TLCEast/sd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "TLC USA Eastern HD",
+        "id": "tlcusaeasternhd",
+        "logo": "",
+        "url": "https://tvpass.org/live/TLCEast/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "TNT Eastern Feed HD",
+        "id": "tnteasternfeedhd",
+        "logo": "",
+        "url": "https://tvpass.org/live/TNTEast/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Travel US East HD",
+        "id": "traveluseasthd",
+        "logo": "",
+        "url": "https://tvpass.org/live/TravelChannelEast/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "VH1 Eastern Feed SD",
+        "id": "vh1easternfeedsd",
+        "logo": "",
+        "url": "https://tvpass.org/live/VH1East/sd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Yes Network SD",
+        "id": "yesnetworksd",
+        "logo": "",
+        "url": "https://tvpass.org/live/yes-network/sd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Yes Network HD",
+        "id": "yesnetworkhd",
+        "logo": "",
+        "url": "https://tvpass.org/live/yes-network/hd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "ESPN2",
+        "id": "espn2",
+        "logo": "",
+        "url": "https://tvpass.org/live/ESPN2/sd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Fanduel Sports Network Ohio Cleveland",
+        "id": "fanduelsportsnetworkohiocleveland",
+        "logo": "",
+        "url": "https://tvpass.org/live/fanduel-sports-network-ohio-cleveland/sd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Fanduel Sports Network Socal",
+        "id": "fanduelsportsnetworksocal",
+        "logo": "",
+        "url": "https://tvpass.org/live/fanduel-sports-network-socal/sd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Fanduel Sports Southeast North Carolina",
+        "id": "fanduelsportssoutheastnorthcarolina",
+        "logo": "",
+        "url": "https://tvpass.org/live/fanduel-sports-southeast-north-carolina/sd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Fanduel Sports Tennessee East",
+        "id": "fanduelsportstennesseeeast",
+        "logo": "",
+        "url": "https://tvpass.org/live/fanduel-sports-tennessee-east/sd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "HBO Zone HD East",
+        "id": "hbozonehdeast",
+        "logo": "",
+        "url": "https://tvpass.org/live/HBOZoneEast/sd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Lifetime Movies East",
+        "id": "lifetimemovieseast",
+        "logo": "",
+        "url": "https://tvpass.org/live/LifetimeMoviesEast/sd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "MeTV Wjlp New Jerseynew York",
+        "id": "metvwjlpnewjerseynewyork",
+        "logo": "",
+        "url": "https://tvpass.org/live/metv-wjlp-new-jerseynew-york/sd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "MovieMax (Max 6) East",
+        "id": "moviemaxmax6east",
+        "logo": "",
+        "url": "https://tvpass.org/live/MovieMaxEast/sd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "NBC Sports Philadelphia",
+        "id": "nbcsportsphiladelphia",
+        "logo": "",
+        "url": "https://tvpass.org/live/nbc-sports-philadelphia/sd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "NHL Network USA",
+        "id": "nhlnetworkusa",
+        "logo": "",
+        "url": "https://tvpass.org/live/NHLNetwork/sd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Showtime Eastern Feed",
+        "id": "showtimeeasternfeed",
+        "logo": "",
+        "url": "https://tvpass.org/live/ShowtimeEast/sd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "SundanceTV USA East",
+        "id": "sundancetvusaeast",
+        "logo": "",
+        "url": "https://tvpass.org/live/SundanceTVEast/sd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "The Tennis Channel",
+        "id": "thetennischannel",
+        "logo": "",
+        "url": "https://tvpass.org/live/TennisChannel/sd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "TV Land Eastern",
+        "id": "tvlandeastern",
+        "logo": "",
+        "url": "https://tvpass.org/live/tv-land-eastern/sd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "WPIX New York (SUPERSTATION)",
+        "id": "wpixnewyorksuperstation",
+        "logo": "",
+        "url": "https://tvpass.org/live/WPIX/sd",
+        "categories": [
+            "tvpass"
+        ],
+        "country": "",
+        "type": "all"
+    },
+    {
+        "name": "Michigan Wolverines @ Texas Longhorns (12/31 3:00 PM ET)",
+        "id": "michiganwolverinestexaslonghorns1231300pmet",
+        "logo": "",
+        "url": "https://tvpass.org/live/WABCDT1/sd",
         "categories": [
             "tvpass"
         ],
@@ -43298,237 +43546,6 @@
         "id": "beverlyhillstelevision35720p",
         "logo": "",
         "url": "https://cdn3.wowza.com/5/V2Y2VmhqMEFDTUkx/beverlyhills/G0072_007/playlist.m3u8",
-        "categories": [
-            "us_local"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Fernandina Beach City Meeting (Fernandina Beach FL) (720p) [Not 24/7]",
-        "id": "fernandinabeachcitymeetingfernandinabeachfl720pnot247",
-        "logo": "",
-        "url": "https://edge-f.swagit.com/live/fernandinabeachfl/live-1-a/playlist.m3u8",
-        "categories": [
-            "us_local"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "SFGovTV San Francisco The Government Channel (720p)",
-        "id": "sfgovtvsanfranciscothegovernmentchannel720p",
-        "logo": "",
-        "url": "https://cdn3.wowza.com/5/ZFdxUW9BQWt2UWRL/sanfrancisco/G0051_048/playlist.m3u8",
-        "categories": [
-            "us_local"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "FNX [Geo-blocked]",
-        "id": "fnxgeoblocked",
-        "logo": "",
-        "url": "https://castus-vod-dev.s3.amazonaws.com/vod_clients/kvcr/live/ch1/video.m3u8",
-        "categories": [
-            "us_local"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "PHXTV",
-        "id": "phxtv",
-        "logo": "",
-        "url": "https://cdn3.wowza.com/5/bGZUOHp2TnhudnM2/phoenix/G1498_006/playlist.m3u8",
-        "categories": [
-            "us_local"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "CreaTV Bay Voice TV Channel 27 (San Jose CA) (720p)",
-        "id": "creatvbayvoicetvchannel27sanjoseca720p",
-        "logo": "",
-        "url": "https://reflect-creatv.cablecast.tv/live-19/live/live.m3u8",
-        "categories": [
-            "us_local"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Monroe County Television MCTV (Monroe County FL) (1080p)",
-        "id": "monroecountytelevisionmctvmonroecountyfl1080p",
-        "logo": "",
-        "url": "https://castus-vod-dev.s3.amazonaws.com/vod_clients/monroe/live/ch1/video.m3u8",
-        "categories": [
-            "us_local"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Access Media Productions Monterey Channel (720p)",
-        "id": "accessmediaproductionsmontereychannel720p",
-        "logo": "",
-        "url": "https://dlttx48mxf9m3.cloudfront.net/vod_clients/amp/live/ch3/video.m3u8",
-        "categories": [
-            "us_local"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Access Media Productions Peninsula Channel (720p)",
-        "id": "accessmediaproductionspeninsulachannel720p",
-        "logo": "",
-        "url": "https://dlttx48mxf9m3.cloudfront.net/vod_clients/amp/live/ch5/video.m3u8",
-        "categories": [
-            "us_local"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Access Media Productions Channel (720p)",
-        "id": "accessmediaproductionschannel720p",
-        "logo": "",
-        "url": "https://dlttx48mxf9m3.cloudfront.net/vod_clients/amp/live/ch1/video.m3u8",
-        "categories": [
-            "us_local"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Bolton Community Voice Channel (CVC) Education (Bolton CT) (480p)",
-        "id": "boltoncommunityvoicechannelcvceducationboltonct480p",
-        "logo": "",
-        "url": "https://dlttx48mxf9m3.cloudfront.net/vod_clients/bolton/live/ch2/video.m3u8",
-        "categories": [
-            "us_local"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Lakewood CityTV (720p)",
-        "id": "lakewoodcitytv720p",
-        "logo": "",
-        "url": "https://dlttx48mxf9m3.cloudfront.net/vod_clients/lakewood/live/ch1/video.m3u8",
-        "categories": [
-            "us_local"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Access Media Productions Marina TV (720p)",
-        "id": "accessmediaproductionsmarinatv720p",
-        "logo": "",
-        "url": "https://dlttx48mxf9m3.cloudfront.net/vod_clients/amp/live/ch4/video.m3u8",
-        "categories": [
-            "us_local"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Access Media Productions Community Channel (720p)",
-        "id": "accessmediaproductionscommunitychannel720p",
-        "logo": "",
-        "url": "https://dlttx48mxf9m3.cloudfront.net/vod_clients/amp/live/ch2/video.m3u8",
-        "categories": [
-            "us_local"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Bolton Community Voice Channel (CVC) Public (Bolton CT) (480p)",
-        "id": "boltoncommunityvoicechannelcvcpublicboltonct480p",
-        "logo": "",
-        "url": "https://dlttx48mxf9m3.cloudfront.net/vod_clients/bolton/live/ch1/video.m3u8",
-        "categories": [
-            "us_local"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Bolton Community Voice Channel (CVC) Government (Bolton CT) (480p)",
-        "id": "boltoncommunityvoicechannelcvcgovernmentboltonct480p",
-        "logo": "",
-        "url": "https://dlttx48mxf9m3.cloudfront.net/vod_clients/bolton/live/ch3/video.m3u8",
-        "categories": [
-            "us_local"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "Channel 11 (Scottsdale AZ)",
-        "id": "channel11scottsdaleaz",
-        "logo": "",
-        "url": "https://cdn3.wowza.com/5/RXJNMFI3VlVkOEFP/scottsdale/G0040_007/chunklist.m3u8",
-        "categories": [
-            "us_local"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "CreaTV The Outlet Channel 30 (San Jose CA) (720p)",
-        "id": "creatvtheoutletchannel30sanjoseca720p",
-        "logo": "",
-        "url": "https://reflect-creatv.cablecast.tv/live-16/live/live.m3u8",
-        "categories": [
-            "us_local"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "CreaTV Classrooms Channel 28 (San Jose CA) (720p)",
-        "id": "creatvclassroomschannel28sanjoseca720p",
-        "logo": "",
-        "url": "https://reflect-creatv.cablecast.tv/live-14/live/live.m3u8",
-        "categories": [
-            "us_local"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "ABC 9 Orlando FL (WFTV) (720p)",
-        "id": "abc9orlandoflwftv720p",
-        "logo": "",
-        "url": "https://amg00327-coxmediagroup-wftvbreaking-ono-hec7b.amagi.tv/playlist/amg00327-coxmediagroup-wftvbreaking-ono/playlist.m3u8",
-        "categories": [
-            "us_local"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "WTVQ ABC 36 News (Lexington KY) (720p)",
-        "id": "wtvqabc36newslexingtonky720p",
-        "logo": "",
-        "url": "https://townnews.g-mana.live/media/14d1fd2c-0548-4803-80ad-6657831a7981/main.m3u8",
-        "categories": [
-            "us_local"
-        ],
-        "country": "",
-        "type": "all"
-    },
-    {
-        "name": "ABC WWAY 3",
-        "id": "abcwway3",
-        "logo": "",
-        "url": "https://townnews.g-mana.live/media/027a05c7-43b6-49eb-ad10-a0c0f10a0754/main.m3u8",
         "categories": [
             "us_local"
         ],
