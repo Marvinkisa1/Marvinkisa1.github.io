@@ -397,17 +397,6 @@
         "type": "all"
     },
     {
-        "name": "Luna Estereo 106.4 FM",
-        "id": "LunaEstereo1064FM.co",
-        "logo": "https://i.imgur.com/cESeD6R.png",
-        "url": "https://servervideo.intermediacolombia.com:19360/kychbbfhdz/kychbbfhdz.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "CO",
-        "type": "all"
-    },
-    {
         "name": "MasMusica FM",
         "id": "MasMusicaFM.co",
         "logo": "https://i.imgur.com/tCg7owd.png",
@@ -483,17 +472,6 @@
         ],
         "country": "PE",
         "type": "all"
-    },
-    {
-        "name": "Cumbia Mix",
-        "id": "CumbiaMix.ar",
-        "logo": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6901dfd41a05195b77301d7b/b306e57e4_Logo-TV-C.png",
-        "url": "https://cloud.tvomix.com/CUMBIAMIX/index.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "AR",
-        "type": "adult"
     },
     {
         "name": "X Level Media",
@@ -878,17 +856,6 @@
         "id": "Zoom.in",
         "logo": "https://dtil.tmsimg.com/assets/s157600_ld_h15_aa.png?lock=720x540",
         "url": "https://dai.google.com/linear/hls/event/JCAm25qkRXiKcK1AJMlvKQ/master.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "IN",
-        "type": "all"
-    },
-    {
-        "name": "9XM",
-        "id": "9XM.in",
-        "logo": "https://dtil.tmsimg.com/assets/s77447_ld_h15_aa.png?lock=720x540",
-        "url": "https://9xjio.wiseplayout.com/9XM/master.m3u8",
         "categories": [
             "music"
         ],
@@ -2257,6 +2224,18 @@
         "type": "all"
     },
     {
+        "name": "Next HD",
+        "id": "NextHD.py",
+        "logo": "https://i.imgur.com/c2rF3SS.png",
+        "url": "https://live.enhdtv.com:19360/nexthd/nexthd.m3u8",
+        "categories": [
+            "movies",
+            "music"
+        ],
+        "country": "PY",
+        "type": "all"
+    },
+    {
         "name": "Kral Pop TV",
         "id": "KralPopTV.tr",
         "logo": "https://i.imgur.com/ch365lh.png",
@@ -2499,18 +2478,6 @@
         "type": "all"
     },
     {
-        "name": "BEATTV",
-        "id": "BEATTV.nl",
-        "logo": "https://i.imgur.com/egK33Dj.png",
-        "url": "https://tv.beatfm.nl/live.m3u8",
-        "categories": [
-            "music",
-            "entertainment"
-        ],
-        "country": "NL",
-        "type": "all"
-    },
-    {
         "name": "Rararadio",
         "id": "Rararadio.nl",
         "logo": "https://i.imgur.com/vTpfxUG.png",
@@ -2533,12 +2500,14 @@
         "type": "all"
     },
     {
-        "name": "Gigant FM",
-        "id": "GigantFM.nl",
-        "logo": "https://i.imgur.com/LwEHfjD.png",
-        "url": "https://video.uitzending.tv:19360/gigantfm/gigantfm.m3u8",
+        "name": "FomixTV",
+        "id": "FomixTV.nl",
+        "logo": "https://i.imgur.com/7SLYEMG.png",
+        "url": "https://stream.fomixmedia.nl/FomixTV/video.m3u8",
         "categories": [
-            "music"
+            "music",
+            "public",
+            "general"
         ],
         "country": "NL",
         "type": "all"
@@ -2687,6 +2656,17 @@
         "type": "all"
     },
     {
+        "name": "Finest TV",
+        "id": "FinestTV.de",
+        "logo": "https://i.imgur.com/1uoP10V.png",
+        "url": "https://media.finest.tv/hls/live.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "DE",
+        "type": "all"
+    },
+    {
         "name": "Planet 100.9 FM",
         "id": "Planet1009FM.pa",
         "logo": "https://i.imgur.com/8ZIBs8l.png",
@@ -2702,17 +2682,6 @@
         "id": "TropiQ997FM.pa",
         "logo": "https://i.imgur.com/5rPdHhb.png",
         "url": "https://www.streaming507.net:19360/videotropiq/videotropiq.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "PA",
-        "type": "all"
-    },
-    {
-        "name": "Fabulosa Estereo 100.5 FM",
-        "id": "FabulosaEstereo1005FM.pa",
-        "logo": "https://i.imgur.com/YFmzkOp.png",
-        "url": "https://www.streaming507.net:19360/videofabulosa/videofabulosa.m3u8",
         "categories": [
             "music"
         ],
@@ -4151,10 +4120,10 @@
         "type": "all"
     },
     {
-        "name": "Tu Musica HD",
-        "id": "TuMusicaHD.do",
-        "logo": "https://i.imgur.com/HnjUjog.png",
-        "url": "https://edge.essastream.com/tumusicahd/tracks-v1a1/mono.m3u8",
+        "name": "TV Exitos",
+        "id": "TVExitos.do",
+        "logo": "https://i.imgur.com/ahz7X7u.png",
+        "url": "https://streaming.grupomediosdelnorte.com:19360/tvexitos/tvexitos.m3u8",
         "categories": [
             "music"
         ],
@@ -4162,10 +4131,10 @@
         "type": "all"
     },
     {
-        "name": "TV Exitos",
-        "id": "TVExitos.do",
-        "logo": "https://i.imgur.com/ahz7X7u.png",
-        "url": "https://streaming.grupomediosdelnorte.com:19360/tvexitos/tvexitos.m3u8",
+        "name": "La Voz del Tropico",
+        "id": "LaVozdelTropico.do",
+        "logo": "https://i.imgur.com/DKDFpHt.png",
+        "url": "https://ss2.tvrdomi.com:1936/lavozdeltropico/lavozdeltropico/playlist.m3u8",
         "categories": [
             "music"
         ],
@@ -4382,6 +4351,17 @@
         "type": "all"
     },
     {
+        "name": "RADIO DISCOunt TV",
+        "id": "RADIODISCOuntTV.ch",
+        "logo": "https://i.imgur.com/ScNYMmx.png",
+        "url": "https://585b674743bbb.streamlock.net/9030/9030/playlist.m3u8",
+        "categories": [
+            "music"
+        ],
+        "country": "CH",
+        "type": "all"
+    },
+    {
         "name": "Play TV",
         "id": "PlayTV.gr",
         "logo": "https://i.imgur.com/JWFOYuD.png",
@@ -4496,17 +4476,6 @@
         "id": "VintageMusic.cr",
         "logo": "https://i.imgur.com/KImqYnN.jpeg",
         "url": "https://59ef525c24caa.streamlock.net/vmtv/tvvintage/playlist.m3u8",
-        "categories": [
-            "music"
-        ],
-        "country": "CR",
-        "type": "all"
-    },
-    {
-        "name": "VM Latino",
-        "id": "VMLatino.cr",
-        "logo": "https://i.imgur.com/Dvo1b82.png",
-        "url": "https://59ef525c24caa.streamlock.net/vmtv/vmlatino/playlist.m3u8",
         "categories": [
             "music"
         ],
