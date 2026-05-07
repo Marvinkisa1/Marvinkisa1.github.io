@@ -60,18 +60,6 @@
         "type": "all"
     },
     {
-        "name": "Dong Nai TV 2",
-        "id": "DongNaiTV2.vn",
-        "logo": "https://i.imgur.com/tNKPSkO.png",
-        "url": "http://118.107.85.4:1935/live/smil:DNTV2.smil/playlist.m3u8",
-        "categories": [
-            "sports",
-            "entertainment"
-        ],
-        "country": "VN",
-        "type": "all"
-    },
-    {
         "name": "An Giang TV 2",
         "id": "AnGiangTV2.vn",
         "logo": "https://i.imgur.com/efrauLr.png",
@@ -88,6 +76,18 @@
         "logo": "https://i.imgur.com/gZUV4z8.png",
         "url": "https://tv.angiangtv.vn/live/kgtv1/kgtv1.m3u8",
         "categories": [
+            "entertainment"
+        ],
+        "country": "VN",
+        "type": "all"
+    },
+    {
+        "name": "Dong Nai TV 2",
+        "id": "DongNaiTV2.vn",
+        "logo": "https://i.imgur.com/tNKPSkO.png",
+        "url": "http://118.107.85.4:1935/live/smil:DNTV2.smil/chunklist.m3u8",
+        "categories": [
+            "sports",
             "entertainment"
         ],
         "country": "VN",
@@ -1222,6 +1222,17 @@
         "type": "all"
     },
     {
+        "name": "EVI TV",
+        "id": "EVITV.cd",
+        "logo": "https://i.imgur.com/fBc9JSM.png",
+        "url": "https://stream.berosat.live:19360/evi-tv/evi-tv.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "CD",
+        "type": "all"
+    },
+    {
         "name": "MTV",
         "id": "MTV.br",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/MTV_2021_%28brand_version%29.svg/960px-MTV_2021_%28brand_version%29.svg.png",
@@ -1534,6 +1545,50 @@
             "entertainment"
         ],
         "country": "CL",
+        "type": "all"
+    },
+    {
+        "name": "Aaj Entertainment",
+        "id": "AajEntertainment.pk",
+        "logo": "https://i.imgur.com/WK5Cqap.png",
+        "url": "https://ml-pull-dvc-myco.io:2096/AAJ_ENTERTAINMENT/index.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "PK",
+        "type": "all"
+    },
+    {
+        "name": "Bol Entertainment",
+        "id": "BolEntertainment.pk",
+        "logo": "https://i.imgur.com/eajSRFo.png",
+        "url": "https://ml-pull-dvc-myco.io:2096/BOL_ENTERTAINMENT/index.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "PK",
+        "type": "all"
+    },
+    {
+        "name": "Express Entertainment",
+        "id": "ExpressEntertainment.pk",
+        "logo": "https://i.imgur.com/rgHbb8W.png",
+        "url": "https://ml-pull-dvc-myco.io:2096/EXPRESS_ENTERTAINMENT/index.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "PK",
+        "type": "all"
+    },
+    {
+        "name": "SAB TV",
+        "id": "SABTV.pk",
+        "logo": "https://i.imgur.com/hC7Sidr.png",
+        "url": "https://ml-pull-dvc-myco.io:2096/SAB_ENTERTAINMENT/tracks-v1a1/mono.ts.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "PK",
         "type": "all"
     },
     {
@@ -1926,10 +1981,21 @@
         "type": "all"
     },
     {
-        "name": "KC2",
-        "id": "KC2.rw",
-        "logo": "https://i.imgur.com/PsYPzNc.png",
-        "url": "https://5c46fa289c89f.streamlock.net/kc2/kc2/chunklist.m3u8",
+        "name": "MRTV Entertainment",
+        "id": "MRTVEntertainment.mm",
+        "logo": "https://i.imgur.com/c9q6oT0.png",
+        "url": "https://mrtvott.com/cache/MRTV-Ent-HD/master.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "MM",
+        "type": "all"
+    },
+    {
+        "name": "B+ TV",
+        "id": "BPlusTV.rw",
+        "logo": "https://i.ibb.co/WzLwj3X/IMG-20230703-155036.jpg",
+        "url": "https://tv.btnrwanda.com:3432/live/bpluslive.m3u8",
         "categories": [
             "entertainment"
         ],
@@ -2036,17 +2102,6 @@
         "type": "all"
     },
     {
-        "name": "Chandel TV",
-        "id": "ChandelTV.tg",
-        "logo": "https://i.imgur.com/jQO7dVE.png",
-        "url": "https://kali.vdopanel.com:3660/live/vj6jlam1rlive.m3u8",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "TG",
-        "type": "all"
-    },
-    {
         "name": "OTV",
         "id": "OTV.gh",
         "logo": "https://pbs.twimg.com/profile_images/1034118312437919744/emeWo-ag_400x400.jpg",
@@ -2096,17 +2151,6 @@
         "id": "PopuTV.py",
         "logo": "https://i.imgur.com/UqCogyZ.png",
         "url": "https://copacogen.desdeparaguay.net/universotv/universotv_py_alta/playlist.m3u8?admin=nacion",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "PY",
-        "type": "all"
-    },
-    {
-        "name": "Oasis TV",
-        "id": "OasisTV.py",
-        "logo": "https://i.imgur.com/u9umNKp.jpeg",
-        "url": "https://video.hostingcaaguazu.com:19360/oasistv/oasistv.m3u8",
         "categories": [
             "entertainment"
         ],
@@ -2191,19 +2235,6 @@
         "type": "all"
     },
     {
-        "name": "Manas TV",
-        "id": "ManasTV.kg",
-        "logo": "https://i.ibb.co/2Kvcj5Q/manas.jpg",
-        "url": "http://212.42.111.152:8080/hls/manas.m3u8",
-        "categories": [
-            "education",
-            "culture",
-            "entertainment"
-        ],
-        "country": "KG",
-        "type": "all"
-    },
-    {
         "name": "Salto 1",
         "id": "Salto1.nl",
         "logo": "https://i.imgur.com/hyubvS5.png",
@@ -2260,17 +2291,6 @@
         "type": "all"
     },
     {
-        "name": "SBS6 Classics",
-        "id": "SBS6Classics.nl",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/8/8d/SBS_6_logo_2013.png",
-        "url": "https://sbs6classic.prd1.talpatvcdn.nl/v1/master/8ada1ed2ae3b9c3db6fc5e604cfa78fc7d2d745e/sbs6classic_ssai/fea54560ba684701a2143f33a9cf4489/index.m3u8",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "NL",
-        "type": "all"
-    },
-    {
         "name": "Metro TV",
         "id": "MetroTV.hn",
         "logo": "https://i.imgur.com/BqS8BHi.png",
@@ -2319,6 +2339,17 @@
         "id": "EDNTV.hn",
         "logo": "https://i.imgur.com/5fPsYTz.png",
         "url": "https://60417ddeaf0d9.streamlock.net/edntv/videoedntv/playlist.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "HN",
+        "type": "all"
+    },
+    {
+        "name": "Radio Omega TV",
+        "id": "RadioOmegaTV.hn",
+        "logo": "https://i.ibb.co/nfJhQMx/Bj7qf5-Tb-Z9.jpg",
+        "url": "https://5caf24a595d94.streamlock.net:1937/8142/8142/playlist.m3u8",
         "categories": [
             "entertainment"
         ],
@@ -2407,6 +2438,17 @@
         "id": "MaxivisionTV.gt",
         "logo": "https://i.imgur.com/UC8WrEN.jpg",
         "url": "https://video03.logicahost.com.br/maxivisiontv/maxivisiontv/playlist.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "GT",
+        "type": "all"
+    },
+    {
+        "name": "SAS TV",
+        "id": "SASTV.gt",
+        "logo": "https://i.imgur.com/VShjB3o.png",
+        "url": "https://cdn.streamhispanatv.net:3390/live/sastvgtlive.m3u8",
         "categories": [
             "entertainment"
         ],
@@ -3679,6 +3721,17 @@
         "type": "all"
     },
     {
+        "name": "BTV",
+        "id": "BTV.ug",
+        "logo": "https://i.imgur.com/rcHZ1al.png",
+        "url": "https://streamfi-alphadgtl1.zettawiseroutes.com:8181/hls/stream.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "UG",
+        "type": "all"
+    },
+    {
         "name": "TV Canal Sur",
         "id": "TVCanalSur.do",
         "logo": "https://www.lyngsat.com/logo/tv/tt/tv-canal-sur-do.png",
@@ -3996,6 +4049,17 @@
             "entertainment"
         ],
         "country": "CY",
+        "type": "all"
+    },
+    {
+        "name": "Jiangsu Variety Channel",
+        "id": "JiangsuVarietyChannel.cn",
+        "logo": "https://www.tvchinese.net/uploads/tv/jszy.jpg",
+        "url": "http://183.207.248.71/gitv/live1/G_JSZY/G_JSZY",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "CN",
         "type": "all"
     },
     {
