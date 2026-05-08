@@ -78,17 +78,6 @@
         "type": "all"
     },
     {
-        "name": "AXN Asia",
-        "id": "AXNAsia.sg",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/AXN_logo_%282015%29.svg/960px-AXN_logo_%282015%29.svg.png",
-        "url": "http://103.58.160.157:8278/720-AXN/playlist.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "SG",
-        "type": "all"
-    },
-    {
         "name": "Nickelodeon Asia",
         "id": "NickelodeonAsia.sg",
         "logo": "https://i.imgur.com/E84jnP8.png",
@@ -117,6 +106,29 @@
         "url": "https://cdn10jtedge.indihometv.com/atm/DASH/hitsmovie/manifest.mpd",
         "categories": [
             "movies"
+        ],
+        "country": "SG",
+        "type": "all"
+    },
+    {
+        "name": "AXN Asia",
+        "id": "AXNAsia.sg",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/AXN_logo_%282015%29.svg/960px-AXN_logo_%282015%29.svg.png",
+        "url": "https://cdn10jtedge.indihometv.com/atm/DASH/axn/manifest.mpd",
+        "categories": [
+            "movies",
+            "series"
+        ],
+        "country": "SG",
+        "type": "all"
+    },
+    {
+        "name": "CNBC Asia",
+        "id": "CNBCAsia.sg",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/b/bc/CNBC_2025.svg",
+        "url": "https://live.fptplay53.net/fnxsd1/cnbc_hls.smil/chunklist.m3u8",
+        "categories": [
+            "business"
         ],
         "country": "SG",
         "type": "all"
