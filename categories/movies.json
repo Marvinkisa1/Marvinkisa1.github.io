@@ -102,20 +102,15 @@
         "type": "all"
     },
     {
-        "name": "AlternaTV",
-        "id": "AlternaTV.ar",
-        "logo": "https://tv.alterna.ar/alternatv.png",
-        "url": "https://tv.alterna.ar/stream/hls/live.m3u8",
+        "name": "Cine.Ar",
+        "id": "CineAr.ar",
+        "logo": "https://i.imgur.com/Iozv4tT.png",
+        "url": "http://201.217.246.42:44310/Live/3fcb6e26785fd8d415571b26dc3cf5d3/local-20.playlist.m3u8",
         "categories": [
-            "music",
-            "culture",
-            "entertainment",
-            "documentary",
-            "movies",
-            "general"
+            "movies"
         ],
         "country": "AR",
-        "type": "adult"
+        "type": "all"
     },
     {
         "name": "Itage TV",
@@ -384,32 +379,10 @@
         "type": "all"
     },
     {
-        "name": "Jalsha Movies",
-        "id": "JalshaMovies.in",
-        "logo": "https://dtil.tmsimg.com/assets/s143219_ld_h15_aa.png?lock=720x540",
-        "url": "http://103.229.254.25:7001/play/a0dt/index.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "IN",
-        "type": "all"
-    },
-    {
         "name": "MoviePlex",
         "id": "MoviePlex.in",
         "logo": "https://i.imgur.com/THJEAqJ.png",
         "url": "https://mumt04.tangotv.in/MOVIEPLEX/index.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "IN",
-        "type": "all"
-    },
-    {
-        "name": "Star Gold",
-        "id": "StarGold.in",
-        "logo": "https://dtil.tmsimg.com/assets/s143815_ld_h15_aa.png?lock=720x540",
-        "url": "http://103.229.254.25:7001/play/a0dd/index.m3u8",
         "categories": [
             "movies"
         ],
@@ -432,17 +405,6 @@
         "id": "ETVCinema.in",
         "logo": "https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/transparentImages/ETV-cinema-HD-Logo_2000_X_1125_Transpharent.png",
         "url": "https://d27zlkxhgwrfgo.cloudfront.net/v1/master/9d43eacaed199f8d5883927e7aef514a8a08e108/ETV_CINEMA_H264_cloud_in/index.m3u8",
-        "categories": [
-            "movies"
-        ],
-        "country": "IN",
-        "type": "all"
-    },
-    {
-        "name": "&TV",
-        "id": "AndTV.in",
-        "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SYMAND_TV_HD/images/LOGO_HD/LOGO_HD_image.png",
-        "url": "http://103.229.254.25:7001/play/a09v/index.m3u8",
         "categories": [
             "movies"
         ],
@@ -572,6 +534,50 @@
         "type": "all"
     },
     {
+        "name": "Star Gold 2",
+        "id": "StarGold2.in",
+        "logo": "https://dtil.tmsimg.com/assets/s158297_ld_h15_aa.png?lock=720x540",
+        "url": "http://103.253.18.58:8000/play/a00r",
+        "categories": [
+            "movies"
+        ],
+        "country": "IN",
+        "type": "all"
+    },
+    {
+        "name": "Star Gold Romance",
+        "id": "StarGoldRomance.in",
+        "logo": "https://dtil.tmsimg.com/assets/s158298_ld_h15_aa.png?lock=720x540",
+        "url": "http://103.253.18.58:8000/play/a017",
+        "categories": [
+            "movies"
+        ],
+        "country": "IN",
+        "type": "all"
+    },
+    {
+        "name": "Star Gold Select",
+        "id": "StarGoldSelect.in",
+        "logo": "https://dtil.tmsimg.com/assets/s143817_ld_h15_aa.png?lock=720x540",
+        "url": "http://103.253.18.58:8000/play/a02u",
+        "categories": [
+            "movies"
+        ],
+        "country": "IN",
+        "type": "all"
+    },
+    {
+        "name": "Star Gold Thrills",
+        "id": "StarGoldThrills.in",
+        "logo": "https://dtil.tmsimg.com/assets/s158822_ld_h15_aa.png?lock=720x540",
+        "url": "http://103.253.18.58:8000/play/a00o",
+        "categories": [
+            "movies"
+        ],
+        "country": "IN",
+        "type": "all"
+    },
+    {
         "name": "Filmex",
         "id": "Filmex.mx",
         "logo": "https://i.imgur.com/Hiz2OyC.png",
@@ -653,17 +659,6 @@
         "id": "NihonEigaSenmonChannel.jp",
         "logo": "https://i.imgur.com/B2wzA67.png",
         "url": "http://cdns.jp-primehome.com:8000/zhongying/live/playlist.m3u8?cid=bs23",
-        "categories": [
-            "movies"
-        ],
-        "country": "JP",
-        "type": "all"
-    },
-    {
-        "name": "WOWOW Cinema",
-        "id": "WOWOWCinema.jp",
-        "logo": "https://i.imgur.com/Wx9fkCW.png",
-        "url": "http://cdns.jp-primehome.com:8000/zhongying/live/playlist.m3u8?cid=bs07",
         "categories": [
             "movies"
         ],
@@ -2183,12 +2178,46 @@
         "type": "all"
     },
     {
-        "name": "Hallmark Movies & Mysteries",
-        "id": "HallmarkMoviesMysteries.us",
-        "logo": "https://i.imgur.com/GPRGA9C.png",
-        "url": "https://tvpass.org/live/HallmarkMoviesMysteriesEast/sd",
+        "name": "AMC Latin America",
+        "id": "AMCLatinAmerica.us",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/AMC_logo_2019.svg/960px-AMC_logo_2019.svg.png",
+        "url": "http://201.217.246.42:44310/Live/3fcb6e26785fd8d415571b26dc3cf5d3/local-76.playlist.m3u8",
         "categories": [
             "movies"
+        ],
+        "country": "US",
+        "type": "all"
+    },
+    {
+        "name": "AXN Latin America",
+        "id": "AXNLatinAmerica.us",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/AXN_logo_%282015%29.svg/960px-AXN_logo_%282015%29.svg.png",
+        "url": "http://201.217.246.42:44310/Live/3fcb6e26785fd8d415571b26dc3cf5d3/local-77.playlist.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "US",
+        "type": "all"
+    },
+    {
+        "name": "Cinecanal",
+        "id": "Cinecanal.us",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/CinecanalLA.png/960px-CinecanalLA.png",
+        "url": "http://201.217.246.42:44310/Live/3fcb6e26785fd8d415571b26dc3cf5d3/local-62.playlist.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "US",
+        "type": "all"
+    },
+    {
+        "name": "Star Channel Latin America",
+        "id": "StarChannelLatinAmerica.us",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Star_Channel_2020.svg/960px-Star_Channel_2020.svg.png",
+        "url": "http://201.217.246.42:44310/Live/3fcb6e26785fd8d415571b26dc3cf5d3/local-68.playlist.m3u8",
+        "categories": [
+            "movies",
+            "series"
         ],
         "country": "US",
         "type": "all"
@@ -2388,6 +2417,17 @@
         "id": "EmotionL.fr",
         "logo": "https://i.imgur.com/MP34aaj.png",
         "url": "https://rakutenaa-zylo-emotional-rakuten-r1zkm.amagi.tv/playlist/rakutenAA-zylo-emotional-rakuten/playlist.m3u8",
+        "categories": [
+            "movies"
+        ],
+        "country": "FR",
+        "type": "all"
+    },
+    {
+        "name": "Persiana Family",
+        "id": "PersianaFamily.fr",
+        "logo": "https://i.imgur.com/lMZsuWi.png",
+        "url": "https://familyhls.persiana.live/hls/stream.m3u8",
         "categories": [
             "movies"
         ],

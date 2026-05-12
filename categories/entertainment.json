@@ -183,6 +183,17 @@
         "type": "all"
     },
     {
+        "name": "Belarus-2",
+        "id": "Belarus2.by",
+        "logo": "https://i.imgur.com/BpEHpPS.png",
+        "url": "https://ngtrk.dc.beltelecom.by/ngtrk/smil:belarus2.smil/playlist.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "BY",
+        "type": "all"
+    },
+    {
         "name": "Island Luck TV",
         "id": "IslandLuckTV.bs",
         "logo": "https://i.imgur.com/P0gDN5n.png",
@@ -315,22 +326,6 @@
         ],
         "country": "AR",
         "type": "all"
-    },
-    {
-        "name": "AlternaTV",
-        "id": "AlternaTV.ar",
-        "logo": "https://tv.alterna.ar/alternatv.png",
-        "url": "https://tv.alterna.ar/stream/hls/live.m3u8",
-        "categories": [
-            "music",
-            "culture",
-            "entertainment",
-            "documentary",
-            "movies",
-            "general"
-        ],
-        "country": "AR",
-        "type": "adult"
     },
     {
         "name": "NDTV LANKA",
@@ -743,17 +738,6 @@
         "type": "all"
     },
     {
-        "name": "GTC Punjabi",
-        "id": "GTCPunjabi.in",
-        "logo": "https://media.thegtcnetwork.com/uploads/gtc-pujabin-s.jpg",
-        "url": "https://mumt01.tangotv.in/GTC/index.m3u8",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "IN",
-        "type": "all"
-    },
-    {
         "name": "Khushboo Bangla",
         "id": "KhushbooBangla.in",
         "logo": "https://dtil.tmsimg.com/assets/s143265_ld_h9_aa.png?lock=720x540",
@@ -853,17 +837,6 @@
         "type": "all"
     },
     {
-        "name": "Zee Bangla Sonar",
-        "id": "ZeeBanglaSonar.in",
-        "logo": "https://dtil.tmsimg.com/assets/GNLZZGG00287G7K.png?lock=720x540",
-        "url": "http://103.229.254.25:7001/play/a070/index.m3u8",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "IN",
-        "type": "all"
-    },
-    {
         "name": "Sony Entertainment Television",
         "id": "SonyEntertainmentTelevision.in",
         "logo": "https://dtil.tmsimg.com/assets/s159096_ld_h15_aa.png?lock=720x540",
@@ -879,17 +852,6 @@
         "id": "MarutamTV.in",
         "logo": "https://i.imgur.com/cFNw4Af.png",
         "url": "https://mntv.livebox.co.in/mntvhls/live.m3u8",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "IN",
-        "type": "all"
-    },
-    {
-        "name": "Zee TV",
-        "id": "ZeeTV.in",
-        "logo": "https://dtil.tmsimg.com/assets/GNLZZGG002FYLVC.png?lock=720x540",
-        "url": "http://103.229.254.25:7001/play/a0cs/index.m3u8",
         "categories": [
             "entertainment"
         ],
@@ -1051,10 +1013,10 @@
         "type": "all"
     },
     {
-        "name": "KCL TV",
-        "id": "KCLTV.in",
-        "logo": "https://i.imgur.com/bkp9dIm.png",
-        "url": "https://kcltv.livebox.co.in/kclhls/live.m3u8",
+        "name": "StarPlus",
+        "id": "StarPlus.in",
+        "logo": "https://dtil.tmsimg.com/assets/s143832_ld_h15_aa.png?lock=720x540",
+        "url": "http://103.253.18.58:8000/play/a00l",
         "categories": [
             "entertainment"
         ],
@@ -1989,6 +1951,17 @@
         "categories": [
             "entertainment",
             "music"
+        ],
+        "country": "PY",
+        "type": "all"
+    },
+    {
+        "name": "Oasis TV",
+        "id": "OasisTV.py",
+        "logo": "https://i.imgur.com/u9umNKp.jpeg",
+        "url": "https://video.hostingcaaguazu.com:19360/oasistv/oasistv.m3u8",
+        "categories": [
+            "entertainment"
         ],
         "country": "PY",
         "type": "all"
@@ -3236,28 +3209,6 @@
         "type": "all"
     },
     {
-        "name": "E!",
-        "id": "E.us",
-        "logo": "https://i.imgur.com/TWFDkap.png",
-        "url": "https://tvpass.org/live/EEast/sd",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "US",
-        "type": "all"
-    },
-    {
-        "name": "FX",
-        "id": "FX.us",
-        "logo": "https://i.imgur.com/ZScwrpi.png",
-        "url": "https://tvpass.org/live/FXEast/sd",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "US",
-        "type": "all"
-    },
-    {
         "name": "A&E",
         "id": "AE.us",
         "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/A%26E_Network_logo.svg/960px-A%26E_Network_logo.svg.png",
@@ -3269,10 +3220,66 @@
         "type": "all"
     },
     {
-        "name": "FXX",
-        "id": "FXX.us",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/FXX_Logo.svg/960px-FXX_Logo.svg.png",
-        "url": "https://tvpass.org/live/FXXEast/sd",
+        "name": "A&E Latin America",
+        "id": "AELatinAmerica.us",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/A%26E_Network_logo.svg/960px-A%26E_Network_logo.svg.png",
+        "url": "http://201.217.246.42:44310/Live/3fcb6e26785fd8d415571b26dc3cf5d3/local-71_480.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "US",
+        "type": "all"
+    },
+    {
+        "name": "E! Latin America",
+        "id": "ELatinAmerica.us",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/E%21_Logo_2012.svg/500px-E%21_Logo_2012.svg.png",
+        "url": "http://201.217.246.42:44310/Live/3fcb6e26785fd8d415571b26dc3cf5d3/local-14_720.m3u8",
+        "categories": [
+            "entertainment",
+            "news"
+        ],
+        "country": "US",
+        "type": "all"
+    },
+    {
+        "name": "FX Latin America",
+        "id": "FXLatinAmerica.us",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/FX_International_logo.svg/960px-FX_International_logo.svg.png",
+        "url": "http://201.217.246.42:44310/Live/3fcb6e26785fd8d415571b26dc3cf5d3/local-78_720.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "US",
+        "type": "all"
+    },
+    {
+        "name": "Lifetime Latin America",
+        "id": "LifetimeLatinAmerica.us",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Logo_Lifetime_2020.svg/960px-Logo_Lifetime_2020.svg.png",
+        "url": "http://201.217.246.42:44310/Live/3fcb6e26785fd8d415571b26dc3cf5d3/Lifetime_720.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "US",
+        "type": "all"
+    },
+    {
+        "name": "Omid e Iran TV",
+        "id": "OmideIranTV.us",
+        "logo": "https://i.imgur.com/CeMf68L.png",
+        "url": "https://oitnhls.wns.live/hls/stream.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "US",
+        "type": "all"
+    },
+    {
+        "name": "Shabakeh 7",
+        "id": "Shabakeh7.us",
+        "logo": "https://i.imgur.com/oHmh5Jb.png",
+        "url": "https://sh7hls.wns.live/hls/stream.m3u8",
         "categories": [
             "entertainment"
         ],
@@ -3645,17 +3652,6 @@
         "type": "all"
     },
     {
-        "name": "GalaxiATeVe",
-        "id": "GalaxiATeVe.do",
-        "logo": "https://grupomediosdelnorte.com/iptv/galaxia.png",
-        "url": "https://streaming.grupomediosdelnorte.com:19360/galaxiateve/galaxiateve.m3u8",
-        "categories": [
-            "entertainment"
-        ],
-        "country": "DO",
-        "type": "all"
-    },
-    {
         "name": "COCO TV",
         "id": "COCOTV.do",
         "logo": "https://i.imgur.com/CnAc7jU.png",
@@ -3770,6 +3766,17 @@
         "id": "Antena21.do",
         "logo": "https://i.imgur.com/QE0XWLh.png",
         "url": "https://d1p8txxph783az.cloudfront.net/index.m3u8",
+        "categories": [
+            "entertainment"
+        ],
+        "country": "DO",
+        "type": "all"
+    },
+    {
+        "name": "Claro Vision TV",
+        "id": "ClaroVisionTV.do",
+        "logo": "https://i.imgur.com/MpTgJMJ.png",
+        "url": "https://streamunoapp.com:3057/live/clarovisiontvlive.m3u8",
         "categories": [
             "entertainment"
         ],
