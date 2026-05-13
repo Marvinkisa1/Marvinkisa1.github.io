@@ -8,7 +8,7 @@ import aiohttp
 from logger import setup_logger
 from config import *
 from utils import remove_duplicates, add_channel_type
-from storage import load_split_json, save_split_json, generate_categories_summary, delete_split_files
+from storage import load_split_json, save_split_json, generate_categories_summary, delete_split_files, save_channels
 from checker import FastChecker
 from processor import M3UProcessor
 from scrapers import scrape_kenya_tv_channels, fetch_and_process_uganda_channels
@@ -30,7 +30,7 @@ async def main():
         # Load logos
         logos_data = []
         try:
-            async with session.get(LOGOS_URL, timeout=30) as resp:
+            async with session.get(LOGOS_URL, timeout=40) as resp:
                 if resp.status == 200:
                     logos_data = await resp.json()
             logger.info(f"✅ Loaded {len(logos_data)} logos")
@@ -43,18 +43,56 @@ async def main():
         M3U_URLS = M3U_URLS + ADDITIONAL_M3U
         logger.info(f"Total M3U URLs: {len(M3U_URLS)}")
 
-        # === Kenya & Uganda ===
+        # === Step 1: Kenya channels ===
         logger.info("🇰🇪 Scraping Kenya channels...")
         kenya_channels = await scrape_kenya_tv_channels(logos_data)
+        if kenya_channels:
+            country_files = {"KE": kenya_channels}
+            category_files = {}
+            for ch in kenya_channels:
+                for cat in ch.get("categories", ["general"]):
+                    category_files.setdefault(cat, []).append(ch)
+            save_channels(kenya_channels, country_files, category_files, append=True)
+            logger.info(f"Added {len(kenya_channels)} Kenya channels")
 
+        # === Step 1.5: Uganda channels ===
         logger.info("🇺🇬 Fetching Uganda channels...")
         await fetch_and_process_uganda_channels(session, checker, logos_data)
 
-        # === Process M3U Playlists ===
+        # === Step 2: Process M3U Playlists ===
         logger.info("🎬 Processing M3U playlists...")
-        # (You can expand this part later)
+        m3u_channels = []
+        for m3u_url in M3U_URLS:
+            if not m3u_url:
+                continue
+            logger.info(f"Processing M3U: {m3u_url}")
+            content = await processor.fetch_m3u_content(session, m3u_url)
+            if content:
+                parsed = processor.parse_m3u(content)
+                # Quick validation
+                valid = []
+                for ch in parsed:
+                    if ch.get('url'):
+                        _, is_working, _ = await checker.check_single_url(session, ch['url'])
+                        if is_working:
+                            valid.append(ch)
+                if valid:
+                    formatted = processor.format_channel_data(valid, logos_data)
+                    m3u_channels.extend(formatted)
+
+        if m3u_channels:
+            country_files = {}
+            category_files = {}
+            for ch in m3u_channels:
+                country = ch.get("country", "Unknown")
+                country_files.setdefault(country, []).append(ch)
+                for cat in ch.get("categories", ["general"]):
+                    category_files.setdefault(cat, []).append(ch)
+            save_channels(m3u_channels, country_files, category_files, append=True)
+            logger.info(f"Added {len(m3u_channels)} channels from M3U sources")
 
         # === Final Sync & Save ===
+        logger.info("🔄 Final syncing all channels...")
         all_channels = load_split_json(WORKING_CHANNELS_BASE)
         all_channels = remove_duplicates(all_channels)
         all_channels = [add_channel_type(ch) for ch in all_channels]
