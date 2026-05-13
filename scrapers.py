@@ -9,27 +9,29 @@ from concurrent.futures import ThreadPoolExecutor
 from difflib import SequenceMatcher
 
 import aiohttp
+from bs4 import BeautifulSoup   # ← This was missing
 
 from config import (
-    KENYA_BASE_URL, UGANDA_API_URL, SCRAPER_HEADERS, 
-    KENYA_HEADERS, UNWANTED_EXTENSIONS
+    KENYA_BASE_URL, 
+    UGANDA_API_URL, 
+    SCRAPER_HEADERS, 
+    KENYA_HEADERS, 
+    UNWANTED_EXTENSIONS
 )
 from utils import remove_duplicates, normalize_name
 from storage import save_channels
 from checker import FastChecker
 
 
-# ====================== Helper Functions for Kenya Scraper ======================
+# ====================== Kenya Helper Functions ======================
 def get_m3u8_from_page(url_data: Tuple[str, int]) -> List[str]:
-    url, index = url_data
+    url, _ = url_data
     try:
         response = requests.get(url, headers=KENYA_HEADERS, timeout=10)
         m3u8_pattern = r'(https?://[^\s\'"]+\.m3u8)'
         m3u8_links = re.findall(m3u8_pattern, response.text)
-        valid_m3u8_links = [link for link in m3u8_links if 'youtube' not in link.lower()]
-        return valid_m3u8_links
-    except Exception as e:
-        # logging.error(f"Error processing {url}: {e}")  # avoid circular import
+        return [link for link in m3u8_links if 'youtube' not in link.lower()]
+    except Exception:
         return []
 
 
@@ -54,8 +56,8 @@ async def check_m3u8_urls(urls: List[str]) -> Optional[str]:
         for url, is_valid in results:
             if is_valid:
                 return url
-        return None
-# ============================================================================
+    return None
+# =====================================================================
 
 
 async def scrape_kenya_tv_channels(logos_data: List[Dict]) -> List[Dict]:
@@ -103,7 +105,7 @@ async def scrape_kenya_tv_channels(logos_data: List[Dict]) -> List[Dict]:
             logo_url = ""
             matching_logos = [l for l in logos_data if l.get("channel") == channel_id]
             if matching_logos:
-                logo_url = matching_logos[0]["url"]
+                logo_url = matching_logos[0].get("url", "")
             
             channel_data = {
                 "name": channel_name,
@@ -183,7 +185,7 @@ async def fetch_and_process_uganda_channels(session: aiohttp.ClientSession,
         
         for logo_data in ug_logos:
             logo_channel = logo_data.get("channel", "")
-            norm_key = normalize(logo_channel.split('.')[0])
+            norm_key = normalize(logo_channel.split('.')[0] if '.' in logo_channel else logo_channel)
             score = SequenceMatcher(None, norm_inp, norm_key).ratio()
             if score > best_score:
                 best_score = score
