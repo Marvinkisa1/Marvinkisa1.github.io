@@ -70,11 +70,10 @@ async def main():
         logger.info("📁 Loading previously saved channels...")
         existing_channels = load_split_json(WORKING_CHANNELS_BASE)
 
-        # Remove any adult/fake named channels before verifying
+        
         existing_channels = [
             ch for ch in existing_channels
-            if not is_fake_name(ch.get('name', '') or ch.get('display_name', ''))
-            and ch.get('type') != 'adult'
+            if not is_fake_name(ch.get('name', '') or ch.get('name', ''))
         ]
 
         logger.info(f"Found {len(existing_channels)} channels in working files, checking them...")
