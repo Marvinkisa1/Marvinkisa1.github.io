@@ -25,9 +25,9 @@ def is_fake_name(name: str) -> bool:
     # Check fake hints first
     if any(hint.lower() in name_lower for hint in FAKE_HINTS):
         return True
-    # Also optionally check adult keywords directly in the name
-    if any(kw.lower() in name_lower for kw in ADULT_KEYWORDS):
-        return True
+    # # Also optionally check adult keywords directly in the name
+    # if any(kw.lower() in name_lower for kw in ADULT_KEYWORDS):
+    #     return True
     return False
 
 
