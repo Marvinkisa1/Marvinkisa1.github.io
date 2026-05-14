@@ -142,16 +142,24 @@ async def scrape_kenya_tv_channels(logos_data: List[Dict]) -> List[Dict]:
         return []
 
 
-async def fetch_and_process_uganda_channels(session: aiohttp.ClientSession,
-                                          checker: FastChecker,
-                                          logos_data: List[Dict]) -> int:
+
+async def fetch_and_process_uganda_channels(
+    session: aiohttp.ClientSession,
+    checker: FastChecker,
+    logos_data: List[Dict]
+) -> List[Dict]:
+    """
+    Fetch, check, and return working Uganda channels.
+    Does NOT save them – the caller will handle saving after collecting all sources.
+    """
+
     def normalize(name: str) -> str:
         name = name.lower()
         name = re.sub(r'[^a-z0-9]', '', name)
         return name
-    
+
     logger.info("🇺🇬 Fetching Uganda channels from API...")
-    
+
     try:
         async with session.get(UGANDA_API_URL) as response:
             if response.status == 200:
@@ -159,19 +167,16 @@ async def fetch_and_process_uganda_channels(session: aiohttp.ClientSession,
                 posts = data.get("posts", [])
             else:
                 logger.error(f"Failed to fetch Uganda API: {response.status}")
-                return 0
+                return []
     except Exception as e:
         logger.error(f"Error fetching Uganda API: {e}")
-        return 0
+        return []
 
     total_posts = len(posts)
     logger.info(f"🌍 Received {total_posts} posts, checking each stream...")
-    
+
     ug_logos = [l for l in logos_data if str(l.get("channel", "")).lower().endswith('.ug')]
     channels = []
-    country_files = {"UG": []}
-    category_files = {}
-    
     checked = 0
     working_count = 0
 
@@ -186,12 +191,12 @@ async def fetch_and_process_uganda_channels(session: aiohttp.ClientSession,
         if any(url.lower().endswith(ext) for ext in UNWANTED_EXTENSIONS):
             return None
         category = post.get("category_name", "").lower().strip() or "entertainment"
-        
+
         logo = ""
         ch_id = None
         best_score = 0
         norm_inp = normalize(name)
-        
+
         for logo_data in ug_logos:
             logo_channel = logo_data.get("channel", "")
             norm_key = normalize(logo_channel.split('.')[0] if '.' in logo_channel else logo_channel)
@@ -201,11 +206,11 @@ async def fetch_and_process_uganda_channels(session: aiohttp.ClientSession,
                 if best_score >= 0.8:
                     logo = logo_data.get("url", "")
                     ch_id = logo_data.get('channel')
-        
+
         if not ch_id:
             base_id = norm_inp
             ch_id = f"{base_id}.ug"
-        
+
         channel = {
             "name": name,
             "id": ch_id,
@@ -214,33 +219,25 @@ async def fetch_and_process_uganda_channels(session: aiohttp.ClientSession,
             "categories": [category],
             "country": "UG"
         }
-        
+
         checked_url, is_working, reason = await checker.check_single_url(session, url)
         checked += 1
         if checked % 20 == 0 or checked == total_posts:
             logger.info(f"   ...checked {checked}/{total_posts} Uganda streams")
-        
+
         if is_working:
             working_count += 1
             return channel
         return None
-    
+
     tasks = [process_post(post) for post in posts]
     results = await asyncio.gather(*tasks, return_exceptions=True)
-    
+
     for result in results:
         if isinstance(result, Exception):
             continue
-        elif result:
+        if result:
             channels.append(result)
-            country_files["UG"].append(result)
-            cat = result["categories"][0]
-            category_files.setdefault(cat, []).append(result)
-    
-    if channels:
-        save_channels(channels, country_files, category_files, append=True)
-        logger.info(f"✅ Added {len(channels)} working Uganda channels (checked {checked}/{total_posts})")
-    else:
-        logger.warning("⚠️ No working Uganda channels found")
-    
-    return len(channels)
+
+    logger.info(f"✅ Found {len(channels)} working Uganda channels (checked {checked}/{total_posts})")
+    return channels

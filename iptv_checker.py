@@ -1,14 +1,13 @@
 import asyncio
 import sys
 import logging
-from datetime import date, timedelta
 
 import aiohttp
 
 from logger import setup_logger
 from config import *
-from utils import remove_duplicates, add_channel_type, is_fake_name   # CHANGED: added is_fake_name
-from storage import load_split_json, save_split_json, generate_categories_summary, delete_split_files, save_channels
+from utils import remove_duplicates, add_channel_type, is_fake_name
+from storage import load_split_json, save_split_json, generate_categories_summary, save_channels
 from checker import FastChecker
 from processor import M3UProcessor
 from scrapers import scrape_kenya_tv_channels, fetch_and_process_uganda_channels
@@ -16,6 +15,34 @@ from scrapers import scrape_kenya_tv_channels, fetch_and_process_uganda_channels
 # Initialize root logger so all modules inherit the same handlers
 setup_logger()
 logger = logging.getLogger(__name__)
+
+
+async def verify_existing_channels(session, checker, channels):
+    """
+    Check a list of already‑saved channels and return only the ones that still respond.
+    """
+    if not channels:
+        return []
+
+    tasks = []
+    for ch in channels:
+        url = ch.get('url')
+        if not url:
+            continue
+        tasks.append(checker.check_single_url(session, url))
+
+    results = await asyncio.gather(*tasks, return_exceptions=True)
+
+    working = []
+    for ch, result in zip(channels, results):
+        if isinstance(result, Exception):
+            continue
+        url, is_working, reason = result
+        if is_working:
+            working.append(ch)
+
+    logger.info(f"Verified existing channels: {len(working)}/{len(channels)} still working")
+    return working
 
 
 async def main():
@@ -39,31 +66,39 @@ async def main():
         except Exception as e:
             logger.warning(f"Could not load logos: {e}")
 
-        # === Step 0: Daily M3U URLs ===
-        logger.info("📡 Scraping daily M3U URLs...")
+        # ===================== STEP 0: Load & verify previously saved channels =====================
+        logger.info("📁 Loading previously saved channels...")
+        existing_channels = load_split_json(WORKING_CHANNELS_BASE)
+
+        # Remove any adult/fake named channels before verifying
+        existing_channels = [
+            ch for ch in existing_channels
+            if not is_fake_name(ch.get('name', '') or ch.get('display_name', ''))
+            and ch.get('type') != 'adult'
+        ]
+
+        logger.info(f"Found {len(existing_channels)} channels in working files, checking them...")
+        verified_old = await verify_existing_channels(session, checker, existing_channels)
+        logger.info(f"✅ {len(verified_old)} previously saved channels are still working")
+
+        # ===================== STEP 1: Scrape new sources =====================
+
+        # --- Kenya ---
+        logger.info("🇰🇪 Scraping Kenya channels...")
+        kenya_channels = await scrape_kenya_tv_channels(logos_data)
+        logger.info(f"✅ Kenya: {len(kenya_channels)} new channels")
+
+        # --- Uganda ---
+        logger.info("🇺🇬 Fetching Uganda channels...")
+        ug_channels = await fetch_and_process_uganda_channels(session, checker, logos_data)
+        logger.info(f"✅ Uganda: {len(ug_channels)} new channels")
+
+        # --- M3U Playlists ---
+        logger.info("🎬 Processing M3U playlists...")
         global M3U_URLS
         M3U_URLS = M3U_URLS + ADDITIONAL_M3U
         logger.info(f"Total M3U URLs: {len(M3U_URLS)}")
 
-        # === Step 1: Kenya channels ===
-        logger.info("🇰🇪 Scraping Kenya channels...")
-        kenya_channels = await scrape_kenya_tv_channels(logos_data)
-        if kenya_channels:
-            country_files = {"KE": kenya_channels}
-            category_files = {}
-            for ch in kenya_channels:
-                for cat in ch.get("categories", ["general"]):
-                    category_files.setdefault(cat, []).append(ch)
-            save_channels(kenya_channels, country_files, category_files, append=True)
-            logger.info(f"Added {len(kenya_channels)} Kenya channels")
-
-        # === Step 1.5: Uganda channels ===
-        logger.info("🇺🇬 Fetching Uganda channels...")
-        ug_count = await fetch_and_process_uganda_channels(session, checker, logos_data)
-        logger.info(f"Uganda step finished – {ug_count} channels added.")
-
-        # === Step 2: Process M3U Playlists ===
-        logger.info("🎬 Processing M3U playlists...")
         m3u_channels = []
         for m3u_url in M3U_URLS:
             if not m3u_url:
@@ -79,7 +114,7 @@ async def main():
                 logger.info("  ↳ No URLs found")
                 continue
 
-            # --- NEW: Filter out channels with fake/adult names BEFORE checking ---
+            # Remove fake/adult names before checking
             candidates = [
                 ch for ch in candidates
                 if not is_fake_name(ch.get('name', '') or ch.get('display_name', ''))
@@ -87,17 +122,13 @@ async def main():
             if not candidates:
                 logger.info("  ↳ No URLs remaining after name filter")
                 continue
-            # -------------------------------------------------------------------
 
             total = len(candidates)
             logger.info(f"  ↳ Checking {total} streams (concurrent limit: {MAX_CONCURRENT})...")
 
-            # Launch all checks concurrently
             tasks = [checker.check_single_url(session, ch['url']) for ch in candidates]
-
-            # Track progress and valid channels
-            checked = 0
             valid = []
+            checked = 0
 
             async def check_with_progress(ch, coro):
                 nonlocal checked, valid
@@ -112,7 +143,6 @@ async def main():
                 url, is_working, reason = result
                 if is_working:
                     valid.append(ch)
-                return result
 
             await asyncio.gather(*[
                 check_with_progress(ch, task) for ch, task in zip(candidates, tasks)
@@ -125,30 +155,36 @@ async def main():
             else:
                 logger.info("  ⚠️ No working streams found")
 
-        if m3u_channels:
-            country_files = {}
-            category_files = {}
-            for ch in m3u_channels:
-                country = ch.get("country", "Unknown")
-                country_files.setdefault(country, []).append(ch)
-                for cat in ch.get("categories", ["general"]):
-                    category_files.setdefault(cat, []).append(ch)
-            save_channels(m3u_channels, country_files, category_files, append=True)
-            logger.info(f"Added {len(m3u_channels)} channels from M3U sources")
+        logger.info(f"✅ M3U: {len(m3u_channels)} new channels")
 
-        # === Final Sync & Save ===
-        logger.info("🔄 Final syncing all channels...")
-        all_channels = load_split_json(WORKING_CHANNELS_BASE)
+        # ===================== STEP 2: Combine all working channels =====================
+        all_channels = verified_old + kenya_channels + ug_channels + m3u_channels
+        logger.info(f"🔀 Combined raw total: {len(all_channels)} channels")
+
+        # Remove duplicates and add type info
         all_channels = remove_duplicates(all_channels)
         all_channels = [add_channel_type(ch) for ch in all_channels]
 
-        # --- CHANGED: Remove any channel that still got tagged as "adult" ---
+        # Final safety filter – drop any adult channels
         all_channels = [ch for ch in all_channels if ch.get("type") != "adult"]
 
-        save_split_json(WORKING_CHANNELS_BASE, all_channels)
+        # ===================== STEP 3: Build country/category breakdown =====================
+        country_files = {}
+        category_files = {}
+        for ch in all_channels:
+            country = ch.get("country", "Unknown")
+            country_files.setdefault(country, []).append(ch)
+            for cat in ch.get("categories", ["general"]):
+                category_files.setdefault(cat, []).append(ch)
+
+        # ===================== STEP 4: Overwrite all saved files with the fresh list =====================
+        logger.info("💾 Replacing old channel files with fresh data...")
+        save_channels(all_channels, country_files, category_files, append=False)
+
+        # Generate categories summary (also done inside save_channels, but safe)
         generate_categories_summary(all_channels)
 
-        logger.info(f"✅ Process completed! Total channels: {len(all_channels)}")
+        logger.info(f"✅ Process completed! Total live channels: {len(all_channels)}")
 
 
 if __name__ == "__main__":
