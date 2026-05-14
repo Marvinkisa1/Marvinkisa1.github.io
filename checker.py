@@ -22,7 +22,7 @@ class FastChecker:
         return any(lower.endswith(ext) for ext in UNWANTED_EXTENSIONS)
 
     async def check_single_url(self, session: aiohttp.ClientSession, url: str) -> Tuple[str, bool, Optional[str]]:
-        async with self.semaphore:  # Ensures at most MAX_CONCURRENT simultaneous checks
+        async with self.semaphore:  # Limits concurrent checks to MAX_CONCURRENT
             if url in self.working_cache:
                 return url, True, "Cached"
             if url in self.failed_cache:

@@ -9,18 +9,21 @@ from concurrent.futures import ThreadPoolExecutor
 from difflib import SequenceMatcher
 
 import aiohttp
-from bs4 import BeautifulSoup   # ← This was missing
+from bs4 import BeautifulSoup
 
 from config import (
-    KENYA_BASE_URL, 
-    UGANDA_API_URL, 
-    SCRAPER_HEADERS, 
-    KENYA_HEADERS, 
+    KENYA_BASE_URL,
+    UGANDA_API_URL,
+    SCRAPER_HEADERS,
+    KENYA_HEADERS,
     UNWANTED_EXTENSIONS
 )
 from utils import remove_duplicates, normalize_name
 from storage import save_channels
 from checker import FastChecker
+
+# Use the same logger as the main script by getting the configured logger
+logger = logging.getLogger("iptv_checker")  # Will inherit from root config
 
 
 # ====================== Kenya Helper Functions ======================
@@ -62,11 +65,11 @@ async def check_m3u8_urls(urls: List[str]) -> Optional[str]:
 
 async def scrape_kenya_tv_channels(logos_data: List[Dict]) -> List[Dict]:
     start_time = time.time()
-    logging.info("Starting Kenya TV scrape...")
+    logger.info("Starting Kenya TV scrape...")
     
     try:
         if not KENYA_BASE_URL:
-            logging.error("KENYA_BASE_URL is not set")
+            logger.error("KENYA_BASE_URL is not set")
             return []
         
         response = requests.get(KENYA_BASE_URL, headers=KENYA_HEADERS, timeout=10)
@@ -132,23 +135,23 @@ async def scrape_kenya_tv_channels(logos_data: List[Dict]) -> List[Dict]:
                 channel_data["url"] = valid_url
                 filtered_results.append(channel_data)
         
-        logging.info(f"Found {len(filtered_results)} working Kenya channels in {time.time() - start_time:.2f}s")
+        logger.info(f"Found {len(filtered_results)} working Kenya channels in {time.time() - start_time:.2f}s")
         return remove_duplicates(filtered_results)
     
     except Exception as e:
-        logging.error(f"Error in Kenya TV scrape: {e}")
+        logger.error(f"Error in Kenya TV scrape: {e}")
         return []
 
 
-async def fetch_and_process_uganda_channels(session: aiohttp.ClientSession, 
-                                          checker: FastChecker, 
+async def fetch_and_process_uganda_channels(session: aiohttp.ClientSession,
+                                          checker: FastChecker,
                                           logos_data: List[Dict]) -> int:
     def normalize(name: str) -> str:
         name = name.lower()
         name = re.sub(r'[^a-z0-9]', '', name)
         return name
     
-    logging.info("Starting Uganda channels fetch...")
+    logger.info("🇺🇬 Fetching Uganda channels from API...")
     
     try:
         async with session.get(UGANDA_API_URL) as response:
@@ -156,18 +159,26 @@ async def fetch_and_process_uganda_channels(session: aiohttp.ClientSession,
                 data = await response.json()
                 posts = data.get("posts", [])
             else:
-                logging.error(f"Failed to fetch Uganda API: {response.status}")
+                logger.error(f"Failed to fetch Uganda API: {response.status}")
                 return 0
     except Exception as e:
-        logging.error(f"Error fetching Uganda API: {e}")
+        logger.error(f"Error fetching Uganda API: {e}")
         return 0
+
+    total_posts = len(posts)
+    logger.info(f"🌍 Received {total_posts} posts, checking each stream...")
     
     ug_logos = [l for l in logos_data if str(l.get("channel", "")).lower().endswith('.ug')]
     channels = []
     country_files = {"UG": []}
     category_files = {}
     
+    # Counters for progress
+    checked = 0
+    working_count = 0
+
     async def process_post(post: Dict) -> Optional[Dict]:
+        nonlocal checked, working_count
         name = str(post.get("channel_name", "")).strip()
         if not name:
             return None
@@ -207,7 +218,12 @@ async def fetch_and_process_uganda_channels(session: aiohttp.ClientSession,
         }
         
         checked_url, is_working, reason = await checker.check_single_url(session, url)
+        checked += 1
+        if checked % 20 == 0:
+            logger.info(f"   ...checked {checked}/{total_posts} Uganda streams")
+        
         if is_working:
+            working_count += 1
             return channel
         return None
     
@@ -225,6 +241,8 @@ async def fetch_and_process_uganda_channels(session: aiohttp.ClientSession,
     
     if channels:
         save_channels(channels, country_files, category_files, append=True)
-        logging.info(f"Added {len(channels)} working Uganda channels")
+        logger.info(f"✅ Added {len(channels)} working Uganda channels (checked {checked}/{total_posts})")
+    else:
+        logger.warning("⚠️ No working Uganda channels found")
     
     return len(channels)

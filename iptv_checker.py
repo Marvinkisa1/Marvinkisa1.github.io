@@ -57,7 +57,8 @@ async def main():
 
         # === Step 1.5: Uganda channels ===
         logger.info("🇺🇬 Fetching Uganda channels...")
-        await fetch_and_process_uganda_channels(session, checker, logos_data)
+        ug_count = await fetch_and_process_uganda_channels(session, checker, logos_data)
+        logger.info(f"Uganda step finished – {ug_count} channels added.")
 
         # === Step 2: Process M3U Playlists ===
         logger.info("🎬 Processing M3U playlists...")
