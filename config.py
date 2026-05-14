@@ -51,7 +51,7 @@ ADULT_KEYWORDS = [
 
 FAKE_HINTS = [
     'mycamtv', 'mysuperhot.com', 'qr code', 'scan to watch',
-    'static image', 'pay to watch'
+    'static image', 'pay to watch', 'MYCAMTV'
 ]
 
 # ====================== Headers ======================
