@@ -25,7 +25,6 @@ class M3UProcessor:
         attrs = dict(re.findall(r'(\S+)="([^"]*)"', line))
         name = line.split(',')[-1].strip()
         
-        # Try to extract country code
         country_code = ''
         clean_name = name
         match = re.match(r'^(?:\|([A-Z]{2})\|)|(?:([A-Z]{2})/?)', name)
@@ -44,11 +43,10 @@ class M3UProcessor:
         }
 
     async def fetch_m3u_content(self, session: aiohttp.ClientSession, url: str) -> str | None:
-        """Fetch M3U content from URL"""
         try:
             async with session.get(
-                url, 
-                headers=SCRAPER_HEADERS, 
+                url,
+                headers=SCRAPER_HEADERS,
                 timeout=ClientTimeout(total=INITIAL_TIMEOUT * 2)
             ) as resp:
                 if resp.status == 200:
@@ -59,7 +57,6 @@ class M3UProcessor:
             return None
 
     def _extract_categories(self, group_title: str) -> List[str]:
-        """Extract categories from group-title"""
         if not group_title:
             return ['general']
         parts = [p.strip().lower() for p in group_title.split('/') if p.strip()]
@@ -68,11 +65,9 @@ class M3UProcessor:
         return parts or ['general']
 
     def format_channel_data(self, channels: List[Dict], logos_data: List[Dict]) -> List[Dict]:
-        """Format parsed M3U channels into final structure"""
         formatted_channels = []
         
         for channel in channels:
-            # Generate channel ID
             if channel.get('tvg_id'):
                 channel_id = channel['tvg_id'].lower()
             else:
@@ -82,7 +77,6 @@ class M3UProcessor:
                 country = channel.get('country_code', '')
                 channel_id = f"{base_id}.{country.lower()}" if country else base_id.lower()
 
-            # Find logo
             logo_url = channel.get('tvg_logo', '')
             if not logo_url and logos_data:
                 matching = [l for l in logos_data if l.get("channel") == channel_id]

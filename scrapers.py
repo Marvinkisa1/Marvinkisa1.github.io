@@ -3,7 +3,6 @@ import time
 import requests
 import logging
 import re
-import html
 from typing import List, Dict, Optional, Tuple
 from concurrent.futures import ThreadPoolExecutor
 from difflib import SequenceMatcher
@@ -18,12 +17,12 @@ from config import (
     KENYA_HEADERS,
     UNWANTED_EXTENSIONS
 )
-from utils import remove_duplicates, normalize_name
+from utils import remove_duplicates
 from storage import save_channels
 from checker import FastChecker
 
-# Use the same logger as the main script by getting the configured logger
-logger = logging.getLogger("iptv_checker")  # Will inherit from root config
+# Will inherit handlers from root logger configured in main
+logger = logging.getLogger(__name__)
 
 
 # ====================== Kenya Helper Functions ======================
@@ -173,7 +172,6 @@ async def fetch_and_process_uganda_channels(session: aiohttp.ClientSession,
     country_files = {"UG": []}
     category_files = {}
     
-    # Counters for progress
     checked = 0
     working_count = 0
 
@@ -219,7 +217,7 @@ async def fetch_and_process_uganda_channels(session: aiohttp.ClientSession,
         
         checked_url, is_working, reason = await checker.check_single_url(session, url)
         checked += 1
-        if checked % 20 == 0:
+        if checked % 20 == 0 or checked == total_posts:
             logger.info(f"   ...checked {checked}/{total_posts} Uganda streams")
         
         if is_working:

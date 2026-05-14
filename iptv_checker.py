@@ -1,6 +1,6 @@
 import asyncio
 import sys
-import json
+import logging
 from datetime import date, timedelta
 
 import aiohttp
@@ -13,7 +13,9 @@ from checker import FastChecker
 from processor import M3UProcessor
 from scrapers import scrape_kenya_tv_channels, fetch_and_process_uganda_channels
 
-logger = setup_logger()
+# Initialize root logger so all modules inherit the same handlers
+setup_logger()
+logger = logging.getLogger(__name__)
 
 
 async def main():
@@ -66,34 +68,52 @@ async def main():
         for m3u_url in M3U_URLS:
             if not m3u_url:
                 continue
-            logger.info(f"Processing M3U: {m3u_url}")
+            logger.info(f"📥 Fetching: {m3u_url}")
             content = await processor.fetch_m3u_content(session, m3u_url)
             if not content:
+                logger.warning(f"  ↳ No content")
                 continue
             parsed = processor.parse_m3u(content)
-
-            # Prepare channels that have a URL
             candidates = [ch for ch in parsed if ch.get('url')]
             if not candidates:
+                logger.info("  ↳ No URLs found")
                 continue
 
-            # Launch all checks concurrently – the semaphore inside FastChecker limits parallelism
-            tasks = [checker.check_single_url(session, ch['url']) for ch in candidates]
-            results = await asyncio.gather(*tasks, return_exceptions=True)
+            total = len(candidates)
+            logger.info(f"  ↳ Checking {total} streams (concurrent limit: {MAX_CONCURRENT})...")
 
+            # Launch all checks concurrently
+            tasks = [checker.check_single_url(session, ch['url']) for ch in candidates]
+
+            # Track progress and valid channels
+            checked = 0
             valid = []
-            for ch, result in zip(candidates, results):
-                if isinstance(result, Exception):
-                    logger.debug(f"Error checking {ch.get('name', '?')}: {result}")
-                    continue
+
+            async def check_with_progress(ch, coro):
+                nonlocal checked, valid
+                try:
+                    result = await coro
+                except Exception as e:
+                    logger.debug(f"Error checking {ch.get('name', '?')}: {e}")
+                    result = (ch['url'], False, str(e))
+                checked += 1
+                if checked % M3U_PROGRESS_INTERVAL == 0 or checked == total:
+                    logger.info(f"  🟢 Progress: {checked}/{total} checked")
                 url, is_working, reason = result
                 if is_working:
                     valid.append(ch)
+                return result
+
+            await asyncio.gather(*[
+                check_with_progress(ch, task) for ch, task in zip(candidates, tasks)
+            ])
 
             if valid:
                 formatted = processor.format_channel_data(valid, logos_data)
                 m3u_channels.extend(formatted)
-                logger.info(f"Found {len(valid)} working streams from {m3u_url}")
+                logger.info(f"  ✅ Found {len(valid)} working streams")
+            else:
+                logger.info("  ⚠️ No working streams found")
 
         if m3u_channels:
             country_files = {}

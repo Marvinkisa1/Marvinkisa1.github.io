@@ -60,3 +60,6 @@ SCRAPER_HEADERS = {
 }
 
 KENYA_HEADERS = SCRAPER_HEADERS.copy()
+
+# Progress logging interval
+M3U_PROGRESS_INTERVAL = 100   # log every 100 streams checked
