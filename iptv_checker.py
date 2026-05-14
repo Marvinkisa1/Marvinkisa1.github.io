@@ -7,7 +7,7 @@ import aiohttp
 
 from logger import setup_logger
 from config import *
-from utils import remove_duplicates, add_channel_type
+from utils import remove_duplicates, add_channel_type, is_fake_name   # CHANGED: added is_fake_name
 from storage import load_split_json, save_split_json, generate_categories_summary, delete_split_files, save_channels
 from checker import FastChecker
 from processor import M3UProcessor
@@ -79,6 +79,16 @@ async def main():
                 logger.info("  ↳ No URLs found")
                 continue
 
+            # --- NEW: Filter out channels with fake/adult names BEFORE checking ---
+            candidates = [
+                ch for ch in candidates
+                if not is_fake_name(ch.get('name', '') or ch.get('display_name', ''))
+            ]
+            if not candidates:
+                logger.info("  ↳ No URLs remaining after name filter")
+                continue
+            # -------------------------------------------------------------------
+
             total = len(candidates)
             logger.info(f"  ↳ Checking {total} streams (concurrent limit: {MAX_CONCURRENT})...")
 
@@ -131,6 +141,9 @@ async def main():
         all_channels = load_split_json(WORKING_CHANNELS_BASE)
         all_channels = remove_duplicates(all_channels)
         all_channels = [add_channel_type(ch) for ch in all_channels]
+
+        # --- CHANGED: Remove any channel that still got tagged as "adult" ---
+        all_channels = [ch for ch in all_channels if ch.get("type") != "adult"]
 
         save_split_json(WORKING_CHANNELS_BASE, all_channels)
         generate_categories_summary(all_channels)
