@@ -165,7 +165,7 @@ async def main():
         all_channels = [add_channel_type(ch) for ch in all_channels]
 
         # Final safety filter – drop any adult channels
-        all_channels = [ch for ch in all_channels if ch.get("type") != "adult"]
+        # all_channels = [ch for ch in all_channels if ch.get("type") != "adult"]
 
         # ===================== STEP 3: Build country/category breakdown =====================
         country_files = {}

@@ -16,7 +16,7 @@ def is_useless_stream(content: str) -> bool:
     return any(hint.lower() in text for hint in FAKE_HINTS)
 
 
-# NEW: Function to block channels whose NAME contains fake or adult hints
+
 def is_fake_name(name: str) -> bool:
     """Return True if the channel name/display_name contains any FAKE_HINTS or ADULT_KEYWORDS."""
     if not name:
@@ -25,9 +25,6 @@ def is_fake_name(name: str) -> bool:
     # Check fake hints first
     if any(hint.lower() in name_lower for hint in FAKE_HINTS):
         return True
-    # # Also optionally check adult keywords directly in the name
-    # if any(kw.lower() in name_lower for kw in ADULT_KEYWORDS):
-    #     return True
     return False
 
 
