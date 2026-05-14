@@ -44,10 +44,10 @@
         "type": "all"
     },
     {
-        "name": "O Eastern Feed HD",
-        "id": "OEasternFeedHD.hb",
+        "name": "O Signature (HBO 3) Eastern HD",
+        "id": "OSignatureHBO3EasternHD.hb",
         "logo": "",
-        "url": "https://tvpass.org/live/HBOEast/hd",
+        "url": "https://tvpass.org/live/HBOSignatureEast/hd",
         "categories": [
             "tvpass"
         ],
@@ -55,10 +55,10 @@
         "type": "all"
     },
     {
-        "name": "O Family Eastern Feed HD",
-        "id": "OFamilyEasternFeedHD.hb",
+        "name": "O Comedy HD East SD",
+        "id": "OComedyHDEastSD.hb",
         "logo": "",
-        "url": "https://tvpass.org/live/HBOFamilyEast/hd",
+        "url": "https://tvpass.org/live/HBOComedyEast/sd",
         "categories": [
             "tvpass"
         ],
@@ -66,34 +66,12 @@
         "type": "all"
     },
     {
-        "name": "O 2 Eastern Feed SD",
-        "id": "O2EasternFeedSD.hb",
+        "name": "O Zone HD East SD",
+        "id": "OZoneHDEastSD.hb",
         "logo": "",
-        "url": "https://tvpass.org/live/HBO2East/sd",
+        "url": "https://tvpass.org/live/HBOZoneEast/sd",
         "categories": [
             "tvpass"
-        ],
-        "country": "HB",
-        "type": "all"
-    },
-    {
-        "name": "O 2 Eastern Feed HD",
-        "id": "O2EasternFeedHD.hb",
-        "logo": "",
-        "url": "https://tvpass.org/live/HBO2East/hd",
-        "categories": [
-            "tvpass"
-        ],
-        "country": "HB",
-        "type": "all"
-    },
-    {
-        "name": "CUGO SPORTS",
-        "id": "CUGOSPORTS.hb",
-        "logo": "https://provider-static.plex.tv/e/epg/channels/logos/gracenote/ef631804cdf478bca5ba96eaee4bc241.png",
-        "url": "https://jmp2.uk/plex-5e20b730f2f8d5003d739db7-631a212e82b744e0309aa56e.m3u8",
-        "categories": [
-            "plex-all"
         ],
         "country": "HB",
         "type": "all"
@@ -103,6 +81,17 @@
         "id": "OBoxing.hb",
         "logo": "https://provider-static.plex.tv/epg/cms/production/2205acfa-68f4-4787-a9f5-0fdaa51a1922/HBOBoxing_Logo_Dark_1500x1000.png",
         "url": "https://jmp2.uk/plex-5e20b730f2f8d5003d739db7-69d93d6e8061ebfbca58c328.m3u8",
+        "categories": [
+            "plex-all"
+        ],
+        "country": "HB",
+        "type": "all"
+    },
+    {
+        "name": "CUGO SPORTS",
+        "id": "CUGOSPORTS.hb",
+        "logo": "https://provider-static.plex.tv/e/epg/channels/logos/gracenote/ef631804cdf478bca5ba96eaee4bc241.png",
+        "url": "https://jmp2.uk/plex-5e20b730f2f8d5003d739db7-631a212e82b744e0309aa56e.m3u8",
         "categories": [
             "plex-all"
         ],
@@ -176,10 +165,10 @@
         "type": "all"
     },
     {
-        "name": "O Hits",
-        "id": "OHits.hb",
-        "logo": "https://i.imgur.com/tGSLZWz.png",
-        "url": "https://qp-pldt-live-bpk-02-prod.akamaized.net/bpk-tv/cg_hbohits/default1/index.mpd",
+        "name": "O Signature",
+        "id": "OSignature.hb",
+        "logo": "https://i.imgur.com/3L9QRDw.png",
+        "url": "https://qp-pldt-live-bpk-02-prod.akamaized.net/bpk-tv/cg_hbosign/default/index.mpd",
         "categories": [
             "hilaytv"
         ],
@@ -198,17 +187,6 @@
         "type": "all"
     },
     {
-        "name": "O Signature",
-        "id": "OSignature.hb",
-        "logo": "https://i.imgur.com/3L9QRDw.png",
-        "url": "https://qp-pldt-live-bpk-02-prod.akamaized.net/bpk-tv/cg_hbosign/default/index.mpd",
-        "categories": [
-            "hilaytv"
-        ],
-        "country": "HB",
-        "type": "all"
-    },
-    {
         "name": "O",
         "id": "O.hb",
         "logo": "https://i.imgur.com/6uN52OW.png",
@@ -220,10 +198,21 @@
         "type": "all"
     },
     {
-        "name": "O HITS",
-        "id": "OHITS.hb",
-        "logo": "https://file.garden/aN9J-XbDsxz3RbSu/movies/hbohits.jpg?raw=true",
-        "url": "https://cdnjkt913.transvision.co.id:1000/live/master/4/4028c6856c3db2cc016d054fbf67379f/manifest.mpd",
+        "name": "O Hits",
+        "id": "OHits.hb",
+        "logo": "https://i.imgur.com/tGSLZWz.png",
+        "url": "https://qp-pldt-live-bpk-02-prod.akamaized.net/bpk-tv/cg_hbohits/default1/index.mpd",
+        "categories": [
+            "hilaytv"
+        ],
+        "country": "HB",
+        "type": "all"
+    },
+    {
+        "name": "O Signature",
+        "id": "OSignature.hb",
+        "logo": "https://iptvsystem.my.id/img/hbosig.png",
+        "url": "https://qp-pldt-live-grp-01-prod.akamaized.net/out/u/cg_hbosign.mpd",
         "categories": [
             "hilaytv"
         ],
@@ -264,10 +253,10 @@
         "type": "all"
     },
     {
-        "name": "O Signature",
-        "id": "OSignature.hb",
-        "logo": "https://iptvsystem.my.id/img/hbosig.png",
-        "url": "https://qp-pldt-live-grp-01-prod.akamaized.net/out/u/cg_hbosign.mpd",
+        "name": "O HITS",
+        "id": "OHITS.hb",
+        "logo": "https://file.garden/aN9J-XbDsxz3RbSu/movies/hbohits.jpg?raw=true",
+        "url": "https://cdnjkt913.transvision.co.id:1000/live/master/4/4028c6856c3db2cc016d054fbf67379f/manifest.mpd",
         "categories": [
             "hilaytv"
         ],
