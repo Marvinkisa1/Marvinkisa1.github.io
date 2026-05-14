@@ -25,7 +25,7 @@
         "name": "L Network",
         "id": "LNetwork.nf",
         "logo": "https://s3.aynaott.com/storage/79f1ee920d6931a767ae0030e1c7c12b",
-        "url": "https://tvsen6.aynascope.net/nfl/index.m3u8?e=1778742676&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=a0a8fee416f80c09637cf5b328b9aae6",
+        "url": "https://tvsen6.aynascope.net/nfl/index.m3u8?e=1778753353&u=78be6644-0a65-48ec-81a4-089ac65a2619&token=142442d03b6f4c6476d8101e70191961",
         "categories": [
             "bd"
         ],
@@ -33,10 +33,10 @@
         "type": "all"
     },
     {
-        "name": "L RedZone SD",
-        "id": "LRedZoneSD.nf",
+        "name": "L RedZone HD",
+        "id": "LRedZoneHD.nf",
         "logo": "",
-        "url": "https://tvpass.org/live/NFLRedZone/sd",
+        "url": "https://tvpass.org/live/NFLRedZone/hd",
         "categories": [
             "tvpass"
         ],
@@ -44,12 +44,23 @@
         "type": "all"
     },
     {
-        "name": "L Channel",
-        "id": "LChannel.nf",
-        "logo": "https://images.pluto.tv/channels/5ced7d5df64be98e07ed47b6/colorLogoPNG.png",
-        "url": "https://jmp2.uk/plu-5ced7d5df64be98e07ed47b6.m3u8",
+        "name": "L Network SD",
+        "id": "LNetworkSD.nf",
+        "logo": "",
+        "url": "https://tvpass.org/live/NFLNetwork/sd",
         "categories": [
-            "plutotv-all"
+            "tvpass"
+        ],
+        "country": "NF",
+        "type": "all"
+    },
+    {
+        "name": "L RedZone",
+        "id": "LRedZone.nf",
+        "logo": "",
+        "url": "https://tvpass.org/live/NFLRedZone/sd",
+        "categories": [
+            "tvpass"
         ],
         "country": "NF",
         "type": "all"
