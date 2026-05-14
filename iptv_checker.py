@@ -67,18 +67,32 @@ async def main():
                 continue
             logger.info(f"Processing M3U: {m3u_url}")
             content = await processor.fetch_m3u_content(session, m3u_url)
-            if content:
-                parsed = processor.parse_m3u(content)
-                # Quick validation
-                valid = []
-                for ch in parsed:
-                    if ch.get('url'):
-                        _, is_working, _ = await checker.check_single_url(session, ch['url'])
-                        if is_working:
-                            valid.append(ch)
-                if valid:
-                    formatted = processor.format_channel_data(valid, logos_data)
-                    m3u_channels.extend(formatted)
+            if not content:
+                continue
+            parsed = processor.parse_m3u(content)
+
+            # Prepare channels that have a URL
+            candidates = [ch for ch in parsed if ch.get('url')]
+            if not candidates:
+                continue
+
+            # Launch all checks concurrently – the semaphore inside FastChecker limits parallelism
+            tasks = [checker.check_single_url(session, ch['url']) for ch in candidates]
+            results = await asyncio.gather(*tasks, return_exceptions=True)
+
+            valid = []
+            for ch, result in zip(candidates, results):
+                if isinstance(result, Exception):
+                    logger.debug(f"Error checking {ch.get('name', '?')}: {result}")
+                    continue
+                url, is_working, reason = result
+                if is_working:
+                    valid.append(ch)
+
+            if valid:
+                formatted = processor.format_channel_data(valid, logos_data)
+                m3u_channels.extend(formatted)
+                logger.info(f"Found {len(valid)} working streams from {m3u_url}")
 
         if m3u_channels:
             country_files = {}

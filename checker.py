@@ -19,29 +19,30 @@ class FastChecker:
         if not url:
             return True
         lower = url.lower().split('?')[0]
-        return any(lower.endswith(ext) for ext in UNWANTED_EXTENSIONS)  # UNWANTED_EXTENSIONS from config
+        return any(lower.endswith(ext) for ext in UNWANTED_EXTENSIONS)
 
     async def check_single_url(self, session: aiohttp.ClientSession, url: str) -> Tuple[str, bool, Optional[str]]:
-        if url in self.working_cache:
-            return url, True, "Cached"
-        if url in self.failed_cache:
-            return url, False, self.failed_cache[url]
+        async with self.semaphore:  # Ensures at most MAX_CONCURRENT simultaneous checks
+            if url in self.working_cache:
+                return url, True, "Cached"
+            if url in self.failed_cache:
+                return url, False, self.failed_cache[url]
 
-        for attempt in range(RETRIES + 1):
-            try:
-                timeout = min(INITIAL_TIMEOUT * (attempt + 1), MAX_TIMEOUT)
-                is_working, reason = await self._check_directly(session, url, timeout)
-                if is_working:
-                    self.working_cache[url] = True
-                    return url, True, reason
-                if attempt == RETRIES:
-                    self.failed_cache[url] = reason
-                await asyncio.sleep(0.5 * (attempt + 1))
-            except Exception as e:
-                if attempt == RETRIES:
-                    self.failed_cache[url] = str(e)
-                await asyncio.sleep(0.5 * (attempt + 1))
-        return url, False, self.failed_cache.get(url)
+            for attempt in range(RETRIES + 1):
+                try:
+                    timeout = min(INITIAL_TIMEOUT * (attempt + 1), MAX_TIMEOUT)
+                    is_working, reason = await self._check_directly(session, url, timeout)
+                    if is_working:
+                        self.working_cache[url] = True
+                        return url, True, reason
+                    if attempt == RETRIES:
+                        self.failed_cache[url] = reason
+                    await asyncio.sleep(0.5 * (attempt + 1))
+                except Exception as e:
+                    if attempt == RETRIES:
+                        self.failed_cache[url] = str(e)
+                    await asyncio.sleep(0.5 * (attempt + 1))
+            return url, False, self.failed_cache.get(url)
 
     async def _check_directly(self, session: aiohttp.ClientSession, url: str, timeout: int):
         try:
