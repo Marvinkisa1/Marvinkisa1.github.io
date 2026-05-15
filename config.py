@@ -20,6 +20,12 @@ ADDITIONAL_M3U = [
     'https://xc.adultiptv.net/get.php?username=adultiptv&password=adultiptv&type=m3u',
 ]
 
+# Adult channels source
+ADULT_BASE_URL = "https://adult-tv-channels.click"
+ADULT_SEARCH_URL = f"{ADULT_BASE_URL}/search.json"
+ADULT_REQUEST_DELAY = 1  # seconds between page requests (be gentle)
+
+
 # ====================== File Paths ======================
 WORKING_CHANNELS_BASE = "working_channels"
 CATEGORIES_DIR = "categories"

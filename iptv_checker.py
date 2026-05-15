@@ -11,6 +11,7 @@ from storage import load_split_json, save_split_json, generate_categories_summar
 from checker import FastChecker
 from processor import M3UProcessor
 from scrapers import scrape_kenya_tv_channels, fetch_and_process_uganda_channels
+from adult_scraper import scrape_adult_channels   
 
 # Initialize root logger so all modules inherit the same handlers
 setup_logger()
@@ -99,6 +100,11 @@ async def main():
         ug_channels = await fetch_and_process_uganda_channels(session, checker, logos_data)
         logger.info(f"✅ Uganda: {len(ug_channels)} new channels")
 
+       # --- Adult channels ---
+        logger.info("🔞 Fetching adult channels...")
+        adult_channels = await scrape_adult_channels(session, logos_data)
+        logger.info(f"🔞 Adult: {len(adult_channels)} new channels")
+
         # --- M3U Playlists ---
         logger.info("🎬 Processing M3U playlists...")
         global M3U_URLS
@@ -164,7 +170,7 @@ async def main():
         logger.info(f"✅ M3U: {len(m3u_channels)} new channels")
 
         # ===================== STEP 2: Combine all working channels =====================
-        all_channels = verified_old + kenya_channels + ug_channels + m3u_channels
+        all_channels = verified_old + kenya_channels + ug_channels + m3u_channels + adult_channels
         logger.info(f"🔀 Combined raw total: {len(all_channels)} channels")
 
         # Strong deduplication on the full set

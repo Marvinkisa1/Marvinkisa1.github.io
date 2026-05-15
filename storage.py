@@ -1,6 +1,7 @@
 import os
 import json
 import shutil
+import glob
 from typing import List, Dict
 
 from config import (
@@ -14,44 +15,44 @@ from utils import remove_duplicates, add_channel_type
 
 
 def delete_split_files(base_name: str):
-    """Delete all split files for a base name"""
-    ext = '.json'
-    if os.path.exists(base_name + ext):
-        os.remove(base_name + ext)
-    i = 1
-    while True:
-        part_file = f"{base_name}{i}{ext}"
-        if not os.path.exists(part_file):
-            break
-        os.remove(part_file)
-        i += 1
+    """Delete all split files for a base name (main + all numbered parts)."""
+    # Delete main file: base_name.json
+    main_file = base_name + '.json'
+    if os.path.exists(main_file):
+        os.remove(main_file)
+    
+    # Delete all numbered part files: base_nameN.json for any N
+    # Pattern matches base_name followed by digits and .json
+    pattern = base_name + '*[0-9]*.json'
+    for part_file in glob.glob(pattern):
+        if part_file != main_file:   # avoid double-deleting main if it matched pattern
+            os.remove(part_file)
 
 
 def load_split_json(base_name: str) -> List[Dict]:
     """Load data from split JSON files"""
     data = []
-    ext = '.json'
     
     # Main file
-    if os.path.exists(base_name + ext):
+    main_file = base_name + '.json'
+    if os.path.exists(main_file):
         try:
-            with open(base_name + ext, 'r', encoding='utf-8') as f:
+            with open(main_file, 'r', encoding='utf-8') as f:
                 data.extend(json.load(f))
         except Exception:
             pass
     
-    # Split parts
-    i = 1
-    while True:
-        part_file = f"{base_name}{i}{ext}"
-        if not os.path.exists(part_file):
-            break
+    # All numbered part files
+    pattern = base_name + '*[0-9]*.json'
+    for part_file in sorted(glob.glob(pattern)):
+        if part_file == main_file:
+            continue
         try:
             with open(part_file, 'r', encoding='utf-8') as f:
                 data.extend(json.load(f))
         except Exception:
             pass
-        i += 1
+    
     return data
 
 
@@ -59,7 +60,7 @@ def save_split_json(base_name: str, data: List[Dict]):
     """Save data with splitting if too large"""
     if not data:
         return
-    delete_split_files(base_name)
+    delete_split_files(base_name)   # now deletes ALL old files
     
     if len(data) <= MAX_CHANNELS_PER_FILE:
         with open(base_name + '.json', 'w', encoding='utf-8') as f:
@@ -67,7 +68,8 @@ def save_split_json(base_name: str, data: List[Dict]):
     else:
         for i in range(0, len(data), MAX_CHANNELS_PER_FILE):
             chunk = data[i:i + MAX_CHANNELS_PER_FILE]
-            with open(f"{base_name}{i//MAX_CHANNELS_PER_FILE + 1}.json", 'w', encoding='utf-8') as f:
+            part_num = i // MAX_CHANNELS_PER_FILE + 1
+            with open(f"{base_name}{part_num}.json", 'w', encoding='utf-8') as f:
                 json.dump(chunk, f, indent=4, ensure_ascii=False)
 
 
