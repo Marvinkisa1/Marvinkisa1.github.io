@@ -6,7 +6,7 @@ import aiohttp
 
 from logger import setup_logger
 from config import *
-from utils import remove_duplicates, add_channel_type, is_fake_name
+from utils import remove_duplicates, add_channel_type, is_fake_name, deduplicate_channels
 from storage import load_split_json, save_split_json, generate_categories_summary, save_channels
 from checker import FastChecker
 from processor import M3UProcessor
@@ -70,15 +70,22 @@ async def main():
         logger.info("📁 Loading previously saved channels...")
         existing_channels = load_split_json(WORKING_CHANNELS_BASE)
 
-        
+        # Filter fake names
         existing_channels = [
             ch for ch in existing_channels
             if not is_fake_name(ch.get('name', '') or ch.get('name', ''))
         ]
 
-        logger.info(f"Found {len(existing_channels)} channels in working files, checking them...")
+        # Deduplicate before verification to avoid checking duplicates
+        existing_channels = deduplicate_channels(existing_channels)
+        logger.info(f"After deduplication: {len(existing_channels)} unique channels found in storage")
+
+        logger.info(f"Checking {len(existing_channels)} channels for liveness...")
         verified_old = await verify_existing_channels(session, checker, existing_channels)
-        logger.info(f"✅ {len(verified_old)} previously saved channels are still working")
+
+        # Deduplicate again after verification
+        verified_old = deduplicate_channels(verified_old)
+        logger.info(f"✅ {len(verified_old)} previously saved channels still working (unique)")
 
         # ===================== STEP 1: Scrape new sources =====================
 
@@ -160,12 +167,10 @@ async def main():
         all_channels = verified_old + kenya_channels + ug_channels + m3u_channels
         logger.info(f"🔀 Combined raw total: {len(all_channels)} channels")
 
-        # Remove duplicates and add type info
-        all_channels = remove_duplicates(all_channels)
+        # Strong deduplication on the full set
+        all_channels = deduplicate_channels(all_channels)
         all_channels = [add_channel_type(ch) for ch in all_channels]
-
-        # Final safety filter – drop any adult channels
-        # all_channels = [ch for ch in all_channels if ch.get("type") != "adult"]
+        logger.info(f"After final deduplication: {len(all_channels)} unique channels")
 
         # ===================== STEP 3: Build country/category breakdown =====================
         country_files = {}
