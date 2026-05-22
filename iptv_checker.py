@@ -11,7 +11,9 @@ from storage import load_split_json, save_split_json, generate_categories_summar
 from checker import FastChecker
 from processor import M3UProcessor
 from scrapers import scrape_kenya_tv_channels, fetch_and_process_uganda_channels
-from adult_scraper import scrape_adult_channels   
+from adult_scraper import scrape_adult_channels  
+from world_iptv_scraper import scrape_world_iptv_channels
+from config import ADDITIONAL_M3U
 
 # Initialize root logger so all modules inherit the same handlers
 setup_logger()
@@ -87,6 +89,20 @@ async def main():
         # Deduplicate again after verification
         verified_old = deduplicate_channels(verified_old)
         logger.info(f"✅ {len(verified_old)} previously saved channels still working (unique)")
+
+
+# ===================== STEP 0.5: Get World IPTV URLs =====================
+    logger.info("🌍 Scraping World IPTV sources...")
+    try:
+        world_iptv_urls = scrape_world_iptv_channels()
+        if world_iptv_urls:
+            logger.info(f"✅ Added {len(world_iptv_urls)} URLs from World IPTV scraper")
+            ADDITIONAL_M3U.extend(world_iptv_urls)
+        else:
+            logger.warning("⚠️ No working URLs found from World IPTV scraper")
+    except Exception as e:
+        logger.error(f"❌ World IPTV scraper failed: {e}")
+
 
         # ===================== STEP 1: Scrape new sources =====================
 

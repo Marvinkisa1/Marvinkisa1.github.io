@@ -9,6 +9,16 @@ LOGOS_URL = os.getenv("LOGOS_URL", "https://iptv-org.github.io/api/logos.json")
 KENYA_BASE_URL = os.getenv("KENYA_BASE_URL", "")
 UGANDA_API_URL = "https://apps.moochatplus.net/bash/api/api.php?get_posts&page=1&count=100&api_key=cda11bx8aITlKsXCpNB7yVLnOdEGqg342ZFrQzJRetkSoUMi9w"
 
+
+#world-iptv scrap
+WORLD_IPTV_BASE_URLS = [
+    "https://world-iptv.club/iptv/",
+    "https://ninoiptv.com/home/"
+]
+WORLD_IPTV_LINKS_PER_SITE = 3
+WORLD_IPTV_MAX_TOTAL = 6
+
+
 # M3U Sources
 M3U_URLS = [
     os.getenv("M3U_URL_1", ""),
@@ -17,7 +27,7 @@ M3U_URLS = [
 
 ADDITIONAL_M3U = [
     "https://raw.githubusercontent.com/abusaeeidx/IPTV-Scraper-Zilla/refs/heads/main/combined-playlist.m3u",
-"http://bgdc.live:25461/get.php?username=nmullen144&password=73970570&type=m3u_plus"
+    'https://xc.adultiptv.net/get.php?username=adultiptv&password=adultiptv&type=m3u',
 ]
 
 # Adult channels source
