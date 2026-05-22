@@ -91,17 +91,17 @@ async def main():
         logger.info(f"✅ {len(verified_old)} previously saved channels still working (unique)")
 
 
-# ===================== STEP 0.5: Get World IPTV URLs =====================
-    logger.info("🌍 Scraping World IPTV sources...")
-    try:
-        world_iptv_urls = scrape_world_iptv_channels()
-        if world_iptv_urls:
-            logger.info(f"✅ Added {len(world_iptv_urls)} URLs from World IPTV scraper")
-            ADDITIONAL_M3U.extend(world_iptv_urls)
-        else:
-            logger.warning("⚠️ No working URLs found from World IPTV scraper")
-    except Exception as e:
-        logger.error(f"❌ World IPTV scraper failed: {e}")
+        # ===================== STEP 0.5: World IPTV =====================
+        logger.info("🌍 Scraping World IPTV sources...")
+        try:
+            world_iptv_urls = scrape_world_iptv_channels()
+            if world_iptv_urls:
+                logger.info(f"✅ Added {len(world_iptv_urls)} URLs from World IPTV scraper")
+                ADDITIONAL_M3U.extend(world_iptv_urls)
+            else:
+                logger.warning("⚠️ No working URLs found from World IPTV scraper")
+        except Exception as e:
+            logger.error(f"❌ World IPTV scraper failed: {e}")
 
 
         # ===================== STEP 1: Scrape new sources =====================
