@@ -1,11 +1,13 @@
 import re
 import time
 import logging
-import requests
 import random
 from urllib.parse import urljoin, urlparse
 from collections import deque
 from bs4 import BeautifulSoup
+
+# pip install curl-cffi beautifulsoup4 lxml
+from curl_cffi.requests import Session
 
 logger = logging.getLogger(__name__)
 
@@ -21,24 +23,32 @@ class WorldIPTVScraper:
         self.current_base_url = None
         self.domain = None
         
-        # Better User-Agents
+        # Strong User-Agents
         self.user_agents = [
-            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0 Safari/537.36",
-            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0 Safari/537.36",
-            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0 Safari/537.36",
-            "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0 Safari/537.36",
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
         ]
         
-        self.headers = {
-            "User-Agent": random.choice(self.user_agents),
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-            "Accept-Language": "en-US,en;q=0.9",
-            "Referer": "https://www.google.com/",
-            "Connection": "keep-alive",
-        }
+        self.session = Session(
+            impersonate="chrome",      # Best for Cloudflare in 2026
+            # impersonate="chrome124", # You can also try specific versions
+            verify=False
+        )
         
-        self.session = requests.Session()
-        self.session.headers.update(self.headers)
+        self.session.headers.update({
+            "User-Agent": random.choice(self.user_agents),
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
+            "Accept-Language": "en-US,en;q=0.9",
+            "Accept-Encoding": "gzip, deflate, br",
+            "Sec-Fetch-Site": "none",
+            "Sec-Fetch-Mode": "navigate",
+            "Sec-Fetch-User": "?1",
+            "Sec-Fetch-Dest": "document",
+            "Upgrade-Insecure-Requests": "1",
+            "Cache-Control": "max-age=0",
+            "Referer": "https://www.google.com/",
+        })
         
         # Regex patterns
         self.m3u_pattern = re.compile(r'https?://[^\s"\'<>]+\.(?:m3u|m3u8)(?:\?[^\s"\'<>]*)?', re.IGNORECASE)
@@ -66,26 +76,29 @@ class WorldIPTVScraper:
         self.domain = urlparse(url).netloc
         logger.info(f"Crawling: {url} (domain: {self.domain})")
 
-    def get_page(self, url, timeout=15):
-        """Improved page fetching with retries and 403 handling"""
-        for attempt in range(3):
+    def get_page(self, url, timeout=20):
+        """Improved page fetching with curl_cffi"""
+        for attempt in range(4):
             try:
                 if attempt > 0:
                     self.session.headers.update({"User-Agent": random.choice(self.user_agents)})
+                    time.sleep(random.uniform(2.5, 5.5))
                 
                 response = self.session.get(url, timeout=timeout)
                 
                 if response.status_code == 403:
                     logger.warning(f"403 Forbidden on {url} (attempt {attempt+1})")
-                    time.sleep(2 + attempt * 2)
+                    time.sleep(3 + attempt * 2)
                     continue
                     
-                response.raise_for_status()
-                return response.text
+                if response.status_code == 200:
+                    return response.text
+                
+                logger.warning(f"Status {response.status_code} on {url}")
                 
             except Exception as e:
-                logger.error(f"Attempt {attempt+1}/3 failed for {url}: {str(e)[:100]}")
-                time.sleep(1.5 + attempt)
+                logger.error(f"Attempt {attempt+1}/4 failed for {url}: {str(e)[:100]}")
+                time.sleep(2 + attempt)
         
         return None
 
@@ -97,16 +110,14 @@ class WorldIPTVScraper:
             link = title_tag.find('a', href=True)
             if link:
                 full_url = urljoin(current_url, link['href'])
-                parsed = urlparse(full_url)
-                if parsed.netloc == self.domain and parsed.scheme in ('http', 'https'):
+                if urlparse(full_url).netloc == self.domain:
                     article_links.add(full_url.split('#')[0])
         
         for a in soup.find_all('a', href=True):
             href = a['href'].lower()
             if any(x in href for x in ['/20', '-may-', '-apr-', '-mar-', '-jun-', '-jul-', '-aug-']):
                 full_url = urljoin(current_url, a['href'])
-                parsed = urlparse(full_url)
-                if parsed.netloc == self.domain and parsed.scheme in ('http', 'https'):
+                if urlparse(full_url).netloc == self.domain:
                     article_links.add(full_url.split('#')[0])
         
         return list(article_links)
@@ -119,8 +130,7 @@ class WorldIPTVScraper:
             if not href or href.startswith(('#', 'javascript:')):
                 continue
             full_url = urljoin(current_url, href)
-            parsed = urlparse(full_url)
-            if parsed.netloc == self.domain and parsed.scheme in ('http', 'https'):
+            if urlparse(full_url).netloc == self.domain:
                 internal.add(full_url.split('#')[0])
         return list(internal)
 
@@ -156,8 +166,8 @@ class WorldIPTVScraper:
             resp = self.session.get(url.split('#')[0].split('?')[0], timeout=timeout, stream=True)
             if resp.status_code != 200:
                 return False, f"HTTP {resp.status_code}"
-            content = resp.raw.read(2048).decode('utf-8', errors='ignore').lower()
-            return '#extm3u' in content, "Working (valid playlist)" if '#extm3u' in content else "OK (200)"
+            content = resp.content[:2048].decode('utf-8', errors='ignore').lower()
+            return '#extm3u' in content, "Working"
         except Exception as e:
             return False, f"Error: {str(e)[:60]}"
 
@@ -169,9 +179,8 @@ class WorldIPTVScraper:
             resp = self.session.get(test_url, timeout=timeout)
             if resp.status_code == 200:
                 content = resp.text.lower()
-                if '#extm3u' in content or len(content) > 500:
+                if '#extm3u' in content or len(content) > 400:
                     return True, "Working"
-                return True, "OK (200)"
             return False, f"HTTP {resp.status_code}"
         except Exception as e:
             return False, f"Failed: {str(e)[:60]}"
@@ -179,7 +188,6 @@ class WorldIPTVScraper:
     def crawl_site(self, links_per_site=3, max_working_total=6):
         all_found_working = []
         total_targets_checked = 0
-        pages_crawled_total = 0
         
         for base_url in self.base_urls:
             self.seen_domains = set()
@@ -189,7 +197,6 @@ class WorldIPTVScraper:
             self.set_base_url(base_url)
             visited_pages = set()
             queue = deque([base_url])
-            pages_crawled = 0
             found_working_this_site = []
             
             while queue and len(found_working_this_site) < links_per_site and len(all_found_working) < max_working_total:
@@ -198,23 +205,20 @@ class WorldIPTVScraper:
                     continue
                 
                 visited_pages.add(current_url)
-                pages_crawled += 1
-                pages_crawled_total += 1
                 
                 html = self.get_page(current_url)
                 if not html:
                     continue
 
-                # Extract article links from main pages
+                # Extract article & internal links
                 if current_url == base_url or '/page/' in current_url:
                     article_links = self.get_article_links(html, current_url)
-                    for link in article_links:
+                    for link in article_links[:15]:
                         if link not in visited_pages:
                             queue.append(link)
 
-                # Internal links
                 internal_links = self.get_internal_links(html, current_url)
-                for link in internal_links[:30]:
+                for link in internal_links[:25]:
                     if link not in visited_pages:
                         queue.append(link)
 
@@ -235,22 +239,21 @@ class WorldIPTVScraper:
                         is_working, status = self.is_m3u_working(link)
                         if is_working:
                             entry = {"url": link, "type": "m3u", "status": status, 
-                                     "source": base_url, "page": current_url, 
-                                     "domain": self.get_domain_from_url(link)}
+                                     "source": base_url, "page": current_url}
                             found_working_this_site.append(entry)
                             all_found_working.append(entry)
-                            logger.info(f"✅ WORKING M3U: {link[:80]}")
+                            logger.info(f"✅ WORKING M3U: {link[:90]}")
+                            
                     elif 'get.php' in link_lower:
                         is_working, status = self.is_xtream_working(link)
                         if is_working:
                             entry = {"url": link, "type": "xtream", "status": status, 
-                                     "source": base_url, "page": current_url, 
-                                     "domain": self.get_domain_from_url(link)}
+                                     "source": base_url, "page": current_url}
                             found_working_this_site.append(entry)
                             all_found_working.append(entry)
-                            logger.info(f"✅ WORKING XTREAM: {link[:80]}")
+                            logger.info(f"✅ WORKING XTREAM: {link[:90]}")
                     
-                    time.sleep(0.6)  # Be gentle
+                    time.sleep(random.uniform(0.8, 1.8))
             
             logger.info(f"Site '{base_url}' → {len(found_working_this_site)} working links")
         
@@ -261,7 +264,14 @@ class WorldIPTVScraper:
 def scrape_world_iptv_channels():
     logger.info("🌍 Starting World IPTV Scraper...")
     scraper = WorldIPTVScraper()
-    working_links = scraper.crawl_site(links_per_site=3, max_working_total=6)
+    working_links = scraper.crawl_site(links_per_site=4, max_working_total=8)
     urls = [link['url'] for link in working_links]
     logger.info(f"✅ World IPTV: Found {len(urls)} working URLs")
     return urls
+
+
+# # For testing
+# if __name__ == "__main__":
+#     logging.basicConfig(level=logging.INFO)
+#     urls = scrape_world_iptv_channels()
+#     print("Found URLs:", urls)

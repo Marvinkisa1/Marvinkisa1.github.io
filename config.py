@@ -27,7 +27,7 @@ M3U_URLS = [
 
 ADDITIONAL_M3U = [
     "https://raw.githubusercontent.com/abusaeeidx/IPTV-Scraper-Zilla/refs/heads/main/combined-playlist.m3u",
-    'https://xc.adultiptv.net/get.php?username=adultiptv&password=adultiptv&type=m3u',
+    'https://raw.githubusercontent.com/bugsfreeweb/LiveTVCollector/refs/heads/main/LiveTV/Collection/LiveTV.m3u'
 ]
 
 # Adult channels source
