@@ -31,8 +31,7 @@ class WorldIPTVScraper:
         ]
         
         self.session = Session(
-            impersonate="chrome",      # Best for Cloudflare in 2026
-            # impersonate="chrome124", # You can also try specific versions
+            impersonate="chrome",
             verify=False
         )
         
@@ -185,7 +184,7 @@ class WorldIPTVScraper:
         except Exception as e:
             return False, f"Failed: {str(e)[:60]}"
 
-    def crawl_site(self, links_per_site=3, max_working_total=6):
+    def crawl_site(self, links_per_site=1, max_working_total=6):
         all_found_working = []
         total_targets_checked = 0
         
@@ -264,14 +263,7 @@ class WorldIPTVScraper:
 def scrape_world_iptv_channels():
     logger.info("🌍 Starting World IPTV Scraper...")
     scraper = WorldIPTVScraper()
-    working_links = scraper.crawl_site(links_per_site=4, max_working_total=8)
+    working_links = scraper.crawl_site(links_per_site=1, max_working_total=8)
     urls = [link['url'] for link in working_links]
     logger.info(f"✅ World IPTV: Found {len(urls)} working URLs")
     return urls
-
-
-# # For testing
-# if __name__ == "__main__":
-#     logging.basicConfig(level=logging.INFO)
-#     urls = scrape_world_iptv_channels()
-#     print("Found URLs:", urls)
