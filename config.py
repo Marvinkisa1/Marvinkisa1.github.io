@@ -15,8 +15,8 @@ WORLD_IPTV_BASE_URLS = [
     "https://world-iptv.club/iptv/",
     "https://ninoiptv.com/home/"
 ]
-WORLD_IPTV_LINKS_PER_SITE = 3
-WORLD_IPTV_MAX_TOTAL = 6
+WORLD_IPTV_LINKS_PER_SITE = 1
+WORLD_IPTV_MAX_TOTAL = 2
 
 
 # M3U Sources
@@ -44,11 +44,11 @@ FAILED_CHANNELS_FILE = "failed_channels.json"
 CATEGORIES_SUMMARY_FILE = "categories.json"
 
 # ====================== Settings ======================
-MAX_CONCURRENT = int(os.getenv("MAX_CONCURRENT", 80))
+MAX_CONCURRENT = int(os.getenv("MAX_CONCURRENT", 130))
 INITIAL_TIMEOUT = 25
 MAX_TIMEOUT = 40
 RETRIES = 3
-BATCH_SIZE = 400
+BATCH_SIZE = 600
 BATCH_DELAY = 0.1
 MAX_CHANNELS_PER_FILE = 4000
 MIN_STREAM_SIZE = 100
