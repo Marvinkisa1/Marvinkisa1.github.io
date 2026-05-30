@@ -105,8 +105,11 @@ async def main():
         try:
             world_iptv_urls = scrape_world_iptv_channels()
             if world_iptv_urls:
-                logger.info(f"✅ Added {len(world_iptv_urls)} URLs from World IPTV scraper")
-                ADDITIONAL_M3U.extend(world_iptv_urls)
+                # Filter out M3U URLs that might already be in existing_urls
+                # (Though they're M3U playlist URLs, not stream URLs, so this is just for safety)
+                new_world_urls = [url for url in world_iptv_urls if url not in existing_urls]
+                logger.info(f"✅ Added {len(new_world_urls)} new URLs from World IPTV scraper")
+                ADDITIONAL_M3U.extend(new_world_urls)
             else:
                 logger.warning("⚠️ No working URLs found from World IPTV scraper")
         except Exception as e:
@@ -115,26 +118,20 @@ async def main():
 
         # ===================== STEP 1: Scrape new sources =====================
 
-        # --- Kenya ---
+        # --- Kenya (pass existing_urls to skip already-known channels) ---
         logger.info("🇰🇪 Scraping Kenya channels...")
-        kenya_channels = await scrape_kenya_tv_channels(logos_data)
-        # Filter out channels that already exist
-        kenya_channels = [ch for ch in kenya_channels if ch.get('url') not in existing_urls]
-        logger.info(f"✅ Kenya: {len(kenya_channels)} new channels (after removing existing)")
+        kenya_channels = await scrape_kenya_tv_channels(logos_data, existing_urls)
+        logger.info(f"✅ Kenya: {len(kenya_channels)} new channels")
 
-        # --- Uganda ---
+        # --- Uganda (pass existing_urls to skip already-known channels) ---
         logger.info("🇺🇬 Fetching Uganda channels...")
-        ug_channels = await fetch_and_process_uganda_channels(session, checker, logos_data)
-        # Filter out channels that already exist
-        ug_channels = [ch for ch in ug_channels if ch.get('url') not in existing_urls]
-        logger.info(f"✅ Uganda: {len(ug_channels)} new channels (after removing existing)")
+        ug_channels = await fetch_and_process_uganda_channels(session, checker, logos_data, existing_urls)
+        logger.info(f"✅ Uganda: {len(ug_channels)} new channels")
 
-        # --- Adult channels ---
+        # --- Adult channels (pass existing_urls to skip already-known channels) ---
         logger.info("🔞 Fetching adult channels...")
-        adult_channels = await scrape_adult_channels(session, logos_data)
-        # Filter out channels that already exist
-        adult_channels = [ch for ch in adult_channels if ch.get('url') not in existing_urls]
-        logger.info(f"🔞 Adult: {len(adult_channels)} new channels (after removing existing)")
+        adult_channels = await scrape_adult_channels(session, logos_data, existing_urls)
+        logger.info(f"🔞 Adult: {len(adult_channels)} new channels")
 
         # --- M3U Playlists ---
         logger.info("🎬 Processing M3U playlists...")

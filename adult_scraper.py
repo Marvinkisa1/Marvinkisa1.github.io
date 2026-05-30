@@ -2,6 +2,7 @@ import asyncio
 import logging
 import re
 from urllib.parse import urljoin
+from typing import Set
 import aiohttp
 from aiohttp import ClientTimeout
 
@@ -31,9 +32,10 @@ def extract_m3u8_from_page(html: str) -> str | None:
     return None
 
 
-async def scrape_adult_channels(session: aiohttp.ClientSession, logos_data: list) -> list:
+async def scrape_adult_channels(session: aiohttp.ClientSession, logos_data: list, existing_urls: Set[str] = None) -> list:
     """
     Scrape adult channels from adult-tv-channels.click.
+    Skip checking any channels whose URL is already in existing_urls.
     Returns list of channel dicts with type="adult".
     """
     logger.info("🔞 Scraping adult channels...")
@@ -48,9 +50,13 @@ async def scrape_adult_channels(session: aiohttp.ClientSession, logos_data: list
         return []
 
     total = len(channels_json)
-    logger.info(f"Found {total} adult channel entries, checking each...")
+    logger.info(f"Found {total} adult channel entries")
+    
+    # Pre-filter if we have existing URLs - but we don't know the stream URLs yet
+    # We need to check each page to get the m3u8 URL, then filter
     adult_channels = []
     checked = 0
+    skipped_existing = 0
 
     for ch in channels_json:
         title = ch.get("title", "").strip()
@@ -78,6 +84,14 @@ async def scrape_adult_channels(session: aiohttp.ClientSession, logos_data: list
                 elif not m3u8_url.startswith("http"):
                     m3u8_url = urljoin(full_page_url, m3u8_url)
 
+                # Skip if this URL already exists in verified channels
+                if existing_urls and m3u8_url in existing_urls:
+                    skipped_existing += 1
+                    logger.debug(f"  ⏭️ Skipping existing: {title}")
+                    checked += 1
+                    await asyncio.sleep(ADULT_REQUEST_DELAY)
+                    continue
+
                 # Build channel object
                 channel = {
                     "name": title,
@@ -101,5 +115,7 @@ async def scrape_adult_channels(session: aiohttp.ClientSession, logos_data: list
 
         await asyncio.sleep(ADULT_REQUEST_DELAY)  # be gentle
 
-    logger.info(f"✅ Found {len(adult_channels)} working adult channels (m3u8 extracted)")
+    if skipped_existing > 0:
+        logger.info(f"⏭️ Skipped {skipped_existing} adult channels that already exist")
+    logger.info(f"✅ Found {len(adult_channels)} new adult channels (m3u8 extracted)")
     return remove_duplicates(adult_channels)

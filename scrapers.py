@@ -3,7 +3,7 @@ import time
 import requests
 import logging
 import re
-from typing import List, Dict, Optional, Tuple
+from typing import List, Dict, Optional, Tuple, Set
 from concurrent.futures import ThreadPoolExecutor
 from difflib import SequenceMatcher
 
@@ -62,7 +62,7 @@ async def check_m3u8_urls(urls: List[str]) -> Optional[str]:
 # =====================================================================
 
 
-async def scrape_kenya_tv_channels(logos_data: List[Dict]) -> List[Dict]:
+async def scrape_kenya_tv_channels(logos_data: List[Dict], existing_urls: Set[str] = None) -> List[Dict]:
     start_time = time.time()
     logger.info("Starting Kenya TV scrape...")
     
@@ -121,20 +121,47 @@ async def scrape_kenya_tv_channels(logos_data: List[Dict]) -> List[Dict]:
             results.append(channel_data)
             urls_to_process.append((full_url, i))
         
+        # Extract m3u8 URLs from pages
         with ThreadPoolExecutor(max_workers=5) as executor:
             m3u8_lists = list(executor.map(get_m3u8_from_page, urls_to_process))
         
-        valid_urls = await asyncio.gather(
-            *[check_m3u8_urls(url_list) for url_list in m3u8_lists]
-        )
+        # Filter out URLs that already exist before checking
+        if existing_urls:
+            filtered_m3u8_lists = []
+            filtered_results = []
+            skipped_count = 0
+            
+            for channel_data, url_list in zip(results, m3u8_lists):
+                new_urls = [url for url in url_list if url not in existing_urls]
+                if new_urls:  # Only keep channels that have new URLs to check
+                    filtered_m3u8_lists.append(new_urls)
+                    filtered_results.append(channel_data)
+                else:
+                    skipped_count += 1
+                    logger.debug(f"⏭️ Skipping existing: {channel_data['name']}")
+            
+            if skipped_count > 0:
+                logger.info(f"⏭️ Skipping {skipped_count} Kenya channels with known URLs")
+            
+            results = filtered_results
+            m3u8_lists = filtered_m3u8_lists
         
-        filtered_results = []
-        for channel_data, valid_url in zip(results, valid_urls):
-            if valid_url:
-                channel_data["url"] = valid_url
-                filtered_results.append(channel_data)
+        # Only check channels that have new URLs
+        if m3u8_lists:
+            valid_urls = await asyncio.gather(
+                *[check_m3u8_urls(url_list) for url_list in m3u8_lists]
+            )
+            
+            filtered_results = []
+            for channel_data, valid_url in zip(results, valid_urls):
+                if valid_url:
+                    channel_data["url"] = valid_url
+                    filtered_results.append(channel_data)
+        else:
+            filtered_results = []
+            logger.info("All Kenya channels already exist, skipping checks")
         
-        logger.info(f"Found {len(filtered_results)} working Kenya channels in {time.time() - start_time:.2f}s")
+        logger.info(f"Found {len(filtered_results)} new working Kenya channels in {time.time() - start_time:.2f}s")
         return remove_duplicates(filtered_results)
     
     except Exception as e:
@@ -146,10 +173,12 @@ async def scrape_kenya_tv_channels(logos_data: List[Dict]) -> List[Dict]:
 async def fetch_and_process_uganda_channels(
     session: aiohttp.ClientSession,
     checker: FastChecker,
-    logos_data: List[Dict]
+    logos_data: List[Dict],
+    existing_urls: Set[str] = None
 ) -> List[Dict]:
     """
     Fetch, check, and return working Uganda channels.
+    Skip checking any streams whose URL is already in existing_urls.
     Does NOT save them – the caller will handle saving after collecting all sources.
     """
 
@@ -173,7 +202,22 @@ async def fetch_and_process_uganda_channels(
         return []
 
     total_posts = len(posts)
-    logger.info(f"🌍 Received {total_posts} posts, checking each stream...")
+    logger.info(f"🌍 Received {total_posts} posts")
+    
+    # Pre-filter posts with known URLs BEFORE checking
+    if existing_urls:
+        original_count = len(posts)
+        posts = [post for post in posts if post.get("channel_url") not in existing_urls]
+        skipped = original_count - len(posts)
+        if skipped > 0:
+            logger.info(f"⏭️ Skipping {skipped} Uganda posts with known URLs")
+    
+    if not posts:
+        logger.info("✅ All Uganda channels already exist")
+        return []
+
+    total_posts = len(posts)
+    logger.info(f"Checking {total_posts} new Uganda streams...")
 
     ug_logos = [l for l in logos_data if str(l.get("channel", "")).lower().endswith('.ug')]
     channels = []
@@ -239,5 +283,5 @@ async def fetch_and_process_uganda_channels(
         if result:
             channels.append(result)
 
-    logger.info(f"✅ Found {len(channels)} working Uganda channels (checked {checked}/{total_posts})")
+    logger.info(f"✅ Found {len(channels)} new working Uganda channels (checked {checked}/{total_posts})")
     return channels
