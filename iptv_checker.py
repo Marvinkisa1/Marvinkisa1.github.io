@@ -48,6 +48,11 @@ async def verify_existing_channels(session, checker, channels):
     return working
 
 
+def get_url_set(channels):
+    """Extract a set of URLs from channel list for fast lookup."""
+    return {ch.get('url') for ch in channels if ch.get('url')}
+
+
 async def main():
     logger.info("🚀 Starting IPTV Channel Collection...")
 
@@ -90,6 +95,10 @@ async def main():
         verified_old = deduplicate_channels(verified_old)
         logger.info(f"✅ {len(verified_old)} previously saved channels still working (unique)")
 
+        # Create a set of existing URLs for fast lookup
+        existing_urls = get_url_set(verified_old)
+        logger.info(f"📋 {len(existing_urls)} unique URLs from verified channels")
+
 
         # ===================== STEP 0.5: World IPTV =====================
         logger.info("🌍 Scraping World IPTV sources...")
@@ -109,17 +118,23 @@ async def main():
         # --- Kenya ---
         logger.info("🇰🇪 Scraping Kenya channels...")
         kenya_channels = await scrape_kenya_tv_channels(logos_data)
-        logger.info(f"✅ Kenya: {len(kenya_channels)} new channels")
+        # Filter out channels that already exist
+        kenya_channels = [ch for ch in kenya_channels if ch.get('url') not in existing_urls]
+        logger.info(f"✅ Kenya: {len(kenya_channels)} new channels (after removing existing)")
 
         # --- Uganda ---
         logger.info("🇺🇬 Fetching Uganda channels...")
         ug_channels = await fetch_and_process_uganda_channels(session, checker, logos_data)
-        logger.info(f"✅ Uganda: {len(ug_channels)} new channels")
+        # Filter out channels that already exist
+        ug_channels = [ch for ch in ug_channels if ch.get('url') not in existing_urls]
+        logger.info(f"✅ Uganda: {len(ug_channels)} new channels (after removing existing)")
 
-       # --- Adult channels ---
+        # --- Adult channels ---
         logger.info("🔞 Fetching adult channels...")
         adult_channels = await scrape_adult_channels(session, logos_data)
-        logger.info(f"🔞 Adult: {len(adult_channels)} new channels")
+        # Filter out channels that already exist
+        adult_channels = [ch for ch in adult_channels if ch.get('url') not in existing_urls]
+        logger.info(f"🔞 Adult: {len(adult_channels)} new channels (after removing existing)")
 
         # --- M3U Playlists ---
         logger.info("🎬 Processing M3U playlists...")
@@ -147,12 +162,20 @@ async def main():
                 ch for ch in candidates
                 if not is_fake_name(ch.get('name', '') or ch.get('display_name', ''))
             ]
+            
+            # Filter out URLs that already exist in verified channels
+            original_count = len(candidates)
+            candidates = [ch for ch in candidates if ch.get('url') not in existing_urls]
+            skipped = original_count - len(candidates)
+            if skipped > 0:
+                logger.info(f"  ↳ Skipping {skipped} URLs that already exist in verified channels")
+            
             if not candidates:
-                logger.info("  ↳ No URLs remaining after name filter")
+                logger.info("  ↳ All URLs already exist in verified channels")
                 continue
 
             total = len(candidates)
-            logger.info(f"  ↳ Checking {total} streams (concurrent limit: {MAX_CONCURRENT})...")
+            logger.info(f"  ↳ Checking {total} new streams (concurrent limit: {MAX_CONCURRENT})...")
 
             tasks = [checker.check_single_url(session, ch['url']) for ch in candidates]
             valid = []
@@ -179,9 +202,9 @@ async def main():
             if valid:
                 formatted = processor.format_channel_data(valid, logos_data)
                 m3u_channels.extend(formatted)
-                logger.info(f"  ✅ Found {len(valid)} working streams")
+                logger.info(f"  ✅ Found {len(valid)} working new streams")
             else:
-                logger.info("  ⚠️ No working streams found")
+                logger.info("  ⚠️ No working new streams found")
 
         logger.info(f"✅ M3U: {len(m3u_channels)} new channels")
 
@@ -189,7 +212,7 @@ async def main():
         all_channels = verified_old + kenya_channels + ug_channels + m3u_channels + adult_channels
         logger.info(f"🔀 Combined raw total: {len(all_channels)} channels")
 
-        # Strong deduplication on the full set
+        # Strong deduplication on the full set (belt and suspenders)
         all_channels = deduplicate_channels(all_channels)
         all_channels = [add_channel_type(ch) for ch in all_channels]
         logger.info(f"After final deduplication: {len(all_channels)} unique channels")
