@@ -3,6 +3,7 @@ import json
 import shutil
 import glob
 from typing import List, Dict
+from datetime import datetime
 
 from config import (
     WORKING_CHANNELS_BASE, 
@@ -16,24 +17,26 @@ from utils import remove_duplicates, add_channel_type
 
 def delete_split_files(base_name: str):
     """Delete all split files for a base name (main + all numbered parts)."""
-    # Delete main file: base_name.json
-    main_file = base_name + '.json'
-    if os.path.exists(main_file):
-        os.remove(main_file)
-    
-    # Delete all numbered part files: base_nameN.json for any N
-    # Pattern matches base_name followed by digits and .json
-    pattern = base_name + '*[0-9]*.json'
-    for part_file in glob.glob(pattern):
-        if part_file != main_file:   # avoid double-deleting main if it matched pattern
-            os.remove(part_file)
+    # Delete any existing files matching the pattern
+    pattern = base_name + '*.json'
+    for f in glob.glob(pattern):
+        os.remove(f)
 
 
 def load_split_json(base_name: str) -> List[Dict]:
     """Load data from split JSON files"""
     data = []
     
-    # Main file
+    # Load all numbered files: working_channels1.json, working_channels2.json, ...
+    pattern = base_name + '*[0-9]*.json'
+    for part_file in sorted(glob.glob(pattern)):
+        try:
+            with open(part_file, 'r', encoding='utf-8') as f:
+                data.extend(json.load(f))
+        except Exception:
+            pass
+    
+    # Also try main file if it exists (backward compatibility)
     main_file = base_name + '.json'
     if os.path.exists(main_file):
         try:
@@ -42,33 +45,25 @@ def load_split_json(base_name: str) -> List[Dict]:
         except Exception:
             pass
     
-    # All numbered part files
-    pattern = base_name + '*[0-9]*.json'
-    for part_file in sorted(glob.glob(pattern)):
-        if part_file == main_file:
-            continue
-        try:
-            with open(part_file, 'r', encoding='utf-8') as f:
-                data.extend(json.load(f))
-        except Exception:
-            pass
-    
     return data
 
 
 def save_split_json(base_name: str, data: List[Dict]):
-    """Save data with splitting if too large"""
+    """Save data with splitting — ALWAYS use numbered files (working_channels1.json, etc.)"""
     if not data:
         return
-    delete_split_files(base_name)   # now deletes ALL old files
+    
+    delete_split_files(base_name)
     
     if len(data) <= MAX_CHANNELS_PER_FILE:
-        with open(base_name + '.json', 'w', encoding='utf-8') as f:
+        # Even for small data, save as working_channels1.json for consistency
+        with open(f"{base_name}1.json", 'w', encoding='utf-8') as f:
             json.dump(data, f, indent=4, ensure_ascii=False)
     else:
+        # Split into multiple numbered files
         for i in range(0, len(data), MAX_CHANNELS_PER_FILE):
             chunk = data[i:i + MAX_CHANNELS_PER_FILE]
-            part_num = i // MAX_CHANNELS_PER_FILE + 1
+            part_num = (i // MAX_CHANNELS_PER_FILE) + 1
             with open(f"{base_name}{part_num}.json", 'w', encoding='utf-8') as f:
                 json.dump(chunk, f, indent=4, ensure_ascii=False)
 
@@ -91,15 +86,32 @@ def generate_categories_summary(channels: List[Dict]):
         json.dump(summary, f, indent=4, ensure_ascii=False)
 
 
+def save_last_update_info(total_channels: int, retained_channels: int, new_channels: int, removed_channels: int):
+    """Save update information"""
+    update_info = {
+        "last_update": datetime.now().isoformat(),
+        "total_channels": total_channels,
+        "retained_channels": retained_channels,
+        "new_channels": new_channels,
+        "removed_channels": removed_channels,
+        "status": "success"
+    }
+    
+    try:
+        with open("last_update.json", 'w', encoding='utf-8') as f:
+            json.dump(update_info, f, indent=4, ensure_ascii=False)
+    except Exception as e:
+        print(f"⚠️ Could not save update info: {e}")
+
+
 def save_channels(channels: List[Dict], country_files: Dict = None, category_files: Dict = None, append: bool = False):
-    """Main function to save channels to working + countries + categories"""
+    """Main function to save channels"""
     if country_files is None:
         country_files = {}
     if category_files is None:
         category_files = {}
 
     if not append:
-        # Clear directories
         if os.path.exists(COUNTRIES_DIR):
             shutil.rmtree(COUNTRIES_DIR)
         if os.path.exists(CATEGORIES_DIR):
@@ -111,7 +123,7 @@ def save_channels(channels: List[Dict], country_files: Dict = None, category_fil
     channels = remove_duplicates(channels)
     channels = [add_channel_type(ch) for ch in channels]
 
-    # Save to working_channels
+    # Save to working_channels (now always numbered)
     if append:
         existing = load_split_json(WORKING_CHANNELS_BASE)
         existing = [add_channel_type(ch) for ch in existing]
@@ -128,7 +140,7 @@ def save_channels(channels: List[Dict], country_files: Dict = None, category_fil
         if not safe_name:
             continue
         base_path = os.path.join(COUNTRIES_DIR, safe_name)
-        save_split_json(base_path, [add_channel_type(ch) for ch in remove_duplicates(ch_list)])
+        save_split_json(base_path, remove_duplicates(ch_list))
 
     # Save by category
     for category, ch_list in category_files.items():
@@ -138,7 +150,7 @@ def save_channels(channels: List[Dict], country_files: Dict = None, category_fil
         if not safe_name:
             continue
         base_path = os.path.join(CATEGORIES_DIR, safe_name)
-        save_split_json(base_path, [add_channel_type(ch) for ch in remove_duplicates(ch_list)])
+        save_split_json(base_path, remove_duplicates(ch_list))
 
     # Generate summary
     all_channels = load_split_json(WORKING_CHANNELS_BASE)
