@@ -1,7 +1,4 @@
 import asyncio
-import json
-import os
-import logging
 from typing import Tuple, Optional
 import aiohttp
 from aiohttp import ClientTimeout, TCPConnector
@@ -9,41 +6,14 @@ from aiohttp import ClientTimeout, TCPConnector
 from config import (MAX_CONCURRENT, INITIAL_TIMEOUT, MAX_TIMEOUT, RETRIES, MIN_STREAM_SIZE, UNWANTED_EXTENSIONS)
 from utils import is_useless_stream
 
-logger = logging.getLogger(__name__)
-CACHE_FILE = "working_cache.json"
-
 
 class FastChecker:
     def __init__(self):
-        self.connector = TCPConnector(
-            limit=MAX_CONCURRENT,
-            force_close=True,      # Keep this for faster resource cleanup
-            ssl=False,
-            ttl_dns_cache=600,
-            # keepalive_timeout removed - conflicts with force_close=True
-        )
+        self.connector = TCPConnector(limit=MAX_CONCURRENT, force_close=True, ssl=False)
         self.headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
         self.working_cache = {}
         self.failed_cache = {}
         self.semaphore = asyncio.Semaphore(MAX_CONCURRENT)
-        self.load_cache()
-
-    def load_cache(self):
-        if os.path.exists(CACHE_FILE):
-            try:
-                with open(CACHE_FILE, 'r', encoding='utf-8') as f:
-                    data = json.load(f)
-                    self.working_cache = data.get('working', {})
-                logger.info(f"✅ Loaded {len(self.working_cache)} cached working URLs")
-            except Exception as e:
-                logger.warning(f"Cache load failed: {e}")
-
-    def save_cache(self):
-        try:
-            with open(CACHE_FILE, 'w', encoding='utf-8') as f:
-                json.dump({'working': dict(list(self.working_cache.items())[-40000:])}, f)
-        except Exception as e:
-            logger.warning(f"Cache save failed: {e}")
 
     def has_unwanted_extension(self, url: str) -> bool:
         if not url:
@@ -52,7 +22,7 @@ class FastChecker:
         return any(lower.endswith(ext) for ext in UNWANTED_EXTENSIONS)
 
     async def check_single_url(self, session: aiohttp.ClientSession, url: str) -> Tuple[str, bool, Optional[str]]:
-        async with self.semaphore:
+        async with self.semaphore:  # Limits concurrent checks to MAX_CONCURRENT
             if url in self.working_cache:
                 return url, True, "Cached"
             if url in self.failed_cache:
@@ -64,16 +34,14 @@ class FastChecker:
                     is_working, reason = await self._check_directly(session, url, timeout)
                     if is_working:
                         self.working_cache[url] = True
-                        if len(self.working_cache) % 1000 == 0:
-                            self.save_cache()
                         return url, True, reason
                     if attempt == RETRIES:
                         self.failed_cache[url] = reason
-                    await asyncio.sleep(0.2 * (attempt + 1))
+                    await asyncio.sleep(0.5 * (attempt + 1))
                 except Exception as e:
                     if attempt == RETRIES:
-                        self.failed_cache[url] = str(e)[:80]
-                    await asyncio.sleep(0.2 * (attempt + 1))
+                        self.failed_cache[url] = str(e)
+                    await asyncio.sleep(0.5 * (attempt + 1))
             return url, False, self.failed_cache.get(url)
 
     async def _check_directly(self, session: aiohttp.ClientSession, url: str, timeout: int):
@@ -87,24 +55,15 @@ class FastChecker:
                 text = chunk.decode('utf-8', errors='ignore')
 
                 if is_useless_stream(text):
-                    return False, "Fake Stream"
+                    return False, "MyCamTV / Fake Stream"
+
                 if len(chunk) < MIN_STREAM_SIZE and '#EXT' not in text:
                     return False, "Too small"
+
                 if any(x in text for x in ['#EXTINF', '#EXT-X-STREAM-INF', '.ts']):
-                    return True, "Valid"
+                    return True, "Valid Stream"
                 return True, "OK"
         except asyncio.TimeoutError:
             return False, "Timeout"
         except Exception as e:
-            return False, str(e)[:80]
-
-    def get_cache_stats(self):
-        return {
-            'working_cached': len(self.working_cache),
-            'failed_cached': len(self.failed_cache)
-        }
-
-    def clear_cache(self):
-        self.save_cache()
-        self.working_cache.clear()
-        self.failed_cache.clear()
+            return False, str(e)

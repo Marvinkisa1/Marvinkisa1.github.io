@@ -1,16 +1,13 @@
 import asyncio
 import sys
 import logging
-import time
-import json
-from datetime import datetime
 
 import aiohttp
 
 from logger import setup_logger
 from config import *
 from utils import remove_duplicates, add_channel_type, is_fake_name, deduplicate_channels
-from storage import load_split_json, save_split_json, generate_categories_summary, save_channels, save_last_update_info
+from storage import load_split_json, save_split_json, generate_categories_summary, save_channels
 from checker import FastChecker
 from processor import M3UProcessor
 from scrapers import scrape_kenya_tv_channels, fetch_and_process_uganda_channels
@@ -18,186 +15,206 @@ from adult_scraper import scrape_adult_channels
 from world_iptv_scraper import scrape_world_iptv_channels
 from config import ADDITIONAL_M3U
 
-# Initialize root logger
+# Initialize root logger so all modules inherit the same handlers
 setup_logger()
 logger = logging.getLogger(__name__)
 
-start_time = time.time()
 
+async def verify_existing_channels(session, checker, channels):
+    """
+    Check a list of already‑saved channels and return only the ones that still respond.
+    """
+    if not channels:
+        return []
 
-def log_elapsed_time(step_name: str):
-    elapsed = time.time() - start_time
-    logger.info(f"⏱️ {step_name} completed in {elapsed:.1f}s")
+    tasks = []
+    for ch in channels:
+        url = ch.get('url')
+        if not url:
+            continue
+        tasks.append(checker.check_single_url(session, url))
+
+    results = await asyncio.gather(*tasks, return_exceptions=True)
+
+    working = []
+    for ch, result in zip(channels, results):
+        if isinstance(result, Exception):
+            continue
+        url, is_working, reason = result
+        if is_working:
+            working.append(ch)
+
+    logger.info(f"Verified existing channels: {len(working)}/{len(channels)} still working")
+    return working
 
 
 def get_url_set(channels):
+    """Extract a set of URLs from channel list for fast lookup."""
     return {ch.get('url') for ch in channels if ch.get('url')}
 
 
-async def ls_concurrently(session, checker, channels):
-    if not channels:
-        return []
-    
-    total = len(channels)
-    valid = []
-    checked = 0
-    
-    logger.info(f"⚡ Checking {total:,} candidates (batch size: {BATCH_SIZE})...")
-    
-    for i in range(0, total, BATCH_SIZE):
-        batch = channels[i:i + BATCH_SIZE]
-        batch_num = i // BATCH_SIZE + 1
-        
-        tasks = [checker.check_single_url(session, ch.get('url')) for ch in batch if ch.get('url')]
-        
-        try:
-            results = await asyncio.gather(*tasks, return_exceptions=True)
-            
-            for ch, result in zip(batch, results):
-                checked += 1
-                if isinstance(result, Exception) or not (isinstance(result, tuple) and len(result) >= 2):
-                    continue
-                if result[1]:  # is_working
-                    valid.append(ch)
-        except Exception as e:
-            logger.error(f"Batch {batch_num} error: {e}")
-        
-        progress = (checked / total) * 100
-        logger.info(f"  ✅ Batch {batch_num}: {len(valid):,} working ({progress:.1f}%)")
-        
-        if hasattr(checker, 'get_cache_stats'):
-            stats = checker.get_cache_stats()
-            logger.debug(f"  📊 Cache → Working: {stats['working_cached']} | Failed: {stats['failed_cached']}")
-        
-        await asyncio.sleep(BATCH_DELAY)
-    
-    return valid
-
-
 async def main():
-    logger.info("🚀 Starting IPTV Channel Collection (HIGH SPEED MODE)...")
-    logger.info(f"⚡ Max concurrent: {MAX_CONCURRENT} | Batch: {BATCH_SIZE} | Timeout: {URL_CHECK_TIMEOUT}s | Retries: {RETRIES}")
+    logger.info("🚀 Starting IPTV Channel Collection...")
 
     checker = FastChecker()
     processor = M3UProcessor()
 
     async with aiohttp.ClientSession(
         connector=checker.connector,
-        headers=checker.headers,
-        timeout=aiohttp.ClientTimeout(total=URL_CHECK_TIMEOUT + 3),
-        trust_env=True
+        headers=checker.headers
     ) as session:
 
-        # ===================== STEP 1: Load existing + cache =====================
-        logger.info("📁 Loading previously saved channels...")
-        existing_channels = load_split_json(WORKING_CHANNELS_BASE)
-        
-        existing_channels = [ch for ch in existing_channels if not is_fake_name(ch.get('name', ''))]
-        existing_channels = deduplicate_channels(existing_channels)
-        existing_urls = get_url_set(existing_channels)
-        
-        logger.info(f"📋 Loaded {len(existing_channels):,} channels ({len(existing_urls):,} unique URLs)")
-        log_elapsed_time("Loading existing channels")
-
-        # ===================== STEP 2: Load logos =====================
+        # Load logos
         logos_data = []
         try:
-            async with session.get(LOGOS_URL, timeout=15) as resp:
+            async with session.get(LOGOS_URL, timeout=40) as resp:
                 if resp.status == 200:
-                    logos_data = await resp.json(content_type=None)
+                    logos_data = await resp.json()
             logger.info(f"✅ Loaded {len(logos_data)} logos")
         except Exception as e:
-            logger.warning(f"⚠️ Logos failed: {e}")
-        log_elapsed_time("Loading logos")
+            logger.warning(f"Could not load logos: {e}")
 
-        # ===================== STEP 3: World IPTV =====================
+        # ===================== STEP 0: Load & verify previously saved channels =====================
+        logger.info("📁 Loading previously saved channels...")
+        existing_channels = load_split_json(WORKING_CHANNELS_BASE)
+
+        # Filter fake names
+        existing_channels = [
+            ch for ch in existing_channels
+            if not is_fake_name(ch.get('name', '') or ch.get('name', ''))
+        ]
+
+        # Deduplicate before verification to avoid checking duplicates
+        existing_channels = deduplicate_channels(existing_channels)
+        logger.info(f"After deduplication: {len(existing_channels)} unique channels found in storage")
+
+        logger.info(f"Checking {len(existing_channels)} channels for liveness...")
+        verified_old = await verify_existing_channels(session, checker, existing_channels)
+
+        # Deduplicate again after verification
+        verified_old = deduplicate_channels(verified_old)
+        logger.info(f"✅ {len(verified_old)} previously saved channels still working (unique)")
+
+        # Create a set of existing URLs for fast lookup
+        existing_urls = get_url_set(verified_old)
+        logger.info(f"📋 {len(existing_urls)} unique URLs from verified channels")
+
+
+        # ===================== STEP 0.5: World IPTV =====================
         logger.info("🌍 Scraping World IPTV sources...")
         try:
             world_iptv_urls = scrape_world_iptv_channels()
             if world_iptv_urls:
-                new_urls = [u for u in world_iptv_urls if u not in ADDITIONAL_M3U]
-                ADDITIONAL_M3U.extend(new_urls)
-                logger.info(f"✅ Added {len(new_urls)} M3U sources")
+                # Filter out M3U URLs that might already be in existing_urls
+                # (Though they're M3U playlist URLs, not stream URLs, so this is just for safety)
+                new_world_urls = [url for url in world_iptv_urls if url not in existing_urls]
+                logger.info(f"✅ Added {len(new_world_urls)} new URLs from World IPTV scraper")
+                ADDITIONAL_M3U.extend(new_world_urls)
+            else:
+                logger.warning("⚠️ No working URLs found from World IPTV scraper")
         except Exception as e:
-            logger.error(f"World IPTV error: {e}")
-        log_elapsed_time("World IPTV scraping")
+            logger.error(f"❌ World IPTV scraper failed: {e}")
 
-        # ===================== STEP 4: Regional scrapers =====================
+
+        # ===================== STEP 1: Scrape new sources =====================
+
+        # --- Kenya (pass existing_urls to skip already-known channels) ---
+        logger.info("🇰🇪 Scraping Kenya channels...")
         kenya_channels = await scrape_kenya_tv_channels(logos_data, existing_urls)
-        logger.info(f"🇰🇪 Kenya: {len(kenya_channels)} new")
-        log_elapsed_time("Kenya")
+        logger.info(f"✅ Kenya: {len(kenya_channels)} new channels")
 
+        # --- Uganda (pass existing_urls to skip already-known channels) ---
+        logger.info("🇺🇬 Fetching Uganda channels...")
         ug_channels = await fetch_and_process_uganda_channels(session, checker, logos_data, existing_urls)
-        logger.info(f"🇺🇬 Uganda: {len(ug_channels)} new")
-        log_elapsed_time("Uganda")
+        logger.info(f"✅ Uganda: {len(ug_channels)} new channels")
 
+        # --- Adult channels (pass existing_urls to skip already-known channels) ---
+        logger.info("🔞 Fetching adult channels...")
         adult_channels = await scrape_adult_channels(session, logos_data, existing_urls)
-        logger.info(f"🔞 Adult: {len(adult_channels)} new")
-        log_elapsed_time("Adult")
+        logger.info(f"🔞 Adult: {len(adult_channels)} new channels")
 
-        # ===================== STEP 5: M3U Playlists =====================
+        # --- M3U Playlists ---
         logger.info("🎬 Processing M3U playlists...")
         global M3U_URLS
-        M3U_URLS = list(dict.fromkeys(M3U_URLS + ADDITIONAL_M3U))  # dedup
-        M3U_URLS = [url for url in M3U_URLS if url]
-
-        all_m3u_candidates = []
-        
-        async def fetch_and_parse_m3u(url):
-            try:
-                logger.info(f"📥 Fetching {url}")
-                content = await processor.fetch_m3u_content(session, url)
-                if not content:
-                    return []
-                parsed = processor.parse_m3u(content)
-                candidates = [
-                    ch for ch in parsed 
-                    if ch.get('url') 
-                    and not is_fake_name(ch.get('name', '') or ch.get('display_name', ''))
-                    and ch.get('url') not in existing_urls
-                ]
-                logger.info(f"  📥 {url}: {len(candidates)} candidates")
-                return candidates
-            except Exception as e:
-                logger.warning(f"Error {url}: {e}")
-                return []
-
-        m3u_results = await asyncio.gather(*[fetch_and_parse_m3u(u) for u in M3U_URLS])
-        for res in m3u_results:
-            all_m3u_candidates.extend(res)
-
-        all_m3u_candidates = deduplicate_channels(all_m3u_candidates)
-        logger.info(f"🎯 {len(all_m3u_candidates):,} M3U candidates to verify")
+        M3U_URLS = M3U_URLS + ADDITIONAL_M3U
+        logger.info(f"Total M3U URLs: {len(M3U_URLS)}")
 
         m3u_channels = []
-        if all_m3u_candidates:
-            working_m3u = await ls_concurrently(session, checker, all_m3u_candidates)
-            if working_m3u:
-                m3u_channels = processor.format_channel_data(working_m3u, logos_data)
-                logger.info(f"✅ M3U: {len(m3u_channels)} working")
-        log_elapsed_time("M3U processing")
+        for m3u_url in M3U_URLS:
+            if not m3u_url:
+                continue
+            logger.info(f"📥 Fetching: {m3u_url}")
+            content = await processor.fetch_m3u_content(session, m3u_url)
+            if not content:
+                logger.warning(f"  ↳ No content")
+                continue
+            parsed = processor.parse_m3u(content)
+            candidates = [ch for ch in parsed if ch.get('url')]
+            if not candidates:
+                logger.info("  ↳ No URLs found")
+                continue
 
-        checker.clear_cache()
+            # Remove fake/adult names before checking
+            candidates = [
+                ch for ch in candidates
+                if not is_fake_name(ch.get('name', '') or ch.get('display_name', ''))
+            ]
+            
+            # Filter out URLs that already exist in verified channels
+            original_count = len(candidates)
+            candidates = [ch for ch in candidates if ch.get('url') not in existing_urls]
+            skipped = original_count - len(candidates)
+            if skipped > 0:
+                logger.info(f"  ↳ Skipping {skipped} URLs that already exist in verified channels")
+            
+            if not candidates:
+                logger.info("  ↳ All URLs already exist in verified channels")
+                continue
 
-        # ===================== STEP 6: Smart Combine =====================
-        logger.info("🔄 Smart retention combine...")
-        new_channels = kenya_channels + ug_channels + m3u_channels + adult_channels
-        new_urls = get_url_set(new_channels)
+            total = len(candidates)
+            logger.info(f"  ↳ Checking {total} new streams (concurrent limit: {MAX_CONCURRENT})...")
 
-        retained_existing = [ch for ch in existing_channels if ch.get('url') in new_urls]
-        removed_count = len(existing_channels) - len(retained_existing)
+            tasks = [checker.check_single_url(session, ch['url']) for ch in candidates]
+            valid = []
+            checked = 0
 
-        logger.info(f"📈 Retained {len(retained_existing):,} | Removed {removed_count:,} stale")
-        
-        all_channels = retained_existing + new_channels
+            async def check_with_progress(ch, coro):
+                nonlocal checked, valid
+                try:
+                    result = await coro
+                except Exception as e:
+                    logger.debug(f"Error checking {ch.get('name', '?')}: {e}")
+                    result = (ch['url'], False, str(e))
+                checked += 1
+                if checked % M3U_PROGRESS_INTERVAL == 0 or checked == total:
+                    logger.info(f"  🟢 Progress: {checked}/{total} checked")
+                url, is_working, reason = result
+                if is_working:
+                    valid.append(ch)
+
+            await asyncio.gather(*[
+                check_with_progress(ch, task) for ch, task in zip(candidates, tasks)
+            ])
+
+            if valid:
+                formatted = processor.format_channel_data(valid, logos_data)
+                m3u_channels.extend(formatted)
+                logger.info(f"  ✅ Found {len(valid)} working new streams")
+            else:
+                logger.info("  ⚠️ No working new streams found")
+
+        logger.info(f"✅ M3U: {len(m3u_channels)} new channels")
+
+        # ===================== STEP 2: Combine all working channels =====================
+        all_channels = verified_old + kenya_channels + ug_channels + m3u_channels + adult_channels
+        logger.info(f"🔀 Combined raw total: {len(all_channels)} channels")
+
+        # Strong deduplication on the full set (belt and suspenders)
         all_channels = deduplicate_channels(all_channels)
         all_channels = [add_channel_type(ch) for ch in all_channels]
+        logger.info(f"After final deduplication: {len(all_channels)} unique channels")
 
-        logger.info(f"🎉 Final: {len(all_channels):,} channels")
-        log_elapsed_time("Combining")
-
-        # ===================== STEP 7: Save =====================
-        logger.info("💾 Saving...")
+        # ===================== STEP 3: Build country/category breakdown =====================
         country_files = {}
         category_files = {}
         for ch in all_channels:
@@ -206,31 +223,21 @@ async def main():
             for cat in ch.get("categories", ["general"]):
                 category_files.setdefault(cat, []).append(ch)
 
+        # ===================== STEP 4: Overwrite all saved files with the fresh list =====================
+        logger.info("💾 Replacing old channel files with fresh data...")
         save_channels(all_channels, country_files, category_files, append=False)
-        
-        save_last_update_info(
-            total_channels=len(all_channels),
-            retained_channels=len(retained_existing),
-            new_channels=len(new_channels),
-            removed_channels=removed_count
-        )
-        
-        log_elapsed_time("Saving")
 
-        total_time = time.time() - start_time
-        logger.info("=" * 70)
-        logger.info("✅ SUCCESS!")
-        logger.info(f"⏱️ Total: {total_time:.1f}s ({total_time/60:.1f} min)")
-        logger.info(f"📊 Total channels: {len(all_channels):,}")
-        logger.info(f"New: {len(new_channels):,} | Retained: {len(retained_existing):,} | Removed: {removed_count:,}")
-        logger.info("=" * 70)
+        # Generate categories summary (also done inside save_channels, but safe)
+        generate_categories_summary(all_channels)
+
+        logger.info(f"✅ Process completed! Total live channels: {len(all_channels)}")
 
 
 if __name__ == "__main__":
     try:
         asyncio.run(main())
     except KeyboardInterrupt:
-        logger.info("⛔ Stopped")
+        logger.info("⛔ Stopped by user")
     except Exception as e:
-        logger.error(f"💥 Fatal: {e}", exc_info=True)
+        logger.error(f"💥 Fatal error: {e}", exc_info=True)
         sys.exit(1)

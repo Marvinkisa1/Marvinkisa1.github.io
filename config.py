@@ -9,23 +9,32 @@ LOGOS_URL = os.getenv("LOGOS_URL", "https://iptv-org.github.io/api/logos.json")
 KENYA_BASE_URL = os.getenv("KENYA_BASE_URL", "")
 UGANDA_API_URL = "https://apps.moochatplus.net/bash/api/api.php?get_posts&page=1&count=100&api_key=cda11bx8aITlKsXCpNB7yVLnOdEGqg342ZFrQzJRetkSoUMi9w"
 
+
 #world-iptv scrap
-WORLD_IPTV_BASE_URLS = ["https://world-iptv.club/iptv/", "https://ninoiptv.com/home/"]
+WORLD_IPTV_BASE_URLS = [
+    "https://world-iptv.club/iptv/",
+    "https://ninoiptv.com/home/"
+]
 WORLD_IPTV_LINKS_PER_SITE = 1
 WORLD_IPTV_MAX_TOTAL = 2
 
+
 # M3U Sources
-M3U_URLS = [os.getenv("M3U_URL_1", ""), os.getenv("M3U_URL_2", "")]
+M3U_URLS = [
+    os.getenv("M3U_URL_1", ""),
+    os.getenv("M3U_URL_2", "")
+]
 
 ADDITIONAL_M3U = [
     "https://raw.githubusercontent.com/abusaeeidx/IPTV-Scraper-Zilla/refs/heads/main/combined-playlist.m3u",
     'https://raw.githubusercontent.com/bugsfreeweb/LiveTVCollector/refs/heads/main/LiveTV/Collection/LiveTV.m3u'
 ]
 
-# Adult
+# Adult channels source
 ADULT_BASE_URL = "https://adult-tv-channels.click"
 ADULT_SEARCH_URL = f"{ADULT_BASE_URL}/search.json"
-ADULT_REQUEST_DELAY = 1
+ADULT_REQUEST_DELAY = 1  # seconds between page requests (be gentle)
+
 
 # ====================== File Paths ======================
 WORKING_CHANNELS_BASE = "working_channels"
@@ -34,27 +43,38 @@ COUNTRIES_DIR = "countries"
 FAILED_CHANNELS_FILE = "failed_channels.json"
 CATEGORIES_SUMMARY_FILE = "categories.json"
 
-# ====================== HIGH SPEED SETTINGS ======================
-MAX_CONCURRENT = int(os.getenv("MAX_CONCURRENT", 300))
-INITIAL_TIMEOUT = 12
-MAX_TIMEOUT = 25
+# ====================== Settings ======================
+MAX_CONCURRENT = int(os.getenv("MAX_CONCURRENT", 160))
+INITIAL_TIMEOUT = 10
+MAX_TIMEOUT = 20
 RETRIES = 2
 BATCH_SIZE = 1000
-BATCH_DELAY = 0.03
+BATCH_DELAY = 0.1
 MAX_CHANNELS_PER_FILE = 4000
-MIN_STREAM_SIZE = 50
-
-URL_CHECK_TIMEOUT = 20
+MIN_STREAM_SIZE = 100
 
 # ====================== Filters ======================
-UNWANTED_EXTENSIONS = ['.mkv','.mp4','.avi','.mov','.flv','.wmv','.mp3','.aac','.wav','.m4a','.webm','.m4v']
+UNWANTED_EXTENSIONS = [
+    '.mkv', '.mp4', '.avi', '.mov', '.flv', '.wmv',
+    '.mp3', '.aac', '.wav', '.m4a', '.webm', '.m4v'
+]
 
-ADULT_KEYWORDS = ['adult', '18+', 'xxx', 'porn', 'sex', 'erotic', 'hentai','blowjob', 'fuck', 'cum', 'milf', 'teen', 'lesbian', 'ebony']
+ADULT_KEYWORDS = [
+    'adult', '18+', 'xxx', 'porn', 'sex', 'erotic', 'hentai',
+    'blowjob', 'fuck', 'cum', 'milf', 'teen', 'lesbian', 'ebony'
+]
 
-FAKE_HINTS = ['mycamtv', 'mysuperhot.com', 'qr code', 'scan to watch','static image', 'pay to watch', 'MYCAMTV']
+FAKE_HINTS = [
+    'mycamtv', 'mysuperhot.com', 'qr code', 'scan to watch',
+    'static image', 'pay to watch', 'MYCAMTV'
+]
 
 # ====================== Headers ======================
-SCRAPER_HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
+SCRAPER_HEADERS = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+}
+
 KENYA_HEADERS = SCRAPER_HEADERS.copy()
 
-M3U_PROGRESS_INTERVAL = 100
+# Progress logging interval
+M3U_PROGRESS_INTERVAL = 100   # log every 100 streams checked
