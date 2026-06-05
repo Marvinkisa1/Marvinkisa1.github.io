@@ -2,7 +2,6 @@ import os
 import json
 import shutil
 import glob
-from datetime import datetime
 from typing import List, Dict
 
 from config import (
@@ -10,8 +9,7 @@ from config import (
     COUNTRIES_DIR, 
     CATEGORIES_DIR, 
     MAX_CHANNELS_PER_FILE, 
-    CATEGORIES_SUMMARY_FILE,
-    LAST_UPDATE_FILE
+    CATEGORIES_SUMMARY_FILE
 )
 from utils import remove_duplicates, add_channel_type
 
@@ -40,10 +38,8 @@ def load_split_json(base_name: str) -> List[Dict]:
     if os.path.exists(main_file):
         try:
             with open(main_file, 'r', encoding='utf-8') as f:
-                loaded_data = json.load(f)
-                if isinstance(loaded_data, list):
-                    data.extend(loaded_data)
-        except (json.JSONDecodeError, Exception):
+                data.extend(json.load(f))
+        except Exception:
             pass
     
     # All numbered part files
@@ -53,10 +49,8 @@ def load_split_json(base_name: str) -> List[Dict]:
             continue
         try:
             with open(part_file, 'r', encoding='utf-8') as f:
-                loaded_data = json.load(f)
-                if isinstance(loaded_data, list):
-                    data.extend(loaded_data)
-        except (json.JSONDecodeError, Exception):
+                data.extend(json.load(f))
+        except Exception:
             pass
     
     return data
@@ -65,11 +59,7 @@ def load_split_json(base_name: str) -> List[Dict]:
 def save_split_json(base_name: str, data: List[Dict]):
     """Save data with splitting if too large"""
     if not data:
-        # Create empty file to indicate no data
-        with open(base_name + '.json', 'w', encoding='utf-8') as f:
-            json.dump([], f, indent=4, ensure_ascii=False)
         return
-    
     delete_split_files(base_name)   # now deletes ALL old files
     
     if len(data) <= MAX_CHANNELS_PER_FILE:
@@ -99,36 +89,6 @@ def generate_categories_summary(channels: List[Dict]):
 
     with open(CATEGORIES_SUMMARY_FILE, 'w', encoding='utf-8') as f:
         json.dump(summary, f, indent=4, ensure_ascii=False)
-
-
-def save_last_update_info(total_channels: int, retained_channels: int, 
-                          new_channels: int, removed_channels: int):
-    """Save update information to last_update.json"""
-    update_info = {
-        'last_updated': datetime.now().isoformat(),
-        'total_channels': total_channels,
-        'retained_channels': retained_channels,
-        'new_channels': new_channels,
-        'removed_channels': removed_channels
-    }
-    
-    with open(LAST_UPDATE_FILE, 'w', encoding='utf-8') as f:
-        json.dump(update_info, f, indent=4, ensure_ascii=False)
-
-
-def load_last_update_info() -> Dict:
-    """Load last update information"""
-    try:
-        with open(LAST_UPDATE_FILE, 'r', encoding='utf-8') as f:
-            return json.load(f)
-    except (FileNotFoundError, json.JSONDecodeError):
-        return {
-            'last_updated': 'Never',
-            'total_channels': 0,
-            'retained_channels': 0,
-            'new_channels': 0,
-            'removed_channels': 0
-        }
 
 
 def save_channels(channels: List[Dict], country_files: Dict = None, category_files: Dict = None, append: bool = False):
