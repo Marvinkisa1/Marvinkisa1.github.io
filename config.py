@@ -42,16 +42,22 @@ CATEGORIES_DIR = "categories"
 COUNTRIES_DIR = "countries"
 FAILED_CHANNELS_FILE = "failed_channels.json"
 CATEGORIES_SUMMARY_FILE = "categories.json"
+LAST_UPDATE_FILE = "last_update.json"  # NEW: Track last update info
 
 # ====================== Settings ======================
-MAX_CONCURRENT = int(os.getenv("MAX_CONCURRENT", 130))
-INITIAL_TIMEOUT = 25
-MAX_TIMEOUT = 40
-RETRIES = 3
-BATCH_SIZE = 600
+MAX_CONCURRENT = int(os.getenv("MAX_CONCURRENT", 200))  # INCREASED from 120 to 200
+INITIAL_TIMEOUT = 10  # REDUCED from 25 to 10 for speed
+MAX_TIMEOUT = 20  # REDUCED from 40 to 20 for speed
+RETRIES = 2  # REDUCED from 3 to 2 for speed
+BATCH_SIZE = 1000  # INCREASED from 400 to 1000
 BATCH_DELAY = 0.1
 MAX_CHANNELS_PER_FILE = 4000
 MIN_STREAM_SIZE = 100
+
+# NEW: Performance settings for GitHub Actions
+URL_CHECK_TIMEOUT = 5  # Very short timeout per URL
+DNS_CACHE_TTL = 600  # Cache DNS for 10 minutes
+MAX_CONCURRENT_CHECKS = 200  # High concurrency for powerful runners
 
 # ====================== Filters ======================
 UNWANTED_EXTENSIONS = [
