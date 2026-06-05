@@ -17,10 +17,10 @@ class FastChecker:
     def __init__(self):
         self.connector = TCPConnector(
             limit=MAX_CONCURRENT,
-            force_close=True,
+            force_close=True,      # Keep this for faster resource cleanup
             ssl=False,
             ttl_dns_cache=600,
-            keepalive_timeout=60
+            # keepalive_timeout removed - conflicts with force_close=True
         )
         self.headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
         self.working_cache = {}
@@ -40,9 +40,8 @@ class FastChecker:
 
     def save_cache(self):
         try:
-            # Save only recent working URLs to keep file small
             with open(CACHE_FILE, 'w', encoding='utf-8') as f:
-                json.dump({'working': dict(list(self.working_cache.items())[-30000:])}, f)
+                json.dump({'working': dict(list(self.working_cache.items())[-40000:])}, f)
         except Exception as e:
             logger.warning(f"Cache save failed: {e}")
 
