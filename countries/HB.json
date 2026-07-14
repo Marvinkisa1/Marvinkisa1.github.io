@@ -1,27 +1,5 @@
 [
     {
-        "name": "CUGO SPORTS",
-        "id": "CUGOSPORTS.hb",
-        "logo": "https://provider-static.plex.tv/e/epg/channels/logos/gracenote/ef631804cdf478bca5ba96eaee4bc241.png",
-        "url": "https://jmp2.uk/plex-6a1610bebdf296985fd95603-631a212e82b744e0309aa56e.m3u8",
-        "categories": [
-            "plex-all"
-        ],
-        "country": "HB",
-        "type": "all"
-    },
-    {
-        "name": "O Boxing",
-        "id": "OBoxing.hb",
-        "logo": "https://provider-static.plex.tv/epg/cms/production/2205acfa-68f4-4787-a9f5-0fdaa51a1922/HBOBoxing_Logo_Dark_1500x1000.png",
-        "url": "https://jmp2.uk/plex-6a1610bebdf296985fd95603-69d93d6e8061ebfbca58c328.m3u8",
-        "categories": [
-            "plex-all"
-        ],
-        "country": "HB",
-        "type": "all"
-    },
-    {
         "name": "O Hits",
         "id": "OHits.hb",
         "logo": "https://i.imgur.com/tGSLZWz.png",
@@ -61,6 +39,17 @@
         "url": "http://103.213.31.111/HBOHD/index.m3u8",
         "categories": [
             "bd"
+        ],
+        "country": "HB",
+        "type": "all"
+    },
+    {
+        "name": "O HD",
+        "id": "OHD.hb",
+        "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/poland/hbo-hd-pl.png",
+        "url": "http://s5.alltvfree.com:8081/live/hbo_720p/playlist.m3u8",
+        "categories": [
+            "hilaytv"
         ],
         "country": "HB",
         "type": "all"
@@ -418,12 +407,23 @@
         "type": "all"
     },
     {
-        "name": "O HD",
-        "id": "OHD.hb",
-        "logo": "https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/poland/hbo-hd-pl.png",
-        "url": "http://s5.alltvfree.com:8081/live/hbo_720p/playlist.m3u8",
+        "name": "CUGO SPORTS",
+        "id": "CUGOSPORTS.hb",
+        "logo": "https://images.sr.roku.com/idType/roku-trc/context/trc/id/d5ac470e48d355c19371733b18be8925/https%3A%2F%2Fimage.roku.com%2Fbh-uploads%2Fproduction%2FinfoHUDLogo%2F1667009297911_ROKU_Info_HUD_Asset_HBCUGO_260x147_Center.png",
+        "url": "https://jmp2.uk/rok-d5ac470e48d355c19371733b18be8925.m3u8",
         "categories": [
-            "hilaytv"
+            "roku-all"
+        ],
+        "country": "HB",
+        "type": "all"
+    },
+    {
+        "name": "O Boxing",
+        "id": "OBoxing.hb",
+        "logo": "",
+        "url": "https://live-manifest.production-public.tubi.io/live/9fe78734-1db2-49b4-af7b-3c89f5f256ad/playlist.m3u8",
+        "categories": [
+            "general"
         ],
         "country": "HB",
         "type": "all"
