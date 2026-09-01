@@ -1,16 +1,5 @@
 [
     {
-        "name": "LTICUM AUKSINIS LT",
-        "id": "LTICUMAUKSINISLT.ba",
-        "logo": "https://static.epg.best/lt/BalticumAuksinis.lt.png",
-        "url": "http://hits.gentv.to:8080/live/caN6Y3xzQC/WeVu6CgYai/104037.m3u8",
-        "categories": [
-            "lithuania"
-        ],
-        "country": "BA",
-        "type": "adult"
-    },
-    {
         "name": "TICUM PLATINUM LT",
         "id": "TICUMPLATINUMLT.ba",
         "logo": "https://static.epg.best/lt/BalticumPlatinum.lt.png",
@@ -20,6 +9,17 @@
         ],
         "country": "BA",
         "type": "adult"
+    },
+    {
+        "name": "ND Campinas SD",
+        "id": "NDCampinasSD.ba",
+        "logo": "https://od.lk/s/NzdfNTg1NjM4OTZf/band.png",
+        "url": "http://dns.fontedecanais.com.br:80/playercodestv/947942/404",
+        "categories": [
+            "c • band"
+        ],
+        "country": "BA",
+        "type": "all"
     },
     {
         "name": "ND Goiania HD",
@@ -55,10 +55,10 @@
         "type": "all"
     },
     {
-        "name": "ND Brasília HD",
-        "id": "NDBrasliaHD.ba",
+        "name": "ND Campinas HD",
+        "id": "NDCampinasHD.ba",
         "logo": "https://od.lk/s/NzdfNTg1NjM4OTZf/band.png",
-        "url": "http://dns.fontedecanais.com.br:80/playercodestv/947942/2378",
+        "url": "http://dns.fontedecanais.com.br:80/playercodestv/947942/403",
         "categories": [
             "c • band"
         ],
@@ -66,10 +66,10 @@
         "type": "all"
     },
     {
-        "name": "ND Bahia SD",
-        "id": "NDBahiaSD.ba",
+        "name": "ND Belém HD",
+        "id": "NDBelmHD.ba",
         "logo": "https://od.lk/s/NzdfNTg1NjM4OTZf/band.png",
-        "url": "http://dns.fontedecanais.com.br:80/playercodestv/947942/400",
+        "url": "http://dns.fontedecanais.com.br:80/playercodestv/947942/401",
         "categories": [
             "c • band"
         ],
@@ -81,17 +81,6 @@
         "id": "NDGoianiaSD.ba",
         "logo": "https://od.lk/s/NzdfNTg1NjM4OTZf/band.png",
         "url": "http://dns.fontedecanais.com.br:80/playercodestv/947942/408",
-        "categories": [
-            "c • band"
-        ],
-        "country": "BA",
-        "type": "all"
-    },
-    {
-        "name": "ND Minas SD",
-        "id": "NDMinasSD.ba",
-        "logo": "https://od.lk/s/NzdfNTg1NjM4OTZf/band.png",
-        "url": "http://dns.fontedecanais.com.br:80/playercodestv/947942/412",
         "categories": [
             "c • band"
         ],
@@ -121,10 +110,21 @@
         "type": "all"
     },
     {
-        "name": "ND TV Tribuna Recife HD",
-        "id": "NDTVTribunaRecifeHD.ba",
+        "name": "ND SP SD",
+        "id": "NDSPSD.ba",
         "logo": "https://od.lk/s/NzdfNTg1NjM4OTZf/band.png",
-        "url": "http://dns.fontedecanais.com.br:80/playercodestv/947942/429",
+        "url": "http://dns.fontedecanais.com.br:80/playercodestv/947942/426",
+        "categories": [
+            "c • band"
+        ],
+        "country": "BA",
+        "type": "all"
+    },
+    {
+        "name": "ND SP FHD",
+        "id": "NDSPFHD.ba",
+        "logo": "https://od.lk/s/NzdfNTg1NjM4OTZf/band.png",
+        "url": "http://dns.fontedecanais.com.br:80/playercodestv/947942/424",
         "categories": [
             "c • band"
         ],
@@ -187,10 +187,21 @@
         "type": "all"
     },
     {
-        "name": "ND NEWS HD",
-        "id": "NDNEWSHD.ba",
+        "name": "ND NEWS FHD",
+        "id": "NDNEWSFHD.ba",
         "logo": "https://od.lk/s/NzdfNTg1NjM4OThf/bandnews.png",
-        "url": "http://dns.fontedecanais.com.br:80/playercodestv/947942/2301",
+        "url": "http://dns.fontedecanais.com.br:80/playercodestv/947942/2300",
+        "categories": [
+            "c • notícias"
+        ],
+        "country": "BA",
+        "type": "all"
+    },
+    {
+        "name": "ND NEWS SD",
+        "id": "NDNEWSSD.ba",
+        "logo": "https://od.lk/s/NzdfNTg1NjM4OThf/bandnews.png",
+        "url": "http://dns.fontedecanais.com.br:80/playercodestv/947942/2302",
         "categories": [
             "c • notícias"
         ],
@@ -220,10 +231,32 @@
         "type": "all"
     },
     {
-        "name": "ND RIO HD",
-        "id": "NDRIOHD.ba",
+        "name": "ND Sports FHD",
+        "id": "NDSportsFHD.ba",
+        "logo": "https://od.lk/s/NzdfNTg1NjM5MDBf/bandsports.png",
+        "url": "http://dns.fontedecanais.com.br:80/playercodestv/947942/523",
+        "categories": [
+            "c • esportes"
+        ],
+        "country": "BA",
+        "type": "all"
+    },
+    {
+        "name": "ND Taroba Curitiba HD",
+        "id": "NDTarobaCuritibaHD.ba",
         "logo": "https://od.lk/s/NzdfNTg1NjM4OTZf/band.png",
-        "url": "http://dns.fontedecanais.com.br:80/playercodestv/947942/418",
+        "url": "http://dns.fontedecanais.com.br:80/playercodestv/947942/427",
+        "categories": [
+            "c • band"
+        ],
+        "country": "BA",
+        "type": "all"
+    },
+    {
+        "name": "ND Taroba Curitiba SD",
+        "id": "NDTarobaCuritibaSD.ba",
+        "logo": "https://od.lk/s/NzdfNTg1NjM4OTZf/band.png",
+        "url": "http://dns.fontedecanais.com.br:80/playercodestv/947942/428",
         "categories": [
             "c • band"
         ],
@@ -259,28 +292,6 @@
         "url": "https://d3b0v7fggu5zwm.cloudfront.net/out/v1/f16b53f0d5ed459da208c459049c9bb0/index.mpd",
         "categories": [
             "hilaytv"
-        ],
-        "country": "BA",
-        "type": "all"
-    },
-    {
-        "name": "LLERS HD 24/7 VIP UK",
-        "id": "LLERSHD247VIPUK.ba",
-        "logo": "",
-        "url": "http://hits.gentv.to:8080/live/caN6Y3xzQC/WeVu6CgYai/118614.m3u8",
-        "categories": [
-            "24-7 english"
-        ],
-        "country": "BA",
-        "type": "all"
-    },
-    {
-        "name": "NSHEE HD 24/7 VIP UK",
-        "id": "NSHEEHD247VIPUK.ba",
-        "logo": "",
-        "url": "http://hits.gentv.to:8080/live/caN6Y3xzQC/WeVu6CgYai/118613.m3u8",
-        "categories": [
-            "24-7 english"
         ],
         "country": "BA",
         "type": "all"
